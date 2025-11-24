@@ -11,7 +11,6 @@ export function useTelegramMembers() {
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
-  const chatId = import.meta.env.VITE_TELEGRAM_CHAT_ID;
   const dataSource = import.meta.env.VITE_TELEGRAM_DATA_SOURCE;
 
   useEffect(() => {
@@ -25,7 +24,7 @@ export function useTelegramMembers() {
       }
 
       try {
-        const url = `/api/telegram-members`;
+        const url = `/api/telegram-members`; // 🔹 llamada limpia
         const resp = await fetch(url);
         const json = await resp.json();
 
@@ -43,7 +42,7 @@ export function useTelegramMembers() {
     }
 
     fetchMembers();
-  }, [chatId, dataSource]);
+  }, [dataSource]); // 🔹 solo depende de dataSource
 
   return { data, isLoading, error };
 }
