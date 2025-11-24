@@ -79,6 +79,8 @@ app.get('/api/telegram-members', async (req, res) => {
     const tgResp = await fetch(url);
     const tgData = await tgResp.json();
 
+    console.log('Telegram API response:', tgData); // 🔹 útil para depurar en Vercel
+
     if (!tgData.ok) {
       return res.status(500).json({ error: tgData.description });
     }
@@ -120,6 +122,9 @@ app.get('/api/community-members', async (req, res) => {
         { headers: { Authorization: `Bearer ${token}` } }
       );
       const data = await resp.json();
+
+      console.log('Community API response:', data); // 🔹 útil para depurar
+
       const members = data?.data?.member_count ?? 0;
 
       communityCache = { members, timestamp: Date.now() };
