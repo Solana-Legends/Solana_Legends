@@ -25,7 +25,7 @@ export function useTelegramMembers() {
       }
 
       try {
-        const url = `/api/telegram-members?group=${encodeURIComponent(chatId)}`;
+        const url = `/api/telegram-members`;
         const resp = await fetch(url);
         const json = await resp.json();
 
