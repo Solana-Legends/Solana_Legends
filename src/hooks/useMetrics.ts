@@ -5,10 +5,21 @@ export function useTwitterFollowers(username: string) {
   const [followers, setFollowers] = useState<number>(0);
   const [isLoading, setIsLoading] = useState(true);
 
+  const mode = import.meta.env.VITE_TWITTER_FOLLOWERS_MODE;
+  const manualCount = Number(import.meta.env.VITE_TWITTER_FOLLOWERS_COUNT);
+
   useEffect(() => {
     async function fetchFollowers() {
+      setIsLoading(true);
+
+      if (mode === 'manual') {
+        console.log(`[Twitter:hook] → modo manual: ${manualCount} seguidores`);
+        setFollowers(manualCount);
+        setIsLoading(false);
+        return;
+      }
+
       try {
-        setIsLoading(true);
         const res = await fetch(`/api/twitter-followers?username=${encodeURIComponent(username)}`);
         const data = await res.json();
         setFollowers(data.followers ?? 0);
@@ -18,22 +29,34 @@ export function useTwitterFollowers(username: string) {
         setIsLoading(false);
       }
     }
+
     fetchFollowers();
-  }, [username]);
+  }, [username, mode, manualCount]);
 
   return { followers, isLoading };
 }
 
-// 🔹 Hook para Telegram
+// 🔹 Hook para Telegram (solo API disponible)
 export function useTelegramMembers() {
   const [members, setMembers] = useState<number>(0);
   const [isLoading, setIsLoading] = useState(true);
 
+  const chatId = import.meta.env.VITE_TELEGRAM_CHAT_ID;
+  const dataSource = import.meta.env.VITE_TELEGRAM_DATA_SOURCE;
+
   useEffect(() => {
     async function fetchMembers() {
+      setIsLoading(true);
+
+      if (dataSource !== 'api') {
+        console.error('[Telegram:hook] → modo no soportado');
+        setMembers(0);
+        setIsLoading(false);
+        return;
+      }
+
       try {
-        setIsLoading(true);
-        const res = await fetch(`/api/telegram-members`);
+        const res = await fetch(`/api/telegram-members?group=${encodeURIComponent(chatId)}`);
         const data = await res.json();
         setMembers(data.members ?? 0);
       } catch {
@@ -42,8 +65,9 @@ export function useTelegramMembers() {
         setIsLoading(false);
       }
     }
+
     fetchMembers();
-  }, []);
+  }, [chatId, dataSource]);
 
   return { members, isLoading };
 }
@@ -53,10 +77,21 @@ export function useCommunityMembers() {
   const [members, setMembers] = useState<number>(0);
   const [isLoading, setIsLoading] = useState(true);
 
+  const mode = import.meta.env.VITE_COMMUNITY_FOLLOWERS_MODE;
+  const manualCount = Number(import.meta.env.VITE_COMMUNITY_FOLLOWERS_COUNT);
+
   useEffect(() => {
     async function fetchMembers() {
+      setIsLoading(true);
+
+      if (mode === 'manual') {
+        console.log(`[Comunidad X:hook] → modo manual: ${manualCount} miembros`);
+        setMembers(manualCount);
+        setIsLoading(false);
+        return;
+      }
+
       try {
-        setIsLoading(true);
         const res = await fetch(`/api/community-members`);
         const data = await res.json();
         setMembers(data.members ?? 0);
@@ -66,8 +101,9 @@ export function useCommunityMembers() {
         setIsLoading(false);
       }
     }
+
     fetchMembers();
-  }, []);
+  }, [mode, manualCount]);
 
   return { members, isLoading };
 }

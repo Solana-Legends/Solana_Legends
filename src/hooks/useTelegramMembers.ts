@@ -3,20 +3,29 @@ import { useEffect, useState } from 'react';
 interface TelegramMembersResponse {
   members: number;
   cached: boolean;
+  error?: string;
 }
 
-export function useTelegramMembers(group?: string) {
+export function useTelegramMembers() {
   const [data, setData] = useState<TelegramMembersResponse | null>(null);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
+  const chatId = import.meta.env.VITE_TELEGRAM_CHAT_ID;
+  const dataSource = import.meta.env.VITE_TELEGRAM_DATA_SOURCE;
+
   useEffect(() => {
     async function fetchMembers() {
+      setIsLoading(true);
+
+      if (dataSource !== 'api') {
+        setError('Modo no soportado para Telegram');
+        setIsLoading(false);
+        return;
+      }
+
       try {
-        setIsLoading(true);
-        const url = group
-          ? `/api/telegram-members?group=${group}`
-          : '/api/telegram-members';
+        const url = `/api/telegram-members?group=${encodeURIComponent(chatId)}`;
         const resp = await fetch(url);
         const json = await resp.json();
 
@@ -34,7 +43,7 @@ export function useTelegramMembers(group?: string) {
     }
 
     fetchMembers();
-  }, [group]);
+  }, [chatId, dataSource]);
 
   return { data, isLoading, error };
 }
