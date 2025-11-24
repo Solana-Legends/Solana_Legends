@@ -18,17 +18,17 @@ const CACHE_DURATION = 60 * 60 * 1000; // 60 min
 let twitterCache = null;
 
 app.get('/api/twitter-followers', async (req, res) => {
-  const mode = process.env.TWITTER_FOLLOWERS_MODE || 'manual';
+  const mode = process.env.VITE_TWITTER_FOLLOWERS_MODE || 'manual';
   const force = req.query.force === 'true';
 
   try {
     if (mode === 'manual') {
-      const followers = parseInt(process.env.TWITTER_FOLLOWERS_COUNT || '0', 10);
+      const followers = parseInt(process.env.VITE_TWITTER_FOLLOWERS_COUNT || '0', 10);
       return res.json({ followers, cached: false, source: 'manual' });
     }
 
     if (mode === 'api') {
-      const token = process.env.X_BEARER_TOKEN;
+      const token = process.env.X_BEARER_TOKEN; // 🔹 backend seguro
       const username = req.query.username;
 
       if (!token || !username) {
@@ -68,8 +68,8 @@ app.get('/api/twitter-followers', async (req, res) => {
 /* ------------------ 🔹 Telegram Members ------------------ */
 app.get('/api/telegram-members', async (req, res) => {
   try {
-    const token = process.env.TELEGRAM_BOT_TOKEN;
-    const chatId = process.env.TELEGRAM_CHAT_ID;
+    const token = process.env.TELEGRAM_BOT_TOKEN; // 🔹 backend seguro
+    const chatId = process.env.TELEGRAM_CHAT_ID;  // 🔹 backend seguro
 
     if (!token || !chatId) {
       return res.status(400).json({ error: 'Faltan token o chatId de Telegram' });
@@ -94,18 +94,18 @@ app.get('/api/telegram-members', async (req, res) => {
 let communityCache = null;
 
 app.get('/api/community-members', async (req, res) => {
-  const mode = process.env.COMMUNITY_FOLLOWERS_MODE || 'manual';
+  const mode = process.env.VITE_COMMUNITY_FOLLOWERS_MODE || 'manual';
   const force = req.query.force === 'true';
 
   try {
     if (mode === 'manual') {
-      const members = parseInt(process.env.COMMUNITY_FOLLOWERS_COUNT || '0', 10);
+      const members = parseInt(process.env.VITE_COMMUNITY_FOLLOWERS_COUNT || '0', 10);
       return res.json({ members, cached: false, source: 'manual' });
     }
 
     if (mode === 'api') {
-      const token = process.env.COMMUNITY_BEARER_TOKEN;
-      const communityId = req.query.communityId;
+      const token = process.env.COMMUNITY_BEARER_TOKEN; // 🔹 backend seguro
+      const communityId = req.query.communityId || process.env.COMMUNITY_ID;
 
       if (!token || !communityId) {
         return res.status(400).json({ error: 'Faltan token o communityId' });
