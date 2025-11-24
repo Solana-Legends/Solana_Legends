@@ -12,7 +12,11 @@
     "isolatedModules": true,
     "moduleDetection": "force",
     "noEmit": true,
+
+    /* 🔑 JSX para React */
     "jsx": "react-jsx",
+    "jsxImportSource": "react",
+    "types": ["react", "react-dom"],
 
     /* Linting */
     "strict": false,

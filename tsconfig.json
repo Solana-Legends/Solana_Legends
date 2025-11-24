@@ -9,18 +9,25 @@
     "paths": {
       "@/*": ["./src/*"]
     },
+
+    /* 🔹 Reglas de control */
     "noImplicitAny": false,
     "noUnusedParameters": false,
     "skipLibCheck": true,
     "allowJs": true,
     "noUnusedLocals": false,
     "strictNullChecks": false,
+    "strict": true,
 
-    // 🔑 Añade estas líneas:
-    "module": "ESNext",        // O "Node16", "NodeNext"
+    /* 🔹 Configuración de módulos */
+    "module": "ESNext",              // O "Node16", "NodeNext"
     "target": "ES2022",
     "esModuleInterop": true,
-    "moduleResolution": "NodeNext", // O "Bundler"
-    "strict": true // Es buena práctica tenerlo en true
+    "moduleResolution": "NodeNext",  // O "Bundler"
+
+    /* 🔑 Configuración JSX para React */
+    "jsx": "react-jsx",
+    "jsxImportSource": "react",
+    "types": ["react", "react-dom"]
   }
 }

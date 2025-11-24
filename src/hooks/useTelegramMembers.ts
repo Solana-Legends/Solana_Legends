@@ -12,37 +12,45 @@ export function useTelegramMembers() {
   const [error, setError] = useState<string | null>(null);
 
   const dataSource = import.meta.env.VITE_TELEGRAM_DATA_SOURCE;
+  const manualCount = Number(import.meta.env.VITE_TELEGRAM_MEMBERS_COUNT || 0);
 
   useEffect(() => {
     async function fetchMembers() {
       setIsLoading(true);
 
-      if (dataSource !== 'api') {
-        setError('Modo no soportado para Telegram');
+      if (dataSource === 'manual') {
+        // 🔹 modo manual: usamos el valor de .env
+        console.log(`[Telegram:hook] → modo manual: ${manualCount} miembros`);
+        setData({ members: manualCount, cached: true });
         setIsLoading(false);
         return;
       }
 
-      try {
-        const url = `/api/telegram-members`; // 🔹 llamada limpia
-        const resp = await fetch(url);
-        const json = await resp.json();
+      if (dataSource === 'api') {
+        try {
+          const url = `/api/telegram-members`;
+          const resp = await fetch(url);
+          const json = await resp.json();
 
-        if (resp.ok) {
-          console.log(`[Telegram:hook] → ${json.members} miembros (cached=${json.cached})`);
-          setData(json);
-        } else {
-          setError(json.error ?? 'Error desconocido');
+          if (resp.ok) {
+            console.log(`[Telegram:hook] → ${json.members} miembros (cached=${json.cached})`);
+            setData(json);
+          } else {
+            setError(json.error ?? 'Error desconocido');
+          }
+        } catch (e: any) {
+          setError(e.message);
+        } finally {
+          setIsLoading(false);
         }
-      } catch (e: any) {
-        setError(e.message);
-      } finally {
+      } else {
+        setError('Modo no soportado para Telegram');
         setIsLoading(false);
       }
     }
 
     fetchMembers();
-  }, [dataSource]); // 🔹 solo depende de dataSource
+  }, [dataSource, manualCount]);
 
   return { data, isLoading, error };
 }

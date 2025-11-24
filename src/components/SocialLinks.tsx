@@ -31,10 +31,12 @@ export default function SocialLinks() {
       name: t('progress.telegram'),
       handle: t('progress.officialGroup'),
       followers: `${metrics.telegram} ${t('progress.members')}`,
-      url: 'https://t.me/EligeTuMeme/1',
+      url: 'https://t.me/EligeTuMeme',
       icon: MessageCircle,
       color: 'bg-cyan-600 hover:bg-cyan-700',
       description: t('social.realTimeChat'),
+      ritualMessage:
+        '🕰️ Cada amanecer y cada ocaso, las cifras se renuevan para reflejar la energía viva del fuego colectivo.',
     },
   ];
 
@@ -100,6 +102,12 @@ export default function SocialLinks() {
                       {t('social.follow')}
                     </Button>
                   </a>
+                  {/* Mensaje ritualizado solo para Telegram */}
+                  {platform.ritualMessage && (
+                    <div className="mt-2 text-sm text-center text-zinc-400 italic animate-fadeIn animate-pulseSlow">
+                      {platform.ritualMessage}
+                    </div>
+                  )}
                 </CardContent>
               </Card>
             );
@@ -164,7 +172,7 @@ export default function SocialLinks() {
                 {t('social.xCommunity')}
               </Button>
             </a>
-            <a href="https://t.me/EligeTuMeme/1" target="_blank" rel="noopener noreferrer">
+            <a href="https://t.me/EligeTuMeme" target="_blank" rel="noopener noreferrer">
               <Button
                 size="lg"
                 variant="outline"
@@ -173,6 +181,11 @@ export default function SocialLinks() {
                 {t('social.joinTelegram')}
               </Button>
             </a>
+          </div>
+
+          {/* Mensaje ritual al pie de la sección */}
+          <div className="mt-6 text-sm text-center text-zinc-400 italic animate-fadeIn animate-pulseSlow">
+            🕰️ Cada amanecer y cada ocaso, las cifras se renuevan para reflejar la energía viva del fuego colectivo.
           </div>
         </div>
       </div>
