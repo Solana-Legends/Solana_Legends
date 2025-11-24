@@ -1,5 +1,3 @@
-# Solana_Legends
-Official portal of Solana Legends, featuring real-time metrics, cosmic aura design, and ritualized narrative for the community.
 # Solana Legends ✨
 
 Official portal of **Solana Legends**, blending technology, mythic storytelling, and community energy.  
@@ -31,16 +29,23 @@ It is a **mythic narrative** designed to empower the community with:
 
 ---
 
-## 🔥 Philosophy
-- Keep the **fire controlled**: avoid emotional trading, act with clarity.
-- Celebrate **behind-the-scenes contributions**: creativity, ideas, and real energy deserve recognition.
-- Ritualize progress: every metric, every update is part of the legend.
+## 📂 Template Notes
+This portal is built on the **shadcn/ui** template.  
+Key files:
+- `index.html` – HTML entry point  
+- `vite.config.ts` – Vite configuration  
+- `src/App.tsx` – Root component  
+- `src/main.tsx` – Entry point  
+- `src/pages/Index.tsx` – Home page logic  
+
+All shadcn/ui components are pre-downloaded under `@/components/ui`.
 
 ---
 
-## 🌐 Deployment
-This project is deployed on **Vercel**.  
-Future updates will include a custom domain: `solanalegends.com`.
+## 🔥 Philosophy
+- Keep the **fire controlled**: avoid emotional trading, act with clarity.  
+- Celebrate **behind-the-scenes contributions**.  
+- Ritualize progress: every metric, every update is part of the legend.
 
 ---
 

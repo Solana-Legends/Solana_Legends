@@ -1,0 +1,26 @@
+{
+  "files": [],
+  "references": [
+    { "path": "./tsconfig.app.json" },
+    { "path": "./tsconfig.node.json" }
+  ],
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["./src/*"]
+    },
+    "noImplicitAny": false,
+    "noUnusedParameters": false,
+    "skipLibCheck": true,
+    "allowJs": true,
+    "noUnusedLocals": false,
+    "strictNullChecks": false,
+
+    // 🔑 Añade estas líneas:
+    "module": "ESNext",        // O "Node16", "NodeNext"
+    "target": "ES2022",
+    "esModuleInterop": true,
+    "moduleResolution": "NodeNext", // O "Bundler"
+    "strict": true // Es buena práctica tenerlo en true
+  }
+}

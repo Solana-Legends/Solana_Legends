@@ -1,0 +1,124 @@
+import { useEffect, useState } from 'react';
+
+// 🔹 Hook para Twitter
+export function useTwitterFollowers(username: string) {
+  const [followers, setFollowers] = useState<number>(0);
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    async function fetchFollowers() {
+      try {
+        setIsLoading(true);
+        const res = await fetch(`/api/twitter-followers?username=${encodeURIComponent(username)}`);
+        const data = await res.json();
+        setFollowers(data.followers ?? 0);
+      } catch {
+        setFollowers(0);
+      } finally {
+        setIsLoading(false);
+      }
+    }
+    fetchFollowers();
+  }, [username]);
+
+  return { followers, isLoading };
+}
+
+// 🔹 Hook para Telegram
+export function useTelegramMembers() {
+  const [members, setMembers] = useState<number>(0);
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    async function fetchMembers() {
+      try {
+        setIsLoading(true);
+        const res = await fetch(`/api/telegram-members`);
+        const data = await res.json();
+        setMembers(data.members ?? 0);
+      } catch {
+        setMembers(0);
+      } finally {
+        setIsLoading(false);
+      }
+    }
+    fetchMembers();
+  }, []);
+
+  return { members, isLoading };
+}
+
+// 🔹 Hook para Comunidad de X
+export function useCommunityMembers() {
+  const [members, setMembers] = useState<number>(0);
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    async function fetchMembers() {
+      try {
+        setIsLoading(true);
+        const res = await fetch(`/api/community-members`);
+        const data = await res.json();
+        setMembers(data.members ?? 0);
+      } catch {
+        setMembers(0);
+      } finally {
+        setIsLoading(false);
+      }
+    }
+    fetchMembers();
+  }, []);
+
+  return { members, isLoading };
+}
+
+// 🔮 Hook principal que devuelve todas las métricas
+export function useMetrics() {
+  const { followers: twitterFollowers, isLoading: twitterLoading } = useTwitterFollowers('EligeTuMeme');
+  const { members: telegramMembers, isLoading: telegramLoading } = useTelegramMembers();
+  const { members: communityMembers, isLoading: communityLoading } = useCommunityMembers();
+
+  const goal = 500;
+
+  // 🔹 Progreso principal: red con más seguidores
+  const mainProgress = Math.max(twitterFollowers, telegramMembers, communityMembers);
+  const remaining = Math.max(0, goal - mainProgress);
+
+  // 🔹 Fuente dominante
+  const topSource = (() => {
+    const sources = [
+      { name: 'Twitter', value: twitterFollowers },
+      { name: 'Telegram', value: telegramMembers },
+      { name: 'Comunidad X', value: communityMembers },
+    ];
+    return sources.sort((a, b) => b.value - a.value)[0].name;
+  })();
+
+  // ✅ Estados individuales
+  const twitterReady = twitterFollowers >= goal;
+  const telegramReady = telegramMembers >= goal;
+  const communityReady = communityMembers >= goal;
+
+  // 🔥 La votación se activa si cualquiera llega al objetivo
+  const votingEnabled = twitterReady || telegramReady || communityReady;
+
+  // Estado de carga global
+  const isLoading = twitterLoading || telegramLoading || communityLoading;
+
+  return {
+    metrics: {
+      twitter: twitterFollowers,
+      telegram: telegramMembers,
+      community: communityMembers,
+    },
+    goal,
+    mainProgress,
+    remaining,
+    topSource,
+    twitterReady,
+    telegramReady,
+    communityReady,
+    votingEnabled,
+    isLoading,
+  };
+}
