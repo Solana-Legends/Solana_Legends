@@ -141,7 +141,7 @@ export default function FollowerCounter() {
         {/* 🔮 Mensaje ritualizado centrado */}
         <div className="text-center mt-8">
           <p className="text-sm text-zinc-400 italic animate-fadeIn animate-pulseSlow">
-            🕰️ Cada amanecer y cada ocaso, las cifras se renuevan para reflejar la energía viva del fuego colectivo.
+            {t('progress.renewalMessage')}
           </p>
         </div>
 

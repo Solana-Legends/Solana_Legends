@@ -108,7 +108,7 @@ export default function SocialLinks() {
 
         {/* Mensaje ritualizado centrado debajo de los tres bloques */}
         <div className="mb-12 text-sm text-center text-zinc-400 italic animate-fadeIn animate-pulseSlow">
-          🕰️ Cada amanecer y cada ocaso, las cifras se renuevan para reflejar la energía viva del fuego colectivo.
+          {t('progress.renewalMessage')}
         </div>
 
         {/* Share Section */}

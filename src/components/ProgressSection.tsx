@@ -96,7 +96,7 @@ export default function ProgressSection() {
       {/* 🕰️ Mensaje ritualizado centrado */}
       {!isLoading && (
         <div className="mt-6 text-sm text-center text-zinc-400 italic animate-fadeIn animate-pulseSlow">
-          🕰️ Cada amanecer y cada ocaso, las cifras se renuevan para reflejar la energía viva del fuego colectivo.
+          {t('progress.renewalMessage')}
         </div>
       )}
 
