@@ -54,8 +54,10 @@ export default function SocialLinks() {
       case 'whatsapp':
         url = `https://wa.me/?text=${encodeURIComponent(shareText + ' ' + shareUrl)}`;
         break;
+      default:
+        break;
     }
-    window.open(url, '_blank');
+    if (url) window.open(url, '_blank');
   };
 
   return (
@@ -179,6 +181,13 @@ export default function SocialLinks() {
               </Button>
             </a>
           </div>
+        </div>
+
+        {/* Footer ritualizado */}
+        <div className="mt-16 text-center text-xs text-zinc-500 px-4">
+          Solana Legends 🪐 EligeTuMeme™ — © 2025<br />
+          Official partners: <a href="https://votra.studio" target="_blank" rel="noopener noreferrer" className="underline hover:text-amber-400">votra.studio</a><br />
+          Powered by community fire, ritualized progress, and cosmic guardianship.
         </div>
       </div>
     </section>
