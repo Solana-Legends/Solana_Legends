@@ -74,6 +74,7 @@ const translations = {
     'progress.topSource': 'La red que lidera el fuego es',
     'progress.goalReached': '¡Meta alcanzada! El fuego ritual está encendido.',
     'progress.telegramNote': '🕰️ Cada amanecer y cada ocaso, las cifras se renuevan para reflejar la energía viva del fuego colectivo',
+    'progress.renewalMessage': '🕰️ Cada amanecer y cada ocaso, las cifras se renuevan para reflejar la energía viva del fuego colectivo',
   
     // Project Info
     'project.title': 'El Proyecto',
@@ -116,7 +117,7 @@ const translations = {
     'social.xCommunity': 'Unirse a la Comunidad X',
     'social.joinTelegram': 'Unirse al Telegram oficial',
     'social.telegramNote': '🕰️ Cada amanecer y cada ocaso, las cifras se renuevan para reflejar la energía viva del fuego colectivo',
-  },  
+  },
 
   en: {
     // Hero Section
@@ -183,6 +184,7 @@ const translations = {
     'progress.topSource': 'The network leading the fire is',
     'progress.goalReached': 'Goal reached! The ritual fire is lit.',
     'progress.telegramNote': '🕰️ At every dawn and dusk, the numbers renew to reflect the living energy of the collective fire',
+    'progress.renewalMessage': '🕰️ At every dawn and every dusk, the numbers renew to reflect the living energy of the collective fire',
   
     // Project Info
     'project.title': 'The Project',
