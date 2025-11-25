@@ -51,11 +51,6 @@ export default function ProgressSection() {
         {twitterReady && !isLoading && (
           <p className="text-amber-400 font-medium mt-1">🔥 {t('progress.fireUnleashed')}</p>
         )}
-        {!isLoading && import.meta.env.VITE_TWITTER_FOLLOWERS_MODE === 'manual' && (
-          <div className="mt-2 text-sm text-center text-zinc-400 italic">
-            🕰️ Cada amanecer y cada ocaso, las cifras se renuevan para reflejar la energía viva del fuego colectivo.
-          </div>
-        )}
       </div>
 
       {/* Telegram */}
@@ -67,11 +62,6 @@ export default function ProgressSection() {
         {telegramReady && !isLoading && (
           <p className="text-amber-400 font-medium mt-1">🔥 {t('progress.fireUnleashed')}</p>
         )}
-        {!isLoading && import.meta.env.VITE_TELEGRAM_MEMBERS_MODE === 'manual' && (
-          <div className="mt-2 text-sm text-center text-zinc-400 italic">
-            🕰️ Cada amanecer y cada ocaso, las cifras se renuevan para reflejar la energía viva del fuego colectivo.
-          </div>
-        )}
       </div>
 
       {/* Comunidad X */}
@@ -82,11 +72,6 @@ export default function ProgressSection() {
         <ProgressBar percent={(metrics.community / goal) * 100} aura={communityReady} />
         {communityReady && !isLoading && (
           <p className="text-amber-400 font-medium mt-1">🔥 {t('progress.fireUnleashed')}</p>
-        )}
-        {!isLoading && import.meta.env.VITE_COMMUNITY_FOLLOWERS_MODE === 'manual' && (
-          <div className="mt-2 text-sm text-center text-zinc-400 italic">
-            🕰️ Cada amanecer y cada ocaso, las cifras se renuevan para reflejar la energía viva del fuego colectivo.
-          </div>
         )}
       </div>
 
