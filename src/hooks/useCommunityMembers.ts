@@ -26,23 +26,34 @@ export function useCommunityMembers() {
         return;
       }
 
-      try {
-        const res = await fetch(`/api/community-members`);
-        const json: CommunityMembersResponse = await res.json();
+      if (mode === 'api') {
+        try {
+          const res = await fetch(`/api/community-members`);
+          const json: CommunityMembersResponse = await res.json();
 
-        if (res.ok) {
-          console.log(`[Comunidad X:hook] → ${json.members} miembros (cached=${json.cached})`);
-          setData(json);
-        } else {
-          const errMsg = json.error ?? 'Error desconocido';
+          if (res.ok) {
+            console.log(`[Comunidad X:hook] → ${json.members} miembros (cached=${json.cached})`);
+            setData({
+              members: json.members,
+              cached: json.cached ?? false,
+              error: json.error,
+            });
+          } else {
+            const errMsg = json.error ?? 'Error desconocido';
+            setError(errMsg);
+            setData({ members: 0, cached: false, error: errMsg });
+          }
+        } catch (e: unknown) {
+          const errMsg = e instanceof Error ? e.message : 'Error desconocido';
           setError(errMsg);
           setData({ members: 0, cached: false, error: errMsg });
+        } finally {
+          setIsLoading(false);
         }
-      } catch (e: unknown) {
-        const errMsg = e instanceof Error ? e.message : 'Error desconocido';
+      } else {
+        const errMsg = 'Modo no soportado para Comunidad X';
         setError(errMsg);
         setData({ members: 0, cached: false, error: errMsg });
-      } finally {
         setIsLoading(false);
       }
     }

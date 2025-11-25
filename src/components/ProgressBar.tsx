@@ -39,11 +39,6 @@ export function ProgressBar({ percent, aura = false }: ProgressBarProps) {
           <div className="absolute inset-0 rounded-full ring-2 ring-amber-400 animate-ping" />
         )}
       </div>
-
-      {/* Mensaje ritualizado de actualización manual */}
-      <div className="mt-4 text-sm text-center text-zinc-400 italic">
-        🕰️ Cada amanecer y cada ocaso, las cifras se renuevan para reflejar la energía viva del fuego colectivo.
-      </div>
     </div>
   );
 }

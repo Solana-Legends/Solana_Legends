@@ -3,11 +3,11 @@ import { ProgressBar } from './ProgressBar';
 import { useLanguage } from '../contexts/LanguageContext';
 import { useMetrics } from '@/hooks/useMetrics';
 
-export default function ProgressSection({ goal = 500 }: { goal?: number }) {
+export default function ProgressSection() {
   const { t } = useLanguage();
   const {
     metrics,
-    goal: target,
+    goal,
     twitterReady,
     telegramReady,
     communityReady,
@@ -27,10 +27,10 @@ export default function ProgressSection({ goal = 500 }: { goal?: number }) {
       {!isLoading && (
         <div className="mb-6">
           <p className="text-zinc-300 mb-1">
-            Progreso Principal ({topSource}): {mainProgress} / {target}
+            Progreso Principal ({topSource}): {mainProgress} / {goal}
           </p>
-          <ProgressBar percent={(mainProgress / target) * 100} aura={mainProgress >= target} />
-          {mainProgress < target ? (
+          <ProgressBar percent={(mainProgress / goal) * 100} aura={mainProgress >= goal} />
+          {mainProgress < goal ? (
             <p className="text-amber-400 font-medium mt-1">
               ¡Faltan {remaining} seguidores para la votación! — El fuego se activará pronto
             </p>
@@ -45,68 +45,63 @@ export default function ProgressSection({ goal = 500 }: { goal?: number }) {
       {/* Twitter */}
       <div className="mb-4">
         <p className="text-zinc-300 mb-1">
-          Twitter/X: {isLoading ? '...' : `${metrics.twitter} / ${target} seguidores`}
+          Twitter/X: {isLoading ? '...' : `${metrics.twitter} / ${goal} seguidores`}
         </p>
-        <ProgressBar percent={(metrics.twitter / target) * 100} aura={twitterReady} />
+        <ProgressBar percent={(metrics.twitter / goal) * 100} aura={twitterReady} />
         {twitterReady && !isLoading && (
           <p className="text-amber-400 font-medium mt-1">🔥 {t('progress.fireUnleashed')}</p>
-        )}
-        {/* Mensaje ritualizado en modo manual */}
-        {!isLoading && import.meta.env.VITE_TWITTER_FOLLOWERS_MODE === 'manual' && (
-          <div className="mt-2 text-sm text-center text-zinc-400 italic">
-            🕰️ Cada amanecer y cada ocaso, las cifras se renuevan para reflejar la energía viva del fuego colectivo.
-          </div>
         )}
       </div>
 
       {/* Telegram */}
       <div className="mb-4">
         <p className="text-zinc-300 mb-1">
-          Telegram: {isLoading ? '...' : `${metrics.telegram} / ${target} miembros`}
+          Telegram: {isLoading ? '...' : `${metrics.telegram} / ${goal} miembros`}
         </p>
-        <ProgressBar percent={(metrics.telegram / target) * 100} aura={telegramReady} />
+        <ProgressBar percent={(metrics.telegram / goal) * 100} aura={telegramReady} />
         {telegramReady && !isLoading && (
           <p className="text-amber-400 font-medium mt-1">🔥 {t('progress.fireUnleashed')}</p>
-        )}
-        {/* Mensaje ritualizado en modo manual */}
-        {!isLoading && import.meta.env.VITE_TELEGRAM_MEMBERS_MODE === 'manual' && (
-          <div className="mt-2 text-sm text-center text-zinc-400 italic">
-            🕰️ Cada amanecer y cada ocaso, las cifras se renuevan para reflejar la energía viva del fuego colectivo.
-          </div>
         )}
       </div>
 
       {/* Comunidad X */}
       <div className="mb-4">
         <p className="text-zinc-300 mb-1">
-          Comunidad X: {isLoading ? '...' : `${metrics.community} / ${target} miembros`}
+          Comunidad X: {isLoading ? '...' : `${metrics.community} / ${goal} miembros`}
         </p>
-        <ProgressBar percent={(metrics.community / target) * 100} aura={communityReady} />
+        <ProgressBar percent={(metrics.community / goal) * 100} aura={communityReady} />
         {communityReady && !isLoading && (
           <p className="text-amber-400 font-medium mt-1">🔥 {t('progress.fireUnleashed')}</p>
-        )}
-        {/* Mensaje ritualizado en modo manual */}
-        {!isLoading && import.meta.env.VITE_COMMUNITY_FOLLOWERS_MODE === 'manual' && (
-          <div className="mt-2 text-sm text-center text-zinc-400 italic">
-            🕰️ Cada amanecer y cada ocaso, las cifras se renuevan para reflejar la energía viva del fuego colectivo.
-          </div>
         )}
       </div>
 
       {/* Botones ritualizados */}
       {votingEnabled && !isLoading && (
         <div className="mt-6 flex flex-col sm:flex-row gap-4">
-          <button className="px-4 py-2 rounded-md bg-amber-500 text-black font-semibold hover:bg-amber-400 transition-all shadow-md shadow-amber-700">
+          <button
+            aria-label="Votar en la ritualización"
+            className="px-4 py-2 rounded-md bg-amber-500 text-black font-semibold hover:bg-amber-400 transition-all shadow-md shadow-amber-700"
+          >
             {t('progress.voteButton')}
           </button>
-          <button className="px-4 py-2 rounded-md bg-zinc-800 text-zinc-100 border border-zinc-600 hover:border-amber-400 transition-all">
+          <button
+            aria-label="Proponer una nueva leyenda"
+            className="px-4 py-2 rounded-md bg-zinc-800 text-zinc-100 border border-zinc-600 hover:border-amber-400 transition-all"
+          >
             {t('progress.proposeLegend')}
           </button>
         </div>
       )}
 
+      {/* Mensaje ritualizado centrado */}
       {!isLoading && (
-        <p className="mt-6 text-sm text-zinc-300">
+        <div className="mt-6 text-sm text-center text-zinc-400 italic animate-fadeIn animate-pulseSlow">
+          🕰️ Cada amanecer y cada ocaso, las cifras se renuevan para reflejar la energía viva del fuego colectivo.
+        </div>
+      )}
+
+      {!isLoading && (
+        <p className="mt-4 text-sm text-zinc-300">
           <span className="inline-block mr-2 h-2 w-2 rounded-full bg-amber-400 animate-pulse" />
           {t('progress.voteMessageRitual')}
         </p>

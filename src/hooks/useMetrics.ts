@@ -42,44 +42,48 @@ export function useTwitterFollowers(username: string) {
   return { followers, isLoading, error };
 }
 
-// 🔹 Hook para Telegram (solo API disponible)
+// 🔹 Hook para Telegram
 export function useTelegramMembers() {
   const [members, setMembers] = useState<number>(0);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
-  const chatId = import.meta.env.VITE_TELEGRAM_CHAT_ID;
-  const dataSource = import.meta.env.VITE_TELEGRAM_DATA_SOURCE;
+  const mode = import.meta.env.VITE_TELEGRAM_MEMBERS_MODE;
+  const manualCount = Number(import.meta.env.VITE_TELEGRAM_MEMBERS_COUNT);
 
   useEffect(() => {
     async function fetchMembers() {
       setIsLoading(true);
 
-      if (dataSource !== 'api') {
-        console.error('[Telegram:hook] → modo no soportado');
-        setMembers(0);
+      if (mode === 'manual') {
+        console.log(`[Telegram:hook] → modo manual: ${manualCount} miembros`);
+        setMembers(manualCount);
         setIsLoading(false);
         return;
       }
 
-      try {
-        const res = await fetch(`/api/telegram-members?group=${encodeURIComponent(chatId)}`);
-        const data: { members?: number } = await res.json();
-        setMembers(data.members ?? 0);
-      } catch (e: unknown) {
-        if (e instanceof Error) {
-          setError(e.message);
-        } else {
-          setError('Error desconocido');
+      if (mode === 'api') {
+        try {
+          const res = await fetch(`/api/telegram-members`);
+          const data: { members?: number } = await res.json();
+          setMembers(data.members ?? 0);
+        } catch (e: unknown) {
+          const errMsg = e instanceof Error ? e.message : 'Error desconocido';
+          setError(errMsg);
+          setMembers(0);
+        } finally {
+          setIsLoading(false);
         }
+      } else {
+        const errMsg = 'Modo no soportado para Telegram';
+        setError(errMsg);
         setMembers(0);
-      } finally {
         setIsLoading(false);
       }
     }
 
     fetchMembers();
-  }, [chatId, dataSource]);
+  }, [mode, manualCount]);
 
   return { members, isLoading, error };
 }

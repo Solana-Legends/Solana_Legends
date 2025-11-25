@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 
 export interface TwitterFollowersResponse {
   followers: number;
-  cached?: boolean;
+  cached: boolean;
   error?: string;
 }
 
@@ -25,22 +25,34 @@ export function useTwitterFollowers(username: string) {
         return;
       }
 
-      try {
-        const res = await fetch(`/api/twitter-followers?username=${encodeURIComponent(username)}`);
-        const json: TwitterFollowersResponse = await res.json();
+      if (mode === 'api') {
+        try {
+          const res = await fetch(`/api/twitter-followers?username=${encodeURIComponent(username)}`);
+          const json: TwitterFollowersResponse = await res.json();
 
-        if (res.ok) {
-          console.log(`[Twitter:hook] → modo api: ${json.followers} seguidores`);
-          setData(json);
-        } else {
-          setError(json.error ?? 'Error desconocido');
-          setData({ followers: 0, error: json.error ?? 'Error desconocido' });
+          if (res.ok) {
+            console.log(`[Twitter:hook] → modo api: ${json.followers} seguidores`);
+            setData({
+              followers: json.followers ?? 0,
+              cached: json.cached ?? false,
+              error: json.error,
+            });
+          } else {
+            const errMsg = json.error ?? 'Error desconocido';
+            setError(errMsg);
+            setData({ followers: 0, cached: false, error: errMsg });
+          }
+        } catch (e: unknown) {
+          const message = e instanceof Error ? e.message : 'Error desconocido';
+          setError(message);
+          setData({ followers: 0, cached: false, error: message });
+        } finally {
+          setIsLoading(false);
         }
-      } catch (e: unknown) {
-        const message = e instanceof Error ? e.message : 'Error desconocido';
-        setError(message);
-        setData({ followers: 0, error: message });
-      } finally {
+      } else {
+        const errMsg = 'Modo no soportado para Twitter';
+        setError(errMsg);
+        setData({ followers: 0, cached: false, error: errMsg });
         setIsLoading(false);
       }
     }

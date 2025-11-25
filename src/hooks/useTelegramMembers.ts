@@ -11,7 +11,7 @@ export function useTelegramMembers() {
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
-  const mode = import.meta.env.VITE_TELEGRAM_MEMBERS_MODE; // 🔹 más claro que "dataSource"
+  const mode = import.meta.env.VITE_TELEGRAM_MEMBERS_MODE;
   const manualCount = Number(import.meta.env.VITE_TELEGRAM_MEMBERS_COUNT || 0);
 
   useEffect(() => {
@@ -32,7 +32,11 @@ export function useTelegramMembers() {
 
           if (resp.ok) {
             console.log(`[Telegram:hook] → ${json.members} miembros (cached=${json.cached})`);
-            setData(json);
+            setData({
+              members: json.members ?? 0,
+              cached: json.cached ?? false,
+              error: json.error,
+            });
           } else {
             const errMsg = json.error ?? 'Error desconocido';
             setError(errMsg);
