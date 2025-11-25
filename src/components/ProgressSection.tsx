@@ -93,8 +93,16 @@ export default function ProgressSection() {
         </div>
       )}
 
+      {/* 🕰️ Mensaje ritualizado centrado */}
       {!isLoading && (
-        <p className="mt-6 text-sm text-zinc-300">
+        <div className="mt-6 text-sm text-center text-zinc-400 italic animate-fadeIn animate-pulseSlow">
+          🕰️ Cada amanecer y cada ocaso, las cifras se renuevan para reflejar la energía viva del fuego colectivo.
+        </div>
+      )}
+
+      {/* 🔮 Cierre ritual */}
+      {!isLoading && (
+        <p className="mt-4 text-sm text-zinc-300 text-center">
           <span className="inline-block mr-2 h-2 w-2 rounded-full bg-amber-400 animate-pulse" />
           {t('progress.voteMessageRitual')}
         </p>
