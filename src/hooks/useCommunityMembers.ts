@@ -1,8 +1,14 @@
 import { useEffect, useState } from 'react';
 
+export interface CommunityMembersResponse {
+  members: number;
+  cached: boolean;
+  error?: string;
+}
+
 // 🔹 Hook para Comunidad de X
 export function useCommunityMembers() {
-  const [members, setMembers] = useState<number>(0);
+  const [data, setData] = useState<CommunityMembersResponse | null>(null);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
@@ -15,22 +21,27 @@ export function useCommunityMembers() {
 
       if (mode === 'manual') {
         console.log(`[Comunidad X:hook] → modo manual: ${manualCount} miembros`);
-        setMembers(manualCount);
+        setData({ members: manualCount, cached: true });
         setIsLoading(false);
         return;
       }
 
       try {
         const res = await fetch(`/api/community-members`);
-        const data: { members?: number } = await res.json();
-        setMembers(data.members ?? 0);
-      } catch (e: unknown) {
-        if (e instanceof Error) {
-          setError(e.message);
+        const json: CommunityMembersResponse = await res.json();
+
+        if (res.ok) {
+          console.log(`[Comunidad X:hook] → ${json.members} miembros (cached=${json.cached})`);
+          setData(json);
         } else {
-          setError('Error desconocido');
+          const errMsg = json.error ?? 'Error desconocido';
+          setError(errMsg);
+          setData({ members: 0, cached: false, error: errMsg });
         }
-        setMembers(0);
+      } catch (e: unknown) {
+        const errMsg = e instanceof Error ? e.message : 'Error desconocido';
+        setError(errMsg);
+        setData({ members: 0, cached: false, error: errMsg });
       } finally {
         setIsLoading(false);
       }
@@ -39,5 +50,5 @@ export function useCommunityMembers() {
     fetchMembers();
   }, [mode, manualCount]);
 
-  return { members, isLoading, error };
+  return { data, isLoading, error };
 }

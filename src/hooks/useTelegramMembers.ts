@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 
-interface TelegramMembersResponse {
+export interface TelegramMembersResponse {
   members: number;
   cached: boolean;
   error?: string;
@@ -11,50 +11,50 @@ export function useTelegramMembers() {
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
-  const dataSource = import.meta.env.VITE_TELEGRAM_DATA_SOURCE;
+  const mode = import.meta.env.VITE_TELEGRAM_MEMBERS_MODE; // 🔹 más claro que "dataSource"
   const manualCount = Number(import.meta.env.VITE_TELEGRAM_MEMBERS_COUNT || 0);
 
   useEffect(() => {
     async function fetchMembers() {
       setIsLoading(true);
 
-      if (dataSource === 'manual') {
-        // 🔹 modo manual: usamos el valor de .env
+      if (mode === 'manual') {
         console.log(`[Telegram:hook] → modo manual: ${manualCount} miembros`);
         setData({ members: manualCount, cached: true });
         setIsLoading(false);
         return;
       }
 
-      if (dataSource === 'api') {
+      if (mode === 'api') {
         try {
-          const url = `/api/telegram-members`;
-          const resp = await fetch(url);
+          const resp = await fetch(`/api/telegram-members`);
           const json: TelegramMembersResponse = await resp.json();
 
           if (resp.ok) {
             console.log(`[Telegram:hook] → ${json.members} miembros (cached=${json.cached})`);
             setData(json);
           } else {
-            setError(json.error ?? 'Error desconocido');
+            const errMsg = json.error ?? 'Error desconocido';
+            setError(errMsg);
+            setData({ members: 0, cached: false, error: errMsg });
           }
         } catch (e: unknown) {
-          if (e instanceof Error) {
-            setError(e.message);
-          } else {
-            setError('Error desconocido');
-          }
+          const errMsg = e instanceof Error ? e.message : 'Error desconocido';
+          setError(errMsg);
+          setData({ members: 0, cached: false, error: errMsg });
         } finally {
           setIsLoading(false);
         }
       } else {
-        setError('Modo no soportado para Telegram');
+        const errMsg = 'Modo no soportado para Telegram';
+        setError(errMsg);
+        setData({ members: 0, cached: false, error: errMsg });
         setIsLoading(false);
       }
     }
 
     fetchMembers();
-  }, [dataSource, manualCount]);
+  }, [mode, manualCount]);
 
   return { data, isLoading, error };
 }

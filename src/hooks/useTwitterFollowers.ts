@@ -34,13 +34,12 @@ export function useTwitterFollowers(username: string) {
           setData(json);
         } else {
           setError(json.error ?? 'Error desconocido');
+          setData({ followers: 0, error: json.error ?? 'Error desconocido' });
         }
       } catch (e: unknown) {
-        if (e instanceof Error) {
-          setError(e.message);
-        } else {
-          setError('Error desconocido');
-        }
+        const message = e instanceof Error ? e.message : 'Error desconocido';
+        setError(message);
+        setData({ followers: 0, error: message });
       } finally {
         setIsLoading(false);
       }
