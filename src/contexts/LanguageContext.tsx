@@ -47,6 +47,7 @@ const translations = {
     'characters.viewResults': 'Ver Resultados de Votación',
     'characters.votingActive': '¡La votación está activa! ¿Cuál será el guardián elegido por la comunidad?',
     'characters.chosenGuardian': 'El guardián elegido por la comunidad es',
+    'characters.telegramNote': '🕰️ Cada amanecer y cada ocaso, las cifras se renuevan para reflejar la energía viva del fuego colectivo',
   
     // Progress (fusionado)
     'progress.title': 'Progreso de la Comunidad',
@@ -114,6 +115,7 @@ const translations = {
     'social.followOnX': 'Seguir en X/Twitter',
     'social.xCommunity': 'Unirse a la Comunidad X',
     'social.joinTelegram': 'Unirse al Telegram oficial',
+    'social.telegramNote': '🕰️ Cada amanecer y cada ocaso, las cifras se renuevan para reflejar la energía viva del fuego colectivo',
   },  
 
   en: {
@@ -154,6 +156,7 @@ const translations = {
     'characters.viewResults': 'View Voting Results',
     'characters.votingActive': 'Voting is active! Which guardian will be chosen by the community?',
     'characters.chosenGuardian': 'The guardian chosen by the community is',
+    'characters.telegramNote': '🕰️ At every dawn and dusk, the numbers renew to reflect the living energy of the collective fire',
   
     // Progress (fusionado)
     'progress.title': 'Community Progress',
@@ -221,6 +224,7 @@ const translations = {
     'social.followOnX': 'Follow on X/Twitter',
     'social.xCommunity': 'Join the X Community',
     'social.joinTelegram': 'Join the official Telegram',
+    'social.telegramNote': '🕰️ At every dawn and dusk, the numbers renew to reflect the living energy of the collective fire',
   },
   
 };

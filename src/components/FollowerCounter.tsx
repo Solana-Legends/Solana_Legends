@@ -25,6 +25,7 @@ export default function FollowerCounter() {
           </p>
         </div>
 
+        {/* Progreso principal */}
         <Card className="bg-[#1A1530]/40 border-2 border-[#FFA908]/30 rounded-xl hover:shadow-[0_0_25px_#FFA908] transition-all duration-300">
           <CardHeader className="text-center">
             <CardTitle className="text-2xl text-white flex items-center justify-center gap-2">
@@ -43,7 +44,6 @@ export default function FollowerCounter() {
                   {isLoading ? '...' : `${mainProgress}/${goal}`}
                 </span>
               </div>
-              {/* Barra de progreso ritualizada */}
               <div className="relative w-full h-3 rounded-full border border-[#FFA908]/40 bg-[#1A1530] overflow-hidden">
                 <div
                   className="absolute top-0 left-0 h-full bg-gradient-to-r from-yellow-400 to-orange-500 animate-[pulse_2s_infinite] rounded-full"
@@ -52,7 +52,6 @@ export default function FollowerCounter() {
               </div>
             </div>
 
-            {/* Mensaje ritualizado */}
             <div className="text-center">
               <Badge className="bg-gradient-to-r from-yellow-400 to-orange-500 text-white border-0 px-4 py-2 shadow-[0_0_15px_#FFA908] text-lg">
                 🔥 {t('progress.missing')} {remaining} {t('progress.forVoting')} — {t('progress.ritualSoon')}
@@ -139,8 +138,15 @@ export default function FollowerCounter() {
           </Card>
         </div>
 
-        {/* Cierre ritual */}
+        {/* 🔮 Mensaje ritualizado centrado */}
         <div className="text-center mt-8">
+          <p className="text-sm text-zinc-400 italic animate-fadeIn animate-pulseSlow">
+            🕰️ Cada amanecer y cada ocaso, las cifras se renuevan para reflejar la energía viva del fuego colectivo.
+          </p>
+        </div>
+
+        {/* Cierre ritual */}
+        <div className="text-center mt-4">
           <p className="text-indigo-200 text-sm italic">
             🔮 {t('progress.voteMessageRitual')}
           </p>
