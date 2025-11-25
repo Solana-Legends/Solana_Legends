@@ -11,28 +11,23 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      # 1. Checkout del repositorio
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      # 2. Setup de Node.js con cache para pnpm
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: 20
-          cache: 'pnpm'
+          cache: 'npm'
 
-      # 3. Instalar pnpm (acción oficial)
-      - name: Install pnpm 8.10.0
-        uses: pnpm/action-setup@v2
-        with:
-          version: 8.10.0
+      - name: Install pnpm manually
+        run: |
+          corepack enable
+          corepack prepare pnpm@8.10.0 --activate
 
-      # 4. Instalar dependencias con lockfile congelado
       - name: Install dependencies (frozen lockfile)
         run: pnpm install --frozen-lockfile
 
-      # 5. Lint (si existe eslint.config.js y carpeta src)
       - name: Lint
         run: |
           if [ -f "eslint.config.js" ]; then
@@ -41,7 +36,6 @@ jobs:
             echo "No ESLint config found, skipping lint"
           fi
 
-      # 6. Build (si existe vite.config.ts/js)
       - name: Build
         run: |
           if [ -f "vite.config.ts" ] || [ -f "vite.config.js" ]; then
@@ -50,7 +44,6 @@ jobs:
             echo "No Vite config found, skipping build"
           fi
 
-      # 7. Tests opcionales (añade script 'test' en package.json)
       - name: Run tests
         if: ${{ always() }}
         run: |
