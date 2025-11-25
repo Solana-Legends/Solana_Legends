@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react';
 export function useTwitterFollowers(username: string) {
   const [followers, setFollowers] = useState<number>(0);
   const [isLoading, setIsLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
 
   const mode = import.meta.env.VITE_TWITTER_FOLLOWERS_MODE;
   const manualCount = Number(import.meta.env.VITE_TWITTER_FOLLOWERS_COUNT);
@@ -21,9 +22,14 @@ export function useTwitterFollowers(username: string) {
 
       try {
         const res = await fetch(`/api/twitter-followers?username=${encodeURIComponent(username)}`);
-        const data = await res.json();
+        const data: { followers?: number } = await res.json();
         setFollowers(data.followers ?? 0);
-      } catch {
+      } catch (e: unknown) {
+        if (e instanceof Error) {
+          setError(e.message);
+        } else {
+          setError('Error desconocido');
+        }
         setFollowers(0);
       } finally {
         setIsLoading(false);
@@ -33,13 +39,14 @@ export function useTwitterFollowers(username: string) {
     fetchFollowers();
   }, [username, mode, manualCount]);
 
-  return { followers, isLoading };
+  return { followers, isLoading, error };
 }
 
 // 🔹 Hook para Telegram (solo API disponible)
 export function useTelegramMembers() {
   const [members, setMembers] = useState<number>(0);
   const [isLoading, setIsLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
 
   const chatId = import.meta.env.VITE_TELEGRAM_CHAT_ID;
   const dataSource = import.meta.env.VITE_TELEGRAM_DATA_SOURCE;
@@ -57,9 +64,14 @@ export function useTelegramMembers() {
 
       try {
         const res = await fetch(`/api/telegram-members?group=${encodeURIComponent(chatId)}`);
-        const data = await res.json();
+        const data: { members?: number } = await res.json();
         setMembers(data.members ?? 0);
-      } catch {
+      } catch (e: unknown) {
+        if (e instanceof Error) {
+          setError(e.message);
+        } else {
+          setError('Error desconocido');
+        }
         setMembers(0);
       } finally {
         setIsLoading(false);
@@ -69,13 +81,14 @@ export function useTelegramMembers() {
     fetchMembers();
   }, [chatId, dataSource]);
 
-  return { members, isLoading };
+  return { members, isLoading, error };
 }
 
 // 🔹 Hook para Comunidad de X
 export function useCommunityMembers() {
   const [members, setMembers] = useState<number>(0);
   const [isLoading, setIsLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
 
   const mode = import.meta.env.VITE_COMMUNITY_FOLLOWERS_MODE;
   const manualCount = Number(import.meta.env.VITE_COMMUNITY_FOLLOWERS_COUNT);
@@ -93,9 +106,14 @@ export function useCommunityMembers() {
 
       try {
         const res = await fetch(`/api/community-members`);
-        const data = await res.json();
+        const data: { members?: number } = await res.json();
         setMembers(data.members ?? 0);
-      } catch {
+      } catch (e: unknown) {
+        if (e instanceof Error) {
+          setError(e.message);
+        } else {
+          setError('Error desconocido');
+        }
         setMembers(0);
       } finally {
         setIsLoading(false);
@@ -105,7 +123,7 @@ export function useCommunityMembers() {
     fetchMembers();
   }, [mode, manualCount]);
 
-  return { members, isLoading };
+  return { members, isLoading, error };
 }
 
 // 🔮 Hook principal que devuelve todas las métricas

@@ -30,7 +30,7 @@ router.get('/', async (req, res) => {
       `https://api.twitter.com/2/users/by/username/${username}`,
       { headers: { Authorization: `Bearer ${token}` } }
     );
-    const userData = await userResp.json();
+    const userData: { data?: { id?: string } } = await userResp.json();
     console.log('[X:api] userData:', userData);
 
     const userId = userData?.data?.id;
@@ -43,16 +43,22 @@ router.get('/', async (req, res) => {
       `https://api.twitter.com/2/users/${userId}?user.fields=public_metrics`,
       { headers: { Authorization: `Bearer ${token}` } }
     );
-    const metricsData = await metricsResp.json();
+    const metricsData: { data?: { public_metrics?: { followers_count?: number } } } =
+      await metricsResp.json();
     console.log('[X:api] metricsData:', metricsData);
 
     const followers = metricsData?.data?.public_metrics?.followers_count ?? 0;
     cache = { followers, timestamp: Date.now() };
 
     res.json({ followers, cached: false });
-  } catch (e: any) {
-    console.error('❌ Twitter API Error:', e);
-    res.status(500).json({ error: e.message });
+  } catch (e: unknown) {
+    if (e instanceof Error) {
+      console.error('❌ Twitter API Error:', e);
+      res.status(500).json({ error: e.message });
+    } else {
+      console.error('❌ Twitter API Error: Unknown error', e);
+      res.status(500).json({ error: 'Error desconocido' });
+    }
   }
 });
 

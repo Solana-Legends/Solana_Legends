@@ -27,7 +27,7 @@ export function useTwitterFollowers(username: string) {
 
       try {
         const res = await fetch(`/api/twitter-followers?username=${encodeURIComponent(username)}`);
-        const json = await res.json();
+        const json: TwitterFollowersResponse = await res.json();
 
         if (res.ok) {
           console.log(`[Twitter:hook] → modo api: ${json.followers} seguidores`);
@@ -35,8 +35,12 @@ export function useTwitterFollowers(username: string) {
         } else {
           setError(json.error ?? 'Error desconocido');
         }
-      } catch (e: any) {
-        setError(e.message);
+      } catch (e: unknown) {
+        if (e instanceof Error) {
+          setError(e.message);
+        } else {
+          setError('Error desconocido');
+        }
       } finally {
         setIsLoading(false);
       }

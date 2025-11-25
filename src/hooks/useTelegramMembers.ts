@@ -30,7 +30,7 @@ export function useTelegramMembers() {
         try {
           const url = `/api/telegram-members`;
           const resp = await fetch(url);
-          const json = await resp.json();
+          const json: TelegramMembersResponse = await resp.json();
 
           if (resp.ok) {
             console.log(`[Telegram:hook] → ${json.members} miembros (cached=${json.cached})`);
@@ -38,8 +38,12 @@ export function useTelegramMembers() {
           } else {
             setError(json.error ?? 'Error desconocido');
           }
-        } catch (e: any) {
-          setError(e.message);
+        } catch (e: unknown) {
+          if (e instanceof Error) {
+            setError(e.message);
+          } else {
+            setError('Error desconocido');
+          }
         } finally {
           setIsLoading(false);
         }

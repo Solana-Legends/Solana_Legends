@@ -22,7 +22,7 @@ router.get('/', async (req, res) => {
     const resp = await fetch(
       `https://api.telegram.org/bot${token}/getChatMembersCount?chat_id=${chatId}`
     );
-    const data = await resp.json();
+    const data: { ok: boolean; result?: number; description?: string } = await resp.json();
 
     if (!data.ok) {
       return res.status(500).json({ error: 'Telegram API error', details: data });
@@ -32,9 +32,14 @@ router.get('/', async (req, res) => {
     console.log(`[Telegram:api] ${chatId} → ${members} miembros`);
 
     res.json({ members, cached: false });
-  } catch (e: any) {
-    console.error('❌ Telegram API Error:', e);
-    res.status(500).json({ error: e.message });
+  } catch (e: unknown) {
+    if (e instanceof Error) {
+      console.error('❌ Telegram API Error:', e);
+      res.status(500).json({ error: e.message });
+    } else {
+      console.error('❌ Telegram API Error: Unknown error', e);
+      res.status(500).json({ error: 'Error desconocido' });
+    }
   }
 });
 
