@@ -19,14 +19,11 @@ export default function HeroSection() {
       </div>
 
       <div className="relative z-10 max-w-6xl mx-auto px-6 text-center">
-        {/* Logo con aura dorada intensa y transparencia real */}
+        {/* Logo con aura dorada */}
         <div className="mb-8 flex justify-center relative">
-          {/* Aura dorada proyectada detrás */}
           <div className="absolute inset-0 flex justify-center items-center pointer-events-none z-0">
             <div className="w-48 h-48 rounded-full blur-3xl aura-pulsante-gold-strong"></div>
           </div>
-
-          {/* Logo con transparencia y pulsación suave */}
           <img
             src="/assets/LogoPremium1.png"
             alt="Solana Legends Logo"
@@ -46,17 +43,14 @@ export default function HeroSection() {
           {t('hero.tagline')}
         </p>
 
-        {/* Videos con controles y aura elemental */}
+        {/* Videos */}
         <div className="grid md:grid-cols-2 gap-8 mb-12 max-w-4xl mx-auto">
-          {/* Izquierdo: wrapper con animación y tarjeta con transición */}
           <div className="animate-in fade-in slide-in-from-left duration-1000">
             <div className="relative group rounded-xl overflow-hidden transition-shadow duration-300 hover:scale-[1.02] border border-purple-500/40 aura-pulsante aura-hover">
               <VideoWithControls src="/assets/HeroesLevitan.mp4" glowColor="#A020F0" />
               <div className="pointer-events-none absolute inset-0 rounded-xl bg-gradient-to-t from-black/50 to-transparent"></div>
             </div>
           </div>
-
-          {/* Derecho: wrapper con animación y tarjeta con transición */}
           <div className="animate-in fade-in slide-in-from-right duration-1000">
             <div className="relative group rounded-xl overflow-hidden transition-shadow duration-300 hover:scale-[1.02] border border-blue-400/40 aura-pulsante-blue aura-hover-gold">
               <VideoWithControls src="/assets/HéroesProgramandoEn.mp4" glowColor="#00BFFF" />
@@ -104,6 +98,17 @@ export default function HeroSection() {
           >
             <Users className="w-5 h-5" />
             {t('hero.joinCommunity')}
+          </Button>
+
+          {/* Nuevo botón Votra.Studio con enlace */}
+          <Button
+            size="lg"
+            variant="outline"
+            onClick={() => window.open('https://voltra.studio', '_blank')}
+            className="flex flex-col items-center justify-center text-center border-[#FFA908] text-[#FFA908] hover:bg-[#FFA908] hover:text-[#0F0B1E] px-8 py-4 font-semibold transition-all duration-300 hover:shadow-[0_0_30px_#FFA908]"
+          >
+            <span className="text-lg font-bold">Votra.Studio</span>
+            <span className="text-sm">Official partners:</span>
           </Button>
         </div>
       </div>
