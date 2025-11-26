@@ -1,4 +1,3 @@
-import React from 'react';
 import { ProgressBar } from './ProgressBar';
 import { useLanguage } from '../contexts/LanguageContext';
 import { useMetrics } from '@/hooks/useMetrics';

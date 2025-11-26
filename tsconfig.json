@@ -24,7 +24,7 @@
     "module": "ESNext",
     "target": "ES2022",
     "esModuleInterop": true,
-    "moduleResolution": "bundler",   // ✅ clave para Vite
+    "moduleResolution": "node",   // ✅ clave para Vite
 
     /* 🔹 Configuración JSX para React */
     "jsx": "react-jsx",

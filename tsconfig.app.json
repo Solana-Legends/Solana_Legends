@@ -7,7 +7,7 @@
 
     /* 🔹 Módulos */
     "module": "ESNext",
-    "moduleResolution": "bundler",   // ✅ modo moderno para Vite/ESBuild
+    "moduleResolution": "node",   // ✅ modo moderno para Vite/ESBuild
     "moduleDetection": "force",
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
