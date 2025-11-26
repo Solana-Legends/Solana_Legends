@@ -6,6 +6,7 @@ import { LanguageProvider } from '@/contexts/LanguageContext';
 import Index from './pages/Index';
 import NotFound from './pages/NotFound';
 import GuardiansPage from './pages/GuardiansPage'; // 🔥 nueva importación
+import { Analytics } from '@vercel/analytics/react'; // 📊 integración de Vercel Analytics
 
 const queryClient = new QueryClient();
 
@@ -21,6 +22,7 @@ const App = () => (
             <Route path="*" element={<NotFound />} />
           </Routes>
         </BrowserRouter>
+        <Analytics /> {/* 📊 componente de analíticas */}
       </TooltipProvider>
     </LanguageProvider>
   </QueryClientProvider>
