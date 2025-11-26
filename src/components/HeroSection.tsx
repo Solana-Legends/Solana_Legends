@@ -100,15 +100,15 @@ export default function HeroSection() {
             {t('hero.joinCommunity')}
           </Button>
 
-          {/* Nuevo botón Votra.Studio con enlace */}
+          {/* Nuevo botón Votra.Studio con enlace y centrado */}
           <Button
             size="lg"
             variant="outline"
             onClick={() => window.open('https://voltra.studio', '_blank')}
-            className="flex flex-col items-center justify-center text-center border-[#FFA908] text-[#FFA908] hover:bg-[#FFA908] hover:text-[#0F0B1E] px-8 py-4 font-semibold transition-all duration-300 hover:shadow-[0_0_30px_#FFA908]"
+            className="flex flex-col items-center justify-center text-center border-[#FFA908] text-[#FFA908] hover:bg-[#FFA908] hover:text-[#0F0B1E] px-8 py-5 font-semibold transition-all duration-300 hover:shadow-[0_0_30px_#FFA908] leading-tight gap-1"
           >
-            <span className="text-lg font-bold">Votra.Studio</span>
-            <span className="text-sm">Official partners:</span>
+            <span className="text-[1.15rem] font-bold tracking-wide translate-y-[2px]">Votra.Studio</span>
+            <span className="text-sm text-[#FFD966] font-medium -translate-y-[2px]">Official partners:</span>
           </Button>
         </div>
       </div>
