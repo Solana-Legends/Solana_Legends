@@ -1,34 +1,44 @@
 {
   "compilerOptions": {
-    "target": "ES2020",
+    /* 🔹 Objetivo y librerías */
+    "target": "ES2022",
     "useDefineForClassFields": true,
-    "lib": ["ES2020", "DOM", "DOM.Iterable"],
-    "module": "ESNext",
-    "skipLibCheck": true,
+    "lib": ["ES2022", "DOM", "DOM.Iterable"],
 
-    /* Bundler mode */
-    "moduleResolution": "node",
+    /* 🔹 Módulos */
+    "module": "ESNext",
+    "moduleResolution": "bundler",   // ✅ modo moderno para Vite/ESBuild
+    "moduleDetection": "force",
+    "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
     "isolatedModules": true,
-    "moduleDetection": "force",
     "noEmit": true,
 
-    /* 🔑 JSX para React */
+    /* 🔹 JSX para React */
     "jsx": "react-jsx",
     "jsxImportSource": "react",
-    "types": ["react", "react-dom"],
 
-    /* Linting */
-    "strict": false,
-    "noUnusedLocals": false,
-    "noUnusedParameters": false,
-    "noImplicitAny": false,
-    "noFallthroughCasesInSwitch": false,
+    /* 🔹 Tipos globales */
+    "types": ["react", "react-dom", "node"],
 
+    /* 🔹 Control de tipado (más seguro y limpio) */
+    "strict": true,                  // Activa todas las comprobaciones estrictas
+    "noImplicitAny": true,           // Evita que se cuelen any implícitos
+    "noUnusedLocals": true,          // Marca variables no usadas
+    "noUnusedParameters": true,      // Marca parámetros no usados
+    "strictNullChecks": true,        // Control estricto de null/undefined
+    "skipLibCheck": true,            // Ignora chequeo de librerías externas
+    "noFallthroughCasesInSwitch": true, // Previene errores en switch sin break
+
+    /* 🔹 Paths */
     "baseUrl": ".",
     "paths": {
       "@/*": ["./src/*"]
     }
   },
-  "include": ["src"]
+  "include": [
+    "src",
+    "tailwindcss.d.ts"
+  ],
+  "exclude": ["node_modules", "dist"]
 }

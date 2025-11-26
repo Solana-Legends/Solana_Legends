@@ -5,29 +5,32 @@
     { "path": "./tsconfig.node.json" }
   ],
   "compilerOptions": {
+    /* 🔹 Paths y base */
     "baseUrl": ".",
     "paths": {
       "@/*": ["./src/*"]
     },
 
-    /* 🔹 Reglas de control */
-    "noImplicitAny": false,
-    "noUnusedParameters": false,
-    "skipLibCheck": true,
-    "allowJs": true,
-    "noUnusedLocals": false,
-    "strictNullChecks": false,
-    "strict": true,
+    /* 🔹 Reglas de control (más estrictas) */
+    "strict": true,                // Activa todas las comprobaciones estrictas
+    "noImplicitAny": true,         // No permite variables sin tipo explícito
+    "noUnusedParameters": true,    // Marca parámetros no usados
+    "noUnusedLocals": true,        // Marca variables no usadas
+    "strictNullChecks": true,      // Control estricto de null/undefined
+    "skipLibCheck": true,          // Ignora chequeo de librerías externas
+    "allowJs": true,               // Permite archivos JS junto a TS
 
     /* 🔹 Configuración de módulos */
-    "module": "ESNext",              // O "Node16", "NodeNext"
+    "module": "ESNext",
     "target": "ES2022",
     "esModuleInterop": true,
-    "moduleResolution": "NodeNext",  // O "Bundler"
+    "moduleResolution": "bundler",   // ✅ clave para Vite
 
-    /* 🔑 Configuración JSX para React */
+    /* 🔹 Configuración JSX para React */
     "jsx": "react-jsx",
     "jsxImportSource": "react",
-    "types": ["react", "react-dom"]
+
+    /* 🔹 Tipos globales */
+    "types": ["react", "react-dom", "node"]
   }
 }
