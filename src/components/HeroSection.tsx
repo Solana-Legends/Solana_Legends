@@ -33,7 +33,7 @@ export default function HeroSection() {
         </div>
 
         {/* Títulos */}
-        <h1 className="mt-[-9rem] text-3xl md:text-5xl lg:text-6xl font-bold text-white mb-6 animate-in fade-in slide-in-from-bottom duration-1000">
+        <h1 className="mt-[-2rem] text-3xl md:text-5xl lg:text-6xl font-bold text-white mb-6 animate-in fade-in slide-in-from-bottom duration-1000">
           {t('hero.title')}
         </h1>
 
