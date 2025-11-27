@@ -36,15 +36,19 @@ export default function HeroSection() {
         <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold text-white mb-6 animate-in fade-in slide-in-from-bottom duration-1000">
           {t('hero.title')}
         </h1>
+
+        {/* Frase en una sola línea */}
         <p className="text-xl md:text-2xl text-indigo-200 mb-8 animate-in fade-in slide-in-from-bottom duration-1000 whitespace-nowrap">
           Únete a nuestra comunidad y elige el guardián que se convertirá en token.
         </p>
-        <p className="text-lg md:text-xl text-purple-300 mb-2 font-medium animate-in fade-in slide-in-from-bottom duration-1000">
+
+        {/* Tagline con 1 cm de espacio efectivo hasta los videos (compensando el desplazamiento hacia arriba) */}
+        <p className="text-lg md:text-xl text-purple-300 mb-[calc(1cm+1rem)] font-medium animate-in fade-in slide-in-from-bottom duration-1000">
           Tres fuerzas elementales. Una comunidad. Un destino.
         </p>
 
-        {/* Imagen Voltra con los mismos efectos que LogoPremium1 */}
-        <div className="mt-[-9rem] mb-8 flex justify-end relative animate-in fade-in slide-in-from-right duration-1000 mr-[-6rem] translate-x-18">
+        {/* Imagen Voltra con desplazamiento hacia arriba igual que el bloque principal */}
+        <div className="mt-[calc(-3rem-1rem)] mb-8 flex justify-end relative animate-in fade-in slide-in-from-right duration-1000 mr-[-4rem] translate-x-12">
           <div className="absolute inset-0 flex justify-end items-center pointer-events-none z-0">
             <div className="w-48 h-48 rounded-full blur-3xl aura-pulsante-gold-strong"></div>
           </div>
@@ -55,8 +59,8 @@ export default function HeroSection() {
           />
         </div>
 
-        {/* Videos */}
-        <div className="grid md:grid-cols-2 gap-8 mb-6 -mt-12 max-w-4xl mx-auto">
+        {/* Videos: subidos exactamente 1rem */}
+        <div className="grid md:grid-cols-2 gap-8 mb-6 -mt-4 max-w-4xl mx-auto">
           <div className="animate-in fade-in slide-in-from-left duration-1000">
             <div className="relative group rounded-xl overflow-hidden transition-shadow duration-300 hover:scale-[1.02] border border-purple-500/40 aura-pulsante aura-hover">
               <VideoWithControls src="/assets/HeroesLevitan.mp4" glowColor="#A020F0" />
@@ -71,8 +75,8 @@ export default function HeroSection() {
           </div>
         </div>
 
-        {/* Badges */}
-        <div className="flex flex-wrap justify-center gap-4 -mt-6 mb-4 animate-in fade-in slide-in-from-bottom duration-1000">
+        {/* Badges: subidos exactamente 1rem */}
+        <div className="flex flex-wrap justify-center gap-4 -mt-4 mb-6 animate-in fade-in slide-in-from-bottom duration-1000">
           <Badge variant="outline" className="text-green-400 border-green-400 bg-green-400/10 px-4 py-2 hover:shadow-[0_0_20px_#00FF00] transition-all duration-300">
             <Rocket className="w-4 h-4 mr-2" />
             {t('hero.activeProject')}
@@ -87,8 +91,8 @@ export default function HeroSection() {
           </Badge>
         </div>
 
-        {/* Botones ritualizados */}
-        <div className="flex flex-col sm:flex-row gap-4 justify-center animate-in fade-in slide-in-from-bottom duration-1000 -mt-6">
+        {/* Botones: subidos exactamente 1rem */}
+        <div className="flex flex-col sm:flex-row gap-4 justify-center animate-in fade-in slide-in-from-bottom duration-1000 -mt-4">
           <Button
             size="lg"
             variant="outline"
