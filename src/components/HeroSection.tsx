@@ -42,13 +42,13 @@ export default function HeroSection() {
           Únete a nuestra comunidad y elige el guardián que se convertirá en token.
         </p>
 
-        {/* Tagline con 1 cm de espacio efectivo hasta los videos (compensando el desplazamiento hacia arriba) */}
+        {/* Tagline con 1 cm de espacio hasta los videos (compensado) */}
         <p className="text-lg md:text-xl text-purple-300 mb-[calc(1cm+1rem)] font-medium animate-in fade-in slide-in-from-bottom duration-1000">
           Tres fuerzas elementales. Una comunidad. Un destino.
         </p>
 
-         {/* Imagen Voltra con los mismos efectos que LogoPremium1 */}
-         <div className="mt-[-9rem] mb-8 flex justify-end relative animate-in fade-in slide-in-from-right duration-1000 mr-[-6rem] translate-x-18">
+        {/* Imagen Voltra */}
+        <div className="mt-[-9rem] mb-8 flex justify-end relative animate-in fade-in slide-in-from-right duration-1000 mr-[-6rem] translate-x-[4.5rem]">
           <div className="absolute inset-0 flex justify-end items-center pointer-events-none z-0">
             <div className="w-48 h-48 rounded-full blur-3xl aura-pulsante-gold-strong"></div>
           </div>
