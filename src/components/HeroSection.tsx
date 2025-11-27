@@ -33,7 +33,7 @@ export default function HeroSection() {
         </div>
 
         {/* Títulos */}
-        <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold text-white mb-6 animate-in fade-in slide-in-from-bottom duration-1000">
+        <h1 className="mt-[-9rem] text-3xl md:text-5xl lg:text-6xl font-bold text-white mb-6 animate-in fade-in slide-in-from-bottom duration-1000">
           {t('hero.title')}
         </h1>
 
@@ -47,8 +47,8 @@ export default function HeroSection() {
           Tres fuerzas elementales. Una comunidad. Un destino.
         </p>
 
-        {/* Imagen Voltra con desplazamiento hacia arriba igual que el bloque principal */}
-        <div className="mt-[calc(-3rem-1rem)] mb-8 flex justify-end relative animate-in fade-in slide-in-from-right duration-1000 mr-[-4rem] translate-x-12">
+         {/* Imagen Voltra con los mismos efectos que LogoPremium1 */}
+         <div className="mt-[-9rem] mb-8 flex justify-end relative animate-in fade-in slide-in-from-right duration-1000 mr-[-6rem] translate-x-18">
           <div className="absolute inset-0 flex justify-end items-center pointer-events-none z-0">
             <div className="w-48 h-48 rounded-full blur-3xl aura-pulsante-gold-strong"></div>
           </div>
