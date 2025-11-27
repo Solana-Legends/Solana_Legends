@@ -39,12 +39,12 @@ export default function HeroSection() {
 
         {/* Frase en una sola línea */}
         <p className="text-xl md:text-2xl text-indigo-200 mb-8 animate-in fade-in slide-in-from-bottom duration-1000 whitespace-nowrap">
-          Únete a nuestra comunidad y elige el guardián que se convertirá en token.
+          {t('hero.subtitle')}
         </p>
 
-        {/* Tagline con 1 cm de espacio hasta los videos (compensado) */}
+        {/* Tagline con 1 cm de espacio hasta los videos */}
         <p className="text-lg md:text-xl text-purple-300 mb-[calc(1cm+1rem)] font-medium animate-in fade-in slide-in-from-bottom duration-1000">
-          Tres fuerzas elementales. Una comunidad. Un destino.
+          {t('hero.tagline')}
         </p>
 
         {/* Imagen Voltra */}
@@ -59,7 +59,7 @@ export default function HeroSection() {
           />
         </div>
 
-        {/* Videos: subidos exactamente 1rem */}
+        {/* Videos */}
         <div className="grid md:grid-cols-2 gap-8 mb-6 -mt-4 max-w-4xl mx-auto">
           <div className="animate-in fade-in slide-in-from-left duration-1000">
             <div className="relative group rounded-xl overflow-hidden transition-shadow duration-300 hover:scale-[1.02] border border-purple-500/40 aura-pulsante aura-hover">
@@ -75,7 +75,7 @@ export default function HeroSection() {
           </div>
         </div>
 
-        {/* Badges: subidos exactamente 1rem */}
+        {/* Badges */}
         <div className="flex flex-wrap justify-center gap-4 -mt-4 mb-6 animate-in fade-in slide-in-from-bottom duration-1000">
           <Badge variant="outline" className="text-green-400 border-green-400 bg-green-400/10 px-4 py-2 hover:shadow-[0_0_20px_#00FF00] transition-all duration-300">
             <Rocket className="w-4 h-4 mr-2" />
@@ -91,7 +91,7 @@ export default function HeroSection() {
           </Badge>
         </div>
 
-        {/* Botones: subidos exactamente 1rem */}
+        {/* Botones */}
         <div className="flex flex-col sm:flex-row gap-4 justify-center animate-in fade-in slide-in-from-bottom duration-1000 -mt-4">
           <Button
             size="lg"
@@ -116,7 +116,6 @@ export default function HeroSection() {
             {t('hero.joinCommunity')}
           </Button>
 
-          {/* Nuevo botón Voltra.Studio */}
           <Button
             size="lg"
             variant="outline"
