@@ -39,12 +39,9 @@ export default function HeroSection() {
         <p className="text-xl md:text-2xl text-indigo-200 mb-8 max-w-3xl mx-auto animate-in fade-in slide-in-from-bottom duration-1000">
           {t('hero.subtitle')}
         </p>
-        <p className="text-lg md:text-xl text-purple-300 mb-12 font-medium animate-in fade-in slide-in-from-bottom duration-1000">
-          {t('hero.tagline')}
-        </p>
 
         {/* Imagen Voltra con los mismos efectos que LogoPremium1 */}
-        <div className="mt-[-6rem] mb-8 flex justify-end relative animate-in fade-in slide-in-from-right duration-1000 mr-[-4rem]">
+        <div className="mt-[-6rem] mb-8 flex justify-end relative animate-in fade-in slide-in-from-right duration-1000 mr-[-6rem] translate-x-4">
           <div className="absolute inset-0 flex justify-end items-center pointer-events-none z-0">
             <div className="w-48 h-48 rounded-full blur-3xl aura-pulsante-gold-strong"></div>
           </div>
@@ -54,6 +51,10 @@ export default function HeroSection() {
             className="h-24 w-auto md:h-32 object-contain mix-blend-overlay opacity-90 logo-respirando relative z-10"
           />
         </div>
+
+        <p className="text-lg md:text-xl text-purple-300 mb-12 font-medium animate-in fade-in slide-in-from-bottom duration-1000">
+          {t('hero.tagline')}
+        </p>
 
         {/* Videos */}
         <div className="grid md:grid-cols-2 gap-8 mb-12 max-w-4xl mx-auto">
@@ -120,7 +121,7 @@ export default function HeroSection() {
             className="flex flex-col items-center justify-center text-center border-[#FFA908] text-[#FFA908] hover:bg-[#FFA908] hover:text-[#0F0B1E] px-8 py-5 font-semibold transition-all duration-300 hover:shadow-[0_0_30px_#FFA908] leading-tight gap-1"
           >
             <span className="text-[1.15rem] font-bold tracking-wide translate-y-[2px]">Voltra.Studio</span>
-            <span className="text-sm text-[#FFD966] font-medium -translate-y-[2px]">Official partners:</span>
+            <span className="text-sm text-[#FFD966] font-medium -translate-y-[2px]">Official partners</span>
           </Button>
         </div>
       </div>
