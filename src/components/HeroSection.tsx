@@ -36,15 +36,15 @@ export default function HeroSection() {
         <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold text-white mb-6 animate-in fade-in slide-in-from-bottom duration-1000">
           {t('hero.title')}
         </h1>
-        <p className="text-xl md:text-2xl text-indigo-200 mb-8 max-w-3xl mx-auto animate-in fade-in slide-in-from-bottom duration-1000">
-          {t('hero.subtitle')}
+        <p className="text-xl md:text-2xl text-indigo-200 mb-8 animate-in fade-in slide-in-from-bottom duration-1000 whitespace-nowrap">
+          Únete a nuestra comunidad y elige el guardián que se convertirá en token.
         </p>
         <p className="text-lg md:text-xl text-purple-300 mb-12 font-medium animate-in fade-in slide-in-from-bottom duration-1000">
-          {t('hero.tagline')}
+          Tres fuerzas elementales. Una comunidad. Un destino.
         </p>
 
         {/* Imagen Voltra con los mismos efectos que LogoPremium1 */}
-        <div className="mt-[-3rem] mb-8 flex justify-end relative animate-in fade-in slide-in-from-right duration-1000 mr-[-6rem] translate-x-12">
+        <div className="mt-[-3rem] mb-8 flex justify-end relative animate-in fade-in slide-in-from-right duration-1000 mr-[-6rem] translate-x-18">
           <div className="absolute inset-0 flex justify-end items-center pointer-events-none z-0">
             <div className="w-48 h-48 rounded-full blur-3xl aura-pulsante-gold-strong"></div>
           </div>
