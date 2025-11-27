@@ -240,10 +240,10 @@ type TranslationKeys = keyof typeof enTranslations;
 /**
  * 🔹 Componemos el objeto principal con satisfies
  */
-const translations = {
+const translations: Record<Language, Record<TranslationKeys, string>> = {
   en: enTranslations,
   es: esTranslations,
-} satisfies Record<Language, typeof enTranslations>;
+};
 
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
 
