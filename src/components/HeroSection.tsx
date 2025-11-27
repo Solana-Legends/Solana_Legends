@@ -56,7 +56,7 @@ export default function HeroSection() {
         </div>
 
         {/* Videos */}
-        <div className="grid md:grid-cols-2 gap-8 mb-12 max-w-4xl mx-auto">
+        <div className="grid md:grid-cols-2 gap-8 mb-6 max-w-4xl mx-auto">
           <div className="animate-in fade-in slide-in-from-left duration-1000">
             <div className="relative group rounded-xl overflow-hidden transition-shadow duration-300 hover:scale-[1.02] border border-purple-500/40 aura-pulsante aura-hover">
               <VideoWithControls src="/assets/HeroesLevitan.mp4" glowColor="#A020F0" />
@@ -72,7 +72,7 @@ export default function HeroSection() {
         </div>
 
         {/* Badges */}
-        <div className="flex flex-wrap justify-center gap-4 mb-8 animate-in fade-in slide-in-from-bottom duration-1000">
+        <div className="flex flex-wrap justify-center gap-4 mb-6 -mt-4 animate-in fade-in slide-in-from-bottom duration-1000">
           <Badge variant="outline" className="text-green-400 border-green-400 bg-green-400/10 px-4 py-2 hover:shadow-[0_0_20px_#00FF00] transition-all duration-300">
             <Rocket className="w-4 h-4 mr-2" />
             {t('hero.activeProject')}
@@ -88,7 +88,7 @@ export default function HeroSection() {
         </div>
 
         {/* Botones ritualizados */}
-        <div className="flex flex-col sm:flex-row gap-4 justify-center animate-in fade-in slide-in-from-bottom duration-1000">
+        <div className="flex flex-col sm:flex-row gap-4 justify-center animate-in fade-in slide-in-from-bottom duration-1000 -mt-4">
           <Button
             size="lg"
             variant="outline"
