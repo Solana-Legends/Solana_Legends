@@ -32,34 +32,36 @@ export default function HeroSection() {
           />
         </div>
 
-        {/* Videos + Imagen Voltra */}
-        <div className="grid md:grid-cols-3 gap-8 mb-12 max-w-6xl mx-auto items-center">
-          {/* Video izquierdo */}
-          <div className="animate-in fade-in slide-in-from-left duration-1000">
-            <div className="relative group rounded-xl overflow-hidden transition-shadow duration-300 hover:scale-[1.02] border border-purple-500/40 aura-pulsante aura-hover">
-              <VideoWithControls src="/assets/HeroesLevitan.mp4" glowColor="#A020F0" />
-              <div className="pointer-events-none absolute inset-0 rounded-xl bg-gradient-to-t from-black/50 to-transparent"></div>
+        {/* Videos con logo Voltra a la derecha */}
+        <div className="relative mb-12 max-w-6xl mx-auto">
+          <div className="grid md:grid-cols-2 gap-8">
+            {/* Video izquierdo */}
+            <div className="animate-in fade-in slide-in-from-left duration-1000">
+              <div className="relative group rounded-xl overflow-hidden transition-shadow duration-300 hover:scale-[1.02] border border-purple-500/40 aura-pulsante aura-hover">
+                <VideoWithControls src="/assets/HeroesLevitan.mp4" glowColor="#A020F0" />
+                <div className="pointer-events-none absolute inset-0 rounded-xl bg-gradient-to-t from-black/50 to-transparent"></div>
+              </div>
             </div>
-          </div>
 
-          {/* Video derecho */}
-          <div className="animate-in fade-in slide-in-from-right duration-1000">
-            <div className="relative group rounded-xl overflow-hidden transition-shadow duration-300 hover:scale-[1.02] border border-blue-400/40 aura-pulsante-blue aura-hover-gold">
-              <VideoWithControls src="/assets/HéroesProgramandoEn.mp4" glowColor="#00BFFF" />
-              <div className="pointer-events-none absolute inset-0 rounded-xl bg-gradient-to-t from-black/50 to-transparent"></div>
-            </div>
-          </div>
+            {/* Video derecho con logo Voltra */}
+            <div className="animate-in fade-in slide-in-from-right duration-1000 relative">
+              <div className="relative group rounded-xl overflow-hidden transition-shadow duration-300 hover:scale-[1.02] border border-blue-400/40 aura-pulsante-blue aura-hover-gold">
+                <VideoWithControls src="/assets/HéroesProgramandoEn.mp4" glowColor="#00BFFF" />
+                <div className="pointer-events-none absolute inset-0 rounded-xl bg-gradient-to-t from-black/50 to-transparent"></div>
+              </div>
 
-          {/* Imagen Voltra con los mismos efectos que LogoPremium1 */}
-          <div className="hidden md:flex justify-center relative animate-in fade-in slide-in-from-right duration-1000">
-            <div className="absolute inset-0 flex justify-center items-center pointer-events-none z-0">
-              <div className="w-48 h-48 rounded-full blur-3xl aura-pulsante-gold-strong"></div>
+              {/* Logo Voltra a la derecha del video */}
+              <div className="absolute top-1/2 right-[-160px] transform -translate-y-1/2 hidden lg:flex justify-center items-center z-10">
+                <div className="absolute inset-0 flex justify-center items-center pointer-events-none z-0">
+                  <div className="w-48 h-48 rounded-full blur-3xl aura-pulsante-gold-strong"></div>
+                </div>
+                <img
+                  src="/assets/Voltra.png"
+                  alt="Voltra Studio Logo"
+                  className="h-24 w-auto md:h-32 object-contain mix-blend-overlay opacity-90 logo-respirando relative z-10"
+                />
+              </div>
             </div>
-            <img
-              src="/assets/Voltra.png"
-              alt="Voltra Studio Logo"
-              className="h-24 w-auto md:h-32 object-contain mix-blend-overlay opacity-90 logo-respirando relative z-10"
-            />
           </div>
         </div>
 
@@ -115,7 +117,7 @@ export default function HeroSection() {
             {t('hero.joinCommunity')}
           </Button>
 
-          {/* Nuevo botón Voltra.Studio */}
+          {/* Botón Voltra.Studio */}
           <Button
             size="lg"
             variant="outline"
