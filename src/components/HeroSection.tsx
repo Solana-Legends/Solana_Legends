@@ -33,17 +33,17 @@ export default function HeroSection() {
         </div>
 
         {/* Imagen Voltra con los mismos efectos que LogoPremium1 */}
-        <div className="mb-8 flex justify-end relative">
+        <div className="mb-8 flex justify-end relative animate-in fade-in slide-in-from-right duration-1000">
           <div className="absolute inset-0 flex justify-end items-center pointer-events-none z-0">
             <div className="w-48 h-48 rounded-full blur-3xl aura-pulsante-gold-strong"></div>
           </div>
           <img
             src="/assets/Voltra.png"
             alt="Voltra Studio Logo"
-            className="h-24 w-auto md:h-32 object-contain animate-in fade-in slide-in-from-right duration-1000 
-            mix-blend-overlay opacity-90 logo-respirando relative z-10"
+            className="h-24 w-auto md:h-32 object-contain mix-blend-overlay opacity-90 logo-respirando relative z-10"
           />
         </div>
+
 
         {/* Títulos */}
         <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold text-white mb-6 animate-in fade-in slide-in-from-bottom duration-1000">
