@@ -32,18 +32,36 @@ export default function HeroSection() {
           />
         </div>
 
-        {/* Imagen Voltra con los mismos efectos que LogoPremium1 */}
-        <div className="mb-8 flex justify-end relative animate-in fade-in slide-in-from-right duration-1000">
-          <div className="absolute inset-0 flex justify-end items-center pointer-events-none z-0">
-            <div className="w-48 h-48 rounded-full blur-3xl aura-pulsante-gold-strong"></div>
+        {/* Videos + Imagen Voltra */}
+        <div className="grid md:grid-cols-3 gap-8 mb-12 max-w-6xl mx-auto items-center">
+          {/* Video izquierdo */}
+          <div className="animate-in fade-in slide-in-from-left duration-1000">
+            <div className="relative group rounded-xl overflow-hidden transition-shadow duration-300 hover:scale-[1.02] border border-purple-500/40 aura-pulsante aura-hover">
+              <VideoWithControls src="/assets/HeroesLevitan.mp4" glowColor="#A020F0" />
+              <div className="pointer-events-none absolute inset-0 rounded-xl bg-gradient-to-t from-black/50 to-transparent"></div>
+            </div>
           </div>
-          <img
-            src="/assets/Voltra.png"
-            alt="Voltra Studio Logo"
-            className="h-24 w-auto md:h-32 object-contain mix-blend-overlay opacity-90 logo-respirando relative z-10"
-          />
-        </div>
 
+          {/* Video derecho */}
+          <div className="animate-in fade-in slide-in-from-right duration-1000">
+            <div className="relative group rounded-xl overflow-hidden transition-shadow duration-300 hover:scale-[1.02] border border-blue-400/40 aura-pulsante-blue aura-hover-gold">
+              <VideoWithControls src="/assets/HéroesProgramandoEn.mp4" glowColor="#00BFFF" />
+              <div className="pointer-events-none absolute inset-0 rounded-xl bg-gradient-to-t from-black/50 to-transparent"></div>
+            </div>
+          </div>
+
+          {/* Imagen Voltra con los mismos efectos que LogoPremium1 */}
+          <div className="hidden md:flex justify-center relative animate-in fade-in slide-in-from-right duration-1000">
+            <div className="absolute inset-0 flex justify-center items-center pointer-events-none z-0">
+              <div className="w-48 h-48 rounded-full blur-3xl aura-pulsante-gold-strong"></div>
+            </div>
+            <img
+              src="/assets/Voltra.png"
+              alt="Voltra Studio Logo"
+              className="h-24 w-auto md:h-32 object-contain mix-blend-overlay opacity-90 logo-respirando relative z-10"
+            />
+          </div>
+        </div>
 
         {/* Títulos */}
         <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold text-white mb-6 animate-in fade-in slide-in-from-bottom duration-1000">
@@ -55,22 +73,6 @@ export default function HeroSection() {
         <p className="text-lg md:text-xl text-purple-300 mb-12 font-medium animate-in fade-in slide-in-from-bottom duration-1000">
           {t('hero.tagline')}
         </p>
-
-        {/* Videos */}
-        <div className="grid md:grid-cols-2 gap-8 mb-12 max-w-4xl mx-auto">
-          <div className="animate-in fade-in slide-in-from-left duration-1000">
-            <div className="relative group rounded-xl overflow-hidden transition-shadow duration-300 hover:scale-[1.02] border border-purple-500/40 aura-pulsante aura-hover">
-              <VideoWithControls src="/assets/HeroesLevitan.mp4" glowColor="#A020F0" />
-              <div className="pointer-events-none absolute inset-0 rounded-xl bg-gradient-to-t from-black/50 to-transparent"></div>
-            </div>
-          </div>
-          <div className="animate-in fade-in slide-in-from-right duration-1000">
-            <div className="relative group rounded-xl overflow-hidden transition-shadow duration-300 hover:scale-[1.02] border border-blue-400/40 aura-pulsante-blue aura-hover-gold">
-              <VideoWithControls src="/assets/HéroesProgramandoEn.mp4" glowColor="#00BFFF" />
-              <div className="pointer-events-none absolute inset-0 rounded-xl bg-gradient-to-t from-black/50 to-transparent"></div>
-            </div>
-          </div>
-        </div>
 
         {/* Badges */}
         <div className="flex flex-wrap justify-center gap-4 mb-8 animate-in fade-in slide-in-from-bottom duration-1000">
