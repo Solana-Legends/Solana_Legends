@@ -5,10 +5,124 @@ type Language = 'es' | 'en';
 interface LanguageContextType {
   language: Language;
   setLanguage: (lang: Language) => void;
-  t: (key: string) => string;
+  t: (key: TranslationKeys) => string;
 }
 
+/**
+ * 🔹 Generamos automáticamente el tipo con todas las claves de traducción
+ * usando el bloque en inglés como referencia.
+ */
 const translations = {
+  en: {
+    // Hero Section
+    'hero.title': 'Solana Legends 🪐 Choose Your Meme',
+    'hero.subtitle': 'Join our community and choose the guardian that will become a token.',
+    'hero.tagline': 'Three elemental forces. One community. One destiny.',
+    'hero.viewGuardians': 'View Guardians',
+    'hero.joinCommunity': 'Join the Community',
+    'hero.activeProject': 'Active Project',
+    'hero.growingCommunity': 'Growing Community',
+    'hero.upcomingVote': 'Upcoming Vote',
+
+    // Characters
+    'characters.title': 'The Guardians',
+    'characters.subtitle': 'Meet the three legendary guardians competing to become the official Solana Legends token',
+    'characters.zapsol.name': 'ZapSol',
+    'characters.zapsol.title': 'The Lightning Guardian',
+    'characters.zapsol.description': 'Master of electrical energy and speed. ZapSol controls cosmic lightning and can travel at the speed of light. His power lies in the ability to generate electrical storms and manipulate the pure energy of the universe.',
+    'characters.zapsol.element': 'Energy',
+    'characters.monkesol.name': 'MonkeSol',
+    'characters.monkesol.title': 'The Ancient Sage',
+    'characters.monkesol.description': 'Guardian of ancient wisdom and blockchain secrets. MonkeSol possesses millennial knowledge about cryptocurrencies and can predict market movements with supernatural precision.',
+    'characters.monkesol.element': 'Wisdom',
+    'characters.chipisol.name': 'ChipiSol',
+    'characters.chipisol.title': 'The Cosmic Spirit',
+    'characters.chipisol.description': 'Mystical entity that connects all dimensions of the metaverse. ChipiSol can manipulate digital reality and create portals between different blockchains, being the bridge between virtual worlds.',
+    'characters.chipisol.element': 'Cosmos',
+    'characters.stats': 'Stats',
+    'characters.power': 'Power',
+    'characters.speed': 'Speed',
+    'characters.intelligence': 'Intelligence',
+    'characters.voteFor': 'Vote for',
+    'characters.votingLocked': 'Voting Locked',
+    'characters.question': 'Which guardian will be chosen by the community?',
+    'characters.votingUnlocked': 'Voting unlocked in',
+    'characters.followersMore': 'more followers',
+    'characters.viewResults': 'View Voting Results',
+    'characters.votingActive': 'Voting is active! Which guardian will be chosen by the community?',
+    'characters.chosenGuardian': 'The guardian chosen by the community is',
+    'characters.telegramNote': '🕰️ At every dawn and dusk, the numbers renew to reflect the living energy of the collective fire',
+
+    // Progress
+    'progress.title': 'Community Progress',
+    'progress.subtitle': 'Tracking the collective fire in each guardian',
+    'progress.mainProgress': 'Main Progress (X/Twitter)',
+    'progress.followers': 'followers',
+    'progress.towardsVoting': 'Progress towards voting',
+    'progress.missing': 'Only',
+    'progress.forVoting': 'followers left for voting!',
+    'progress.twitter': 'Twitter/X',
+    'progress.community': 'X Community',
+    'progress.telegram': 'Telegram',
+    'progress.members': 'members',
+    'progress.follow': 'Follow on X',
+    'progress.joinCommunity': 'Join Community',
+    'progress.joinTelegram': 'Join Telegram',
+    'progress.officialGroup': 'Official group',
+    'progress.voteMessage': '🗳️ Once we reach 500 followers on X, voting will begin to choose the winning guardian!',
+    'progress.ritualSoon': 'The fire will ignite soon',
+    'progress.voteMessageRitual': 'The ritual vote is active, take part in Solana Legends destiny',
+    'progress.fireUnleashed': 'The fire has been unleashed!',
+    'progress.voteButton': 'Vote for the Guardian',
+    'progress.proposeLegend': 'Propose a Legend',
+    'progress.topSource': 'The network leading the fire is',
+    'progress.goalReached': 'Goal reached! The ritual fire is lit.',
+    'progress.telegramNote': '🕰️ At every dawn and dusk, the numbers renew to reflect the living energy of the collective fire',
+    'progress.renewalMessage': '🕰️ At every dawn and every dusk, the numbers renew to reflect the living energy of the collective fire',
+
+    // Project Info
+    'project.title': 'The Project',
+    'project.subtitle': 'Solana Legends is more than a token - it\'s a community that decides the future of its guardians',
+    'project.whitepaper': 'White Paper',
+    'project.whitepaperDesc': 'Complete documentation',
+    'project.whitepaperText': 'Discover the complete narrative, tokenomics, and detailed roadmap of Solana Legends. Learn how the voting system works and the future of our guardians.',
+    'project.readWhitepaper': 'Read White Paper',
+    'project.features': 'Key Features',
+    'project.feature1': 'Decentralized community voting',
+    'project.feature2': 'Secure and fast Solana blockchain',
+    'project.feature3': 'Winning guardian token',
+    'project.feature4': 'Active and participatory community',
+    'project.feature5': 'Transparent and defined roadmap',
+    'project.stat1': 'Legendary Guardians',
+    'project.stat2': 'Follower Goal',
+    'project.stat3': 'Winning Token',
+    'project.stat4': 'Possibilities',
+
+    // Ritual subtitles
+    'project.stat1Aura': '⚡ Ancestral energy',
+    'project.stat2Aura': '🔥 Community fire',
+    'project.stat3Aura': '❄️ Token revealed',
+    'project.stat4Aura': '🪐 Infinite possibilities',
+
+    // Social Links
+    'social.title': 'Social Connections',
+    'social.subtitle': 'Join our platforms and share the energy',
+    'social.followLatest': 'Follow our latest updates',
+    'social.joinOurCommunity': 'Join our community',
+    'social.realTimeChat': 'Real-time chat',
+    'social.follow': 'Follow',
+    'social.share': 'Share the legend',
+    'social.shareSubtitle': 'Spread the collective fire across your networks',
+    'social.shareX': 'Share on X/Twitter',
+    'social.shareTelegram': 'Share on Telegram',
+    'social.shareWhatsapp': 'Share on WhatsApp',
+    'social.callToAction': 'Be part of the ritual and walk with the guardians',
+    'social.followOnX': 'Follow on X/Twitter',
+    'social.xCommunity': 'Join the X Community',
+    'social.joinTelegram': 'Join the official Telegram',
+    'social.telegramNote': '🕰️ At every dawn and dusk, the numbers renew to reflect the living energy of the collective fire',
+  },
+
   es: {
     // Hero Section
     'hero.title': 'Solana Legends 🪐 Elige Tu Meme',
@@ -49,7 +163,7 @@ const translations = {
     'characters.chosenGuardian': 'El guardián elegido por la comunidad es',
     'characters.telegramNote': '🕰️ Cada amanecer y cada ocaso, las cifras se renuevan para reflejar la energía viva del fuego colectivo',
   
-    // Progress (fusionado)
+    // Progress
     'progress.title': 'Progreso de la Comunidad',
     'progress.subtitle': 'Seguimos el fuego colectivo en cada guardián',
     'progress.mainProgress': 'Progreso Principal (X/Twitter)',
@@ -94,7 +208,7 @@ const translations = {
     'project.stat3': 'Token Ganador',
     'project.stat4': 'Posibilidades',
   
-    // 🔮 Subtítulos ritualizados
+    // Subtítulos ritualizados
     'project.stat1Aura': '⚡ Energía ancestral',
     'project.stat2Aura': '🔥 Fuego comunitario',
     'project.stat3Aura': '❄️ Token revelado',
@@ -118,126 +232,21 @@ const translations = {
     'social.joinTelegram': 'Unirse al Telegram oficial',
     'social.telegramNote': '🕰️ Cada amanecer y cada ocaso, las cifras se renuevan para reflejar la energía viva del fuego colectivo',
   },
-
-  en: {
-    // Hero Section
-    'hero.title': 'Solana Legends 🪐 Choose Your Meme',
-    'hero.subtitle': 'Join our community and choose the guardian that will become a token.',
-    'hero.tagline': 'Three elemental forces. One community. One destiny.',
-    'hero.viewGuardians': 'View Guardians',
-    'hero.joinCommunity': 'Join the Community',
-    'hero.activeProject': 'Active Project',
-    'hero.growingCommunity': 'Growing Community',
-    'hero.upcomingVote': 'Upcoming Vote',
-  
-    // Characters
-    'characters.title': 'The Guardians',
-    'characters.subtitle': 'Meet the three legendary guardians competing to become the official Solana Legends token',
-    'characters.zapsol.name': 'ZapSol',
-    'characters.zapsol.title': 'The Lightning Guardian',
-    'characters.zapsol.description': 'Master of electrical energy and speed. ZapSol controls cosmic lightning and can travel at the speed of light. His power lies in the ability to generate electrical storms and manipulate the pure energy of the universe.',
-    'characters.zapsol.element': 'Energy',
-    'characters.monkesol.name': 'MonkeSol',
-    'characters.monkesol.title': 'The Ancient Sage',
-    'characters.monkesol.description': 'Guardian of ancient wisdom and blockchain secrets. MonkeSol possesses millennial knowledge about cryptocurrencies and can predict market movements with supernatural precision.',
-    'characters.monkesol.element': 'Wisdom',
-    'characters.chipisol.name': 'ChipiSol',
-    'characters.chipisol.title': 'The Cosmic Spirit',
-    'characters.chipisol.description': 'Mystical entity that connects all dimensions of the metaverse. ChipiSol can manipulate digital reality and create portals between different blockchains, being the bridge between virtual worlds.',
-    'characters.chipisol.element': 'Cosmos',
-    'characters.stats': 'Stats',
-    'characters.power': 'Power',
-    'characters.speed': 'Speed',
-    'characters.intelligence': 'Intelligence',
-    'characters.voteFor': 'Vote for',
-    'characters.votingLocked': 'Voting Locked',
-    'characters.question': 'Which guardian will be chosen by the community?',
-    'characters.votingUnlocked': 'Voting unlocked in',
-    'characters.followersMore': 'more followers',
-    'characters.viewResults': 'View Voting Results',
-    'characters.votingActive': 'Voting is active! Which guardian will be chosen by the community?',
-    'characters.chosenGuardian': 'The guardian chosen by the community is',
-    'characters.telegramNote': '🕰️ At every dawn and dusk, the numbers renew to reflect the living energy of the collective fire',
-  
-    // Progress (fusionado)
-    'progress.title': 'Community Progress',
-    'progress.subtitle': 'Tracking the collective fire in each guardian',
-    'progress.mainProgress': 'Main Progress (X/Twitter)',
-    'progress.followers': 'followers',
-    'progress.towardsVoting': 'Progress towards voting',
-    'progress.missing': 'Only',
-    'progress.forVoting': 'followers left for voting!',
-    'progress.twitter': 'Twitter/X',
-    'progress.community': 'X Community',
-    'progress.telegram': 'Telegram',
-    'progress.members': 'members',
-    'progress.follow': 'Follow on X',
-    'progress.joinCommunity': 'Join Community',
-    'progress.joinTelegram': 'Join Telegram',
-    'progress.officialGroup': 'Official group',
-    'progress.voteMessage': '🗳️ Once we reach 500 followers on X, voting will begin to choose the winning guardian!',
-    'progress.ritualSoon': 'The fire will ignite soon',
-    'progress.voteMessageRitual': 'The ritual vote is active, take part in Solana Legends destiny',
-    'progress.fireUnleashed': 'The fire has been unleashed!',
-    'progress.voteButton': 'Vote for the Guardian',
-    'progress.proposeLegend': 'Propose a Legend',
-    'progress.topSource': 'The network leading the fire is',
-    'progress.goalReached': 'Goal reached! The ritual fire is lit.',
-    'progress.telegramNote': '🕰️ At every dawn and dusk, the numbers renew to reflect the living energy of the collective fire',
-    'progress.renewalMessage': '🕰️ At every dawn and every dusk, the numbers renew to reflect the living energy of the collective fire',
-  
-    // Project Info
-    'project.title': 'The Project',
-    'project.subtitle': 'Solana Legends is more than a token - it\'s a community that decides the future of its guardians',
-    'project.whitepaper': 'White Paper',
-    'project.whitepaperDesc': 'Complete documentation',
-    'project.whitepaperText': 'Discover the complete narrative, tokenomics, and detailed roadmap of Solana Legends. Learn how the voting system works and the future of our guardians.',
-    'project.readWhitepaper': 'Read White Paper',
-    'project.features': 'Key Features',
-    'project.feature1': 'Decentralized community voting',
-    'project.feature2': 'Secure and fast Solana blockchain',
-    'project.feature3': 'Winning guardian token',
-    'project.feature4': 'Active and participatory community',
-    'project.feature5': 'Transparent and defined roadmap',
-    'project.stat1': 'Legendary Guardians',
-    'project.stat2': 'Follower Goal',
-    'project.stat3': 'Winning Token',
-    'project.stat4': 'Possibilities',
-  
-    // 🔮 Ritual subtitles
-    'project.stat1Aura': '⚡ Ancestral energy',
-    'project.stat2Aura': '🔥 Community fire',
-    'project.stat3Aura': '❄️ Token revealed',
-    'project.stat4Aura': '🪐 Infinite possibilities',
-  
-    // Social Links
-    'social.title': 'Social Connections',
-    'social.subtitle': 'Join our platforms and share the energy',
-    'social.followLatest': 'Follow our latest updates',
-    'social.joinOurCommunity': 'Join our community',
-    'social.realTimeChat': 'Real-time chat',
-    'social.follow': 'Follow',
-    'social.share': 'Share the legend',
-    'social.shareSubtitle': 'Spread the collective fire across your networks',
-    'social.shareX': 'Share on X/Twitter',
-    'social.shareTelegram': 'Share on Telegram',
-    'social.shareWhatsapp': 'Share on WhatsApp',
-    'social.callToAction': 'Be part of the ritual and walk with the guardians',
-    'social.followOnX': 'Follow on X/Twitter',
-    'social.xCommunity': 'Join the X Community',
-    'social.joinTelegram': 'Join the official Telegram',
-    'social.telegramNote': '🕰️ At every dawn and dusk, the numbers renew to reflect the living energy of the collective fire',
-  },
-  
 };
+
+/**
+ * 🔹 Extraemos automáticamente las claves válidas
+ */
+type TranslationKeys = keyof typeof translations['en'];
 
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
 
 export function LanguageProvider({ children }: { children: ReactNode }) {
-  const [language, setLanguage] = useState<Language>('es');
+  // 🔹 Ahora arranca en inglés
+  const [language, setLanguage] = useState<Language>('en');
 
-  const t = (key: string): string => {
-    return translations[language][key] || key;
+  const t = (key: TranslationKeys): string => {
+    return translations[language][key];
   };
 
   return (
