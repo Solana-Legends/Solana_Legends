@@ -9,8 +9,7 @@ interface LanguageContextType {
 }
 
 /**
- * 🔹 Generamos automáticamente el tipo con todas las claves de traducción
- * usando el bloque en inglés como referencia.
+ * 🔹 Traducciones: primero inglés, luego español
  */
 const translations = {
   en: {
@@ -242,7 +241,7 @@ type TranslationKeys = keyof typeof translations['en'];
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
 
 export function LanguageProvider({ children }: { children: ReactNode }) {
-  // 🔹 Ahora arranca en inglés
+  // 🔹 Arranca en inglés
   const [language, setLanguage] = useState<Language>('en');
 
   const t = (key: TranslationKeys): string => {
