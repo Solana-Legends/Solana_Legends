@@ -24,12 +24,19 @@ export default function HeroSection() {
           <div className="absolute inset-0 flex justify-center items-center pointer-events-none z-0">
             <div className="w-48 h-48 rounded-full blur-3xl aura-pulsante-gold-strong"></div>
           </div>
-          <img
-            src="/assets/LogoPremium1.png"
-            alt="Solana Legends Logo"
-            className="h-24 w-auto md:h-32 object-contain animate-in fade-in slide-in-from-top duration-1000 
-            mix-blend-overlay opacity-90 logo-respirando relative z-10"
-          />
+          <a
+            href="https://x.com/EligeTuMeme"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="relative z-10"
+          >
+            <img
+              src="/assets/LogoPremium1.png"
+              alt="Solana Legends Logo"
+              className="h-24 w-auto md:h-32 object-contain animate-in fade-in slide-in-from-top duration-1000 
+      mix-blend-overlay opacity-90 logo-respirando"
+            />
+          </a>
         </div>
 
         {/* Títulos */}
@@ -52,11 +59,19 @@ export default function HeroSection() {
           <div className="absolute inset-0 flex justify-end items-center pointer-events-none z-0">
             <div className="w-48 h-48 rounded-full blur-3xl aura-pulsante-gold-strong"></div>
           </div>
-          <img
-            src="/assets/Voltra.png"
-            alt="Voltra Studio Logo"
-            className="h-24 w-auto md:h-32 object-contain mix-blend-overlay opacity-90 logo-respirando relative z-10"
-          />
+          <a
+            href="https://x.com/Voltrastudio"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="relative z-10"
+          >
+            <img
+              src="/assets/Voltra.png"
+              alt="Voltra Studio Logo"
+              className="h-24 w-auto md:h-32 object-contain mix-blend-overlay opacity-90 logo-respirando"
+            />
+          </a>
+
         </div>
 
         {/* Videos */}
