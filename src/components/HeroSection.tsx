@@ -43,6 +43,18 @@ export default function HeroSection() {
           {t('hero.tagline')}
         </p>
 
+        {/* Imagen Voltra con los mismos efectos que LogoPremium1 */}
+        <div className="mt-[-6rem] mb-8 flex justify-end relative animate-in fade-in slide-in-from-right duration-1000 mr-[-4rem]">
+          <div className="absolute inset-0 flex justify-end items-center pointer-events-none z-0">
+            <div className="w-48 h-48 rounded-full blur-3xl aura-pulsante-gold-strong"></div>
+          </div>
+          <img
+            src="/assets/Voltra.png"
+            alt="Voltra Studio Logo"
+            className="h-24 w-auto md:h-32 object-contain mix-blend-overlay opacity-90 logo-respirando relative z-10"
+          />
+        </div>
+
         {/* Videos */}
         <div className="grid md:grid-cols-2 gap-8 mb-12 max-w-4xl mx-auto">
           <div className="animate-in fade-in slide-in-from-left duration-1000">
@@ -57,18 +69,6 @@ export default function HeroSection() {
               <div className="pointer-events-none absolute inset-0 rounded-xl bg-gradient-to-t from-black/50 to-transparent"></div>
             </div>
           </div>
-        </div>
-
-        {/* Imagen Voltra con los mismos efectos que LogoPremium1 */}
-        <div className="mt-[-6rem] mb-8 flex justify-end relative animate-in fade-in slide-in-from-right duration-1000 mr-[-4rem]">
-          <div className="absolute inset-0 flex justify-end items-center pointer-events-none z-0">
-            <div className="w-48 h-48 rounded-full blur-3xl aura-pulsante-gold-strong"></div>
-          </div>
-          <img
-            src="/assets/Voltra.png"
-            alt="Voltra Studio Logo"
-            className="h-24 w-auto md:h-32 object-contain mix-blend-overlay opacity-90 logo-respirando relative z-10"
-          />
         </div>
 
         {/* Badges */}
