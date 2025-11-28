@@ -7,7 +7,7 @@
 
     /* 🔹 Módulos */
     "module": "ESNext",
-    "moduleResolution": "node",   // ✅ modo moderno para Vite/ESBuild
+    "moduleResolution": "node",
     "moduleDetection": "force",
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
@@ -21,24 +21,22 @@
     /* 🔹 Tipos globales */
     "types": ["react", "react-dom", "node"],
 
-    /* 🔹 Control de tipado (más seguro y limpio) */
-    "strict": true,                  // Activa todas las comprobaciones estrictas
-    "noImplicitAny": true,           // Evita que se cuelen any implícitos
-    "noUnusedLocals": true,          // Marca variables no usadas
-    "noUnusedParameters": true,      // Marca parámetros no usados
-    "strictNullChecks": true,        // Control estricto de null/undefined
-    "skipLibCheck": true,            // Ignora chequeo de librerías externas
-    "noFallthroughCasesInSwitch": true, // Previene errores en switch sin break
+    /* 🔹 Control de tipado */
+    "strict": true,
+    "noImplicitAny": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "strictNullChecks": true,
+    "skipLibCheck": true,
+    "noFallthroughCasesInSwitch": true,
 
-    /* 🔹 Paths */
+    /* 🔹 Paths (alias) */
     "baseUrl": ".",
     "paths": {
-      "@/*": ["./src/*"]
+      "@/*": ["./src/*"],
+      "@components/*": ["./src/components/*"]
     }
   },
-  "include": [
-    "src",
-    "tailwindcss.d.ts"
-  ],
+  "include": ["src", "tailwindcss.d.ts"],
   "exclude": ["node_modules", "dist"]
 }

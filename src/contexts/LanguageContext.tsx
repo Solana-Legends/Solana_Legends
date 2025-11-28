@@ -119,7 +119,14 @@ const enTranslations = {
   'social.xCommunity': 'Join the X Community',
   'social.joinTelegram': 'Join the official Telegram',
   'social.telegramNote': '🕰️ At every dawn and dusk, the numbers renew to reflect the living energy of the collective fire',
+
+  // ✅ Common Section (añadido)
+  'common.home': 'Home',
+  'common.backHome': 'Back to home',
 } as const;
+
+// 🔹 Tipo de claves de traducción generado automáticamente
+type TranslationKeys = keyof typeof enTranslations;
 
 // Bloque español
 const esTranslations = {
@@ -230,12 +237,15 @@ const esTranslations = {
   'social.xCommunity': 'Unirse a la Comunidad X',
   'social.joinTelegram': 'Unirse al Telegram oficial',
   'social.telegramNote': '🕰️ Cada amanecer y cada ocaso, las cifras se renuevan para reflejar la energía viva del fuego colectivo',
+
+  // ✅ Common Section (añadido)
+  'common.home': 'Inicio',
+  'common.backHome': 'Volver al inicio',
 } as const;
 
 /**
  * 🔹 Ahora extraemos las claves válidas a partir del bloque en inglés
  */
-type TranslationKeys = keyof typeof enTranslations;
 
 /**
  * 🔹 Componemos el objeto principal con satisfies
