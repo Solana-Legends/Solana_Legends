@@ -29,6 +29,26 @@ export default function GuardianCard({
       ? "aura-chipisol"
       : "";
 
+  // Símbolo elemental según el guardián
+  const elementalSymbol =
+    id === "zapsol"
+      ? "⚡️"
+      : id === "monkesol"
+      ? "🔥"
+      : id === "chipisol"
+      ? "❄️"
+      : "";
+
+  // Color opcional para cada símbolo
+  const symbolColor =
+    id === "zapsol"
+      ? "text-yellow-400"
+      : id === "monkesol"
+      ? "text-red-500"
+      : id === "chipisol"
+      ? "text-blue-300"
+      : "";
+
   return (
     <div
       data-id={id}
@@ -40,6 +60,13 @@ export default function GuardianCard({
         alt={name}
         className={`absolute top-4 left-4 w-16 h-16 object-contain rounded-md ${auraClass}`}
       />
+
+      {/* Símbolo elemental arriba a la derecha */}
+      <div
+        className={`absolute top-4 right-4 text-3xl drop-shadow-lg ${symbolColor}`}
+      >
+        {elementalSymbol}
+      </div>
 
       {/* Contenido con margen superior para no solaparse con la imagen */}
       <div className="mt-20">
