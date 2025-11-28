@@ -50,7 +50,6 @@ export default function GuardiansPortal() {
       <div className="flex justify-between items-center mb-8">
         <LanguageSwitcher />
 
-        {/* Botón de volver con animación de entrada y salida */}
         <Link
           to="/"
           onClick={() => setExit(true)}
@@ -72,8 +71,25 @@ export default function GuardiansPortal() {
         </Link>
       </div>
 
-      {/* 🔹 Encabezado ritualizado */}
-      <div className="max-w-6xl mx-auto text-center">
+      {/* 🔹 Breadcrumb ritualizado con animación */}
+      <nav
+        className="text-sm text-blue-300 mb-6 flex items-center gap-2 px-1 md:px-0 opacity-0 translate-y-3 animate-fadeInUp"
+        style={{ animationDelay: "0.2s" }}
+      >
+        <Link
+          to="/"
+          className="hover:text-blue-200 transition font-medium hover:shadow-[0_0_12px_#3B82F6] rounded px-1"
+        >
+          {t("common.home")}
+        </Link>
+        <span className="text-gray-400">›</span>
+        <span className="text-purple-300 font-semibold tracking-wide hover:shadow-[0_0_12px_#A020F0] rounded px-1 transition">
+          {t("hero.viewGuardians")}
+        </span>
+      </nav>
+
+      {/* 🔹 Encabezado ritualizado con animación */}
+      <div className="max-w-6xl mx-auto text-center opacity-0 translate-y-3 animate-fadeInUp" style={{ animationDelay: "0.4s" }}>
         <h1 className="text-4xl md:text-6xl font-bold mb-2">
           {t("hero.viewGuardians")}
         </h1>
@@ -88,7 +104,7 @@ export default function GuardiansPortal() {
           <div
             key={g.id}
             className="opacity-0 translate-y-6 animate-fadeInUp hover:scale-105 transition-transform duration-300"
-            style={{ animationDelay: `${index * 0.3}s` }}
+            style={{ animationDelay: `${index * 0.3 + 0.6}s` }}
           >
             <GuardianCard {...g} />
           </div>
