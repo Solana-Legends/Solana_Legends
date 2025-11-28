@@ -10,7 +10,7 @@ const guardians = [
     name: "ZapSol",
     title: "The Lightning Guardian",
     aura: "⚡",
-    image: "/images/guardians/Zap.png",
+    image: "/images/guardians/Zap.png", // 🔹 ruta corregida
     description: {
       en: "Master of electrical energy and speed...",
       es: "Maestro de la energía eléctrica y la velocidad...",
@@ -21,7 +21,7 @@ const guardians = [
     name: "MonkeSol",
     title: "The Ancient Sage",
     aura: "🧠",
-    image: "/images/guardians/Monk.png",
+    image: "/images/guardians/Monk.png", // 🔹 ruta corregida
     description: {
       en: "Guardian of ancient wisdom and blockchain secrets...",
       es: "Guardián de la sabiduría antigua y los secretos del blockchain...",
@@ -32,7 +32,7 @@ const guardians = [
     name: "ChipiSol",
     title: "The Cosmic Spirit",
     aura: "🪐",
-    image: "/images/guardians/Chip.png",
+    image: "/images/guardians/Chip.png", // 🔹 ruta corregida
     description: {
       en: "Mystical entity that connects all dimensions...",
       es: "Entidad mística que conecta todas las dimensiones...",
@@ -71,25 +71,8 @@ export default function GuardiansPortal() {
         </Link>
       </div>
 
-      {/* 🔹 Breadcrumb ritualizado con animación */}
-      <nav
-        className="text-sm text-blue-300 mb-6 flex items-center gap-2 px-1 md:px-0 opacity-0 translate-y-3 animate-fadeInUp"
-        style={{ animationDelay: "0.2s" }}
-      >
-        <Link
-          to="/"
-          className="hover:text-blue-200 transition font-medium hover:shadow-[0_0_12px_#3B82F6] rounded px-1"
-        >
-          {t("common.home")}
-        </Link>
-        <span className="text-gray-400">›</span>
-        <span className="text-purple-300 font-semibold tracking-wide hover:shadow-[0_0_12px_#A020F0] rounded px-1 transition">
-          {t("hero.viewGuardians")}
-        </span>
-      </nav>
-
-      {/* 🔹 Encabezado ritualizado con animación */}
-      <div className="max-w-6xl mx-auto text-center opacity-0 translate-y-3 animate-fadeInUp" style={{ animationDelay: "0.4s" }}>
+      {/* 🔹 Encabezado ritualizado */}
+      <div className="max-w-6xl mx-auto text-center">
         <h1 className="text-4xl md:text-6xl font-bold mb-2">
           {t("hero.viewGuardians")}
         </h1>
@@ -98,20 +81,19 @@ export default function GuardiansPortal() {
         </p>
       </div>
 
-      {/* 🔹 Grid de guardianes con animación de entrada y hover intensificado */}
+      {/* 🔹 Grid de guardianes SIN animaciones (para probar) */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-        {guardians.map((g, index) => (
+        {guardians.map((g) => (
           <div
             key={g.id}
-            className="opacity-0 translate-y-6 animate-fadeInUp hover:scale-105 transition-transform duration-300"
-            style={{ animationDelay: `${index * 0.3 + 0.6}s` }}
+            className="hover:scale-105 transition-transform duration-300"
           >
             <GuardianCard {...g} />
           </div>
         ))}
       </div>
 
-      {/* 🔹 Pie de página con fondo y hover */}
+      {/* 🔹 Pie de página */}
       <p className="text-center text-sm text-blue-300 mt-10 italic bg-slate-900 py-4 hover:bg-slate-800 hover:text-blue-200 transition">
         {t("characters.telegramNote")}
       </p>
