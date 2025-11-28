@@ -3,7 +3,7 @@ import { useLanguage } from "@/contexts/LanguageContext";
 interface GuardianCardProps {
   id?: string;
   name: string;
-  title: string;
+  title: { en: string; es: string };
   aura: string;
   image: string;
   description: { en: string; es: string };
@@ -49,6 +49,16 @@ export default function GuardianCard({
       ? "text-blue-300"
       : "";
 
+  // Clase de animación para el símbolo
+  const symbolAnimation =
+    id === "zapsol"
+      ? "symbol-zapsol"
+      : id === "monkesol"
+      ? "symbol-monkesol"
+      : id === "chipisol"
+      ? "symbol-chipisol"
+      : "";
+
   return (
     <div
       data-id={id}
@@ -61,9 +71,9 @@ export default function GuardianCard({
         className={`absolute top-4 left-4 w-16 h-16 object-contain rounded-md ${auraClass}`}
       />
 
-      {/* Símbolo elemental arriba a la derecha */}
+      {/* Símbolo elemental arriba a la derecha con animación */}
       <div
-        className={`absolute top-4 right-4 text-3xl drop-shadow-lg ${symbolColor}`}
+        className={`absolute top-4 right-4 text-3xl drop-shadow-lg ${symbolColor} ${symbolAnimation}`}
       >
         {elementalSymbol}
       </div>
@@ -73,7 +83,7 @@ export default function GuardianCard({
         <h2 className="text-2xl font-bold">
           {aura} {name}
         </h2>
-        <p className="text-blue-300 italic">{title}</p>
+        <p className="text-blue-300 italic">{title[language]}</p>
         <p className="mt-2 text-sm">{description[language]}</p>
         <button className="mt-4 bg-yellow-500 hover:bg-yellow-600 text-orange-900 font-semibold px-4 py-2 rounded">
           {t("characters.voteFor")} {name}

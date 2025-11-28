@@ -8,7 +8,10 @@ const guardians = [
   {
     id: "zapsol",
     name: "ZapSol",
-    title: "The Lightning Guardian",
+    title: {
+     en: "The Lightning Guardian",
+     es: "El guardián del rayo",
+    },
     aura: "⚡",
     image: "/images/guardians/Zap.png",
     description: {
@@ -19,8 +22,11 @@ const guardians = [
   {
     id: "monkesol",
     name: "MonkeSol",
-    title: "The Ancient Sage",
-    aura: "🧠",
+    title:  {
+      en: "The Ancient Sage",
+      es: "El antiguo sabio",
+    },
+    aura: "🔥",
     image: "/images/guardians/Monk.png",
     description: {
       en: "Guardian of ancient wisdom and blockchain secrets...",
@@ -30,8 +36,11 @@ const guardians = [
   {
     id: "chipisol",
     name: "ChipiSol",
-    title: "The Cosmic Spirit",
-    aura: "🪐",
+    title: {
+      en: "The Cosmic Spirit",
+      es: "El Espíritu Cósmico",
+    },
+    aura: "❄️",
     image: "/images/guardians/Chip.png",
     description: {
       en: "Mystical entity that connects all dimensions...",
