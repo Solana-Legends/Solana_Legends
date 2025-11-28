@@ -15,8 +15,8 @@ const guardians = [
     aura: "⚡",
     image: "/images/guardians/Zap.png",
     description: {
-      en: "Master of electrical energy and speed...",
-      es: "Maestro de la energía eléctrica y la velocidad...",
+      en: "Master of electrical energy, speed, and lightning...",
+      es: "Maestro de la energía eléctrica, la velocidad y el rayo...",
     },
   },
   {
@@ -43,8 +43,8 @@ const guardians = [
     aura: "❄️",
     image: "/images/guardians/Chip.png",
     description: {
-      en: "Mystical entity that connects all dimensions...",
-      es: "Entidad mística que conecta todas las dimensiones...",
+      en: "Mystical entity that connects all dimensions and portals...",
+      es: "Entidad mística que conecta todas las dimensiones y portales...",
     },
   },
 ];
