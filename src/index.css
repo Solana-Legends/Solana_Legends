@@ -132,7 +132,7 @@ video {
 }
 .logo-respirando { animation: pulse-scale 3s ease-in-out infinite; }
 
-/* === Auras === */
+/* === Auras genéricas === */
 
 /* Púrpura base */
 @keyframes pulse-aura {
@@ -194,43 +194,135 @@ video {
 }
 
 /* === Hover dinámico para videos (cambio de aura) === */
-
-/* Contenedor con transición suave */
 .aura-hover { transition: box-shadow 0.3s ease-in-out; }
-
-/* Cambia a azul al pasar el cursor */
 .aura-hover:hover { animation: pulse-aura-blue 3s ease-in-out infinite; }
-
-/* Variante: cambiar a dorado en hover */
 .aura-hover-gold:hover { animation: pulse-aura-gold-strong 3s ease-in-out infinite; }
-
-/* Variante: mantener aura base pero acentuar intensidad en hover */
 .aura-hover-intense:hover { filter: saturate(1.2) brightness(1.05); }
 
 /* Evitar cortes del aura en contenedores padres */
-.aura-container {
-  position: relative;
-  z-index: 0;
-}
+.aura-container { position: relative; z-index: 0; }
 .aura-container > .aura-pulsante,
 .aura-container > .aura-pulsante-blue,
-.aura-container > .aura-pulsante-gold-strong {
-  position: relative;
-  z-index: 1;
-}
+.aura-container > .aura-pulsante-gold-strong { position: relative; z-index: 1; }
 
 /* === Variantes por guardián (opcional) === */
-
-/* Fuego → dorado intenso */
 .aura-fire:hover { animation: pulse-aura-gold-strong 3s ease-in-out infinite; }
-
-/* Agua → azul eléctrico */
 .aura-water:hover { animation: pulse-aura-blue 3s ease-in-out infinite; }
-
-/* Sombra → púrpura profundo estático (sin animación) */
 .aura-shadow:hover {
-  box-shadow:
-    0 0 60px rgba(80, 0, 160, 1),
-    0 0 120px rgba(80, 0, 160, 0.7);
+  box-shadow: 0 0 60px rgba(80, 0, 160, 1), 0 0 120px rgba(80, 0, 160, 0.7);
   border-radius: 1.25rem;
 }
+
+/* === Animaciones de entrada === */
+@keyframes fadeInUp {
+  0% { opacity: 0; transform: translateY(24px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+.animate-fadeInUp { animation: fadeInUp 0.8s ease-out forwards; }
+
+/* Intensificación de aura al hacer hover sobre la tarjeta */
+.aura-zapsol:hover { filter: brightness(1.2) saturate(1.3); }
+.aura-monkesol:hover { filter: brightness(1.15) saturate(1.2); }
+.aura-chipisol:hover { filter: brightness(1.25) saturate(1.4); }
+
+/* === Auras personalizadas por guardián (diferenciadas) === */
+
+/* ⚡ ZapSol → aura eléctrica rápida */
+@keyframes pulse-fast {
+  0%, 100% {
+    box-shadow: 0 0 25px rgba(56,189,248,0.9), 0 0 50px rgba(56,189,248,0.6);
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    box-shadow: 0 0 40px rgba(56,189,248,1), 0 0 80px rgba(56,189,248,0.8);
+    transform: scale(1.15);
+    opacity: 0.7;
+  }
+}
+.aura-zapsol {
+  animation: pulse-fast 1s ease-in-out infinite;
+  border-radius: 0.5rem;
+}
+
+/* 🧠 MonkeSol → aura lenta y calmada */
+@keyframes pulse-slow {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(147,197,253,0.7), 0 0 40px rgba(147,197,253,0.5);
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    box-shadow: 0 0 30px rgba(147,197,253,1), 0 0 60px rgba(147,197,253,0.7);
+    transform: scale(1.05);
+    opacity: 0.85;
+  }
+}
+.aura-monkesol {
+  animation: pulse-slow 3s ease-in-out infinite;
+  border-radius: 0.5rem;
+}
+
+/* 🪐 ChipiSol → aura cósmica con destellos */
+@keyframes flicker {
+  0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% { opacity: 1; }
+  20%, 22%, 24%, 55% { opacity: 0.4; }
+}
+.aura-chipisol {
+  animation: flicker 2s infinite;
+  box-shadow: 0 0 30px rgba(192,132,252,0.9), 0 0 60px rgba(192,132,252,0.6);
+  border-radius: 0.5rem;
+}
+
+/* === Intensificación dinámica de aura en hover === */
+
+/* ⚡ ZapSol → de azul eléctrico a blanco brillante */
+.aura-zapsol:hover {
+  animation: pulse-fast 1s ease-in-out infinite;
+  box-shadow: 0 0 40px rgba(255,255,255,0.9), 0 0 80px rgba(255,255,255,0.7);
+  filter: brightness(1.3);
+}
+
+/* 🧠 MonkeSol → de azul calmado a verde sabio */
+.aura-monkesol:hover {
+  animation: pulse-slow 3s ease-in-out infinite;
+  box-shadow: 0 0 40px rgba(34,197,94,0.9), 0 0 80px rgba(34,197,94,0.6);
+  filter: saturate(1.2);
+}
+
+/* 🪐 ChipiSol → de púrpura cósmico a rosa mágico */
+.aura-chipisol:hover {
+  animation: flicker 2s infinite;
+  box-shadow: 0 0 40px rgba(236,72,153,0.9), 0 0 80px rgba(236,72,153,0.6);
+  filter: brightness(1.25) saturate(1.3);
+}
+
+/* === Animación de entrada para el botón de volver === */
+@keyframes slideInLeftGlow {
+  0% {
+    opacity: 0;
+    transform: translateX(-40px);
+    box-shadow: 0 0 0 rgba(59,130,246,0);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+    box-shadow: 0 0 15px rgba(59,130,246,0.6);
+  }
+}
+.animate-slideInLeftGlow { animation: slideInLeftGlow 0.8s ease-out forwards; }
+
+/* === Animación de salida para el botón de volver === */
+@keyframes slideOutLeftGlow {
+  0% {
+    opacity: 1;
+    transform: translateX(0);
+    box-shadow: 0 0 15px rgba(59,130,246,0.6);
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(-40px);
+    box-shadow: 0 0 0 rgba(59,130,246,0);
+  }
+}
+.animate-slideOutLeftGlow { animation: slideOutLeftGlow 0.6s ease-in forwards; }

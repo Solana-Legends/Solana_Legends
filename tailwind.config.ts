@@ -79,10 +79,41 @@ const config: Config = {
           from: { height: "var(--radix-accordion-content-height)" },
           to: { height: "0" },
         },
+        fadeInUp: {
+          "0%": { opacity: "0", transform: "translateY(24px)" },
+          "100%": { opacity: "1", transform: "translateY(0)" },
+        },
+        slideInLeftGlow: {
+          "0%": {
+            opacity: "0",
+            transform: "translateX(-40px)",
+            boxShadow: "0 0 0 rgba(59,130,246,0)",
+          },
+          "100%": {
+            opacity: "1",
+            transform: "translateX(0)",
+            boxShadow: "0 0 15px rgba(59,130,246,0.6)",
+          },
+        },
+        slideOutLeftGlow: {
+          "0%": {
+            opacity: "1",
+            transform: "translateX(0)",
+            boxShadow: "0 0 15px rgba(59,130,246,0.6)",
+          },
+          "100%": {
+            opacity: "0",
+            transform: "translateX(-40px)",
+            boxShadow: "0 0 0 rgba(59,130,246,0)",
+          },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
+        fadeInUp: "fadeInUp 0.8s ease-out forwards",
+        slideInLeftGlow: "slideInLeftGlow 0.8s ease-out forwards",
+        slideOutLeftGlow: "slideOutLeftGlow 0.6s ease-in forwards",
       },
     },
   },
