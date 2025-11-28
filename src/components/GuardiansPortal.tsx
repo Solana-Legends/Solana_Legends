@@ -1,4 +1,4 @@
-import Link from "next/link";
+import { Link } from "react-router-dom";
 import { useLanguage } from "@/contexts/LanguageContext";
 import LanguageSwitcher from "@/components/LanguageSwitcher";
 import GuardianCard from "@/components/GuardianCard";
@@ -48,7 +48,7 @@ export default function GuardiansPortal() {
       <div className="flex justify-between items-center mb-8">
         <LanguageSwitcher />
         <Link
-          href="/"
+          to="/"
           className="bg-blue-600 hover:bg-blue-700 text-white font-semibold px-4 py-2 rounded"
         >
           {t("common.backHome")}
