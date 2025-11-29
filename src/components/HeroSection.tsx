@@ -51,6 +51,25 @@ export default function HeroSection() {
           {t('hero.tagline')}
         </p>
 
+        {/* 🔹 Logo Voltra con aura dorada y link a X */}
+        <div className="mb-8 flex justify-center relative">
+          <div className="absolute inset-0 flex justify-end items-center pointer-events-none z-0">
+            <div className="w-48 h-48 rounded-full blur-3xl aura-pulsante-gold-strong"></div>
+          </div>
+          <a
+            href="https://x.com/Voltrastudio"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="relative z-10"
+          >
+            <img
+              src="/assets/Voltra.png"
+              alt="Voltra Studio Logo"
+              className="h-24 w-auto md:h-32 object-contain mix-blend-overlay opacity-90 logo-respirando"
+            />
+          </a>
+        </div>
+
         {/* 🔹 Videos */}
         <div className="grid md:grid-cols-2 gap-8 mb-6 -mt-4 max-w-4xl mx-auto">
           <div className="animate-in fade-in slide-in-from-left duration-1000">
