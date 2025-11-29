@@ -38,36 +38,31 @@ export default function HeroSection() {
           </a>
         </div>
 
-        {/* 🔹 Títulos */}
+        {/* Títulos */}
         <h1 className="mt-[-2rem] text-3xl md:text-5xl lg:text-6xl font-bold text-white mb-6 animate-in fade-in slide-in-from-bottom duration-1000">
           {t('hero.title')}
         </h1>
 
+        {/* Frase en una sola línea */}
         <p className="text-xl md:text-2xl text-indigo-200 mb-8 animate-in fade-in slide-in-from-bottom duration-1000 whitespace-nowrap">
-          {t('hero.subtitle')}
+          Únete a nuestra comunidad y elige el guardián que se convertirá en token.
         </p>
 
+        {/* Tagline con 1 cm de espacio hasta los videos (compensado) */}
         <p className="text-lg md:text-xl text-purple-300 mb-[calc(1cm+1rem)] font-medium animate-in fade-in slide-in-from-bottom duration-1000">
-          {t('hero.tagline')}
+          Tres fuerzas elementales. Una comunidad. Un destino.
         </p>
 
-        {/* 🔹 Logo Voltra con aura dorada y link a X */}
-        <div className="mb-8 flex justify-center relative">
+        {/* Imagen Voltra */}
+        <div className="mt-[-9rem] mb-8 flex justify-end relative animate-in fade-in slide-in-from-right duration-1000 mr-[-6rem] translate-x-[4.5rem]">
           <div className="absolute inset-0 flex justify-end items-center pointer-events-none z-0">
             <div className="w-48 h-48 rounded-full blur-3xl aura-pulsante-gold-strong"></div>
           </div>
-          <a
-            href="https://x.com/Voltrastudio"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="relative z-10"
-          >
-            <img
-              src="/assets/Voltra.png"
-              alt="Voltra Studio Logo"
-              className="h-24 w-auto md:h-32 object-contain mix-blend-overlay opacity-90 logo-respirando"
-            />
-          </a>
+          <img
+            src="/assets/Voltra.png"
+            alt="Voltra Studio Logo"
+            className="h-24 w-auto md:h-32 object-contain mix-blend-overlay opacity-90 logo-respirando relative z-10"
+          />
         </div>
 
         {/* 🔹 Videos */}
