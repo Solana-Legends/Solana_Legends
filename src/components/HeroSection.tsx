@@ -54,7 +54,7 @@ export default function HeroSection() {
         </p>
 
         {/* Imagen Voltra */}
-        <div className="mt-[-9rem] mb-8 flex justify-end relative animate-in fade-in slide-in-from-right duration-1000 mr-[-6rem] translate-x-[4.5rem]">
+        <div className="mt-[-9rem] mb-8 flex justify-end relative animate-in fade-in slide-in-from-right duration-1000 mr-[-6rem] translate-x-[2.5rem]">
           <div className="absolute inset-0 flex justify-end items-center pointer-events-none z-0">
             <div className="w-48 h-48 rounded-full blur-3xl aura-pulsante-gold-strong"></div>
           </div>
