@@ -19,7 +19,7 @@ export default function GuardianCard({
 }: GuardianCardProps) {
   const { language, t } = useLanguage();
 
-  // Selección de clase de aura según el guardián
+  // Selección de clase de aura según el guardián (aplicada a la tarjeta para que el hover cambie el color del aura)
   const auraClass =
     id === "zapsol"
       ? "aura-zapsol"
@@ -39,7 +39,7 @@ export default function GuardianCard({
       ? "❄️"
       : "";
 
-  // Color opcional para cada símbolo
+  // Color opcional para cada símbolo (se mantienen los colores asignados)
   const symbolColor =
     id === "zapsol"
       ? "text-yellow-400"
@@ -49,7 +49,7 @@ export default function GuardianCard({
       ? "text-blue-300"
       : "";
 
-  // Clase de animación para el símbolo
+  // Clase de animación para el símbolo (coherente con index.css modificado)
   const symbolAnimation =
     id === "zapsol"
       ? "symbol-zapsol"
@@ -62,18 +62,19 @@ export default function GuardianCard({
   return (
     <div
       data-id={id}
-      className="relative bg-slate-800 rounded-xl p-6 shadow-lg text-left"
+      className={`aura-container relative bg-slate-800 rounded-xl p-6 shadow-lg text-left ${auraClass}`}
     >
-      {/* Imagen con aura personalizada */}
+      {/* Imagen del guardián (sin aura para evitar doble efecto, la aura está en la tarjeta) */}
       <img
         src={image}
         alt={name}
-        className={`absolute top-4 left-4 w-16 h-16 object-contain rounded-md ${auraClass}`}
+        className="absolute top-4 left-4 w-16 h-16 object-contain rounded-md"
       />
 
       {/* Símbolo elemental arriba a la derecha con animación */}
       <div
         className={`absolute top-4 right-4 text-3xl drop-shadow-lg ${symbolColor} ${symbolAnimation}`}
+        aria-hidden="true"
       >
         {elementalSymbol}
       </div>
