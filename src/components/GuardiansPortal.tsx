@@ -50,14 +50,8 @@ const guardians = [
 ];
 
 export default function GuardiansPortal() {
-  const { t, language } = useLanguage(); // ✅ añadimos language
+  const { t } = useLanguage();
   const [exit, setExit] = useState(false);
-
-  // Clase de aura para el footer según idioma
-  const footerAuraClass =
-    language === "es"
-      ? "footer-gradient-spanish" // púrpura ritual
-      : "footer-gradient-english"; // dorado intenso
 
   return (
     <section className="px-4 py-12 md:py-20 bg-gradient-to-b from-slate-950 to-slate-900 text-white">
@@ -116,12 +110,12 @@ export default function GuardiansPortal() {
         </p>
       </div>
 
-      {/* Grid de guardianes */}
+      {/* Grid de guardianes con animación de entrada y hover intensificado */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
         {guardians.map((g, index) => (
           <div
             key={g.id}
-            className="opacity-0 translate-y-6 animate-fadeInUp"
+            className="opacity-0 translate-y-6 animate-fadeInUp hover:scale-105 transition-transform duration-300"
             style={{ animationDelay: `${index * 0.3 + 0.6}s` }}
           >
             <GuardianCard {...g} />
@@ -129,9 +123,9 @@ export default function GuardiansPortal() {
         ))}
       </div>
 
-      {/* Pie de sección con aura diferenciada por idioma */}
-      <footer className={`mt-10 py-6 ${footerAuraClass}`}>
-        <p className="text-center text-sm italic footer-aura">
+      {/* Pie de página con aura en hover (sin barra gris) */}
+      <footer className="mt-10 py-4 ">
+        <p className="text-center text-sm text-yellow-500 italic footer-aura">
           {t("characters.telegramNote")}
         </p>
       </footer>
