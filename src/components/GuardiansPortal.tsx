@@ -123,9 +123,6 @@ export default function GuardiansPortal() {
         ))}
       </div>
 
-      {/* Aura cósmica detrás */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 rounded-full blur-3xl bg-[#FFA908]/20 animate-pulse pointer-events-none z-0" />
-
       {/* Pie de sección con aura ritualizada y franja expansiva debajo */}
       <footer className="mt-10 py-4 ">
         <p className="text-center text-sm text-yellow-500 italic footer-aura">
