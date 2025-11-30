@@ -39,6 +39,16 @@ export default function GuardianCard({
       ? "hero-chipisol"
       : "";
 
+  // Aura en la foto del héroe
+  const heroAura =
+    id === "zapsol"
+      ? "hero-zapsol-aura"
+      : id === "monkesol"
+      ? "hero-monkesol-aura"
+      : id === "chipisol"
+      ? "hero-chipisol-aura"
+      : "";
+
   // Símbolo elemental
   const elementalSymbol =
     id === "zapsol"
@@ -69,21 +79,31 @@ export default function GuardianCard({
       ? "symbol-chipisol"
       : "";
 
+  // Aura del símbolo
+  const symbolAura =
+    id === "zapsol"
+      ? "symbol-zapsol-aura"
+      : id === "monkesol"
+      ? "symbol-monkesol-aura"
+      : id === "chipisol"
+      ? "symbol-chipisol-aura"
+      : "";
+
   return (
     <div
       data-id={id}
       className={`relative bg-slate-800 rounded-xl p-6 shadow-lg text-left ${auraClass}`}
     >
-      {/* Imagen con animación propia */}
+      {/* Imagen con animación + aura */}
       <img
         src={image}
         alt={name}
-        className={`absolute top-4 left-4 w-16 h-16 object-contain rounded-md ${heroAnimation}`}
+        className={`absolute top-4 left-4 w-16 h-16 object-contain rounded-md ${heroAnimation} ${heroAura}`}
       />
 
-      {/* Símbolo elemental arriba a la derecha */}
+      {/* Símbolo elemental arriba a la derecha con aura */}
       <div
-        className={`absolute top-4 right-4 text-3xl drop-shadow-lg ${symbolColor} ${symbolAnimation}`}
+        className={`absolute top-4 right-4 text-3xl drop-shadow-lg ${symbolColor} ${symbolAnimation} ${symbolAura}`}
       >
         {elementalSymbol}
       </div>
