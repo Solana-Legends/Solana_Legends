@@ -54,7 +54,7 @@ export default function GuardiansPortal() {
   const [exit, setExit] = useState(false);
 
   return (
-    <section className="mt-[-2rem] px-4 py-12 md:py-20 bg-gradient-to-b from-slate-950 to-slate-900 text-white">
+    <section className="mt-[-3rem] px-4 py-12 md:py-20 bg-gradient-to-b from-slate-950 to-slate-900 text-white">
       {/* Header con cambio de idioma y volver a home */}
       <div className="flex justify-between items-center mb-8">
         <LanguageSwitcher />
@@ -123,11 +123,12 @@ export default function GuardiansPortal() {
         ))}
       </div>
 
-      {/* Pie de sección con fondo pulsante púrpura-dorado e intensificación en hover */}
+      {/* Pie de sección con aura ritualizada y franja expansiva debajo */}
       <footer className="mt-10 py-6 footer-gradient-animated">
-        <p className="text-center text-sm text-yellow-500 italic footer-aura">
+        <p className="text-center text-sm italic footer-aura-glow">
           {t("characters.telegramNote")}
         </p>
+        <div className="footer-aura-intense" />
       </footer>
     </section>
   );
