@@ -125,10 +125,9 @@ export default function GuardiansPortal() {
 
       {/* Pie de sección con aura ritualizada y franja expansiva debajo */}
       <footer className="mt-10 py-6 footer-gradient-animated">
-        <p className="text-center text-sm italic footer-aura-glow">
+        <p className="text-center text-sm text-white italic footer-aura">
           {t("characters.telegramNote")}
         </p>
-        <div className="footer-aura-intense" />
       </footer>
     </section>
   );
