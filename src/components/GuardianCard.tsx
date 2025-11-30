@@ -19,7 +19,7 @@ export default function GuardianCard({
 }: GuardianCardProps) {
   const { language, t } = useLanguage();
 
-  // Selección de clase de aura según el guardián (aplicada a la tarjeta para que el hover cambie el color del aura)
+  // Aura de la tarjeta (cambia color en hover)
   const auraClass =
     id === "zapsol"
       ? "aura-zapsol"
@@ -29,7 +29,17 @@ export default function GuardianCard({
       ? "aura-chipisol"
       : "";
 
-  // Símbolo elemental según el guardián
+  // Animación en la foto del héroe
+  const heroAnimation =
+    id === "zapsol"
+      ? "hero-zapsol"
+      : id === "monkesol"
+      ? "hero-monkesol"
+      : id === "chipisol"
+      ? "hero-chipisol"
+      : "";
+
+  // Símbolo elemental
   const elementalSymbol =
     id === "zapsol"
       ? "⚡️"
@@ -39,7 +49,7 @@ export default function GuardianCard({
       ? "❄️"
       : "";
 
-  // Color opcional para cada símbolo (se mantienen los colores asignados)
+  // Color del símbolo
   const symbolColor =
     id === "zapsol"
       ? "text-yellow-400"
@@ -49,7 +59,7 @@ export default function GuardianCard({
       ? "text-blue-300"
       : "";
 
-  // Clase de animación para el símbolo (coherente con index.css modificado)
+  // Animación del símbolo
   const symbolAnimation =
     id === "zapsol"
       ? "symbol-zapsol"
@@ -62,24 +72,23 @@ export default function GuardianCard({
   return (
     <div
       data-id={id}
-      className={`aura-container relative bg-slate-800 rounded-xl p-6 shadow-lg text-left ${auraClass}`}
+      className={`relative bg-slate-800 rounded-xl p-6 shadow-lg text-left ${auraClass}`}
     >
-      {/* Imagen del guardián (sin aura para evitar doble efecto, la aura está en la tarjeta) */}
+      {/* Imagen con animación propia */}
       <img
         src={image}
         alt={name}
-        className="absolute top-4 left-4 w-16 h-16 object-contain rounded-md"
+        className={`absolute top-4 left-4 w-16 h-16 object-contain rounded-md ${heroAnimation}`}
       />
 
-      {/* Símbolo elemental arriba a la derecha con animación */}
+      {/* Símbolo elemental arriba a la derecha */}
       <div
         className={`absolute top-4 right-4 text-3xl drop-shadow-lg ${symbolColor} ${symbolAnimation}`}
-        aria-hidden="true"
       >
         {elementalSymbol}
       </div>
 
-      {/* Contenido con margen superior para no solaparse con la imagen */}
+      {/* Contenido */}
       <div className="mt-20">
         <h2 className="text-2xl font-bold">
           {aura} {name}
