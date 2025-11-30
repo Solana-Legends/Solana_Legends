@@ -123,8 +123,8 @@ export default function GuardiansPortal() {
         ))}
       </div>
 
-      {/* Pie de página con aura en hover (sin barra gris) */}
-      <footer className="mt-10 py-4 border-t border-slate-800">
+      {/* Pie de página ritualizado con fondo púrpura-dorado y aura en hover */}
+      <footer className="mt-16 py-6 bg-gradient-to-r from-purple-900 via-fuchsia-700 to-yellow-500">
         <p className="text-center text-sm text-white italic footer-aura">
           {t("characters.telegramNote")}
         </p>

@@ -2,7 +2,7 @@ import React from 'react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
-import { Zap, Brain, Sparkles, Lock, Users, MessageCircle, Twitter } from 'lucide-react';
+import { Zap, Brain, Sparkles, Lock } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { useMetrics } from '@/hooks/useMetrics';
 
@@ -69,13 +69,13 @@ export default function CharacterGallery() {
   const handleVote = (characterName: string) => {
     if (!votingEnabled) return;
     console.log('[VOTE]', characterName);
-    // TODO: aquí irá la acción real de voto
+    // TODO: acción real de voto
   };
 
   const handleViewResults = () => {
     if (!votingEnabled) return;
     console.log('[VIEW_RESULTS]');
-    // TODO: aquí irá la navegación a resultados
+    // TODO: navegación a resultados
   };
 
   const progressPercentage = goal > 0 ? (mainProgress / goal) * 100 : 0;
@@ -207,7 +207,7 @@ export default function CharacterGallery() {
         <div className="text-center mt-12">
           {votingEnabled ? (
             <>
-              <p className="text-white text-lg mb-6">{t('characters.votingActive')}</p>
+              <p className="text-white text-lg mb-6 footer-aura">{t('characters.votingActive')}</p>
               <Button
                 size="lg"
                 variant="outline"
@@ -219,10 +219,10 @@ export default function CharacterGallery() {
             </>
           ) : (
             <>
-              <p className="text-white text-lg mb-4">{t('characters.question')}</p>
+              <p className="text-white text-lg mb-4 footer-aura">{t('characters.question')}</p>
               <div className="flex items-center justify-center gap-2 mb-6">
                 <Lock className="w-5 h-5 text-[#FFA908]" />
-                <p className="text-[#FFA908] font-semibold">
+                <p className="text-[#FFA908] font-semibold footer-aura">
                   {t('characters.votingUnlocked')} {remaining} {t('characters.followersMore')}
                 </p>
               </div>
