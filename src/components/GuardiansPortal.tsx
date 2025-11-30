@@ -54,7 +54,7 @@ export default function GuardiansPortal() {
   const [exit, setExit] = useState(false);
 
   return (
-    <section className="px-4 py-12 md:py-20 bg-gradient-to-b from-slate-950 to-slate-900 text-white">
+    <section className="mt-[-3rem] px-4 py-12 md:py-20 bg-gradient-to-b from-slate-950 to-slate-900 text-white">
       {/* Header con cambio de idioma y volver a home */}
       <div className="flex justify-between items-center mb-8">
         <LanguageSwitcher />
@@ -110,12 +110,12 @@ export default function GuardiansPortal() {
         </p>
       </div>
 
-      {/* Grid de guardianes con animación de entrada y hover intensificado */}
+      {/* Grid de guardianes */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
         {guardians.map((g, index) => (
           <div
             key={g.id}
-            className="opacity-0 translate-y-6 animate-fadeInUp hover:scale-105 transition-transform duration-300"
+            className="opacity-0 translate-y-6 animate-fadeInUp"
             style={{ animationDelay: `${index * 0.3 + 0.6}s` }}
           >
             <GuardianCard {...g} />
@@ -123,7 +123,7 @@ export default function GuardiansPortal() {
         ))}
       </div>
 
-      {/* Pie de página con aura en hover (sin barra gris) */}
+      {/* Pie de sección con aura ritualizada y franja expansiva debajo */}
       <footer className="mt-10 py-4 ">
         <p className="text-center text-sm text-yellow-500 italic footer-aura">
           {t("characters.telegramNote")}
