@@ -41,8 +41,8 @@ export default function SocialLinks() {
   // Texto de compartir adaptado al idioma activo
   const shareText =
     language === 'es'
-      ? '🪐 ¡Descubre Solana Legends! Tres guardianes épicos compiten por convertirse en token. ¿Cuál elegirás? #Solana #Legends #Voltra #Studio #Crypto #Meme '
-      : '🪐 Discover Solana Legends! Three epic guardians compete to become a token. Which will you choose? #Solana #Legends #Voltra #Studio #Crypto #Meme ';
+      ? '🪐 ¡Descubre Solana Legends! Tres guardianes épicos compiten por convertirse en token. ¿Cuál elegirás? #Solana #Legends #Voltra #Studio #Crypto #Meme \n'
+      : '🪐 Discover Solana Legends! Three epic guardians compete to become a token. Which will you choose? #Solana #Legends #Voltra #Studio #Crypto #Meme \n';
 
   const shareUrl = typeof window !== 'undefined' ? window.location.href : '';
 
