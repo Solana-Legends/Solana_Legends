@@ -50,11 +50,17 @@ const guardians = [
 ];
 
 export default function GuardiansPortal() {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage(); // ✅ añadimos language
   const [exit, setExit] = useState(false);
 
+  // Clase de aura para el footer según idioma
+  const footerAuraClass =
+    language === "es"
+      ? "footer-gradient-spanish" // púrpura ritual
+      : "footer-gradient-english"; // dorado intenso
+
   return (
-    <section className="mt-[-3rem] px-4 py-12 md:py-20 bg-gradient-to-b from-slate-950 to-slate-900 text-white">
+    <section className="px-4 py-12 md:py-20 bg-gradient-to-b from-slate-950 to-slate-900 text-white">
       {/* Header con cambio de idioma y volver a home */}
       <div className="flex justify-between items-center mb-8">
         <LanguageSwitcher />
@@ -123,9 +129,9 @@ export default function GuardiansPortal() {
         ))}
       </div>
 
-      {/* Pie de sección con aura ritualizada y franja expansiva debajo */}
-      <footer className="mt-10 py-6 footer-gradient-animated">
-        <p className="text-center text-sm text-white italic footer-aura">
+      {/* Pie de sección con aura diferenciada por idioma */}
+      <footer className={`mt-10 py-6 ${footerAuraClass}`}>
+        <p className="text-center text-sm italic footer-aura">
           {t("characters.telegramNote")}
         </p>
       </footer>
