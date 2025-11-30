@@ -54,7 +54,7 @@ export default function GuardiansPortal() {
   const [exit, setExit] = useState(false);
 
   return (
-    <section className="px-4 py-12 md:py-20 bg-gradient-to-b from-slate-950 to-slate-900 text-white">
+    <section className="mt-[-2rem] px-4 py-12 md:py-20 bg-gradient-to-b from-slate-950 to-slate-900 text-white">
       {/* Header con cambio de idioma y volver a home */}
       <div className="flex justify-between items-center mb-8">
         <LanguageSwitcher />
