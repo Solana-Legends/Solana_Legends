@@ -9,8 +9,8 @@ const guardians = [
     id: "zapsol",
     name: "ZapSol",
     title: {
-     en: "The Lightning Guardian",
-     es: "El guardián del rayo",
+      en: "The Lightning Guardian",
+      es: "El guardián del rayo",
     },
     aura: "⚡",
     image: "/images/guardians/Zap.png",
@@ -22,7 +22,7 @@ const guardians = [
   {
     id: "monkesol",
     name: "MonkeSol",
-    title:  {
+    title: {
       en: "The Ancient Sage",
       es: "El antiguo sabio",
     },
@@ -55,7 +55,7 @@ export default function GuardiansPortal() {
 
   return (
     <section className="px-4 py-12 md:py-20 bg-gradient-to-b from-slate-950 to-slate-900 text-white">
-      {/* 🔹 Header con cambio de idioma y volver a home */}
+      {/* Header con cambio de idioma y volver a home */}
       <div className="flex justify-between items-center mb-8">
         <LanguageSwitcher />
 
@@ -80,7 +80,7 @@ export default function GuardiansPortal() {
         </Link>
       </div>
 
-      {/* 🔹 Breadcrumb ritualizado con animación */}
+      {/* Breadcrumb ritualizado con animación */}
       <nav
         className="text-sm text-blue-300 mb-6 flex items-center gap-2 px-1 md:px-0 opacity-0 translate-y-3 animate-fadeInUp"
         style={{ animationDelay: "0.2s" }}
@@ -97,8 +97,11 @@ export default function GuardiansPortal() {
         </span>
       </nav>
 
-      {/* 🔹 Encabezado ritualizado con animación */}
-      <div className="max-w-6xl mx-auto text-center opacity-0 translate-y-3 animate-fadeInUp" style={{ animationDelay: "0.4s" }}>
+      {/* Encabezado ritualizado con animación */}
+      <div
+        className="max-w-6xl mx-auto text-center opacity-0 translate-y-3 animate-fadeInUp"
+        style={{ animationDelay: "0.4s" }}
+      >
         <h1 className="text-4xl md:text-6xl font-bold mb-2">
           {t("hero.viewGuardians")}
         </h1>
@@ -107,7 +110,7 @@ export default function GuardiansPortal() {
         </p>
       </div>
 
-      {/* 🔹 Grid de guardianes con animación de entrada y hover intensificado */}
+      {/* Grid de guardianes con animación de entrada y hover intensificado */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
         {guardians.map((g, index) => (
           <div
@@ -120,10 +123,12 @@ export default function GuardiansPortal() {
         ))}
       </div>
 
-      {/* 🔹 Pie de página con fondo y hover */}
-      <p className="text-center text-sm text-blue-300 mt-10 italic bg-slate-900 py-4 hover:bg-slate-800 hover:text-blue-200 transition">
-        {t("characters.telegramNote")}
-      </p>
+      {/* Pie de página con aura en hover (sin barra gris) */}
+      <footer className="mt-10 py-4 border-t border-slate-800">
+        <p className="text-center text-sm text-white italic footer-aura">
+          {t("characters.telegramNote")}
+        </p>
+      </footer>
     </section>
   );
 }
