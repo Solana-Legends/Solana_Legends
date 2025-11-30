@@ -5,7 +5,7 @@ import { useLanguage } from '@/contexts/LanguageContext';
 import { useMetrics } from '@/hooks/useMetrics';
 
 export default function SocialLinks() {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
   const { metrics } = useMetrics();
 
   const socialPlatforms = [
@@ -38,8 +38,12 @@ export default function SocialLinks() {
     },
   ];
 
+  // Texto de compartir adaptado al idioma activo
   const shareText =
-    '🪐 ¡Descubre Solana Legends! Tres guardianes épicos compiten por convertirse en token. ¿Cuál elegirás? #SolanaLegends #Crypto #Meme';
+    language === 'es'
+      ? '🪐 ¡Descubre Solana Legends! Tres guardianes épicos compiten por convertirse en token. ¿Cuál elegirás? #Solana #Legends #Voltra #Studio #Crypto #Meme\nhttps://solana-legends.vercel.app'
+      : '🪐 Discover Solana Legends! Three epic guardians compete to become a token. Which will you choose? #Solana #Legends #Voltra #Studio #Crypto #Meme\nhttps://solana-legends.vercel.app';
+
   const shareUrl = typeof window !== 'undefined' ? window.location.href : '';
 
   const handleShare = (platform: string) => {
