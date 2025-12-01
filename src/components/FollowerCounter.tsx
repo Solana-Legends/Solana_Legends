@@ -1,12 +1,18 @@
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { Badge } from '@/components/ui/badge';
-import { Users, MessageCircle, Twitter } from 'lucide-react';
-import { useLanguage } from '@/contexts/LanguageContext';
-import { useMetrics } from '@/hooks/useMetrics';
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+import { Users, MessageCircle, Twitter } from "lucide-react";
+import { useLanguage } from "@/contexts/LanguageContext";
+import { useMetrics } from "@/hooks/useMetrics";
 
 export default function FollowerCounter() {
   const { t } = useLanguage();
-  const { metrics, goal, isLoading, mainProgress, remaining, topSource } = useMetrics();
+  const { metrics, goal, isLoading, mainProgress, remaining } = useMetrics();
 
   const progressPercentage = goal > 0 ? (mainProgress / goal) * 100 : 0;
 
@@ -18,11 +24,9 @@ export default function FollowerCounter() {
       <div className="relative z-10 max-w-4xl mx-auto">
         <div className="text-center mb-12">
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
-            {t('progress.title')}
+            {t("progress.title")}
           </h2>
-          <p className="text-indigo-200 text-lg">
-            {t('progress.subtitle')}
-          </p>
+          <p className="text-indigo-200 text-lg">{t("progress.subtitle")}</p>
         </div>
 
         {/* Progreso principal */}
@@ -30,18 +34,24 @@ export default function FollowerCounter() {
           <CardHeader className="text-center">
             <CardTitle className="text-2xl text-white flex items-center justify-center gap-2">
               <Twitter className="h-6 w-6 text-blue-400" />
-              Progreso Principal ({topSource})
+              {t("progress.mainProgressLabel").replace("{source}", "X/Twitter")}
             </CardTitle>
             <CardDescription className="text-purple-300">
-              {isLoading ? '...' : `${mainProgress} / ${goal} ${t('progress.followers')} (${progressPercentage.toFixed(1)}%)`}
+              {isLoading
+                ? "..."
+                : `${mainProgress} / ${goal} ${t(
+                    "progress.followers"
+                  )} (${progressPercentage.toFixed(1)}%)`}
             </CardDescription>
           </CardHeader>
           <CardContent className="space-y-6">
             <div className="space-y-2">
               <div className="flex justify-between text-sm">
-                <span className="text-purple-300">{t('progress.towardsVoting')}</span>
+                <span className="text-purple-300">
+                  {t("progress.towardsVoting")}
+                </span>
                 <span className="text-[#FFA908] font-semibold">
-                  {isLoading ? '...' : `${mainProgress}/${goal}`}
+                  {isLoading ? "..." : `${mainProgress}/${goal}`}
                 </span>
               </div>
               <div className="relative w-full h-3 rounded-full border border-[#FFA908]/40 bg-[#1A1530] overflow-hidden">
@@ -54,7 +64,8 @@ export default function FollowerCounter() {
 
             <div className="text-center">
               <Badge className="bg-gradient-to-r from-yellow-400 to-orange-500 text-white border-0 px-4 py-2 shadow-[0_0_15px_#FFA908] text-lg">
-                🔥 {t('progress.missing')} {remaining} {t('progress.forVoting')} — {t('progress.ritualSoon')}
+                🔥 {t("progress.missing")} {remaining} {t("progress.forVoting")}{" "}
+                — {t("progress.ritualSoon")}
               </Badge>
             </div>
           </CardContent>
@@ -68,21 +79,27 @@ export default function FollowerCounter() {
               <div className="flex justify-center mb-2">
                 <Twitter className="h-8 w-8 text-blue-400" />
               </div>
-              <CardTitle className="text-white">{t('progress.twitter')}</CardTitle>
-              <CardDescription className="text-purple-300">@EligeTuMeme</CardDescription>
+              <CardTitle className="text-white">
+                {t("progress.twitter")}
+              </CardTitle>
+              <CardDescription className="text-purple-300">
+                @EligeTuMeme
+              </CardDescription>
             </CardHeader>
             <CardContent className="text-center">
               <div className="text-3xl font-bold text-blue-400 mb-2">
-                {isLoading ? '...' : metrics.twitter}
+                {isLoading ? "..." : metrics.twitter}
               </div>
-              <p className="text-sm text-purple-300 mb-4">{t('progress.followers')}</p>
+              <p className="text-sm text-purple-300 mb-4">
+                {t("progress.followers")}
+              </p>
               <a
                 href="https://x.com/EligeTuMeme"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center w-full bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg transition-all duration-300 aura-hover aura-pulsante"
               >
-                {t('progress.follow')}
+                {t("progress.follow")}
               </a>
             </CardContent>
           </Card>
@@ -93,21 +110,27 @@ export default function FollowerCounter() {
               <div className="flex justify-center mb-2">
                 <Users className="h-8 w-8 text-purple-400" />
               </div>
-              <CardTitle className="text-white">{t('progress.community')}</CardTitle>
-              <CardDescription className="text-purple-300">Solana Legends</CardDescription>
+              <CardTitle className="text-white">
+                {t("progress.community")}
+              </CardTitle>
+              <CardDescription className="text-purple-300">
+                Solana Legends
+              </CardDescription>
             </CardHeader>
             <CardContent className="text-center">
               <div className="text-3xl font-bold text-purple-400 mb-2">
-                {isLoading ? '...' : metrics.community}
+                {isLoading ? "..." : metrics.community}
               </div>
-              <p className="text-sm text-purple-300 mb-4">{t('progress.members')}</p>
+              <p className="text-sm text-purple-300 mb-4">
+                {t("progress.members")}
+              </p>
               <a
                 href="https://x.com/i/communities/1976865385971360174"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center w-full bg-purple-600 hover:bg-purple-700 text-white px-4 py-2 rounded-lg transition-all duration-300 aura-hover aura-pulsante"
               >
-                {t('progress.joinCommunity')}
+                {t("progress.joinCommunity")}
               </a>
             </CardContent>
           </Card>
@@ -118,21 +141,27 @@ export default function FollowerCounter() {
               <div className="flex justify-center mb-2">
                 <MessageCircle className="h-8 w-8 text-cyan-400" />
               </div>
-              <CardTitle className="text-white">{t('progress.telegram')}</CardTitle>
-              <CardDescription className="text-purple-300">{t('progress.officialGroup')}</CardDescription>
+              <CardTitle className="text-white">
+                {t("progress.telegram")}
+              </CardTitle>
+              <CardDescription className="text-purple-300">
+                {t("progress.officialGroup")}
+              </CardDescription>
             </CardHeader>
             <CardContent className="text-center">
               <div className="text-3xl font-bold text-cyan-400 mb-2">
-                {isLoading ? '...' : metrics.telegram}
+                {isLoading ? "..." : metrics.telegram}
               </div>
-              <p className="text-sm text-purple-300 mb-4">{t('progress.members')}</p>
+              <p className="text-sm text-purple-300 mb-4">
+                {t("progress.members")}
+              </p>
               <a
                 href="https://t.me/EligeTuMeme/1"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center w-full bg-cyan-600 hover:bg-cyan-700 text-white px-4 py-2 rounded-lg transition-all duration-300 aura-hover aura-pulsante"
               >
-                {t('progress.joinTelegram')}
+                {t("progress.joinTelegram")}
               </a>
             </CardContent>
           </Card>
@@ -141,15 +170,22 @@ export default function FollowerCounter() {
         {/* 🔮 Mensaje ritualizado centrado */}
         <div className="text-center mt-8">
           <p className="text-sm text-zinc-400 italic animate-fadeIn animate-pulseSlow">
-            {t('progress.renewalMessage')}
+            {t("progress.renewalMessage")}
           </p>
         </div>
 
-        {/* Cierre ritual */}
+        {/* Cierre ritual condicionado */}
         <div className="text-center mt-4">
-          <p className="text-indigo-200 text-sm italic">
-            🔮 {t('progress.voteMessageRitual')}
-          </p>
+          {!isLoading && mainProgress < goal && (
+            <p className="text-indigo-200 text-sm italic">
+              🔥 {t("progress.ritualSoon")}
+            </p>
+          )}
+          {!isLoading && mainProgress >= goal && (
+            <p className="text-indigo-200 text-sm italic">
+              🔮 {t("progress.voteMessageRitual")}
+            </p>
+          )}
         </div>
       </div>
     </section>
