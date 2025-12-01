@@ -491,78 +491,7 @@ video {
   background: linear-gradient(to right, #fbbf24, #f59e0b);
 }
 
-/* === Gradiente animado púrpura + dorado (vertical) === */
-@keyframes pulse-gradient-gold-purple-vertical {
-  0% {
-    background: linear-gradient(to bottom, #4c1d95, #6d28d9);
-  } /* púrpura arriba */
-  50% {
-    background: linear-gradient(to bottom, #f59e0b, #d97706);
-  } /* dorado arriba */
-  100% {
-    background: linear-gradient(to bottom, #4c1d95, #6d28d9);
-  }
-}
-.section-gradient-gold-purple-vertical {
-  animation: pulse-gradient-gold-purple-vertical 6s ease-in-out infinite;
-  transition: background 0.6s ease-in-out;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-.section-gradient-gold-purple-vertical:hover {
-  background: linear-gradient(
-    to bottom,
-    #fbbf24,
-    #9333ea
-  ); /* dorado + púrpura intenso */
-}
-
-/* === Gradiente animado azul + rojo (vertical) === */
-@keyframes pulse-gradient-blue-red-vertical {
-  0% {
-    background: linear-gradient(to bottom, #1e3a8a, #3b82f6);
-  } /* azul arriba */
-  50% {
-    background: linear-gradient(to bottom, #dc2626, #ef4444);
-  } /* rojo arriba */
-  100% {
-    background: linear-gradient(to bottom, #1e3a8a, #3b82f6);
-  }
-}
-.section-gradient-blue-red-vertical {
-  animation: pulse-gradient-blue-red-vertical 6s ease-in-out infinite;
-  transition: background 0.6s ease-in-out;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-.section-gradient-blue-red-vertical:hover {
-  background: linear-gradient(to bottom, #ef4444, #3b82f6);
-}
-
-/* === Gradiente animado naranja + verde (vertical) === */
-@keyframes pulse-gradient-orange-green-vertical {
-  0% {
-    background: linear-gradient(to bottom, #ea580c, #f97316);
-  } /* naranja arriba */
-  50% {
-    background: linear-gradient(to bottom, #16a34a, #22c55e);
-  } /* verde arriba */
-  100% {
-    background: linear-gradient(to bottom, #ea580c, #f97316);
-  }
-}
-.section-gradient-orange-green-vertical {
-  animation: pulse-gradient-orange-green-vertical 6s ease-in-out infinite;
-  transition: background 0.6s ease-in-out;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-.section-gradient-orange-green-vertical:hover {
-  background: linear-gradient(to bottom, #22c55e, #f97316);
-}
-
-/* === Gradientes animados reutilizables para secciones === */
-/* Púrpura + dorado */
+/* === Gradientes animados reutilizables para secciones (horizontales) === */
 @keyframes pulse-gradient-gold-purple {
   0% {
     background: linear-gradient(to right, #4c1d95, #6d28d9);
@@ -584,7 +513,6 @@ video {
   background: linear-gradient(to right, #fbbf24, #9333ea);
 }
 
-/* Azul + rojo */
 @keyframes pulse-gradient-blue-red {
   0% {
     background: linear-gradient(to right, #1e3a8a, #3b82f6);
@@ -606,7 +534,6 @@ video {
   background: linear-gradient(to right, #ef4444, #3b82f6);
 }
 
-/* Naranja + verde */
 @keyframes pulse-gradient-orange-green {
   0% {
     background: linear-gradient(to right, #ea580c, #f97316);
@@ -628,88 +555,86 @@ video {
   background: linear-gradient(to right, #22c55e, #f97316);
 }
 
-/* === Aura de tarjeta genérica pulsante === */
-@keyframes pulse-card {
-  0%,
-  100% {
-    box-shadow: 0 0 25px rgba(255, 168, 8, 0.6),
-      0 0 50px rgba(160, 32, 240, 0.4);
-  }
-  50% {
-    box-shadow: 0 0 40px rgba(255, 168, 8, 0.9),
-      0 0 80px rgba(160, 32, 240, 0.6);
-  }
+/* === Bordes ritualizados arriba y abajo por aura === */
+.section-border-gold-purple {
+  position: relative;
 }
-.card-aura {
-  animation: pulse-card 6s ease-in-out infinite;
-  transition: box-shadow 0.5s ease-in-out, transform 0.3s ease-in-out;
-  border-radius: 1rem;
+.section-border-gold-purple::before,
+.section-border-gold-purple::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 12px;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.4s ease-in-out;
 }
-.card-aura:hover {
-  box-shadow: 0 0 60px rgba(255, 168, 8, 1), 0 0 120px rgba(255, 255, 255, 0.9);
-  transform: scale(1.05);
+.section-border-gold-purple::before {
+  top: 0;
+  background: linear-gradient(to right, #fbbf24, #9333ea);
 }
-
-/* === Auras diferenciadas por guardián (pulsantes + hover) === */
-@keyframes pulse-zapsol {
-  0%,
-  100% {
-    box-shadow: 0 0 25px rgba(56, 189, 248, 0.7),
-      0 0 50px rgba(56, 189, 248, 0.4);
-  }
-  50% {
-    box-shadow: 0 0 40px rgba(255, 255, 255, 0.9),
-      0 0 80px rgba(56, 189, 248, 0.6);
-  }
+.section-border-gold-purple::after {
+  bottom: 0;
+  background: linear-gradient(to right, #9333ea, #fbbf24);
 }
-.card-aura-zapsol {
-  animation: pulse-zapsol 6s ease-in-out infinite;
-  transition: box-shadow 0.5s ease-in-out, transform 0.3s ease-in-out;
-  border-radius: 1rem;
-}
-.card-aura-zapsol:hover {
-  box-shadow: 0 0 60px rgba(56, 189, 248, 1), 0 0 120px rgba(255, 255, 255, 0.9);
-  transform: scale(1.05);
+.section-border-gold-purple:hover::before,
+.section-border-gold-purple:hover::after {
+  opacity: 1;
 }
 
-@keyframes pulse-monkesol {
-  0%,
-  100% {
-    box-shadow: 0 0 25px rgba(239, 68, 68, 0.7), 0 0 50px rgba(239, 68, 68, 0.4);
-  }
-  50% {
-    box-shadow: 0 0 40px rgba(255, 168, 8, 0.9), 0 0 80px rgba(239, 68, 68, 0.6);
-  }
+.section-border-blue-red {
+  position: relative;
 }
-.card-aura-monkesol {
-  animation: pulse-monkesol 6s ease-in-out infinite;
-  transition: box-shadow 0.5s ease-in-out, transform 0.3s ease-in-out;
-  border-radius: 1rem;
+.section-border-blue-red::before,
+.section-border-blue-red::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 12px;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.4s ease-in-out;
 }
-.card-aura-monkesol:hover {
-  box-shadow: 0 0 60px rgba(255, 168, 8, 1), 0 0 120px rgba(255, 255, 255, 0.9);
-  transform: scale(1.05);
+.section-border-blue-red::before {
+  top: 0;
+  background: linear-gradient(to right, #3b82f6, #ef4444);
+}
+.section-border-blue-red::after {
+  bottom: 0;
+  background: linear-gradient(to right, #ef4444, #3b82f6);
+}
+.section-border-blue-red:hover::before,
+.section-border-blue-red:hover::after {
+  opacity: 1;
 }
 
-@keyframes pulse-chipisol {
-  0%,
-  100% {
-    box-shadow: 0 0 25px rgba(192, 132, 252, 0.7),
-      0 0 50px rgba(192, 132, 252, 0.4);
-  }
-  50% {
-    box-shadow: 0 0 40px rgba(236, 72, 153, 0.9),
-      0 0 80px rgba(192, 132, 252, 0.6);
-  }
+.section-border-orange-green {
+  position: relative;
 }
-.card-aura-chipisol {
-  animation: pulse-chipisol 6s ease-in-out infinite;
-  transition: box-shadow 0.5s ease-in-out, transform 0.3s ease-in-out;
-  border-radius: 1rem;
+.section-border-orange-green::before,
+.section-border-orange-green::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 12px;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.4s ease-in-out;
 }
-.card-aura-chipisol:hover {
-  box-shadow: 0 0 60px rgba(236, 72, 153, 1), 0 0 120px rgba(255, 255, 255, 0.9);
-  transform: scale(1.05);
+.section-border-orange-green::before {
+  top: 0;
+  background: linear-gradient(to right, #f97316, #22c55e);
+}
+.section-border-orange-green::after {
+  bottom: 0;
+  background: linear-gradient(to right, #22c55e, #f97316);
+}
+.section-border-orange-green:hover::before,
+.section-border-orange-green:hover::after {
+  opacity: 1;
 }
 
 /* === Footer por idioma (púrpura en ES, dorado en EN) === */

@@ -10,7 +10,7 @@ export default function HeroSection() {
   const navigate = useNavigate();
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-[#0F0B1E] via-[#1A1530] to-[#0F0B1E] overflow-hidden">
+    <section className="section-border-orange-green relative min-h-screen flex items-center justify-center bg-gradient-to-br from-[#0F0B1E] via-[#1A1530] to-[#0F0B1E] overflow-hidden">
       {/* Fondo cósmico animado */}
       <div className="absolute inset-0 opacity-20">
         <div className="absolute top-1/4 left-1/4 w-32 h-32 bg-purple-500 rounded-full blur-3xl animate-pulse"></div>
@@ -33,8 +33,7 @@ export default function HeroSection() {
             <img
               src="/assets/LogoPremium1.png"
               alt="Solana Legends Logo"
-              className="h-24 w-auto md:h-32 object-contain animate-in fade-in slide-in-from-top duration-1000 
-      mix-blend-overlay opacity-90 logo-respirando"
+              className="h-24 w-auto md:h-32 object-contain animate-in fade-in slide-in-from-top duration-1000 mix-blend-overlay opacity-90 logo-respirando"
             />
           </a>
         </div>
@@ -61,7 +60,7 @@ export default function HeroSection() {
             {/* Aura dorada pulsante */}
             <div className="absolute w-48 h-48 rounded-full blur-3xl aura-pulsante-gold-strong z-0 pointer-events-none"></div>
 
-            {/* Logo Voltra centrado */}
+            {/* Logo Voltra centrado a la derecha*/}
             <a
               href="https://x.com/Voltrastudio"
               target="_blank"
