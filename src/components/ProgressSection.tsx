@@ -18,7 +18,7 @@ export default function ProgressSection() {
   } = useMetrics();
 
   return (
-    <section className="relative max-w-2xl mx-auto px-4 pt-4 pb-2">
+    <section className="relative max-w-2xl mx-auto px-4 pt-4 pb-0">
       <h2 className="text-xl font-bold text-zinc-100 mb-2">{t('progress.title')}</h2>
       <p className="text-sm text-zinc-400 mb-6">{t('progress.subtitle')}</p>
 
@@ -26,16 +26,19 @@ export default function ProgressSection() {
       {!isLoading && (
         <div className="mb-6">
           <p className="text-zinc-300 mb-1">
-            Progreso Principal ({topSource}): {mainProgress} / {goal}
+            {t('progress.mainProgressLabel')
+              .replace('{source}', topSource)
+              .replace('{current}', mainProgress.toString())
+              .replace('{goal}', goal.toString())}
           </p>
           <ProgressBar percent={(mainProgress / goal) * 100} aura={mainProgress >= goal} />
           {mainProgress < goal ? (
             <p className="text-amber-400 font-medium mt-1">
-              ¡Faltan {remaining} seguidores para la votación! — El fuego se activará pronto
+              {t('progress.remainingFollowers').replace('{remaining}', remaining.toString())}
             </p>
           ) : (
             <p className="text-amber-400 font-medium mt-1">
-              ✨ ¡{topSource} ha encendido el fuego ritual! La votación está activa
+              {t('progress.fireActivated').replace('{source}', topSource)}
             </p>
           )}
         </div>
@@ -44,7 +47,9 @@ export default function ProgressSection() {
       {/* Twitter */}
       <div className="mb-4">
         <p className="text-zinc-300 mb-1">
-          Twitter/X: {isLoading ? '...' : `${metrics.twitter} / ${goal} seguidores`}
+          {t('progress.twitterLabel')
+            .replace('{current}', metrics.twitter.toString())
+            .replace('{goal}', goal.toString())}
         </p>
         <ProgressBar percent={(metrics.twitter / goal) * 100} aura={twitterReady} />
         {twitterReady && !isLoading && (
@@ -55,7 +60,9 @@ export default function ProgressSection() {
       {/* Telegram */}
       <div className="mb-4">
         <p className="text-zinc-300 mb-1">
-          Telegram: {isLoading ? '...' : `${metrics.telegram} / ${goal} miembros`}
+          {t('progress.telegramLabel')
+            .replace('{current}', metrics.telegram.toString())
+            .replace('{goal}', goal.toString())}
         </p>
         <ProgressBar percent={(metrics.telegram / goal) * 100} aura={telegramReady} />
         {telegramReady && !isLoading && (
@@ -66,7 +73,9 @@ export default function ProgressSection() {
       {/* Comunidad X */}
       <div className="mb-4">
         <p className="text-zinc-300 mb-1">
-          Comunidad X: {isLoading ? '...' : `${metrics.community} / ${goal} miembros`}
+          {t('progress.communityLabel')
+            .replace('{current}', metrics.community.toString())
+            .replace('{goal}', goal.toString())}
         </p>
         <ProgressBar percent={(metrics.community / goal) * 100} aura={communityReady} />
         {communityReady && !isLoading && (
@@ -78,13 +87,13 @@ export default function ProgressSection() {
       {votingEnabled && !isLoading && (
         <div className="mt-6 flex flex-col sm:flex-row gap-4">
           <button
-            aria-label="Votar en la ritualización"
+            aria-label={t('progress.voteButton')}
             className="px-4 py-2 rounded-md bg-amber-500 text-black font-semibold hover:bg-amber-400 transition-all shadow-md shadow-amber-700"
           >
             {t('progress.voteButton')}
           </button>
           <button
-            aria-label="Proponer una nueva leyenda"
+            aria-label={t('progress.proposeLegend')}
             className="px-4 py-2 rounded-md bg-zinc-800 text-zinc-100 border border-zinc-600 hover:border-amber-400 transition-all"
           >
             {t('progress.proposeLegend')}

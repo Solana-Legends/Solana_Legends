@@ -54,6 +54,16 @@ const enTranslations = {
   // Progress
   'progress.title': 'Community Progress',
   'progress.subtitle': 'Tracking the collective fire in each guardian',
+
+  // 🔹 Nuevas claves dinámicas
+  'progress.mainProgressLabel': 'Main Progress ({source}): {current} / {goal}',
+  'progress.remainingFollowers': '{remaining} followers left until the vote — the fire will ignite soon',
+  'progress.fireActivated': '✨ {source} has ignited the ritual fire! Voting is now active',
+  'progress.twitterLabel': 'Twitter/X: {current} / {goal} followers',
+  'progress.telegramLabel': 'Telegram: {current} / {goal} members',
+  'progress.communityLabel': 'X Community: {current} / {goal} members',
+
+  // Claves existentes
   'progress.mainProgress': 'Main Progress (X/Twitter)',
   'progress.followers': 'followers',
   'progress.towardsVoting': 'Progress towards voting',
@@ -120,7 +130,7 @@ const enTranslations = {
   'social.joinTelegram': 'Join the official Telegram',
   'social.telegramNote': '🕰️ At every dawn and dusk, the numbers renew to reflect the living energy of the collective fire',
 
-  // ✅ Common Section (añadido)
+  // ✅ Common Section
   'common.home': 'Home',
   'common.backHome': 'Back to home',
 } as const;
@@ -172,6 +182,16 @@ const esTranslations = {
   // Progress
   'progress.title': 'Progreso de la Comunidad',
   'progress.subtitle': 'Seguimos el fuego colectivo en cada guardián',
+
+  // 🔹 Nuevas claves dinámicas
+  'progress.mainProgressLabel': 'Progreso Principal ({source}): {current} / {goal}',
+  'progress.remainingFollowers': '¡Faltan {remaining} seguidores para la votación! — El fuego se activará pronto',
+  'progress.fireActivated': '✨ ¡{source} ha encendido el fuego ritual! La votación está activa',
+  'progress.twitterLabel': 'Twitter/X: {current} / {goal} seguidores',
+  'progress.telegramLabel': 'Telegram: {current} / {goal} miembros',
+  'progress.communityLabel': 'Comunidad X: {current} / {goal} miembros',
+
+  // Claves existentes
   'progress.mainProgress': 'Progreso Principal (X/Twitter)',
   'progress.followers': 'seguidores',
   'progress.towardsVoting': 'Progreso hacia la votación',
@@ -238,7 +258,7 @@ const esTranslations = {
   'social.joinTelegram': 'Unirse al Telegram oficial',
   'social.telegramNote': '🕰️ Cada amanecer y cada ocaso, las cifras se renuevan para reflejar la energía viva del fuego colectivo',
 
-  // ✅ Common Section (añadido)
+  // ✅ Common Section
   'common.home': 'Inicio',
   'common.backHome': 'Volver al inicio',
 } as const;
