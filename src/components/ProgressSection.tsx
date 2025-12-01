@@ -18,7 +18,7 @@ export default function ProgressSection() {
   } = useMetrics();
 
   return (
-    <section className="relative max-w-2xl mx-auto px-4 pt-4 pb8">
+    <section className="relative max-w-2xl mx-auto px-4 pt-4 pb-0">
       <h2 className="text-xl font-bold text-zinc-100 mb-2">{t('progress.title')}</h2>
       <p className="text-sm text-zinc-400 mb-6">{t('progress.subtitle')}</p>
 
@@ -108,8 +108,15 @@ export default function ProgressSection() {
         </div>
       )}
 
-      {/* 🔮 Cierre ritual (solo cuando se alcanza la meta) */}
-      {mainProgress >= goal && !isLoading && (
+      {/* 🔮 Cierre ritual */}
+      {!isLoading && mainProgress < goal && (
+        <p className="mt-1 text-sm text-zinc-300 text-center">
+          <span className="inline-block mr-2 h-2 w-2 rounded-full bg-amber-400 animate-pulse" />
+          {t('progress.ritualSoon')}
+        </p>
+      )}
+
+      {!isLoading && mainProgress >= goal && (
         <p className="mt-1 text-sm text-zinc-300 text-center">
           <span className="inline-block mr-2 h-2 w-2 rounded-full bg-amber-400 animate-pulse" />
           {t('progress.voteMessageRitual')}
@@ -117,7 +124,7 @@ export default function ProgressSection() {
       )}
 
       {/* Imagen ZapSol con aura perfectamente centrada y alineada */}
-      <div className="relative flex justify-end items-center mt-[-6rem] mr-[-24rem] mb-0 translate-y-[-16rem] animate-in fade-in slide-in-from-right duration-1000">
+      <div className="absolute right-0 bottom-0 flex justify-center items-center w-80 h-80 animate-in fade-in slide-in-from-right duration-1000">
         <div className="relative z-10 flex justify-center items-center w-80 h-80">
           {/* Aura dorada pulsante */}
           <div className="absolute w-80 h-80 rounded-full blur-3xl aura-pulsante-gold-strong pointer-events-none z-0"></div>
