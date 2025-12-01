@@ -56,21 +56,25 @@ export default function HeroSection() {
 
         {/* Imagen Voltra */}
         <div className="mt-[-9rem] mb-8 flex justify-end relative animate-in fade-in slide-in-from-right duration-1000 mr-[-8rem] translate-x-[-2rem]">
-          <div className="absolute inset-0 flex justify-center items-center pointer-events-none z-0">
-            <div className="w-48 h-48 rounded-full blur-3xl aura-pulsante-gold-strong"></div>
+          {/* Bloque aura + logo */}
+          <div className="relative flex justify-center items-center w-48 h-48">
+            {/* Aura dorada pulsante */}
+            <div className="absolute w-48 h-48 rounded-full blur-3xl aura-pulsante-gold-strong z-0 pointer-events-none"></div>
+
+            {/* Logo Voltra centrado */}
+            <a
+              href="https://x.com/Voltrastudio"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="relative z-10 flex justify-center items-center"
+            >
+              <img
+                src="/assets/Voltra.png"
+                alt="Voltra Studio Logo"
+                className="h-24 w-auto md:h-32 object-contain mix-blend-overlay opacity-90 logo-respirando"
+              />
+            </a>
           </div>
-          <a
-            href="https://x.com/Voltrastudio"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="relative z-10 flex justify-center items-center"
-          >
-            <img
-              src="/assets/Voltra.png"
-              alt="Voltra Studio Logo"
-              className="h-24 w-auto md:h-32 object-contain mix-blend-overlay opacity-90 logo-respirando"
-            />
-          </a>
         </div>
 
         {/* Videos */}

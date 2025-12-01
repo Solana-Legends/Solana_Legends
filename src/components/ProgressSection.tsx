@@ -107,19 +107,18 @@ export default function ProgressSection() {
         </p>
       )}
 
-      {/* Imagen ZapSol centrada dentro del aura */}
-      <div className="mt-[-6rem] mb-8 flex justify-end relative animate-in fade-in slide-in-from-right duration-1000 mr-[-6rem]">
-        {/* Aura dorada pulsante */}
-        <div className="absolute inset-0 flex justify-center items-center pointer-events-none z-0">
-          <div className="w-80 h-80 rounded-full blur-3xl aura-pulsante-gold-strong"></div>
-        </div>
+      {/* Imagen ZapSol con aura perfectamente centrada y más arriba/derecha */}
+      <div className="relative flex justify-end items-start mt-[-4rem] mb-8 mr-[-6rem] animate-in fade-in slide-in-from-right duration-1000">
+        {/* Bloque que contiene aura + imagen */}
+        <div className="relative z-10 flex justify-center items-center w-80 h-80">
+          {/* Aura dorada pulsante */}
+          <div className="absolute w-80 h-80 rounded-full blur-3xl aura-pulsante-gold-strong pointer-events-none z-0"></div>
 
-        {/* Imagen del héroe ZapSol */}
-        <div className="relative z-10 flex justify-center items-center">
+          {/* Imagen del héroe ZapSol */}
           <img
             src="/assets/ZapSol.png"
             alt="ZapSol Hero"
-            className="h-64 w-auto md:h-72 object-contain mix-blend-overlay opacity-90 ZapSol-respirando"
+            className="relative z-10 h-64 w-auto md:h-72 object-contain mix-blend-overlay opacity-90 ZapSol-respirando"
           />
         </div>
       </div>
