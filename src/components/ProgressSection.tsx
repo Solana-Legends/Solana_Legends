@@ -18,7 +18,7 @@ export default function ProgressSection() {
   } = useMetrics();
 
   return (
-    <section className="max-w-2xl mx-auto px-4 py-8">
+    <section className="relative max-w-2xl mx-auto px-4 py-8">
       <h2 className="text-xl font-bold text-zinc-100 mb-2">{t('progress.title')}</h2>
       <p className="text-sm text-zinc-400 mb-6">{t('progress.subtitle')}</p>
 
@@ -106,6 +106,18 @@ export default function ProgressSection() {
           {t('progress.voteMessageRitual')}
         </p>
       )}
+
+      {/* ⚡ Imagen del héroe ZapSol siempre visible a la derecha */}
+      <div className="absolute right-0 top-1/2 transform -translate-y-1/2 flex justify-center items-center">
+        {/* Aura dorada pulsante */}
+        <div className="absolute w-48 h-48 rounded-full blur-3xl aura-pulsante-gold-strong pointer-events-none"></div>
+        {/* Imagen del héroe */}
+        <img
+          src="/assets/ZapSol.png"
+          alt="ZapSol Hero"
+          className="relative h-32 w-auto object-contain animate-in fade-in slide-in-from-right duration-1000 mix-blend-overlay opacity-90 logo-respirando"
+        />
+      </div>
     </section>
   );
 }
