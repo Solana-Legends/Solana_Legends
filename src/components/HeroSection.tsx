@@ -56,14 +56,14 @@ export default function HeroSection() {
 
         {/* Imagen Voltra */}
         <div className="mt-[-9rem] mb-8 flex justify-end relative animate-in fade-in slide-in-from-right duration-1000 mr-[-8rem] translate-x-[-2rem]">
-          <div className="absolute inset-0 flex justify-end items-center pointer-events-none z-0">
+          <div className="absolute inset-0 flex justify-center items-center pointer-events-none z-0">
             <div className="w-48 h-48 rounded-full blur-3xl aura-pulsante-gold-strong"></div>
           </div>
           <a
             href="https://x.com/Voltrastudio"
             target="_blank"
             rel="noopener noreferrer"
-            className="relative z-10"
+            className="relative z-10 flex justify-center items-center"
           >
             <img
               src="/assets/Voltra.png"
