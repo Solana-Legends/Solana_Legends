@@ -108,7 +108,7 @@ export default function ProgressSection() {
       )}
 
       {/* Imagen ZapSol con aura perfectamente centrada y alineada */}
-      <div className="relative flex justify-end items-center mt-[-6rem] mb-8 mr-[-6rem] translate-y-[-2rem] animate-in fade-in slide-in-from-right duration-1000">
+      <div className="relative flex justify-end items-center mt-[-6rem] mb-8 mr-[-24rem] translate-y-[-12rem] animate-in fade-in slide-in-from-right duration-1000">
         <div className="relative z-10 flex justify-center items-center w-80 h-80">
           {/* Aura dorada pulsante */}
           <div className="absolute w-80 h-80 rounded-full blur-3xl aura-pulsante-gold-strong pointer-events-none z-0"></div>
