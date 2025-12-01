@@ -107,8 +107,8 @@ export default function ProgressSection() {
         </p>
       )}
 
-      {/* ⚡ Imagen del héroe ZapSol aún más grande y más a la derecha */}
-      <div className="fixed top-1/2 right-[-120px] transform -translate-y-1/2 z-10 flex justify-center items-center">
+      {/* ⚡ Imagen del héroe ZapSol más grande y correctamente alineada */}
+      <div className="absolute top-1/2 right-0 transform translate-x-1/2 -translate-y-1/2 z-10 flex justify-center items-center">
         {/* Aura dorada pulsante */}
         <div className="absolute w-80 h-80 rounded-full blur-3xl aura-pulsante-gold-strong pointer-events-none"></div>
         {/* Imagen del héroe */}
@@ -118,6 +118,7 @@ export default function ProgressSection() {
           className="relative h-64 w-auto object-contain animate-in fade-in slide-in-from-right duration-1000 mix-blend-overlay opacity-90 logo-respirando"
         />
       </div>
+
     </section>
   );
 }
