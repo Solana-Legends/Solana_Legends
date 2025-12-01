@@ -6,34 +6,24 @@
   :root {
     --background: 0 0% 100%;
     --foreground: 222.2 84% 4.9%;
-
     --card: 0 0% 100%;
     --card-foreground: 222.2 84% 4.9%;
-
     --popover: 0 0% 100%;
     --popover-foreground: 222.2 84% 4.9%;
-
     --primary: 222.2 47.4% 11.2%;
     --primary-foreground: 210 40% 98%;
-
     --secondary: 210 40% 96.1%;
     --secondary-foreground: 222.2 47.4% 11.2%;
-
     --muted: 210 40% 96.1%;
     --muted-foreground: 215.4 16.3% 46.9%;
-
     --accent: 210 40% 96.1%;
     --accent-foreground: 222.2 47.4% 11.2%;
-
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
-
     --border: 214.3 31.8% 91.4%;
     --input: 214.3 31.8% 91.4%;
     --ring: 222.2 84% 4.9%;
-
     --radius: 0.5rem;
-
     --sidebar-background: 0 0% 98%;
     --sidebar-foreground: 240 5.3% 26.1%;
     --sidebar-primary: 240 5.9% 10%;
@@ -47,32 +37,23 @@
   .dark {
     --background: 222.2 84% 4.9%;
     --foreground: 210 40% 98%;
-
     --card: 222.2 84% 4.9%;
     --card-foreground: 210 40% 98%;
-
     --popover: 222.2 84% 4.9%;
     --popover-foreground: 210 40% 98%;
-
     --primary: 210 40% 98%;
     --primary-foreground: 222.2 47.4% 11.2%;
-
     --secondary: 217.2 32.6% 17.5%;
     --secondary-foreground: 210 40% 98%;
-
     --muted: 217.2 32.6% 17.5%;
     --muted-foreground: 215 20.2% 65.1%;
-
     --accent: 217.2 32.6% 17.5%;
     --accent-foreground: 210 40% 98%;
-
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 210 40% 98%;
-
     --border: 217.2 32.6% 17.5%;
     --input: 217.2 32.6% 17.5%;
     --ring: 212.7 26.8% 83.9%;
-
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
     --sidebar-primary: 224.3 76.3% 48%;
@@ -96,18 +77,36 @@
 }
 
 @layer components {
-  .bg-background { background-color: hsl(var(--background)); }
-  .text-foreground { color: hsl(var(--foreground)); }
-  .bg-card { background-color: hsl(var(--card)); }
-  .text-card-foreground { color: hsl(var(--card-foreground)); }
-  .bg-popover { background-color: hsl(var(--popover)); }
-  .text-popover-foreground { color: hsl(var(--popover-foreground)); }
-  .border-border { border-color: hsl(var(--border)); }
-  .ring-ring { box-shadow: 0 0 0 3px hsl(var(--ring)); }
+  .bg-background {
+    background-color: hsl(var(--background));
+  }
+  .text-foreground {
+    color: hsl(var(--foreground));
+  }
+  .bg-card {
+    background-color: hsl(var(--card));
+  }
+  .text-card-foreground {
+    color: hsl(var(--card-foreground));
+  }
+  .bg-popover {
+    background-color: hsl(var(--popover));
+  }
+  .text-popover-foreground {
+    color: hsl(var(--popover-foreground));
+  }
+  .border-border {
+    border-color: hsl(var(--border));
+  }
+  .ring-ring {
+    box-shadow: 0 0 0 3px hsl(var(--ring));
+  }
 }
 
 /* === Reglas adicionales === */
-html { scroll-behavior: smooth; }
+html {
+  scroll-behavior: smooth;
+}
 
 video::-webkit-media-controls,
 video::-webkit-media-controls-enclosure,
@@ -115,7 +114,9 @@ video::-webkit-media-controls-play-button,
 video::-webkit-media-controls-start-playback-button,
 video::-webkit-media-controls-picture-in-picture-button,
 video::-webkit-media-controls-settings-button,
-video::-webkit-media-controls-upgrade-button { display: none !important; }
+video::-webkit-media-controls-upgrade-button {
+  display: none !important;
+}
 
 video {
   -webkit-user-select: none;
@@ -124,20 +125,28 @@ video {
 
 /* === Animación de respiración para el logo === */
 @keyframes pulse-scale {
-  0%, 100% { transform: scale(1); }
-  50% { transform: scale(1.05); }
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
 }
-.logo-respirando { animation: pulse-scale 3s ease-in-out infinite; }
+.logo-respirando {
+  animation: pulse-scale 3s ease-in-out infinite;
+}
 
 /* === Auras genéricas === */
 @keyframes pulse-aura {
-  0%, 100% {
+  0%,
+  100% {
     box-shadow: 0 0 40px rgba(160, 32, 240, 0.8),
-                0 0 80px rgba(160, 32, 240, 0.5);
+      0 0 80px rgba(160, 32, 240, 0.5);
   }
   50% {
     box-shadow: 0 0 60px rgba(160, 32, 240, 1),
-                0 0 120px rgba(160, 32, 240, 0.7);
+      0 0 120px rgba(160, 32, 240, 0.7);
   }
 }
 .aura-pulsante {
@@ -147,13 +156,12 @@ video {
 }
 
 @keyframes pulse-aura-blue {
-  0%, 100% {
-    box-shadow: 0 0 40px rgba(0, 191, 255, 0.8),
-                0 0 80px rgba(0, 191, 255, 0.5);
+  0%,
+  100% {
+    box-shadow: 0 0 40px rgba(0, 191, 255, 0.8), 0 0 80px rgba(0, 191, 255, 0.5);
   }
   50% {
-    box-shadow: 0 0 60px rgba(0, 191, 255, 1),
-                0 0 120px rgba(0, 191, 255, 0.7);
+    box-shadow: 0 0 60px rgba(0, 191, 255, 1), 0 0 120px rgba(0, 191, 255, 0.7);
   }
 }
 .aura-pulsante-blue {
@@ -163,15 +171,14 @@ video {
 }
 
 @keyframes pulse-aura-gold-strong {
-  0%, 100% {
-    box-shadow: 0 0 80px rgba(255, 168, 8, 1),
-                0 0 160px rgba(255, 168, 8, 0.8),
-                0 0 240px rgba(255, 168, 8, 0.5);
+  0%,
+  100% {
+    box-shadow: 0 0 80px rgba(255, 168, 8, 1), 0 0 160px rgba(255, 168, 8, 0.8),
+      0 0 240px rgba(255, 168, 8, 0.5);
   }
   50% {
-    box-shadow: 0 0 120px rgba(255, 168, 8, 1),
-                0 0 200px rgba(255, 168, 8, 0.9),
-                0 0 280px rgba(255, 168, 8, 0.6);
+    box-shadow: 0 0 120px rgba(255, 168, 8, 1), 0 0 200px rgba(255, 168, 8, 0.9),
+      0 0 280px rgba(255, 168, 8, 0.6);
   }
 }
 .aura-pulsante-gold-strong {
@@ -181,20 +188,38 @@ video {
 }
 
 /* === Hover dinámico para videos === */
-.aura-hover { transition: box-shadow 0.3s ease-in-out; }
-.aura-hover:hover { animation: pulse-aura-blue 3s ease-in-out infinite; }
-.aura-hover-gold:hover { animation: pulse-aura-gold-strong 3s ease-in-out infinite; }
-.aura-hover-intense:hover { filter: saturate(1.2) brightness(1.05); }
+.aura-hover {
+  transition: box-shadow 0.3s ease-in-out;
+}
+.aura-hover:hover {
+  animation: pulse-aura-blue 3s ease-in-out infinite;
+}
+.aura-hover-gold:hover {
+  animation: pulse-aura-gold-strong 3s ease-in-out infinite;
+}
+.aura-hover-intense:hover {
+  filter: saturate(1.2) brightness(1.05);
+}
 
 /* === Evitar cortes del aura en contenedores padres === */
-.aura-container { position: relative; z-index: 0; }
+.aura-container {
+  position: relative;
+  z-index: 0;
+}
 .aura-container > .aura-pulsante,
 .aura-container > .aura-pulsante-blue,
-.aura-container > .aura-pulsante-gold-strong { position: relative; z-index: 1; }
+.aura-container > .aura-pulsante-gold-strong {
+  position: relative;
+  z-index: 1;
+}
 
 /* === Variantes por guardián (hover opcional) === */
-.aura-fire:hover { animation: pulse-aura-gold-strong 3s ease-in-out infinite; }
-.aura-water:hover { animation: pulse-aura-blue 3s ease-in-out infinite; }
+.aura-fire:hover {
+  animation: pulse-aura-gold-strong 3s ease-in-out infinite;
+}
+.aura-water:hover {
+  animation: pulse-aura-blue 3s ease-in-out infinite;
+}
 .aura-shadow:hover {
   box-shadow: 0 0 60px rgba(80, 0, 160, 1), 0 0 120px rgba(80, 0, 160, 0.7);
   border-radius: 1.25rem;
@@ -202,122 +227,238 @@ video {
 
 /* === Animaciones de entrada === */
 @keyframes fadeInUp {
-  0% { opacity: 0; transform: translateY(24px); }
-  100% { opacity: 1; transform: translateY(0); }
+  0% {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
-.animate-fadeInUp { animation: fadeInUp 0.8s ease-out forwards; }
+.animate-fadeInUp {
+  animation: fadeInUp 0.8s ease-out forwards;
+}
 
 /* === Intensificación genérica de aura en tarjetas === */
-.aura-zapsol:hover { filter: brightness(1.2) saturate(1.3); }
-.aura-monkesol:hover { filter: brightness(1.15) saturate(1.2); }
-.aura-chipisol:hover { filter: brightness(1.25) saturate(1.4); }
+.aura-zapsol:hover {
+  filter: brightness(1.2) saturate(1.3);
+}
+.aura-monkesol:hover {
+  filter: brightness(1.15) saturate(1.2);
+}
+.aura-chipisol:hover {
+  filter: brightness(1.25) saturate(1.4);
+}
 
 /* === Auras personalizadas por guardián (sin pulsación; solo hover) === */
 .aura-zapsol {
-  box-shadow: 0 0 25px rgba(56,189,248,0.9), 0 0 50px rgba(56,189,248,0.6);
+  box-shadow: 0 0 25px rgba(56, 189, 248, 0.9), 0 0 50px rgba(56, 189, 248, 0.6);
   border-radius: 0.5rem;
 }
 .aura-zapsol:hover {
-  box-shadow: 0 0 50px rgba(255,255,255,1), 0 0 100px rgba(255,255,255,0.85);
+  box-shadow: 0 0 50px rgba(255, 255, 255, 1),
+    0 0 100px rgba(255, 255, 255, 0.85);
   filter: brightness(1.4);
 }
 
 .aura-monkesol {
-  box-shadow: 0 0 30px rgba(239,68,68,0.9), 0 0 60px rgba(239,68,68,0.6);
+  box-shadow: 0 0 30px rgba(239, 68, 68, 0.9), 0 0 60px rgba(239, 68, 68, 0.6);
   border-radius: 0.5rem;
 }
 .aura-monkesol:hover {
-  box-shadow: 0 0 50px rgba(34,197,94,1), 0 0 100px rgba(34,197,94,0.85);
+  box-shadow: 0 0 50px rgba(34, 197, 94, 1), 0 0 100px rgba(34, 197, 94, 0.85);
   filter: saturate(1.3) brightness(1.2);
 }
 
 .aura-chipisol {
-  box-shadow: 0 0 30px rgba(192,132,252,0.9), 0 0 60px rgba(192,132,252,0.6);
+  box-shadow: 0 0 30px rgba(192, 132, 252, 0.9),
+    0 0 60px rgba(192, 132, 252, 0.6);
   border-radius: 0.5rem;
 }
 .aura-chipisol:hover {
-  box-shadow: 0 0 50px rgba(236,72,153,1), 0 0 100px rgba(236,72,153,0.85);
+  box-shadow: 0 0 50px rgba(236, 72, 153, 1), 0 0 100px rgba(236, 72, 153, 0.85);
   filter: brightness(1.3) saturate(1.3);
 }
 
 /* === Animaciones en las FOTOS de héroes === */
 @keyframes pulse-fast {
-  0%, 100% { transform: scale(1); opacity: 1; }
-  50% { transform: scale(1.15); opacity: 0.7; }
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.15);
+    opacity: 0.7;
+  }
 }
-.hero-zapsol { animation: pulse-fast 2s ease-in-out infinite; }
-.hero-zapsol-aura { box-shadow: 0 0 20px rgba(56,189,248,0.8); border-radius: 0.5rem; }
-.hero-zapsol-aura:hover { box-shadow: 0 0 40px rgba(255,255,255,1); }
+.hero-zapsol {
+  animation: pulse-fast 2s ease-in-out infinite;
+}
+.hero-zapsol-aura {
+  box-shadow: 0 0 20px rgba(56, 189, 248, 0.8);
+  border-radius: 0.5rem;
+}
+.hero-zapsol-aura:hover {
+  box-shadow: 0 0 40px rgba(255, 255, 255, 1);
+}
 
 @keyframes flicker {
-  0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% { opacity: 1; }
-  20%, 22%, 24%, 55% { opacity: 0.4; }
+  0%,
+  19%,
+  21%,
+  23%,
+  25%,
+  54%,
+  56%,
+  100% {
+    opacity: 1;
+  }
+  20%,
+  22%,
+  24%,
+  55% {
+    opacity: 0.4;
+  }
 }
-.hero-monkesol { animation: flicker 2s infinite; }
-.hero-monkesol-aura { box-shadow: 0 0 20px rgba(239,68,68,0.8); border-radius: 0.5rem; }
-.hero-monkesol-aura:hover { box-shadow: 0 0 40px rgba(34,197,94,1); }
+.hero-monkesol {
+  animation: flicker 2s infinite;
+}
+.hero-monkesol-aura {
+  box-shadow: 0 0 20px rgba(239, 68, 68, 0.8);
+  border-radius: 0.5rem;
+}
+.hero-monkesol-aura:hover {
+  box-shadow: 0 0 40px rgba(34, 197, 94, 1);
+}
 
 @keyframes pulse-slow {
-  0%, 100% { transform: scale(1); opacity: 1; }
-  50% { transform: scale(1.05); opacity: 0.85; }
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.05);
+    opacity: 0.85;
+  }
 }
-.hero-chipisol { animation: pulse-slow 2.5s ease-in-out infinite; }
-.hero-chipisol-aura { box-shadow: 0 0 20px rgba(192,132,252,0.8); border-radius: 0.5rem; }
-.hero-chipisol-aura:hover { box-shadow: 0 0 40px rgba(236,72,153,1); }
+.hero-chipisol {
+  animation: pulse-slow 2.5s ease-in-out infinite;
+}
+.hero-chipisol-aura {
+  box-shadow: 0 0 20px rgba(192, 132, 252, 0.8);
+  border-radius: 0.5rem;
+}
+.hero-chipisol-aura:hover {
+  box-shadow: 0 0 40px rgba(236, 72, 153, 1);
+}
 
 /* === Símbolos elementales === */
 @keyframes pulseZapSymbol {
-  0%, 100% { transform: scale(1); }
-  50% { transform: scale(1.25); }
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.25);
+  }
 }
-.symbol-zapsol { animation: pulseZapSymbol 2s ease-in-out infinite; }
-.symbol-zapsol-aura { text-shadow: 0 0 10px rgba(250,204,21,0.9), 0 0 20px rgba(250,204,21,0.6); }
-.symbol-zapsol-aura:hover { text-shadow: 0 0 14px rgba(255,255,255,1), 0 0 28px rgba(255,255,255,0.8); }
+.symbol-zapsol {
+  animation: pulseZapSymbol 2s ease-in-out infinite;
+}
+.symbol-zapsol-aura {
+  text-shadow: 0 0 10px rgba(250, 204, 21, 0.9),
+    0 0 20px rgba(250, 204, 21, 0.6);
+}
+.symbol-zapsol-aura:hover {
+  text-shadow: 0 0 14px rgba(255, 255, 255, 1),
+    0 0 28px rgba(255, 255, 255, 0.8);
+}
 
 @keyframes flickerMonkeSymbol {
-  0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% { opacity: 1; }
-  20%, 22%, 24%, 55% { opacity: 0.4; }
+  0%,
+  19%,
+  21%,
+  23%,
+  25%,
+  54%,
+  56%,
+  100% {
+    opacity: 1;
+  }
+  20%,
+  22%,
+  24%,
+  55% {
+    opacity: 0.4;
+  }
 }
-.symbol-monkesol { animation: flickerMonkeSymbol 2s infinite; }
-.symbol-monkesol-aura { text-shadow: 0 0 10px rgba(239,68,68,0.9), 0 0 20px rgba(239,68,68,0.6); }
-.symbol-monkesol-aura:hover { text-shadow: 0 0 14px rgba(34,197,94,1), 0 0 28px rgba(34,197,94,0.8); }
+.symbol-monkesol {
+  animation: flickerMonkeSymbol 2s infinite;
+}
+.symbol-monkesol-aura {
+  text-shadow: 0 0 10px rgba(239, 68, 68, 0.9), 0 0 20px rgba(239, 68, 68, 0.6);
+}
+.symbol-monkesol-aura:hover {
+  text-shadow: 0 0 14px rgba(34, 197, 94, 1), 0 0 28px rgba(34, 197, 94, 0.8);
+}
 
 @keyframes pulseChipiSymbol {
-  0%, 100% { transform: scale(1); opacity: 0.9; }
-  50% { transform: scale(1.15); opacity: 1; }
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 0.9;
+  }
+  50% {
+    transform: scale(1.15);
+    opacity: 1;
+  }
 }
-.symbol-chipisol { animation: pulseChipiSymbol 2.5s ease-in-out infinite; }
-.symbol-chipisol-aura { text-shadow: 0 0 10px rgba(59,130,246,0.9), 0 0 20px rgba(59,130,246,0.6); }
-.symbol-chipisol-aura:hover { text-shadow: 0 0 14px rgba(236,72,153,1), 0 0 28px rgba(236,72,153,0.8); }
+.symbol-chipisol {
+  animation: pulseChipiSymbol 2.5s ease-in-out infinite;
+}
+.symbol-chipisol-aura {
+  text-shadow: 0 0 10px rgba(59, 130, 246, 0.9),
+    0 0 20px rgba(59, 130, 246, 0.6);
+}
+.symbol-chipisol-aura:hover {
+  text-shadow: 0 0 14px rgba(236, 72, 153, 1), 0 0 28px rgba(236, 72, 153, 0.8);
+}
 
 /* === Animaciones de entrada/salida para botón volver === */
 @keyframes slideInLeftGlow {
   0% {
     opacity: 0;
     transform: translateX(-40px);
-    box-shadow: 0 0 0 rgba(59,130,246,0);
+    box-shadow: 0 0 0 rgba(59, 130, 246, 0);
   }
   100% {
     opacity: 1;
     transform: translateX(0);
-    box-shadow: 0 0 15px rgba(59,130,246,0.6);
+    box-shadow: 0 0 15px rgba(59, 130, 246, 0.6);
   }
 }
-.animate-slideInLeftGlow { animation: slideInLeftGlow 0.8s ease-out forwards; }
+.animate-slideInLeftGlow {
+  animation: slideInLeftGlow 0.8s ease-out forwards;
+}
 
 @keyframes slideOutLeftGlow {
   0% {
     opacity: 1;
     transform: translateX(0);
-    box-shadow: 0 0 15px rgba(59,130,246,0.6);
+    box-shadow: 0 0 15px rgba(59, 130, 246, 0.6);
   }
   100% {
     opacity: 0;
     transform: translateX(-40px);
-    box-shadow: 0 0 0 rgba(59,130,246,0);
+    box-shadow: 0 0 0 rgba(59, 130, 246, 0);
   }
 }
-.animate-slideOutLeftGlow { animation: slideOutLeftGlow 0.6s ease-in forwards; }
+.animate-slideOutLeftGlow {
+  animation: slideOutLeftGlow 0.6s ease-in forwards;
+}
 
 /* === Aura para mensaje del footer (hover) === */
 .footer-aura {
@@ -326,7 +467,7 @@ video {
 }
 .footer-aura:hover {
   text-shadow: 0 0 20px rgba(255, 255, 255, 0.9),
-               0 0 40px rgba(255, 168, 8, 0.6);
+    0 0 40px rgba(255, 168, 8, 0.6);
 }
 
 /* === Fondo de pie de sección pulsante genérico === */
@@ -350,15 +491,153 @@ video {
   background: linear-gradient(to right, #fbbf24, #f59e0b);
 }
 
+/* === Gradiente animado púrpura + dorado (vertical) === */
+@keyframes pulse-gradient-gold-purple-vertical {
+  0% {
+    background: linear-gradient(to bottom, #4c1d95, #6d28d9);
+  } /* púrpura arriba */
+  50% {
+    background: linear-gradient(to bottom, #f59e0b, #d97706);
+  } /* dorado arriba */
+  100% {
+    background: linear-gradient(to bottom, #4c1d95, #6d28d9);
+  }
+}
+.section-gradient-gold-purple-vertical {
+  animation: pulse-gradient-gold-purple-vertical 6s ease-in-out infinite;
+  transition: background 0.6s ease-in-out;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.section-gradient-gold-purple-vertical:hover {
+  background: linear-gradient(
+    to bottom,
+    #fbbf24,
+    #9333ea
+  ); /* dorado + púrpura intenso */
+}
+
+/* === Gradiente animado azul + rojo (vertical) === */
+@keyframes pulse-gradient-blue-red-vertical {
+  0% {
+    background: linear-gradient(to bottom, #1e3a8a, #3b82f6);
+  } /* azul arriba */
+  50% {
+    background: linear-gradient(to bottom, #dc2626, #ef4444);
+  } /* rojo arriba */
+  100% {
+    background: linear-gradient(to bottom, #1e3a8a, #3b82f6);
+  }
+}
+.section-gradient-blue-red-vertical {
+  animation: pulse-gradient-blue-red-vertical 6s ease-in-out infinite;
+  transition: background 0.6s ease-in-out;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.section-gradient-blue-red-vertical:hover {
+  background: linear-gradient(to bottom, #ef4444, #3b82f6);
+}
+
+/* === Gradiente animado naranja + verde (vertical) === */
+@keyframes pulse-gradient-orange-green-vertical {
+  0% {
+    background: linear-gradient(to bottom, #ea580c, #f97316);
+  } /* naranja arriba */
+  50% {
+    background: linear-gradient(to bottom, #16a34a, #22c55e);
+  } /* verde arriba */
+  100% {
+    background: linear-gradient(to bottom, #ea580c, #f97316);
+  }
+}
+.section-gradient-orange-green-vertical {
+  animation: pulse-gradient-orange-green-vertical 6s ease-in-out infinite;
+  transition: background 0.6s ease-in-out;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.section-gradient-orange-green-vertical:hover {
+  background: linear-gradient(to bottom, #22c55e, #f97316);
+}
+
+/* === Gradientes animados reutilizables para secciones === */
+/* Púrpura + dorado */
+@keyframes pulse-gradient-gold-purple {
+  0% {
+    background: linear-gradient(to right, #4c1d95, #6d28d9);
+  }
+  50% {
+    background: linear-gradient(to right, #f59e0b, #d97706);
+  }
+  100% {
+    background: linear-gradient(to right, #4c1d95, #6d28d9);
+  }
+}
+.section-gradient-gold-purple {
+  animation: pulse-gradient-gold-purple 6s ease-in-out infinite;
+  transition: background 0.6s ease-in-out;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.section-gradient-gold-purple:hover {
+  background: linear-gradient(to right, #fbbf24, #9333ea);
+}
+
+/* Azul + rojo */
+@keyframes pulse-gradient-blue-red {
+  0% {
+    background: linear-gradient(to right, #1e3a8a, #3b82f6);
+  }
+  50% {
+    background: linear-gradient(to right, #dc2626, #ef4444);
+  }
+  100% {
+    background: linear-gradient(to right, #1e3a8a, #3b82f6);
+  }
+}
+.section-gradient-blue-red {
+  animation: pulse-gradient-blue-red 6s ease-in-out infinite;
+  transition: background 0.6s ease-in-out;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.section-gradient-blue-red:hover {
+  background: linear-gradient(to right, #ef4444, #3b82f6);
+}
+
+/* Naranja + verde */
+@keyframes pulse-gradient-orange-green {
+  0% {
+    background: linear-gradient(to right, #ea580c, #f97316);
+  }
+  50% {
+    background: linear-gradient(to right, #16a34a, #22c55e);
+  }
+  100% {
+    background: linear-gradient(to right, #ea580c, #f97316);
+  }
+}
+.section-gradient-orange-green {
+  animation: pulse-gradient-orange-green 6s ease-in-out infinite;
+  transition: background 0.6s ease-in-out;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.section-gradient-orange-green:hover {
+  background: linear-gradient(to right, #22c55e, #f97316);
+}
+
 /* === Aura de tarjeta genérica pulsante === */
 @keyframes pulse-card {
-  0%, 100% {
+  0%,
+  100% {
     box-shadow: 0 0 25px rgba(255, 168, 8, 0.6),
-                0 0 50px rgba(160, 32, 240, 0.4);
+      0 0 50px rgba(160, 32, 240, 0.4);
   }
   50% {
     box-shadow: 0 0 40px rgba(255, 168, 8, 0.9),
-                0 0 80px rgba(160, 32, 240, 0.6);
+      0 0 80px rgba(160, 32, 240, 0.6);
   }
 }
 .card-aura {
@@ -367,20 +646,20 @@ video {
   border-radius: 1rem;
 }
 .card-aura:hover {
-  box-shadow: 0 0 60px rgba(255, 168, 8, 1),
-              0 0 120px rgba(255, 255, 255, 0.9);
+  box-shadow: 0 0 60px rgba(255, 168, 8, 1), 0 0 120px rgba(255, 255, 255, 0.9);
   transform: scale(1.05);
 }
 
 /* === Auras diferenciadas por guardián (pulsantes + hover) === */
 @keyframes pulse-zapsol {
-  0%, 100% {
-    box-shadow: 0 0 25px rgba(56,189,248,0.7),
-                0 0 50px rgba(56,189,248,0.4);
+  0%,
+  100% {
+    box-shadow: 0 0 25px rgba(56, 189, 248, 0.7),
+      0 0 50px rgba(56, 189, 248, 0.4);
   }
   50% {
-    box-shadow: 0 0 40px rgba(255,255,255,0.9),
-                0 0 80px rgba(56,189,248,0.6);
+    box-shadow: 0 0 40px rgba(255, 255, 255, 0.9),
+      0 0 80px rgba(56, 189, 248, 0.6);
   }
 }
 .card-aura-zapsol {
@@ -389,19 +668,17 @@ video {
   border-radius: 1rem;
 }
 .card-aura-zapsol:hover {
-  box-shadow: 0 0 60px rgba(56,189,248,1),
-              0 0 120px rgba(255,255,255,0.9);
+  box-shadow: 0 0 60px rgba(56, 189, 248, 1), 0 0 120px rgba(255, 255, 255, 0.9);
   transform: scale(1.05);
 }
 
 @keyframes pulse-monkesol {
-  0%, 100% {
-    box-shadow: 0 0 25px rgba(239,68,68,0.7),
-                0 0 50px rgba(239,68,68,0.4);
+  0%,
+  100% {
+    box-shadow: 0 0 25px rgba(239, 68, 68, 0.7), 0 0 50px rgba(239, 68, 68, 0.4);
   }
   50% {
-    box-shadow: 0 0 40px rgba(255,168,8,0.9),
-                0 0 80px rgba(239,68,68,0.6);
+    box-shadow: 0 0 40px rgba(255, 168, 8, 0.9), 0 0 80px rgba(239, 68, 68, 0.6);
   }
 }
 .card-aura-monkesol {
@@ -410,19 +687,19 @@ video {
   border-radius: 1rem;
 }
 .card-aura-monkesol:hover {
-  box-shadow: 0 0 60px rgba(255,168,8,1),
-              0 0 120px rgba(255,255,255,0.9);
+  box-shadow: 0 0 60px rgba(255, 168, 8, 1), 0 0 120px rgba(255, 255, 255, 0.9);
   transform: scale(1.05);
 }
 
 @keyframes pulse-chipisol {
-  0%, 100% {
-    box-shadow: 0 0 25px rgba(192,132,252,0.7),
-                0 0 50px rgba(192,132,252,0.4);
+  0%,
+  100% {
+    box-shadow: 0 0 25px rgba(192, 132, 252, 0.7),
+      0 0 50px rgba(192, 132, 252, 0.4);
   }
   50% {
-    box-shadow: 0 0 40px rgba(236,72,153,0.9),
-                0 0 80px rgba(192,132,252,0.6);
+    box-shadow: 0 0 40px rgba(236, 72, 153, 0.9),
+      0 0 80px rgba(192, 132, 252, 0.6);
   }
 }
 .card-aura-chipisol {
@@ -431,16 +708,21 @@ video {
   border-radius: 1rem;
 }
 .card-aura-chipisol:hover {
-  box-shadow: 0 0 60px rgba(236,72,153,1),
-              0 0 120px rgba(255,255,255,0.9);
+  box-shadow: 0 0 60px rgba(236, 72, 153, 1), 0 0 120px rgba(255, 255, 255, 0.9);
   transform: scale(1.05);
 }
 
 /* === Footer por idioma (púrpura en ES, dorado en EN) === */
 @keyframes pulse-gradient-spanish {
-  0% { background: linear-gradient(to right, #4c1d95, #6d28d9); }
-  50% { background: linear-gradient(to right, #9333ea, #7e22ce); }
-  100% { background: linear-gradient(to right, #4c1d95, #6d28d9); }
+  0% {
+    background: linear-gradient(to right, #4c1d95, #6d28d9);
+  }
+  50% {
+    background: linear-gradient(to right, #9333ea, #7e22ce);
+  }
+  100% {
+    background: linear-gradient(to right, #4c1d95, #6d28d9);
+  }
 }
 .footer-gradient-spanish {
   animation: pulse-gradient-spanish 6s ease-in-out infinite;
@@ -452,9 +734,15 @@ video {
 }
 
 @keyframes pulse-gradient-english {
-  0% { background: linear-gradient(to right, #f59e0b, #d97706); }
-  50% { background: linear-gradient(to right, #fbbf24, #f59e0b); }
-  100% { background: linear-gradient(to right, #f59e0b, #d97706); }
+  0% {
+    background: linear-gradient(to right, #f59e0b, #d97706);
+  }
+  50% {
+    background: linear-gradient(to right, #fbbf24, #f59e0b);
+  }
+  100% {
+    background: linear-gradient(to right, #f59e0b, #d97706);
+  }
 }
 .footer-gradient-english {
   animation: pulse-gradient-english 6s ease-in-out infinite;
