@@ -78,7 +78,7 @@ export default function HeroSection() {
         </div>
 
         {/* Videos */}
-        <div className="grid md:grid-cols-2 gap-8 mb-6 -mt-4 max-w-4xl mx-auto">
+        <div className="grid md:grid-cols-2 gap-8 mb-6 -mt-9 max-w-4xl mx-auto">
           <div className="animate-in fade-in slide-in-from-left duration-1000">
             <div className="relative group rounded-xl overflow-hidden transition-shadow duration-300 hover:scale-[1.02] border border-purple-500/40 aura-pulsante aura-hover">
               <VideoWithControls src="/assets/HeroesLevitan.mp4" glowColor="#A020F0" />
