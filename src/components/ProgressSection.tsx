@@ -106,21 +106,19 @@ export default function ProgressSection() {
           {t('progress.voteMessageRitual')}
         </p>
       )}
+{/* ⚡ Imagen del héroe ZapSol centrada dentro del aura */}
+<div className="relative flex justify-center items-center mt-[-6rem] mb-8 animate-in fade-in slide-in-from-right duration-1000">
+  {/* Aura dorada pulsante detrás */}
+  <div className="absolute z-0 w-80 h-80 rounded-full blur-3xl aura-pulsante-gold-strong pointer-events-none"></div>
 
-      {/* ⚡ Imagen del héroe ZapSol alineada a la derecha de las barras de progreso */}
-      <div className="mt-[-9rem] mb-8 flex justify-end relative animate-in fade-in slide-in-from-right duration-1000 mr-[-8rem] translate-x-[-2rem]">
-          <div className="absolute inset-0 flex justify-end items-center pointer-events-none z-0">
-            <div className="w-80 h-80 rounded-full blur-3xl aura-pulsante-gold-strong"></div>
-          </div>
-          <a>
-        {/* Imagen del héroe */}
-        <img
-          src="/assets/ZapSol.png"
-          alt="ZapSol Hero"
-          className="h-64 w-auto md:h-72 object-contain mix-blend-overlay opacity-90 ZapSol-respirando"
-          />
-        </a>
-      </div>
+  {/* Imagen del héroe */}
+  <img
+    src="/assets/ZapSol.png"
+    alt="ZapSol Hero"
+    className="relative z-10 h-64 w-auto md:h-72 object-contain mix-blend-overlay opacity-90 ZapSol-respirando"
+  />
+</div>
+
     </section>
   );
 }
