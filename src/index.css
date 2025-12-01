@@ -491,150 +491,88 @@ video {
   background: linear-gradient(to right, #fbbf24, #f59e0b);
 }
 
-/* === Gradientes animados reutilizables para secciones (horizontales) === */
-@keyframes pulse-gradient-gold-purple {
-  0% {
-    background: linear-gradient(to right, #4c1d95, #6d28d9);
+/* === Auras pulsantes personalizadas === */
+
+/* Púrpura + Dorado */
+@keyframes pulse-aura-purple-gold {
+  0%,
+  100% {
+    box-shadow: 0 0 80px rgba(147, 51, 234, 1),
+      0 0 160px rgba(251, 191, 36, 0.8), 0 0 240px rgba(251, 191, 36, 0.5);
   }
   50% {
-    background: linear-gradient(to right, #f59e0b, #d97706);
-  }
-  100% {
-    background: linear-gradient(to right, #4c1d95, #6d28d9);
+    box-shadow: 0 0 120px rgba(147, 51, 234, 1),
+      0 0 200px rgba(251, 191, 36, 0.9), 0 0 280px rgba(251, 191, 36, 0.6);
   }
 }
-.section-gradient-gold-purple {
-  animation: pulse-gradient-gold-purple 6s ease-in-out infinite;
-  transition: background 0.6s ease-in-out;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-.section-gradient-gold-purple:hover {
-  background: linear-gradient(to right, #fbbf24, #9333ea);
+.aura-hover-purple-gold:hover {
+  animation: pulse-aura-purple-gold 3s ease-in-out infinite;
 }
 
-@keyframes pulse-gradient-blue-red {
-  0% {
-    background: linear-gradient(to right, #1e3a8a, #3b82f6);
+/* Naranja + Rojo */
+@keyframes pulse-aura-orange-red {
+  0%,
+  100% {
+    box-shadow: 0 0 80px rgba(234, 88, 12, 1), 0 0 160px rgba(220, 38, 38, 0.8),
+      0 0 240px rgba(220, 38, 38, 0.5);
   }
   50% {
-    background: linear-gradient(to right, #dc2626, #ef4444);
-  }
-  100% {
-    background: linear-gradient(to right, #1e3a8a, #3b82f6);
+    box-shadow: 0 0 120px rgba(234, 88, 12, 1), 0 0 200px rgba(220, 38, 38, 0.9),
+      0 0 280px rgba(220, 38, 38, 0.6);
   }
 }
-.section-gradient-blue-red {
-  animation: pulse-gradient-blue-red 6s ease-in-out infinite;
-  transition: background 0.6s ease-in-out;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-.section-gradient-blue-red:hover {
-  background: linear-gradient(to right, #ef4444, #3b82f6);
+.aura-hover-orange-red:hover {
+  animation: pulse-aura-orange-red 3s ease-in-out infinite;
 }
 
-@keyframes pulse-gradient-orange-green {
-  0% {
-    background: linear-gradient(to right, #ea580c, #f97316);
+/* Verde + Naranja */
+@keyframes pulse-aura-green-orange {
+  0%,
+  100% {
+    box-shadow: 0 0 80px rgba(34, 197, 94, 1), 0 0 160px rgba(234, 88, 12, 0.8),
+      0 0 240px rgba(234, 88, 12, 0.5);
   }
   50% {
-    background: linear-gradient(to right, #16a34a, #22c55e);
+    box-shadow: 0 0 120px rgba(34, 197, 94, 1), 0 0 200px rgba(234, 88, 12, 0.9),
+      0 0 280px rgba(234, 88, 12, 0.6);
   }
+}
+.aura-hover-green-orange:hover {
+  animation: pulse-aura-green-orange 3s ease-in-out infinite;
+}
+
+/* Dorado + Verde Esmeralda */
+@keyframes pulse-aura-gold-emerald {
+  0%,
   100% {
-    background: linear-gradient(to right, #ea580c, #f97316);
+    box-shadow: 0 0 80px rgba(251, 191, 36, 1), 0 0 160px rgba(5, 150, 105, 0.8),
+      0 0 240px rgba(5, 150, 105, 0.5);
+  }
+  50% {
+    box-shadow: 0 0 120px rgba(251, 191, 36, 1),
+      0 0 200px rgba(5, 150, 105, 0.9), 0 0 280px rgba(5, 150, 105, 0.6);
   }
 }
-.section-gradient-orange-green {
-  animation: pulse-gradient-orange-green 6s ease-in-out infinite;
-  transition: background 0.6s ease-in-out;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-.section-gradient-orange-green:hover {
-  background: linear-gradient(to right, #22c55e, #f97316);
+.aura-hover-gold-emerald:hover {
+  animation: pulse-aura-gold-emerald 3s ease-in-out infinite;
 }
 
-/* === Bordes ritualizados arriba y abajo por aura === */
-.section-border-gold-purple {
-  position: relative;
+/* === Aura base pulsante (púrpura) === */
+@keyframes pulse-aura {
+  0%,
+  100% {
+    box-shadow: 0 0 40px rgba(160, 32, 240, 0.8),
+      0 0 80px rgba(160, 32, 240, 0.5);
+  }
+  50% {
+    box-shadow: 0 0 60px rgba(160, 32, 240, 1),
+      0 0 120px rgba(160, 32, 240, 0.7);
+  }
 }
-.section-border-gold-purple::before,
-.section-border-gold-purple::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  width: 100%;
-  height: 12px;
-  pointer-events: none;
-  opacity: 0;
-  transition: opacity 0.4s ease-in-out;
-}
-.section-border-gold-purple::before {
-  top: 0;
-  background: linear-gradient(to right, #fbbf24, #9333ea);
-}
-.section-border-gold-purple::after {
-  bottom: 0;
-  background: linear-gradient(to right, #9333ea, #fbbf24);
-}
-.section-border-gold-purple:hover::before,
-.section-border-gold-purple:hover::after {
-  opacity: 1;
-}
-
-.section-border-blue-red {
-  position: relative;
-}
-.section-border-blue-red::before,
-.section-border-blue-red::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  width: 100%;
-  height: 12px;
-  pointer-events: none;
-  opacity: 0;
-  transition: opacity 0.4s ease-in-out;
-}
-.section-border-blue-red::before {
-  top: 0;
-  background: linear-gradient(to right, #3b82f6, #ef4444);
-}
-.section-border-blue-red::after {
-  bottom: 0;
-  background: linear-gradient(to right, #ef4444, #3b82f6);
-}
-.section-border-blue-red:hover::before,
-.section-border-blue-red:hover::after {
-  opacity: 1;
-}
-
-.section-border-orange-green {
-  position: relative;
-}
-.section-border-orange-green::before,
-.section-border-orange-green::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  width: 100%;
-  height: 12px;
-  pointer-events: none;
-  opacity: 0;
-  transition: opacity 0.4s ease-in-out;
-}
-.section-border-orange-green::before {
-  top: 0;
-  background: linear-gradient(to right, #f97316, #22c55e);
-}
-.section-border-orange-green::after {
-  bottom: 0;
-  background: linear-gradient(to right, #22c55e, #f97316);
-}
-.section-border-orange-green:hover::before,
-.section-border-orange-green:hover::after {
-  opacity: 1;
+.aura-pulsante {
+  animation: pulse-aura 3s ease-in-out infinite;
+  border-radius: 1.25rem;
+  will-change: box-shadow;
 }
 
 /* === Footer por idioma (púrpura en ES, dorado en EN) === */
