@@ -148,9 +148,9 @@ export default function ProgressSection() {
 
       {/* Imagen ZapSol con aura perfectamente centrada y alineada a la izquierda */}
       <div className="relative flex justify-end items-center mt-[-6rem] mr-[-24rem] mb-[-16rem] translate-y-[-16rem] animate-in fade-in slide-in-from-right duration-1000">
-        <div className="relative z-10 flex justify-center items-center w-80 h-80">
-          {/* Aura dorada pulsante */}
-          <div className="absolute w-80 h-80 rounded-full blur-3xl hero-zapsol-aura pointer-events-none z-0"></div>
+        <div className="relative z-10 flex justify-center items-center w-80 h-80 group">
+          {/* Aura dorada pulsante por defecto, cambia a azul en hover */}
+          <div className="absolute w-80 h-80 rounded-full blur-3xl hero-zapsol-aura pointer-events-none z-0 transition-colors duration-500 group-hover:bg-blue-500/40"></div>
           {/* Imagen del héroe ZapSol */}
           <img
             src="/assets/ZapSol.png"
