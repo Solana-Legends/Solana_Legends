@@ -10,7 +10,13 @@ export default function HeroSection() {
   const navigate = useNavigate();
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-[#0F0B1E] via-[#1A1530] to-[#0F0B1E] overflow-hidden aura-pulsante aura-hover-green-orange">
+    <section className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-[#0F0B1E] via-[#1A1530] to-[#0F0B1E] overflow-hidden aura-pulsante aura-hover-gold">
+      {/* ✨ Capa envolvente para aura completa */}
+      <div className="absolute inset-0 z-0 pointer-events-none aura-pulsante aura-hover-gold" />
+
+      {/* ✨ Aura cósmica dorada detrás del contenido */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[28rem] h-[28rem] rounded-full blur-3xl bg-[#FFA908]/20 animate-pulse pointer-events-none z-0" />
+
       {/* Fondo cósmico animado */}
       <div className="absolute inset-0 opacity-20">
         <div className="absolute top-1/4 left-1/4 w-32 h-32 bg-purple-500 rounded-full blur-3xl animate-pulse"></div>
@@ -60,7 +66,7 @@ export default function HeroSection() {
             {/* Aura dorada pulsante */}
             <div className="absolute w-48 h-48 rounded-full blur-3xl aura-pulsante-gold-strong z-0 pointer-events-none"></div>
 
-            {/* Logo Voltra centrado a la derecha*/}
+            {/* Logo Voltra centrado a la derecha */}
             <a
               href="https://x.com/Voltrastudio"
               target="_blank"
