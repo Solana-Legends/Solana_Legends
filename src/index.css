@@ -4,6 +4,7 @@
 
 @layer base {
   :root {
+    /* ✨ === Variables base === */
     --background: 0 0% 100%;
     --foreground: 222.2 84% 4.9%;
     --card: 0 0% 100%;
@@ -35,6 +36,7 @@
   }
 
   .dark {
+    /* ✨ === Variables en modo oscuro === */
     --background: 222.2 84% 4.9%;
     --foreground: 210 40% 98%;
     --card: 222.2 84% 4.9%;
@@ -77,33 +79,42 @@
 }
 
 @layer components {
+
+  /* ✨ === Componentes base (utilidades de color y ring) === */
   .bg-background {
     background-color: hsl(var(--background));
   }
+
   .text-foreground {
     color: hsl(var(--foreground));
   }
+
   .bg-card {
     background-color: hsl(var(--card));
   }
+
   .text-card-foreground {
     color: hsl(var(--card-foreground));
   }
+
   .bg-popover {
     background-color: hsl(var(--popover));
   }
+
   .text-popover-foreground {
     color: hsl(var(--popover-foreground));
   }
+
   .border-border {
     border-color: hsl(var(--border));
   }
+
   .ring-ring {
     box-shadow: 0 0 0 3px hsl(var(--ring));
   }
 }
 
-/* === Reglas adicionales === */
+/* ✨ === Reglas adicionales y comportamiento global === */
 html {
   scroll-behavior: smooth;
 }
@@ -123,32 +134,38 @@ video {
   user-select: none;
 }
 
-/* === Animación de respiración para el logo === */
+/* ✨ === Animación de respiración para el logo === */
 @keyframes pulse-scale {
+
   0%,
   100% {
     transform: scale(1);
   }
+
   50% {
     transform: scale(1.05);
   }
 }
+
 .logo-respirando {
   animation: pulse-scale 3s ease-in-out infinite;
 }
 
-/* === Auras genéricas === */
+/* ✨ === Auras genéricas (púrpura y azul) === */
 @keyframes pulse-aura {
+
   0%,
   100% {
     box-shadow: 0 0 40px rgba(160, 32, 240, 0.8),
       0 0 80px rgba(160, 32, 240, 0.5);
   }
+
   50% {
     box-shadow: 0 0 60px rgba(160, 32, 240, 1),
       0 0 120px rgba(160, 32, 240, 0.7);
   }
 }
+
 .aura-pulsante {
   animation: pulse-aura 3s ease-in-out infinite;
   border-radius: 1.25rem;
@@ -156,14 +173,17 @@ video {
 }
 
 @keyframes pulse-aura-blue {
+
   0%,
   100% {
     box-shadow: 0 0 40px rgba(0, 191, 255, 0.8), 0 0 80px rgba(0, 191, 255, 0.5);
   }
+
   50% {
     box-shadow: 0 0 60px rgba(0, 191, 255, 1), 0 0 120px rgba(0, 191, 255, 0.7);
   }
 }
+
 .aura-pulsante-blue {
   animation: pulse-aura-blue 3s ease-in-out infinite;
   border-radius: 1.25rem;
@@ -171,91 +191,105 @@ video {
 }
 
 @keyframes pulse-aura-gold-strong {
+
   0%,
   100% {
     box-shadow: 0 0 80px rgba(255, 168, 8, 1), 0 0 160px rgba(255, 168, 8, 0.8),
       0 0 240px rgba(255, 168, 8, 0.5);
   }
+
   50% {
     box-shadow: 0 0 120px rgba(255, 168, 8, 1), 0 0 200px rgba(255, 168, 8, 0.9),
       0 0 280px rgba(255, 168, 8, 0.6);
   }
 }
+
 .aura-pulsante-gold-strong {
   animation: pulse-aura-gold-strong 3s ease-in-out infinite;
   border-radius: 1.25rem;
   will-change: box-shadow;
 }
 
-/* === Hover dinámico para videos === */
+/* 🎥 === Hover dinámico para videos === */
 .aura-hover {
   transition: box-shadow 0.3s ease-in-out;
 }
+
 .aura-hover:hover {
   animation: pulse-aura-blue 3s ease-in-out infinite;
 }
+
 .aura-hover-gold:hover {
   animation: pulse-aura-gold-strong 3s ease-in-out infinite;
 }
+
 .aura-hover-intense:hover {
   filter: saturate(1.2) brightness(1.05);
 }
 
-/* === Evitar cortes del aura en contenedores padres === */
+/* ✨ === Evitar cortes del aura en contenedores padres === */
 .aura-container {
   position: relative;
   z-index: 0;
 }
-.aura-container > .aura-pulsante,
-.aura-container > .aura-pulsante-blue,
-.aura-container > .aura-pulsante-gold-strong {
+
+.aura-container>.aura-pulsante,
+.aura-container>.aura-pulsante-blue,
+.aura-container>.aura-pulsante-gold-strong {
   position: relative;
   z-index: 1;
 }
 
-/* === Variantes por guardián (hover opcional) === */
+/* ✨ === Variantes por guardián (hover opcional) === */
 .aura-fire:hover {
   animation: pulse-aura-gold-strong 3s ease-in-out infinite;
 }
+
 .aura-water:hover {
   animation: pulse-aura-blue 3s ease-in-out infinite;
 }
+
 .aura-shadow:hover {
   box-shadow: 0 0 60px rgba(80, 0, 160, 1), 0 0 120px rgba(80, 0, 160, 0.7);
   border-radius: 1.25rem;
 }
 
-/* === Animaciones de entrada === */
+/* 🌀 === Animaciones de entrada (fade-in-up) === */
 @keyframes fadeInUp {
   0% {
     opacity: 0;
     transform: translateY(24px);
   }
+
   100% {
     opacity: 1;
     transform: translateY(0);
   }
 }
+
 .animate-fadeInUp {
   animation: fadeInUp 0.8s ease-out forwards;
 }
 
-/* === Intensificación genérica de aura en tarjetas === */
+/* ✨ === Intensificación genérica de aura en tarjetas (hover) === */
 .aura-zapsol:hover {
   filter: brightness(1.2) saturate(1.3);
 }
+
 .aura-monkesol:hover {
   filter: brightness(1.15) saturate(1.2);
 }
+
 .aura-chipisol:hover {
   filter: brightness(1.25) saturate(1.4);
 }
 
-/* === Auras personalizadas por guardián (sin pulsación; solo hover) === */
+/* ✨ === Auras personalizadas por guardián (sin pulsación; solo hover) === */
 .aura-zapsol {
   box-shadow: 0 0 25px rgba(56, 189, 248, 0.9), 0 0 50px rgba(56, 189, 248, 0.6);
   border-radius: 0.5rem;
 }
+
 .aura-zapsol:hover {
   box-shadow: 0 0 50px rgba(255, 255, 255, 1),
     0 0 100px rgba(255, 255, 255, 0.85);
@@ -266,6 +300,7 @@ video {
   box-shadow: 0 0 30px rgba(239, 68, 68, 0.9), 0 0 60px rgba(239, 68, 68, 0.6);
   border-radius: 0.5rem;
 }
+
 .aura-monkesol:hover {
   box-shadow: 0 0 50px rgba(34, 197, 94, 1), 0 0 100px rgba(34, 197, 94, 0.85);
   filter: saturate(1.3) brightness(1.2);
@@ -276,35 +311,42 @@ video {
     0 0 60px rgba(192, 132, 252, 0.6);
   border-radius: 0.5rem;
 }
+
 .aura-chipisol:hover {
   box-shadow: 0 0 50px rgba(236, 72, 153, 1), 0 0 100px rgba(236, 72, 153, 0.85);
   filter: brightness(1.3) saturate(1.3);
 }
 
-/* === Animaciones en las FOTOS de héroes === */
+/* ✨ === Animaciones en las FOTOS de héroes (escala/opacity/flicker) === */
 @keyframes pulse-fast {
+
   0%,
   100% {
     transform: scale(1);
     opacity: 1;
   }
+
   50% {
     transform: scale(1.15);
     opacity: 0.7;
   }
 }
+
 .hero-zapsol {
   animation: pulse-fast 2s ease-in-out infinite;
 }
+
 .hero-zapsol-aura {
   box-shadow: 0 0 20px rgba(56, 189, 248, 0.8);
   border-radius: 0.5rem;
 }
+
 .hero-zapsol-aura:hover {
   box-shadow: 0 0 40px rgba(255, 255, 255, 1);
 }
 
 @keyframes flicker {
+
   0%,
   19%,
   21%,
@@ -315,6 +357,7 @@ video {
   100% {
     opacity: 1;
   }
+
   20%,
   22%,
   24%,
@@ -322,62 +365,141 @@ video {
     opacity: 0.4;
   }
 }
+
 .hero-monkesol {
   animation: flicker 2s infinite;
 }
+
 .hero-monkesol-aura {
   box-shadow: 0 0 20px rgba(239, 68, 68, 0.8);
   border-radius: 0.5rem;
 }
+
 .hero-monkesol-aura:hover {
   box-shadow: 0 0 40px rgba(34, 197, 94, 1);
 }
 
 @keyframes pulse-slow {
+
   0%,
   100% {
     transform: scale(1);
     opacity: 1;
   }
+
   50% {
     transform: scale(1.05);
     opacity: 0.85;
   }
 }
+
 .hero-chipisol {
   animation: pulse-slow 2.5s ease-in-out infinite;
 }
+
 .hero-chipisol-aura {
   box-shadow: 0 0 20px rgba(192, 132, 252, 0.8);
   border-radius: 0.5rem;
 }
+
 .hero-chipisol-aura:hover {
   box-shadow: 0 0 40px rgba(236, 72, 153, 1);
 }
 
-/* === Símbolos elementales === */
+/* ✨ === Auras para imágenes de héroes (pulsación específica) === */
+
+/* ⚡ ZapSol: aura eléctrica dorada */
+@keyframes pulseZapHero {
+
+  0%,
+  100% {
+    box-shadow: 0 0 40px rgba(250, 204, 21, 0.8),
+      0 0 80px rgba(250, 204, 21, 0.5);
+  }
+
+  50% {
+    box-shadow: 0 0 60px rgba(250, 204, 21, 1),
+      0 0 120px rgba(250, 204, 21, 0.7);
+  }
+}
+
+.hero-zapsol-aura {
+  animation: pulseZapHero 2s ease-in-out infinite;
+  border-radius: 1.25rem;
+  will-change: box-shadow;
+}
+
+/* 🔥 MonkeSol: aura fuego ancestral */
+@keyframes pulseMonkeHero {
+
+  0%,
+  100% {
+    box-shadow: 0 0 40px rgba(239, 68, 68, 0.8),
+      0 0 80px rgba(239, 68, 68, 0.5);
+  }
+
+  50% {
+    box-shadow: 0 0 60px rgba(239, 68, 68, 1),
+      0 0 120px rgba(239, 68, 68, 0.7);
+  }
+}
+
+.hero-monkesol-aura {
+  animation: pulseMonkeHero 2.5s ease-in-out infinite;
+  border-radius: 1.25rem;
+  will-change: box-shadow;
+}
+
+/* ❄️ ChipiSol: aura cósmica púrpura/azul */
+@keyframes pulseChipiHero {
+
+  0%,
+  100% {
+    box-shadow: 0 0 40px rgba(192, 132, 252, 0.8),
+      0 0 80px rgba(59, 130, 246, 0.5);
+  }
+
+  50% {
+    box-shadow: 0 0 60px rgba(192, 132, 252, 1),
+      0 0 120px rgba(59, 130, 246, 0.7);
+  }
+}
+
+.hero-chipisol-aura {
+  animation: pulseChipiHero 3s ease-in-out infinite;
+  border-radius: 1.25rem;
+  will-change: box-shadow;
+}
+
+/* 🧩 === Símbolos elementales (text-shadow y animaciones) === */
 @keyframes pulseZapSymbol {
+
   0%,
   100% {
     transform: scale(1);
   }
+
   50% {
     transform: scale(1.25);
   }
 }
+
 .symbol-zapsol {
   animation: pulseZapSymbol 2s ease-in-out infinite;
 }
+
 .symbol-zapsol-aura {
   text-shadow: 0 0 10px rgba(250, 204, 21, 0.9),
     0 0 20px rgba(250, 204, 21, 0.6);
 }
+
 .symbol-zapsol-aura:hover {
   text-shadow: 0 0 14px rgba(255, 255, 255, 1),
     0 0 28px rgba(255, 255, 255, 0.8);
 }
 
 @keyframes flickerMonkeSymbol {
+
   0%,
   19%,
   21%,
@@ -388,6 +510,7 @@ video {
   100% {
     opacity: 1;
   }
+
   20%,
   22%,
   24%,
@@ -395,51 +518,158 @@ video {
     opacity: 0.4;
   }
 }
+
 .symbol-monkesol {
   animation: flickerMonkeSymbol 2s infinite;
 }
+
 .symbol-monkesol-aura {
   text-shadow: 0 0 10px rgba(239, 68, 68, 0.9), 0 0 20px rgba(239, 68, 68, 0.6);
 }
+
 .symbol-monkesol-aura:hover {
   text-shadow: 0 0 14px rgba(34, 197, 94, 1), 0 0 28px rgba(34, 197, 94, 0.8);
 }
 
 @keyframes pulseChipiSymbol {
+
   0%,
   100% {
     transform: scale(1);
     opacity: 0.9;
   }
+
   50% {
     transform: scale(1.15);
     opacity: 1;
   }
 }
+
 .symbol-chipisol {
   animation: pulseChipiSymbol 2.5s ease-in-out infinite;
 }
+
 .symbol-chipisol-aura {
   text-shadow: 0 0 10px rgba(59, 130, 246, 0.9),
     0 0 20px rgba(59, 130, 246, 0.6);
 }
+
 .symbol-chipisol-aura:hover {
   text-shadow: 0 0 14px rgba(236, 72, 153, 1), 0 0 28px rgba(236, 72, 153, 0.8);
 }
 
-/* === Animaciones de entrada/salida para botón volver === */
+/* 🧩 === Símbolos elementales para héroes (HeroSection / ProgressSection) === */
+
+/* ⚡ ZapSol Hero */
+@keyframes pulseHeroZapSymbol {
+
+  0%,
+  100% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.15);
+  }
+}
+
+.symbol-hero-zapsol {
+  animation: pulseHeroZapSymbol 4s ease-in-out infinite;
+  /* más lento */
+}
+
+.symbol-hero-zapsol-aura {
+  text-shadow: 0 0 12px rgba(250, 204, 21, 0.9),
+    0 0 24px rgba(250, 204, 21, 0.6);
+}
+
+.symbol-hero-zapsol-aura:hover {
+  text-shadow: 0 0 16px rgba(255, 255, 255, 1),
+    0 0 32px rgba(255, 255, 255, 0.8);
+}
+
+/* 🔥 MonkeSol Hero */
+@keyframes flickerHeroMonkeSymbol {
+
+  0%,
+  19%,
+  21%,
+  23%,
+  25%,
+  54%,
+  56%,
+  100% {
+    opacity: 1;
+  }
+
+  20%,
+  22%,
+  24%,
+  55% {
+    opacity: 0.4;
+  }
+}
+
+.symbol-hero-monkesol {
+  animation: flickerHeroMonkeSymbol 2s infinite;
+  /* más lento que GuardianCard */
+}
+
+.symbol-hero-monkesol-aura {
+  text-shadow: 0 0 12px rgba(239, 68, 68, 0.9),
+    0 0 24px rgba(239, 68, 68, 0.6);
+}
+
+.symbol-hero-monkesol-aura:hover {
+  text-shadow: 0 0 16px rgba(34, 197, 94, 1),
+    0 0 32px rgba(34, 197, 94, 0.8);
+}
+
+/* ❄️ ChipiSol Hero */
+@keyframes pulseHeroChipiSymbol {
+
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 0.9;
+  }
+
+  50% {
+    transform: scale(1.15);
+    opacity: 1;
+  }
+}
+
+.symbol-hero-chipisol {
+  animation: pulseHeroChipiSymbol 5s ease-in-out infinite;
+  /* más lento */
+}
+
+.symbol-hero-chipisol-aura {
+  text-shadow: 0 0 12px rgba(59, 130, 246, 0.9),
+    0 0 24px rgba(59, 130, 246, 0.6);
+}
+
+.symbol-hero-chipisol-aura:hover {
+  text-shadow: 0 0 16px rgba(236, 72, 153, 1),
+    0 0 32px rgba(236, 72, 153, 0.8);
+}
+
+/* 🌀 === Animaciones de entrada/salida para botón volver === */
 @keyframes slideInLeftGlow {
   0% {
     opacity: 0;
     transform: translateX(-40px);
     box-shadow: 0 0 0 rgba(59, 130, 246, 0);
   }
+
   100% {
     opacity: 1;
     transform: translateX(0);
     box-shadow: 0 0 15px rgba(59, 130, 246, 0.6);
   }
 }
+
 .animate-slideInLeftGlow {
   animation: slideInLeftGlow 0.8s ease-out forwards;
 }
@@ -450,148 +680,174 @@ video {
     transform: translateX(0);
     box-shadow: 0 0 15px rgba(59, 130, 246, 0.6);
   }
+
   100% {
     opacity: 0;
     transform: translateX(-40px);
     box-shadow: 0 0 0 rgba(59, 130, 246, 0);
   }
 }
+
 .animate-slideOutLeftGlow {
   animation: slideOutLeftGlow 0.6s ease-in forwards;
 }
 
-/* === Aura para mensaje del footer (hover) === */
+/* ✨ === Aura para mensaje del footer (hover) === */
 .footer-aura {
   transition: text-shadow 0.3s ease-in-out;
   text-shadow: 0 0 10px rgba(255, 255, 255, 0.6);
 }
+
 .footer-aura:hover {
   text-shadow: 0 0 20px rgba(255, 255, 255, 0.9),
     0 0 40px rgba(255, 168, 8, 0.6);
 }
 
-/* === Fondo de pie de sección pulsante genérico === */
+/* 🧭 === Fondo de pie de sección pulsante genérico === */
 @keyframes pulse-gradient {
   0% {
     background: linear-gradient(to right, #4c1d95, #6d28d9);
   }
+
   50% {
     background: linear-gradient(to right, #f59e0b, #d97706);
   }
+
   100% {
     background: linear-gradient(to right, #4c1d95, #6d28d9);
   }
 }
+
 .footer-gradient-animated {
   animation: pulse-gradient 6s ease-in-out infinite;
   border-radius: 0.75rem;
   transition: background 0.6s ease-in-out;
 }
+
 .footer-gradient-animated:hover {
   background: linear-gradient(to right, #fbbf24, #f59e0b);
 }
 
-/* === Auras pulsantes personalizadas === */
+/* 🧿 === Auras pulsantes personalizadas (combinaciones) === */
 
-/* Púrpura + Dorado */
+/* ✨ Púrpura + Dorado */
 @keyframes pulse-aura-purple-gold {
+
   0%,
   100% {
     box-shadow: 0 0 80px rgba(147, 51, 234, 1),
       0 0 160px rgba(251, 191, 36, 0.8), 0 0 240px rgba(251, 191, 36, 0.5);
   }
+
   50% {
     box-shadow: 0 0 120px rgba(147, 51, 234, 1),
       0 0 200px rgba(251, 191, 36, 0.9), 0 0 280px rgba(251, 191, 36, 0.6);
   }
 }
+
 .aura-hover-purple-gold:hover {
   animation: pulse-aura-purple-gold 3s ease-in-out infinite;
 }
 
-/* Naranja + Rojo */
+/* ✨ Naranja + Rojo */
 @keyframes pulse-aura-orange-red {
+
   0%,
   100% {
     box-shadow: 0 0 80px rgba(234, 88, 12, 1), 0 0 160px rgba(220, 38, 38, 0.8),
       0 0 240px rgba(220, 38, 38, 0.5);
   }
+
   50% {
     box-shadow: 0 0 120px rgba(234, 88, 12, 1), 0 0 200px rgba(220, 38, 38, 0.9),
       0 0 280px rgba(220, 38, 38, 0.6);
   }
 }
+
 .aura-hover-orange-red:hover {
   animation: pulse-aura-orange-red 3s ease-in-out infinite;
 }
 
-/* Verde + Naranja */
+/* ✨ Verde + Naranja */
 @keyframes pulse-aura-green-orange {
+
   0%,
   100% {
     box-shadow: 0 0 80px rgba(34, 197, 94, 1), 0 0 160px rgba(234, 88, 12, 0.8),
       0 0 240px rgba(234, 88, 12, 0.5);
   }
+
   50% {
     box-shadow: 0 0 120px rgba(34, 197, 94, 1), 0 0 200px rgba(234, 88, 12, 0.9),
       0 0 280px rgba(234, 88, 12, 0.6);
   }
 }
+
 .aura-hover-green-orange:hover {
   animation: pulse-aura-green-orange 3s ease-in-out infinite;
 }
 
-/* Dorado + Verde Esmeralda */
+/* ✨ Dorado + Verde Esmeralda */
 @keyframes pulse-aura-gold-emerald {
+
   0%,
   100% {
     box-shadow: 0 0 80px rgba(251, 191, 36, 1), 0 0 160px rgba(5, 150, 105, 0.8),
       0 0 240px rgba(5, 150, 105, 0.5);
   }
+
   50% {
     box-shadow: 0 0 120px rgba(251, 191, 36, 1),
       0 0 200px rgba(5, 150, 105, 0.9), 0 0 280px rgba(5, 150, 105, 0.6);
   }
 }
+
 .aura-hover-gold-emerald:hover {
   animation: pulse-aura-gold-emerald 3s ease-in-out infinite;
 }
 
-/* === Aura base pulsante (púrpura) === */
+/* ✨ === Aura base pulsante (púrpura) — duplicada por compatibilidad === */
 @keyframes pulse-aura {
+
   0%,
   100% {
     box-shadow: 0 0 40px rgba(160, 32, 240, 0.8),
       0 0 80px rgba(160, 32, 240, 0.5);
   }
+
   50% {
     box-shadow: 0 0 60px rgba(160, 32, 240, 1),
       0 0 120px rgba(160, 32, 240, 0.7);
   }
 }
+
 .aura-pulsante {
   animation: pulse-aura 3s ease-in-out infinite;
   border-radius: 1.25rem;
   will-change: box-shadow;
 }
 
-/* === Footer por idioma (púrpura en ES, dorado en EN) === */
+/* 🧭 === Footer por idioma (púrpura en ES, dorado en EN) === */
 @keyframes pulse-gradient-spanish {
   0% {
     background: linear-gradient(to right, #4c1d95, #6d28d9);
   }
+
   50% {
     background: linear-gradient(to right, #9333ea, #7e22ce);
   }
+
   100% {
     background: linear-gradient(to right, #4c1d95, #6d28d9);
   }
 }
+
 .footer-gradient-spanish {
   animation: pulse-gradient-spanish 6s ease-in-out infinite;
   border-radius: 0.75rem;
   transition: background 0.6s ease-in-out;
 }
+
 .footer-gradient-spanish:hover {
   background: linear-gradient(to right, #a855f7, #9333ea);
 }
@@ -600,18 +856,22 @@ video {
   0% {
     background: linear-gradient(to right, #f59e0b, #d97706);
   }
+
   50% {
     background: linear-gradient(to right, #fbbf24, #f59e0b);
   }
+
   100% {
     background: linear-gradient(to right, #f59e0b, #d97706);
   }
 }
+
 .footer-gradient-english {
   animation: pulse-gradient-english 6s ease-in-out infinite;
   border-radius: 0.75rem;
   transition: background 0.6s ease-in-out;
 }
+
 .footer-gradient-english:hover {
   background: linear-gradient(to right, #fde68a, #fbbf24);
 }
