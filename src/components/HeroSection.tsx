@@ -168,7 +168,7 @@ export default function HeroSection() {
       <div className="absolute bottom-0 left-0 mb-[4rem] ml-[2rem] animate-in fade-in slide-in-from-left duration-1000">
         <div className="relative z-10 flex justify-center items-center w-80 h-80">
           {/* Aura dorada pulsante */}
-          <div className="absolute w-80 h-80 rounded-full blur-3xl aura-pulsante-gold-strong pointer-events-none z-0"></div>
+          <div className="absolute w-80 h-80 rounded-full blur-3xl symbol-monkesol-aura pointer-events-none z-0"></div>
           {/* Imagen del héroe MonkeSol */}
           <img
             src="/assets/MonkeSol.png"
