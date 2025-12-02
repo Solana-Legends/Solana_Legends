@@ -155,7 +155,7 @@ export default function ProgressSection() {
           <img
             src="/assets/ZapSol.png"
             alt="ZapSol Hero"
-            className="relative z-10 h-64 w-auto md:h-72 object-contain mix-blend-overlay opacity-90 logo-respirando"
+            className="relative z-10 h-64 w-auto md:h-72 object-contain mix-blend-overlay opacity-90 aura-zapsol"
           />
         </div>
       </div>
