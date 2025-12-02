@@ -19,7 +19,7 @@ export default function FollowerCounter() {
   return (
     <section className="relative py-20 px-6 bg-gradient-to-br from-[#0F0B1E] via-[#1A1530] to-[#0F0B1E] aura-pulsante aura-hover-gold">
       {/* Aura cósmica detrás */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 rounded-full blur-3xl bg-[#FFA908]/20 animate-pulse pointer-events-none z-0" />
+      {/* <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 rounded-full blur-3xl bg-[#FFA908]/20 animate-pulse pointer-events-none z-0" /> */}
 
       <div className="relative z-10 max-w-4xl mx-auto">
         <div className="text-center mb-12">
@@ -72,6 +72,8 @@ export default function FollowerCounter() {
         </Card>
 
         {/* Tarjetas de redes sociales */}
+
+        {/* Cuenta de X */}
         <div className="grid md:grid-cols-3 gap-6 mt-8">
           {/* Twitter */}
           <Card className="bg-[#1A1530]/40 border border-[#FFA908]/30 rounded-xl hover:shadow-[0_0_25px_#FFA908] hover:scale-105 transition-all duration-300">
