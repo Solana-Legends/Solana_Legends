@@ -54,9 +54,15 @@ export default function GuardiansPortal() {
   const [exit, setExit] = useState(false);
 
   return (
-    <section className="mt-[-3rem] px-4 py-12 md:py-20 bg-gradient-to-b from-slate-950 to-slate-900 text-white">
+    <section className="relative mt-[-3rem] px-4 py-12 md:py-20 min-h-[600px] bg-gradient-to-b from-slate-950 to-slate-900 text-white aura-pulsante aura-hover-gold">
+      {/* ✨ Capa envolvente para aura completa */}
+      <div className="absolute inset-0 z-0 pointer-events-none aura-pulsante aura-hover-gold" />
+
+      {/* ✨ Aura cósmica dorada detrás del contenido */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 rounded-full blur-3xl bg-[#FFA908]/20 animate-pulse pointer-events-none z-0" />
+
       {/* Header con cambio de idioma y volver a home */}
-      <div className="flex justify-between items-center mb-8">
+      <div className="relative z-10 flex justify-between items-center mb-8">
         <LanguageSwitcher />
 
         <Link
@@ -74,7 +80,11 @@ export default function GuardiansPortal() {
             stroke="currentColor"
             strokeWidth={2}
           >
-            <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="M15 19l-7-7 7-7"
+            />
           </svg>
           {t("common.backHome")}
         </Link>
@@ -82,7 +92,7 @@ export default function GuardiansPortal() {
 
       {/* Breadcrumb ritualizado con animación */}
       <nav
-        className="text-sm text-blue-300 mb-6 flex items-center gap-2 px-1 md:px-0 opacity-0 translate-y-3 animate-fadeInUp"
+        className="relative z-10 text-sm text-blue-300 mb-6 flex items-center gap-2 px-1 md:px-0 opacity-0 translate-y-3 animate-fadeInUp"
         style={{ animationDelay: "0.2s" }}
       >
         <Link
@@ -99,7 +109,7 @@ export default function GuardiansPortal() {
 
       {/* Encabezado ritualizado con animación */}
       <div
-        className="max-w-6xl mx-auto text-center opacity-0 translate-y-3 animate-fadeInUp"
+        className="relative z-10 max-w-6xl mx-auto text-center opacity-0 translate-y-3 animate-fadeInUp"
         style={{ animationDelay: "0.4s" }}
       >
         <h1 className="text-4xl md:text-6xl font-bold mb-2">
@@ -111,7 +121,7 @@ export default function GuardiansPortal() {
       </div>
 
       {/* Grid de guardianes */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+      <div className="relative z-10 grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
         {guardians.map((g, index) => (
           <div
             key={g.id}
@@ -124,7 +134,7 @@ export default function GuardiansPortal() {
       </div>
 
       {/* Pie de sección con aura ritualizada y franja expansiva debajo */}
-      <footer className="mt-10 py-4 ">
+      <footer className="relative z-10 mt-10 py-4">
         <p className="text-center text-sm text-yellow-500 italic footer-aura">
           {t("characters.telegramNote")}
         </p>

@@ -18,7 +18,9 @@ export default function ProgressSection() {
   } = useMetrics();
 
   return (
-    <section className="relative max-w-2xl mx-auto px-4 pt-4 pb-16 ">
+    <section className="relative max-w-2xl mx-auto px-4 pt-4 pb-16 aura-pulsante aura-hover-gold">
+      {/* ✨ Aura cósmica dorada detrás del contenido */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 rounded-full blur-3xl bg-[#FFA908]/20 animate-pulse pointer-events-none z-0" />
       <h2 className="text-xl font-bold text-zinc-100 mb-2">
         {t("progress.title")}
       </h2>
