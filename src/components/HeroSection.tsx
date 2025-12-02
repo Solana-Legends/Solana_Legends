@@ -27,8 +27,8 @@ export default function HeroSection() {
       {/* Contenido principal centrado */}
       <div className="relative z-10 max-w-6xl mx-auto px-6 text-center">
         {/* Logo con aura dorada */}
-        <div className="mb-8 flex justify-center relative">
-          <div className="absolute inset-0 flex justify-center items-center pointer-events-none z-0 group">
+        <div className="mb-8 flex justify-center relative group">
+          <div className="absolute inset-0 flex justify-center items-center pointer-events-none z-0">
             <div className="w-48 h-48 rounded-full blur-3xl aura-pulsante-gold-strong transition-colors duration-500 group-hover:bg-red-500/40"></div>
           </div>
           <a
