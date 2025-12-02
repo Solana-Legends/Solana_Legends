@@ -27,8 +27,8 @@ export default function HeroSection() {
       {/* Contenido principal centrado */}
       <div className="relative z-10 max-w-6xl mx-auto px-6 text-center">
         {/* Logo con aura dorada */}
-        <div className="mb-8 flex justify-center relative">
-          <div className="absolute inset-0 flex justify-center items-center pointer-events-none z-0">
+        <div className="mb-8 flex justify-center relative group">
+          <div className="absolute inset-0 flex justify-center items-center pointer-events-none z-0 transition-colors duration-500 group-hover:bg-red-500/40">
             <div className="w-48 h-48 rounded-full blur-3xl aura-pulsante-gold-strong"></div>
           </div>
           <a
@@ -63,9 +63,9 @@ export default function HeroSection() {
         {/* Imagen Voltra */}
         <div className="mt-[-9rem] mb-8 flex justify-end relative animate-in fade-in slide-in-from-right duration-1000 mr-[-8rem] translate-x-[-2rem]">
           {/* Bloque aura + logo */}
-          <div className="relative flex justify-center items-center w-48 h-48">
+          <div className="relative flex justify-center items-center w-48 h-48 group">
             {/* Aura dorada pulsante */}
-            <div className="absolute w-48 h-48 rounded-full blur-3xl aura-pulsante-gold-strong z-0 pointer-events-none"></div>
+            <div className="absolute w-48 h-48 rounded-full blur-3xl aura-pulsante-gold-strong z-0 pointer-events-none transition-colors duration-500 group-hover:bg-orange-500/40"></div>
 
             {/* Logo Voltra centrado a la derecha */}
             <a
