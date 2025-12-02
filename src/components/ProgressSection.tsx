@@ -19,6 +19,8 @@ export default function ProgressSection() {
 
   return (
     <section className="relative max-w-2xl mx-auto px-4 pt-4 pb-16">
+      {/* Aura cósmica detrás */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 rounded-full blur-3xl bg-[#FFA908]/20 animate-pulse pointer-events-none z-0" />
       <h2 className="text-xl font-bold text-zinc-100 mb-2">
         {t("progress.title")}
       </h2>
