@@ -236,7 +236,7 @@ export default function SocialLinks() {
         </div>
 
         {/* Imagen ChipiSol con aura perfectamente centrada y alineada a la izquierda */}
-        <div className="absolute bottom-0 left-0 mb-[8rem] ml-[-2rem] animate-in fade-in slide-in-from-left duration-1000">
+        <div className="absolute bottom-0 left-0 mb-[14rem] ml-[-2rem] animate-in fade-in slide-in-from-left duration-1000">
           <div className="relative z-10 flex justify-center items-center w-80 h-80 group">
             {/* Aura dorada pulsante por defecto, cambia a verde en hover */}
             <div className="absolute w-80 h-80 rounded-full blur-3xl hero-chipisol-aura pointer-events-none z-0 transition-colors duration-500 group-hover:bg-white/40"></div>
