@@ -3,7 +3,7 @@ import { useLanguage } from "@/contexts/LanguageContext";
 import LanguageSwitcher from "@/components/LanguageSwitcher";
 import GuardianCard from "@/components/guardians/GuardianCard";
 import GuardianGallery from "./GuardianGallery";
-import { useState } from "react";
+import BackHomeButton from "@/components/guardians/BackHomeButton";
 
 const guardians = [
   {
@@ -52,7 +52,6 @@ const guardians = [
 
 export default function GuardiansPortal() {
   const { t } = useLanguage();
-  const [exit, setExit] = useState(false);
 
   return (
     <section className="relative mt-[-3rem] px-4 py-12 md:py-20 min-h-[600px] bg-gradient-to-b from-slate-950 to-slate-900 text-white aura-pulsante aura-hover-gold">
@@ -65,30 +64,7 @@ export default function GuardiansPortal() {
       {/* Header con cambio de idioma y volver a home */}
       <div className="relative z-10 flex justify-between items-center mb-8">
         <LanguageSwitcher />
-
-        <Link
-          to="/"
-          onClick={() => setExit(true)}
-          className={`flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white font-semibold px-5 py-3 rounded-lg text-lg transition ${
-            exit ? "animate-slideOutLeftGlow" : "animate-slideInLeftGlow"
-          }`}
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            className="h-6 w-6"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-            strokeWidth={2}
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              d="M15 19l-7-7 7-7"
-            />
-          </svg>
-          {t("common.backHome")}
-        </Link>
+        <BackHomeButton />
       </div>
 
       {/* Breadcrumb ritualizado con animación */}

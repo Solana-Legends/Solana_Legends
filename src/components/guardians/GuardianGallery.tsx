@@ -30,7 +30,7 @@ export default function GuardianGallery() {
         <div className="animate-in fade-in slide-in-from-right duration-1000">
           <div className="relative group rounded-xl overflow-hidden transition-shadow duration-300 hover:scale-[1.02] border border-blue-400/40 aura-pulsante-blue aura-hover-gold">
             <VideoWithControls
-              src="/assets/HeroesEspaciale.mp4"
+              src="/assets/HeroesEspaciales.mp4"
               glowColor="#00BFFF"
             />
             <div className="pointer-events-none absolute inset-0 rounded-xl bg-gradient-to-t from-black/50 to-transparent"></div>
