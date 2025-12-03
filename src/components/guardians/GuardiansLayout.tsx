@@ -4,6 +4,27 @@ import LanguageSwitcher from "@/components/LanguageSwitcher";
 import BackHomeButton from "@/components/guardians/BackHomeButton";
 import GuardiansBreadcrumb from "@/components/guardians/GuardiansBreadcrumb";
 
+// ✨ Componente de prueba integrado
+function TestHeader() {
+  return (
+    <div className="relative z-10 p-4 bg-slate-800 text-white">
+      <div className="flex justify-between items-center">
+        <button className="bg-green-600 px-4 py-2 rounded">
+          LanguageSwitcher
+        </button>
+        <button className="bg-blue-600 px-4 py-2 rounded">
+          BackHomeButton
+        </button>
+      </div>
+      <nav className="flex gap-2 mt-4 text-sm">
+        <span>Home</span>
+        <span>›</span>
+        <span>Guardians</span>
+      </nav>
+    </div>
+  );
+}
+
 interface GuardiansLayoutProps {
   children: ReactNode;
   titleKey?: TranslationKeys;
@@ -25,7 +46,10 @@ export default function GuardiansLayout({
 
       {/* ✅ Contenido en flujo normal */}
       <div className="relative z-10">
-        {/* Encabezado con cambio de idioma y botón de regreso */}
+        {/* 🔎 Header de prueba */}
+        <TestHeader />
+
+        {/* Encabezado real con cambio de idioma y botón de regreso */}
         <div className="mb-8 space-y-4">
           <div className="flex justify-between items-center">
             <LanguageSwitcher />
