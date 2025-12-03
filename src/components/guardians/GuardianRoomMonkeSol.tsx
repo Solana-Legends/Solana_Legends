@@ -13,7 +13,7 @@ export default function GuardianRoomMonkeSol() {
       <div className="absolute top-10 left-1/4 text-red-500 text-4xl animate-bounce">
         🔥
       </div>
-      <div className="absolute bottom-12 right-1/2 text-orange-400 text-3xl animate-ping">
+      <div className="absolute bottom-12 right-1/4 text-orange-400 text-3xl animate-ping">
         ☯
       </div>
       <div className="absolute top-1/2 left-2/3 text-yellow-500 text-2xl animate-spin">
@@ -38,7 +38,7 @@ export default function GuardianRoomMonkeSol() {
           style={{ animationDelay: "0.6s" }}
         >
           <img
-            src="/images/guardians/Monk.png"
+            src="/images/guardians/Monk1.png"
             alt="MonkeSol"
             className="w-64 h-64 object-contain drop-shadow-[0_0_25px_#f87171]"
           />

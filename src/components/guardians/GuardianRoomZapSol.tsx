@@ -31,7 +31,7 @@ export default function GuardianRoomZapSol() {
           style={{ animationDelay: "0.6s" }}
         >
           <img
-            src="/images/guardians/Zap.png"
+            src="/images/guardians/Zap1.png"
             alt="ZapSol"
             className="w-64 h-64 object-contain drop-shadow-[0_0_25px_#facc15]"
           />
