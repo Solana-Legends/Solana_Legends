@@ -65,7 +65,7 @@ export default function HeroSection() {
           {/* Bloque aura + logo */}
           <div className="relative flex justify-center items-center w-48 h-48 group">
             {/* Aura dorada pulsante */}
-            <div className="absolute w-48 h-48 rounded-full blur-3xl aura-pulsante-gold-strong z-0 pointer-events-none transition-colors duration-500 group-hover:bg-orange-500/40"></div>
+            <div className="absolute w-48 h-48 rounded-full blur-3xl aura-pulsante-gold-strong z-0 pointer-events-none transition-colors duration-500 group-hover:bg-purple-500/40"></div>
 
             {/* Logo Voltra centrado a la derecha */}
             <a
