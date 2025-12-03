@@ -144,6 +144,25 @@ const enTranslations = {
   // ✅ Common Section
   "common.home": "Home",
   "common.backHome": "Back to home",
+
+  // Timeline
+  "timeline.monkesol.title": "MonkeSol descends with ancestral wisdom 🔥",
+  "timeline.monkesol.description":
+    "From the flames emerges the Sage Guardian, bearer of controlled fire that illuminates minds and protects blockchain secrets.",
+
+  "timeline.zapsol.title": "ZapSol bursts forth with a thunder of energy ⚡",
+  "timeline.zapsol.description":
+    "The lightning clears the path: symbol of speed, electric power, and the spark that awakens the community.",
+
+  "timeline.chipisol.title": "ChipiSol reveals itself as cosmic spirit ❄️",
+  "timeline.chipisol.description":
+    "Among crystalline dimensions appears the mystical Entity, weaving portals and preserving the eternal memory of the universe.",
+
+  "timeline.union.title": "The union of the three forces ⚡🔥❄️",
+  "timeline.union.description":
+    "ZapSol, MonkeSol and ChipiSol intertwine their auras and become Guardians of a new cosmos, protectors of the legendary community.",
+    "timeline.closure": "Thus was born the legend of the Guardians, united in a new universe.",
+
 } as const;
 
 // 🔹 Tipo de claves de traducción generado automáticamente
@@ -283,6 +302,25 @@ const esTranslations = {
   // ✅ Common Section
   "common.home": "Inicio",
   "common.backHome": "Volver al inicio",
+
+  // Timeline
+  "timeline.monkesol.title": "MonkeSol desciende con sabiduría ancestral 🔥",
+  "timeline.monkesol.description":
+    "De las llamas surge el Guardián Sabio, portador del fuego controlado que ilumina la mente y protege los secretos del blockchain.",
+
+  "timeline.zapsol.title": "ZapSol irrumpe con un trueno de energía ⚡",
+  "timeline.zapsol.description":
+    "El relámpago abre camino: símbolo de velocidad, poder eléctrico y la chispa que despierta a la comunidad.",
+
+  "timeline.chipisol.title": "ChipiSol se revela como espíritu cósmico ❄️",
+  "timeline.chipisol.description":
+    "Entre dimensiones cristalinas aparece la Entidad mística, tejiendo portales y preservando la memoria eterna del universo.",
+
+  "timeline.union.title": "La unión de las tres fuerzas ⚡🔥❄️",
+  "timeline.union.description":
+    "ZapSol, MonkeSol y ChipiSol entrelazan sus auras y se convierten en Guardianes de un nuevo cosmos, protectores de la comunidad legendaria.",
+    "timeline.closure": "Así nació la leyenda de los Guardianes, unidos en un nuevo universo.",
+
 } as const;
 
 /**

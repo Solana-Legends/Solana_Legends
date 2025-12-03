@@ -1,7 +1,8 @@
 import { Link } from "react-router-dom";
 import { useLanguage } from "@/contexts/LanguageContext";
 import LanguageSwitcher from "@/components/LanguageSwitcher";
-import GuardianCard from "@/components/GuardianCard";
+import GuardianCard from "@/components/guardians/GuardianCard";
+import GuardianGallery from "./GuardianGallery";
 import { useState } from "react";
 
 const guardians = [
@@ -139,6 +140,7 @@ export default function GuardiansPortal() {
           {t("characters.telegramNote")}
         </p>
       </footer>
+      <GuardianGallery />
     </section>
   );
 }

@@ -1,4 +1,4 @@
-import GuardiansPortal from "@/components/GuardiansPortal";
+import GuardiansPortal from "@/components/guardians/GuardiansPortal";
 
 export default function GuardiansPage() {
   return <GuardiansPortal />;
