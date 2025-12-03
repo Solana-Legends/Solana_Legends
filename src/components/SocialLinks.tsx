@@ -244,7 +244,7 @@ export default function SocialLinks() {
             <img
               src="/assets/ChipiSol.png"
               alt="ChipiSol Hero"
-              className="relative z-10 h-61 w-auto md:h-69 object-contain mix-blend-overlay opacity-90 symbol-hero-chipisol"
+              className="relative z-10 h-63 w-auto md:h-71 object-contain mix-blend-overlay opacity-90 symbol-hero-chipisol"
             />
           </div>
         </div>
