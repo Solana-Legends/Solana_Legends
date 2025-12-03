@@ -875,3 +875,11 @@ video {
 .footer-gradient-english:hover {
   background: linear-gradient(to right, #fde68a, #fbbf24);
 }
+
+.back-home-btn {
+  position: relative !important;
+}
+
+.guardians-breadcrumb {
+  position: relative !important;
+}

@@ -193,7 +193,9 @@ const enTranslations = {
 } as const;
 
 // 🔹 Tipo de claves de traducción generado automáticamente
-type TranslationKeys = keyof typeof enTranslations | `characters.${string}`;
+export type TranslationKeys =
+  | keyof typeof enTranslations
+  | `characters.${string}`;
 
 // Bloque español
 const esTranslations = {
