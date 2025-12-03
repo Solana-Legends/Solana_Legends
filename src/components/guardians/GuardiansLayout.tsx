@@ -29,7 +29,7 @@ export default function GuardiansLayout({
         <div className="mb-8 space-y-4">
           <div className="flex justify-between items-center">
             <LanguageSwitcher />
-            <BackHomeButton className="back-home-btn" />
+            <BackHomeButton />
           </div>
           <GuardiansBreadcrumb />
         </div>
