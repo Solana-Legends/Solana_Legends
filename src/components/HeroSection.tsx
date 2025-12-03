@@ -84,7 +84,7 @@ export default function HeroSection() {
         </div>
 
         {/* Imagen MonkeSol anclada y fija abajo a la izquierda */}
-        <div className="absolute bottom-0 left-0 mb-[-2rem] ml-[-12rem] animate-in fade-in slide-in-from-left duration-1000">
+        <div className="absolute bottom-0 left-0 mb-[-3rem] ml-[-10rem] animate-in fade-in slide-in-from-left duration-1000">
           <div className="relative z-10 flex justify-center items-center w-80 h-80 group">
             {/* Aura dorada pulsante por defecto, cambia a púrpura en hover */}
             <div className="absolute w-80 h-80 rounded-full blur-3xl hero-monkesol-aura pointer-events-none z-0 transition-colors duration-500 group-hover:bg-purple-500/40"></div>
@@ -92,7 +92,7 @@ export default function HeroSection() {
             <img
               src="/assets/MonkeSol.png"
               alt="MonkeSol Hero"
-              className="relative z-10 h-64 w-auto md:h-72 object-contain mix-blend-overlay opacity-90 symbol-hero-monkesol"
+              className="relative z-10 h-61 w-auto md:h-69 object-contain mix-blend-overlay opacity-90 symbol-hero-monkesol"
             />
           </div>
         </div>
