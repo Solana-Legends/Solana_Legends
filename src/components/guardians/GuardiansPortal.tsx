@@ -53,7 +53,7 @@ export default function GuardiansPortal() {
 
   return (
     <GuardiansLayout titleKey="hero.viewGuardians" subtitleKey="hero.tagline">
-      {/* Grid de guardianes */}
+      {/* ✅ Grid de guardianes en flujo normal */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
         {guardians.map((g, index) => (
           <div
@@ -66,14 +66,14 @@ export default function GuardiansPortal() {
         ))}
       </div>
 
-      {/* Pie de sección con aura ritualizada y franja expansiva debajo */}
+      {/* ✅ Pie de sección ritualizado */}
       <footer className="mt-10 py-4">
         <p className="text-center text-sm text-yellow-500 italic footer-aura">
           {t("characters.telegramNote")}
         </p>
       </footer>
 
-      {/* Galería ritualizada de guardianes */}
+      {/* ✅ Galería ritualizada */}
       <GuardianGallery />
     </GuardiansLayout>
   );
