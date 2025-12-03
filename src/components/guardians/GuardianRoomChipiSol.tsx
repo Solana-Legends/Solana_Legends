@@ -1,5 +1,9 @@
 // src/components/guardians/GuardianRoomChipiSol.tsx
+import { useLanguage } from "@/contexts/LanguageContext";
+
 export default function GuardianRoomChipiSol() {
+  const { t } = useLanguage();
+
   return (
     <section className="relative px-6 py-16 bg-gradient-to-b from-slate-800 to-slate-700 rounded-xl shadow-lg overflow-hidden">
       {/* ✨ Fondo cósmico con aura fría */}
@@ -24,14 +28,13 @@ export default function GuardianRoomChipiSol() {
       {/* Contenido principal */}
       <div className="relative z-10 max-w-4xl mx-auto text-center">
         <h3 className="text-4xl md:text-5xl font-bold text-cyan-400 mb-4 animate-fadeInUp">
-          ❄️ ChipiSol
+          {t("chipisol.title")}
         </h3>
         <p
           className="text-lg md:text-xl text-blue-200 mb-6 animate-fadeInUp"
           style={{ animationDelay: "0.3s" }}
         >
-          El Espíritu Cósmico, entidad mística que conecta todas las dimensiones
-          y portales.
+          {t("chipisol.subtitle")}
         </p>
 
         {/* Imagen ritualizada */}
@@ -51,8 +54,7 @@ export default function GuardianRoomChipiSol() {
           className="italic text-cyan-300 text-lg md:text-xl animate-fadeInUp"
           style={{ animationDelay: "0.9s" }}
         >
-          “El hielo cósmico preserva la memoria del universo y abre portales
-          hacia lo eterno.”
+          {t("chipisol.quote")}
         </blockquote>
       </div>
     </section>

@@ -1,5 +1,9 @@
 // src/components/guardians/GuardianRoomZapSol.tsx
+import { useLanguage } from "@/contexts/LanguageContext";
+
 export default function GuardianRoomZapSol() {
+  const { t } = useLanguage();
+
   return (
     <section className="relative px-6 py-16 bg-gradient-to-b from-slate-950 to-slate-900 rounded-xl shadow-lg overflow-hidden">
       {/* ✨ Fondo eléctrico animado */}
@@ -12,14 +16,13 @@ export default function GuardianRoomZapSol() {
       {/* Contenido principal */}
       <div className="relative z-10 max-w-4xl mx-auto text-center">
         <h3 className="text-4xl md:text-5xl font-bold text-yellow-400 mb-4 animate-fadeInUp">
-          ⚡ ZapSol
+          {t("zapsol.title")}
         </h3>
         <p
           className="text-lg md:text-xl text-blue-300 mb-6 animate-fadeInUp"
           style={{ animationDelay: "0.3s" }}
         >
-          El Guardián del Rayo, maestro de la energía eléctrica, la velocidad y
-          la luz.
+          {t("zapsol.subtitle")}
         </p>
 
         {/* Imagen ritualizada */}
@@ -39,8 +42,7 @@ export default function GuardianRoomZapSol() {
           className="italic text-yellow-300 text-lg md:text-xl animate-fadeInUp"
           style={{ animationDelay: "0.9s" }}
         >
-          “El rayo ilumina el camino del sabio y despierta la energía de la
-          comunidad.”
+          {t("zapsol.quote")}
         </blockquote>
       </div>
     </section>

@@ -1,5 +1,9 @@
 // src/components/guardians/GuardianRoomMonkeSol.tsx
+import { useLanguage } from "@/contexts/LanguageContext";
+
 export default function GuardianRoomMonkeSol() {
+  const { t } = useLanguage();
+
   return (
     <section className="relative px-6 py-16 bg-gradient-to-b from-slate-900 to-slate-800 rounded-xl shadow-lg overflow-hidden">
       {/* ✨ Fondo ritualizado con aura cálida */}
@@ -7,9 +11,9 @@ export default function GuardianRoomMonkeSol() {
 
       {/* 🔥 Símbolos ancestrales flotando */}
       <div className="absolute top-10 left-1/4 text-red-500 text-4xl animate-bounce">
-        卍
+        🔥
       </div>
-      <div className="absolute bottom-12 right-1/3 text-orange-400 text-3xl animate-ping">
+      <div className="absolute bottom-12 right-1/2 text-orange-400 text-3xl animate-ping">
         ☯
       </div>
       <div className="absolute top-1/2 left-2/3 text-yellow-500 text-2xl animate-spin">
@@ -19,14 +23,13 @@ export default function GuardianRoomMonkeSol() {
       {/* Contenido principal */}
       <div className="relative z-10 max-w-4xl mx-auto text-center">
         <h3 className="text-4xl md:text-5xl font-bold text-red-400 mb-4 animate-fadeInUp">
-          🔥 MonkeSol
+          {t("monkesol.title")}
         </h3>
         <p
           className="text-lg md:text-xl text-orange-300 mb-6 animate-fadeInUp"
           style={{ animationDelay: "0.3s" }}
         >
-          El Guardián Sabio, protector de la sabiduría ancestral y los secretos
-          del blockchain.
+          {t("monkesol.subtitle")}
         </p>
 
         {/* Imagen ritualizada */}
@@ -46,8 +49,7 @@ export default function GuardianRoomMonkeSol() {
           className="italic text-orange-400 text-lg md:text-xl animate-fadeInUp"
           style={{ animationDelay: "0.9s" }}
         >
-          “El fuego controlado es la llama que guía a la comunidad hacia la
-          sabiduría.”
+          {t("monkesol.quote")}
         </blockquote>
       </div>
     </section>

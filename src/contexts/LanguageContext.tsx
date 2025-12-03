@@ -161,8 +161,35 @@ const enTranslations = {
   "timeline.union.title": "The union of the three forces ⚡🔥❄️",
   "timeline.union.description":
     "ZapSol, MonkeSol and ChipiSol intertwine their auras and become Guardians of a new cosmos, protectors of the legendary community.",
-    "timeline.closure": "Thus was born the legend of the Guardians, united in a new universe.",
+  "timeline.closure":
+    "Thus was born the legend of the Guardians, united in a new universe.",
 
+  // gallery
+  "gallery.title": "Virtual Museum of the Guardians",
+  "gallery.subtitle":
+    "Explore the ritualized halls of ZapSol ⚡, MonkeSol 🔥 and ChipiSol ❄️",
+  "gallery.footer": "At every dawn and dusk, the fire renews with your energy",
+
+  // chipisol
+  "chipisol.title": "❄️ ChipiSol",
+  "chipisol.subtitle":
+    "The Cosmic Spirit, mystical entity that connects all dimensions and portals.",
+  "chipisol.quote":
+    "Cosmic ice preserves the memory of the universe and opens portals to the eternal.",
+
+  // monkesol
+  "monkesol.title": "🔥 MonkeSol",
+  "monkesol.subtitle":
+    "The Sage Guardian, protector of ancestral wisdom and blockchain secrets.",
+  "monkesol.quote":
+    "Controlled fire is the flame that guides the community toward wisdom.",
+
+  // zapsol
+  "zapsol.title": "⚡ ZapSol",
+  "zapsol.subtitle":
+    "The Lightning Guardian, master of electrical energy, speed, and light.",
+  "zapsol.quote":
+    "The lightning illuminates the path of the wise and awakens the community’s energy.",
 } as const;
 
 // 🔹 Tipo de claves de traducción generado automáticamente
@@ -319,8 +346,36 @@ const esTranslations = {
   "timeline.union.title": "La unión de las tres fuerzas ⚡🔥❄️",
   "timeline.union.description":
     "ZapSol, MonkeSol y ChipiSol entrelazan sus auras y se convierten en Guardianes de un nuevo cosmos, protectores de la comunidad legendaria.",
-    "timeline.closure": "Así nació la leyenda de los Guardianes, unidos en un nuevo universo.",
+  "timeline.closure":
+    "Así nació la leyenda de los Guardianes, unidos en un nuevo universo.",
 
+  // gallery
+  "gallery.title": "Museo Virtual de los Guardianes",
+  "gallery.subtitle":
+    "Explora las salas ritualizadas de ZapSol ⚡, MonkeSol 🔥 y ChipiSol ❄️",
+  "gallery.footer":
+    "Cada amanecer y cada ocaso, el fuego se renueva con vuestra energía",
+
+  // chipisol
+  "chipisol.title": "❄️ ChipiSol",
+  "chipisol.subtitle":
+    "El Espíritu Cósmico, entidad mística que conecta todas las dimensiones y portales.",
+  "chipisol.quote":
+    "El hielo cósmico preserva la memoria del universo y abre portales hacia lo eterno.",
+
+  // monkesol
+  "monkesol.title": "🔥 MonkeSol",
+  "monkesol.subtitle":
+    "El Guardián Sabio, protector de la sabiduría ancestral y los secretos del blockchain.",
+  "monkesol.quote":
+    "El fuego controlado es la llama que guía a la comunidad hacia la sabiduría.",
+
+  // zapsol
+  "zapsol.title": "⚡ ZapSol",
+  "zapsol.subtitle":
+    "El Guardián del Rayo, maestro de la energía eléctrica, la velocidad y la luz.",
+  "zapsol.quote":
+    "El rayo ilumina el camino del sabio y despierta la energía de la comunidad.",
 } as const;
 
 /**
