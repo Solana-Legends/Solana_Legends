@@ -91,3 +91,6 @@ dist
 # Vite logs
 vite.config.js.timestamp-*
 vite.config.ts.timestamp-*
+
+# Ignorar solo el vídeo grande que bloquea el push
+public/assets/HeroesEspaciales.mp4
