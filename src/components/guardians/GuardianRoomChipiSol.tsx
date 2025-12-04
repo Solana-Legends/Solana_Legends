@@ -1,10 +1,11 @@
+// src/components/guardians/GuardianRoomChipiSol.tsx
 import { useLanguage } from "@/contexts/LanguageContext";
 
 export default function GuardianRoomChipiSol() {
   const { t } = useLanguage();
 
   return (
-    <section className="relative min-h-[640px] px-6 py-16 bg-gradient-to-b from-slate-800 to-slate-700 rounded-xl shadow-lg overflow-hidden">
+    <section className="relative px-6 py-16 bg-gradient-to-b from-slate-800 to-slate-700 rounded-xl shadow-lg overflow-hidden">
       {/* ✨ Fondo cósmico con aura fría */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,#0ea5e9,#0f172a)] opacity-70 animate-pulse" />
 
@@ -36,7 +37,7 @@ export default function GuardianRoomChipiSol() {
           {t("chipisol.subtitle")}
         </p>
 
-        {/* Imagen ritualizada (rostro centrado) */}
+        {/* Imagen ritualizada */}
         <div
           className="flex justify-center mb-8 animate-fadeInUp"
           style={{ animationDelay: "0.6s" }}

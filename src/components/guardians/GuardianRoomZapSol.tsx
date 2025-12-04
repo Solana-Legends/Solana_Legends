@@ -4,7 +4,7 @@ export default function GuardianRoomZapSol() {
   const { t } = useLanguage();
 
   return (
-    <section className="relative min-h-[640px] px-6 py-16 bg-gradient-to-b from-slate-950 to-slate-900 rounded-xl shadow-lg overflow-hidden">
+    <section className="relative px-6 py-16 bg-gradient-to-b from-slate-950 to-slate-900 rounded-xl shadow-lg overflow-hidden">
       {/* ✨ Fondo eléctrico animado */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,#1e3a8a,#0f172a)] animate-pulse opacity-70" />
 
