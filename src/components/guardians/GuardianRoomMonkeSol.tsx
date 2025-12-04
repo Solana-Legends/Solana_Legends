@@ -9,15 +9,41 @@ export default function GuardianRoomMonkeSol() {
       {/* ✨ Fondo ritualizado con aura cálida */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,#7f1d1d,#0f172a)] opacity-70 animate-pulse" />
 
-      {/* 🔥 Símbolos ancestrales flotando */}
-      <div className="absolute top-10 left-1/4 text-red-500 text-4xl animate-bounce">
-        🔥
-      </div>
-      <div className="absolute bottom-12 right-1/4 text-blue-400 text-3xl animate-pulse">
-        ☯
-      </div>
-      <div className="absolute top-1/2 right-1/4 text-yellow-500 text-3xl animate-spin">
-        💥
+      {/* 🔥💥 Partículas de fuego y explosiones */}
+      <div className="absolute inset-0 pointer-events-none">
+        {Array.from({ length: 30 }).map((_, i) => {
+          const isFire = i % 2 === 0; // alterna entre fuego 🔥 y explosiones 💥
+
+          // Alterna animaciones: pulso, flicker, spin
+          const animationClass =
+            i % 3 === 0
+              ? "animate-pulse" // brillo suave
+              : i % 3 === 1
+              ? "animate-flicker" // parpadeo irregular
+              : "animate-spin"; // giro constante
+
+          // Aura ligera alrededor (drop-shadow)
+          const auraClass = isFire
+            ? "drop-shadow-[0_0_12px_#ef4444]" // rojo para fuego
+            : "drop-shadow-[0_0_12px_#facc15]"; // dorado para explosiones
+
+          return (
+            <div
+              key={i}
+              className={`absolute text-3xl ${
+                isFire ? "text-red-500" : "text-yellow-400"
+              } ${animationClass} ${auraClass}`}
+              style={{
+                top: `${Math.random() * 100}%`,
+                left: `${Math.random() * 100}%`,
+                animationDuration: `${2 + Math.random() * 3}s`,
+                animationDelay: `${Math.random() * 2}s`,
+              }}
+            >
+              {isFire ? "🔥" : "💥"}
+            </div>
+          );
+        })}
       </div>
 
       {/* Contenido principal */}
@@ -45,7 +71,7 @@ export default function GuardianRoomMonkeSol() {
         </div>
 
         {/* Imagen MonkeSol anclada y fija abajo a la izquierda */}
-        <div className="absolute bottom-0 left-0 mb-[-0rem] ml-[-4rem] animate-in fade-in slide-in-from-left duration-1000">
+        <div className="absolute bottom-0 left-0 mb-0 ml-[-4rem] animate-in fade-in slide-in-from-left duration-1000">
           <div className="relative z-10 flex justify-center items-center w-80 h-80 group">
             {/* Aura dorada pulsante por defecto, cambia a rojo en hover */}
             <div className="absolute w-80 h-80 rounded-full blur-3xl hero-monkesol-aura pointer-events-none z-0 transition-colors duration-500 group-hover:bg-red-400/40"></div>

@@ -1,3 +1,4 @@
+// src/components/guardians/GuardianRoomZapSol.tsx
 import { useLanguage } from "@/contexts/LanguageContext";
 
 export default function GuardianRoomZapSol() {
@@ -8,7 +9,44 @@ export default function GuardianRoomZapSol() {
       {/* ✨ Fondo eléctrico animado */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,#1e3a8a,#0f172a)] animate-pulse opacity-70" />
 
-      {/* ⚡ Rayos estilizados */}
+      {/* ⚡✨ Partículas eléctricas y chispas */}
+      <div className="absolute inset-0 pointer-events-none">
+        {Array.from({ length: 30 }).map((_, i) => {
+          const isRay = i % 2 === 0; // alterna entre rayos ⚡ y chispas ✨
+
+          // Alterna animaciones: pulso, flicker, spin
+          const animationClass =
+            i % 3 === 0
+              ? "animate-pulse" // brillo suave
+              : i % 3 === 1
+              ? "animate-flicker" // parpadeo irregular
+              : "animate-spin"; // giro constante
+
+          // Aura ligera alrededor (drop-shadow)
+          const auraClass = isRay
+            ? "drop-shadow-[0_0_12px_#facc15]" // dorado para rayos
+            : "drop-shadow-[0_0_12px_#fb923c]"; // naranja para chispas
+
+          return (
+            <div
+              key={i}
+              className={`absolute text-2xl ${
+                isRay ? "text-yellow-400" : "text-orange-300"
+              } ${animationClass} ${auraClass}`}
+              style={{
+                top: `${Math.random() * 100}%`,
+                left: `${Math.random() * 100}%`,
+                animationDuration: `${2 + Math.random() * 3}s`,
+                animationDelay: `${Math.random() * 2}s`,
+              }}
+            >
+              {isRay ? "⚡" : "✨"}
+            </div>
+          );
+        })}
+      </div>
+
+      {/* ⚡ Rayos estilizados verticales */}
       <div className="absolute top-0 left-1/4 w-1 h-full bg-gradient-to-b from-yellow-500 to-transparent animate-[pulse_2s_infinite]" />
       <div className="absolute top-0 left-3/4 w-1 h-full bg-gradient-to-b from-orange-500 to-transparent animate-[pulse_3s_infinite]" />
 

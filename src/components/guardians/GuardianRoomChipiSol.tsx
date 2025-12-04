@@ -9,26 +9,38 @@ export default function GuardianRoomChipiSol() {
       {/* ✨ Fondo cósmico con aura fría */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,#0ea5e9,#0f172a)] opacity-70 animate-pulse" />
 
-      {/* ❄️ Partículas translúcidas con animaciones variadas */}
+      {/* ❄️✨ Partículas cósmicas */}
       <div className="absolute inset-0 pointer-events-none">
-        {Array.from({ length: 30 }).map((_, i) => (
-          <div
-            key={i}
-            className={`absolute w-2 h-2 bg-white rounded-full opacity-70 ${
-              i % 3 === 0
-                ? "animate-float" // movimiento suave de flotación
-                : i % 3 === 1
-                ? "animate-bounce" // rebote más marcado
-                : "animate-ping" // expansión y desvanecimiento tipo radar
-            }`}
-            style={{
-              top: `${Math.random() * 100}%`,
-              left: `${Math.random() * 100}%`,
-              animationDuration: `${3 + Math.random() * 4}s`,
-              animationDelay: `${Math.random() * 2}s`,
-            }}
-          />
-        ))}
+        {Array.from({ length: 30 }).map((_, i) => {
+          const isSnow = i % 2 === 0; // alterna entre copos y destellos
+          const animationClass =
+            i % 3 === 0
+              ? "animate-float" // flotación suave
+              : i % 3 === 1
+              ? "animate-flicker" // parpadeo irregular
+              : "animate-pulse"; // brillo constante
+
+          const auraClass = isSnow
+            ? "drop-shadow-[0_0_12px_#22d3ee]" // azul para copos
+            : "drop-shadow-[0_0_12px_#9333ea]"; // púrpura para destellos
+
+          return (
+            <div
+              key={i}
+              className={`absolute text-2xl ${
+                isSnow ? "text-blue-200" : "text-purple-400"
+              } ${animationClass} ${auraClass}`}
+              style={{
+                top: `${Math.random() * 100}%`,
+                left: `${Math.random() * 100}%`,
+                animationDuration: `${3 + Math.random() * 4}s`,
+                animationDelay: `${Math.random() * 2}s`,
+              }}
+            >
+              {isSnow ? "❄️" : "✨"}
+            </div>
+          );
+        })}
       </div>
 
       {/* Contenido principal */}
