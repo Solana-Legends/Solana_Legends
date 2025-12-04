@@ -33,7 +33,7 @@ export default function GuardianRoomZapSol() {
         />
 
         {/* Imagen ZapSol con aura centrada */}
-        <div className="relative flex justify-center items-center animate-in fade-in slide-in-from-right duration-1000">
+        <div className="relative flex justify-end items-center mt-[-0rem] mr-[-14rem] mb-[-24rem] translate-y-[-16rem] animate-in fade-in slide-in-from-right duration-1000">
           <div className="relative z-10 flex justify-center items-center w-80 h-80 group">
             {/* Aura dorada pulsante por defecto, cambia a azul en hover */}
             <div className="absolute w-80 h-80 rounded-full blur-3xl hero-zapsol-aura pointer-events-none z-0 transition-colors duration-500 group-hover:bg-orange-500/40"></div>
