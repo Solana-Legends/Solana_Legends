@@ -9,30 +9,17 @@ export default function GuardianRoomZapSol() {
       {/* ✨ Fondo eléctrico animado */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,#1e3a8a,#0f172a)] animate-pulse opacity-70" />
 
-      {/* ⚡✨ Partículas eléctricas y chispas */}
+      {/* ⚡ Partículas eléctricas */}
       <div className="absolute inset-0 pointer-events-none">
-        {Array.from({ length: 30 }).map((_, i) => {
-          const isRay = i % 2 === 0; // alterna entre rayos ⚡ y chispas ✨
-
-          // Alterna animaciones: pulso, flicker, spin
+        {Array.from({ length: 20 }).map((_, i) => {
+          // Alterna entre pulso y flicker
           const animationClass =
-            i % 3 === 0
-              ? "animate-pulse" // brillo suave
-              : i % 3 === 1
-              ? "animate-flicker" // parpadeo irregular
-              : "animate-spin"; // giro constante
-
-          // Aura ligera alrededor (drop-shadow)
-          const auraClass = isRay
-            ? "drop-shadow-[0_0_12px_#facc15]" // dorado para rayos
-            : "drop-shadow-[0_0_12px_#fb923c]"; // naranja para chispas
+            i % 2 === 0 ? "animate-pulse" : "animate-flicker";
 
           return (
             <div
               key={i}
-              className={`absolute text-2xl ${
-                isRay ? "text-yellow-400" : "text-orange-300"
-              } ${animationClass} ${auraClass}`}
+              className={`absolute text-2xl text-yellow-400 ${animationClass} drop-shadow-[0_0_12px_#facc15]`}
               style={{
                 top: `${Math.random() * 100}%`,
                 left: `${Math.random() * 100}%`,
@@ -40,7 +27,7 @@ export default function GuardianRoomZapSol() {
                 animationDelay: `${Math.random() * 2}s`,
               }}
             >
-              {isRay ? "⚡" : "✨"}
+              ⚡
             </div>
           );
         })}

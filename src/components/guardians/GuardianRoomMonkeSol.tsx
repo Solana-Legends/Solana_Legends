@@ -9,30 +9,16 @@ export default function GuardianRoomMonkeSol() {
       {/* ✨ Fondo ritualizado con aura cálida */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,#7f1d1d,#0f172a)] opacity-70 animate-pulse" />
 
-      {/* 🔥💥 Partículas de fuego y explosiones */}
+      {/* 🔥 Partículas de brasas (más pequeñas) */}
       <div className="absolute inset-0 pointer-events-none">
-        {Array.from({ length: 30 }).map((_, i) => {
-          const isFire = i % 2 === 0; // alterna entre fuego 🔥 y explosiones 💥
-
-          // Alterna animaciones: pulso, flicker, spin
+        {Array.from({ length: 20 }).map((_, i) => {
           const animationClass =
-            i % 3 === 0
-              ? "animate-pulse" // brillo suave
-              : i % 3 === 1
-              ? "animate-flicker" // parpadeo irregular
-              : "animate-spin"; // giro constante
-
-          // Aura ligera alrededor (drop-shadow)
-          const auraClass = isFire
-            ? "drop-shadow-[0_0_12px_#ef4444]" // rojo para fuego
-            : "drop-shadow-[0_0_12px_#facc15]"; // dorado para explosiones
+            i % 2 === 0 ? "animate-pulse" : "animate-flicker";
 
           return (
             <div
               key={i}
-              className={`absolute text-3xl ${
-                isFire ? "text-red-500" : "text-yellow-400"
-              } ${animationClass} ${auraClass}`}
+              className={`absolute text-xl text-red-500 ${animationClass} drop-shadow-[0_0_12px_#ef4444]`}
               style={{
                 top: `${Math.random() * 100}%`,
                 left: `${Math.random() * 100}%`,
@@ -40,7 +26,7 @@ export default function GuardianRoomMonkeSol() {
                 animationDelay: `${Math.random() * 2}s`,
               }}
             >
-              {isFire ? "🔥" : "💥"}
+              🔥
             </div>
           );
         })}
@@ -71,9 +57,9 @@ export default function GuardianRoomMonkeSol() {
         </div>
 
         {/* Imagen MonkeSol anclada y fija abajo a la izquierda */}
-        <div className="absolute bottom-0 left-0 mb-0 ml-[-4rem] animate-in fade-in slide-in-from-left duration-1000">
+        <div className="absolute bottom-0 left-0 ml-[-4rem] animate-in fade-in slide-in-from-left duration-1000">
           <div className="relative z-10 flex justify-center items-center w-80 h-80 group">
-            {/* Aura dorada pulsante por defecto, cambia a rojo en hover */}
+            {/* Aura roja pulsante por defecto */}
             <div className="absolute w-80 h-80 rounded-full blur-3xl hero-monkesol-aura pointer-events-none z-0 transition-colors duration-500 group-hover:bg-red-400/40"></div>
             {/* Imagen del héroe MonkeSol */}
             <img

@@ -9,27 +9,26 @@ export default function GuardianRoomChipiSol() {
       {/* ✨ Fondo cósmico con aura fría */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,#0ea5e9,#0f172a)] opacity-70 animate-pulse" />
 
-      {/* ❄️✨ Partículas cósmicas */}
+      {/* ❄️ Copos y puntos blancos */}
       <div className="absolute inset-0 pointer-events-none">
-        {Array.from({ length: 30 }).map((_, i) => {
-          const isSnow = i % 2 === 0; // alterna entre copos y destellos
-          const animationClass =
-            i % 3 === 0
-              ? "animate-float" // flotación suave
+        {Array.from({ length: 20 }).map((_, i) => {
+          const isSnow = i % 2 === 0; // alterna entre copos y puntos
+          const animationClass = isSnow
+            ? i % 3 === 0
+              ? "animate-pulse"
               : i % 3 === 1
-              ? "animate-flicker" // parpadeo irregular
-              : "animate-pulse"; // brillo constante
+              ? "animate-flicker"
+              : "animate-float"
+            : i % 3 === 0
+            ? "animate-float"
+            : i % 3 === 1
+            ? "animate-bounce"
+            : "animate-ping";
 
-          const auraClass = isSnow
-            ? "drop-shadow-[0_0_12px_#22d3ee]" // azul para copos
-            : "drop-shadow-[0_0_12px_#9333ea]"; // púrpura para destellos
-
-          return (
+          return isSnow ? (
             <div
               key={i}
-              className={`absolute text-2xl ${
-                isSnow ? "text-blue-200" : "text-purple-400"
-              } ${animationClass} ${auraClass}`}
+              className={`absolute text-xl text-blue-200 ${animationClass} drop-shadow-[0_0_12px_#22d3ee]`}
               style={{
                 top: `${Math.random() * 100}%`,
                 left: `${Math.random() * 100}%`,
@@ -37,8 +36,19 @@ export default function GuardianRoomChipiSol() {
                 animationDelay: `${Math.random() * 2}s`,
               }}
             >
-              {isSnow ? "❄️" : "✨"}
+              ❄️
             </div>
+          ) : (
+            <div
+              key={i}
+              className={`absolute w-2 h-2 bg-white rounded-full opacity-70 ${animationClass}`}
+              style={{
+                top: `${Math.random() * 100}%`,
+                left: `${Math.random() * 100}%`,
+                animationDuration: `${3 + Math.random() * 4}s`,
+                animationDelay: `${Math.random() * 2}s`,
+              }}
+            />
           );
         })}
       </div>
@@ -70,7 +80,7 @@ export default function GuardianRoomChipiSol() {
         {/* Imagen ChipiSol con aura lateral derecha */}
         <div className="absolute bottom-0 right-0 mb-[4rem] mr-[-4rem] animate-in fade-in slide-in-from-right duration-1000">
           <div className="relative z-10 flex justify-center items-center w-80 h-80 group">
-            {/* Aura dorada pulsante por defecto, cambia a azul en hover */}
+            {/* Aura azul pulsante por defecto */}
             <div className="absolute w-80 h-80 rounded-full blur-3xl hero-chipisol-aura pointer-events-none z-0 transition-colors duration-500 group-hover:bg-cyan-400/40"></div>
             {/* Imagen del héroe ChipiSol */}
             <img
