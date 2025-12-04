@@ -16,7 +16,7 @@ export default function GuardianRoomMonkeSol() {
       <div className="absolute bottom-12 right-1/4 text-blue-400 text-3xl animate-pulse">
         ☯
       </div>
-      <div className="absolute top-1/2 left-1/4 text-yellow-500 text-3xl animate-spin">
+      <div className="absolute top-1/2 right-1/4 text-yellow-500 text-3xl animate-spin">
         💥
       </div>
 
