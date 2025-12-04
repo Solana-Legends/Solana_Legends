@@ -102,14 +102,6 @@ export default function GuardianRoomZapSol() {
           {t("zapsol.quote")}
         </blockquote>
       </div>
-
-      {/* 🔀 Transición hacia MonkeSol */}
-      <div className="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-b from-yellow-400/40 via-orange-400/40 to-red-700/60 animate-pulse">
-        <div className="absolute inset-0 flex justify-center items-center">
-          {/* Chispa de transición */}
-          <div className="w-16 h-16 rounded-full bg-gradient-to-r from-yellow-400 to-orange-500 blur-2xl opacity-70 animate-ping"></div>
-        </div>
-      </div>
     </section>
   );
 }
