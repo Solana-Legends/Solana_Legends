@@ -9,12 +9,18 @@ export default function GuardianRoomChipiSol() {
       {/* ✨ Fondo cósmico con aura fría */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,#0ea5e9,#0f172a)] opacity-70 animate-pulse" />
 
-      {/* ❄️ Partículas translúcidas tipo nieve */}
+      {/* ❄️ Partículas translúcidas con animaciones variadas */}
       <div className="absolute inset-0 pointer-events-none">
-        {Array.from({ length: 20 }).map((_, i) => (
+        {Array.from({ length: 30 }).map((_, i) => (
           <div
             key={i}
-            className="absolute w-2 h-2 bg-white rounded-full opacity-70 animate-float"
+            className={`absolute w-2 h-2 bg-white rounded-full opacity-70 ${
+              i % 3 === 0
+                ? "animate-float" // movimiento suave de flotación
+                : i % 3 === 1
+                ? "animate-bounce" // rebote más marcado
+                : "animate-ping" // expansión y desvanecimiento tipo radar
+            }`}
             style={{
               top: `${Math.random() * 100}%`,
               left: `${Math.random() * 100}%`,

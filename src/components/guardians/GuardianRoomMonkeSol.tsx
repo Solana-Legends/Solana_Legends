@@ -13,11 +13,11 @@ export default function GuardianRoomMonkeSol() {
       <div className="absolute top-10 left-1/4 text-red-500 text-4xl animate-bounce">
         🔥
       </div>
-      <div className="absolute bottom-12 right-2/6 text-orange-400 text-3xl animate-ping">
+      <div className="absolute bottom-12 right-2/6 text-orange-400 text-3xl animate-pulse">
         ☯
       </div>
-      <div className="absolute top-1/2 left-2/3 text-yellow-500 text-2xl animate-spin">
-        ✦
+      <div className="absolute top-1/2 left-2/4 text-yellow-500 text-3xl animate-spin">
+        💥
       </div>
 
       {/* Contenido principal */}
@@ -47,13 +47,13 @@ export default function GuardianRoomMonkeSol() {
         {/* Imagen MonkeSol anclada y fija abajo a la izquierda */}
         <div className="absolute bottom-0 left-0 mb-[-0rem] ml-[-4rem] animate-in fade-in slide-in-from-left duration-1000">
           <div className="relative z-10 flex justify-center items-center w-80 h-80 group">
-            {/* Aura dorada pulsante por defecto, cambia a púrpura en hover */}
+            {/* Aura dorada pulsante por defecto, cambia a rojo en hover */}
             <div className="absolute w-80 h-80 rounded-full blur-3xl hero-monkesol-aura pointer-events-none z-0 transition-colors duration-500 group-hover:bg-red-400/40"></div>
             {/* Imagen del héroe MonkeSol */}
             <img
               src="/assets/MonkeSolVol.png"
               alt="MonkeSol Hero"
-              className="relative z-10 h-64 w-auto md:h-72 object-contain mix-blend-overlay opacity-90 symbol-hero-monkesol"
+              className="relative z-10 h-64 w-auto md:h-72 object-contain mix-blend-overlay opacity-90 symbol-hero-monkesol-pulse"
             />
           </div>
         </div>

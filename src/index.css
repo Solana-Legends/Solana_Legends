@@ -560,7 +560,33 @@ video {
 
 /* 🧩 === Símbolos elementales para héroes (HeroSection / ProgressSection) === */
 
-/* ⚡ ZapSol Hero */
+/* ⚡ ZapSol Hero - efecto rayo titilante (flicker) */
+@keyframes flickerHeroZapSymbol {
+
+  0%,
+  19%,
+  21%,
+  23%,
+  25%,
+  54%,
+  56%,
+  100% {
+    opacity: 1;
+  }
+
+  20%,
+  22%,
+  24%,
+  55% {
+    opacity: 0.4;
+  }
+}
+
+.symbol-hero-zapsol-flicker {
+  animation: flickerHeroZapSymbol 2s infinite;
+}
+
+/* ⚡ ZapSol Hero - efecto pulso eléctrico */
 @keyframes pulseHeroZapSymbol {
 
   0%,
@@ -573,9 +599,8 @@ video {
   }
 }
 
-.symbol-hero-zapsol {
+.symbol-hero-zapsol-pulse {
   animation: pulseHeroZapSymbol 4s ease-in-out infinite;
-  /* más lento */
 }
 
 .symbol-hero-zapsol-aura {
@@ -588,7 +613,7 @@ video {
     0 0 32px rgba(255, 255, 255, 0.8);
 }
 
-/* 🔥 MonkeSol Hero */
+/* 🔥 MonkeSol Hero - efecto llama titilante (flicker) */
 @keyframes flickerHeroMonkeSymbol {
 
   0%,
@@ -610,9 +635,27 @@ video {
   }
 }
 
-.symbol-hero-monkesol {
+.symbol-hero-monkesol-flicker {
   animation: flickerHeroMonkeSymbol 2s infinite;
-  /* más lento que GuardianCard */
+}
+
+/* 🔥 MonkeSol Hero - efecto llama que pulsa lentamente */
+@keyframes pulseHeroMonkeSymbol {
+
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 0.9;
+  }
+
+  50% {
+    transform: scale(1.15);
+    opacity: 1;
+  }
+}
+
+.symbol-hero-monkesol-pulse {
+  animation: pulseHeroMonkeSymbol 4s ease-in-out infinite;
 }
 
 .symbol-hero-monkesol-aura {
@@ -874,4 +917,22 @@ video {
 
 .footer-gradient-english:hover {
   background: linear-gradient(to right, #fde68a, #fbbf24);
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.animate-float {
+  animation: float 4s ease-in-out infinite;
 }
