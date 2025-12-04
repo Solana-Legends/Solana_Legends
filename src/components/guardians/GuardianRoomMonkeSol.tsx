@@ -9,13 +9,22 @@ export default function GuardianRoomMonkeSol() {
       {/* ✨ Fondo ritualizado con aura cálida */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,#7f1d1d,#0f172a)] opacity-70 animate-pulse" />
 
-      {/* 🔥 Partículas de brasas (más pequeñas) */}
+      {/* 🔥 + puntos de fuego */}
       <div className="absolute inset-0 pointer-events-none">
         {Array.from({ length: 20 }).map((_, i) => {
-          const animationClass =
-            i % 2 === 0 ? "animate-pulse" : "animate-flicker";
+          const isFlame = i % 2 === 0; // alterna entre brasas y puntos
 
-          return (
+          const animationClass = isFlame
+            ? i % 2 === 0
+              ? "animate-pulse"
+              : "animate-flicker"
+            : i % 3 === 0
+            ? "animate-float"
+            : i % 3 === 1
+            ? "animate-bounce"
+            : "animate-ping";
+
+          return isFlame ? (
             <div
               key={i}
               className={`absolute text-xl text-red-500 ${animationClass} drop-shadow-[0_0_12px_#ef4444]`}
@@ -28,6 +37,17 @@ export default function GuardianRoomMonkeSol() {
             >
               🔥
             </div>
+          ) : (
+            <div
+              key={i}
+              className={`absolute w-2 h-2 rounded-full bg-orange-400 opacity-80 ${animationClass} drop-shadow-[0_0_8px_#ef4444]`}
+              style={{
+                top: `${Math.random() * 100}%`,
+                left: `${Math.random() * 100}%`,
+                animationDuration: `${2 + Math.random() * 3}s`,
+                animationDelay: `${Math.random() * 2}s`,
+              }}
+            />
           );
         })}
       </div>

@@ -9,17 +9,25 @@ export default function GuardianRoomZapSol() {
       {/* ✨ Fondo eléctrico animado */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,#1e3a8a,#0f172a)] animate-pulse opacity-70" />
 
-      {/* ⚡ Partículas eléctricas */}
+      {/* ⚡ + puntos eléctricos */}
       <div className="absolute inset-0 pointer-events-none">
         {Array.from({ length: 20 }).map((_, i) => {
-          // Alterna entre pulso y flicker
-          const animationClass =
-            i % 2 === 0 ? "animate-pulse" : "animate-flicker";
+          const isRay = i % 2 === 0; // alterna entre rayos y puntos
 
-          return (
+          const animationClass = isRay
+            ? i % 2 === 0
+              ? "animate-pulse"
+              : "animate-flicker"
+            : i % 3 === 0
+            ? "animate-float"
+            : i % 3 === 1
+            ? "animate-bounce"
+            : "animate-ping";
+
+          return isRay ? (
             <div
               key={i}
-              className={`absolute text-2xl text-yellow-400 ${animationClass} drop-shadow-[0_0_12px_#facc15]`}
+              className={`absolute text-xl text-yellow-400 ${animationClass} drop-shadow-[0_0_12px_#facc15]`}
               style={{
                 top: `${Math.random() * 100}%`,
                 left: `${Math.random() * 100}%`,
@@ -29,6 +37,17 @@ export default function GuardianRoomZapSol() {
             >
               ⚡
             </div>
+          ) : (
+            <div
+              key={i}
+              className={`absolute w-2 h-2 rounded-full bg-gradient-to-r from-yellow-400 to-orange-400 opacity-80 ${animationClass} drop-shadow-[0_0_8px_#facc15]`}
+              style={{
+                top: `${Math.random() * 100}%`,
+                left: `${Math.random() * 100}%`,
+                animationDuration: `${2 + Math.random() * 3}s`,
+                animationDelay: `${Math.random() * 2}s`,
+              }}
+            />
           );
         })}
       </div>
