@@ -35,7 +35,7 @@ export default function GuardianTimeline() {
   ];
 
   return (
-    <section className="relative px-6 py-16 bg-gradient-to-b from-slate-700 to-slate-600 rounded-xl shadow-lg mt-20">
+    <section className="relative px-6 py-16 bg-gradient-to-b from-slate-700 to-slate-600 rounded-xl shadow-lg">
       <h3 className="text-3xl md:text-4xl font-bold text-center text-purple-300 mb-12">
         Cronología de los Guardianes
       </h3>
