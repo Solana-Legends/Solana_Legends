@@ -1,10 +1,11 @@
+// src/components/guardians/GuardianRoomChipiSol.tsx
 import { useLanguage } from "@/contexts/LanguageContext";
 
 export default function GuardianRoomChipiSol() {
   const { t } = useLanguage();
 
   return (
-    <section className="relative min-h-[640px] px-6 py-16 bg-gradient-to-b from-slate-800 to-slate-700 rounded-xl shadow-lg overflow-hidden flex flex-col justify-center">
+    <section className="relative px-6 py-16 bg-gradient-to-b from-slate-800 to-slate-700 rounded-xl shadow-lg overflow-hidden">
       {/* ✨ Fondo cósmico con aura fría */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,#0ea5e9,#0f172a)] opacity-70 animate-pulse" />
 
@@ -25,34 +26,38 @@ export default function GuardianRoomChipiSol() {
       </div>
 
       {/* Contenido principal */}
-      <div className="relative z-10 max-w-4xl mx-auto text-center flex flex-col items-center space-y-6">
-        <h3 className="text-4xl md:text-5xl font-bold text-cyan-400 animate-fadeInUp">
+      <div className="relative z-10 max-w-4xl mx-auto text-center">
+        <h3 className="text-4xl md:text-5xl font-bold text-cyan-400 mb-4 animate-fadeInUp">
           {t("chipisol.title")}
         </h3>
         <p
-          className="text-lg md:text-xl text-blue-200 animate-fadeInUp"
+          className="text-lg md:text-xl text-blue-200 mb-6 animate-fadeInUp"
           style={{ animationDelay: "0.3s" }}
         >
           {t("chipisol.subtitle")}
         </p>
 
         {/* Imagen ritualizada */}
-        <img
-          src="/images/guardians/Chip1.png"
-          alt="ChipiSol"
-          className="w-64 h-64 object-contain drop-shadow-[0_0_25px_#22d3ee] animate-fadeInUp"
+        <div
+          className="flex justify-center mb-8 animate-fadeInUp"
           style={{ animationDelay: "0.6s" }}
-        />
+        >
+          <img
+            src="/images/guardians/Chip1.png"
+            alt="ChipiSol"
+            className="w-64 h-64 object-contain drop-shadow-[0_0_25px_#22d3ee]"
+          />
+        </div>
 
-        {/* Imagen ChipiSol con aura centrada */}
-        <div className="relative flex justify-center items-center animate-in fade-in slide-in-from-right duration-1000">
+        {/* Imagen ChipiSol con aura perfectamente centrada y alineada a la izquierda */}
+        <div className="relative flex justify-end items-center mt-[-0rem] mr-[-10rem] mb-[-10rem] translate-y-[-16rem] animate-in fade-in slide-in-from-right duration-1000">
           <div className="relative z-10 flex justify-center items-center w-80 h-80 group">
             {/* Aura dorada pulsante por defecto, cambia a azul en hover */}
             <div className="absolute w-80 h-80 rounded-full blur-3xl hero-chipisol-aura pointer-events-none z-0 transition-colors duration-500 group-hover:bg-cyan-400/40"></div>
-            {/* Imagen del héroe ChipiSol */}
+            {/* Imagen del héroe ZapSol */}
             <img
               src="/assets/ChipiSolVol.png"
-              alt="ChipiSol Hero"
+              alt="ZapSol Hero"
               className="relative z-10 h-64 w-auto md:h-72 object-contain mix-blend-overlay opacity-90 symbol-hero-chipisol"
             />
           </div>
