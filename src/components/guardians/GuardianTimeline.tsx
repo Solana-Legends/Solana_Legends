@@ -1,3 +1,4 @@
+// src/components/guardians/GuardianTimeline.tsx
 import { useLanguage } from "@/contexts/LanguageContext";
 
 export default function GuardianTimeline() {
@@ -59,6 +60,14 @@ export default function GuardianTimeline() {
       <p className="text-center text-purple-300 italic mt-12">
         {t("timeline.closure")}
       </p>
+
+      {/* 🔀 Transición final de GuardianTimeline */}
+      <div className="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-b from-purple-500/30 via-slate-800/60 to-black animate-pulse">
+        <div className="absolute inset-0 flex justify-center items-center">
+          {/* Halo cósmico expansivo */}
+          <div className="w-24 h-24 rounded-full bg-gradient-to-r from-purple-400 via-cyan-400 to-yellow-400 blur-3xl opacity-70 animate-ping"></div>
+        </div>
+      </div>
     </section>
   );
 }

@@ -1,3 +1,4 @@
+// src/components/guardians/GuardianGallery.tsx
 import { useLanguage } from "@/contexts/LanguageContext";
 import GuardianRoomZapSol from "@/components/guardians/GuardianRoomZapSol";
 import GuardianRoomMonkeSol from "@/components/guardians/GuardianRoomMonkeSol";
@@ -35,6 +36,14 @@ export default function GuardianGallery() {
             />
             <div className="pointer-events-none absolute inset-0 rounded-xl bg-gradient-to-t from-black/50 to-transparent"></div>
           </div>
+        </div>
+      </div>
+
+      {/* 🔀 Transición hacia GuardianRoomZapSol */}
+      <div className="relative w-full h-24 bg-gradient-to-b from-purple-500/30 via-blue-400/30 to-yellow-400/40 animate-pulse mt-8 mb-12 rounded-lg overflow-hidden">
+        <div className="absolute inset-0 flex justify-center items-center">
+          {/* Halo eléctrico que abre la sala de ZapSol */}
+          <div className="w-20 h-20 rounded-full bg-gradient-to-r from-purple-400 via-blue-400 to-yellow-400 blur-3xl opacity-70 animate-ping"></div>
         </div>
       </div>
 

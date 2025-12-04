@@ -98,6 +98,14 @@ export default function GuardianRoomMonkeSol() {
           {t("monkesol.quote")}
         </blockquote>
       </div>
+
+      {/* 🔀 Transición hacia ChipiSol */}
+      <div className="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-b from-orange-500/40 via-red-500/40 to-cyan-500/60 animate-pulse">
+        <div className="absolute inset-0 flex justify-center items-center">
+          {/* Cristalización del fuego */}
+          <div className="w-16 h-16 rounded-full bg-gradient-to-r from-orange-400 to-cyan-400 blur-2xl opacity-70 animate-ping"></div>
+        </div>
+      </div>
     </section>
   );
 }

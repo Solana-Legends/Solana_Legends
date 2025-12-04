@@ -99,6 +99,14 @@ export default function GuardianRoomChipiSol() {
           {t("chipisol.quote")}
         </blockquote>
       </div>
+
+      {/* 🔀 Transición hacia GuardianTimeline */}
+      <div className="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-b from-cyan-400/40 via-blue-500/40 to-slate-900 animate-pulse">
+        <div className="absolute inset-0 flex justify-center items-center">
+          {/* Portal cósmico */}
+          <div className="w-20 h-20 rounded-full bg-gradient-to-r from-cyan-300 to-blue-500 blur-3xl opacity-70 animate-ping"></div>
+        </div>
+      </div>
     </section>
   );
 }

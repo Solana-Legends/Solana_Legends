@@ -1,3 +1,4 @@
+// src/components/guardians/GuardiansPortal.tsx
 import { useLanguage } from "@/contexts/LanguageContext";
 import GuardianCard from "@/components/guardians/GuardianCard";
 import GuardianGallery from "./GuardianGallery";
@@ -72,6 +73,14 @@ export default function GuardiansPortal() {
           {t("characters.telegramNote")}
         </p>
       </footer>
+
+      {/* 🔀 Transición hacia GuardianGallery */}
+      <div className="relative w-full h-24 bg-gradient-to-b from-yellow-400/30 via-orange-400/30 to-cyan-400/40 animate-pulse mt-4 mb-8 rounded-lg overflow-hidden">
+        <div className="absolute inset-0 flex justify-center items-center">
+          {/* Halo multicolor que conecta guardianes con la galería */}
+          <div className="w-20 h-20 rounded-full bg-gradient-to-r from-yellow-400 via-orange-500 to-cyan-400 blur-3xl opacity-70 animate-ping"></div>
+        </div>
+      </div>
 
       {/* ✅ Galería ritualizada */}
       <GuardianGallery />
