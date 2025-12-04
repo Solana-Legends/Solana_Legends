@@ -51,7 +51,7 @@ export default function GuardianRoomMonkeSol() {
             <div className="absolute w-80 h-80 rounded-full blur-3xl hero-monkesol-aura pointer-events-none z-0 transition-colors duration-500 group-hover:bg-red-400/40"></div>
             {/* Imagen del héroe MonkeSol */}
             <img
-              src="/assets/MonkeSol.png"
+              src="/assets/MonkeSolVol.png"
               alt="MonkeSol Hero"
               className="relative z-10 h-64 w-auto md:h-72 object-contain mix-blend-overlay opacity-90 symbol-hero-monkesol"
             />
