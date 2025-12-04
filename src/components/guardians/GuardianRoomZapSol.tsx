@@ -4,7 +4,7 @@ export default function GuardianRoomZapSol() {
   const { t } = useLanguage();
 
   return (
-    <section className="relative min-h-[440px] px-6 py-16 bg-gradient-to-b from-slate-950 to-slate-900 rounded-xl shadow-lg overflow-hidden flex flex-col justify-center">
+    <section className="relative min-h-[240px] px-6 py-16 bg-gradient-to-b from-slate-950 to-slate-900 rounded-xl shadow-lg overflow-hidden flex flex-col justify-center">
       {/* ✨ Fondo eléctrico animado */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,#1e3a8a,#0f172a)] animate-pulse opacity-70" />
 
@@ -33,7 +33,7 @@ export default function GuardianRoomZapSol() {
         />
 
         {/* Imagen ZapSol con aura centrada */}
-        <div className="relative flex justify-end items-center mt-[-0rem] mr-[-24rem] mb-[-24rem] translate-y-[-16rem] animate-in fade-in slide-in-from-right duration-1000">
+        <div className="relative flex justify-end items-center mt-[-0rem] mr-[-44rem] mb-[-24rem] translate-y-[-16rem] animate-in fade-in slide-in-from-right duration-1000">
           <div className="relative z-10 flex justify-center items-center w-80 h-80 group">
             {/* Aura dorada pulsante por defecto, cambia a azul en hover */}
             <div className="absolute w-80 h-80 rounded-full blur-3xl hero-zapsol-aura pointer-events-none z-0 transition-colors duration-500 group-hover:bg-orange-500/40"></div>
