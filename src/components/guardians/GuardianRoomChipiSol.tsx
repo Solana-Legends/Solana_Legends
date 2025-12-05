@@ -11,25 +11,23 @@ export default function GuardianRoomChipiSol() {
 
       {/* ❄️ Copos y puntos blancos */}
       <div className="absolute inset-0 pointer-events-none">
-        {Array.from({ length: 32 }).map((_, i) => {
+        {Array.from({ length: 30 }).map((_, i) => {
           const isSnow = i % 2 === 0; // alterna entre copos y puntos
 
-          // Animación principal según tipo
-          const animationClass = isSnow
-            ? i % 4 === 0
-              ? "animate-pulse"
-              : i % 4 === 1
-              ? "animate-ping"
-              : i % 4 === 2
-              ? "animate-flicker"
-              : "animate-float"
-            : i % 3 === 0
-            ? "animate-float"
-            : i % 3 === 1
-            ? "animate-bounce"
-            : "animate-ping";
+          let animationClass = "";
+          if (isSnow) {
+            // ❄️ Copos: 4 efectos
+            if (i % 4 === 0) animationClass = "animate-pulse";
+            else if (i % 4 === 1) animationClass = "animate-ping";
+            else if (i % 4 === 2) animationClass = "animate-flicker";
+            else animationClass = "animate-float";
+          } else {
+            // ⚪ Puntos: 3 efectos
+            if (i % 3 === 0) animationClass = "animate-float";
+            else if (i % 3 === 1) animationClass = "animate-bounce";
+            else animationClass = "animate-ping";
+          }
 
-          // Combina animación principal + fade in/out
           const combinedClass = `${animationClass} animate-fade-cycle`;
 
           return isSnow ? (
@@ -39,7 +37,6 @@ export default function GuardianRoomChipiSol() {
               style={{
                 top: `${Math.random() * 100}%`,
                 left: `${Math.random() * 100}%`,
-                animationDuration: "16s",
                 animationDelay: `${Math.random() * 5}s`,
               }}
             >
@@ -52,7 +49,6 @@ export default function GuardianRoomChipiSol() {
               style={{
                 top: `${Math.random() * 100}%`,
                 left: `${Math.random() * 100}%`,
-                animationDuration: "16s",
                 animationDelay: `${Math.random() * 5}s`,
               }}
             />
