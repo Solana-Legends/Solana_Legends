@@ -20,7 +20,7 @@ export default function GuardianRoomMonkeSol() {
 
       {/* 🔥 + puntos de fuego */}
       <div className="absolute inset-0 pointer-events-none">
-        {Array.from({ length: 20 }).map((_, i) => {
+        {Array.from({ length: 24 }).map((_, i) => {
           const isFlame = i % 2 === 0; // alterna brasas y puntos
 
           return isFlame ? (

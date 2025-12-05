@@ -20,7 +20,7 @@ export default function GuardianRoomZapSol() {
 
       {/* ⚡ + puntos eléctricos */}
       <div className="absolute inset-0 pointer-events-none">
-        {Array.from({ length: 20 }).map((_, i) => {
+        {Array.from({ length: 24 }).map((_, i) => {
           const isRay = i % 2 === 0; // alterna rayos y puntos
 
           return isRay ? (

@@ -670,43 +670,38 @@ video {
 
   /* Flicker/parpadeo intermedio */
   55% {
-    opacity: 0.2;
+    opacity: 0.4;
     transform: scale(1.2) translateY(-32px);
   }
 
-  58% {
+  56% {
     opacity: 1;
     transform: scale(1.25) translateY(-33px);
   }
 
-  61% {
-    opacity: 0.3;
-    transform: scale(1.15) translateY(-34px);
+  57% {
+    opacity: 0.4;
+    transform: scale(1.1) translateY(-34px);
   }
 
-  64% {
+  58% {
     opacity: 1;
     transform: scale(1.2) translateY(-35px);
   }
 
-  67% {
+  59% {
     opacity: 0.4;
     transform: scale(1.3) translateY(-36px);
   }
 
-  70% {
+  60% {
     opacity: 1;
     transform: scale(1.2) translateY(-37px);
   }
 
-  73% {
-    opacity: 0.3;
-    transform: scale(1.25) translateY(-38px);
-  }
-
   75% {
     opacity: 1;
-    transform: scale(1.2) translateY(-40px);
+    transform: scale(1.25) translateY(-40px);
   }
 
   /* Inicio fade out */
