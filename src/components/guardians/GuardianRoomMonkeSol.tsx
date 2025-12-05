@@ -72,7 +72,7 @@ export default function GuardianRoomMonkeSol() {
           <img
             src="/images/guardians/Monk2.png"
             alt="MonkeSol"
-            className="w-64 h-64 object-contain drop-shadow-[0_0_25px_#f87171]"
+            className="w-80 h-80 object-contain drop-shadow-[0_0_25px_#f87171]"
           />
         </div>
 

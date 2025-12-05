@@ -73,7 +73,7 @@ export default function GuardianRoomChipiSol() {
           <img
             src="/images/guardians/Chip2.png"
             alt="ChipiSol"
-            className="w-64 h-64 object-contain drop-shadow-[0_0_25px_#22d3ee]"
+            className="w-80 h-80 object-contain drop-shadow-[0_0_25px_#22d3ee]"
           />
         </div>
 

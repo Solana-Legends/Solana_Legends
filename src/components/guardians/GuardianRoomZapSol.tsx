@@ -76,7 +76,7 @@ export default function GuardianRoomZapSol() {
           <img
             src="/images/guardians/Zap2.png"
             alt="ZapSol"
-            className="w-64 h-64 object-contain drop-shadow-[0_0_25px_#facc15]"
+            className="w-80 h-80 object-contain drop-shadow-[0_0_25px_#facc15]"
           />
         </div>
 
