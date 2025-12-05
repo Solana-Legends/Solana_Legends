@@ -29,7 +29,7 @@ export default function GuardianRoomChipiSol() {
           return isSnow ? (
             <div
               key={`${cycleKey}-${i}`}
-              className="absolute text-xl text-blue-200 drop-shadow-[0_0_12px_#22d3ee] animate-snow-cycle"
+              className="absolute text-xl text-blue-200 drop-shadow-[0_0_12px_#22d3ee] animate-chipisol-cycle"
               style={{
                 top: `${Math.random() * 100}%`,
                 left: `${Math.random() * 100}%`,
