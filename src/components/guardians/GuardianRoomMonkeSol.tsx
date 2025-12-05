@@ -70,7 +70,7 @@ export default function GuardianRoomMonkeSol() {
           style={{ animationDelay: "0.6s" }}
         >
           <img
-            src="/images/guardians/Monk1.png"
+            src="/images/guardians/Monk2.png"
             alt="MonkeSol"
             className="w-64 h-64 object-contain drop-shadow-[0_0_25px_#f87171]"
           />

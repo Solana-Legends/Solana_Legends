@@ -71,7 +71,7 @@ export default function GuardianRoomChipiSol() {
           style={{ animationDelay: "0.6s" }}
         >
           <img
-            src="/images/guardians/Chip1.png"
+            src="/images/guardians/Chip2.png"
             alt="ChipiSol"
             className="w-64 h-64 object-contain drop-shadow-[0_0_25px_#22d3ee]"
           />
