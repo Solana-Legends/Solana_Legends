@@ -11,7 +11,7 @@ export default function GuardianRoomChipiSol() {
 
       {/* ❄️ Copos y puntos blancos */}
       <div className="absolute inset-0 pointer-events-none">
-        {Array.from({ length: 20 }).map((_, i) => {
+        {Array.from({ length: 30 }).map((_, i) => {
           const isSnow = i % 2 === 0; // alterna entre copos y puntos
           const animationClass = isSnow
             ? i % 3 === 0
