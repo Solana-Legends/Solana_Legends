@@ -586,6 +586,127 @@ video {
 
 /* 🧩 === Símbolos elementales para héroes (HeroSection / ProgressSection) === */
 
+/* === Animaciones globales para guardianes === */
+
+/* Pulso suave (brillo constante) */
+@keyframes pulseStrong {
+
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 0.8;
+  }
+
+  50% {
+    transform: scale(1.4);
+    opacity: 1;
+  }
+}
+
+.animate-pulse {
+  animation: pulseStrong 3s ease-in-out infinite;
+}
+
+/* Parpadeo irregular rápido */
+@keyframes flickerFast {
+
+  0%,
+  19%,
+  21%,
+  59%,
+  61%,
+  100% {
+    opacity: 1;
+  }
+
+  20%,
+  60% {
+    opacity: 0.3;
+  }
+}
+
+.animate-flicker {
+  animation: flickerFast 0.5s linear infinite;
+}
+
+/* Flotamiento más notorio */
+@keyframes floatStrong {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+.animate-float {
+  animation: floatStrong 5s ease-in-out infinite;
+}
+
+/* Rebote más energético */
+@keyframes bounceFast {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-15px);
+  }
+}
+
+.animate-bounce {
+  animation: bounceFast 2s ease-in-out infinite;
+}
+
+/* Ping más rápido */
+@keyframes pingFast {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+
+  100% {
+    transform: scale(2);
+    opacity: 0;
+  }
+}
+
+.animate-ping {
+  animation: pingFast 1s ease-out infinite;
+}
+
+/* Ciclo de fade in/out para copos y puntos */
+@keyframes fadeCycle {
+  0% {
+    opacity: 0;
+  }
+
+  10% {
+    opacity: 1;
+  }
+
+  /* entrada en ~1.6s */
+  90% {
+    opacity: 1;
+  }
+
+  /* permanece visible */
+  100% {
+    opacity: 0;
+  }
+
+  /* salida en ~1.6s */
+}
+
+.animate-fade-cycle {
+  animation: fadeCycle 16s ease-in-out infinite;
+}
+
 /* ⚡ ZapSol Hero - efecto rayo titilante (flicker) */
 @keyframes flickerHeroZapSymbol {
 
@@ -785,7 +906,7 @@ video {
     opacity: 1;
   }
 
-  /* entrada en ~2s */
+  /* entrada en ~1.6s */
   90% {
     opacity: 1;
   }
@@ -795,13 +916,12 @@ video {
     opacity: 0;
   }
 
-  /* salida en ~2s */
+  /* salida en ~1.6s */
 }
 
 .animate-fade-cycle {
-  animation: fadeCycle 20s linear infinite;
+  animation: fadeCycle 16s ease-in-out infinite;
 }
-
 
 @keyframes pulseHeroChipiSymbol {
 
