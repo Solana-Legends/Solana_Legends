@@ -776,6 +776,33 @@ video {
 }
 
 /* ❄️ ChipiSol Hero */
+@keyframes fadeCycle {
+  0% {
+    opacity: 0;
+  }
+
+  10% {
+    opacity: 1;
+  }
+
+  /* entrada en ~2s */
+  90% {
+    opacity: 1;
+  }
+
+  /* permanece visible */
+  100% {
+    opacity: 0;
+  }
+
+  /* salida en ~2s */
+}
+
+.animate-fade-cycle {
+  animation: fadeCycle 20s linear infinite;
+}
+
+
 @keyframes pulseHeroChipiSymbol {
 
   0%,
