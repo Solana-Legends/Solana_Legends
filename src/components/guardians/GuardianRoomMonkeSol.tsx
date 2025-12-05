@@ -1,8 +1,17 @@
 // src/components/guardians/GuardianRoomMonkeSol.tsx
 import { useLanguage } from "@/contexts/LanguageContext";
+import { useEffect, useState } from "react";
 
 export default function GuardianRoomMonkeSol() {
   const { t } = useLanguage();
+  const [cycleKey, setCycleKey] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCycleKey((prev) => prev + 1);
+    }, 16000); // ciclo de 16s
+    return () => clearInterval(interval);
+  }, []);
 
   return (
     <section className="relative px-6 py-16 bg-gradient-to-b from-slate-900 to-slate-800 rounded-xl shadow-lg overflow-hidden">
@@ -12,40 +21,26 @@ export default function GuardianRoomMonkeSol() {
       {/* 🔥 + puntos de fuego */}
       <div className="absolute inset-0 pointer-events-none">
         {Array.from({ length: 20 }).map((_, i) => {
-          const isFlame = i % 2 === 0; // alterna entre brasas y puntos
-
-          const animationClass = isFlame
-            ? i % 2 === 0
-              ? "animate-pulse"
-              : "animate-flicker"
-            : i % 3 === 0
-            ? "animate-float"
-            : i % 3 === 1
-            ? "animate-bounce"
-            : "animate-ping";
+          const isFlame = i % 2 === 0; // alterna brasas y puntos
 
           return isFlame ? (
             <div
-              key={i}
-              className={`absolute text-xl text-red-500 ${animationClass} drop-shadow-[0_0_12px_#ef4444]`}
+              key={`${cycleKey}-${i}`}
+              className="absolute text-xl text-red-500 drop-shadow-[0_0_12px_#ef4444] animate-zapsolmonkesol-cycle"
               style={{
                 top: `${Math.random() * 100}%`,
                 left: `${Math.random() * 100}%`,
-                animationDuration: `${2 + Math.random() * 3}s`,
-                animationDelay: `${Math.random() * 2}s`,
               }}
             >
               🔥
             </div>
           ) : (
             <div
-              key={i}
-              className={`absolute w-2 h-2 rounded-full bg-orange-400 opacity-80 ${animationClass} drop-shadow-[0_0_8px_#ef4444]`}
+              key={`${cycleKey}-${i}`}
+              className="absolute w-2 h-2 rounded-full bg-orange-400 opacity-80 drop-shadow-[0_0_8px_#ef4444] animate-zapsolmonkesol-cycle"
               style={{
                 top: `${Math.random() * 100}%`,
                 left: `${Math.random() * 100}%`,
-                animationDuration: `${2 + Math.random() * 3}s`,
-                animationDelay: `${Math.random() * 2}s`,
               }}
             />
           );
@@ -79,9 +74,7 @@ export default function GuardianRoomMonkeSol() {
         {/* Imagen MonkeSol anclada y fija abajo a la izquierda */}
         <div className="absolute bottom-0 left-0 ml-[-4rem] animate-in fade-in slide-in-from-left duration-1000">
           <div className="relative z-10 flex justify-center items-center w-80 h-80 group">
-            {/* Aura roja pulsante por defecto */}
             <div className="absolute w-80 h-80 rounded-full blur-3xl hero-monkesol-aura pointer-events-none z-0 transition-colors duration-500 group-hover:bg-red-400/40"></div>
-            {/* Imagen del héroe MonkeSol */}
             <img
               src="/assets/MonkeSolVol.png"
               alt="MonkeSol Hero"

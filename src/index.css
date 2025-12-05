@@ -639,6 +639,48 @@ video {
     0 0 32px rgba(255, 255, 255, 0.8);
 }
 
+@keyframes zapsolmonkesolCycle {
+  0% {
+    opacity: 0;
+    transform: scale(0.8) translateY(0);
+  }
+
+  12.5% {
+    opacity: 1;
+    transform: scale(1) translateY(-10px);
+  }
+
+  /* fade in */
+  50% {
+    opacity: 1;
+    transform: scale(1.1) translateY(-20px);
+  }
+
+  /* float + chispa */
+  75% {
+    opacity: 0.8;
+    transform: scale(1) translateY(-30px);
+  }
+
+  /* flicker/parpadeo */
+  87.5% {
+    opacity: 0.5;
+    transform: scale(1.2) translateY(-40px);
+  }
+
+  /* inicio fade out */
+  100% {
+    opacity: 0;
+    transform: scale(0.8) translateY(-50px);
+  }
+
+  /* desaparece */
+}
+
+.animate-zapsolmonkesol-cycle {
+  animation: zapsolmonkesolCycle 16s linear infinite;
+}
+
 /* 🔥 MonkeSol Hero - efecto llama titilante (flicker) */
 @keyframes flickerHeroMonkeSymbol {
 
@@ -722,6 +764,42 @@ video {
 .symbol-hero-chipisol-aura:hover {
   text-shadow: 0 0 16px rgba(236, 72, 153, 1),
     0 0 32px rgba(236, 72, 153, 0.8);
+}
+
+@keyframes snowCycle {
+  0% {
+    opacity: 0;
+    transform: scale(0.8) translateY(0);
+  }
+
+  12.5% {
+    opacity: 1;
+    transform: scale(1.2) translateY(-10px);
+  }
+
+  /* fade in + latido */
+  75% {
+    opacity: 1;
+    transform: scale(1.1) translateY(-20px);
+  }
+
+  /* flotamiento + chispa */
+  87.5% {
+    opacity: 0.5;
+    transform: scale(1.2) translateY(-30px);
+  }
+
+  /* inicio fade out */
+  100% {
+    opacity: 0;
+    transform: scale(0.8) translateY(-40px);
+  }
+
+  /* desaparece */
+}
+
+.animate-snow-cycle {
+  animation: snowCycle 16s linear infinite;
 }
 
 /* 🌀 === Animaciones de entrada/salida para botón volver === */

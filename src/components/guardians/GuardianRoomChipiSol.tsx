@@ -1,8 +1,20 @@
 // src/components/guardians/GuardianRoomChipiSol.tsx
 import { useLanguage } from "@/contexts/LanguageContext";
+import { useEffect, useState } from "react";
 
 export default function GuardianRoomChipiSol() {
   const { t } = useLanguage();
+
+  // 🔁 Estado para forzar reposicionamiento cada ciclo
+  const [cycleKey, setCycleKey] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      // Cada 16s reinicia posiciones
+      setCycleKey((prev) => prev + 1);
+    }, 16000);
+    return () => clearInterval(interval);
+  }, []);
 
   return (
     <section className="relative px-6 py-16 bg-gradient-to-b from-slate-800 to-slate-700 rounded-xl shadow-lg overflow-hidden">
@@ -12,41 +24,26 @@ export default function GuardianRoomChipiSol() {
       {/* ❄️ Copos y puntos blancos */}
       <div className="absolute inset-0 pointer-events-none">
         {Array.from({ length: 20 }).map((_, i) => {
-          const isSnow = i % 2 === 0; // alterna entre copos y puntos
-          const animationClass = isSnow
-            ? i % 3 === 0
-              ? "animate-pulse"
-              : i % 3 === 1
-              ? "animate-flicker"
-              : "animate-float"
-            : i % 3 === 0
-            ? "animate-float"
-            : i % 3 === 1
-            ? "animate-bounce"
-            : "animate-ping";
+          const isSnow = i % 2 === 0; // alterna ❄️ y puntos
 
           return isSnow ? (
             <div
-              key={i}
-              className={`absolute text-xl text-blue-200 ${animationClass} drop-shadow-[0_0_12px_#22d3ee]`}
+              key={`${cycleKey}-${i}`}
+              className="absolute text-xl text-blue-200 drop-shadow-[0_0_12px_#22d3ee] animate-snow-cycle"
               style={{
                 top: `${Math.random() * 100}%`,
                 left: `${Math.random() * 100}%`,
-                animationDuration: `${3 + Math.random() * 4}s`,
-                animationDelay: `${Math.random() * 2}s`,
               }}
             >
               ❄️
             </div>
           ) : (
             <div
-              key={i}
-              className={`absolute w-2 h-2 bg-white rounded-full opacity-70 ${animationClass}`}
+              key={`${cycleKey}-${i}`}
+              className="absolute w-2 h-2 bg-white rounded-full opacity-70 animate-snow-cycle"
               style={{
                 top: `${Math.random() * 100}%`,
                 left: `${Math.random() * 100}%`,
-                animationDuration: `${3 + Math.random() * 4}s`,
-                animationDelay: `${Math.random() * 2}s`,
               }}
             />
           );
@@ -80,9 +77,8 @@ export default function GuardianRoomChipiSol() {
         {/* Imagen ChipiSol con aura lateral derecha */}
         <div className="absolute bottom-0 right-0 mb-[4rem] mr-[-4rem] animate-in fade-in slide-in-from-right duration-1000">
           <div className="relative z-10 flex justify-center items-center w-80 h-80 group">
-            {/* Aura azul pulsante por defecto */}
+            {/* Aura azul pulsante */}
             <div className="absolute w-80 h-80 rounded-full blur-3xl hero-chipisol-aura pointer-events-none z-0 transition-colors duration-500 group-hover:bg-cyan-400/40"></div>
-            {/* Imagen del héroe ChipiSol */}
             <img
               src="/assets/ChipiSolVol.png"
               alt="ChipiSol Hero"

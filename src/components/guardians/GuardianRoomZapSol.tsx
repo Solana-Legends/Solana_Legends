@@ -1,8 +1,17 @@
 // src/components/guardians/GuardianRoomZapSol.tsx
 import { useLanguage } from "@/contexts/LanguageContext";
+import { useEffect, useState } from "react";
 
 export default function GuardianRoomZapSol() {
   const { t } = useLanguage();
+  const [cycleKey, setCycleKey] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCycleKey((prev) => prev + 1);
+    }, 16000); // ciclo de 16s
+    return () => clearInterval(interval);
+  }, []);
 
   return (
     <section className="relative px-6 py-16 bg-gradient-to-b from-slate-950 to-slate-900 rounded-xl shadow-lg overflow-hidden">
@@ -12,40 +21,26 @@ export default function GuardianRoomZapSol() {
       {/* ⚡ + puntos eléctricos */}
       <div className="absolute inset-0 pointer-events-none">
         {Array.from({ length: 20 }).map((_, i) => {
-          const isRay = i % 2 === 0; // alterna entre rayos y puntos
-
-          const animationClass = isRay
-            ? i % 2 === 0
-              ? "animate-pulse"
-              : "animate-flicker"
-            : i % 3 === 0
-            ? "animate-float"
-            : i % 3 === 1
-            ? "animate-bounce"
-            : "animate-ping";
+          const isRay = i % 2 === 0; // alterna rayos y puntos
 
           return isRay ? (
             <div
-              key={i}
-              className={`absolute text-xl text-yellow-400 ${animationClass} drop-shadow-[0_0_12px_#facc15]`}
+              key={`${cycleKey}-${i}`}
+              className="absolute text-xl text-yellow-400 drop-shadow-[0_0_12px_#facc15] animate-zapsolmonkesol-cycle"
               style={{
                 top: `${Math.random() * 100}%`,
                 left: `${Math.random() * 100}%`,
-                animationDuration: `${2 + Math.random() * 3}s`,
-                animationDelay: `${Math.random() * 2}s`,
               }}
             >
               ⚡
             </div>
           ) : (
             <div
-              key={i}
-              className={`absolute w-2 h-2 rounded-full bg-gradient-to-r from-yellow-400 to-orange-400 opacity-80 ${animationClass} drop-shadow-[0_0_8px_#facc15]`}
+              key={`${cycleKey}-${i}`}
+              className="absolute w-2 h-2 rounded-full bg-gradient-to-r from-yellow-400 to-orange-400 opacity-80 drop-shadow-[0_0_8px_#facc15] animate-zapsolmonkesol-cycle"
               style={{
                 top: `${Math.random() * 100}%`,
                 left: `${Math.random() * 100}%`,
-                animationDuration: `${2 + Math.random() * 3}s`,
-                animationDelay: `${Math.random() * 2}s`,
               }}
             />
           );
@@ -68,7 +63,7 @@ export default function GuardianRoomZapSol() {
           {t("zapsol.subtitle")}
         </p>
 
-        {/* Imagen ritualizada (rostro centrado) */}
+        {/* Imagen ritualizada */}
         <div
           className="flex justify-center mb-8 animate-fadeInUp"
           style={{ animationDelay: "0.6s" }}
@@ -83,9 +78,7 @@ export default function GuardianRoomZapSol() {
         {/* Imagen ZapSol con aura lateral derecha */}
         <div className="absolute bottom-0 right-0 mb-[-4rem] mr-[-14rem] animate-in fade-in slide-in-from-right duration-1000">
           <div className="relative z-10 flex justify-center items-center w-80 h-80 group">
-            {/* Aura dorada pulsante por defecto, cambia a naranja en hover */}
             <div className="absolute w-80 h-80 rounded-full blur-3xl hero-zapsol-aura pointer-events-none z-0 transition-colors duration-500 group-hover:bg-orange-500/40"></div>
-            {/* Imagen del héroe ZapSol */}
             <img
               src="/assets/ZapSolVol.png"
               alt="ZapSol Hero"
