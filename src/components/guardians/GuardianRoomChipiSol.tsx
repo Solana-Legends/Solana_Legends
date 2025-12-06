@@ -21,28 +21,39 @@ export default function GuardianRoomChipiSol() {
       {/* ❄️ Copos + puntos */}
       <div className="absolute inset-0 pointer-events-none">
         {Array.from({ length: 30 }).map((_, i) => {
-          const isSnow = i % 2 === 0; // alterna copos y puntos
+          const isSnow = i % 2 === 0;
 
-          return isSnow ? (
+          // Animación adicional de movimiento
+          const animationClass = isSnow
+            ? i % 3 === 0
+              ? "animate-pulse"
+              : i % 3 === 1
+              ? "animate-flicker"
+              : "animate-float"
+            : i % 3 === 0
+            ? "animate-float"
+            : i % 3 === 1
+            ? "animate-pulse"
+            : "animate-ping";
+
+          return (
             <div
               key={`${cycleKey}-${i}`}
-              className="absolute text-xl text-blue-200 drop-shadow-[0_0_12px_#22d3ee] fade-cycle"
+              className={`absolute fade-cycle ${animationClass}`}
               style={{
                 top: `${Math.random() * 100}%`,
                 left: `${Math.random() * 100}%`,
+                animationDelay: `${Math.random() * 5}s`,
               }}
             >
-              ❄️
+              {isSnow ? (
+                <div className="text-xl text-blue-200 drop-shadow-[0_0_12px_#22d3ee]">
+                  ❄️
+                </div>
+              ) : (
+                <div className="w-2 h-2 bg-white rounded-full opacity-70" />
+              )}
             </div>
-          ) : (
-            <div
-              key={`${cycleKey}-${i}`}
-              className="absolute w-2 h-2 rounded-full bg-white opacity-80 drop-shadow-[0_0_8px_#22d3ee] fade-cycle"
-              style={{
-                top: `${Math.random() * 100}%`,
-                left: `${Math.random() * 100}%`,
-              }}
-            />
           );
         })}
       </div>
