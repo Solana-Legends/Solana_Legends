@@ -898,25 +898,26 @@ video {
   text-shadow: 0 0 16px rgba(236, 72, 153, 1), 0 0 32px rgba(236, 72, 153, 0.8);
 }
 
-/* === Clases combinadas (efecto + fade) === */
-.animate-float-fade {
-  animation: floatStrong 5s ease-in-out infinite, fadeCycle 16s linear infinite;
-}
-
-.animate-bounce-fade {
-  animation: bounceSnow 3s ease-in-out infinite, fadeCycle 16s linear infinite;
-}
-
-.animate-ping-fade {
-  animation: pingFast 1s ease-out infinite, fadeCycle 16s linear infinite;
-}
-
+/* ❄️ Copos con fade in/out */
 .animate-pulse-fade {
   animation: pulseStrong 3s ease-in-out infinite, fadeCycle 16s linear infinite;
 }
 
 .animate-flicker-fade {
-  animation: flickerSnow 1s linear infinite, fadeCycle 16s linear infinite;
+  animation: flickerSnow 2s infinite, fadeCycle 16s linear infinite;
+}
+
+.animate-float-fade {
+  animation: floatStrong 3s ease-in-out infinite, fadeCycle 16s linear infinite;
+}
+
+/* ⚪ Puntos con fade in/out */
+.animate-pulse-points-fade {
+  animation: pulseStrongPoints 2.5s ease-in-out infinite, fadeCycle 16s linear infinite;
+}
+
+.animate-ping-fade {
+  animation: pingFast 1s ease-out infinite, fadeCycle 16s linear infinite;
 }
 
 /* 🌀 === Animaciones de entrada/salida para botón volver === */

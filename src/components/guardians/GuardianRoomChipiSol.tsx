@@ -15,15 +15,15 @@ export default function GuardianRoomChipiSol() {
           const isSnow = i % 2 === 0; // alterna entre copos y puntos
           const animationClass = isSnow
             ? i % 3 === 0
-              ? "animate-pulse"
+              ? "animate-pulse-fade"
               : i % 3 === 1
-              ? "animate-flicker"
-              : "animate-float"
+              ? "animate-flicker-fade"
+              : "animate-float-fade"
             : i % 3 === 0
-            ? "animate-float"
+            ? "animate-float-fade"
             : i % 3 === 1
-            ? "animate-pulse"
-            : "animate-ping";
+            ? "animate-pulse-points-fade"
+            : "animate-ping-fade";
 
           return isSnow ? (
             <div
