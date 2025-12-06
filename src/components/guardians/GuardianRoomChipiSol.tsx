@@ -9,7 +9,6 @@ type SnowPoint = {
   scale: number;
   layer: "foreground" | "midground" | "background";
   rotationSpeed: string;
-  opacity: number;
 };
 
 export default function GuardianRoomChipiSol() {
@@ -31,8 +30,6 @@ export default function GuardianRoomChipiSol() {
             : 0.4 + Math.random() * 0.6,
         layer,
         rotationSpeed: `${10 + Math.random() * 20}s`,
-        opacity:
-          layer === "foreground" ? 0.9 : layer === "midground" ? 0.7 : 0.5,
       };
     })
   );
@@ -50,7 +47,7 @@ export default function GuardianRoomChipiSol() {
     return () => window.removeEventListener("mousemove", handleMouseMove);
   }, []);
 
-  // ✅ Corrección: actualizar posiciones sin recrear el array completo
+  // ✅ Actualizar posiciones sin recrear nodos
   useEffect(() => {
     const interval = setInterval(() => {
       setPositions((prev) =>
@@ -66,12 +63,6 @@ export default function GuardianRoomChipiSol() {
               ? 0.7 + Math.random() * 1
               : 0.4 + Math.random() * 0.6,
           rotationSpeed: `${10 + Math.random() * 20}s`,
-          opacity:
-            p.layer === "foreground"
-              ? 0.9
-              : p.layer === "midground"
-              ? 0.7
-              : 0.5,
         }))
       );
     }, 20000);
@@ -114,9 +105,8 @@ export default function GuardianRoomChipiSol() {
                 transform: `translate(${parallax.x * parallaxFactor}px, ${
                   parallax.y * parallaxFactor
                 }px) scale(${pos.scale}) rotate(${Math.random() * 360}deg)`,
-                transition: `transform ${pos.transitionDuration} ease-in-out, opacity 2s ease-in-out`,
+                transition: `transform ${pos.transitionDuration} ease-in-out`,
                 animationDelay: `${Math.random() * 20}s`,
-                opacity: pos.opacity,
               }}
             >
               {isSnow ? (
