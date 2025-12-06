@@ -37,7 +37,7 @@ export default function GuardianRoomChipiSol() {
           return isSnow ? (
             <div
               key={`${cycleKey}-${i}`}
-              className={`absolute text-xl text-blue-200 animate-fade-cycle ${animationClass} drop-shadow-[0_0_12px_#22d3ee]`}
+              className={`absolute text-xl text-blue-200 ${animationClass} drop-shadow-[0_0_12px_#22d3ee]`}
               style={{
                 top: `${Math.random() * 100}%`,
                 left: `${Math.random() * 100}%`,
@@ -50,7 +50,7 @@ export default function GuardianRoomChipiSol() {
           ) : (
             <div
               key={`${cycleKey}-${i}`}
-              className={`absolute w-2 h-2 bg-white rounded-full opacity-70 animate-fade-cycle ${animationClass}`}
+              className={`absolute w-2 h-2 bg-white rounded-full opacity-70 ${animationClass}`}
               style={{
                 top: `${Math.random() * 100}%`,
                 left: `${Math.random() * 100}%`,
