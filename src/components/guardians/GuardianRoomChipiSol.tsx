@@ -25,13 +25,13 @@ export default function GuardianRoomChipiSol() {
 
           let animationClass = "";
           if (isSnow) {
-            // ❄️ Copos: 4 efectos
+            // ❄️ Copos: 4 efectos (pulse, ping, flicker, bounce)
             if (i % 4 === 0) animationClass = "animate-pulse";
             else if (i % 4 === 1) animationClass = "animate-ping";
             else if (i % 4 === 2) animationClass = "animate-flicker";
-            else animationClass = "animate-float";
+            else animationClass = "animate-bounce";
           } else {
-            // ⚪ Puntos: 3 efectos
+            // ⚪ Puntos: 3 efectos (float, bounce, ping)
             if (i % 3 === 0) animationClass = "animate-float";
             else if (i % 3 === 1) animationClass = "animate-bounce";
             else animationClass = "animate-ping";
