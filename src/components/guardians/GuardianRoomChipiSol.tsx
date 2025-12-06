@@ -19,7 +19,7 @@ export default function GuardianRoomChipiSol() {
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,#0ea5e9,#0f172a)] opacity-70 animate-pulse" />
 
       {/* ❄️ Copos y puntos blancos */}
-      <div className="absolute inset-0 pointer-events-none">
+      <div className="absolute inset-0 pointer-events-none fade-cycle">
         {Array.from({ length: 30 }).map((_, i) => {
           const isSnow = i % 2 === 0; // alterna entre copos y puntos
           const animationClass = isSnow
