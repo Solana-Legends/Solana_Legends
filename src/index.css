@@ -576,6 +576,25 @@ video {
   animation: pulseStrong 3s ease-in-out infinite;
 }
 
+/* 🌬️ Flotamiento más visible para ❄️ y ⚪ */
+@keyframes floatStrong {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-40px);
+    /* más desplazamiento que antes */
+  }
+}
+
+.animate-float {
+  animation: floatStrong 3s ease-in-out infinite;
+  /* más rápido que antes */
+}
+
 /* ❄️ Copos — flicker con patrón irregular */
 @keyframes flickerSnow {
 
