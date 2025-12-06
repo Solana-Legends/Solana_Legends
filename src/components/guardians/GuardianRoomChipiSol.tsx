@@ -25,24 +25,22 @@ export default function GuardianRoomChipiSol() {
 
           let animationClass = "";
           if (isSnow) {
-            // ❄️ Copos: 4 efectos (pulse, ping, flicker, bounce)
-            if (i % 4 === 0) animationClass = "animate-pulse";
-            else if (i % 4 === 1) animationClass = "animate-ping";
-            else if (i % 4 === 2) animationClass = "animate-flicker";
-            else animationClass = "animate-bounce";
+            // ❄️ Copos: 4 efectos combinados con fade
+            if (i % 4 === 0) animationClass = "animate-pulse-fade";
+            else if (i % 4 === 1) animationClass = "animate-ping-fade";
+            else if (i % 4 === 2) animationClass = "animate-flicker-fade";
+            else animationClass = "animate-bounce-fade";
           } else {
-            // ⚪ Puntos: 3 efectos (float, bounce, ping)
-            if (i % 3 === 0) animationClass = "animate-float";
-            else if (i % 3 === 1) animationClass = "animate-bounce";
-            else animationClass = "animate-ping";
+            // ⚪ Puntos: 3 efectos combinados con fade
+            if (i % 3 === 0) animationClass = "animate-float-fade";
+            else if (i % 3 === 1) animationClass = "animate-bounce-fade";
+            else animationClass = "animate-ping-fade";
           }
-
-          const combinedClass = `${animationClass} animate-fade-cycle`;
 
           return isSnow ? (
             <div
               key={`${cycleKey}-${i}`}
-              className={`absolute text-xl text-blue-200 ${combinedClass} drop-shadow-[0_0_12px_#22d3ee]`}
+              className={`absolute text-xl text-blue-200 ${animationClass} drop-shadow-[0_0_12px_#22d3ee]`}
               style={{
                 top: `${Math.random() * 100}%`,
                 left: `${Math.random() * 100}%`,
@@ -54,7 +52,7 @@ export default function GuardianRoomChipiSol() {
           ) : (
             <div
               key={`${cycleKey}-${i}`}
-              className={`absolute w-2 h-2 bg-white rounded-full opacity-70 ${combinedClass}`}
+              className={`absolute w-2 h-2 bg-white rounded-full opacity-70 ${animationClass}`}
               style={{
                 top: `${Math.random() * 100}%`,
                 left: `${Math.random() * 100}%`,
