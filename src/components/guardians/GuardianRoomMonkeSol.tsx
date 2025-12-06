@@ -9,7 +9,7 @@ export default function GuardianRoomMonkeSol() {
   useEffect(() => {
     const interval = setInterval(() => {
       setCycleKey((prev) => prev + 1);
-    }, 16000); // ciclo de 16s
+    }, 20000); // ciclo completo de 20s
     return () => clearInterval(interval);
   }, []);
 
@@ -18,15 +18,31 @@ export default function GuardianRoomMonkeSol() {
       {/* ✨ Fondo ritualizado con aura cálida */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,#7f1d1d,#0f172a)] opacity-70 animate-pulse" />
 
-      {/* 🔥 + puntos de fuego */}
+      {/* 🔥 Llamas + puntos */}
       <div className="absolute inset-0 pointer-events-none">
-        {Array.from({ length: 30 }).map((_, i) => {
-          const isFlame = i % 2 === 0; // alterna brasas y puntos
+        {Array.from({ length: 24 }).map((_, i) => {
+          const isFlame = i % 2 === 0;
+
+          // Alterna entre animaciones combinadas
+          const flameAnimations = [
+            "animate-flamePulse",
+            "animate-flameFlicker",
+            "animate-flameFloat",
+          ];
+          const pointAnimations = [
+            "animate-pointPulse",
+            "animate-pointFloat",
+            "animate-pointPing",
+          ];
+
+          const animationClass = isFlame
+            ? flameAnimations[i % flameAnimations.length]
+            : pointAnimations[i % pointAnimations.length];
 
           return isFlame ? (
             <div
               key={`${cycleKey}-${i}`}
-              className="absolute text-xl text-red-500 drop-shadow-[0_0_12px_#ef4444] animate-pulse animate-flicker animate-float"
+              className={`absolute text-xl text-red-500 drop-shadow-[0_0_12px_#ef4444] ${animationClass}`}
               style={{
                 top: `${Math.random() * 100}%`,
                 left: `${Math.random() * 100}%`,
@@ -37,7 +53,7 @@ export default function GuardianRoomMonkeSol() {
           ) : (
             <div
               key={`${cycleKey}-${i}`}
-              className="absolute w-2 h-2 rounded-full bg-orange-400 opacity-80 drop-shadow-[0_0_8px_#ef4444] animate-pointCombo"
+              className={`absolute w-2 h-2 rounded-full bg-orange-400 opacity-80 drop-shadow-[0_0_8px_#ef4444] ${animationClass}`}
               style={{
                 top: `${Math.random() * 100}%`,
                 left: `${Math.random() * 100}%`,
