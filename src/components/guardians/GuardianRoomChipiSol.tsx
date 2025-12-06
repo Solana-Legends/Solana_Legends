@@ -1,17 +1,8 @@
 // src/components/guardians/GuardianRoomChipiSol.tsx
 import { useLanguage } from "@/contexts/LanguageContext";
-import { useEffect, useState } from "react";
 
 export default function GuardianRoomChipiSol() {
   const { t } = useLanguage();
-  const [cycleKey, setCycleKey] = useState(0);
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCycleKey((prev) => prev + 1);
-    }, 16000); // ciclo de 16s
-    return () => clearInterval(interval);
-  }, []);
 
   return (
     <section className="relative px-6 py-16 bg-gradient-to-b from-slate-800 to-slate-700 rounded-xl shadow-lg overflow-hidden">
@@ -22,41 +13,40 @@ export default function GuardianRoomChipiSol() {
       <div className="absolute inset-0 pointer-events-none">
         {Array.from({ length: 30 }).map((_, i) => {
           const isSnow = i % 2 === 0; // alterna entre copos y puntos
-
-          let animationClass = "";
-          if (isSnow) {
-            // ❄️ Copos: 4 efectos combinados con fade
-            if (i % 4 === 0) animationClass = "animate-pulse-fade";
-            else if (i % 4 === 1) animationClass = "animate-ping-fade";
-            else if (i % 4 === 2) animationClass = "animate-flicker-fade";
-            else animationClass = "animate-bounce-fade";
-          } else {
-            // ⚪ Puntos: 3 efectos combinados con fade
-            if (i % 3 === 0) animationClass = "animate-float-fade";
-            else if (i % 3 === 1) animationClass = "animate-bounce-fade";
-            else animationClass = "animate-ping-fade";
-          }
+          const animationClass = isSnow
+            ? i % 3 === 0
+              ? "animate-pulse"
+              : i % 3 === 1
+              ? "animate-flicker"
+              : "animate-float"
+            : i % 3 === 0
+            ? "animate-float"
+            : i % 3 === 1
+            ? "animate-bounce"
+            : "animate-ping";
 
           return isSnow ? (
             <div
-              key={`${cycleKey}-${i}`}
+              key={i}
               className={`absolute text-xl text-blue-200 ${animationClass} drop-shadow-[0_0_12px_#22d3ee]`}
               style={{
                 top: `${Math.random() * 100}%`,
                 left: `${Math.random() * 100}%`,
-                animationDelay: `${Math.random() * 5}s`,
+                animationDuration: `${3 + Math.random() * 4}s`,
+                animationDelay: `${Math.random() * 2}s`,
               }}
             >
               ❄️
             </div>
           ) : (
             <div
-              key={`${cycleKey}-${i}`}
+              key={i}
               className={`absolute w-2 h-2 bg-white rounded-full opacity-70 ${animationClass}`}
               style={{
                 top: `${Math.random() * 100}%`,
                 left: `${Math.random() * 100}%`,
-                animationDelay: `${Math.random() * 5}s`,
+                animationDuration: `${3 + Math.random() * 4}s`,
+                animationDelay: `${Math.random() * 2}s`,
               }}
             />
           );
