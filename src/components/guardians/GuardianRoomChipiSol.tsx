@@ -1,5 +1,6 @@
+// src/components/guardians/GuardianRoomChipiSol.tsx
 import { useLanguage } from "@/contexts/LanguageContext";
-import { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
 
 export default function GuardianRoomChipiSol() {
   const { t } = useLanguage();
@@ -14,49 +15,39 @@ export default function GuardianRoomChipiSol() {
 
   return (
     <section className="relative px-6 py-16 bg-gradient-to-b from-slate-800 to-slate-700 rounded-xl shadow-lg overflow-hidden">
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,#0ea5e9,#0f172a)] opacity-70 animate-pulse" />
+      {/* ✨ Fondo cósmico animado */}
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,#0ea5e9,#0f172a)] animate-pulse opacity-70" />
 
+      {/* ❄️ Copos + puntos */}
       <div className="absolute inset-0 pointer-events-none">
         {Array.from({ length: 30 }).map((_, i) => {
-          const isSnow = i % 2 === 0;
-          const animationClass = isSnow
-            ? i % 3 === 0
-              ? "animate-pulse"
-              : i % 3 === 1
-              ? "animate-flicker"
-              : "animate-float"
-            : i % 3 === 0
-            ? "animate-float"
-            : i % 3 === 1
-            ? "animate-pulse"
-            : "animate-ping";
+          const isSnow = i % 2 === 0; // alterna copos y puntos
 
-          return (
+          return isSnow ? (
             <div
               key={`${cycleKey}-${i}`}
-              className="absolute fade-cycle"
+              className="absolute text-xl text-blue-200 drop-shadow-[0_0_12px_#22d3ee] fade-cycle"
               style={{
                 top: `${Math.random() * 100}%`,
                 left: `${Math.random() * 100}%`,
-                animationDelay: `${i * 0.5}s`, // desfase progresivo
               }}
             >
-              {isSnow ? (
-                <div
-                  className={`text-xl text-blue-200 ${animationClass} drop-shadow-[0_0_12px_#22d3ee]`}
-                >
-                  ❄️
-                </div>
-              ) : (
-                <div
-                  className={`w-2 h-2 bg-white rounded-full opacity-70 ${animationClass}`}
-                />
-              )}
+              ❄️
             </div>
+          ) : (
+            <div
+              key={`${cycleKey}-${i}`}
+              className="absolute w-2 h-2 rounded-full bg-white opacity-80 drop-shadow-[0_0_8px_#22d3ee] fade-cycle"
+              style={{
+                top: `${Math.random() * 100}%`,
+                left: `${Math.random() * 100}%`,
+              }}
+            />
           );
         })}
       </div>
 
+      {/* Contenido principal */}
       <div className="relative z-10 max-w-4xl mx-auto text-center">
         <h3 className="text-4xl md:text-5xl font-bold text-cyan-400 mb-4 animate-fadeInUp">
           {t("chipisol.title")}
@@ -68,6 +59,7 @@ export default function GuardianRoomChipiSol() {
           {t("chipisol.subtitle")}
         </p>
 
+        {/* Imagen ritualizada */}
         <div
           className="flex justify-center mb-8 animate-fadeInUp"
           style={{ animationDelay: "0.6s" }}
@@ -79,6 +71,7 @@ export default function GuardianRoomChipiSol() {
           />
         </div>
 
+        {/* Imagen ChipiSol con aura lateral derecha */}
         <div className="absolute bottom-0 right-0 mb-[4rem] mr-[-4rem] animate-in fade-in slide-in-from-right duration-1000">
           <div className="relative z-10 flex justify-center items-center w-80 h-80 group">
             <div className="absolute w-80 h-80 rounded-full blur-3xl hero-chipisol-aura pointer-events-none z-0 transition-colors duration-500 group-hover:bg-cyan-400/40"></div>
@@ -90,6 +83,7 @@ export default function GuardianRoomChipiSol() {
           </div>
         </div>
 
+        {/* Frase ritualizada */}
         <blockquote
           className="italic text-cyan-300 text-lg md:text-xl animate-fadeInUp"
           style={{ animationDelay: "0.9s" }}
