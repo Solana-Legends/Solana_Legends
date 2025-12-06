@@ -1,8 +1,30 @@
 // src/components/guardians/GuardianRoomChipiSol.tsx
 import { useLanguage } from "@/contexts/LanguageContext";
+import { useState, useEffect } from "react";
 
 export default function GuardianRoomChipiSol() {
   const { t } = useLanguage();
+
+  // Estado con posiciones iniciales
+  const [positions, setPositions] = useState(
+    Array.from({ length: 30 }).map(() => ({
+      top: `${Math.random() * 100}%`,
+      left: `${Math.random() * 100}%`,
+    }))
+  );
+
+  // Recalcular posiciones cada 20s (ciclo del fade)
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setPositions(
+        Array.from({ length: 30 }).map(() => ({
+          top: `${Math.random() * 100}%`,
+          left: `${Math.random() * 100}%`,
+        }))
+      );
+    }, 20000); // cada 20s
+    return () => clearInterval(interval);
+  }, []);
 
   return (
     <section className="relative px-6 py-16 bg-gradient-to-b from-slate-800 to-slate-700 rounded-xl shadow-lg overflow-hidden">
@@ -11,7 +33,7 @@ export default function GuardianRoomChipiSol() {
 
       {/* ❄️ Copos y puntos blancos */}
       <div className="absolute inset-0 pointer-events-none">
-        {Array.from({ length: 30 }).map((_, i) => {
+        {positions.map((pos, i) => {
           const isSnow = i % 2 === 0; // alterna entre copos y puntos
           const animationClass = isSnow
             ? i % 3 === 0
@@ -30,9 +52,9 @@ export default function GuardianRoomChipiSol() {
               key={i}
               className="fade-cycle absolute"
               style={{
-                top: `${Math.random() * 100}%`,
-                left: `${Math.random() * 100}%`,
-                // animationDelay: `${Math.random() * 20}s`, // desfase en el ciclo de 20s
+                top: pos.top,
+                left: pos.left,
+                animationDelay: `${Math.random() * 20}s`,
               }}
             >
               {isSnow ? (
