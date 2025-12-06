@@ -1,29 +1,40 @@
 // src/components/guardians/GuardianRoomChipiSol.tsx
 import { useLanguage } from "@/contexts/LanguageContext";
-import { useEffect, useState } from "react";
+import { useState, useEffect } from "react";
 
 export default function GuardianRoomChipiSol() {
   const { t } = useLanguage();
-  const [cycleKey, setCycleKey] = useState(0);
 
+  // Estado con posiciones iniciales
+  const [positions, setPositions] = useState(
+    Array.from({ length: 30 }).map(() => ({
+      top: `${Math.random() * 100}%`,
+      left: `${Math.random() * 100}%`,
+    }))
+  );
+
+  // Recalcular posiciones cada 20s (ciclo del fade)
   useEffect(() => {
     const interval = setInterval(() => {
-      setCycleKey((prev) => prev + 1);
-    }, 20000); // ciclo de 20s
+      setPositions(
+        Array.from({ length: 30 }).map(() => ({
+          top: `${Math.random() * 100}%`,
+          left: `${Math.random() * 100}%`,
+        }))
+      );
+    }, 20000); // cada 20s
     return () => clearInterval(interval);
   }, []);
 
   return (
     <section className="relative px-6 py-16 bg-gradient-to-b from-slate-800 to-slate-700 rounded-xl shadow-lg overflow-hidden">
-      {/* ✨ Fondo cósmico animado */}
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,#0ea5e9,#0f172a)] animate-pulse opacity-70" />
+      {/* ✨ Fondo cósmico con aura fría */}
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,#0ea5e9,#0f172a)] opacity-70 animate-pulse" />
 
-      {/* ❄️ Copos + puntos */}
+      {/* ❄️ Copos y puntos blancos */}
       <div className="absolute inset-0 pointer-events-none">
-        {Array.from({ length: 30 }).map((_, i) => {
-          const isSnow = i % 2 === 0;
-
-          // Animación adicional de movimiento
+        {positions.map((pos, i) => {
+          const isSnow = i % 2 === 0; // alterna entre copos y puntos
           const animationClass = isSnow
             ? i % 3 === 0
               ? "animate-pulse"
@@ -38,20 +49,32 @@ export default function GuardianRoomChipiSol() {
 
           return (
             <div
-              key={`${cycleKey}-${i}`}
-              className={`absolute fade-cycle ${animationClass}`}
+              key={i}
+              className="fade-cycle absolute"
               style={{
-                top: `${Math.random() * 100}%`,
-                left: `${Math.random() * 100}%`,
-                animationDelay: `${Math.random() * 5}s`,
+                top: pos.top,
+                left: pos.left,
+                animationDelay: `${Math.random() * 20}s`,
               }}
             >
               {isSnow ? (
-                <div className="text-xl text-blue-200 drop-shadow-[0_0_12px_#22d3ee]">
+                <div
+                  className={`text-xl text-blue-200 ${animationClass} drop-shadow-[0_0_12px_#22d3ee]`}
+                  style={{
+                    animationDuration: `${3 + Math.random() * 4}s`,
+                    animationDelay: `${Math.random() * 2}s`,
+                  }}
+                >
                   ❄️
                 </div>
               ) : (
-                <div className="w-2 h-2 bg-white rounded-full opacity-70" />
+                <div
+                  className={`w-2 h-2 bg-white rounded-full opacity-70 ${animationClass}`}
+                  style={{
+                    animationDuration: `${3 + Math.random() * 4}s`,
+                    animationDelay: `${Math.random() * 2}s`,
+                  }}
+                />
               )}
             </div>
           );
@@ -85,7 +108,9 @@ export default function GuardianRoomChipiSol() {
         {/* Imagen ChipiSol con aura lateral derecha */}
         <div className="absolute bottom-0 right-0 mb-[4rem] mr-[-4rem] animate-in fade-in slide-in-from-right duration-1000">
           <div className="relative z-10 flex justify-center items-center w-80 h-80 group">
+            {/* Aura azul pulsante por defecto */}
             <div className="absolute w-80 h-80 rounded-full blur-3xl hero-chipisol-aura pointer-events-none z-0 transition-colors duration-500 group-hover:bg-cyan-400/40"></div>
+            {/* Imagen del héroe ChipiSol */}
             <img
               src="/assets/ChipiSolVol.png"
               alt="ChipiSol Hero"

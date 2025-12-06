@@ -576,7 +576,55 @@ video {
   animation: pulseStrong 3s ease-in-out infinite;
 }
 
-/* 🌬️ Flotamiento más visible para ❄️ y ⚪ */
+/* ❄️ Copos — flickerSnow más rápido */
+@keyframes flickerSnow {
+
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  20% {
+    opacity: 0.2;
+  }
+
+  40% {
+    opacity: 0.8;
+  }
+
+  60% {
+    opacity: 0.3;
+  }
+
+  80% {
+    opacity: 0.7;
+  }
+}
+
+.animate-flicker {
+  animation: flickerSnow 1s linear infinite;
+}
+
+/* ⚪ Puntos — pulso más intenso (nuevo) */
+@keyframes pulseStrongPoints {
+
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 0.6;
+  }
+
+  50% {
+    transform: scale(1.6);
+    opacity: 1;
+  }
+}
+
+.animate-pulse-points {
+  animation: pulseStrongPoints 2.5s ease-in-out infinite;
+}
+
+/* Flotamiento más notorio */
 @keyframes floatStrong {
 
   0%,
@@ -585,41 +633,12 @@ video {
   }
 
   50% {
-    transform: translateY(-40px);
-    /* más desplazamiento que antes */
+    transform: translateY(-20px);
   }
 }
 
 .animate-float {
-  animation: floatStrong 3s ease-in-out infinite;
-  /* más rápido que antes */
-}
-
-/* ❄️ Copos — flicker con patrón irregular */
-@keyframes flickerSnow {
-
-  0%,
-  19%,
-  21%,
-  23%,
-  25%,
-  54%,
-  56%,
-  100% {
-    opacity: 1;
-  }
-
-  20%,
-  22%,
-  24%,
-  55% {
-    opacity: 0.4;
-  }
-}
-
-.animate-flicker {
-  animation: flickerSnow 2s infinite;
-  /* igual que el símbolo, duración 2s */
+  animation: floatStrong 5s ease-in-out infinite;
 }
 
 /* Rebote más energético (visibilidad clara) */
@@ -898,27 +917,25 @@ video {
   text-shadow: 0 0 16px rgba(236, 72, 153, 1), 0 0 32px rgba(236, 72, 153, 0.8);
 }
 
-/* 🌌 Fade in/out de 20s para copos y puntos */
-@keyframes fadeInOut {
-  0% {
-    opacity: 0;
-  }
-
-  10% {
-    opacity: 1;
-  }
-
-  90% {
-    opacity: 1;
-  }
-
-  100% {
-    opacity: 0;
-  }
+/* === Clases combinadas (efecto + fade) === */
+.animate-float-fade {
+  animation: floatStrong 5s ease-in-out infinite, fadeCycle 16s linear infinite;
 }
 
-.fade-cycle {
-  animation: fadeInOut 20s ease-in-out infinite;
+.animate-bounce-fade {
+  animation: bounceSnow 3s ease-in-out infinite, fadeCycle 16s linear infinite;
+}
+
+.animate-ping-fade {
+  animation: pingFast 1s ease-out infinite, fadeCycle 16s linear infinite;
+}
+
+.animate-pulse-fade {
+  animation: pulseStrong 3s ease-in-out infinite, fadeCycle 16s linear infinite;
+}
+
+.animate-flicker-fade {
+  animation: flickerSnow 1s linear infinite, fadeCycle 16s linear infinite;
 }
 
 /* 🌀 === Animaciones de entrada/salida para botón volver === */
