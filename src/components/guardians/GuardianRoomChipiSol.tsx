@@ -50,32 +50,29 @@ export default function GuardianRoomChipiSol() {
     return () => window.removeEventListener("mousemove", handleMouseMove);
   }, []);
 
+  // ✅ Corrección: actualizar posiciones sin recrear el array completo
   useEffect(() => {
     const interval = setInterval(() => {
-      setPositions(
-        Array.from({ length: 30 }).map((_, i) => {
-          const layer =
-            i % 3 === 0
-              ? "foreground"
-              : i % 3 === 1
-              ? "midground"
-              : "background";
-          return {
-            x: Math.random() * 100,
-            y: Math.random() * 100,
-            transitionDuration: `${1 + Math.random() * 3}s`,
-            scale:
-              layer === "foreground"
-                ? 1 + Math.random() * 1.5
-                : layer === "midground"
-                ? 0.7 + Math.random() * 1
-                : 0.4 + Math.random() * 0.6,
-            layer,
-            rotationSpeed: `${10 + Math.random() * 20}s`,
-            opacity:
-              layer === "foreground" ? 0.9 : layer === "midground" ? 0.7 : 0.5,
-          };
-        })
+      setPositions((prev) =>
+        prev.map((p) => ({
+          ...p,
+          x: Math.random() * 100,
+          y: Math.random() * 100,
+          transitionDuration: `${1 + Math.random() * 3}s`,
+          scale:
+            p.layer === "foreground"
+              ? 1 + Math.random() * 1.5
+              : p.layer === "midground"
+              ? 0.7 + Math.random() * 1
+              : 0.4 + Math.random() * 0.6,
+          rotationSpeed: `${10 + Math.random() * 20}s`,
+          opacity:
+            p.layer === "foreground"
+              ? 0.9
+              : p.layer === "midground"
+              ? 0.7
+              : 0.5,
+        }))
       );
     }, 20000);
     return () => clearInterval(interval);
