@@ -147,7 +147,11 @@ video {
   }
 }
 
-/* ✨⚡ Animación de parpadeo irregular */
+.logo-respirando {
+  animation: pulse-scale 3s ease-in-out infinite;
+}
+
+/* ✨⚡ Animación de parpadeo irregular (héroes/símbolos específicos) */
 @keyframes flicker {
 
   0%,
@@ -169,26 +173,22 @@ video {
   }
 }
 
-.animate-flicker {
+.animate-flicker-legacy {
   animation: flicker 2s infinite;
 }
 
-.logo-respirando {
-  animation: pulse-scale 3s ease-in-out infinite;
-}
+/* Conservada para compatibilidad puntual */
 
 /* ✨ === Auras genéricas (púrpura y azul) === */
 @keyframes pulse-aura {
 
   0%,
   100% {
-    box-shadow: 0 0 40px rgba(160, 32, 240, 0.8),
-      0 0 80px rgba(160, 32, 240, 0.5);
+    box-shadow: 0 0 40px rgba(160, 32, 240, 0.8), 0 0 80px rgba(160, 32, 240, 0.5);
   }
 
   50% {
-    box-shadow: 0 0 60px rgba(160, 32, 240, 1),
-      0 0 120px rgba(160, 32, 240, 0.7);
+    box-shadow: 0 0 60px rgba(160, 32, 240, 1), 0 0 120px rgba(160, 32, 240, 0.7);
   }
 }
 
@@ -220,13 +220,11 @@ video {
 
   0%,
   100% {
-    box-shadow: 0 0 80px rgba(255, 168, 8, 1), 0 0 160px rgba(255, 168, 8, 0.8),
-      0 0 240px rgba(255, 168, 8, 0.5);
+    box-shadow: 0 0 80px rgba(255, 168, 8, 1), 0 0 160px rgba(255, 168, 8, 0.8), 0 0 240px rgba(255, 168, 8, 0.5);
   }
 
   50% {
-    box-shadow: 0 0 120px rgba(255, 168, 8, 1), 0 0 200px rgba(255, 168, 8, 0.9),
-      0 0 280px rgba(255, 168, 8, 0.6);
+    box-shadow: 0 0 120px rgba(255, 168, 8, 1), 0 0 200px rgba(255, 168, 8, 0.9), 0 0 280px rgba(255, 168, 8, 0.6);
   }
 }
 
@@ -297,19 +295,6 @@ video {
   animation: fadeInUp 0.8s ease-out forwards;
 }
 
-/* ✨ === Intensificación genérica de aura en tarjetas (hover) === */
-.aura-zapsol:hover {
-  filter: brightness(1.2) saturate(1.3);
-}
-
-.aura-monkesol:hover {
-  filter: brightness(1.15) saturate(1.2);
-}
-
-.aura-chipisol:hover {
-  filter: brightness(1.25) saturate(1.4);
-}
-
 /* ✨ === Auras personalizadas por guardián (sin pulsación; solo hover) === */
 .aura-zapsol {
   box-shadow: 0 0 25px rgba(56, 189, 248, 0.9), 0 0 50px rgba(56, 189, 248, 0.6);
@@ -317,8 +302,7 @@ video {
 }
 
 .aura-zapsol:hover {
-  box-shadow: 0 0 50px rgba(255, 255, 255, 1),
-    0 0 100px rgba(255, 255, 255, 0.85);
+  box-shadow: 0 0 50px rgba(255, 255, 255, 1), 0 0 100px rgba(255, 255, 255, 0.85);
   filter: brightness(1.4);
 }
 
@@ -333,8 +317,7 @@ video {
 }
 
 .aura-chipisol {
-  box-shadow: 0 0 30px rgba(192, 132, 252, 0.9),
-    0 0 60px rgba(192, 132, 252, 0.6);
+  box-shadow: 0 0 30px rgba(192, 132, 252, 0.9), 0 0 60px rgba(192, 132, 252, 0.6);
   border-radius: 0.5rem;
 }
 
@@ -373,6 +356,7 @@ video {
 
 @keyframes flicker {
 
+  /* usado por hero-monkesol */
   0%,
   19%,
   21%,
@@ -433,19 +417,15 @@ video {
 }
 
 /* ✨ === Auras para imágenes de héroes (pulsación específica) === */
-
-/* ⚡ ZapSol: aura eléctrica dorada */
 @keyframes pulseZapHero {
 
   0%,
   100% {
-    box-shadow: 0 0 40px rgba(250, 204, 21, 0.8),
-      0 0 80px rgba(250, 204, 21, 0.5);
+    box-shadow: 0 0 40px rgba(250, 204, 21, 0.8), 0 0 80px rgba(250, 204, 21, 0.5);
   }
 
   50% {
-    box-shadow: 0 0 60px rgba(250, 204, 21, 1),
-      0 0 120px rgba(250, 204, 21, 0.7);
+    box-shadow: 0 0 60px rgba(250, 204, 21, 1), 0 0 120px rgba(250, 204, 21, 0.7);
   }
 }
 
@@ -455,18 +435,15 @@ video {
   will-change: box-shadow;
 }
 
-/* 🔥 MonkeSol: aura fuego ancestral */
 @keyframes pulseMonkeHero {
 
   0%,
   100% {
-    box-shadow: 0 0 40px rgba(239, 68, 68, 0.8),
-      0 0 80px rgba(239, 68, 68, 0.5);
+    box-shadow: 0 0 40px rgba(239, 68, 68, 0.8), 0 0 80px rgba(239, 68, 68, 0.5);
   }
 
   50% {
-    box-shadow: 0 0 60px rgba(239, 68, 68, 1),
-      0 0 120px rgba(239, 68, 68, 0.7);
+    box-shadow: 0 0 60px rgba(239, 68, 68, 1), 0 0 120px rgba(239, 68, 68, 0.7);
   }
 }
 
@@ -476,18 +453,15 @@ video {
   will-change: box-shadow;
 }
 
-/* ❄️ ChipiSol: aura cósmica púrpura/azul */
 @keyframes pulseChipiHero {
 
   0%,
   100% {
-    box-shadow: 0 0 40px rgba(192, 132, 252, 0.8),
-      0 0 80px rgba(59, 130, 246, 0.5);
+    box-shadow: 0 0 40px rgba(192, 132, 252, 0.8), 0 0 80px rgba(59, 130, 246, 0.5);
   }
 
   50% {
-    box-shadow: 0 0 60px rgba(192, 132, 252, 1),
-      0 0 120px rgba(59, 130, 246, 0.7);
+    box-shadow: 0 0 60px rgba(192, 132, 252, 1), 0 0 120px rgba(59, 130, 246, 0.7);
   }
 }
 
@@ -515,13 +489,11 @@ video {
 }
 
 .symbol-zapsol-aura {
-  text-shadow: 0 0 10px rgba(250, 204, 21, 0.9),
-    0 0 20px rgba(250, 204, 21, 0.6);
+  text-shadow: 0 0 10px rgba(250, 204, 21, 0.9), 0 0 20px rgba(250, 204, 21, 0.6);
 }
 
 .symbol-zapsol-aura:hover {
-  text-shadow: 0 0 14px rgba(255, 255, 255, 1),
-    0 0 28px rgba(255, 255, 255, 0.8);
+  text-shadow: 0 0 14px rgba(255, 255, 255, 1), 0 0 28px rgba(255, 255, 255, 0.8);
 }
 
 @keyframes flickerMonkeSymbol {
@@ -576,17 +548,14 @@ video {
 }
 
 .symbol-chipisol-aura {
-  text-shadow: 0 0 10px rgba(59, 130, 246, 0.9),
-    0 0 20px rgba(59, 130, 246, 0.6);
+  text-shadow: 0 0 10px rgba(59, 130, 246, 0.9), 0 0 20px rgba(59, 130, 246, 0.6);
 }
 
 .symbol-chipisol-aura:hover {
   text-shadow: 0 0 14px rgba(236, 72, 153, 1), 0 0 28px rgba(236, 72, 153, 0.8);
 }
 
-/* 🧩 === Símbolos elementales para héroes (HeroSection / ProgressSection) === */
-
-/* === Animaciones globales para guardianes === */
+/* === Animaciones globales para guardianes (unificadas) === */
 
 /* Pulso suave (brillo constante) */
 @keyframes pulseStrong {
@@ -607,26 +576,25 @@ video {
   animation: pulseStrong 3s ease-in-out infinite;
 }
 
-/* Parpadeo irregular rápido */
-@keyframes flickerFast {
+/* Parpadeo irregular para ❄️ y puntos (más notorio) */
+@keyframes flickerSnow {
 
   0%,
-  19%,
-  21%,
-  59%,
-  61%,
   100% {
     opacity: 1;
   }
 
-  20%,
-  60% {
+  40% {
     opacity: 0.3;
+  }
+
+  60% {
+    opacity: 0.8;
   }
 }
 
 .animate-flicker {
-  animation: flickerFast 0.5s linear infinite;
+  animation: flickerSnow 2s linear infinite;
 }
 
 /* Flotamiento más notorio */
@@ -646,8 +614,8 @@ video {
   animation: floatStrong 5s ease-in-out infinite;
 }
 
-/* Rebote más energético */
-@keyframes bounceFast {
+/* Rebote más energético (visibilidad clara) */
+@keyframes bounceSnow {
 
   0%,
   100% {
@@ -655,12 +623,12 @@ video {
   }
 
   50% {
-    transform: translateY(-15px);
+    transform: translateY(-25px);
   }
 }
 
 .animate-bounce {
-  animation: bounceFast 2s ease-in-out infinite;
+  animation: bounceSnow 3s ease-in-out infinite;
 }
 
 /* Ping más rápido */
@@ -680,116 +648,50 @@ video {
   animation: pingFast 1s ease-out infinite;
 }
 
-/* Ciclo de fade in/out para copos y puntos */
+/* Ciclo de fade in/out progresivo para copos y puntos (unificado) */
 @keyframes fadeCycle {
   0% {
     opacity: 0;
   }
 
-  5% {
-    opacity: 0.3;
-  }
-
-  /* empieza a aparecer */
-  10% {
+  15% {
     opacity: 1;
   }
 
-  /* totalmente visible */
+  /* entrada suave (~2.4s) */
   85% {
     opacity: 1;
   }
 
-  /* se mantiene visible */
-  95% {
-    opacity: 0.3;
-  }
-
-  /* empieza a desaparecer */
+  /* visible pleno */
   100% {
     opacity: 0;
   }
 
-  /* invisible otra vez */
+  /* salida suave (~2.4s) */
 }
 
 .animate-fade-cycle {
-  animation: fadeCycle 16s ease-in-out infinite;
+  animation: fadeCycle 16s linear infinite;
 }
 
-
-/* ⚡ ZapSol Hero - efecto rayo titilante (flicker) */
-@keyframes flickerHeroZapSymbol {
-
-  0%,
-  19%,
-  21%,
-  23%,
-  25%,
-  54%,
-  56%,
-  100% {
-    opacity: 1;
-  }
-
-  20%,
-  22%,
-  24%,
-  55% {
-    opacity: 0.4;
-  }
-}
-
-.symbol-hero-zapsol-flicker {
-  animation: flickerHeroZapSymbol 2s infinite;
-}
-
-/* ⚡ ZapSol Hero - efecto pulso eléctrico */
-@keyframes pulseHeroZapSymbol {
-
-  0%,
-  100% {
-    transform: scale(1);
-  }
-
-  50% {
-    transform: scale(1.15);
-  }
-}
-
-.symbol-hero-zapsol-pulse {
-  animation: pulseHeroZapSymbol 4s ease-in-out infinite;
-}
-
-.symbol-hero-zapsol-aura {
-  text-shadow: 0 0 12px rgba(250, 204, 21, 0.9),
-    0 0 24px rgba(250, 204, 21, 0.6);
-}
-
-.symbol-hero-zapsol-aura:hover {
-  text-shadow: 0 0 16px rgba(255, 255, 255, 1),
-    0 0 32px rgba(255, 255, 255, 0.8);
-}
-
+/* ⚡ ZapSol/🔥 MonkeSol/❄️ ChipiSol — ciclos compuestos (conservados) */
 @keyframes zapsolmonkesolCycle {
   0% {
     opacity: 0;
     transform: scale(0.8) translateY(0);
   }
 
-  /* Fade in + inicio de latido */
   12.5% {
     opacity: 1;
     transform: scale(1.2) translateY(-10px);
   }
 
-  /* Latido fuerte */
   25% {
     opacity: 1;
     transform: scale(1.4) translateY(-20px);
   }
 
-  /* Chispa destello */
   37.5% {
     opacity: 0.6;
     transform: scale(1.6) translateY(-25px);
@@ -800,7 +702,6 @@ video {
     transform: scale(1) translateY(-30px);
   }
 
-  /* Flicker/parpadeo intermedio */
   55% {
     opacity: 0.4;
     transform: scale(1.2) translateY(-32px);
@@ -836,7 +737,6 @@ video {
     transform: scale(1.25) translateY(-40px);
   }
 
-  /* Inicio fade out */
   87.5% {
     opacity: 0.5;
     transform: scale(1.1) translateY(-45px);
@@ -852,7 +752,47 @@ video {
   animation: zapsolmonkesolCycle 16s linear infinite;
 }
 
-/* 🔥 MonkeSol Hero - efecto llama titilante (flicker) */
+@keyframes pulseHeroZapSymbol {
+
+  0%,
+  100% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.15);
+  }
+}
+
+.symbol-hero-zapsol-pulse {
+  animation: pulseHeroZapSymbol 4s ease-in-out infinite;
+}
+
+@keyframes flickerHeroZapSymbol {
+
+  0%,
+  19%,
+  21%,
+  23%,
+  25%,
+  54%,
+  56%,
+  100% {
+    opacity: 1;
+  }
+
+  20%,
+  22%,
+  24%,
+  55% {
+    opacity: 0.4;
+  }
+}
+
+.symbol-hero-zapsol-flicker {
+  animation: flickerHeroZapSymbol 2s infinite;
+}
+
 @keyframes flickerHeroMonkeSymbol {
 
   0%,
@@ -878,7 +818,6 @@ video {
   animation: flickerHeroMonkeSymbol 2s infinite;
 }
 
-/* 🔥 MonkeSol Hero - efecto llama que pulsa lentamente */
 @keyframes pulseHeroMonkeSymbol {
 
   0%,
@@ -897,43 +836,6 @@ video {
   animation: pulseHeroMonkeSymbol 4s ease-in-out infinite;
 }
 
-.symbol-hero-monkesol-aura {
-  text-shadow: 0 0 12px rgba(239, 68, 68, 0.9),
-    0 0 24px rgba(239, 68, 68, 0.6);
-}
-
-.symbol-hero-monkesol-aura:hover {
-  text-shadow: 0 0 16px rgba(34, 197, 94, 1),
-    0 0 32px rgba(34, 197, 94, 0.8);
-}
-
-/* ❄️ ChipiSol Hero */
-@keyframes fadeCycle {
-  0% {
-    opacity: 0;
-  }
-
-  10% {
-    opacity: 1;
-  }
-
-  /* entrada en ~1.6s */
-  90% {
-    opacity: 1;
-  }
-
-  /* permanece visible */
-  100% {
-    opacity: 0;
-  }
-
-  /* salida en ~1.6s */
-}
-
-.animate-fade-cycle {
-  animation: fadeCycle 16s ease-in-out infinite;
-}
-
 @keyframes pulseHeroChipiSymbol {
 
   0%,
@@ -950,73 +852,30 @@ video {
 
 .symbol-hero-chipisol {
   animation: pulseHeroChipiSymbol 5s ease-in-out infinite;
-  /* más lento */
+}
+
+.symbol-hero-zapsol-aura {
+  text-shadow: 0 0 12px rgba(250, 204, 21, 0.9), 0 0 24px rgba(250, 204, 21, 0.6);
+}
+
+.symbol-hero-zapsol-aura:hover {
+  text-shadow: 0 0 16px rgba(255, 255, 255, 1), 0 0 32px rgba(255, 255, 255, 0.8);
+}
+
+.symbol-hero-monkesol-aura {
+  text-shadow: 0 0 12px rgba(239, 68, 68, 0.9), 0 0 24px rgba(239, 68, 68, 0.6);
+}
+
+.symbol-hero-monkesol-aura:hover {
+  text-shadow: 0 0 16px rgba(34, 197, 94, 1), 0 0 32px rgba(34, 197, 94, 0.8);
 }
 
 .symbol-hero-chipisol-aura {
-  text-shadow: 0 0 12px rgba(59, 130, 246, 0.9),
-    0 0 24px rgba(59, 130, 246, 0.6);
+  text-shadow: 0 0 12px rgba(59, 130, 246, 0.9), 0 0 24px rgba(59, 130, 246, 0.6);
 }
 
 .symbol-hero-chipisol-aura:hover {
-  text-shadow: 0 0 16px rgba(236, 72, 153, 1),
-    0 0 32px rgba(236, 72, 153, 0.8);
-}
-
-@keyframes chipisolCycle {
-  0% {
-    opacity: 0;
-    transform: scale(0.8) translateY(0);
-  }
-
-  /* Fade in + inicio de latido */
-  12.5% {
-    opacity: 1;
-    transform: scale(1.2) translateY(-10px);
-  }
-
-  /* Latido fuerte */
-  25% {
-    opacity: 1;
-    transform: scale(1.4) translateY(-20px);
-  }
-
-  /* Chispa destello */
-  37.5% {
-    opacity: 0.6;
-    transform: scale(1.6) translateY(-25px);
-  }
-
-  50% {
-    opacity: 1;
-    transform: scale(1) translateY(-30px);
-  }
-
-  /* Latido intermedio */
-  62.5% {
-    opacity: 1;
-    transform: scale(1.25) translateY(-35px);
-  }
-
-  75% {
-    opacity: 0.9;
-    transform: scale(1.2) translateY(-40px);
-  }
-
-  /* Inicio fade out */
-  87.5% {
-    opacity: 0.5;
-    transform: scale(1.1) translateY(-45px);
-  }
-
-  100% {
-    opacity: 0;
-    transform: scale(0.8) translateY(-50px);
-  }
-}
-
-.animate-chipisol-cycle {
-  animation: chipisolCycle 16s linear infinite;
+  text-shadow: 0 0 16px rgba(236, 72, 153, 1), 0 0 32px rgba(236, 72, 153, 0.8);
 }
 
 /* 🌀 === Animaciones de entrada/salida para botón volver === */
@@ -1056,17 +915,6 @@ video {
   animation: slideOutLeftGlow 0.6s ease-in forwards;
 }
 
-/* ✨ === Aura para mensaje del footer (hover) === */
-.footer-aura {
-  transition: text-shadow 0.3s ease-in-out;
-  text-shadow: 0 0 10px rgba(255, 255, 255, 0.6);
-}
-
-.footer-aura:hover {
-  text-shadow: 0 0 20px rgba(255, 255, 255, 0.9),
-    0 0 40px rgba(255, 168, 8, 0.6);
-}
-
 /* 🧭 === Fondo de pie de sección pulsante genérico === */
 @keyframes pulse-gradient {
   0% {
@@ -1093,19 +941,15 @@ video {
 }
 
 /* 🧿 === Auras pulsantes personalizadas (combinaciones) === */
-
-/* ✨ Púrpura + Dorado */
 @keyframes pulse-aura-purple-gold {
 
   0%,
   100% {
-    box-shadow: 0 0 80px rgba(147, 51, 234, 1),
-      0 0 160px rgba(251, 191, 36, 0.8), 0 0 240px rgba(251, 191, 36, 0.5);
+    box-shadow: 0 0 80px rgba(147, 51, 234, 1), 0 0 160px rgba(251, 191, 36, 0.8), 0 0 240px rgba(251, 191, 36, 0.5);
   }
 
   50% {
-    box-shadow: 0 0 120px rgba(147, 51, 234, 1),
-      0 0 200px rgba(251, 191, 36, 0.9), 0 0 280px rgba(251, 191, 36, 0.6);
+    box-shadow: 0 0 120px rgba(147, 51, 234, 1), 0 0 200px rgba(251, 191, 36, 0.9), 0 0 280px rgba(251, 191, 36, 0.6);
   }
 }
 
@@ -1113,18 +957,15 @@ video {
   animation: pulse-aura-purple-gold 3s ease-in-out infinite;
 }
 
-/* ✨ Naranja + Rojo */
 @keyframes pulse-aura-orange-red {
 
   0%,
   100% {
-    box-shadow: 0 0 80px rgba(234, 88, 12, 1), 0 0 160px rgba(220, 38, 38, 0.8),
-      0 0 240px rgba(220, 38, 38, 0.5);
+    box-shadow: 0 0 80px rgba(234, 88, 12, 1), 0 0 160px rgba(220, 38, 38, 0.8), 0 0 240px rgba(220, 38, 38, 0.5);
   }
 
   50% {
-    box-shadow: 0 0 120px rgba(234, 88, 12, 1), 0 0 200px rgba(220, 38, 38, 0.9),
-      0 0 280px rgba(220, 38, 38, 0.6);
+    box-shadow: 0 0 120px rgba(234, 88, 12, 1), 0 0 200px rgba(220, 38, 38, 0.9), 0 0 280px rgba(220, 38, 38, 0.6);
   }
 }
 
@@ -1132,18 +973,15 @@ video {
   animation: pulse-aura-orange-red 3s ease-in-out infinite;
 }
 
-/* ✨ Verde + Naranja */
 @keyframes pulse-aura-green-orange {
 
   0%,
   100% {
-    box-shadow: 0 0 80px rgba(34, 197, 94, 1), 0 0 160px rgba(234, 88, 12, 0.8),
-      0 0 240px rgba(234, 88, 12, 0.5);
+    box-shadow: 0 0 80px rgba(34, 197, 94, 1), 0 0 160px rgba(234, 88, 12, 0.8), 0 0 240px rgba(234, 88, 12, 0.5);
   }
 
   50% {
-    box-shadow: 0 0 120px rgba(34, 197, 94, 1), 0 0 200px rgba(234, 88, 12, 0.9),
-      0 0 280px rgba(234, 88, 12, 0.6);
+    box-shadow: 0 0 120px rgba(34, 197, 94, 1), 0 0 200px rgba(234, 88, 12, 0.9), 0 0 280px rgba(234, 88, 12, 0.6);
   }
 }
 
@@ -1151,44 +989,20 @@ video {
   animation: pulse-aura-green-orange 3s ease-in-out infinite;
 }
 
-/* ✨ Dorado + Verde Esmeralda */
 @keyframes pulse-aura-gold-emerald {
 
   0%,
   100% {
-    box-shadow: 0 0 80px rgba(251, 191, 36, 1), 0 0 160px rgba(5, 150, 105, 0.8),
-      0 0 240px rgba(5, 150, 105, 0.5);
+    box-shadow: 0 0 80px rgba(251, 191, 36, 1), 0 0 160px rgba(5, 150, 105, 0.8), 0 0 240px rgba(5, 150, 105, 0.5);
   }
 
   50% {
-    box-shadow: 0 0 120px rgba(251, 191, 36, 1),
-      0 0 200px rgba(5, 150, 105, 0.9), 0 0 280px rgba(5, 150, 105, 0.6);
+    box-shadow: 0 0 120px rgba(251, 191, 36, 1), 0 0 200px rgba(5, 150, 105, 0.9), 0 0 280px rgba(5, 150, 105, 0.6);
   }
 }
 
 .aura-hover-gold-emerald:hover {
   animation: pulse-aura-gold-emerald 3s ease-in-out infinite;
-}
-
-/* ✨ === Aura base pulsante (púrpura) — duplicada por compatibilidad === */
-@keyframes pulse-aura {
-
-  0%,
-  100% {
-    box-shadow: 0 0 40px rgba(160, 32, 240, 0.8),
-      0 0 80px rgba(160, 32, 240, 0.5);
-  }
-
-  50% {
-    box-shadow: 0 0 60px rgba(160, 32, 240, 1),
-      0 0 120px rgba(160, 32, 240, 0.7);
-  }
-}
-
-.aura-pulsante {
-  animation: pulse-aura 3s ease-in-out infinite;
-  border-radius: 1.25rem;
-  will-change: box-shadow;
 }
 
 /* 🧭 === Footer por idioma (púrpura en ES, dorado en EN) === */
@@ -1240,6 +1054,7 @@ video {
   background: linear-gradient(to right, #fde68a, #fbbf24);
 }
 
+/* Flotamiento base (para compatibilidad con otros elementos) */
 @keyframes float {
   0% {
     transform: translateY(0);
@@ -1254,77 +1069,8 @@ video {
   }
 }
 
-.animate-float {
+.animate-float-legacy {
   animation: float 4s ease-in-out infinite;
 }
 
-/* === Animaciones globales para guardianes === */
-
-/* Pulso suave (brillo constante) */
-@keyframes pulse {
-
-  0%,
-  100% {
-    transform: scale(1);
-    opacity: 1;
-  }
-
-  50% {
-    transform: scale(1.1);
-    opacity: 0.85;
-  }
-}
-
-.animate-pulse {
-  animation: pulse 3s ease-in-out infinite;
-}
-
-/* Giro constante */
-@keyframes spin {
-  0% {
-    transform: rotate(0deg);
-  }
-
-  100% {
-    transform: rotate(360deg);
-  }
-}
-
-.animate-spin {
-  animation: spin 4s linear infinite;
-}
-
-/* Rebote vertical */
-@keyframes bounce {
-
-  0%,
-  100% {
-    transform: translateY(0);
-  }
-
-  50% {
-    transform: translateY(-20%);
-  }
-}
-
-.animate-bounce {
-  animation: bounce 2s infinite;
-}
-
-/* Expansión tipo radar */
-@keyframes ping {
-  0% {
-    transform: scale(1);
-    opacity: 1;
-  }
-
-  75%,
-  100% {
-    transform: scale(2);
-    opacity: 0;
-  }
-}
-
-.animate-ping {
-  animation: ping 2s cubic-bezier(0, 0, 0.2, 1) infinite;
-}
+/* === Fin del archivo === */
