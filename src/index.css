@@ -899,7 +899,7 @@ video {
 }
 
 /* 🌌 Fade in/out de 20s para copos y puntos */
-@keyframes fadeInOutCycle {
+@keyframes fadeInOut {
   0% {
     opacity: 0;
   }
@@ -908,21 +908,17 @@ video {
     opacity: 1;
   }
 
-  /* primeros 2s → fade in */
   90% {
     opacity: 1;
   }
 
-  /* 16s visibles */
   100% {
     opacity: 0;
   }
-
-  /* últimos 2s → fade out */
 }
 
 .fade-cycle {
-  animation: fadeInOutCycle 20s linear infinite;
+  animation: fadeInOut 20s ease-in-out infinite;
 }
 
 /* 🌀 === Animaciones de entrada/salida para botón volver === */

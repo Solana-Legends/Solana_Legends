@@ -110,14 +110,14 @@ export default function GuardianRoomChipiSol() {
           return (
             <div
               key={i}
-              className="fade-cycle absolute"
+              className="absolute fade-cycle"
               style={{
                 top: `${pos.y}%`,
                 left: `${pos.x}%`,
                 transform: `translate(${parallax.x * parallaxFactor}px, ${
                   parallax.y * parallaxFactor
                 }px) scale(${pos.scale}) rotate(${Math.random() * 360}deg)`,
-                transition: `transform ${pos.transitionDuration} ease-in-out`,
+                transition: `transform ${pos.transitionDuration} ease-in-out, opacity 2s ease-in-out`,
                 animationDelay: `${Math.random() * 20}s`,
                 opacity: pos.opacity,
               }}
