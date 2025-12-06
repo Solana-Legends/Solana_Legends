@@ -20,13 +20,13 @@ export default function GuardianRoomMonkeSol() {
 
       {/* 🔥 + puntos de fuego */}
       <div className="absolute inset-0 pointer-events-none">
-        {Array.from({ length: 24 }).map((_, i) => {
+        {Array.from({ length: 30 }).map((_, i) => {
           const isFlame = i % 2 === 0; // alterna brasas y puntos
 
           return isFlame ? (
             <div
               key={`${cycleKey}-${i}`}
-              className="absolute text-xl text-red-500 drop-shadow-[0_0_12px_#ef4444] animate-zapsolmonkesol-cycle"
+              className="absolute text-xl text-red-500 drop-shadow-[0_0_12px_#ef4444] animate-pulse animate-flicker animate-float"
               style={{
                 top: `${Math.random() * 100}%`,
                 left: `${Math.random() * 100}%`,
@@ -37,7 +37,7 @@ export default function GuardianRoomMonkeSol() {
           ) : (
             <div
               key={`${cycleKey}-${i}`}
-              className="absolute w-2 h-2 rounded-full bg-orange-400 opacity-80 drop-shadow-[0_0_8px_#ef4444] animate-zapsolmonkesol-cycle"
+              className="absolute w-2 h-2 rounded-full bg-orange-400 opacity-80 drop-shadow-[0_0_8px_#ef4444] animate-pointCombo"
               style={{
                 top: `${Math.random() * 100}%`,
                 left: `${Math.random() * 100}%`,
