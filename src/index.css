@@ -925,31 +925,23 @@ video {
   animation: fadeInOutCycle 20s linear infinite;
 }
 
-/* 🌬️ Drift + rotación continua */
-@keyframes driftRotate {
+/* 🌬️ Desplazamiento suave mientras están visibles */
+@keyframes drift {
   0% {
-    transform: translate(0, 0) rotate(0deg) scale(var(--drift-scale, 1));
-  }
-
-  25% {
-    transform: translate(var(--drift-x), var(--drift-y)) rotate(90deg) scale(var(--drift-scale, 1));
+    transform: translate(0, 0);
   }
 
   50% {
-    transform: translate(calc(var(--drift-x) * -1), var(--drift-y)) rotate(180deg) scale(var(--drift-scale, 1));
-  }
-
-  75% {
-    transform: translate(var(--drift-x), calc(var(--drift-y) * -1)) rotate(270deg) scale(var(--drift-scale, 1));
+    transform: translate(30px, -40px);
   }
 
   100% {
-    transform: translate(0, 0) rotate(360deg) scale(var(--drift-scale, 1));
+    transform: translate(0, 0);
   }
 }
 
-.animate-drift-rotate {
-  animation: driftRotate var(--drift-speed, 16s) linear infinite;
+.animate-drift {
+  animation: drift 16s ease-in-out infinite;
 }
 
 /* 🌀 === Animaciones de entrada/salida para botón volver === */

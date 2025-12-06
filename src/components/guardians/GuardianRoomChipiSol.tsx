@@ -12,7 +12,7 @@ export default function GuardianRoomChipiSol() {
       {/* ❄️ Copos y puntos blancos */}
       <div className="absolute inset-0 pointer-events-none">
         {Array.from({ length: 30 }).map((_, i) => {
-          const isSnow = i % 2 === 0;
+          const isSnow = i % 2 === 0; // alterna entre copos y puntos
           const animationClass = isSnow
             ? i % 3 === 0
               ? "animate-pulse"
@@ -25,12 +25,6 @@ export default function GuardianRoomChipiSol() {
             ? "animate-pulse"
             : "animate-ping";
 
-          // drift aleatorio en intensidad, dirección, velocidad y escala
-          const driftX = `${Math.floor(Math.random() * 60 - 30)}px`; // entre -30px y +30px
-          const driftY = `${Math.floor(Math.random() * 60 - 30)}px`; // entre -30px y +30px
-          const driftSpeed = `${12 + Math.random() * 8}s`; // entre 12s y 20s
-          const driftScale = `${0.5 + Math.random() * 1.5}`; // entre 0.5x y 2x
-
           return (
             <div
               key={i}
@@ -38,16 +32,12 @@ export default function GuardianRoomChipiSol() {
               style={{
                 top: `${Math.random() * 100}%`,
                 left: `${Math.random() * 100}%`,
-                animationDelay: `${Math.random() * 20}s`,
-                ["--drift-x" as any]: driftX,
-                ["--drift-y" as any]: driftY,
-                ["--drift-speed" as any]: driftSpeed,
-                ["--drift-scale" as any]: driftScale,
+                // animationDelay: `${Math.random() * 20}s`, // desfase en el ciclo de 20s
               }}
             >
               {isSnow ? (
                 <div
-                  className={`text-xl text-blue-200 ${animationClass} animate-drift-rotate drop-shadow-[0_0_12px_#22d3ee]`}
+                  className={`text-xl text-blue-200 ${animationClass} drop-shadow-[0_0_12px_#22d3ee]`}
                   style={{
                     animationDuration: `${3 + Math.random() * 4}s`,
                     animationDelay: `${Math.random() * 2}s`,
@@ -57,7 +47,7 @@ export default function GuardianRoomChipiSol() {
                 </div>
               ) : (
                 <div
-                  className={`w-2 h-2 bg-white rounded-full ${animationClass} animate-drift-rotate`}
+                  className={`w-2 h-2 bg-white rounded-full opacity-70 ${animationClass}`}
                   style={{
                     animationDuration: `${3 + Math.random() * 4}s`,
                     animationDelay: `${Math.random() * 2}s`,
