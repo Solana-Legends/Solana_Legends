@@ -584,17 +584,21 @@ video {
     opacity: 1;
   }
 
-  40% {
-    opacity: 0.3;
+  25% {
+    opacity: 0.2;
   }
 
-  60% {
+  50% {
     opacity: 0.8;
+  }
+
+  75% {
+    opacity: 0.4;
   }
 }
 
 .animate-flicker {
-  animation: flickerSnow 2s linear infinite;
+  animation: flickerSnow 1.5s linear infinite;
 }
 
 /* Flotamiento más notorio */
@@ -648,47 +652,43 @@ video {
   animation: pingFast 1s ease-out infinite;
 }
 
-/* Ciclo de fade in/out progresivo para copos y puntos (unificado) */
+/* Ciclo de fade in/out progresivo para copos y puntos (unificado y extendido) */
 @keyframes fadeCycle {
   0% {
     opacity: 0;
   }
 
-  5% {
-    opacity: 0.2;
-  }
-
   10% {
-    opacity: 0.5;
+    opacity: 0.3;
   }
 
-  15% {
+  20% {
+    opacity: 0.6;
+  }
+
+  30% {
     opacity: 1;
   }
 
-  /* entrada gradual */
-  85% {
+  70% {
     opacity: 1;
   }
 
-  /* visible pleno */
+  80% {
+    opacity: 0.6;
+  }
+
   90% {
-    opacity: 0.5;
-  }
-
-  95% {
-    opacity: 0.2;
+    opacity: 0.3;
   }
 
   100% {
     opacity: 0;
   }
-
-  /* salida gradual */
 }
 
 .animate-fade-cycle {
-  animation: fadeCycle 16s ease-in-out infinite;
+  animation: fadeCycle 16s linear infinite;
 }
 
 /* ⚡ ZapSol/🔥 MonkeSol/❄️ ChipiSol — ciclos compuestos (conservados) */
@@ -894,6 +894,7 @@ video {
   text-shadow: 0 0 16px rgba(236, 72, 153, 1), 0 0 32px rgba(236, 72, 153, 0.8);
 }
 
+/* === Clases combinadas (efecto + fade) === */
 .animate-float-fade {
   animation: floatStrong 5s ease-in-out infinite, fadeCycle 16s linear infinite;
 }
@@ -911,29 +912,8 @@ video {
 }
 
 .animate-flicker-fade {
-  animation: flickerSnow 2s linear infinite, fadeCycle 16s linear infinite;
+  animation: flickerSnow 1.5s linear infinite, fadeCycle 16s linear infinite;
 }
-
-.animate-float-fade {
-  animation: floatStrong 5s ease-in-out infinite, fadeCycle 16s linear infinite;
-}
-
-.animate-bounce-fade {
-  animation: bounceSnow 3s ease-in-out infinite, fadeCycle 16s linear infinite;
-}
-
-.animate-ping-fade {
-  animation: pingFast 1s ease-out infinite, fadeCycle 16s linear infinite;
-}
-
-.animate-pulse-fade {
-  animation: pulseStrong 3s ease-in-out infinite, fadeCycle 16s linear infinite;
-}
-
-.animate-flicker-fade {
-  animation: flickerSnow 2s linear infinite, fadeCycle 16s linear infinite;
-}
-
 
 /* 🌀 === Animaciones de entrada/salida para botón volver === */
 @keyframes slideInLeftGlow {
