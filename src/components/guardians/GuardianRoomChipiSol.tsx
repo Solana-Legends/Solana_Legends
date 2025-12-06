@@ -50,7 +50,7 @@ export default function GuardianRoomChipiSol() {
           ) : (
             <div
               key={`${cycleKey}-${i}`}
-              className={`absolute w-2 h-2 bg-white rounded-full opacity-70 ${animationClass} fade-cycle`}
+              className={`absolute w-2 h-2 bg-white rounded-full opacity-70 ${animationClass}`}
               style={{
                 top: `${Math.random() * 100}%`,
                 left: `${Math.random() * 100}%`,
