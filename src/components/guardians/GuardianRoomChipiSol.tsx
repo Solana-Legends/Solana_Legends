@@ -2,79 +2,25 @@
 import { useLanguage } from "@/contexts/LanguageContext";
 import { useState, useEffect } from "react";
 
-type SnowPoint = {
-  x: number;
-  y: number;
-  transitionDuration: string;
-  scale: number;
-  layer: "foreground" | "midground" | "background";
-  rotationSpeed: string;
-};
-
 export default function GuardianRoomChipiSol() {
   const { t } = useLanguage();
+  const [cycleKey, setCycleKey] = useState(0);
 
-  const [positions, setPositions] = useState<SnowPoint[]>(
-    Array.from({ length: 30 }).map((_, i) => {
-      const layer =
-        i % 3 === 0 ? "foreground" : i % 3 === 1 ? "midground" : "background";
-      return {
-        x: Math.random() * 100,
-        y: Math.random() * 100,
-        transitionDuration: `${1 + Math.random() * 3}s`,
-        scale:
-          layer === "foreground"
-            ? 1 + Math.random() * 1.5
-            : layer === "midground"
-            ? 0.7 + Math.random() * 1
-            : 0.4 + Math.random() * 0.6,
-        layer,
-        rotationSpeed: `${10 + Math.random() * 20}s`,
-      };
-    })
-  );
-
-  const [parallax, setParallax] = useState({ x: 0, y: 0 });
-
-  useEffect(() => {
-    const handleMouseMove = (e: MouseEvent) => {
-      const { innerWidth, innerHeight } = window;
-      const offsetX = (e.clientX / innerWidth - 0.5) * 20;
-      const offsetY = (e.clientY / innerHeight - 0.5) * 20;
-      setParallax({ x: offsetX, y: offsetY });
-    };
-    window.addEventListener("mousemove", handleMouseMove);
-    return () => window.removeEventListener("mousemove", handleMouseMove);
-  }, []);
-
-  // ✅ Actualizar posiciones sin recrear nodos
   useEffect(() => {
     const interval = setInterval(() => {
-      setPositions((prev) =>
-        prev.map((p) => ({
-          ...p,
-          x: Math.random() * 100,
-          y: Math.random() * 100,
-          transitionDuration: `${1 + Math.random() * 3}s`,
-          scale:
-            p.layer === "foreground"
-              ? 1 + Math.random() * 1.5
-              : p.layer === "midground"
-              ? 0.7 + Math.random() * 1
-              : 0.4 + Math.random() * 0.6,
-          rotationSpeed: `${10 + Math.random() * 20}s`,
-        }))
-      );
-    }, 20000);
+      setCycleKey((prev) => prev + 1);
+    }, 20000); // ciclo de 20s
     return () => clearInterval(interval);
   }, []);
 
   return (
     <section className="relative px-6 py-16 bg-gradient-to-b from-slate-800 to-slate-700 rounded-xl shadow-lg overflow-hidden">
+      {/* ✨ Fondo cósmico */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,#0ea5e9,#0f172a)] opacity-70 animate-pulse" />
 
+      {/* ❄️ Copos y puntos */}
       <div className="absolute inset-0 pointer-events-none">
-        {positions.map((pos, i) => {
+        {Array.from({ length: 30 }).map((_, i) => {
           const isSnow = i % 2 === 0;
           const animationClass = isSnow
             ? i % 3 === 0
@@ -88,44 +34,25 @@ export default function GuardianRoomChipiSol() {
             ? "animate-pulse"
             : "animate-ping";
 
-          const parallaxFactor =
-            pos.layer === "foreground"
-              ? 1.5
-              : pos.layer === "midground"
-              ? 1
-              : 0.5;
-
           return (
             <div
-              key={i}
+              key={`${cycleKey}-${i}`}
               className="absolute fade-cycle"
               style={{
-                top: `${pos.y}%`,
-                left: `${pos.x}%`,
-                transform: `translate(${parallax.x * parallaxFactor}px, ${
-                  parallax.y * parallaxFactor
-                }px) scale(${pos.scale}) rotate(${Math.random() * 360}deg)`,
-                transition: `transform ${pos.transitionDuration} ease-in-out`,
-                animationDelay: `${i * 0.7}s`, // desfase progresivo para cada copo
+                top: `${Math.random() * 100}%`,
+                left: `${Math.random() * 100}%`,
+                animationDelay: `${Math.random() * 5}s`,
               }}
             >
               {isSnow ? (
                 <div
                   className={`text-xl text-blue-200 ${animationClass} drop-shadow-[0_0_12px_#22d3ee]`}
-                  style={{
-                    animationDuration: pos.rotationSpeed,
-                    animationDelay: `${Math.random() * 2}s`,
-                  }}
                 >
                   ❄️
                 </div>
               ) : (
                 <div
-                  className={`w-2 h-2 bg-white rounded-full ${animationClass}`}
-                  style={{
-                    animationDuration: pos.rotationSpeed,
-                    animationDelay: `${Math.random() * 2}s`,
-                  }}
+                  className={`w-2 h-2 bg-white rounded-full opacity-70 ${animationClass}`}
                 />
               )}
             </div>
@@ -133,6 +60,7 @@ export default function GuardianRoomChipiSol() {
         })}
       </div>
 
+      {/* Contenido principal */}
       <div className="relative z-10 max-w-4xl mx-auto text-center">
         <h3 className="text-4xl md:text-5xl font-bold text-cyan-400 mb-4 animate-fadeInUp">
           {t("chipisol.title")}
