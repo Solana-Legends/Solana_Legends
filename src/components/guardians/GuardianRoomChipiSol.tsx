@@ -106,7 +106,7 @@ export default function GuardianRoomChipiSol() {
                   parallax.y * parallaxFactor
                 }px) scale(${pos.scale}) rotate(${Math.random() * 360}deg)`,
                 transition: `transform ${pos.transitionDuration} ease-in-out`,
-                animationDelay: `${Math.random() * 20}s`,
+                animationDelay: `${i * 0.7}s`, // desfase progresivo para cada copo
               }}
             >
               {isSnow ? (
