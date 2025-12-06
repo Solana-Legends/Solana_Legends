@@ -15,40 +15,46 @@ export default function GuardianRoomChipiSol() {
           const isSnow = i % 2 === 0; // alterna entre copos y puntos
           const animationClass = isSnow
             ? i % 3 === 0
-              ? "animate-pulse-fade-cycle"
+              ? "animate-pulse"
               : i % 3 === 1
-              ? "animate-flicker-fade-cycle"
-              : "animate-float-fade-cycle"
+              ? "animate-flicker"
+              : "animate-float"
             : i % 3 === 0
-            ? "animate-float-points-fade-cycle"
+            ? "animate-float"
             : i % 3 === 1
-            ? "animate-pulse-points-fade-cycle"
-            : "animate-ping-fade-cycle";
+            ? "animate-pulse"
+            : "animate-ping";
 
-          return isSnow ? (
+          return (
             <div
               key={i}
-              className={`absolute text-xl text-blue-200 ${animationClass} drop-shadow-[0_0_12px_#22d3ee]`}
+              className="fade-cycle absolute"
               style={{
                 top: `${Math.random() * 100}%`,
                 left: `${Math.random() * 100}%`,
-                animationDuration: `${3 + Math.random() * 4}s`,
-                animationDelay: `${Math.random() * 2}s`,
+                animationDelay: `${Math.random() * 20}s`, // desfase en el ciclo de 20s
               }}
             >
-              ❄️
+              {isSnow ? (
+                <div
+                  className={`text-xl text-blue-200 ${animationClass} drop-shadow-[0_0_12px_#22d3ee]`}
+                  style={{
+                    animationDuration: `${3 + Math.random() * 4}s`,
+                    animationDelay: `${Math.random() * 2}s`,
+                  }}
+                >
+                  ❄️
+                </div>
+              ) : (
+                <div
+                  className={`w-2 h-2 bg-white rounded-full opacity-70 ${animationClass}`}
+                  style={{
+                    animationDuration: `${3 + Math.random() * 4}s`,
+                    animationDelay: `${Math.random() * 2}s`,
+                  }}
+                />
+              )}
             </div>
-          ) : (
-            <div
-              key={i}
-              className={`absolute w-2 h-2 bg-white rounded-full opacity-70 ${animationClass}`}
-              style={{
-                top: `${Math.random() * 100}%`,
-                left: `${Math.random() * 100}%`,
-                animationDuration: `${3 + Math.random() * 4}s`,
-                animationDelay: `${Math.random() * 2}s`,
-              }}
-            />
           );
         })}
       </div>

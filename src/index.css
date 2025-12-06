@@ -908,45 +908,22 @@ video {
     opacity: 1;
   }
 
-  /* en los primeros 2s ya están visibles */
+  /* primeros 2s → fade in */
   90% {
     opacity: 1;
   }
 
-  /* se mantienen visibles durante 16s */
+  /* 16s visibles */
   100% {
     opacity: 0;
   }
 
-  /* últimos 2s desaparecen */
+  /* últimos 2s → fade out */
 }
 
-/* ❄️ Copos con fade in/out + animación */
-.animate-pulse-fade-cycle {
-  animation: pulseStrong 3s ease-in-out infinite, fadeInOutCycle 20s linear infinite;
+.fade-cycle {
+  animation: fadeInOutCycle 20s linear infinite;
 }
-
-.animate-flicker-fade-cycle {
-  animation: flickerSnow 2s infinite, fadeInOutCycle 20s linear infinite;
-}
-
-.animate-float-fade-cycle {
-  animation: floatStrong 3s ease-in-out infinite, fadeInOutCycle 20s linear infinite;
-}
-
-/* ⚪ Puntos con fade in/out + animación */
-.animate-pulse-points-fade-cycle {
-  animation: ppulseStrong 3s ease-in-out infinite, fadeInOutCycle 20s linear infinite;
-}
-
-.animate-ping-fade-cycle {
-  animation: pingFast 1s ease-out infinite, fadeInOutCycle 20s linear infinite;
-}
-
-.animate-float-points-fade-cycle {
-  animation: floatStrong 3s ease-in-out infinite, fadeInOutCycle 20s linear infinite;
-}
-
 
 /* 🌀 === Animaciones de entrada/salida para botón volver === */
 @keyframes slideInLeftGlow {
