@@ -898,27 +898,55 @@ video {
   text-shadow: 0 0 16px rgba(236, 72, 153, 1), 0 0 32px rgba(236, 72, 153, 0.8);
 }
 
-/* ❄️ Copos con fade in/out */
-.animate-pulse-fade {
-  animation: pulseStrong 3s ease-in-out infinite, fadeCycle 16s linear infinite;
+/* 🌌 Fade in/out de 20s para copos y puntos */
+@keyframes fadeInOutCycle {
+  0% {
+    opacity: 0;
+  }
+
+  10% {
+    opacity: 1;
+  }
+
+  /* en los primeros 2s ya están visibles */
+  90% {
+    opacity: 1;
+  }
+
+  /* se mantienen visibles durante 16s */
+  100% {
+    opacity: 0;
+  }
+
+  /* últimos 2s desaparecen */
 }
 
-.animate-flicker-fade {
-  animation: flickerSnow 2s infinite, fadeCycle 16s linear infinite;
+/* ❄️ Copos con fade in/out + animación */
+.animate-pulse-fade-cycle {
+  animation: pulseStrong 3s ease-in-out infinite, fadeInOutCycle 20s linear infinite;
 }
 
-.animate-float-fade {
-  animation: floatStrong 3s ease-in-out infinite, fadeCycle 16s linear infinite;
+.animate-flicker-fade-cycle {
+  animation: flickerSnow 2s infinite, fadeInOutCycle 20s linear infinite;
 }
 
-/* ⚪ Puntos con fade in/out */
-.animate-pulse-points-fade {
-  animation: pulseStrongPoints 2.5s ease-in-out infinite, fadeCycle 16s linear infinite;
+.animate-float-fade-cycle {
+  animation: floatStrong 3s ease-in-out infinite, fadeInOutCycle 20s linear infinite;
 }
 
-.animate-ping-fade {
-  animation: pingFast 1s ease-out infinite, fadeCycle 16s linear infinite;
+/* ⚪ Puntos con fade in/out + animación */
+.animate-pulse-points-fade-cycle {
+  animation: ppulseStrong 3s ease-in-out infinite, fadeInOutCycle 20s linear infinite;
 }
+
+.animate-ping-fade-cycle {
+  animation: pingFast 1s ease-out infinite, fadeInOutCycle 20s linear infinite;
+}
+
+.animate-float-points-fade-cycle {
+  animation: floatStrong 3s ease-in-out infinite, fadeInOutCycle 20s linear infinite;
+}
+
 
 /* 🌀 === Animaciones de entrada/salida para botón volver === */
 @keyframes slideInLeftGlow {
