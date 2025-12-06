@@ -32,7 +32,7 @@ export default function GuardianRoomChipiSol() {
               style={{
                 top: `${Math.random() * 100}%`,
                 left: `${Math.random() * 100}%`,
-                animationDelay: `${Math.random() * 20}s`, // desfase en el ciclo de 20s
+                // animationDelay: `${Math.random() * 20}s`, // desfase en el ciclo de 20s
               }}
             >
               {isSnow ? (
