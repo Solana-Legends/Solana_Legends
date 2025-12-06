@@ -2,27 +2,85 @@
 import { useLanguage } from "@/contexts/LanguageContext";
 import { useState, useEffect } from "react";
 
+type SnowPoint = {
+  x: number;
+  y: number;
+  transitionDuration: string;
+  scale: number;
+  layer: "foreground" | "midground" | "background";
+  rotationSpeed: string;
+  opacity: number;
+};
+
 export default function GuardianRoomChipiSol() {
   const { t } = useLanguage();
 
-  // Estado con posiciones iniciales
-  const [positions, setPositions] = useState(
-    Array.from({ length: 30 }).map(() => ({
-      top: `${Math.random() * 100}%`,
-      left: `${Math.random() * 100}%`,
-    }))
+  // Estado inicial con capas de profundidad
+  const [positions, setPositions] = useState<SnowPoint[]>(
+    Array.from({ length: 30 }).map((_, i) => {
+      const layer =
+        i % 3 === 0 ? "foreground" : i % 3 === 1 ? "midground" : "background";
+      return {
+        x: Math.random() * 100,
+        y: Math.random() * 100,
+        transitionDuration: `${1 + Math.random() * 3}s`,
+        scale:
+          layer === "foreground"
+            ? 1 + Math.random() * 1.5
+            : layer === "midground"
+            ? 0.7 + Math.random() * 1
+            : 0.4 + Math.random() * 0.6,
+        layer,
+        rotationSpeed: `${10 + Math.random() * 20}s`,
+        opacity:
+          layer === "foreground" ? 0.9 : layer === "midground" ? 0.7 : 0.5,
+      };
+    })
   );
 
-  // Recalcular posiciones cada 20s (ciclo del fade)
+  // Parallax dinámico con movimiento del ratón
+  const [parallax, setParallax] = useState({ x: 0, y: 0 });
+
+  useEffect(() => {
+    const handleMouseMove = (e: MouseEvent) => {
+      const { innerWidth, innerHeight } = window;
+      const offsetX = (e.clientX / innerWidth - 0.5) * 20; // rango -10 a +10
+      const offsetY = (e.clientY / innerHeight - 0.5) * 20; // rango -10 a +10
+      setParallax({ x: offsetX, y: offsetY });
+    };
+    window.addEventListener("mousemove", handleMouseMove);
+    return () => window.removeEventListener("mousemove", handleMouseMove);
+  }, []);
+
+  // Recalcular posiciones cada 20s
   useEffect(() => {
     const interval = setInterval(() => {
       setPositions(
-        Array.from({ length: 30 }).map(() => ({
-          top: `${Math.random() * 100}%`,
-          left: `${Math.random() * 100}%`,
-        }))
+        Array.from({ length: 30 }).map((_, i) => {
+          const layer =
+            i % 3 === 0
+              ? "foreground"
+              : i % 3 === 1
+              ? "midground"
+              : "background";
+          return {
+            x: Math.random() * 100,
+            y: Math.random() * 100,
+            transitionDuration: `${1 + Math.random() * 3}s`,
+            scale:
+              layer === "foreground"
+                ? 1 + Math.random() * 1.5
+                : layer === "midground"
+                ? 0.7 + Math.random() * 1
+                : 0.4 + Math.random() * 0.6,
+            layer,
+            rotationSpeed: `${10 + Math.random() * 20}s`,
+            opacity:
+              layer === "foreground" ? 0.9 : layer === "midground" ? 0.7 : 0.5,
+          };
+        })
       );
-    }, 20000); // cada 20s
+    }, 20000);
     return () => clearInterval(interval);
   }, []);
 
@@ -34,7 +92,7 @@ export default function GuardianRoomChipiSol() {
       {/* ❄️ Copos y puntos blancos */}
       <div className="absolute inset-0 pointer-events-none">
         {positions.map((pos, i) => {
-          const isSnow = i % 2 === 0; // alterna entre copos y puntos
+          const isSnow = i % 2 === 0;
           const animationClass = isSnow
             ? i % 3 === 0
               ? "animate-pulse"
@@ -47,21 +105,34 @@ export default function GuardianRoomChipiSol() {
             ? "animate-pulse"
             : "animate-ping";
 
+          // Intensidad del parallax según la capa
+          const parallaxFactor =
+            pos.layer === "foreground"
+              ? 1.5
+              : pos.layer === "midground"
+              ? 1
+              : 0.5;
+
           return (
             <div
               key={i}
               className="fade-cycle absolute"
               style={{
-                top: pos.top,
-                left: pos.left,
+                transform: `translate(calc(${pos.x}% + ${
+                  parallax.x * parallaxFactor
+                }px), calc(${pos.y}% + ${
+                  parallax.y * parallaxFactor
+                }px)) scale(${pos.scale}) rotate(${Math.random() * 360}deg)`,
+                transition: `transform ${pos.transitionDuration} ease-in-out`,
                 animationDelay: `${Math.random() * 20}s`,
+                opacity: pos.opacity,
               }}
             >
               {isSnow ? (
                 <div
                   className={`text-xl text-blue-200 ${animationClass} drop-shadow-[0_0_12px_#22d3ee]`}
                   style={{
-                    animationDuration: `${3 + Math.random() * 4}s`,
+                    animationDuration: pos.rotationSpeed,
                     animationDelay: `${Math.random() * 2}s`,
                   }}
                 >
@@ -69,9 +140,9 @@ export default function GuardianRoomChipiSol() {
                 </div>
               ) : (
                 <div
-                  className={`w-2 h-2 bg-white rounded-full opacity-70 ${animationClass}`}
+                  className={`w-2 h-2 bg-white rounded-full ${animationClass}`}
                   style={{
-                    animationDuration: `${3 + Math.random() * 4}s`,
+                    animationDuration: pos.rotationSpeed,
                     animationDelay: `${Math.random() * 2}s`,
                   }}
                 />
