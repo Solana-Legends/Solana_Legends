@@ -25,36 +25,30 @@ export default function GuardianRoomChipiSol() {
             ? "animate-pulse"
             : "animate-ping";
 
-          return (
+          return isSnow ? (
             <div
               key={i}
-              className="fade-cycle absolute"
+              className={`absolute text-xl text-blue-200 ${animationClass} drop-shadow-[0_0_12px_#22d3ee]`}
               style={{
                 top: `${Math.random() * 100}%`,
                 left: `${Math.random() * 100}%`,
-                // animationDelay: `${Math.random() * 20}s`, // desfase en el ciclo de 20s
+                animationDuration: `${3 + Math.random() * 4}s`,
+                animationDelay: `${Math.random() * 2}s`,
               }}
             >
-              {isSnow ? (
-                <div
-                  className={`text-xl text-blue-200 ${animationClass} drop-shadow-[0_0_12px_#22d3ee]`}
-                  style={{
-                    animationDuration: `${3 + Math.random() * 4}s`,
-                    animationDelay: `${Math.random() * 2}s`,
-                  }}
-                >
-                  ❄️
-                </div>
-              ) : (
-                <div
-                  className={`w-2 h-2 bg-white rounded-full opacity-70 ${animationClass}`}
-                  style={{
-                    animationDuration: `${3 + Math.random() * 4}s`,
-                    animationDelay: `${Math.random() * 2}s`,
-                  }}
-                />
-              )}
+              ❄️
             </div>
+          ) : (
+            <div
+              key={i}
+              className={`absolute w-2 h-2 bg-white rounded-full opacity-70 ${animationClass}`}
+              style={{
+                top: `${Math.random() * 100}%`,
+                left: `${Math.random() * 100}%`,
+                animationDuration: `${3 + Math.random() * 4}s`,
+                animationDelay: `${Math.random() * 2}s`,
+              }}
+            />
           );
         })}
       </div>
