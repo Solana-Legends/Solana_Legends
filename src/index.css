@@ -914,6 +914,27 @@ video {
   animation: flickerSnow 2s linear infinite, fadeCycle 16s linear infinite;
 }
 
+.animate-float-fade {
+  animation: floatStrong 5s ease-in-out infinite, fadeCycle 16s linear infinite;
+}
+
+.animate-bounce-fade {
+  animation: bounceSnow 3s ease-in-out infinite, fadeCycle 16s linear infinite;
+}
+
+.animate-ping-fade {
+  animation: pingFast 1s ease-out infinite, fadeCycle 16s linear infinite;
+}
+
+.animate-pulse-fade {
+  animation: pulseStrong 3s ease-in-out infinite, fadeCycle 16s linear infinite;
+}
+
+.animate-flicker-fade {
+  animation: flickerSnow 2s linear infinite, fadeCycle 16s linear infinite;
+}
+
+
 /* 🌀 === Animaciones de entrada/salida para botón volver === */
 @keyframes slideInLeftGlow {
   0% {
