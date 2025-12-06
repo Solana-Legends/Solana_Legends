@@ -1,4 +1,3 @@
-// src/components/guardians/GuardianRoomChipiSol.tsx
 import { useLanguage } from "@/contexts/LanguageContext";
 import { useState, useEffect } from "react";
 
@@ -15,10 +14,8 @@ export default function GuardianRoomChipiSol() {
 
   return (
     <section className="relative px-6 py-16 bg-gradient-to-b from-slate-800 to-slate-700 rounded-xl shadow-lg overflow-hidden">
-      {/* ✨ Fondo cósmico */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,#0ea5e9,#0f172a)] opacity-70 animate-pulse" />
 
-      {/* ❄️ Copos y puntos */}
       <div className="absolute inset-0 pointer-events-none">
         {Array.from({ length: 30 }).map((_, i) => {
           const isSnow = i % 2 === 0;
@@ -41,7 +38,7 @@ export default function GuardianRoomChipiSol() {
               style={{
                 top: `${Math.random() * 100}%`,
                 left: `${Math.random() * 100}%`,
-                animationDelay: `${Math.random() * 5}s`,
+                animationDelay: `${i * 0.5}s`, // desfase progresivo
               }}
             >
               {isSnow ? (
@@ -60,7 +57,6 @@ export default function GuardianRoomChipiSol() {
         })}
       </div>
 
-      {/* Contenido principal */}
       <div className="relative z-10 max-w-4xl mx-auto text-center">
         <h3 className="text-4xl md:text-5xl font-bold text-cyan-400 mb-4 animate-fadeInUp">
           {t("chipisol.title")}
