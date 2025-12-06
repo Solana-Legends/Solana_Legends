@@ -41,8 +41,8 @@ export default function GuardianRoomChipiSol() {
               style={{
                 top: `${Math.random() * 100}%`,
                 left: `${Math.random() * 100}%`,
-                animationDuration: `${3 + Math.random() * 4}s`,
-                animationDelay: `${Math.random() * 2}s`,
+                // animationDuration: `${3 + Math.random() * 4}s`,
+                // animationDelay: `${Math.random() * 2}s`,
               }}
             >
               ❄️
