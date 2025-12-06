@@ -654,26 +654,42 @@ video {
     opacity: 0;
   }
 
+  5% {
+    opacity: 0.3;
+  }
+
+  10% {
+    opacity: 0.6;
+  }
+
   15% {
     opacity: 1;
   }
 
-  /* entrada suave (~2.4s) */
+  /* entrada más gradual */
   85% {
     opacity: 1;
   }
 
-  /* visible pleno */
+  90% {
+    opacity: 0.6;
+  }
+
+  95% {
+    opacity: 0.3;
+  }
+
   100% {
     opacity: 0;
   }
 
-  /* salida suave (~2.4s) */
+  /* salida más gradual */
 }
 
 .animate-fade-cycle {
   animation: fadeCycle 16s linear infinite;
 }
+
 
 /* ⚡ ZapSol/🔥 MonkeSol/❄️ ChipiSol — ciclos compuestos (conservados) */
 @keyframes zapsolmonkesolCycle {
