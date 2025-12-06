@@ -925,25 +925,6 @@ video {
   animation: fadeInOutCycle 20s linear infinite;
 }
 
-/* 🌬️ Desplazamiento suave mientras están visibles */
-@keyframes drift {
-  0% {
-    transform: translate(0, 0);
-  }
-
-  50% {
-    transform: translate(30px, -40px);
-  }
-
-  100% {
-    transform: translate(0, 0);
-  }
-}
-
-.animate-drift {
-  animation: drift 16s ease-in-out infinite;
-}
-
 /* 🌀 === Animaciones de entrada/salida para botón volver === */
 @keyframes slideInLeftGlow {
   0% {
