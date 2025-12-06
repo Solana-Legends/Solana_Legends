@@ -1,8 +1,17 @@
 // src/components/guardians/GuardianRoomChipiSol.tsx
 import { useLanguage } from "@/contexts/LanguageContext";
+import { useEffect, useState } from "react";
 
 export default function GuardianRoomChipiSol() {
   const { t } = useLanguage();
+  const [cycleKey, setCycleKey] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCycleKey((prev) => prev + 1);
+    }, 16000); // ciclo de 16s
+    return () => clearInterval(interval);
+  }, []);
 
   return (
     <section className="relative px-6 py-16 bg-gradient-to-b from-slate-800 to-slate-700 rounded-xl shadow-lg overflow-hidden">
@@ -27,7 +36,7 @@ export default function GuardianRoomChipiSol() {
 
           return isSnow ? (
             <div
-              key={i}
+              key={`${cycleKey}-${i}`}
               className={`absolute text-xl text-blue-200 ${animationClass} drop-shadow-[0_0_12px_#22d3ee]`}
               style={{
                 top: `${Math.random() * 100}%`,
@@ -40,7 +49,7 @@ export default function GuardianRoomChipiSol() {
             </div>
           ) : (
             <div
-              key={i}
+              key={`${cycleKey}-${i}`}
               className={`absolute w-2 h-2 bg-white rounded-full opacity-70 ${animationClass}`}
               style={{
                 top: `${Math.random() * 100}%`,
