@@ -7,9 +7,13 @@ export default function GuardianRoomZapSol() {
   const [cycleKey, setCycleKey] = useState(0);
 
   useEffect(() => {
+    // ⏱️ Reinicia las animaciones cada 24s
+    // - 0–16% (≈4s) → fade in progresivo
+    // - 16–83% (≈16s) → tramo intermedio con pulsos, flotaciones, parpadeos y expansiones
+    // - 83–100% (≈4s) → fade out progresivo
     const interval = setInterval(() => {
       setCycleKey((prev) => prev + 1);
-    }, 16000); // ciclo de 16s
+    }, 24000); // ciclo completo de 24s
     return () => clearInterval(interval);
   }, []);
 
@@ -18,15 +22,31 @@ export default function GuardianRoomZapSol() {
       {/* ✨ Fondo eléctrico animado */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,#1e3a8a,#0f172a)] animate-pulse opacity-70" />
 
-      {/* ⚡ + puntos eléctricos */}
+      {/* ⚡ Rayos + ⚪ Puntos eléctricos */}
       <div className="absolute inset-0 pointer-events-none">
         {Array.from({ length: 30 }).map((_, i) => {
-          const isRay = i % 2 === 0; // alterna rayos y puntos
+          const isRay = i % 2 === 0;
+
+          // Animaciones equivalentes a MonkeSol/ChipiSol
+          const rayAnimations = [
+            "animate-flamePulse", // ⚡ → pulso rápido
+            "animate-flameFlicker", // ⚡ → parpadeo más lento
+            "animate-flameFloat", // ⚡ → flotación con rebote
+          ];
+          const pointAnimations = [
+            "animate-pointPulse", // ⚪ → pulso rápido
+            "animate-pointFloat", // ⚪ → flotación con rebote
+            "animate-pointPing", // ⚪ → 4 apariciones
+          ];
+
+          const animationClass = isRay
+            ? rayAnimations[i % rayAnimations.length]
+            : pointAnimations[i % pointAnimations.length];
 
           return isRay ? (
             <div
               key={`${cycleKey}-${i}`}
-              className="absolute text-xl text-yellow-400 drop-shadow-[0_0_12px_#facc15] animate-zapsolmonkesol-cycle"
+              className={`absolute text-xl text-yellow-400 drop-shadow-[0_0_12px_#facc15] ${animationClass}`}
               style={{
                 top: `${Math.random() * 100}%`,
                 left: `${Math.random() * 100}%`,
@@ -37,7 +57,7 @@ export default function GuardianRoomZapSol() {
           ) : (
             <div
               key={`${cycleKey}-${i}`}
-              className="absolute w-2 h-2 rounded-full bg-gradient-to-r from-yellow-400 to-orange-400 opacity-80 drop-shadow-[0_0_8px_#facc15] animate-zapsolmonkesol-cycle"
+              className={`absolute w-2 h-2 rounded-full bg-gradient-to-r from-yellow-400 to-orange-400 opacity-80 drop-shadow-[0_0_8px_#facc15] ${animationClass}`}
               style={{
                 top: `${Math.random() * 100}%`,
                 left: `${Math.random() * 100}%`,
@@ -76,7 +96,7 @@ export default function GuardianRoomZapSol() {
         </div>
 
         {/* Imagen ZapSol con aura lateral derecha */}
-        <div className="absolute bottom-0 right-0 mb-[-4rem] mr-[-14rem] animate-in fade-in slide-in-from-right duration-1000">
+        <div className="absolute bottom-0 right-0 mb-[-4rem] mr-[-14rem] animate-in fade-in slide-in-from-left duration-1000 motion-safe:animate-bounce">
           <div className="relative z-10 flex justify-center items-center w-80 h-80 group">
             <div className="absolute w-80 h-80 rounded-full blur-3xl hero-zapsol-aura pointer-events-none z-0 transition-colors duration-500 group-hover:bg-orange-500/40"></div>
             <img
