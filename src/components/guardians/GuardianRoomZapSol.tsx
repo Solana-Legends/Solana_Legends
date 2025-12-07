@@ -24,7 +24,7 @@ export default function GuardianRoomZapSol() {
 
       {/* ⚡ Rayos + ⚪ Puntos eléctricos */}
       <div className="absolute inset-0 pointer-events-none">
-        {Array.from({ length: 30 }).map((_, i) => {
+        {Array.from({ length: 36 }).map((_, i) => {
           const isRay = i % 2 === 0;
 
           // Animaciones equivalentes a MonkeSol/ChipiSol
