@@ -1314,7 +1314,7 @@ video {
 }
 
 .animate-flameFlicker {
-  animation: flameFlickerCycle 20s linear infinite;
+  animation: flameFlickerCycle 20s 2s infinite;
 }
 
 .animate-flameFloat {
