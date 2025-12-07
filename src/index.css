@@ -1136,21 +1136,23 @@ video {
 
 /* 🔥 Llamas */
 @keyframes flamePulseCycle {
+
+  /* Fade in (0–10%) */
   0% {
     opacity: 0;
     transform: scale(0.8) translateY(0);
   }
 
-  8% {
+  10% {
     opacity: 1;
   }
 
+  /* Pulso más rápido y menor crecimiento */
   25% {
     transform: scale(1.4);
     opacity: 1;
   }
 
-  /* Pulso más rápido y menor crecimiento */
   45% {
     transform: scale(1.1);
     opacity: 0.6;
@@ -1158,6 +1160,11 @@ video {
 
   85% {
     opacity: 0.4;
+  }
+
+  /* Fade out (90–100%) */
+  90% {
+    opacity: 1;
   }
 
   100% {
@@ -1180,73 +1187,82 @@ video {
     transform: scale(1);
   }
 
-  /* 10–20% → parpadeo */
+  /* Bloques de 2s parpadeo/estático */
   12%,
+  14%,
   16%,
   18% {
     opacity: 0.2;
   }
 
-  14%,
+  13%,
+  15%,
+  17%,
+  19%,
   20% {
     opacity: 1;
   }
 
-  /* 20–30% → estático */
   20%,
   30% {
     opacity: 1;
   }
 
-  /* 30–40% → parpadeo */
   32%,
+  34%,
   36%,
   38% {
     opacity: 0.2;
   }
 
-  34%,
+  33%,
+  35%,
+  37%,
+  39%,
   40% {
     opacity: 1;
   }
 
-  /* 40–50% → estático */
   40%,
   50% {
     opacity: 1;
   }
 
-  /* 50–60% → parpadeo */
   52%,
+  54%,
   56%,
   58% {
     opacity: 0.2;
   }
 
-  54%,
+  53%,
+  55%,
+  57%,
+  59%,
   60% {
     opacity: 1;
   }
 
-  /* 60–70% → estático */
   60%,
   70% {
     opacity: 1;
   }
 
-  /* 70–80% → parpadeo */
   72%,
+  74%,
   76%,
   78% {
     opacity: 0.2;
   }
 
-  74%,
+  73%,
+  75%,
+  77%,
+  79%,
   80% {
     opacity: 1;
   }
 
-  /* 80–90% → estático */
   80%,
   90% {
     opacity: 1;
@@ -1260,21 +1276,23 @@ video {
 }
 
 @keyframes flameFloatCycle {
+
+  /* Fade in (0–10%) */
   0% {
     opacity: 0;
     transform: translateY(0);
   }
 
-  8% {
+  10% {
     opacity: 1;
   }
 
+  /* Más rápido y mayor recorrido */
   25% {
     transform: translateY(-30px);
     opacity: 1;
   }
 
-  /* Más rápido y mayor recorrido */
   50% {
     transform: translateY(-50px);
     opacity: 0.6;
@@ -1282,6 +1300,11 @@ video {
 
   85% {
     opacity: 0.4;
+  }
+
+  /* Fade out (90–100%) */
+  90% {
+    opacity: 1;
   }
 
   100% {
@@ -1304,21 +1327,23 @@ video {
 
 /* ⚪ Puntos */
 @keyframes pointPulseCycle {
+
+  /* Fade in (0–10%) */
   0% {
     opacity: 0;
     transform: scale(0.8) translateY(0);
   }
 
-  8% {
+  10% {
     opacity: 1;
   }
 
+  /* Igual que las llamas */
   25% {
     transform: scale(1.4);
     opacity: 1;
   }
 
-  /* Igual que las llamas */
   45% {
     transform: scale(1.1);
     opacity: 0.6;
@@ -1328,6 +1353,11 @@ video {
     opacity: 0.4;
   }
 
+  /* Fade out (90–100%) */
+  90% {
+    opacity: 1;
+  }
+
   100% {
     opacity: 0;
     transform: scale(0.8) translateY(-20px);
@@ -1335,21 +1365,23 @@ video {
 }
 
 @keyframes pointFloatCycle {
+
+  /* Fade in (0–10%) */
   0% {
     opacity: 0;
     transform: translateY(0);
   }
 
-  8% {
+  10% {
     opacity: 1;
   }
 
+  /* Igual que las llamas */
   25% {
     transform: translateY(-30px);
     opacity: 1;
   }
 
-  /* Igual que las llamas */
   50% {
     transform: translateY(-50px);
     opacity: 0.6;
@@ -1359,42 +1391,78 @@ video {
     opacity: 0.4;
   }
 
+  /* Fade out (90–100%) */
+  90% {
+    opacity: 1;
+  }
+
   100% {
     opacity: 0;
     transform: translateY(-70px);
   }
 }
 
+/* ⚪ Ping con 4 expansiones rápidas en 16s */
 @keyframes pointPingCycle {
+
+  /* Fade in (0–10%) */
   0% {
     opacity: 0;
     transform: scale(0.4);
   }
 
-  8% {
+  10% {
     opacity: 1;
     transform: scale(0.6);
   }
 
-  25% {
+  /* Primera expansión (10–25%) */
+  15% {
     opacity: 1;
-    transform: scale(1.6);
+    transform: scale(1.2);
   }
 
-  /* Más rápido y menor tiempo de expansión */
+  25% {
+    opacity: 0.5;
+    transform: scale(1.4);
+  }
+
+  /* Segunda expansión (25–50%) */
+  35% {
+    opacity: 1;
+    transform: scale(1.2);
+  }
+
   50% {
     opacity: 0.5;
-    transform: scale(2.2);
+    transform: scale(1.4);
   }
 
+  /* Tercera expansión (50–75%) */
+  60% {
+    opacity: 1;
+    transform: scale(1.2);
+  }
+
+  75% {
+    opacity: 0.5;
+    transform: scale(1.4);
+  }
+
+  /* Cuarta expansión (75–90%) */
   85% {
-    opacity: 0.2;
-    transform: scale(2.6);
+    opacity: 1;
+    transform: scale(1.2);
+  }
+
+  /* Fade out (90–100%) */
+  90% {
+    opacity: 1;
   }
 
   100% {
     opacity: 0;
-    transform: scale(2.8);
+    transform: scale(1.4);
   }
 }
 
