@@ -1166,7 +1166,7 @@ video {
   }
 }
 
-/* 🔥 Flicker rápido con fade in/out progresivo */
+/* 🔥 Flicker muy rápido con fade in/out progresivo */
 @keyframes flameFlickerCycle {
 
   /* Fade in (0–10%) */
@@ -1179,26 +1179,50 @@ video {
     opacity: 1;
   }
 
-  /* Flicker intermedio más rápido (10–90%) */
-  15%,
-  25%,
-  35%,
-  45%,
-  55%,
-  65%,
-  75%,
-  85% {
+  /* Flicker intermedio muy rápido (10–90%) */
+  12%,
+  16%,
+  20%,
+  24%,
+  28%,
+  32%,
+  36%,
+  40%,
+  44%,
+  48%,
+  52%,
+  56%,
+  60%,
+  64%,
+  68%,
+  72%,
+  76%,
+  80%,
+  84%,
+  88% {
     opacity: 1;
     transform: scale(1.6);
   }
 
-  20%,
+  14%,
+  18%,
+  22%,
+  26%,
   30%,
-  40%,
+  34%,
+  38%,
+  42%,
+  46%,
   50%,
-  60%,
+  54%,
+  58%,
+  62%,
+  66%,
   70%,
-  80% {
+  74%,
+  78%,
+  82%,
+  86% {
     opacity: 0.2;
     transform: scale(1.4);
   }
