@@ -1146,13 +1146,13 @@ video {
   }
 
   30% {
-    transform: scale(2.2);
+    transform: scale(1.8);
     opacity: 1;
   }
 
   /* Pulso más fuerte */
   50% {
-    transform: scale(1.6);
+    transform: scale(1.2);
     opacity: 0.5;
   }
 
@@ -1162,116 +1162,98 @@ video {
 
   100% {
     opacity: 0;
-    transform: scale(0.8) translateY(-30px);
+    transform: scale(0.8) translateY(-24px);
   }
 }
 
-/* 🔥 Flicker muchísimo más rápido con fade in/out progresivo */
+/* 🔥 Flicker con bloques de 2s y fade in/out progresivo */
 @keyframes flameFlickerCycle {
 
   /* Fade in (0–10%) */
   0% {
     opacity: 0;
-    transform: scale(0.8) translateY(0);
+    transform: scale(0.8);
   }
 
   10% {
     opacity: 1;
+    transform: scale(1);
   }
 
-  /* Flicker intermedio ultrarrápido (10–90%) */
-  11%,
-  13%,
-  15%,
-  17%,
-  19%,
-  21%,
-  23%,
-  25%,
-  27%,
-  29%,
-  31%,
-  33%,
-  35%,
-  37%,
-  39%,
-  41%,
-  43%,
-  45%,
-  47%,
-  49%,
-  51%,
-  53%,
-  55%,
-  57%,
-  59%,
-  61%,
-  63%,
-  65%,
-  67%,
-  69%,
-  71%,
-  73%,
-  75%,
-  77%,
-  79%,
-  81%,
-  83%,
-  85%,
-  87%,
-  89% {
-    opacity: 1;
-    transform: scale(1.6);
-  }
-
+  /* Bloques de 2s dentro de 10–90% */
+  /* 10–20% → parpadeo */
   12%,
-  14%,
   16%,
-  18%,
-  20%,
-  22%,
-  24%,
-  26%,
-  28%,
-  30%,
-  32%,
-  34%,
-  36%,
-  38%,
-  40%,
-  42%,
-  44%,
-  46%,
-  48%,
-  50%,
-  52%,
-  54%,
-  56%,
-  58%,
-  60%,
-  62%,
-  64%,
-  66%,
-  68%,
-  70%,
-  72%,
-  74%,
-  76%,
-  78%,
-  80%,
-  82%,
-  84%,
-  86%,
-  88% {
+  18% {
     opacity: 0.2;
-    transform: scale(1.4);
   }
 
-  /* Fade out (90–100%) */
+  14%,
+  20% {
+    opacity: 1;
+  }
+
+  /* 20–30% → estático */
+  20%,
+  30% {
+    opacity: 1;
+  }
+
+  /* 30–40% → parpadeo */
+  32%,
+  36%,
+  38% {
+    opacity: 0.2;
+  }
+
+  34%,
+  40% {
+    opacity: 1;
+  }
+
+  /* 40–50% → estático */
+  40%,
+  50% {
+    opacity: 1;
+  }
+
+  /* 50–60% → parpadeo */
+  52%,
+  56%,
+  58% {
+    opacity: 0.2;
+  }
+
+  54%,
+  60% {
+    opacity: 1;
+  }
+
+  /* 60–70% → estático */
+  60%,
+  70% {
+    opacity: 1;
+  }
+
+  /* 70–80% → parpadeo */
+  72%,
+  76%,
+  78% {
+    opacity: 0.2;
+  }
+
+  74%,
+  80% {
+    opacity: 1;
+  }
+
+  /* 80–90% → estático */
+  80%,
   90% {
     opacity: 1;
   }
 
+  /* Fade out (90–100%) */
   100% {
     opacity: 0;
     transform: scale(0.8) translateY(-30px);
@@ -1289,7 +1271,7 @@ video {
   }
 
   30% {
-    transform: translateY(-30px);
+    transform: translateY(-20px);
     opacity: 1;
   }
 
@@ -1305,7 +1287,7 @@ video {
 
   100% {
     opacity: 0;
-    transform: translateY(-50px);
+    transform: translateY(-60px);
   }
 }
 
@@ -1314,7 +1296,7 @@ video {
 }
 
 .animate-flameFlicker {
-  animation: flameFlickerCycle 20s 2s infinite;
+  animation: flameFlickerCycle 20s linear infinite;
 }
 
 .animate-flameFloat {
@@ -1333,7 +1315,7 @@ video {
   }
 
   30% {
-    transform: scale(1.6);
+    transform: scale(1.2);
     opacity: 1;
   }
 
@@ -1349,7 +1331,7 @@ video {
 
   100% {
     opacity: 0;
-    transform: scale(0.8) translateY(-30px);
+    transform: scale(0.8) translateY(-20px);
   }
 }
 
@@ -1364,13 +1346,13 @@ video {
   }
 
   30% {
-    transform: translateY(-28px);
+    transform: translateY(-20px);
     opacity: 1;
   }
 
   /* Flotación más visible */
   50% {
-    transform: translateY(-36px);
+    transform: translateY(-40px);
     opacity: 0.5;
   }
 
@@ -1380,24 +1362,24 @@ video {
 
   100% {
     opacity: 0;
-    transform: translateY(-44px);
+    transform: translateY(-60px);
   }
 }
 
 @keyframes pointPingCycle {
   0% {
     opacity: 0;
-    transform: scale(0.8);
+    transform: scale(0.4);
   }
 
   10% {
     opacity: 1;
-    transform: scale(1);
+    transform: scale(0.6);
   }
 
   30% {
     opacity: 1;
-    transform: scale(2.2);
+    transform: scale(2.0);
   }
 
   /* Ping más grande */
@@ -1413,7 +1395,7 @@ video {
 
   100% {
     opacity: 0;
-    transform: scale(3);
+    transform: scale(3.0);
   }
 }
 
