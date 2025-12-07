@@ -1166,7 +1166,10 @@ video {
   }
 }
 
+/* 🔥 Flicker con fade in/out progresivo */
 @keyframes flameFlickerCycle {
+
+  /* Fade in (0–10%) */
   0% {
     opacity: 0;
     transform: scale(0.8) translateY(0);
@@ -1176,19 +1179,28 @@ video {
     opacity: 1;
   }
 
-  30% {
-    opacity: 0.1;
-    transform: scale(1.5);
-  }
-
-  /* Flicker más contrastado */
-  50% {
+  /* Flicker intermedio (10–90%) */
+  19%,
+  21%,
+  23%,
+  25%,
+  54%,
+  56% {
     opacity: 1;
-    transform: scale(1.8);
+    transform: scale(1.6);
   }
 
+  20%,
+  22%,
+  24%,
+  55% {
+    opacity: 0.3;
+    transform: scale(1.4);
+  }
+
+  /* Fade out (90–100%) */
   90% {
-    opacity: 0.2;
+    opacity: 1;
   }
 
   100% {
@@ -1233,7 +1245,7 @@ video {
 }
 
 .animate-flameFlicker {
-  animation: flameFlickerCycle 20s ease-in-out infinite;
+  animation: flameFlickerCycle 20s linear infinite;
 }
 
 .animate-flameFloat {
