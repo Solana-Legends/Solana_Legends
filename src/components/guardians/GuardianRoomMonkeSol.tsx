@@ -7,9 +7,14 @@ export default function GuardianRoomMonkeSol() {
   const [cycleKey, setCycleKey] = useState(0);
 
   useEffect(() => {
+    // ⏱️ Reinicia las animaciones cada 24s
+    // - 0–16% (≈4s) → fade in progresivo
+    // - 16–83% (≈16s) → tramo intermedio con pulsos, flotaciones, parpadeos y expansiones
+    // - 83–100% (≈4s) → fade out progresivo
+    // Esto asegura que el ciclo CSS (24s) y el reinicio en React estén sincronizados.
     const interval = setInterval(() => {
       setCycleKey((prev) => prev + 1);
-    }, 20000); // ciclo completo de 20s
+    }, 24000); // ciclo completo de 24s
     return () => clearInterval(interval);
   }, []);
 
@@ -18,12 +23,12 @@ export default function GuardianRoomMonkeSol() {
       {/* ✨ Fondo ritualizado con aura cálida */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,#7f1d1d,#0f172a)] opacity-70 animate-pulse" />
 
-      {/* 🔥 Llamas + puntos */}
+      {/* 🔥 Llamas + ⚪ Puntos */}
       <div className="absolute inset-0 pointer-events-none">
         {Array.from({ length: 36 }).map((_, i) => {
           const isFlame = i % 2 === 0;
 
-          // Alterna entre animaciones combinadas
+          // Alterna entre animaciones de llamas y puntos
           const flameAnimations = [
             "animate-flamePulse",
             "animate-flameFlicker",
@@ -41,7 +46,7 @@ export default function GuardianRoomMonkeSol() {
 
           return isFlame ? (
             <div
-              key={`${cycleKey}-${i}`}
+              key={`${cycleKey}-${i}`} // 🔑 fuerza reinicio cada 24s
               className={`absolute text-xl text-red-500 drop-shadow-[0_0_12px_#ef4444] ${animationClass}`}
               style={{
                 top: `${Math.random() * 100}%`,
@@ -52,7 +57,7 @@ export default function GuardianRoomMonkeSol() {
             </div>
           ) : (
             <div
-              key={`${cycleKey}-${i}`}
+              key={`${cycleKey}-${i}`} // 🔑 fuerza reinicio cada 24s
               className={`absolute w-2 h-2 rounded-full bg-orange-400 opacity-80 drop-shadow-[0_0_8px_#ef4444] ${animationClass}`}
               style={{
                 top: `${Math.random() * 100}%`,

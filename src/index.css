@@ -1137,33 +1137,33 @@ video {
 /* 🔥 Llamas */
 @keyframes flamePulseCycle {
 
-  /* Fade in (0–10%) */
+  /* Fade in (0–16%) */
   0% {
     opacity: 0;
     transform: scale(0.8) translateY(0);
   }
 
-  10% {
+  16% {
     opacity: 1;
   }
 
-  /* Pulso más rápido y menor crecimiento */
-  25% {
+  /* Pulso intermedio (16–83%) */
+  30% {
     transform: scale(1.4);
     opacity: 1;
   }
 
-  45% {
+  50% {
     transform: scale(1.1);
     opacity: 0.6;
   }
 
-  85% {
+  70% {
     opacity: 0.4;
   }
 
-  /* Fade out (90–100%) */
-  90% {
+  /* Fade out (83–100%) */
+  83% {
     opacity: 1;
   }
 
@@ -1173,102 +1173,107 @@ video {
   }
 }
 
-/* 🔥 Flicker con bloques de 2s parpadeo/estático y fade in/out progresivo */
+/* 🔥 Flicker con bloques de 2s parpadeo/estático y fade in/out de 4s */
 @keyframes flameFlickerCycle {
 
-  /* Fade in (0–10%) */
+  /* Fade in (0–16%) */
   0% {
     opacity: 0;
     transform: scale(0.8);
   }
 
-  10% {
+  16% {
     opacity: 1;
     transform: scale(1);
   }
 
-  /* Bloques de 2s parpadeo/estático */
-  12%,
-  14%,
-  16%,
-  18% {
-    opacity: 0.2;
-  }
-
-  13%,
-  15%,
+  /* Bloques de 2s parpadeo ↔ 2s estático dentro de 16–83% */
+  /* Ejemplo: 5 alternancias en cada bloque de parpadeo */
+  /* 16–24% → parpadeo rápido */
   17%,
+  18%,
   19%,
-  20% {
-    opacity: 1;
-  }
-
   20%,
-  30% {
-    opacity: 1;
-  }
-
-  32%,
-  34%,
-  36%,
-  38% {
+  21% {
     opacity: 0.2;
   }
 
+  22%,
+  23%,
+  24% {
+    opacity: 1;
+  }
+
+  /* 24–32% → estático */
+  24%,
+  32% {
+    opacity: 1;
+  }
+
+  /* 32–40% → parpadeo rápido */
   33%,
+  34%,
   35%,
-  37%,
+  36%,
+  37% {
+    opacity: 0.2;
+  }
+
+  38%,
   39%,
   40% {
     opacity: 1;
   }
 
+  /* 40–48% → estático */
   40%,
-  50% {
+  48% {
     opacity: 1;
   }
 
+  /* 48–56% → parpadeo rápido */
+  49%,
+  50%,
+  51%,
   52%,
+  53% {
+    opacity: 0.2;
+  }
+
   54%,
-  56%,
-  58% {
-    opacity: 0.2;
-  }
-
-  53%,
   55%,
-  57%,
-  59%,
-  60% {
+  56% {
     opacity: 1;
   }
 
-  60%,
-  70% {
+  /* 56–64% → estático */
+  56%,
+  64% {
     opacity: 1;
   }
 
-  72%,
-  74%,
-  76%,
-  78% {
+  /* 64–72% → parpadeo rápido */
+  65%,
+  66%,
+  67%,
+  68%,
+  69% {
     opacity: 0.2;
   }
 
-  73%,
-  75%,
-  77%,
-  79%,
-  80% {
+  70%,
+  71%,
+  72% {
     opacity: 1;
   }
 
-  80%,
-  90% {
+  /* 72–83% → estático */
+  72%,
+  83% {
     opacity: 1;
   }
 
-  /* Fade out (90–100%) */
+  /* Fade out (83–100%) */
   100% {
     opacity: 0;
     transform: scale(0.8) translateY(-30px);
@@ -1277,18 +1282,18 @@ video {
 
 @keyframes flameFloatCycle {
 
-  /* Fade in (0–10%) */
+  /* Fade in (0–16%) */
   0% {
     opacity: 0;
     transform: translateY(0);
   }
 
-  10% {
+  16% {
     opacity: 1;
   }
 
-  /* Más rápido y mayor recorrido */
-  25% {
+  /* Flotación intermedia (16–83%) */
+  30% {
     transform: translateY(-30px);
     opacity: 1;
   }
@@ -1298,12 +1303,12 @@ video {
     opacity: 0.6;
   }
 
-  85% {
+  70% {
     opacity: 0.4;
   }
 
-  /* Fade out (90–100%) */
-  90% {
+  /* Fade out (83–100%) */
+  83% {
     opacity: 1;
   }
 
@@ -1314,47 +1319,47 @@ video {
 }
 
 .animate-flamePulse {
-  animation: flamePulseCycle 16s ease-in-out infinite;
+  animation: flamePulseCycle 24s ease-in-out infinite;
 }
 
 .animate-flameFlicker {
-  animation: flameFlickerCycle 20s linear infinite;
+  animation: flameFlickerCycle 24s linear infinite;
 }
 
 .animate-flameFloat {
-  animation: flameFloatCycle 16s ease-in-out infinite;
+  animation: flameFloatCycle 24s ease-in-out infinite;
 }
 
 /* ⚪ Puntos */
 @keyframes pointPulseCycle {
 
-  /* Fade in (0–10%) */
+  /* Fade in (0–16%) */
   0% {
     opacity: 0;
     transform: scale(0.8) translateY(0);
   }
 
-  10% {
+  16% {
     opacity: 1;
   }
 
-  /* Igual que las llamas */
-  25% {
+  /* Igual que las llamas (16–83%) */
+  30% {
     transform: scale(1.4);
     opacity: 1;
   }
 
-  45% {
+  50% {
     transform: scale(1.1);
     opacity: 0.6;
   }
 
-  85% {
+  70% {
     opacity: 0.4;
   }
 
-  /* Fade out (90–100%) */
-  90% {
+  /* Fade out (83–100%) */
+  83% {
     opacity: 1;
   }
 
@@ -1366,18 +1371,18 @@ video {
 
 @keyframes pointFloatCycle {
 
-  /* Fade in (0–10%) */
+  /* Fade in (0–16%) */
   0% {
     opacity: 0;
     transform: translateY(0);
   }
 
-  10% {
+  16% {
     opacity: 1;
   }
 
-  /* Igual que las llamas */
-  25% {
+  /* Igual que las llamas (16–83%) */
+  30% {
     transform: translateY(-30px);
     opacity: 1;
   }
@@ -1387,12 +1392,12 @@ video {
     opacity: 0.6;
   }
 
-  85% {
+  70% {
     opacity: 0.4;
   }
 
-  /* Fade out (90–100%) */
-  90% {
+  /* Fade out (83–100%) */
+  83% {
     opacity: 1;
   }
 
@@ -1402,44 +1407,55 @@ video {
   }
 }
 
-/* ⚪ Ping con 4 expansiones rápidas en 16s */
+/* ⚪ Ping con 4 expansiones rápidas en 16s intermedios */
 @keyframes pointPingCycle {
 
-  /* Fade in (0–10%) */
+  /* Fade in (0–16%) */
   0% {
     opacity: 0;
     transform: scale(0.4);
   }
 
-  10% {
+  16% {
     opacity: 1;
     transform: scale(0.6);
   }
 
-  /* Primera expansión (10–25%) */
-  15% {
+  /* Primera expansión (16–30%) */
+  22% {
     opacity: 1;
     transform: scale(1.2);
   }
 
-  25% {
+  30% {
     opacity: 0.5;
     transform: scale(1.4);
   }
 
-  /* Segunda expansión (25–50%) */
-  35% {
+  /* Segunda expansión (30–45%) */
+  37% {
     opacity: 1;
     transform: scale(1.2);
   }
 
-  50% {
+  45% {
     opacity: 0.5;
     transform: scale(1.4);
   }
 
-  /* Tercera expansión (50–75%) */
+  /* Tercera expansión (45–60%) */
+  52% {
+    opacity: 1;
+    transform: scale(1.2);
+  }
+
   60% {
+    opacity: 0.5;
+    transform: scale(1.4);
+  }
+
+  /* Cuarta expansión (60–75%) */
+  67% {
     opacity: 1;
     transform: scale(1.2);
   }
@@ -1449,14 +1465,8 @@ video {
     transform: scale(1.4);
   }
 
-  /* Cuarta expansión (75–90%) */
-  85% {
-    opacity: 1;
-    transform: scale(1.2);
-  }
-
-  /* Fade out (90–100%) */
-  90% {
+  /* Fade out (83–100%) */
+  83% {
     opacity: 1;
   }
 
@@ -1467,15 +1477,15 @@ video {
 }
 
 .animate-pointPulse {
-  animation: pointPulseCycle 16s ease-in-out infinite;
+  animation: pointPulseCycle 24s ease-in-out infinite;
 }
 
 .animate-pointFloat {
-  animation: pointFloatCycle 16s ease-in-out infinite;
+  animation: pointFloatCycle 24s ease-in-out infinite;
 }
 
 .animate-pointPing {
-  animation: pointPingCycle 16s ease-in-out infinite;
+  animation: pointPingCycle 24s ease-in-out infinite;
 }
 
 /* === Fin del archivo === */
