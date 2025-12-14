@@ -1,6 +1,6 @@
-import { ProgressBar } from "./ProgressBar";
 import { useLanguage } from "../contexts/LanguageContext";
 import { useMetrics } from "@/hooks/useMetrics";
+import ProgressDisplay from "./ProgressDisplay";
 
 export default function ProgressSection() {
   const { t } = useLanguage();
@@ -18,7 +18,7 @@ export default function ProgressSection() {
   } = useMetrics();
 
   return (
-    <section className="relative max-w-2xl mx-auto px-4 pt-4 pb-16 ">
+    <section data-testid="progress-section" className="relative max-w-2xl mx-auto px-4 pt-4 pb-16 ">
       <h2 className="text-xl font-bold text-zinc-100 mb-2">
         {t("progress.title")}
       </h2>
@@ -26,85 +26,59 @@ export default function ProgressSection() {
 
       {/* 🔥 Progreso Principal */}
       {!isLoading && (
-        <div className="mb-6">
-          <p className="text-zinc-300 mb-1">
-            {t("progress.mainProgressLabel")
-              .replace("{source}", topSource)
-              .replace("{current}", mainProgress.toString())
-              .replace("{goal}", goal.toString())}
-          </p>
-          <ProgressBar
-            percent={(mainProgress / goal) * 100}
-            aura={mainProgress >= goal}
-          />
-          {mainProgress < goal ? (
-            <p className="text-amber-400 font-medium mt-1">
-              {t("progress.remainingFollowers").replace(
-                "{remaining}",
-                remaining.toString()
-              )}
-            </p>
-          ) : (
-            <p className="text-amber-400 font-medium mt-1">
-              {t("progress.fireActivated").replace("{source}", topSource)}
-            </p>
-          )}
-        </div>
+        <ProgressDisplay
+          isMain
+          label={t("progress.mainProgressLabel")
+            .replace("{source}", topSource)
+            .replace("{current}", mainProgress.toString())
+            .replace("{goal}", goal.toString())}
+          current={mainProgress}
+          goal={goal}
+          aura={mainProgress >= goal}
+          isLoading={isLoading}
+          remaining={remaining}
+          topSource={topSource}
+          remainingFollowersText={t("progress.remainingFollowers")}
+          fireActivatedText={t("progress.fireActivated")}
+          fireUnleashedText={t("progress.fireUnleashed")}
+        />
       )}
-
-      {/* Twitter */}
-      <div className="mb-4">
-        <p className="text-zinc-300 mb-1">
-          {t("progress.twitterLabel")
-            .replace("{current}", metrics.twitter.toString())
-            .replace("{goal}", goal.toString())}
-        </p>
-        <ProgressBar
-          percent={(metrics.twitter / goal) * 100}
-          aura={twitterReady}
-        />
-        {twitterReady && !isLoading && (
-          <p className="text-amber-400 font-medium mt-1">
-            🔥 {t("progress.fireUnleashed")}
-          </p>
-        )}
-      </div>
-
-      {/* Telegram */}
-      <div className="mb-4">
-        <p className="text-zinc-300 mb-1">
-          {t("progress.telegramLabel")
-            .replace("{current}", metrics.telegram.toString())
-            .replace("{goal}", goal.toString())}
-        </p>
-        <ProgressBar
-          percent={(metrics.telegram / goal) * 100}
-          aura={telegramReady}
-        />
-        {telegramReady && !isLoading && (
-          <p className="text-amber-400 font-medium mt-1">
-            🔥 {t("progress.fireUnleashed")}
-          </p>
-        )}
-      </div>
-
-      {/* Comunidad X */}
-      <div className="mb-4">
-        <p className="text-zinc-300 mb-1">
-          {t("progress.communityLabel")
-            .replace("{current}", metrics.community.toString())
-            .replace("{goal}", goal.toString())}
-        </p>
-        <ProgressBar
-          percent={(metrics.community / goal) * 100}
-          aura={communityReady}
-        />
-        {communityReady && !isLoading && (
-          <p className="text-amber-400 font-medium mt-1">
-            🔥 {t("progress.fireUnleashed")}
-          </p>
-        )}
-      </div>
+      <ProgressDisplay
+        label={t("progress.twitterLabel")
+          .replace("{current}", metrics.twitter.toString())
+          .replace("{goal}", goal.toString())}
+        current={metrics.twitter}
+        goal={goal}
+        aura={twitterReady}
+        isLoading={isLoading}
+        fireUnleashedText={t("progress.fireUnleashed")}
+        remainingFollowersText={""}
+        fireActivatedText={""}
+      />
+      <ProgressDisplay
+        label={t("progress.telegramLabel")
+          .replace("{current}", metrics.telegram.toString())
+          .replace("{goal}", goal.toString())}
+        current={metrics.telegram}
+        goal={goal}
+        aura={telegramReady}
+        isLoading={isLoading}
+        fireUnleashedText={t("progress.fireUnleashed")}
+        remainingFollowersText={""}
+        fireActivatedText={""}
+      />
+      <ProgressDisplay
+        label={t("progress.communityLabel")
+          .replace("{current}", metrics.community.toString())
+          .replace("{goal}", goal.toString())}
+        current={metrics.community}
+        goal={goal}
+        aura={communityReady}
+        isLoading={isLoading}
+        fireUnleashedText={t("progress.fireUnleashed")}
+        remainingFollowersText={""}
+        fireActivatedText={""}
+      />
 
       {/* Botones ritualizados */}
       {votingEnabled && !isLoading && (
