@@ -136,28 +136,28 @@ export default function CharacterGallery() {
                 <CardHeader className="text-center pb-4">
                   <div className="relative mb-6">
 
-                    {/* AURA HORIZONTAL ESTRECHA */}
+                    {/* AURA HORIZONTAL ESTRECHA (MODIFICADA) */}
                     <div
                       className={`
                         absolute left-1/2 top-1/2 
                         -translate-x-1/2 -translate-y-1/2
-                        w-28 h-10 md:w-32 md:h-12
+                        w-20 h-6 md:w-24 md:h-8
                         bg-gradient-to-r ${character.color}
                         rounded-full blur-xl opacity-40 
                         group-hover:opacity-60 transition-opacity
                       `}
                     />
 
-                    {/* Avatar */}
+                    {/* Avatar (AURA AJUSTADA) */}
                     <div
                       className={`relative mx-auto rounded-full border-4 ${character.borderColor}
                                   group-hover:scale-110 transition-transform overflow-visible
-                                  flex justify-center items-center p-1 aura-pulsante aura-hover`}
+                                  flex justify-center items-center p-0.5 aura-pulsante aura-hover`}
                     >
                       <img
                         src={character.image}
                         alt={character.name}
-                        className="h-32 md:h-36 w-auto object-contain transition-all duration-300"
+                        className="h-36 md:h-40 w-auto object-contain transition-all duration-300"
                       />
                     </div>
 
