@@ -16,8 +16,8 @@ const App = () => (
       <TooltipProvider>
         <Toaster />
         <BrowserRouter>
-          {/* ✅ Contenedor responsive global (Opción A: max-w-4xl) */}
-          <div className="w-full max-w-screen-2xl mx-auto px-4">
+          {/* ❌ Eliminado el max-w que creaba bandas */}
+          <div className="w-full">
             <Routes>
               <Route path="/" element={<Index />} />
               <Route path="/guardians" element={<GuardiansPage />} />
