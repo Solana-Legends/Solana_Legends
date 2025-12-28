@@ -136,7 +136,7 @@ export default function CharacterGallery() {
                 <CardHeader className="text-center pb-4">
                   <div className="relative mb-6">
 
-                    {/* AURA HORIZONTAL ESTRECHA (MODIFICADA) */}
+                    {/* AURA HORIZONTAL ESTRECHA (FUNCIONANDO) */}
                     <div
                       className={`
                         absolute left-1/2 top-1/2 
@@ -145,14 +145,16 @@ export default function CharacterGallery() {
                         bg-gradient-to-r ${character.color}
                         rounded-full blur-xl opacity-40 
                         group-hover:opacity-60 transition-opacity
+                        z-0
                       `}
                     />
 
-                    {/* Avatar (AURA AJUSTADA) */}
+                    {/* AVATAR (AURA AJUSTADA + Z-INDEX) */}
                     <div
                       className={`relative mx-auto rounded-full border-4 ${character.borderColor}
                                   group-hover:scale-110 transition-transform overflow-visible
-                                  flex justify-center items-center p-0.5 aura-pulsante aura-hover`}
+                                  flex justify-center items-center p-0.5 aura-pulsante aura-hover
+                                  z-20`}
                     >
                       <img
                         src={character.image}
@@ -162,7 +164,7 @@ export default function CharacterGallery() {
                     </div>
 
                     {/* Badge */}
-                    <div className="absolute -bottom-2 left-1/2 -translate-x-1/2">
+                    <div className="absolute -bottom-2 left-1/2 -translate-x-1/2 z-30">
                       <Badge
                         className={`bg-gradient-to-r ${character.color} text-white border-0 px-3 py-1`}
                       >
