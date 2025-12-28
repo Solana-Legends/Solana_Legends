@@ -18,7 +18,7 @@ export default function ProgressSection() {
   } = useMetrics();
 
   return (
-    <section className="relative max-w-2xl mx-auto px-4 pt-4 pb-16 ">
+    <section className="relative w-full max-w-screen-2xl mx-auto px-4 pt-4 pb-16">
       <h2 className="text-xl font-bold text-zinc-100 mb-2">
         {t("progress.title")}
       </h2>

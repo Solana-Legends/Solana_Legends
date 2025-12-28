@@ -25,7 +25,7 @@ export default function SubscriptionForm() {
   
   return (
     <section className="py-20 px-6 bg-gradient-to-br from-blue-900 to-purple-900">
-      <div className="max-w-4xl mx-auto">
+      <div className="w-full max-w-screen-2xl mx-auto px-4">
         <div className="text-center mb-12">
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
             🔔 Mantente <span className="bg-gradient-to-r from-yellow-400 to-orange-400 bg-clip-text text-transparent">Informado</span>

@@ -17,7 +17,7 @@ const App = () => (
         <Toaster />
         <BrowserRouter>
           {/* ✅ Contenedor responsive global (Opción A: max-w-4xl) */}
-          <div className="mx-auto w-full max-w-4xl px-4">
+          <div className="w-full max-w-screen-2xl mx-auto px-4">
             <Routes>
               <Route path="/" element={<Index />} />
               <Route path="/guardians" element={<GuardiansPage />} />

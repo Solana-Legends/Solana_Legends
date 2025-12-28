@@ -9,8 +9,7 @@ import LanguageSwitcher from "@/components/LanguageSwitcher";
 export default function Index() {
   return (
     <div className="min-h-screen bg-black overflow-x-hidden">
-      {/* Contenedor responsive corregido */}
-      <div className="mx-auto w-full max-w-4xl px-4 overflow-x-hidden">
+      <div className="w-full max-w-screen-2xl mx-auto px-4 overflow-x-hidden">
         <LanguageSwitcher />
         <HeroSection />
         <CharacterGallery />

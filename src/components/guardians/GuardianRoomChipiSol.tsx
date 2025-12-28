@@ -68,7 +68,7 @@ export default function GuardianRoomChipiSol() {
       </div>
 
       {/* Contenido principal */}
-      <div className="relative z-10 max-w-4xl mx-auto text-center">
+      <div className="relative z-10 w-full max-w-screen-2xl mx-auto px-4 text-center">
         <h3 className="text-4xl md:text-5xl font-bold text-cyan-400 mb-4 animate-fadeInUp">
           {t("chipisol.title")}
         </h3>

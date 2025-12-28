@@ -40,7 +40,7 @@ export default function GuardianTimeline() {
         Cronología de los Guardianes
       </h3>
 
-      <div className="relative border-l-4 border-purple-500 max-w-3xl mx-auto">
+      <div className="relative border-l-4 border-purple-500 w-full max-w-screen-2xl mx-auto px-4">
         {timeline.map((item, index) => (
           <div key={index} className="mb-12 ml-6 animate-fadeInUp relative">
             <div className="absolute -left-8 top-1 w-8 h-8 rounded-full bg-purple-600 flex items-center justify-center text-white shadow-lg">

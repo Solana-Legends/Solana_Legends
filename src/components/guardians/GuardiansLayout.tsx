@@ -36,7 +36,7 @@ export default function GuardiansLayout({
 
         {/* Título y subtítulo ritualizados */}
         <header
-          className="max-w-6xl mx-auto text-center opacity-0 translate-y-3 animate-fadeInUp"
+          className="w-full max-w-screen-2xl mx-auto px-4 text-center opacity-0 translate-y-3 animate-fadeInUp"
           style={{ animationDelay: "0.4s" }}
         >
           <h1 className="text-4xl md:text-6xl font-bold mb-2">{t(titleKey)}</h1>
