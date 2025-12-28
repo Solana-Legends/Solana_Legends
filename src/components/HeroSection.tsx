@@ -23,7 +23,7 @@ export default function HeroSection() {
         {/* Logo */}
         <div className="mb-6 md:mb-8 flex justify-center relative group">
           <div className="absolute inset-0 flex justify-center items-center pointer-events-none z-0">
-            <div className="w-32 h-32 md:w-48 md:h-48 rounded-full blur-xl md:blur-3xl aura-pulsante-gold-strong aura-pulsante aura-hover-white"></div>
+            <div className="w-32 h-32 md:w-48 md:h-48 rounded-full blur-xl md:blur-3xl aura-pulsante-gold-strong aura-hover-white"></div>
           </div>
 
           <a
@@ -58,7 +58,7 @@ export default function HeroSection() {
         {/* Logo Voltra */}
         <div className="flex justify-center md:justify-end mb-0">
           <div className="relative flex justify-center items-center w-28 h-28 md:w-44 md:h-44 group">
-            <div className="absolute w-full h-full rounded-full blur-xl md:blur-3xl aura-pulsante-gold-strong aura-hover-white"></div>
+            <div className="absolute w-full h-full rounded-full blur-xl md:blur-3xl border border-yellow-300/80 aura-pulsante aura-hover-white"></div>
 
             <a
               href="https://x.com/Voltrastudio"
