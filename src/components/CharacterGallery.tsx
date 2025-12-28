@@ -73,6 +73,7 @@ export default function CharacterGallery() {
     },
   ];
 
+  // Mantener funciones para la futura votación
   const handleVote = (characterName: string) => {
     if (!votingEnabled) return;
     console.log("[VOTE]", characterName);
@@ -83,13 +84,17 @@ export default function CharacterGallery() {
     console.log("[VIEW_RESULTS]");
   };
 
+  // Eliminar warnings TS6133 sin afectar nada
+  void handleVote;
+  void handleViewResults;
+
   const progressPercentage = goal > 0 ? (mainProgress / goal) * 100 : 0;
 
   return (
     <section className="relative py-16 px-6 min-h-[520px] bg-gradient-to-br from-[#0F0B1E] via-[#1A1530] to-[#0F0B1E] aura-pulsante aura-hover-gold">
       <div className="absolute inset-0 z-0 pointer-events-none aura-pulsante aura-hover-gold" />
 
-      {/* AURA VERTICAL REDUCIDA */}
+      {/* AURA VERTICAL */}
       <div
         className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 
                       w-48 h-48 md:w-64 md:h-64 rounded-full blur-3xl 
@@ -97,7 +102,8 @@ export default function CharacterGallery() {
       />
 
       <div className="relative z-10 w-full max-w-screen-2xl mx-auto px-4">
-        {/* Header */}
+
+        {/* HEADER */}
         <div className="text-center mb-10">
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-3">
             {t("characters.title")}
@@ -125,19 +131,20 @@ export default function CharacterGallery() {
           </p>
         </div>
 
-        {/* Cards */}
-        <div className="grid lg:grid-cols-3 gap-6">
+        {/* CARDS — 300px EXACTOS */}
+        <div className="flex flex-wrap justify-center gap-6">
           {characters.map((character) => {
             const IconComponent = character.icon;
 
             return (
               <Card
                 key={character.id}
-                className={`bg-[#1A1530]/40 border-4 rounded-xl transition-all duration-300 hover:scale-105 group ${character.borderColor} aura-pulsante aura-hover`}
+                className={`w-[300px] bg-[#1A1530]/40 border-4 rounded-xl transition-all duration-300 hover:scale-105 group ${character.borderColor} aura-pulsante aura-hover`}
               >
                 <CardHeader className="text-center pb-3">
                   <div className="relative mb-5">
-                    {/* AURA HORIZONTAL ESTRECHA (FUNCIONANDO) */}
+
+                    {/* AURA HORIZONTAL */}
                     <div
                       className={`
                         absolute left-1/2 top-1/2 
@@ -150,21 +157,21 @@ export default function CharacterGallery() {
                       `}
                     />
 
-                    {/* AVATAR (AURA AJUSTADA + Z-INDEX) */}
+                    {/* AVATAR CON BORDE OVALADO */}
                     <div
-                      className={`relative mx-auto rounded-full border-4 ${character.borderColor}
-                                  group-hover:scale-110 transition-transform overflow-visible
-                                  flex justify-center items-center p-0.5 aura-pulsante aura-hover
+                      className={`relative mx-auto rounded-xl border-4 ${character.borderColor}
+                                  group-hover:scale-110 transition-transform overflow-hidden
+                                  flex justify-center items-center p-1 aura-pulsante aura-hover
                                   z-20`}
                     >
                       <img
                         src={character.image}
                         alt={character.name}
-                        className="h-32 md:h-36 w-auto object-contain transition-all duration-300"
+                        className="h-36 md:h-40 w-auto object-contain transition-all duration-300"
                       />
                     </div>
 
-                    {/* Badge */}
+                    {/* BADGE */}
                     <div className="absolute -bottom-2 left-1/2 -translate-x-1/2 z-30">
                       <Badge
                         className={`bg-gradient-to-r ${character.color} text-white border-0 px-3 py-1`}
@@ -189,7 +196,7 @@ export default function CharacterGallery() {
                     {character.description}
                   </p>
 
-                  {/* Stats */}
+                  {/* STATS */}
                   <div className="space-y-2">
                     <h4 className="text-white font-semibold text-xs uppercase tracking-wide">
                       {t("characters.stats")}
@@ -223,70 +230,49 @@ export default function CharacterGallery() {
                     )}
                   </div>
 
-                  {/* Voting */}
-                  {votingEnabled ? (
-                    <Button
-                      className="w-full bg-[#FFA908] hover:bg-[#D27F00] text-[#0F0B1E] font-semibold border-0 hover:shadow-[0_0_25px_#FFA908] hover:scale-105 transition-all duration-300 py-2 text-sm"
-                      size="default"
-                      onClick={() => handleVote(character.name)}
-                    >
-                      {t("characters.voteFor")} {character.name}
-                    </Button>
-                  ) : (
-                    <Button
-                      className="w-full bg-gradient-to-r from-[#1A1530] to-[#2A1F40] text-[#FFA908] font-semibold border border-[#FFA908]/30 shadow-[0_0_15px_#FFA908]/40 pointer-events-none cursor-not-allowed transition-all duration-300 py-2 text-sm"
-                      size="default"
-                    >
-                      <Lock className="w-4 h-4 mr-2" />
-                      {t("characters.votingLocked")}
-                    </Button>
-                  )}
+                  {/* BOTÓN BLOQUEADO + AURA DORADA FUERTE */}
+                  <Button
+                    className="w-full bg-gradient-to-r from-[#1A1530] to-[#2A1F40] 
+                               text-[#FFA908] font-semibold border border-[#FFA908]/30 
+                               shadow-[0_0_15px_#FFA908]/40 pointer-events-none cursor-not-allowed 
+                               transition-all duration-300 py-2 text-sm
+                               hover:shadow-[0_0_35px_#FFA908] hover:scale-105"
+                    size="default"
+                  >
+                    <Lock className="w-4 h-4 mr-2" />
+                    {t("characters.votingLocked")}
+                  </Button>
                 </CardContent>
               </Card>
             );
           })}
         </div>
 
-        {/* Footer */}
+        {/* FOOTER */}
         <div className="text-center mt-8">
-          {votingEnabled ? (
-            <>
-              <p className="text-white text-base mb-4 footer-aura">
-                {t("characters.votingActive")}
-              </p>
+          <p className="text-white text-base mb-3 footer-aura">
+            {t("characters.question")}
+          </p>
 
-              <Button
-                size="default"
-                variant="outline"
-                className="border-[#FFA908] text-[#FFA908] hover:bg-[#D27F00] hover:text-[#0F0B1E] hover:shadow-[0_0_25px_#FFA908] hover:scale-105 transition-all duration-300 px-6 py-2 text-sm"
-                onClick={handleViewResults}
-              >
-                {t("characters.viewResults")}
-              </Button>
-            </>
-          ) : (
-            <>
-              <p className="text-white text-base mb-3 footer-aura">
-                {t("characters.question")}
-              </p>
+          <div className="flex items-center justify-center gap-2 mb-4">
+            <Lock className="w-4 h-4 text-[#FFA908]" />
+            <p className="text-[#FFA908] font-semibold footer-aura text-sm">
+              {t("characters.votingUnlocked")} {remaining}{" "}
+              {t("characters.followersMore")}
+            </p>
+          </div>
 
-              <div className="flex items-center justify-center gap-2 mb-4">
-                <Lock className="w-4 h-4 text-[#FFA908]" />
-                <p className="text-[#FFA908] font-semibold footer-aura text-sm">
-                  {t("characters.votingUnlocked")} {remaining}{" "}
-                  {t("characters.followersMore")}
-                </p>
-              </div>
-
-              <Button
-                size="default"
-                variant="outline"
-                className="w-full max-w-xs mx-auto bg-gradient-to-r from-[#1A1530] to-[#2A1F40] text-[#FFA908] font-semibold border border-[#FFA908]/30 shadow-[0_0_15px_#FFA908]/40 pointer-events-none cursor-not-allowed transition-all duration-300 px-6 py-2 text-sm"
-              >
-                {t("characters.viewResults")}
-              </Button>
-            </>
-          )}
+          <Button
+            size="default"
+            variant="outline"
+            className="w-full max-w-xs mx-auto bg-gradient-to-r from-[#1A1530] to-[#2A1F40] 
+                       text-[#FFA908] font-semibold border border-[#FFA908]/30 
+                       shadow-[0_0_15px_#FFA908]/40 pointer-events-none cursor-not-allowed 
+                       transition-all duration-300 px-6 py-2 text-sm
+                       hover:shadow-[0_0_35px_#FFA908] hover:scale-105"
+          >
+            {t("characters.viewResults")}
+          </Button>
         </div>
       </div>
     </section>
