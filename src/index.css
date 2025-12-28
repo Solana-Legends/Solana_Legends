@@ -247,6 +247,10 @@ video {
   animation: pulse-aura-gold-strong 3s ease-in-out infinite;
 }
 
+.aura-hover-white:hover {
+  animation: pulse-aura-white-strong 3s ease-in-out infinite;
+}
+
 .aura-hover-intense:hover {
   filter: saturate(1.2) brightness(1.05);
 }
