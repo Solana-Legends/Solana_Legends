@@ -90,7 +90,7 @@ export default function HeroSection() {
         {/* Videos */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 mb-6 w-full max-w-screen-lg mx-auto px-2">
           <div>
-            <div className="relative group rounded-xl overflow-hidden border border-purple-500/40 aura-pulsante">
+            <div className="relative group rounded-xl overflow-hidden border border-purple-500/40 aura-pulsante h-64 md:h-80">
               <VideoWithControls
                 src="/assets/HeroesLevitan.mp4"
                 glowColor="#A020F0"
@@ -100,7 +100,7 @@ export default function HeroSection() {
           </div>
 
           <div>
-            <div className="relative group rounded-xl overflow-hidden border border-blue-400/40 aura-pulsante-blue">
+            <div className="relative group rounded-xl overflow-hidden border border-blue-400/40 aura-pulsante-blue h-64 md:h-80">
               <VideoWithControls
                 src="/assets/HéroesProgramandoEn.mp4"
                 glowColor="#00BFFF"
