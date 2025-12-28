@@ -86,45 +86,47 @@ export default function CharacterGallery() {
   const progressPercentage = goal > 0 ? (mainProgress / goal) * 100 : 0;
 
   return (
-    <section className="relative py-20 px-6 min-h-[600px] bg-gradient-to-br from-[#0F0B1E] via-[#1A1530] to-[#0F0B1E] aura-pulsante aura-hover-gold">
+    <section className="relative py-16 px-6 min-h-[520px] bg-gradient-to-br from-[#0F0B1E] via-[#1A1530] to-[#0F0B1E] aura-pulsante aura-hover-gold">
       <div className="absolute inset-0 z-0 pointer-events-none aura-pulsante aura-hover-gold" />
 
       {/* AURA VERTICAL REDUCIDA */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 
-                      w-56 h-56 md:w-72 md:h-72 rounded-full blur-3xl 
-                      bg-[#FFA908]/20 animate-pulse pointer-events-none z-0" />
+      <div
+        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 
+                      w-48 h-48 md:w-64 md:h-64 rounded-full blur-3xl 
+                      bg-[#FFA908]/20 animate-pulse pointer-events-none z-0"
+      />
 
       <div className="relative z-10 w-full max-w-screen-2xl mx-auto px-4">
         {/* Header */}
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+        <div className="text-center mb-10">
+          <h2 className="text-3xl md:text-4xl font-bold text-white mb-3">
             {t("characters.title")}
           </h2>
 
-          <p className="text-xl text-white w-full max-w-screen-lg mx-auto mb-4 px-4">
+          <p className="text-base md:text-lg text-white w-full max-w-screen-lg mx-auto mb-3 px-4">
             {t("characters.subtitle")}
           </p>
 
-          <p className="text-lg text-[#FFA908] font-semibold">
+          <p className="text-base text-[#FFA908] font-semibold">
             {isLoading
               ? "..."
               : `${mainProgress} / ${goal} ${t("progress.followers")}`}
           </p>
 
-          <div className="relative w-full max-w-lg mx-auto h-3 rounded-full border border-[#FFA908]/40 bg-[#1A1530] overflow-hidden mt-4">
+          <div className="relative w-full max-w-lg mx-auto h-2.5 rounded-full border border-[#FFA908]/40 bg-[#1A1530] overflow-hidden mt-3">
             <div
               className="absolute top-0 left-0 h-full bg-gradient-to-r from-yellow-400 to-orange-500 animate-[pulse_2s_infinite] rounded-full"
               style={{ width: `${progressPercentage}%` }}
             />
           </div>
 
-          <p className="text-indigo-200 text-sm mt-2">
+          <p className="text-indigo-200 text-xs mt-2">
             🔮 {t("progress.missing")} {remaining} {t("progress.forVoting")}
           </p>
         </div>
 
         {/* Cards */}
-        <div className="grid lg:grid-cols-3 gap-8">
+        <div className="grid lg:grid-cols-3 gap-6">
           {characters.map((character) => {
             const IconComponent = character.icon;
 
@@ -133,9 +135,8 @@ export default function CharacterGallery() {
                 key={character.id}
                 className={`bg-[#1A1530]/40 border-4 rounded-xl transition-all duration-300 hover:scale-105 group ${character.borderColor} aura-pulsante aura-hover`}
               >
-                <CardHeader className="text-center pb-4">
-                  <div className="relative mb-6">
-
+                <CardHeader className="text-center pb-3">
+                  <div className="relative mb-5">
                     {/* AURA HORIZONTAL ESTRECHA (FUNCIONANDO) */}
                     <div
                       className={`
@@ -159,7 +160,7 @@ export default function CharacterGallery() {
                       <img
                         src={character.image}
                         alt={character.name}
-                        className="h-36 md:h-40 w-auto object-contain transition-all duration-300"
+                        className="h-32 md:h-36 w-auto object-contain transition-all duration-300"
                       />
                     </div>
 
@@ -174,30 +175,30 @@ export default function CharacterGallery() {
                     </div>
                   </div>
 
-                  <CardTitle className="text-2xl text-white mb-2">
+                  <CardTitle className="text-xl text-white mb-1">
                     {character.name}
                   </CardTitle>
 
-                  <CardDescription className="text-lg text-[#FFA908] font-medium">
+                  <CardDescription className="text-base text-[#FFA908] font-medium">
                     {character.title}
                   </CardDescription>
                 </CardHeader>
 
-                <CardContent className="space-y-6">
+                <CardContent className="space-y-4">
                   <p className="text-white leading-relaxed text-sm">
                     {character.description}
                   </p>
 
                   {/* Stats */}
-                  <div className="space-y-3">
-                    <h4 className="text-white font-semibold text-sm">
+                  <div className="space-y-2">
+                    <h4 className="text-white font-semibold text-xs uppercase tracking-wide">
                       {t("characters.stats")}
                     </h4>
 
                     {Object.entries(character.stats).map(
                       ([stat, value], index) => (
                         <div key={stat} className="space-y-1">
-                          <div className="flex justify-between text-sm">
+                          <div className="flex justify-between text-xs">
                             <span className="text-[#FFA908] capitalize">
                               {t(`characters.${stat}`)}
                             </span>
@@ -207,7 +208,7 @@ export default function CharacterGallery() {
                           </div>
 
                           <div
-                            className={`w-full h-2 rounded-full border ${character.borderColor}`}
+                            className={`w-full h-1.5 rounded-full border ${character.borderColor}`}
                           >
                             <div
                               className={`h-full rounded-full bg-gradient-to-r ${character.color} transition-all duration-1000 ease-out`}
@@ -225,16 +226,16 @@ export default function CharacterGallery() {
                   {/* Voting */}
                   {votingEnabled ? (
                     <Button
-                      className="w-full bg-[#FFA908] hover:bg-[#D27F00] text-[#0F0B1E] font-semibold border-0 hover:shadow-[0_0_25px_#FFA908] hover:scale-105 transition-all duration-300"
-                      size="lg"
+                      className="w-full bg-[#FFA908] hover:bg-[#D27F00] text-[#0F0B1E] font-semibold border-0 hover:shadow-[0_0_25px_#FFA908] hover:scale-105 transition-all duration-300 py-2 text-sm"
+                      size="default"
                       onClick={() => handleVote(character.name)}
                     >
                       {t("characters.voteFor")} {character.name}
                     </Button>
                   ) : (
                     <Button
-                      className="w-full bg-gradient-to-r from-[#1A1530] to-[#2A1F40] text-[#FFA908] font-semibold border border-[#FFA908]/30 shadow-[0_0_15px_#FFA908]/40 pointer-events-none cursor-not-allowed transition-all duration-300"
-                      size="lg"
+                      className="w-full bg-gradient-to-r from-[#1A1530] to-[#2A1F40] text-[#FFA908] font-semibold border border-[#FFA908]/30 shadow-[0_0_15px_#FFA908]/40 pointer-events-none cursor-not-allowed transition-all duration-300 py-2 text-sm"
+                      size="default"
                     >
                       <Lock className="w-4 h-4 mr-2" />
                       {t("characters.votingLocked")}
@@ -247,17 +248,17 @@ export default function CharacterGallery() {
         </div>
 
         {/* Footer */}
-        <div className="text-center mt-12">
+        <div className="text-center mt-8">
           {votingEnabled ? (
             <>
-              <p className="text-white text-lg mb-6 footer-aura">
+              <p className="text-white text-base mb-4 footer-aura">
                 {t("characters.votingActive")}
               </p>
 
               <Button
-                size="lg"
+                size="default"
                 variant="outline"
-                className="border-[#FFA908] text-[#FFA908] hover:bg-[#D27F00] hover:text-[#0F0B1E] hover:shadow-[0_0_25px_#FFA908] hover:scale-105 transition-all duration-300"
+                className="border-[#FFA908] text-[#FFA908] hover:bg-[#D27F00] hover:text-[#0F0B1E] hover:shadow-[0_0_25px_#FFA908] hover:scale-105 transition-all duration-300 px-6 py-2 text-sm"
                 onClick={handleViewResults}
               >
                 {t("characters.viewResults")}
@@ -265,22 +266,22 @@ export default function CharacterGallery() {
             </>
           ) : (
             <>
-              <p className="text-white text-lg mb-4 footer-aura">
+              <p className="text-white text-base mb-3 footer-aura">
                 {t("characters.question")}
               </p>
 
-              <div className="flex items-center justify-center gap-2 mb-6">
-                <Lock className="w-5 h-5 text-[#FFA908]" />
-                <p className="text-[#FFA908] font-semibold footer-aura">
+              <div className="flex items-center justify-center gap-2 mb-4">
+                <Lock className="w-4 h-4 text-[#FFA908]" />
+                <p className="text-[#FFA908] font-semibold footer-aura text-sm">
                   {t("characters.votingUnlocked")} {remaining}{" "}
                   {t("characters.followersMore")}
                 </p>
               </div>
 
               <Button
-                size="lg"
+                size="default"
                 variant="outline"
-                className="w-full bg-gradient-to-r from-[#1A1530] to-[#2A1F40] text-[#FFA908] font-semibold border border-[#FFA908]/30 shadow-[0_0_15px_#FFA908]/40 pointer-events-none cursor-not-allowed transition-all duration-300"
+                className="w-full max-w-xs mx-auto bg-gradient-to-r from-[#1A1530] to-[#2A1F40] text-[#FFA908] font-semibold border border-[#FFA908]/30 shadow-[0_0_15px_#FFA908]/40 pointer-events-none cursor-not-allowed transition-all duration-300 px-6 py-2 text-sm"
               >
                 {t("characters.viewResults")}
               </Button>
