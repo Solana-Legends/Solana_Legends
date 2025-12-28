@@ -11,7 +11,6 @@ export default function HeroSection() {
 
   return (
     <section className="relative min-h-[80vh] flex items-center justify-center bg-gradient-to-br from-[#0F0B1E] via-[#1A1530] to-[#0F0B1E] overflow-hidden aura-pulsante aura-hover-gold">
-      
       {/* Fondo cósmico */}
       <div className="absolute inset-0 opacity-20 pointer-events-none">
         <div className="absolute top-1/4 left-1/4 w-20 h-20 md:w-32 md:h-32 bg-purple-500 rounded-full blur-xl md:blur-3xl animate-pulse"></div>
@@ -21,14 +20,17 @@ export default function HeroSection() {
 
       {/* Contenido */}
       <div className="relative z-10 w-full max-w-screen-2xl mx-auto px-4 text-center">
-
         {/* Logo */}
         <div className="mb-6 md:mb-8 flex justify-center relative group">
           <div className="absolute inset-0 flex justify-center items-center pointer-events-none z-0">
             <div className="w-32 h-32 md:w-48 md:h-48 rounded-full blur-xl md:blur-3xl aura-pulsante-gold-strong"></div>
           </div>
 
-          <a href="https://x.com/EligeTuMeme" target="_blank" rel="noopener noreferrer">
+          <a
+            href="https://x.com/EligeTuMeme"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <img
               src="/assets/LogoPremium1.png"
               alt="Solana Legends Logo"
@@ -48,16 +50,21 @@ export default function HeroSection() {
         </p>
 
         {/* Tagline */}
-        <p className="text-base md:text-xl text-purple-300 mb-8 md:mb-10 font-medium">
+        <p className="text-base md:text-xl text-purple-300 mb-4 md:mb-5 font-medium">
           {t("hero.tagline")}
         </p>
 
         {/* Logo Voltra */}
-        <div className="flex justify-center md:justify-end mb-8 md:mb-10">
+        <div className="flex justify-center md:justify-end mb-4 md:mb-5">
           <div className="relative flex justify-center items-center w-28 h-28 md:w-44 md:h-44 group">
             <div className="absolute w-full h-full rounded-full blur-xl md:blur-3xl aura-pulsante-gold-strong"></div>
 
-            <a href="https://x.com/Voltrastudio" target="_blank" rel="noopener noreferrer" className="relative z-10">
+            <a
+              href="https://x.com/Voltrastudio"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="relative z-10"
+            >
               <img
                 src="/assets/Voltra.png"
                 alt="Voltra Studio Logo"
@@ -83,14 +90,20 @@ export default function HeroSection() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 mb-6 w-full max-w-screen-lg mx-auto px-2">
           <div>
             <div className="relative group rounded-xl overflow-hidden border border-purple-500/40 aura-pulsante">
-              <VideoWithControls src="/assets/HeroesLevitan.mp4" glowColor="#A020F0" />
+              <VideoWithControls
+                src="/assets/HeroesLevitan.mp4"
+                glowColor="#A020F0"
+              />
               <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent pointer-events-none"></div>
             </div>
           </div>
 
           <div>
             <div className="relative group rounded-xl overflow-hidden border border-blue-400/40 aura-pulsante-blue">
-              <VideoWithControls src="/assets/HéroesProgramandoEn.mp4" glowColor="#00BFFF" />
+              <VideoWithControls
+                src="/assets/HéroesProgramandoEn.mp4"
+                glowColor="#00BFFF"
+              />
               <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent pointer-events-none"></div>
             </div>
           </div>
