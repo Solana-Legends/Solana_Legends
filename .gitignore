@@ -44,7 +44,10 @@ web_modules/
 
 # dotenv files
 .env
-.env.*
+.env.local
+.env.development
+.env.test
+!.env.production
 !.env.example
 
 # Parcel / Next / Nuxt / Gatsby / Vuepress / Sveltekit / Vitepress
