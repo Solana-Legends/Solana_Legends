@@ -70,7 +70,7 @@ export default function HeroSection() {
         {/* MonkeSol flotante corregido */}
         <div className="absolute bottom-0 left-0 mb-[14rem] ml-[-2rem] animate-in fade-in slide-in-from-left duration-1000">
           <div className="relative z-10 flex justify-center items-center w-80 h-80 group">
-            <div className="absolute w-80 h-80 rounded-full blur-3xl hero-monkesol-aura pointer-events-none z-0 transition-colors duration-500 group-hover:bg-orange/40"></div>
+            <div className="absolute w-80 h-80 rounded-full blur-3xl hero-monkesol-aura pointer-events-none z-0 transition-colors duration-500 group-hover:bg-purple/40"></div>
 
             <img
               src="/assets/MonkeSol.png"
