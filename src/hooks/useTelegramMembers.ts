@@ -18,6 +18,7 @@ export function useTelegramMembers() {
     async function fetchMembers() {
       setIsLoading(true);
 
+      // 🔥 MODO MANUAL → SOLO FRONTEND (sin backend)
       if (mode === 'manual') {
         console.log(`[Telegram:hook] → modo manual: ${manualCount} miembros`);
         setData({ members: manualCount, cached: true });
@@ -25,6 +26,7 @@ export function useTelegramMembers() {
         return;
       }
 
+      // 🔥 MODO API → BACKEND (para el futuro)
       if (mode === 'api') {
         try {
           const resp = await fetch(`/api/telegram-members`);
@@ -49,12 +51,14 @@ export function useTelegramMembers() {
         } finally {
           setIsLoading(false);
         }
-      } else {
-        const errMsg = 'Modo no soportado para Telegram';
-        setError(errMsg);
-        setData({ members: 0, cached: false, error: errMsg });
-        setIsLoading(false);
+        return;
       }
+
+      // 🔥 Modo inválido
+      const errMsg = 'Modo no soportado para Telegram';
+      setError(errMsg);
+      setData({ members: 0, cached: false, error: errMsg });
+      setIsLoading(false);
     }
 
     fetchMembers();

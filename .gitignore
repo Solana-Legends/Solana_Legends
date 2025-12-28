@@ -43,10 +43,12 @@ web_modules/
 .yarn-integrity
 
 # dotenv files
-.env
+# Ignorar solo los .env privados
 .env.local
 .env.development
 .env.test
+# Permitir los .env que deben entrar en el repo
+!.env
 !.env.production
 !.env.example
 

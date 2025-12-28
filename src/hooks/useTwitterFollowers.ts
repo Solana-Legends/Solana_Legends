@@ -18,6 +18,7 @@ export function useTwitterFollowers(username: string) {
     async function fetchFollowers() {
       setIsLoading(true);
 
+      // 🔥 MODO MANUAL → SOLO FRONTEND (sin backend)
       if (mode === 'manual') {
         console.log(`[Twitter:hook] → modo manual: ${manualCount} seguidores`);
         setData({ followers: manualCount, cached: true });
@@ -25,9 +26,12 @@ export function useTwitterFollowers(username: string) {
         return;
       }
 
+      // 🔥 MODO API → BACKEND (para el futuro)
       if (mode === 'api') {
         try {
-          const res = await fetch(`/api/twitter-followers?username=${encodeURIComponent(username)}`);
+          const res = await fetch(
+            `/api/twitter-followers?username=${encodeURIComponent(username)}`
+          );
           const json: TwitterFollowersResponse = await res.json();
 
           if (res.ok) {
@@ -49,12 +53,14 @@ export function useTwitterFollowers(username: string) {
         } finally {
           setIsLoading(false);
         }
-      } else {
-        const errMsg = 'Modo no soportado para Twitter';
-        setError(errMsg);
-        setData({ followers: 0, cached: false, error: errMsg });
-        setIsLoading(false);
+        return;
       }
+
+      // 🔥 Modo inválido
+      const errMsg = 'Modo no soportado para Twitter';
+      setError(errMsg);
+      setData({ followers: 0, cached: false, error: errMsg });
+      setIsLoading(false);
     }
 
     fetchFollowers();

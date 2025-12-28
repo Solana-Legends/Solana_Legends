@@ -6,7 +6,7 @@ export interface CommunityMembersResponse {
   error?: string;
 }
 
-// 🔹 Hook para Comunidad de X
+// 🔹 Hook para Comunidad de X (modo manual = frontend, modo api = backend)
 export function useCommunityMembers() {
   const [data, setData] = useState<CommunityMembersResponse | null>(null);
   const [isLoading, setIsLoading] = useState(true);
@@ -19,6 +19,7 @@ export function useCommunityMembers() {
     async function fetchMembers() {
       setIsLoading(true);
 
+      // 🔥 MODO MANUAL → SOLO FRONTEND (sin backend)
       if (mode === 'manual') {
         console.log(`[Comunidad X:hook] → modo manual: ${manualCount} miembros`);
         setData({ members: manualCount, cached: true });
@@ -26,6 +27,7 @@ export function useCommunityMembers() {
         return;
       }
 
+      // 🔥 MODO API → BACKEND (para el futuro)
       if (mode === 'api') {
         try {
           const res = await fetch(`/api/community-members`);
@@ -50,12 +52,14 @@ export function useCommunityMembers() {
         } finally {
           setIsLoading(false);
         }
-      } else {
-        const errMsg = 'Modo no soportado para Comunidad X';
-        setError(errMsg);
-        setData({ members: 0, cached: false, error: errMsg });
-        setIsLoading(false);
+        return;
       }
+
+      // 🔥 Modo inválido
+      const errMsg = 'Modo no soportado para Comunidad X';
+      setError(errMsg);
+      setData({ members: 0, cached: false, error: errMsg });
+      setIsLoading(false);
     }
 
     fetchMembers();
