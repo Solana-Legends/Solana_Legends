@@ -68,14 +68,14 @@ export default function HeroSection() {
         </div>
 
         {/* MonkeSol flotante corregido */}
-        <div className="hidden md:block absolute bottom-0 left-0 translate-y-1/4 md:translate-y-0 md:ml-8 z-10">
-          <div className="relative flex justify-center items-center p-2 rounded-full aura-pulsante aura-hover">
-            <div className="absolute w-full h-full rounded-full blur-3xl hero-monkesol-aura"></div>
+        <div className="absolute bottom-0 left-0 mb-[14rem] ml-[-2rem] animate-in fade-in slide-in-from-left duration-1000">
+          <div className="relative z-10 flex justify-center items-center w-80 h-80 group">
+            <div className="absolute w-80 h-80 rounded-full blur-3xl hero-monkesol-aura pointer-events-none z-0 transition-colors duration-500 group-hover:bg-orange/40"></div>
 
             <img
               src="/assets/MonkeSol.png"
               alt="MonkeSol Hero"
-              className="h-64 md:h-72 w-auto object-contain opacity-90 symbol-hero-monkesol-pulse"
+              className="relative z-10 h-56 w-auto md:h-64 object-contain mix-blend-overlay opacity-90 symbol-hero-monkesol-pulse"
             />
           </div>
         </div>
