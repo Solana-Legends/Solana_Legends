@@ -1,0 +1,42 @@
+{
+  "compilerOptions": {
+    /* 🔹 Objetivo y librerías */
+    "target": "ES2022",
+    "useDefineForClassFields": true,
+    "lib": ["ES2022", "DOM", "DOM.Iterable"],
+
+    /* 🔹 Módulos */
+    "module": "ESNext",
+    "moduleResolution": "node",
+    "moduleDetection": "force",
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "isolatedModules": true,
+    "noEmit": true,
+
+    /* 🔹 JSX para React */
+    "jsx": "react-jsx",
+    "jsxImportSource": "react",
+
+    /* 🔹 Tipos globales */
+    "types": ["react", "react-dom", "node"],
+
+    /* 🔹 Control de tipado */
+    "strict": true,
+    "noImplicitAny": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "strictNullChecks": true,
+    "skipLibCheck": true,
+    "noFallthroughCasesInSwitch": true,
+
+    /* 🔹 Paths (alias) */
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["./src/*"],
+      "@components/*": ["./src/components/*"]
+    }
+  },
+  "include": ["src", "tailwindcss.d.ts"],
+  "exclude": ["node_modules", "dist"]
+}
