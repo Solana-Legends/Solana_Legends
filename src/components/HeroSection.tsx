@@ -10,7 +10,8 @@ export default function HeroSection() {
   const navigate = useNavigate();
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-[#0F0B1E] via-[#1A1530] to-[#0F0B1E] overflow-hidden aura-pulsante aura-hover-gold">
+    <section className="relative min-h-[80vh] flex items-center justify-center bg-gradient-to-br from-[#0F0B1E] via-[#1A1530] to-[#0F0B1E] overflow-hidden aura-pulsante aura-hover-gold">
+      
       {/* Fondo cósmico */}
       <div className="absolute inset-0 opacity-20 pointer-events-none">
         <div className="absolute top-1/4 left-1/4 w-20 h-20 md:w-32 md:h-32 bg-purple-500 rounded-full blur-xl md:blur-3xl animate-pulse"></div>
@@ -27,11 +28,7 @@ export default function HeroSection() {
             <div className="w-32 h-32 md:w-48 md:h-48 rounded-full blur-xl md:blur-3xl aura-pulsante-gold-strong"></div>
           </div>
 
-          <a
-            href="https://x.com/EligeTuMeme"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+          <a href="https://x.com/EligeTuMeme" target="_blank" rel="noopener noreferrer">
             <img
               src="/assets/LogoPremium1.png"
               alt="Solana Legends Logo"
@@ -41,35 +38,30 @@ export default function HeroSection() {
         </div>
 
         {/* Título */}
-        <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold text-white mb-4 md:mb-6">
+        <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold text-white mb-4 md:mb-4">
           {t("hero.title")}
         </h1>
 
         {/* Subtítulo */}
-        <p className="text-lg md:text-2xl text-indigo-200 mb-4 md:mb-8">
+        <p className="text-lg md:text-2xl text-indigo-200 mb-3 md:mb-4">
           {t("hero.subtitle")}
         </p>
 
         {/* Tagline */}
-        <p className="text-base md:text-xl text-purple-300 mb-10 md:mb-16 font-medium">
+        <p className="text-base md:text-xl text-purple-300 mb-8 md:mb-10 font-medium">
           {t("hero.tagline")}
         </p>
 
         {/* Logo Voltra */}
-        <div className="flex justify-center md:justify-end mb-10 md:mb-16">
-          <div className="relative flex justify-center items-center w-32 h-32 md:w-48 md:h-48 group">
+        <div className="flex justify-center md:justify-end mb-8 md:mb-10">
+          <div className="relative flex justify-center items-center w-28 h-28 md:w-44 md:h-44 group">
             <div className="absolute w-full h-full rounded-full blur-xl md:blur-3xl aura-pulsante-gold-strong"></div>
 
-            <a
-              href="https://x.com/Voltrastudio"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="relative z-10"
-            >
+            <a href="https://x.com/Voltrastudio" target="_blank" rel="noopener noreferrer" className="relative z-10">
               <img
                 src="/assets/Voltra.png"
                 alt="Voltra Studio Logo"
-                className="h-20 w-auto md:h-32 object-contain opacity-90 logo-respirando"
+                className="h-16 w-auto md:h-28 object-contain opacity-90 logo-respirando"
               />
             </a>
           </div>
@@ -89,30 +81,24 @@ export default function HeroSection() {
         </div>
 
         {/* Videos */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 mb-8 w-full max-w-screen-lg mx-auto px-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 mb-6 w-full max-w-screen-lg mx-auto px-2">
           <div>
             <div className="relative group rounded-xl overflow-hidden border border-purple-500/40 aura-pulsante">
-              <VideoWithControls
-                src="/assets/HeroesLevitan.mp4"
-                glowColor="#A020F0"
-              />
+              <VideoWithControls src="/assets/HeroesLevitan.mp4" glowColor="#A020F0" />
               <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent pointer-events-none"></div>
             </div>
           </div>
 
           <div>
             <div className="relative group rounded-xl overflow-hidden border border-blue-400/40 aura-pulsante-blue">
-              <VideoWithControls
-                src="/assets/HéroesProgramandoEn.mp4"
-                glowColor="#00BFFF"
-              />
+              <VideoWithControls src="/assets/HéroesProgramandoEn.mp4" glowColor="#00BFFF" />
               <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent pointer-events-none"></div>
             </div>
           </div>
         </div>
 
         {/* Badges */}
-        <div className="flex flex-wrap justify-center gap-3 md:gap-4 mb-6">
+        <div className="flex flex-wrap justify-center gap-3 md:gap-4 mb-4">
           <Badge className="text-green-400 border-green-400 bg-green-400/10 px-4 py-2">
             <Rocket className="w-4 h-4 mr-2" />
             {t("hero.activeProject")}
@@ -130,7 +116,7 @@ export default function HeroSection() {
         </div>
 
         {/* Botones */}
-        <div className="flex flex-col sm:flex-row gap-4 justify-center mb-10">
+        <div className="flex flex-col sm:flex-row gap-4 justify-center mb-6">
           <Button
             size="lg"
             variant="outline"
