@@ -89,7 +89,10 @@ export default function CharacterGallery() {
     <section className="relative py-20 px-6 min-h-[600px] bg-gradient-to-br from-[#0F0B1E] via-[#1A1530] to-[#0F0B1E] aura-pulsante aura-hover-gold">
       <div className="absolute inset-0 z-0 pointer-events-none aura-pulsante aura-hover-gold" />
 
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 rounded-full blur-3xl bg-[#FFA908]/20 animate-pulse pointer-events-none z-0" />
+      {/* AURA VERTICAL REDUCIDA */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 
+                      w-56 h-56 md:w-72 md:h-72 rounded-full blur-3xl 
+                      bg-[#FFA908]/20 animate-pulse pointer-events-none z-0" />
 
       <div className="relative z-10 w-full max-w-screen-2xl mx-auto px-4">
         {/* Header */}
@@ -132,15 +135,24 @@ export default function CharacterGallery() {
               >
                 <CardHeader className="text-center pb-4">
                   <div className="relative mb-6">
+
+                    {/* AURA HORIZONTAL ESTRECHA */}
                     <div
-                      className={`absolute inset-0 bg-gradient-to-r ${character.color} rounded-full blur-xl opacity-30 group-hover:opacity-50 transition-opacity`}
+                      className={`
+                        absolute left-1/2 top-1/2 
+                        -translate-x-1/2 -translate-y-1/2
+                        w-28 h-10 md:w-32 md:h-12
+                        bg-gradient-to-r ${character.color}
+                        rounded-full blur-xl opacity-40 
+                        group-hover:opacity-60 transition-opacity
+                      `}
                     />
 
-                    {/* Avatar corregido */}
+                    {/* Avatar */}
                     <div
                       className={`relative mx-auto rounded-full border-4 ${character.borderColor}
                                   group-hover:scale-110 transition-transform overflow-visible
-                                  flex justify-center items-center p-2 aura-pulsante aura-hover`}
+                                  flex justify-center items-center p-1 aura-pulsante aura-hover`}
                     >
                       <img
                         src={character.image}
