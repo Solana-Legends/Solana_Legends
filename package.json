@@ -4,16 +4,17 @@
   "overrides": {
     "react-day-picker": "^8.8.0"
   },
-  "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "lint": "eslint --quiet ./src",
-    "preview": "vite preview",
-    "start": "node server.js",
-    "dev:backend": "nodemon server.js",
-    "dev:frontend": "vite",
-    "dev:all": "concurrently \"npm run dev:backend\" \"npm run dev:frontend\""
-  },
+"scripts": {
+  "dev": "vite",
+  "build": "vite build",
+  "lint": "eslint --quiet ./src",
+  "preview": "vite preview",
+  "start": "node server.js",
+  "dev:backend": "nodemon server.js",
+  "dev:frontend": "vite",
+  "dev:all": "concurrently \"npm run dev:backend\" \"npm run dev:frontend\"",
+  "deploy": "vercel env push && vercel --prod"
+},
   "dependencies": {
     "@hookform/resolvers": "^3.9.0",
     "@radix-ui/react-accordion": "^1.2.0",

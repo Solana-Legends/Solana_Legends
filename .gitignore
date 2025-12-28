@@ -99,3 +99,4 @@ __pycache__/
 public/assets/HeroesEspaciales.mp4
 
 .git_backup/
+.vercel
