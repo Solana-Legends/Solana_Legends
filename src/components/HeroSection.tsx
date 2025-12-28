@@ -50,12 +50,12 @@ export default function HeroSection() {
         </p>
 
         {/* Tagline */}
-        <p className="text-base md:text-xl text-purple-300 mb-4 md:mb-5 font-medium">
+        <p className="text-base md:text-xl text-purple-300 mb-2 md:mb-3 font-medium">
           {t("hero.tagline")}
         </p>
 
         {/* Logo Voltra */}
-        <div className="flex justify-center md:justify-end mb-4 md:mb-5">
+        <div className="flex justify-center md:justify-end mb-2 md:mb-3">
           <div className="relative flex justify-center items-center w-28 h-28 md:w-44 md:h-44 group">
             <div className="absolute w-full h-full rounded-full blur-xl md:blur-3xl aura-pulsante-gold-strong"></div>
 
