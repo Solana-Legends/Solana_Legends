@@ -89,7 +89,7 @@ export default function HeroSection() {
 
         {/* Videos */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 mb-6 w-full max-w-screen-lg mx-auto px-2">
-          <div>
+          <div className="animate-in fade-in slide-in-from-left duration-1000">
             <div className="relative group rounded-xl overflow-hidden border border-purple-500/40 aura-pulsante">
               <VideoWithControls
                 src="/assets/HeroesLevitan.mp4"
@@ -98,8 +98,7 @@ export default function HeroSection() {
               <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent pointer-events-none"></div>
             </div>
           </div>
-
-          <div>
+          <div className="animate-in fade-in slide-in-from-right duration-1000">
             <div className="relative group rounded-xl overflow-hidden border border-blue-400/40 aura-pulsante-blue">
               <VideoWithControls
                 src="/assets/HéroesProgramandoEn.mp4"

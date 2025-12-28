@@ -17,7 +17,7 @@ export default function GuardianGallery() {
       </div>
 
       {/* Videos */}
-      <div className="grid md:grid-cols-2 gap-8 mb-6 -mt-9 w-full max-w-screen-2xl mx-auto px-4">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 mb-6 w-full max-w-screen-lg mx-auto px-2">
         <div className="animate-in fade-in slide-in-from-left duration-1000">
           <div className="relative group rounded-xl overflow-hidden transition-shadow duration-300 hover:scale-[1.02] border border-purple-500/40 aura-pulsante aura-hover">
             <VideoWithControls
