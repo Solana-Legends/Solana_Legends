@@ -76,84 +76,80 @@ export default function CharacterGallery() {
   const handleVote = (characterName: string) => {
     if (!votingEnabled) return;
     console.log("[VOTE]", characterName);
-    // TODO: acción real de voto
   };
 
   const handleViewResults = () => {
     if (!votingEnabled) return;
     console.log("[VIEW_RESULTS]");
-    // TODO: navegación a resultados
   };
 
   const progressPercentage = goal > 0 ? (mainProgress / goal) * 100 : 0;
 
   return (
     <section className="relative py-20 px-6 min-h-[600px] bg-gradient-to-br from-[#0F0B1E] via-[#1A1530] to-[#0F0B1E] aura-pulsante aura-hover-gold">
-      {/* ✨ Capa envolvente para aura completa */}
       <div className="absolute inset-0 z-0 pointer-events-none aura-pulsante aura-hover-gold" />
 
-      {/* ✨ Aura cósmica dorada detrás del contenido */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 rounded-full blur-3xl bg-[#FFA908]/20 animate-pulse pointer-events-none z-0" />
 
       <div className="relative z-10 w-full max-w-screen-2xl mx-auto px-4">
-        {/* Cabecera con progreso global */}
+        {/* Header */}
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
             {t("characters.title")}
           </h2>
-          <p className="text-xl text-white max-w-3xl mx-auto mb-4">
+
+          <p className="text-xl text-white w-full max-w-screen-lg mx-auto mb-4 px-4">
             {t("characters.subtitle")}
           </p>
+
           <p className="text-lg text-[#FFA908] font-semibold">
             {isLoading
               ? "..."
               : `${mainProgress} / ${goal} ${t("progress.followers")}`}
           </p>
+
           <div className="relative w-full max-w-lg mx-auto h-3 rounded-full border border-[#FFA908]/40 bg-[#1A1530] overflow-hidden mt-4">
             <div
               className="absolute top-0 left-0 h-full bg-gradient-to-r from-yellow-400 to-orange-500 animate-[pulse_2s_infinite] rounded-full"
               style={{ width: `${progressPercentage}%` }}
             />
           </div>
+
           <p className="text-indigo-200 text-sm mt-2">
             🔮 {t("progress.missing")} {remaining} {t("progress.forVoting")}
           </p>
         </div>
 
-        {/* Tarjetas de personajes */}
+        {/* Cards */}
         <div className="grid lg:grid-cols-3 gap-8">
           {characters.map((character) => {
             const IconComponent = character.icon;
-            const cardAuraClass = character.name.includes("ZapSol")
-              ? "aura-pulsante aura-hover-gold"
-              : character.name.includes("MonkeSol")
-              ? "aura-pulsante-blue aura-hover"
-              : "aura-pulsante aura-hover";
 
             return (
               <Card
                 key={character.id}
-                className={`bg-[#1A1530]/40 border-4 rounded-xl transition-all duration-300 hover:scale-105 group ${character.borderColor} ${cardAuraClass}`}
+                className={`bg-[#1A1530]/40 border-4 rounded-xl transition-all duration-300 hover:scale-105 group ${character.borderColor} aura-pulsante aura-hover`}
               >
                 <CardHeader className="text-center pb-4">
                   <div className="relative mb-6">
-                    {/* Glow elemental */}
                     <div
                       className={`absolute inset-0 bg-gradient-to-r ${character.color} rounded-full blur-xl opacity-30 group-hover:opacity-50 transition-opacity`}
                     />
-                    {/* Avatar con aura */}
+
+                    {/* Avatar corregido */}
                     <div
-                      className={`relative w-40 h-40 mx-auto rounded-full border-4 ${character.borderColor}
-                                  group-hover:scale-110 transition-transform overflow-hidden
-                                  aura-pulsante aura-hover`}
+                      className={`relative mx-auto rounded-full border-4 ${character.borderColor}
+                                  group-hover:scale-110 transition-transform overflow-visible
+                                  flex justify-center items-center p-2 aura-pulsante aura-hover`}
                     >
                       <img
                         src={character.image}
                         alt={character.name}
-                        className="w-full h-full object-cover transition-all duration-300"
+                        className="h-32 md:h-36 w-auto object-contain transition-all duration-300"
                       />
                     </div>
-                    {/* Badge elemento */}
+
+                    {/* Badge */}
                     <div className="absolute -bottom-2 left-1/2 -translate-x-1/2">
                       <Badge
                         className={`bg-gradient-to-r ${character.color} text-white border-0 px-3 py-1`}
@@ -167,6 +163,7 @@ export default function CharacterGallery() {
                   <CardTitle className="text-2xl text-white mb-2">
                     {character.name}
                   </CardTitle>
+
                   <CardDescription className="text-lg text-[#FFA908] font-medium">
                     {character.title}
                   </CardDescription>
@@ -182,6 +179,7 @@ export default function CharacterGallery() {
                     <h4 className="text-white font-semibold text-sm">
                       {t("characters.stats")}
                     </h4>
+
                     {Object.entries(character.stats).map(
                       ([stat, value], index) => (
                         <div key={stat} className="space-y-1">
@@ -193,6 +191,7 @@ export default function CharacterGallery() {
                               {value}%
                             </span>
                           </div>
+
                           <div
                             className={`w-full h-2 rounded-full border ${character.borderColor}`}
                           >
@@ -209,7 +208,7 @@ export default function CharacterGallery() {
                     )}
                   </div>
 
-                  {/* Botón de voto */}
+                  {/* Voting */}
                   {votingEnabled ? (
                     <Button
                       className="w-full bg-[#FFA908] hover:bg-[#D27F00] text-[#0F0B1E] font-semibold border-0 hover:shadow-[0_0_25px_#FFA908] hover:scale-105 transition-all duration-300"
@@ -233,13 +232,14 @@ export default function CharacterGallery() {
           })}
         </div>
 
-        {/* Footer de votación / resultados */}
+        {/* Footer */}
         <div className="text-center mt-12">
           {votingEnabled ? (
             <>
               <p className="text-white text-lg mb-6 footer-aura">
                 {t("characters.votingActive")}
               </p>
+
               <Button
                 size="lg"
                 variant="outline"
@@ -254,6 +254,7 @@ export default function CharacterGallery() {
               <p className="text-white text-lg mb-4 footer-aura">
                 {t("characters.question")}
               </p>
+
               <div className="flex items-center justify-center gap-2 mb-6">
                 <Lock className="w-5 h-5 text-[#FFA908]" />
                 <p className="text-[#FFA908] font-semibold footer-aura">
@@ -261,6 +262,7 @@ export default function CharacterGallery() {
                   {t("characters.followersMore")}
                 </p>
               </div>
+
               <Button
                 size="lg"
                 variant="outline"
