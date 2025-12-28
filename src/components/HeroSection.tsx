@@ -11,7 +11,7 @@ export default function HeroSection() {
 
   return (
     <section className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-[#0F0B1E] via-[#1A1530] to-[#0F0B1E] overflow-hidden aura-pulsante aura-hover-gold">
-      {/* ✅ Fondo cósmico (blur reducido en móvil para evitar overflow) */}
+      {/* Fondo cósmico */}
       <div className="absolute inset-0 opacity-20 pointer-events-none">
         <div className="absolute top-1/4 left-1/4 w-20 h-20 md:w-32 md:h-32 bg-purple-500 rounded-full blur-xl md:blur-3xl animate-pulse"></div>
         <div className="absolute bottom-1/4 right-1/4 w-28 h-28 md:w-48 md:h-48 bg-blue-600 rounded-full blur-xl md:blur-3xl animate-pulse delay-1000"></div>
@@ -20,6 +20,7 @@ export default function HeroSection() {
 
       {/* Contenido */}
       <div className="relative z-10 w-full max-w-screen-2xl mx-auto px-4 text-center">
+
         {/* Logo */}
         <div className="mb-6 md:mb-8 flex justify-center relative group">
           <div className="absolute inset-0 flex justify-center items-center pointer-events-none z-0">
@@ -74,20 +75,21 @@ export default function HeroSection() {
           </div>
         </div>
 
-        {/* ✅ MonkeSol corregido (sin overflow en móvil) */}
-        <div className="hidden md:block absolute bottom-0 left-0 mb-[-2rem] md:ml-0 overflow-hidden">
-          <div className="relative flex justify-center items-center w-80 h-80 group">
+        {/* MonkeSol flotante corregido */}
+        <div className="hidden md:block absolute bottom-0 left-0 translate-y-1/4 md:translate-y-0 md:ml-8 z-10">
+          <div className="relative flex justify-center items-center p-2 rounded-full aura-pulsante aura-hover">
             <div className="absolute w-full h-full rounded-full blur-3xl hero-monkesol-aura"></div>
+
             <img
               src="/assets/MonkeSol.png"
               alt="MonkeSol Hero"
-              className="relative z-10 h-72 w-auto object-contain opacity-90 symbol-hero-monkesol-pulse"
+              className="h-64 md:h-72 w-auto object-contain opacity-90 symbol-hero-monkesol-pulse"
             />
           </div>
         </div>
 
         {/* Videos */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 mb-8 max-w-3xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 mb-8 w-full max-w-screen-lg mx-auto px-4">
           <div>
             <div className="relative group rounded-xl overflow-hidden border border-purple-500/40 aura-pulsante">
               <VideoWithControls
