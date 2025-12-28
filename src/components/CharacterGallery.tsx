@@ -131,7 +131,7 @@ export default function CharacterGallery() {
           </p>
         </div>
 
-        {/* CARDS — 300px EXACTOS */}
+        {/* CARDS — 320px EXACTOS */}
         <div className="flex flex-wrap justify-center gap-6">
           {characters.map((character) => {
             const IconComponent = character.icon;
@@ -139,7 +139,7 @@ export default function CharacterGallery() {
             return (
               <Card
                 key={character.id}
-                className={`w-[300px] bg-[#1A1530]/40 border-4 rounded-xl transition-all duration-300 hover:scale-105 group ${character.borderColor} aura-pulsante aura-hover`}
+                className={`w-[320px] bg-[#1A1530]/40 border-4 rounded-xl transition-all duration-300 hover:scale-105 group ${character.borderColor} aura-pulsante aura-hover`}
               >
                 <CardHeader className="text-center pb-3">
                   <div className="relative mb-5">
@@ -157,7 +157,7 @@ export default function CharacterGallery() {
                       `}
                     />
 
-                    {/* AVATAR CON BORDE OVALADO */}
+                    {/* AVATAR CON BORDE OVALADO PERFECTO */}
                     <div
                       className={`relative mx-auto rounded-xl border-4 ${character.borderColor}
                                   group-hover:scale-110 transition-transform overflow-hidden
@@ -167,7 +167,7 @@ export default function CharacterGallery() {
                       <img
                         src={character.image}
                         alt={character.name}
-                        className="h-36 md:h-40 w-auto object-contain transition-all duration-300"
+                        className="h-36 md:h-40 w-full object-cover transition-all duration-300"
                       />
                     </div>
 
@@ -232,11 +232,11 @@ export default function CharacterGallery() {
 
                   {/* BOTÓN BLOQUEADO + AURA DORADA FUERTE */}
                   <Button
-                    className="w-full bg-gradient-to-r from-[#1A1530] to-[#2A1F40] 
+                    className="group w-full bg-gradient-to-r from-[#1A1530] to-[#2A1F40] 
                                text-[#FFA908] font-semibold border border-[#FFA908]/30 
                                shadow-[0_0_15px_#FFA908]/40 pointer-events-none cursor-not-allowed 
                                transition-all duration-300 py-2 text-sm
-                               hover:shadow-[0_0_35px_#FFA908] hover:scale-105"
+                               group-hover:shadow-[0_0_35px_#FFA908] group-hover:scale-105"
                     size="default"
                   >
                     <Lock className="w-4 h-4 mr-2" />
@@ -265,11 +265,11 @@ export default function CharacterGallery() {
           <Button
             size="default"
             variant="outline"
-            className="w-full max-w-xs mx-auto bg-gradient-to-r from-[#1A1530] to-[#2A1F40] 
+            className="group w-full max-w-xs mx-auto bg-gradient-to-r from-[#1A1530] to-[#2A1F40] 
                        text-[#FFA908] font-semibold border border-[#FFA908]/30 
                        shadow-[0_0_15px_#FFA908]/40 pointer-events-none cursor-not-allowed 
                        transition-all duration-300 px-6 py-2 text-sm
-                       hover:shadow-[0_0_35px_#FFA908] hover:scale-105"
+                       group-hover:shadow-[0_0_35px_#FFA908] group-hover:scale-105"
           >
             {t("characters.viewResults")}
           </Button>
