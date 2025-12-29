@@ -83,7 +83,6 @@ export default function CharacterGallery() {
     console.log("[VIEW_RESULTS]");
   };
 
-  // evitar TS6133 manteniendo las funciones para futuro uso
   void handleVote;
   void handleViewResults;
 
@@ -93,7 +92,6 @@ export default function CharacterGallery() {
     <section className="relative py-16 px-6 min-h-[520px] bg-gradient-to-br from-[#0F0B1E] via-[#1A1530] to-[#0F0B1E] aura-pulsante aura-hover-gold">
       <div className="absolute inset-0 z-0 pointer-events-none aura-pulsante aura-hover-gold" />
 
-      {/* Aura vertical */}
       <div
         className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 
                    w-48 h-48 md:w-64 md:h-64 rounded-full blur-3xl 
@@ -101,7 +99,8 @@ export default function CharacterGallery() {
       />
 
       <div className="relative z-10 w-full max-w-screen-2xl mx-auto px-4">
-        {/* Header */}
+
+        {/* HEADER */}
         <div className="text-center mb-10">
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-3">
             {t("characters.title")}
@@ -112,9 +111,7 @@ export default function CharacterGallery() {
           </p>
 
           <p className="text-base text-[#FFA908] font-semibold">
-            {isLoading
-              ? "..."
-              : `${mainProgress} / ${goal} ${t("progress.followers")}`}
+            {isLoading ? "..." : `${mainProgress} / ${goal} ${t("progress.followers")}`}
           </p>
 
           <div className="relative w-full max-w-lg mx-auto h-2.5 rounded-full border border-[#FFA908]/40 bg-[#1A1530] overflow-hidden mt-3">
@@ -129,7 +126,7 @@ export default function CharacterGallery() {
           </p>
         </div>
 
-        {/* Cards */}
+        {/* CARDS */}
         <div className="flex flex-wrap justify-center gap-6">
           {characters.map((character) => {
             const IconComponent = character.icon;
@@ -141,7 +138,8 @@ export default function CharacterGallery() {
               >
                 <CardHeader className="text-center pb-3">
                   <div className="relative mb-5">
-                    {/* Aura horizontal detrás del avatar */}
+
+                    {/* AURA HORIZONTAL */}
                     <div
                       className={`
                         absolute left-1/2 top-1/2 
@@ -154,20 +152,20 @@ export default function CharacterGallery() {
                       `}
                     />
 
-                    {/* Avatar con borde ajustado */}
+                    {/* AVATAR — BORDE OVALADO (OPCIÓN B) */}
                     <div
-                      className={`relative mx-auto rounded-xl border-4 ${character.borderColor}
+                      className={`relative mx-auto rounded-2xl border-4 ${character.borderColor}
                                   flex justify-center items-center p-1 aura-pulsante aura-hover
                                   z-20`}
                     >
                       <img
                         src={character.image}
                         alt={character.name}
-                        className="h-36 md:h-40 w-auto object-cover transition-all duration-300"
+                        className="h-36 md:h-40 w-auto object-cover rounded-xl transition-all duration-300"
                       />
                     </div>
 
-                    {/* Badge de elemento */}
+                    {/* BADGE */}
                     <div className="absolute -bottom-2 left-1/2 -translate-x-1/2 z-30">
                       <Badge
                         className={`bg-gradient-to-r ${character.color} text-white border-0 px-3 py-1`}
@@ -192,7 +190,7 @@ export default function CharacterGallery() {
                     {character.description}
                   </p>
 
-                  {/* Stats */}
+                  {/* STATS */}
                   <div className="space-y-2">
                     <h4 className="text-white font-semibold text-xs uppercase tracking-wide">
                       {t("characters.stats")}
@@ -210,9 +208,7 @@ export default function CharacterGallery() {
                             </span>
                           </div>
 
-                          <div
-                            className={`w-full h-1.5 rounded-full border ${character.borderColor}`}
-                          >
+                          <div className={`w-full h-1.5 rounded-full border ${character.borderColor}`}>
                             <div
                               className={`h-full rounded-full bg-gradient-to-r ${character.color} transition-all duration-1000 ease-out`}
                               style={{
@@ -226,7 +222,7 @@ export default function CharacterGallery() {
                     )}
                   </div>
 
-                  {/* Botón bloqueado con aura dorada fuerte al hover */}
+                  {/* BOTÓN BLOQUEADO — AURA DORADA FUERTE */}
                   <Button
                     className="group w-full bg-gradient-to-r from-[#1A1530] to-[#2A1F40] 
                                text-[#FFA908] font-semibold border border-[#FFA908]/30 
@@ -244,7 +240,7 @@ export default function CharacterGallery() {
           })}
         </div>
 
-        {/* Footer */}
+        {/* FOOTER */}
         <div className="text-center mt-8">
           <p className="text-white text-base mb-3 footer-aura">
             {t("characters.question")}
@@ -258,6 +254,7 @@ export default function CharacterGallery() {
             </p>
           </div>
 
+          {/* BOTÓN INFERIOR — CON CANDADO + AURA DORADA FUERTE */}
           <Button
             size="default"
             variant="outline"
@@ -267,6 +264,7 @@ export default function CharacterGallery() {
                        transition-all duration-300 px-6 py-2 text-sm
                        group-hover:shadow-[0_0_35px_#FFA908] group-hover:scale-105"
           >
+            <Lock className="w-4 h-4 mr-2" />
             {t("characters.viewResults")}
           </Button>
         </div>
