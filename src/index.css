@@ -246,8 +246,8 @@ video {
   }
 }
 
-.aura-pulsante-gold-strong {
-  animation: pulse-aura-gold-strong 3s ease-in-out infinite;
+.aura-pulsante-white-strong {
+  animation: pulse-aura-white-strong 3s ease-in-out infinite;
   border-radius: 1.25rem;
   will-change: box-shadow;
 }
