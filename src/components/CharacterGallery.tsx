@@ -99,7 +99,6 @@ export default function CharacterGallery() {
       />
 
       <div className="relative z-10 w-full max-w-screen-2xl mx-auto px-4">
-
         {/* HEADER */}
         <div className="text-center mb-10">
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-3">
@@ -111,7 +110,9 @@ export default function CharacterGallery() {
           </p>
 
           <p className="text-base text-[#FFA908] font-semibold">
-            {isLoading ? "..." : `${mainProgress} / ${goal} ${t("progress.followers")}`}
+            {isLoading
+              ? "..."
+              : `${mainProgress} / ${goal} ${t("progress.followers")}`}
           </p>
 
           <div className="relative w-full max-w-lg mx-auto h-2.5 rounded-full border border-[#FFA908]/40 bg-[#1A1530] overflow-hidden mt-3">
@@ -138,7 +139,6 @@ export default function CharacterGallery() {
               >
                 <CardHeader className="text-center pb-3">
                   <div className="relative mb-5">
-
                     {/* AURA HORIZONTAL */}
                     <div
                       className={`
@@ -207,7 +207,9 @@ export default function CharacterGallery() {
                             </span>
                           </div>
 
-                          <div className={`w-full h-1.5 rounded-full border ${character.borderColor}`}>
+                          <div
+                            className={`w-full h-1.5 rounded-full border ${character.borderColor}`}
+                          >
                             <div
                               className={`h-full rounded-full bg-gradient-to-r ${character.color} transition-all duration-1000 ease-out`}
                               style={{
@@ -227,7 +229,7 @@ export default function CharacterGallery() {
                                text-[#FFA908] font-semibold border border-[#FFA908]/30 
                                shadow-[0_0_15px_#FFA908]/40 pointer-events-none cursor-not-allowed 
                                transition-all duration-300 py-2 text-sm
-                               aura-pulsante-blue aura-hover-gold z-20
+                               aura-pulsante-white-strong aura-hover-gold
                                group-hover:shadow-[0_0_35px_#FFA908] group-hover:scale-105"
                     size="default"
                   >
@@ -259,10 +261,11 @@ export default function CharacterGallery() {
             size="default"
             variant="outline"
             className="group w-full max-w-xs mx-auto bg-gradient-to-r from-[#1A1530] to-[#2A1F40] 
+                       group-hover:from-yellow-400 group-hover:to-orange-500
                        text-[#FFA908] font-semibold border border-[#FFA908]/30 
                        shadow-[0_0_15px_#FFA908]/40 pointer-events-none cursor-not-allowed 
                        transition-all duration-300 px-6 py-2 text-sm
-                       aura-pulsante-blue aura-hover-white z-20
+                       aura-pulsante-gold-strong aura-hover-white
                        group-hover:shadow-[0_0_35px_#FFA908] group-hover:scale-105"
           >
             <Lock className="w-4 h-4 mr-2" />
