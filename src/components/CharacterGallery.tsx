@@ -227,7 +227,7 @@ export default function CharacterGallery() {
                                text-[#FFA908] font-semibold border border-[#FFA908]/30 
                                shadow-[0_0_15px_#FFA908]/40 pointer-events-none cursor-not-allowed 
                                transition-all duration-300 py-2 text-sm
-                               aura-pulsante-blue aura-hover-gold
+                               aura-pulsante-blue aura-hover
                                group-hover:shadow-[0_0_35px_#FFA908] group-hover:scale-105"
                     size="default"
                   >
@@ -262,7 +262,7 @@ export default function CharacterGallery() {
                        text-[#FFA908] font-semibold border border-[#FFA908]/30 
                        shadow-[0_0_15px_#FFA908]/40 pointer-events-none cursor-not-allowed 
                        transition-all duration-300 px-6 py-2 text-sm
-                       aura-pulsante-blue aura-hover-white
+                       aura-pulsante-blue aura-hover
                        group-hover:shadow-[0_0_35px_#FFA908] group-hover:scale-105"
           >
             <Lock className="w-4 h-4 mr-2" />
