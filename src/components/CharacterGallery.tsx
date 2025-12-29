@@ -152,15 +152,16 @@ export default function CharacterGallery() {
                       `}
                     />
 
-                    {/* AVATAR — BORDE OVALADO PERFECTO */}
+                    {/* AVATAR — BORDE OVALADO (OPCIÓN B) */}
                     <div
                       className={`relative mx-auto rounded-2xl border-4 ${character.borderColor}
-                                  overflow-hidden p-1 aura-pulsante aura-hover z-20`}
+                                  flex justify-center items-center p-1 aura-pulsante aura-hover
+                                  z-20`}
                     >
                       <img
                         src={character.image}
                         alt={character.name}
-                        className="h-36 md:h-40 w-full object-cover rounded-xl transition-all duration-300"
+                        className="h-36 md:h-40 w-auto object-cover rounded-xl transition-all duration-300"
                       />
                     </div>
 
@@ -227,7 +228,6 @@ export default function CharacterGallery() {
                                text-[#FFA908] font-semibold border border-[#FFA908]/30 
                                shadow-[0_0_15px_#FFA908]/40 pointer-events-none cursor-not-allowed 
                                transition-all duration-300 py-2 text-sm
-                               aura-pulsante aura-hover
                                group-hover:shadow-[0_0_35px_#FFA908] group-hover:scale-105"
                     size="default"
                   >
@@ -254,18 +254,16 @@ export default function CharacterGallery() {
             </p>
           </div>
 
-          {/* BOTÓN INFERIOR — CANDADO + AURA PULSANTE */}
+          {/* BOTÓN INFERIOR — CON CANDADO + AURA DORADA FUERTE */}
           <Button
-            size="default"
-            variant="outline"
-            className="group w-full max-w-xs mx-auto bg-gradient-to-r from-[#1A1530] to-[#2A1F40] 
-                       text-[#FFA908] font-semibold border border-[#FFA908]/30 
-                       shadow-[0_0_15px_#FFA908]/40 pointer-events-none cursor-not-allowed 
-                       transition-all duration-300 px-6 py-2 text-sm
-                       aura-pulsante aura-hover
-                       group-hover:shadow-[0_0_35px_#FFA908] group-hover:scale-105"
-          >
-            <Lock className="w-4 h-4 mr-2" />
+                    className="group w-full bg-gradient-to-r from-[#1A1530] to-[#2A1F40] 
+                               text-[#FFA908] font-semibold border border-[#FFA908]/30 
+                               shadow-[0_0_15px_#FFA908]/40 pointer-events-none cursor-not-allowed 
+                               transition-all duration-300 py-2 text-sm
+                               group-hover:shadow-[0_0_35px_#FFA908] group-hover:scale-105"
+                    size="default"
+                  >
+                    <Lock className="w-4 h-4 mr-2" />
             {t("characters.viewResults")}
           </Button>
         </div>
