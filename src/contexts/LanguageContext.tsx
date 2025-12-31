@@ -63,12 +63,12 @@ const enTranslations = {
   "progress.subtitle": "Tracking the collective fire in each guardian",
   "progress.mainProgressLabel": "Main Progress ({source})",
   "progress.remainingFollowers":
-    "{remaining} followers left until the vote — the fire will ignite soon",
+    "{remaining} followers left until the vote ⚡️ the fire will ignite soon",
   "progress.fireActivated":
     "✨ {source} has ignited the ritual fire! Voting is now active",
-  "progress.twitterLabel": "Twitter/X: {current} / {goal} followers",
-  "progress.telegramLabel": "Telegram: {current} / {goal} members",
-  "progress.communityLabel": "X Community: {current} / {goal} members",
+  "progress.twitterLabel": "Twitter/X 👉🏽 {current} / {goal} followers",
+  "progress.telegramLabel": "Telegram 👉🏽 {current} / {goal} members",
+  "progress.communityLabel": "X Community 👉🏽 {current} / {goal} members",
   "progress.followers": "followers",
   "progress.towardsVoting": "Progress towards voting",
   "progress.missing": "Only",
@@ -250,12 +250,12 @@ const esTranslations = {
   "progress.subtitle": "Seguimos el fuego colectivo en cada guardián",
   "progress.mainProgressLabel": "Progreso Principal ({source})",
   "progress.remainingFollowers":
-    "¡Faltan {remaining} seguidores para la votación! — El fuego se activará pronto",
+    "¡Faltan {remaining} seguidores para la votación! ⚡️ El fuego se activará pronto",
   "progress.fireActivated":
     "✨ ¡{source} ha encendido el fuego ritual! La votación está activa",
-  "progress.twitterLabel": "Twitter/X: {current} / {goal} seguidores",
-  "progress.telegramLabel": "Telegram: {current} / {goal} miembros",
-  "progress.communityLabel": "Comunidad X: {current} / {goal} miembros",
+  "progress.twitterLabel": "Twitter/X 👉🏽 {current} / {goal} seguidores",
+  "progress.telegramLabel": "Telegram 👉🏽 {current} / {goal} miembros",
+  "progress.communityLabel": "Comunidad X 👉🏽 {current} / {goal} miembros",
   "progress.followers": "seguidores",
   "progress.towardsVoting": "Progreso hacia la votación",
   "progress.missing": "¡Faltan",
