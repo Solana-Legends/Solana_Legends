@@ -68,7 +68,7 @@ export default function HeroSection() {
               <img
                 src="/assets/Voltra.png"
                 alt="Voltra Studio Logo"
-                className="h-16 w-auto md:h-24 object-contain opacity-90 logo-respirando"
+                className="h-18 w-auto md:h-28 object-contain opacity-90 logo-respirando"
               />
             </a>
           </div>
