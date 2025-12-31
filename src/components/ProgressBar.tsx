@@ -15,20 +15,18 @@ export function ProgressBar({ percent, aura = false }: ProgressBarProps) {
 
   return (
     <div className="relative w-full">
-      <div className="relative w-full h-2.5 rounded-full bg-zinc-800 overflow-hidden border border-zinc-600">
+      <div className="relative w-full h-3 rounded-full bg-zinc-900 overflow-hidden border border-amber-400/40 shadow-[0_0_12px_rgba(255,200,80,0.15)]">
+        
+        {/* Barra */}
         <div
           className={`h-full rounded-full bg-gradient-to-r ${gradient} transition-[width] duration-700`}
           style={{ width: `${clamped}%` }}
         />
 
-        <div
-          className="pointer-events-none absolute inset-0 blur-md opacity-40"
-          style={{
-            background:
-              "radial-gradient(120px 40px at 10% 50%, rgba(255,120,60,0.35), transparent), radial-gradient(120px 40px at 90% 50%, rgba(255,60,120,0.35), transparent)",
-          }}
-        />
+        {/* Aura suave */}
+        <div className="absolute inset-0 rounded-full blur-xl bg-amber-500/10 pointer-events-none" />
 
+        {/* Aura dorada cuando se cumple el objetivo */}
         {aura && (
           <div className="absolute inset-0 rounded-full ring-2 ring-amber-400 animate-ping" />
         )}

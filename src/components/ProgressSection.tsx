@@ -19,24 +19,31 @@ export default function ProgressSection() {
 
   return (
     <section className="relative w-full max-w-[960px] mx-auto px-4 pt-4 pb-16 text-center">
+      
       <h2 className="text-xl font-bold text-zinc-100 mb-2">
         {t("progress.title")}
       </h2>
-      <p className="text-sm text-zinc-400 mb-6">{t("progress.subtitle")}</p>
 
+      <p className="text-sm text-zinc-400 mb-6">
+        {t("progress.subtitle")}
+      </p>
+
+      {/* MAIN PROGRESS */}
       {!isLoading && (
         <div className="mb-6">
-          <p className="text-zinc-300 mb-1">
+          <p className="text-zinc-300 mb-1 text-left">
             {t("progress.mainProgressLabel")
               .replace("{source}", topSource)
               .replace("{current}", mainProgress.toString())
               .replace("{goal}", goal.toString())}
           </p>
+
           <ProgressBar
             percent={(mainProgress / goal) * 100}
             aura={mainProgress >= goal}
           />
-          <p className="text-amber-400 font-medium mt-1">
+
+          <p className="text-amber-400 font-medium mt-1 text-left">
             {mainProgress < goal
               ? t("progress.remainingFollowers").replace(
                   "{remaining}",
@@ -47,51 +54,67 @@ export default function ProgressSection() {
         </div>
       )}
 
+      {/* TWITTER */}
       <div className="mb-4">
-        <p className="text-zinc-300 mb-1">
+        <p className="text-zinc-300 mb-1 text-left">
           {t("progress.twitterLabel")
             .replace("{current}", metrics.twitter.toString())
             .replace("{goal}", goal.toString())}
         </p>
-        <ProgressBar percent={(metrics.twitter / goal) * 100} aura={twitterReady} />
+
+        <ProgressBar
+          percent={(metrics.twitter / goal) * 100}
+          aura={twitterReady}
+        />
+
         {twitterReady && !isLoading && (
-          <p className="text-amber-400 font-medium mt-1">
+          <p className="text-amber-400 font-medium mt-1 text-left">
             🔥 {t("progress.fireUnleashed")}
           </p>
         )}
       </div>
 
+      {/* TELEGRAM */}
       <div className="mb-4">
-        <p className="text-zinc-300 mb-1">
+        <p className="text-zinc-300 mb-1 text-left">
           {t("progress.telegramLabel")
             .replace("{current}", metrics.telegram.toString())
             .replace("{goal}", goal.toString())}
         </p>
-        <ProgressBar percent={(metrics.telegram / goal) * 100} aura={telegramReady} />
+
+        <ProgressBar
+          percent={(metrics.telegram / goal) * 100}
+          aura={telegramReady}
+        />
+
         {telegramReady && !isLoading && (
-          <p className="text-amber-400 font-medium mt-1">
+          <p className="text-amber-400 font-medium mt-1 text-left">
             🔥 {t("progress.fireUnleashed")}
           </p>
         )}
       </div>
 
+      {/* X COMMUNITY */}
       <div className="mb-4">
-        <p className="text-zinc-300 mb-1">
+        <p className="text-zinc-300 mb-1 text-left">
           {t("progress.communityLabel")
             .replace("{current}", metrics.community.toString())
             .replace("{goal}", goal.toString())}
         </p>
+
         <ProgressBar
           percent={(metrics.community / goal) * 100}
           aura={communityReady}
         />
+
         {communityReady && !isLoading && (
-          <p className="text-amber-400 font-medium mt-1">
+          <p className="text-amber-400 font-medium mt-1 text-left">
             🔥 {t("progress.fireUnleashed")}
           </p>
         )}
       </div>
 
+      {/* BUTTONS */}
       {votingEnabled && !isLoading && (
         <div className="mt-6 flex flex-col sm:flex-row gap-4 justify-center">
           <button
@@ -100,6 +123,7 @@ export default function ProgressSection() {
           >
             {t("progress.voteButton")}
           </button>
+
           <button
             aria-label={t("progress.proposeLegend")}
             className="px-4 py-2 rounded-md bg-zinc-800 text-zinc-100 border border-zinc-600 hover:border-amber-400 transition-all"
@@ -109,6 +133,7 @@ export default function ProgressSection() {
         </div>
       )}
 
+      {/* RITUAL MESSAGES */}
       {!isLoading && (
         <div className="mt-6 text-sm text-center text-zinc-400 italic animate-fadeIn animate-pulseSlow">
           {t("progress.renewalMessage")}
