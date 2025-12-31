@@ -63,7 +63,7 @@ const enTranslations = {
   "progress.subtitle": "Tracking the collective fire in each guardian",
   "progress.mainProgressLabel": "Main Progress ({source})",
   "progress.remainingFollowers":
-    "{remaining} ¡followers left until the vote! ⚡️ the fire will ignite soon",
+    "¡{remaining} followers left until the vote! ⚡️ the fire will ignite soon",
   "progress.fireActivated":
     "✨ {source} has ignited the ritual fire! Voting is now active",
   "progress.twitterLabel": "Twitter/X 👉🏽 {current} / {goal} followers",
