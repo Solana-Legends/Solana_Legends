@@ -30,7 +30,7 @@ export default function FollowerCounter() {
         </div>
 
         {/* Progreso principal */}
-        <div className="w-full max-w-md mx-auto">
+        <div className="w-full max-w-[960px] mx-auto">
           <Card className="bg-[#1A1530]/40 border-2 border-[#FFA908]/30 rounded-xl hover:shadow-[0_0_25px_#FFA908] transition-all duration-300">
             <CardHeader className="text-center">
               <CardTitle className="text-2xl text-white flex items-center justify-center gap-2">
@@ -76,9 +76,9 @@ export default function FollowerCounter() {
         </div>
 
         {/* Tarjetas de redes sociales */}
-        <div className="grid md:grid-cols-3 gap-6 mt-8 justify-center">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8 w-full max-w-[960px] mx-auto">
           {/* Twitter */}
-          <Card className="w-full max-w-[300px] mx-auto bg-[#1A1530]/40 border border-[#FFA908]/30 rounded-xl hover:shadow-[0_0_25px_#FFA908] hover:scale-105 transition-all duration-300">
+          <Card className="w-full bg-[#1A1530]/40 border border-[#FFA908]/30 rounded-xl hover:shadow-[0_0_25px_#FFA908] hover:scale-105 transition-all duration-300">
             <CardHeader className="text-center">
               <div className="flex justify-center mb-2">
                 <Twitter className="h-8 w-8 text-blue-400" />
@@ -110,7 +110,7 @@ export default function FollowerCounter() {
           </Card>
 
           {/* Comunidad X */}
-          <Card className="w-full max-w-[300px] mx-auto bg-[#1A1530]/40 border border-[#FFA908]/30 rounded-xl hover:shadow-[0_0_25px_#FFA908] hover:scale-105 transition-all duration-300">
+          <Card className="w-full bg-[#1A1530]/40 border border-[#FFA908]/30 rounded-xl hover:shadow-[0_0_25px_#FFA908] hover:scale-105 transition-all duration-300">
             <CardHeader className="text-center">
               <div className="flex justify-center mb-2">
                 <Users className="h-8 w-8 text-purple-400" />
@@ -142,7 +142,7 @@ export default function FollowerCounter() {
           </Card>
 
           {/* Telegram */}
-          <Card className="w-full max-w-[300px] mx-auto bg-[#1A1530]/40 border border-[#FFA908]/30 rounded-xl hover:shadow-[0_0_25px_#FFA908] hover:scale-105 transition-all duration-300">
+          <Card className="w-full bg-[#1A1530]/40 border border-[#FFA908]/30 rounded-xl hover:shadow-[0_0_25px_#FFA908] hover:scale-105 transition-all duration-300">
             <CardHeader className="text-center">
               <div className="flex justify-center mb-2">
                 <MessageCircle className="h-8 w-8 text-cyan-400" />

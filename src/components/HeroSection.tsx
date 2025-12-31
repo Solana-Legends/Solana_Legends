@@ -56,7 +56,7 @@ export default function HeroSection() {
 
         {/* Logo Voltra */}
         <div className="flex justify-center md:justify-end mb-2">
-          <div className="relative flex justify-center items-center w-24 h-24 md:w-36 md:h-36 group -mr-4 md:-mr-6">
+          <div className="relative flex justify-center items-center w-24 h-24 md:w-36 md:h-36 group md:-translate-x-6">
             <div className="absolute w-full h-full rounded-full blur-xl md:blur-3xl aura-pulsante-gold-strong aura-hover-white"></div>
 
             <a
