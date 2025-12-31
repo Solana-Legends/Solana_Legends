@@ -20,14 +20,17 @@ export default function HeroSection() {
 
       {/* Contenido */}
       <div className="relative z-10 w-full max-w-screen-2xl mx-auto px-4 text-center">
-        
         {/* Logo */}
         <div className="mb-4 md:mb-6 flex justify-center relative group">
           <div className="absolute inset-0 flex justify-center items-center pointer-events-none z-0">
             <div className="w-24 h-24 md:w-40 md:h-40 rounded-full blur-xl md:blur-3xl aura-pulsante-gold-strong aura-hover-white"></div>
           </div>
 
-          <a href="https://x.com/EligeTuMeme" target="_blank" rel="noopener noreferrer">
+          <a
+            href="https://x.com/EligeTuMeme"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <img
               src="/assets/LogoPremium1.png"
               alt="Solana Legends Logo"
@@ -53,14 +56,19 @@ export default function HeroSection() {
 
         {/* Logo Voltra */}
         <div className="flex justify-center md:justify-end mb-2">
-          <div className="relative flex justify-center items-center w-24 h-24 md:w-36 md:h-36 group">
+          <div className="relative flex justify-center items-center w-24 h-24 md:w-36 md:h-36 group -mr-4 md:-mr-6">
             <div className="absolute w-full h-full rounded-full blur-xl md:blur-3xl aura-pulsante-gold-strong aura-hover-white"></div>
 
-            <a href="https://x.com/Voltrastudio" target="_blank" rel="noopener noreferrer" className="relative z-10">
+            <a
+              href="https://x.com/Voltrastudio"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="relative z-10"
+            >
               <img
                 src="/assets/Voltra.png"
                 alt="Voltra Studio Logo"
-                className="h-14 w-auto md:h-20 object-contain opacity-90 logo-respirando"
+                className="h-16 w-auto md:h-24 object-contain opacity-90 logo-respirando"
               />
             </a>
           </div>
