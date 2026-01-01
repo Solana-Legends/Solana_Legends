@@ -20,7 +20,8 @@ export default function ProjectInfo() {
       {/* ✨ Aura cósmica dorada detrás del contenido */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 rounded-full blur-3xl bg-[#FFA908]/20 animate-pulse pointer-events-none z-0" />
 
-      <div className="relative z-10 w-full max-w-screen-2xl mx-auto px-4">
+      {/* 🔥 Ajuste de ancho para coincidir con las barras */}
+      <div className="relative z-10 w-full max-w-[960px] mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
             {t("project.title")}
@@ -57,7 +58,6 @@ export default function ProjectInfo() {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                {/* Botón ritualizado con gradiente + destello */}
                 <Button
                   className="relative w-full overflow-hidden 
                              bg-gradient-to-r from-yellow-400 to-orange-500 
@@ -67,7 +67,6 @@ export default function ProjectInfo() {
                              aura-hover aura-pulsante"
                 >
                   {t("project.readWhitepaper")}
-                  {/* Destello animado */}
                   <span
                     className="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-white/40 to-transparent 
                                    translate-x-[-100%] hover:translate-x-[100%] transition-transform duration-700 ease-in-out"

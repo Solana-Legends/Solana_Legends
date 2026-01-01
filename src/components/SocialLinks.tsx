@@ -44,7 +44,6 @@ export default function SocialLinks() {
     },
   ];
 
-  // Texto de compartir adaptado al idioma activo
   const shareText =
     language === "es"
       ? "🪐 ¡Descubre Solana Legends! Tres guardianes épicos compiten por convertirse en token. ¿Cuál elegirás? #Solana #Legends #Voltra #Studio #Crypto #Meme \n"
@@ -81,10 +80,11 @@ export default function SocialLinks() {
       id="community"
       className="relative py-20 px-6 bg-gradient-to-br from-[#0F0B1E] via-[#1A1530] to-[#0F0B1E] aura-pulsante aura-hover-gold"
     >
-      {/* Aura cósmica detrás */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 rounded-full blur-3xl bg-[#FFA908]/20 animate-pulse pointer-events-none z-0" />
 
-      <div className="relative z-10 w-full max-w-screen-2xl mx-auto px-4">
+      {/* 🔥 Ajuste de ancho para coincidir con las barras */}
+      <div className="relative z-10 w-full max-w-[960px] mx-auto px-4">
+        
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
             {t("social.title")}
@@ -142,7 +142,7 @@ export default function SocialLinks() {
           })}
         </div>
 
-        {/* Mensaje ritualizado centrado debajo de los tres bloques */}
+        {/* Mensaje ritualizado */}
         <div className="mb-12 text-sm text-center text-zinc-400 italic animate-fadeIn animate-pulseSlow">
           {t("progress.renewalMessage")}
         </div>
@@ -235,12 +235,10 @@ export default function SocialLinks() {
           </div>
         </div>
 
-        {/* Imagen ChipiSol con aura perfectamente centrada y alineada a la izquierda */}
+        {/* Imagen ChipiSol */}
         <div className="absolute bottom-0 left-0 mb-[14rem] ml-[-2rem] animate-in fade-in slide-in-from-left duration-1000">
           <div className="relative z-10 flex justify-center items-center w-80 h-80 group">
-            {/* Aura dorada pulsante por defecto, cambia a verde en hover */}
             <div className="absolute w-80 h-80 rounded-full blur-3xl hero-chipisol-aura pointer-events-none z-0 transition-colors duration-500 group-hover:bg-white/40"></div>
-            {/* Imagen del héroe ChipiSol */}
             <img
               src="/assets/ChipiSol.png"
               alt="ChipiSol Hero"
@@ -249,7 +247,7 @@ export default function SocialLinks() {
           </div>
         </div>
 
-        {/* Footer ritualizado */}
+        {/* Footer */}
         <div className="mt-16 text-center text-xs text-zinc-500 px-4">
           Solana Legends 🪐 EligeTuMeme™ — © 2025
           <br />
@@ -263,8 +261,7 @@ export default function SocialLinks() {
             Voltra.studio
           </a>
           <br />
-          Powered by community fire, ritualized progress, and cosmic
-          guardianship.
+          Powered by community fire, ritualized progress, and cosmic guardianship.
         </div>
       </div>
     </section>
