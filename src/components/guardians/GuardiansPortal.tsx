@@ -54,7 +54,7 @@ export default function GuardiansPortal() {
   return (
     <GuardiansLayout titleKey="hero.viewGuardians" subtitleKey="hero.tagline">
       {/* ✅ Grid de guardianes en flujo normal */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-8 w-full max-w-screen-2xl mx-auto px-4">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-8 w-full max-w-[960px] mx-auto px-4 place-items-center">
         {guardians.map((g, index) => (
           <div
             key={g.id}
