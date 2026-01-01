@@ -35,21 +35,32 @@ export default function GuardianTimeline() {
   ];
 
   return (
-    <section className="relative px-6 py-16 bg-gradient-to-b from-blue-800 to-slate-600 rounded-xl shadow-lg">
+    <section className="relative px-6 py-16 bg-gradient-to-b from-blue-800/90 to-slate-600/90 rounded-xl shadow-lg">
+      
+      {/* ⭐ Título bilingüe */}
       <h3 className="text-3xl md:text-4xl font-bold text-center text-purple-300 mb-12">
-        Cronología de los Guardianes
+        {t("timeline.title")}
       </h3>
 
-      <div className="relative border-l-4 border-purple-500 w-full max-w-screen-2xl mx-auto px-4">
+      {/* ⭐ Timeline centrado y con ancho ritual */}
+      <div className="relative border-l-4 border-purple-500 w-full max-w-[960px] mx-auto px-4">
         {timeline.map((item, index) => (
           <div key={index} className="mb-12 ml-6 animate-fadeInUp relative">
+            
+            {/* Icono aura */}
             <div className="absolute -left-8 top-1 w-8 h-8 rounded-full bg-purple-600 flex items-center justify-center text-white shadow-lg">
               {item.aura}
             </div>
+
+            {/* Año */}
             <div className={`font-bold ${item.color}`}>{item.year}</div>
+
+            {/* Título */}
             <h4 className={`text-xl md:text-2xl font-semibold ${item.color}`}>
               {item.title}
             </h4>
+
+            {/* Descripción */}
             <p className="text-gray-300 mt-2">{item.description}</p>
           </div>
         ))}

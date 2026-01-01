@@ -146,6 +146,8 @@ const enTranslations = {
   "common.backHome": "Back to home",
 
   // Timeline
+  "timeline.title": "Guardians Timeline",
+
   "timeline.monkesol.title": "MonkeSol descends with ancestral wisdom 🔥",
   "timeline.monkesol.description":
     "From the flames emerges the Sage Guardian, bearer of controlled fire that illuminates minds and protects blockchain secrets.",
@@ -333,6 +335,8 @@ const esTranslations = {
   "common.backHome": "Volver al inicio",
 
   // Timeline
+  "timeline.title": "Cronología de los Guardianes",
+
   "timeline.monkesol.title": "MonkeSol desciende con sabiduría ancestral 🔥",
   "timeline.monkesol.description":
     "De las llamas surge el Guardián Sabio, portador del fuego controlado que ilumina la mente y protege los secretos del blockchain.",
