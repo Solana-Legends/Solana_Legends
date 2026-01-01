@@ -10,10 +10,7 @@ export default function HeroSection() {
   const navigate = useNavigate();
 
   return (
-    <section className="relative min-h-[70vh] flex items-center justify-center 
-      bg-gradient-to-br from-[#0F0B1E]/90 via-[#1A1530]/90 to-[#0F0B1E]/90 
-      overflow-hidden aura-pulsante aura-hover-gold">
-
+    <section className="relative min-h-[70vh] flex items-center justify-center bg-gradient-to-br from-[#0F0B1E] via-[#1A1530] to-[#0F0B1E] overflow-hidden aura-pulsante aura-hover-gold">
       {/* Fondo cósmico */}
       <div className="absolute inset-0 opacity-20 pointer-events-none">
         <div className="absolute top-1/4 left-1/4 w-16 h-16 md:w-28 md:h-28 bg-purple-500 rounded-full blur-xl md:blur-3xl animate-pulse"></div>
@@ -23,7 +20,6 @@ export default function HeroSection() {
 
       {/* Contenido */}
       <div className="relative z-10 w-full max-w-screen-2xl mx-auto px-4 text-center">
-        
         {/* Logo */}
         <div className="mb-4 md:mb-6 flex justify-center relative group">
           <div className="absolute inset-0 flex justify-center items-center pointer-events-none z-0">
@@ -90,7 +86,7 @@ export default function HeroSection() {
           </div>
         </div>
 
-        {/* Videos */}
+        {/* Videos (ORIGINALES, SIN CAMBIOS) */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 mb-6 w-full max-w-screen-lg mx-auto px-2">
           <div className="animate-in fade-in slide-in-from-left duration-1000">
             <div className="relative group rounded-xl overflow-hidden transition-shadow duration-300 hover:scale-[1.02] border border-purple-500/40 aura-pulsante aura-hover-white">
