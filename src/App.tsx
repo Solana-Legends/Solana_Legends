@@ -8,6 +8,9 @@ import NotFound from "./pages/NotFound";
 import GuardiansPage from "./pages/GuardiansPage";
 import { Analytics } from "@vercel/analytics/react";
 
+// 🔥 Importamos el aura global
+import AuraGlobal from "./components/AuraGlobal";
+
 const queryClient = new QueryClient();
 
 const App = () => (
@@ -15,6 +18,10 @@ const App = () => (
     <LanguageProvider>
       <TooltipProvider>
         <Toaster />
+
+        {/* 🔥 Aura global detrás de toda la app */}
+        <AuraGlobal />
+
         <BrowserRouter>
           {/* ❌ Eliminado el max-w que creaba bandas */}
           <div className="w-full">
@@ -25,6 +32,7 @@ const App = () => (
             </Routes>
           </div>
         </BrowserRouter>
+
         <Analytics />
       </TooltipProvider>
     </LanguageProvider>
