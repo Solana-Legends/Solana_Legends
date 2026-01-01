@@ -98,7 +98,7 @@ export default function GuardianCard({
       <img
         src={image}
         alt={name}
-        className={`absolute top-4 left-4 w-16 h-16 object-contain rounded-md ${heroAnimation} ${heroAura}`}
+        className={`absolute top-4 left-4 w-20 h-20 object-contain rounded-md ${heroAnimation} ${heroAura}`}
       />
 
       {/* Símbolo elemental arriba a la derecha con aura */}
