@@ -68,8 +68,8 @@ export default function GuardianRoomZapSol() {
       </div>
 
       {/* ⚡ Rayos estilizados verticales */}
-      <div className="absolute top-0 left-[29%] w-1 h-full bg-gradient-to-b from-yellow-400 to-transparent animate-[pulse_2s_infinite]" />
-      <div className="absolute top-0 left-[71%] w-1 h-full bg-gradient-to-b from-orange-600 to-transparent animate-[pulse_3s_infinite]" />
+      <div className="absolute top-0 left-[30%] w-1 h-full bg-gradient-to-b from-yellow-400 to-transparent animate-[pulse_2s_infinite]" />
+      <div className="absolute top-0 left-[70%] w-1 h-full bg-gradient-to-b from-orange-600 to-transparent animate-[pulse_3s_infinite]" />
 
       {/* Contenido principal */}
       <div className="relative z-10 w-full max-w-screen-2xl mx-auto px-4 text-center">

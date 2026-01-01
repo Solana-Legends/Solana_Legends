@@ -69,8 +69,8 @@ export default function GuardianRoomMonkeSol() {
       </div>
 
       {/* ⚡ Rayos estilizados verticales */}
-      <div className="absolute top-0 left-[27%] w-1 h-full bg-gradient-to-b from-red-600 to-transparent animate-[pulse_2s_infinite]" />
-      <div className="absolute top-0 left-[73%] w-1 h-full bg-gradient-to-b from-orange-400 to-transparent animate-[pulse_3s_infinite]" />
+      <div className="absolute top-0 left-[28%] w-1 h-full bg-gradient-to-b from-red-600 to-transparent animate-[pulse_2s_infinite]" />
+      <div className="absolute top-0 left-[72%] w-1 h-full bg-gradient-to-b from-orange-400 to-transparent animate-[pulse_3s_infinite]" />
 
       {/* Contenido principal */}
       <div className="relative z-10 w-full max-w-screen-2xl mx-auto px-4 text-center">
