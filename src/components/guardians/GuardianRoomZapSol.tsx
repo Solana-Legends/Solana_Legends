@@ -68,8 +68,8 @@ export default function GuardianRoomZapSol() {
       </div>
 
       {/* ⚡ Rayos estilizados verticales */}
-      <div className="absolute top-0 left-[35%] w-1 h-full bg-gradient-to-b from-yellow-400 to-transparent animate-[pulse_2s_infinite]" />
-      <div className="absolute top-0 left-[65%] w-1 h-full bg-gradient-to-b from-orange-600 to-transparent animate-[pulse_3s_infinite]" />
+      <div className="absolute top-0 left-[30%] w-1 h-full bg-gradient-to-b from-yellow-400 to-transparent animate-[pulse_2s_infinite]" />
+      <div className="absolute top-0 left-[70%] w-1 h-full bg-gradient-to-b from-orange-600 to-transparent animate-[pulse_3s_infinite]" />
 
       {/* Contenido principal */}
       <div className="relative z-10 w-full max-w-screen-2xl mx-auto px-4 text-center">
@@ -96,7 +96,7 @@ export default function GuardianRoomZapSol() {
         </div>
 
         {/* Imagen ZapSol con aura lateral derecha */}
-        <div className="absolute bottom-0 right-0 mb-[4rem] mr-[0rem] animate-in fade-in slide-in-from-left duration-1000">
+        <div className="absolute bottom-0 right-0 mb-[4rem] mr-[2rem] animate-in fade-in slide-in-from-left duration-1000">
           <div className="relative z-10 flex justify-center items-center w-80 h-80 group">
             <div className="absolute w-80 h-80 rounded-full blur-3xl hero-zapsol-aura pointer-events-none z-0 transition-colors duration-500 group-hover:bg-orange-500/40"></div>
             <img

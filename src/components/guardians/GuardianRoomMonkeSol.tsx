@@ -69,8 +69,8 @@ export default function GuardianRoomMonkeSol() {
       </div>
 
       {/* ⚡ Rayos estilizados verticales */}
-      <div className="absolute top-0 left-[35%] w-1 h-full bg-gradient-to-b from-red-600 to-transparent animate-[pulse_2s_infinite]" />
-      <div className="absolute top-0 left-[65%] w-1 h-full bg-gradient-to-b from-orange-400 to-transparent animate-[pulse_3s_infinite]" />
+      <div className="absolute top-0 left-[28%] w-1 h-full bg-gradient-to-b from-red-600 to-transparent animate-[pulse_2s_infinite]" />
+      <div className="absolute top-0 left-[72%] w-1 h-full bg-gradient-to-b from-orange-400 to-transparent animate-[pulse_3s_infinite]" />
 
       {/* Contenido principal */}
       <div className="relative z-10 w-full max-w-screen-2xl mx-auto px-4 text-center">
@@ -97,7 +97,7 @@ export default function GuardianRoomMonkeSol() {
         </div>
 
         {/* Imagen MonkeSol anclada y fija abajo a la izquierda */}
-        <div className="absolute bottom-0 left-0 ml-[0rem] animate-in fade-in slide-in-from-left duration-1000">
+        <div className="absolute bottom-0 left-0 ml-[2rem] animate-in fade-in slide-in-from-left duration-1000">
           <div className="relative z-10 flex justify-center items-center w-80 h-80 group">
             <div className="absolute w-80 h-80 rounded-full blur-3xl hero-monkesol-aura pointer-events-none z-0 transition-colors duration-500 group-hover:bg-red-400/40"></div>
             <img
