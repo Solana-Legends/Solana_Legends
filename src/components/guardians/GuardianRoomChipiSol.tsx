@@ -67,6 +67,10 @@ export default function GuardianRoomChipiSol() {
         })}
       </div>
 
+      {/* ⚡ Rayos estilizados verticales */}
+      <div className="absolute top-0 left-1/4 w-1 h-full bg-gradient-to-b from-blue-500 to-transparent animate-[pulse_2s_infinite]" />
+      <div className="absolute top-0 left-3/4 w-1 h-full bg-gradient-to-b from-blue-100 to-transparent animate-[pulse_3s_infinite]" />
+
       {/* Contenido principal */}
       <div className="relative z-10 w-full max-w-screen-2xl mx-auto px-4 text-center">
         <h3 className="text-4xl md:text-5xl font-bold text-cyan-400 mb-4 animate-fadeInUp">
