@@ -181,7 +181,7 @@ export default function FollowerCounter() {
         <div
           className="
     absolute 
-    bottom-[4rem] right-[-7.5rem]     /* 📱 móvil: más arriba y más a la derecha */
+    bottom-[2rem] right-[-6rem]     /* 📱 móvil: más arriba y más a la derecha */
     md:bottom-0 md:right-0         /* 🖥️ desktop: posición original */
     mb-[4rem] mr-[2rem]
     animate-in fade-in slide-in-from-left duration-1000"
