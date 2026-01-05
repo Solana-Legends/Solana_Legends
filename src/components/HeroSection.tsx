@@ -102,7 +102,7 @@ export default function HeroSection() {
             <img
               src="/assets/MonkeSol.png"
               alt="MonkeSol Hero"
-              className="relative z-10 h-42 w-auto md:h-60 object-contain mix-blend-overlay opacity-90 symbol-hero-monkesol-pulse"
+              className="relative z-10 h-44 w-auto md:h-60 object-contain mix-blend-overlay opacity-90 symbol-hero-monkesol-pulse"
             />
           </div>
         </div>
