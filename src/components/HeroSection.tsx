@@ -10,9 +10,7 @@ export default function HeroSection() {
   const { t } = useLanguage();
   const navigate = useNavigate();
 
-  {
     /* Botones con ancho dinámico */
-  }
   const longestButtonRef = useRef<HTMLButtonElement | null>(null);
   const [maxWidth, setMaxWidth] = useState<number | null>(null);
 
@@ -33,25 +31,27 @@ export default function HeroSection() {
       </div>
 
       {/* Contenido */}
-      <div className="relative z-10 w-full max-w-screen-2xl mx-auto px-4 text-center md:pt-12">
-        {/* Logo */}
-        <div className="mb-4 md:mb-6 flex justify-center relative group origin-bottom scale-125 md:scale-125 mt-4">
-          <div className="absolute inset-0 flex justify-center items-center pointer-events-none z-0">
-            <div className="w-24 h-24 md:w-44 md:h-44 rounded-full blur-lg md:blur-3xl aura-pulsante-gold-strong aura-hover-white"></div>
-          </div>
+      <div className="relative z-10 w-full max-w-screen-2xl mx-auto px-4 text-center">
 
-          <a
-            href="https://x.com/EligeTuMeme"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+        {/* Bloque superior encapsulado */}
+        <div className="md:mt-6 md:mb-4 mb-2">
+        {/* Logo */}
+          <div className="mb-4 md:mb-6 flex justify-center relative group">
+            <div className="absolute inset-0 flex justify-center items-center pointer-events-none z-0">
+              <div className="w-24 h-24 md:w-44 md:h-44 rounded-full blur-lg md:blur-3xl aura-pulsante-gold-strong aura-hover-white"></div>
+            </div>
+            <a
+              href="https://x.com/EligeTuMeme"
+              target="_blank"
+              rel="noopener noreferrer"
+           >
             <img
               src="/assets/LogoPremium2.png"
               alt="Solana Legends Logo"
-              className="h-16 w-auto md:h-28 object-contain opacity-90 logo-respirando"
-            />
-          </a>
-        </div>
+              className="h-[4.25rem] w-auto md:h-32 object-contain opacity-90 logo-respirando"
+              />
+            </a>
+          </div>
 
         {/* Título */}
         <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-3">
