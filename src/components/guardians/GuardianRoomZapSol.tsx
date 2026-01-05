@@ -102,8 +102,7 @@ export default function GuardianRoomZapSol() {
     bottom-[7rem] right-[-9rem]     /* 📱 móvil: más arriba y más a la derecha */
     md:bottom-0 md:right-0         /* 🖥️ desktop: posición original */
     mb-[4rem] mr-[2rem]
-    animate-in fade-in slide-in-from-left duration-1000
-  "
+    animate-in fade-in slide-in-from-left duration-1000"
         >
           <div className="relative z-10 flex justify-center items-center w-80 h-80 group">
             <div className="absolute w-80 h-80 rounded-full blur-3xl hero-zapsol-aura pointer-events-none z-0 transition-colors duration-500 group-hover:bg-orange-500/40"></div>
