@@ -99,7 +99,7 @@ export default function GuardianRoomZapSol() {
         <div
           className="
     absolute 
-    bottom-[6rem] right-[1rem]     /* 📱 móvil: más arriba y más a la derecha */
+    bottom-[8rem] right-[-2rem]     /* 📱 móvil: más arriba y más a la derecha */
     md:bottom-0 md:right-0         /* 🖥️ desktop: posición original */
     mb-[4rem] mr-[2rem]
     animate-in fade-in slide-in-from-left duration-1000
