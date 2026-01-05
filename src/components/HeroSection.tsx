@@ -37,7 +37,7 @@ export default function HeroSection() {
         {/* Logo */}
         <div className="mb-4 md:mb-6 flex justify-center relative group">
           <div className="absolute inset-0 flex justify-center items-center pointer-events-none z-0">
-            <div className="w-24 h-24 md:w-40 md:h-40 rounded-full blur-xl md:blur-3xl aura-pulsante-gold-strong aura-hover-white"></div>
+            <div className="w-16 h-16 md:w-40 md:h-40 rounded-full blur-lg md:blur-3xl aura-pulsante-gold-strong aura-hover-white"></div>
           </div>
 
           <a
