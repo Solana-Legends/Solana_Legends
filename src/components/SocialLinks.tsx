@@ -239,7 +239,7 @@ export default function SocialLinks() {
         <div
           className="
     absolute 
-    bottom-[1rem] left-[-5rem]     /* 📱 móvil: más arriba y más a la derecha */
+    bottom-[-4rem] left-[-3rem]     /* 📱 móvil: más arriba y más a la derecha */
     md:bottom-0 md:left-0         /* 🖥️ desktop: posición original */
     mb-[14rem] ml-[-2rem]
     animate-in fade-in slide-in-from-left duration-1000"
@@ -249,7 +249,7 @@ export default function SocialLinks() {
             <img
               src="/assets/ChipiSol.png"
               alt="ChipiSol Hero"
-              className="relative z-10 h-48 w-auto md:h-64 object-contain mix-blend-overlay opacity-90 symbol-hero-chipisol"
+              className="relative z-10 h-44 w-auto md:h-64 object-contain mix-blend-overlay opacity-90 symbol-hero-chipisol"
             />
           </div>
         </div>
