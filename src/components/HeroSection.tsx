@@ -46,7 +46,7 @@ export default function HeroSection() {
             rel="noopener noreferrer"
           >
             <img
-              src="/assets/LogoPremium1.png"
+              src="/assets/LogoPremium2.png"
               alt="Solana Legends Logo"
               className="h-14 w-auto md:h-28 object-contain opacity-90 logo-respirando"
             />
