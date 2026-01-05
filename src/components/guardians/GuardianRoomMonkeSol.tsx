@@ -100,7 +100,7 @@ export default function GuardianRoomMonkeSol() {
         <div
           className="
     absolute 
-    bottom-[7rem] left-[-9rem]     /* 📱 móvil: más arriba y más a la derecha */
+    bottom-[6rem] left-[-8rem]     /* 📱 móvil: más arriba y más a la derecha */
     md:bottom-0 md:left-0         /* 🖥️ desktop: posición original */
     mb-[4rem] mr-[2rem]
     animate-in fade-in slide-in-from-left duration-1000"

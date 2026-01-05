@@ -99,7 +99,7 @@ export default function GuardianRoomChipiSol() {
         <div
           className="
     absolute 
-    bottom-[7rem] right-[-9rem]     /* 📱 móvil: más arriba y más a la derecha */
+    bottom-[6rem] right-[-8rem]     /* 📱 móvil: más arriba y más a la derecha */
     md:bottom-0 md:right-0         /* 🖥️ desktop: posición original */
     mb-[4rem] mr-[2rem]
     animate-in fade-in slide-in-from-left duration-1000"
