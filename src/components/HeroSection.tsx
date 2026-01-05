@@ -37,7 +37,7 @@ export default function HeroSection() {
         {/* Logo */}
         <div className="mb-4 md:mb-6 flex justify-center relative group">
           <div className="absolute inset-0 flex justify-center items-center pointer-events-none z-0">
-            <div className="w-20 h-20 md:w-40 md:h-40 rounded-full blur-lg md:blur-3xl aura-pulsante-gold-strong aura-hover-white"></div>
+            <div className="w-24 h-24 md:w-40 md:h-40 rounded-full blur-lg md:blur-3xl aura-pulsante-gold-strong aura-hover-white"></div>
           </div>
 
           <a
@@ -48,7 +48,7 @@ export default function HeroSection() {
             <img
               src="/assets/LogoPremium1.png"
               alt="Solana Legends Logo"
-              className="h-12 w-auto md:h-28 object-contain opacity-90 logo-respirando"
+              className="h-14 w-auto md:h-28 object-contain opacity-90 logo-respirando"
             />
           </a>
         </div>
