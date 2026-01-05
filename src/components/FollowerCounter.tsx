@@ -35,7 +35,10 @@ export default function FollowerCounter() {
             <CardHeader className="text-center">
               <CardTitle className="text-2xl text-white flex items-center justify-center gap-2">
                 <Twitter className="h-6 w-6 text-blue-400" />
-                {t("progress.mainProgressLabel").replace("{source}", "X/Twitter")}
+                {t("progress.mainProgressLabel").replace(
+                  "{source}",
+                  "X/Twitter"
+                )}
               </CardTitle>
               <CardDescription className="text-purple-300">
                 {isLoading
@@ -67,8 +70,8 @@ export default function FollowerCounter() {
 
               <div className="text-center">
                 <Badge className="bg-gradient-to-r from-yellow-400 to-orange-500 text-white border-0 px-3 py-1.5 shadow-[0_0_15px_#FFA908] text-base">
-                  🔥 {t("progress.missing")} {remaining} {t("progress.forVoting")} —{" "}
-                  {t("progress.ritualSoon")}
+                  🔥 {t("progress.missing")} {remaining}{" "}
+                  {t("progress.forVoting")} — {t("progress.ritualSoon")}
                 </Badge>
               </div>
             </CardContent>
@@ -172,6 +175,18 @@ export default function FollowerCounter() {
               </a>
             </CardContent>
           </Card>
+        </div>
+
+        {/* Imagen ZapSol */}
+        <div className="absolute bottom-0 right-0 mb-[6rem] mr-[2rem] animate-in fade-in slide-in-from-left duration-1000">
+          <div className="relative z-10 flex justify-center items-center w-80 h-80 group">
+            <div className="absolute w-80 h-80 rounded-full blur-3xl hero-chipisol-aura pointer-events-none z-0 transition-colors duration-500 group-hover:bg-white/40"></div>
+            <img
+              src="/assets/ZapSol.png"
+              alt="ZapSol Hero"
+              className="relative z-10 h-56 w-auto md:h-64 object-contain mix-blend-overlay opacity-90 symbol-hero-chipisol"
+            />
+          </div>
         </div>
 
         {/* 🔮 Mensaje ritualizado centrado */}
