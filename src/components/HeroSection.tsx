@@ -10,16 +10,18 @@ export default function HeroSection() {
   const { t } = useLanguage();
   const navigate = useNavigate();
 
-  {/* Botones con ancho dinámico */}
-const longestButtonRef = useRef<HTMLButtonElement | null>(null);
-const [maxWidth, setMaxWidth] = useState<number | null>(null);
-
-useLayoutEffect(() => {
-  if (longestButtonRef.current) {
-    const width = longestButtonRef.current.getBoundingClientRect().width;
-    setMaxWidth(width);
+  {
+    /* Botones con ancho dinámico */
   }
-}, [t]); // recalcular cuando cambia el idioma
+  const longestButtonRef = useRef<HTMLButtonElement | null>(null);
+  const [maxWidth, setMaxWidth] = useState<number | null>(null);
+
+  useLayoutEffect(() => {
+    if (longestButtonRef.current) {
+      const width = longestButtonRef.current.getBoundingClientRect().width;
+      setMaxWidth(width);
+    }
+  }, [t]); // recalcular cuando cambia el idioma
 
   return (
     <section className="relative min-h-[70vh] flex items-center justify-center bg-gradient-to-br from-[#0F0B1E] via-[#1A1530] to-[#0F0B1E] overflow-hidden aura-pulsante aura-hover-gold">
@@ -87,13 +89,20 @@ useLayoutEffect(() => {
         </div>
 
         {/* MonkeSol flotante */}
-        <div className="absolute bottom-0 left-0 ml-[-3rem] animate-in fade-in slide-in-from-left duration-1000">
+        <div
+          className="
+    absolute 
+    bottom-[1rem] left-[-5rem]     /* 📱 móvil: más arriba y más a la derecha */
+    md:bottom-0 md:left-0         /* 🖥️ desktop: posición original */
+    ml-[-3rem]
+    animate-in fade-in slide-in-from-left duration-1000"
+        >
           <div className="relative z-10 flex justify-center items-center w-64 h-64 group">
             <div className="absolute w-64 h-64 rounded-full blur-3xl hero-monkesol-aura pointer-events-none z-0 transition-colors duration-500 group-hover:bg-red-400/40"></div>
             <img
               src="/assets/MonkeSol.png"
               alt="MonkeSol Hero"
-              className="relative z-10 h-48 w-auto md:h-60 object-contain mix-blend-overlay opacity-90 symbol-hero-monkesol-pulse"
+              className="relative z-10 h-44 w-auto md:h-60 object-contain mix-blend-overlay opacity-90 symbol-hero-monkesol-pulse"
             />
           </div>
         </div>
@@ -140,7 +149,7 @@ useLayoutEffect(() => {
         </div>
 
         {/* Botones */}
-        <div className="flex flex-col sm:flex-row gap-3 justify-center mb-4">
+        <div className="flex flex-col sm:flex-row gap-3 justify-center items-center mb-4">
           {/* Botón 1 */}
           <Button
             size="default"
@@ -153,7 +162,7 @@ useLayoutEffect(() => {
             {t("hero.viewGuardians")}
           </Button>
 
-          {/* Botón 2 — este define el ancho */}
+          {/* Botón 2 */}
           <Button
             ref={longestButtonRef}
             size="default"
@@ -176,8 +185,10 @@ useLayoutEffect(() => {
             style={{ width: maxWidth ?? "auto" }}
             className="w-fit border-[#FFA908] text-[#FFA908] hover:bg-[#FFA908] hover:text-[#0F0B1E] flex flex-col leading-tight py-2 px-4"
           >
-            <span className="text-base font-bold">Voltra.Studio</span>
-            <span className="text-xs text-[#FFD966]">Official partners</span>
+            <span className="text-base font-bold">Voltra.studio</span>
+            <span className="text-xs text-[#FFD966]">
+              {t("hero.voltraPartners")}
+            </span>
           </Button>
         </div>
       </div>
