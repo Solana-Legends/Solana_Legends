@@ -10,7 +10,7 @@ export default function HeroSection() {
   const { t } = useLanguage();
   const navigate = useNavigate();
 
-    /* Botones con ancho dinámico */
+    // Botones con ancho dinámico
   const longestButtonRef = useRef<HTMLButtonElement | null>(null);
   const [maxWidth, setMaxWidth] = useState<number | null>(null);
 
@@ -34,7 +34,7 @@ export default function HeroSection() {
       <div className="relative z-10 w-full max-w-screen-2xl mx-auto px-4 text-center">
 
         {/* Bloque superior encapsulado */}
-        <div className="md:mt-6 md:mb-4 mb-2">
+        <div className="md:mt-6 md:mb-2 mb-1">
         {/* Logo */}
           <div className="mb-4 md:mb-6 flex justify-center relative group">
             <div className="absolute inset-0 flex justify-center items-center pointer-events-none z-0">
