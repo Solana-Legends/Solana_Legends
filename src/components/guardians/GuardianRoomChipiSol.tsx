@@ -111,7 +111,7 @@ export default function GuardianRoomChipiSol() {
             <img
               src="/assets/ChipiSolVol.png"
               alt="ChipiSol Hero"
-              className="relative z-10 h-64 w-auto md:h-72 object-contain mix-blend-overlay opacity-90 symbol-hero-chipisol"
+              className="relative z-10 h-48 w-auto md:h-72 object-contain mix-blend-overlay opacity-90 symbol-hero-chipisol"
             />
           </div>
         </div>

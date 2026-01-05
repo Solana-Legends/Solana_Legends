@@ -101,8 +101,8 @@ export default function GuardianRoomMonkeSol() {
           className="
     absolute 
     bottom-[7rem] left-[-9rem]     /* 📱 móvil: más arriba y más a la derecha */
-    md:bottom-0 md:right-0         /* 🖥️ desktop: posición original */
-    mb-[4rem] mr-[6rem]
+    md:bottom-0 md:left-0         /* 🖥️ desktop: posición original */
+    mb-[4rem] mr-[2rem]
     animate-in fade-in slide-in-from-left duration-1000"
         >
           <div className="relative z-10 flex justify-center items-center w-80 h-80 group">
@@ -110,7 +110,7 @@ export default function GuardianRoomMonkeSol() {
             <img
               src="/assets/MonkeSolVol.png"
               alt="MonkeSol Hero"
-              className="relative z-10 h-64 w-auto md:h-72 object-contain mix-blend-overlay opacity-90 symbol-hero-monkesol-pulse"
+              className="relative z-10 h-48 w-auto md:h-72 object-contain mix-blend-overlay opacity-90 symbol-hero-monkesol-pulse"
             />
           </div>
         </div>

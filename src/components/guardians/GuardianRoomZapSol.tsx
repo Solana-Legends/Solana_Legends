@@ -109,7 +109,7 @@ export default function GuardianRoomZapSol() {
             <img
               src="/assets/ZapSolVol.png"
               alt="ZapSol Hero"
-              className="relative z-10 h-64 w-auto md:h-72 object-contain mix-blend-overlay opacity-90 symbol-hero-zapsol-flicker"
+              className="relative z-10 h-48 w-auto md:h-72 object-contain mix-blend-overlay opacity-90 symbol-hero-zapsol-flicker"
             />
           </div>
         </div>
