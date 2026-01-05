@@ -33,7 +33,7 @@ export default function HeroSection() {
       </div>
 
       {/* Contenido */}
-      <div className="relative z-10 w-full max-w-screen-2xl mx-auto px-4 text-center">
+      <div className="relative z-10 w-full max-w-screen-2xl mx-auto px-4 text-center md:pt-12">
         {/* Logo */}
         <div className="mb-4 md:mb-6 flex justify-center relative group origin-bottom scale-125 md:scale-125 mt-4">
           <div className="absolute inset-0 flex justify-center items-center pointer-events-none z-0">
