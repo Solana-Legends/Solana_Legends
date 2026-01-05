@@ -4,10 +4,22 @@ import { Rocket, Users, Vote, Shield } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { useNavigate } from "react-router-dom";
 import VideoWithControls from "@/components/VideoWithControls";
+import { useRef, useLayoutEffect, useState } from "react";
 
 export default function HeroSection() {
   const { t } = useLanguage();
   const navigate = useNavigate();
+
+  {/* Botones con ancho dinámico */}
+const longestButtonRef = useRef<HTMLButtonElement | null>(null);
+const [maxWidth, setMaxWidth] = useState<number | null>(null);
+
+useLayoutEffect(() => {
+  if (longestButtonRef.current) {
+    const width = longestButtonRef.current.getBoundingClientRect().width;
+    setMaxWidth(width);
+  }
+}, [t]); // recalcular cuando cambia el idioma
 
   return (
     <section className="relative min-h-[70vh] flex items-center justify-center bg-gradient-to-br from-[#0F0B1E] via-[#1A1530] to-[#0F0B1E] overflow-hidden aura-pulsante aura-hover-gold">
@@ -81,7 +93,7 @@ export default function HeroSection() {
             <img
               src="/assets/MonkeSol.png"
               alt="MonkeSol Hero"
-              className="relative z-10 h-52 w-auto md:h-60 object-contain mix-blend-overlay opacity-90 symbol-hero-monkesol-pulse"
+              className="relative z-10 h-48 w-auto md:h-60 object-contain mix-blend-overlay opacity-90 symbol-hero-monkesol-pulse"
             />
           </div>
         </div>
@@ -129,34 +141,40 @@ export default function HeroSection() {
 
         {/* Botones */}
         <div className="flex flex-col sm:flex-row gap-3 justify-center mb-4">
+          {/* Botón 1 */}
           <Button
             size="default"
             variant="outline"
             onClick={() => navigate("/guardians")}
-            className="border-[#FFA908] text-[#FFA908] hover:bg-[#FFA908] hover:text-[#0F0B1E] py-2 px-4"
+            style={{ width: maxWidth ?? "auto" }}
+            className="w-fit border-[#FFA908] text-[#FFA908] hover:bg-[#FFA908] hover:text-[#0F0B1E] py-2 px-4"
           >
             <Shield className="w-5 h-5" />
             {t("hero.viewGuardians")}
           </Button>
 
+          {/* Botón 2 — este define el ancho */}
           <Button
+            ref={longestButtonRef}
             size="default"
             variant="outline"
             onClick={() => {
               const section = document.getElementById("community");
               if (section) section.scrollIntoView({ behavior: "smooth" });
             }}
-            className="border-indigo-400 text-indigo-400 hover:bg-indigo-400 hover:text-[#0F0B1E] py-2 px-4"
+            className="w-fit border-indigo-400 text-indigo-400 hover:bg-indigo-400 hover:text-[#0F0B1E] py-2 px-4"
           >
             <Users className="w-5 h-5" />
             {t("hero.joinCommunity")}
           </Button>
 
+          {/* Botón 3 */}
           <Button
             size="default"
             variant="outline"
             onClick={() => window.open("https://voltra.studio", "_blank")}
-            className="border-[#FFA908] text-[#FFA908] hover:bg-[#FFA908] hover:text-[#0F0B1E] flex flex-col leading-tight py-2 px-4"
+            style={{ width: maxWidth ?? "auto" }}
+            className="w-fit border-[#FFA908] text-[#FFA908] hover:bg-[#FFA908] hover:text-[#0F0B1E] flex flex-col leading-tight py-2 px-4"
           >
             <span className="text-base font-bold">Voltra.Studio</span>
             <span className="text-xs text-[#FFD966]">Official partners</span>

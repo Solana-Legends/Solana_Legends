@@ -178,13 +178,20 @@ export default function FollowerCounter() {
         </div>
 
         {/* Imagen ZapSol */}
-        <div className="absolute bottom-0 right-0 mb-[6rem] mr-[0rem] animate-in fade-in slide-in-from-left duration-1000">
+        <div
+          className="
+    absolute 
+    bottom-[6rem] right-[-8.5rem]     /* 📱 móvil: más arriba y más a la derecha */
+    md:bottom-0 md:right-0         /* 🖥️ desktop: posición original */
+    mb-[4rem] mr-[2rem]
+    animate-in fade-in slide-in-from-left duration-1000"
+        >
           <div className="relative z-10 flex justify-center items-center w-80 h-80 group">
-            <div className="absolute w-80 h-80 rounded-full blur-3xl hero-chipisol-aura pointer-events-none z-0 transition-colors duration-500 group-hover:bg-white/40"></div>
+            <div className="absolute w-80 h-80 rounded-full blur-3xl hero-zapsol-aura pointer-events-none z-0 transition-colors duration-500 group-hover:bg-orange-500/40"></div>
             <img
               src="/assets/ZapSol.png"
               alt="ZapSol Hero"
-              className="relative z-10 h-56 w-auto md:h-64 object-contain mix-blend-overlay opacity-90 symbol-hero-zapsol-flicker"
+              className="relative z-10 h-48 w-auto md:h-64 object-contain mix-blend-overlay opacity-90 symbol-hero-zapsol-flicker"
             />
           </div>
         </div>
