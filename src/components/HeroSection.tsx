@@ -92,7 +92,7 @@ export default function HeroSection() {
         <div
           className="
     absolute 
-    bottom-[0rem] left-[-2rem]     /* 📱 móvil: más arriba y más a la derecha */
+    bottom-[-2rem] left-[-0.8rem]     /* 📱 móvil: más arriba y más a la derecha */
     md:bottom-0 md:left-0         /* 🖥️ desktop: posición original */
     ml-[-3rem]
     animate-in fade-in slide-in-from-left duration-1000"
@@ -102,7 +102,7 @@ export default function HeroSection() {
             <img
               src="/assets/MonkeSol.png"
               alt="MonkeSol Hero"
-              className="relative z-10 h-44 w-auto md:h-60 object-contain mix-blend-overlay opacity-90 symbol-hero-monkesol-pulse"
+              className="relative z-10 h-42 w-auto md:h-60 object-contain mix-blend-overlay opacity-90 symbol-hero-monkesol-pulse"
             />
           </div>
         </div>
