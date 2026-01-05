@@ -99,7 +99,7 @@ export default function GuardianRoomZapSol() {
         <div
           className="
     absolute 
-    bottom-[6rem] right-[-8rem]     /* 📱 móvil: más arriba y más a la derecha */
+    bottom-[6rem] right-[-8.5rem]     /* 📱 móvil: más arriba y más a la derecha */
     md:bottom-0 md:right-0         /* 🖥️ desktop: posición original */
     mb-[4rem] mr-[2rem]
     animate-in fade-in slide-in-from-left duration-1000"
@@ -109,7 +109,7 @@ export default function GuardianRoomZapSol() {
             <img
               src="/assets/ZapSolVol.png"
               alt="ZapSol Hero"
-              className="relative z-10 h-48 w-auto md:h-72 object-contain mix-blend-overlay opacity-90 symbol-hero-zapsol-flicker"
+              className="relative z-10 h-44 w-auto md:h-72 object-contain mix-blend-overlay opacity-90 symbol-hero-zapsol-flicker"
             />
           </div>
         </div>
