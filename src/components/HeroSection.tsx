@@ -154,7 +154,7 @@ export default function HeroSection() {
             variant="outline"
             onClick={() => navigate("/hall-of-heroes")}
             className="
-    w-[190px]
+    w-[200px]
     flex flex-row items-center gap-3
     text-left
     border-[#FFA908] text-[#FFA908]
