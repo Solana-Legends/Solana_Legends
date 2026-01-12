@@ -155,7 +155,7 @@ export default function HeroSection() {
             onClick={() => navigate("/hall-of-heroes")}
             style={{ width: maxWidth ?? "auto" }}
             className="
-    w-[220px]
+    w-fit
     flex flex-row items-center gap-3
     text-left
     border-[#FFA908] text-[#FFA908]
@@ -163,12 +163,10 @@ export default function HeroSection() {
     py-2 px-4
   "
           >
-            {/* ICONO IZQUIERDA — CENTRADO VERTICALMENTE */}
             <span className="text-yellow-400 text-xl flex items-center">
               🔥
             </span>
 
-            {/* TEXTO DERECHA (2 líneas) */}
             <div className="flex flex-col leading-tight">
               <span className="font-semibold">
                 {t("hero.hallOfHeroes").split("✨")[0].trim()} ✨
