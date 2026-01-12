@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { Rocket, Users, Vote, Flame } from "lucide-react";
+import { Rocket, Users, Vote } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { useNavigate } from "react-router-dom";
 import VideoWithControls from "@/components/VideoWithControls";
@@ -9,9 +9,6 @@ import { useRef, useLayoutEffect, useState } from "react";
 export default function HeroSection() {
   const { t } = useLanguage();
   const navigate = useNavigate();
-
-  // Dividir el texto en dos líneas usando el emoji como separador
-  const [line1, line2] = t("hero.hallOfHeroes").split("✨");
 
   // Botones con ancho dinámico
   const longestButtonRef = useRef<HTMLButtonElement | null>(null);
@@ -151,25 +148,34 @@ export default function HeroSection() {
 
         {/* Botones */}
         <div className="flex flex-col sm:flex-row gap-3 justify-center items-center mb-4">
-
           {/* Botón 1 — Hall of Heroes */}
           <Button
             size="default"
             variant="outline"
             onClick={() => navigate("/hall-of-heroes")}
             className="
-              w-[220px]
-              flex flex-col items-center gap-1
-              text-center break-words leading-tight
-              border-[#FFA908] text-[#FFA908]
-              hover:bg-[#FFA908] hover:text-[#0F0B1E]
-              py-2 px-4
-            "
+    w-[220px]
+    flex flex-row items-center gap-3
+    text-left
+    border-[#FFA908] text-[#FFA908]
+    hover:bg-[#FFA908] hover:text-[#0F0B1E]
+    py-2 px-4
+  "
           >
-            <Flame className="w-8 h-8" />
+            {/* ICONO IZQUIERDA — CENTRADO VERTICALMENTE */}
+            <span className="text-yellow-400 text-xl flex items-center">
+              🔥
+            </span>
 
-            <span className="leading-tight">{line1.trim()} ✨</span>
-            <span className="leading-tight">{line2.trim()}</span>
+            {/* TEXTO DERECHA (2 líneas) */}
+            <div className="flex flex-col leading-tight">
+              <span className="font-semibold">
+                {t("hero.hallOfHeroes").split("✨")[0].trim()} ✨
+              </span>
+              <span className="text-sm opacity-90">
+                {t("hero.hallOfHeroes").split("✨")[1].trim()}
+              </span>
+            </div>
           </Button>
 
           {/* Botón 2 */}
@@ -193,12 +199,26 @@ export default function HeroSection() {
             variant="outline"
             onClick={() => window.open("https://voltra.studio", "_blank")}
             style={{ width: maxWidth ?? "auto" }}
-            className="w-fit border-[#FFA908] text-[#FFA908] hover:bg-[#FFA908] hover:text-[#0F0B1E] flex flex-col leading-tight py-2 px-4"
+            className="
+    w-[220px]
+    flex flex-row items-center gap-3
+    border-[#FFA908] text-[#FFA908]
+    hover:bg-[#FFA908] hover:text-[#0F0B1E]
+    py-2 px-4
+  "
           >
-            <span className="text-base font-bold">Voltra.studio</span>
-            <span className="text-xs text-[#FFD966]">
-              {t("hero.voltraPartners")}
+            {/* ICONO A LA IZQUIERDA */}
+            <span className="text-yellow-400 text-xl flex items-center">
+              ⚡
             </span>
+
+            {/* TEXTO A LA DERECHA EN DOS LÍNEAS */}
+            <div className="flex flex-col leading-tight text-left">
+              <span className="text-base font-bold">Voltra.studio</span>
+              <span className="text-xs text-[#FFD966]">
+                {t("hero.voltraPartners")}
+              </span>
+            </div>
           </Button>
         </div>
       </div>
