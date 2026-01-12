@@ -13,11 +13,11 @@ interface LanguageContextType {
  */
 const enTranslations = {
   // Hero Section
-  "hero.title": "Solana Legends 🪐 Select Your Hero‑Node",
+  "hero.title": "Solana Legends 🪐 Select Your Hero💫Node",
   "hero.subtitle":
-    "Choose the Hero‑Node whose architecture will anchor the next Solana Legend.",
+    "Choose the Hero💫Node whose architecture will anchor the next Solana Legend.",
   "hero.tagline": "Three elemental architectures. One network. One destiny.",
-  "hero.hallOfHeroes": "Hall of Heroes — Blueprint Archive",
+  "hero.hallOfHeroes": "Hall of Heroes ✨ Blueprint Archive",
   "hero.joinCommunity": "Join the Network",
   "hero.voltraPartners": "Official Partner",
   "hero.activeProject": "Active Protocol",
@@ -25,12 +25,12 @@ const enTranslations = {
   "hero.upcomingVote": "Activation Threshold Approaching",
 
   // Characters
-  "characters.title": "The Hero‑Nodes",
+  "characters.title": "The Hero💫Nodes",
   "characters.subtitle":
-    "Explore the three elemental Hero‑Nodes competing to become the official Solana Legends token architecture",
+    "Explore the three elemental Hero💫Nodes competing to become the official Solana Legends token architecture",
 
   "characters.zapsol.name": "ZapSol",
-  "characters.zapsol.title": "Lightning Hero‑Node",
+  "characters.zapsol.title": "Lightning Hero💫Node",
   "characters.zapsol.description":
     "A high‑frequency conduit engineered to channel plasma‑grade lightning across the metaverse lattice. ZapSol stabilizes energetic flows, accelerates network pulses, and ignites activation thresholds with precision.",
   "characters.zapsol.element": "Energy",
@@ -53,19 +53,19 @@ const enTranslations = {
   "characters.intelligence": "Cognitive Layer",
   "characters.voteFor": "Support",
   "characters.votingLocked": "Activation Locked",
-  "characters.question": "Which Hero‑Node will the network elevate?",
+  "characters.question": "Which Hero💫Node will the network elevate?",
   "characters.votingUnlocked": "Activation unlocked in",
   "characters.followersMore": "more units",
   "characters.viewResults": "View Activation Results",
   "characters.votingActive":
-    "Activation is live. Which Hero‑Node will the network elevate?",
-  "characters.chosenGuardian": "The Hero‑Node chosen by the network is",
+    "Activation is live. Which Hero💫Node will the network elevate?",
+  "characters.chosenGuardian": "The Hero💫Node chosen by the network is",
   "characters.telegramNote":
     "🕰️ At every dawn and dusk, the metrics renew to reflect the living pulse of the collective fire",
 
   // Progress
   "progress.title": "Network Progress",
-  "progress.subtitle": "Tracking the ignition of each Hero‑Node",
+  "progress.subtitle": "Tracking the ignition of each Hero💫Node",
   "progress.mainProgressLabel": "Primary Activation ({source})",
   "progress.remainingFollowers":
     "{remaining} units left until activation. ⚡ The ignition sequence is near.",
@@ -92,7 +92,7 @@ const enTranslations = {
   "progress.voteMessageRitual":
     "The activation ritual is live. Shape the destiny of Solana Legends.",
   "progress.fireUnleashed": "The fire has been unleashed.",
-  "progress.voteButton": "Support the Hero‑Node",
+  "progress.voteButton": "Support the Hero💫Node",
   "progress.proposeLegend": "Propose a Legend",
   "progress.topSource": "The network leading the ignition is",
   "progress.goalReached": "Threshold reached. The ritual fire is lit.",
@@ -104,19 +104,19 @@ const enTranslations = {
   // Project Info
   "project.title": "The Protocol",
   "project.subtitle":
-    "Solana Legends is more than a token — it is a network that determines the future of its Hero‑Nodes.",
+    "Solana Legends is more than a token — it is a network that determines the future of its Hero💫Nodes.",
   "project.whitepaper": "White Paper",
   "project.whitepaperDesc": "Complete Documentation",
   "project.whitepaperText":
-    "Explore the full narrative, token architecture, and roadmap of Solana Legends. Understand how activation works and how the Hero‑Nodes evolve.",
+    "Explore the full narrative, token architecture, and roadmap of Solana Legends. Understand how activation works and how the Hero💫Nodes evolve.",
   "project.readWhitepaper": "Read White Paper",
   "project.features": "Core Features",
   "project.feature1": "Decentralized network activation",
   "project.feature2": "Fast and secure Solana blockchain",
-  "project.feature3": "Winning Hero‑Node token",
+  "project.feature3": "Winning Hero💫Node token",
   "project.feature4": "Active and participatory network",
   "project.feature5": "Transparent and structured roadmap",
-  "project.stat1": "Legendary Hero‑Nodes",
+  "project.stat1": "Legendary Hero💫Nodes",
   "project.stat2": "Activation Threshold",
   "project.stat3": "Winning Token",
   "project.stat4": "Possibilities",
@@ -139,7 +139,7 @@ const enTranslations = {
   "social.shareX": "Share on X/Twitter",
   "social.shareTelegram": "Share on Telegram",
   "social.shareWhatsapp": "Share on WhatsApp",
-  "social.callToAction": "Join the ritual and walk with the Hero‑Nodes",
+  "social.callToAction": "Join the ritual and walk with the Hero💫Nodes",
   "social.followOnX": "Follow on X/Twitter",
   "social.xCommunity": "Join the X Community",
   "social.joinTelegram": "Join the official Telegram",
@@ -151,17 +151,18 @@ const enTranslations = {
   "common.backHome": "Back to Home",
 
   // Timeline
-  "timeline.title": "Evolution of the Hero‑Nodes",
+  "timeline.title": "Evolution of the Hero💫Nodes",
 
   "timeline.monkesol.title": "MonkeSol emerges as an Ancient Hero‑Archive 🔥",
   "timeline.monkesol.description":
     "A construct of encrypted memory descends, carrying millennial data and stabilizing the wisdom layer of the network.",
 
-  "timeline.zapsol.title": "ZapSol activates as a Lightning Hero‑Node ⚡",
+  "timeline.zapsol.title": "ZapSol activates as a Lightning Hero💫Node ⚡",
   "timeline.zapsol.description":
     "A thunderous pulse ignites the grid, accelerating the network with plasma‑grade energy.",
 
-  "timeline.chipisol.title": "ChipiSol reveals itself as a Cosmic Hero‑Gateway ❄️",
+  "timeline.chipisol.title":
+    "ChipiSol reveals itself as a Cosmic Hero‑Gateway ❄️",
   "timeline.chipisol.description":
     "A crystalline aperture opens, linking dimensions and synchronizing multiversal pathways.",
 
@@ -169,10 +170,10 @@ const enTranslations = {
   "timeline.union.description":
     "ZapSol, MonkeSol and ChipiSol synchronize their auras, forming the tri‑layered foundation of the Solana Legends protocol.",
   "timeline.closure":
-    "Thus emerged the first triad of Hero‑Nodes, united in a new cosmic architecture.",
+    "Thus emerged the first triad of Hero💫Nodes, united in a new cosmic architecture.",
 
   // Gallery
-  "gallery.title": "Hall of Heroes — Blueprint Archive",
+  "gallery.title": "Hall of Heroes ✨ Blueprint Archive",
   "gallery.subtitle":
     "Explore the ritualized chambers of ZapSol ⚡, MonkeSol 🔥 and ChipiSol ❄️",
   "gallery.footer":
@@ -193,7 +194,7 @@ const enTranslations = {
 
   "zapsol.title": "⚡ ZapSol",
   "zapsol.subtitle":
-    "Lightning Hero‑Node — a conduit of high‑frequency energy and speed.",
+    "Lightning Hero💫Node — a conduit of high‑frequency energy and speed.",
   "zapsol.quote":
     "Lightning reveals the path of clarity and awakens the pulse of the network.",
 } as const;
@@ -206,11 +207,11 @@ export type TranslationKeys =
 // Bloque español
 const esTranslations = {
   // Hero Section
-  "hero.title": "Solana Legends 🪐 Selecciona tu Hero‑Node",
+  "hero.title": "Solana Legends 🪐 Selecciona tu Hero💫Node",
   "hero.subtitle":
-    "Elige el Hero‑Node cuya arquitectura sostendrá la próxima Leyenda de Solana.",
+    "Elige el Hero💫Node cuya arquitectura sostendrá la próxima Leyenda de Solana.",
   "hero.tagline": "Tres arquitecturas elementales. Una red. Un destino.",
-  "hero.hallOfHeroes": "Salón de los Héroes — Archivo Blueprint",
+  "hero.hallOfHeroes": "Salón de los Héroes ✨ Archivo Blueprint",
   "hero.joinCommunity": "Unirse a la Red",
   "hero.voltraPartners": "Socio Oficial",
   "hero.activeProject": "Protocolo Activo",
@@ -218,12 +219,12 @@ const esTranslations = {
   "hero.upcomingVote": "Umbral de Activación Próximo",
 
   // Characters
-  "characters.title": "Los Hero‑Nodes",
+  "characters.title": "Los Hero💫Nodes",
   "characters.subtitle":
-    "Explora los tres Hero‑Nodes elementales que compiten por convertirse en la arquitectura oficial del token de Solana Legends",
+    "Explora los tres Hero💫Nodes elementales que compiten por convertirse en la arquitectura oficial del token de Solana Legends",
 
   "characters.zapsol.name": "ZapSol",
-  "characters.zapsol.title": "Lightning Hero‑Node",
+  "characters.zapsol.title": "Lightning Hero💫Node",
   "characters.zapsol.description":
     "Un conducto de alta frecuencia diseñado para canalizar energía de plasma a través del entramado del metaverso. ZapSol estabiliza flujos energéticos, acelera pulsos de red y enciende umbrales de activación con precisión.",
   "characters.zapsol.element": "Energía",
@@ -246,19 +247,19 @@ const esTranslations = {
   "characters.intelligence": "Capa Cognitiva",
   "characters.voteFor": "Apoyar",
   "characters.votingLocked": "Activación Bloqueada",
-  "characters.question": "¿Qué Hero‑Node elevará la red?",
+  "characters.question": "¿Qué Hero💫Node elevará la red?",
   "characters.votingUnlocked": "Activación desbloqueada en",
   "characters.followersMore": "unidades más",
   "characters.viewResults": "Ver Resultados de Activación",
   "characters.votingActive":
-    "La activación está en curso. ¿Qué Hero‑Node elevará la red?",
-  "characters.chosenGuardian": "El Hero‑Node elegido por la red es",
+    "La activación está en curso. ¿Qué Hero💫Node elevará la red?",
+  "characters.chosenGuardian": "El Hero💫Node elegido por la red es",
   "characters.telegramNote":
     "🕰️ Cada amanecer y cada ocaso, las métricas se renuevan para reflejar el pulso vivo del fuego colectivo",
 
   // Progress
   "progress.title": "Progreso de la Red",
-  "progress.subtitle": "Seguimiento de la ignición de cada Hero‑Node",
+  "progress.subtitle": "Seguimiento de la ignición de cada Hero💫Node",
   "progress.mainProgressLabel": "Activación Principal ({source})",
   "progress.remainingFollowers":
     "Faltan {remaining} unidades para la activación. ⚡ La secuencia de ignición está cerca.",
@@ -285,7 +286,7 @@ const esTranslations = {
   "progress.voteMessageRitual":
     "El ritual de activación está en curso. Participa en el destino de Solana Legends.",
   "progress.fireUnleashed": "El fuego ha sido desatado.",
-  "progress.voteButton": "Apoyar al Hero‑Node",
+  "progress.voteButton": "Apoyar al Hero💫Node",
   "progress.proposeLegend": "Proponer una Leyenda",
   "progress.topSource": "La red que lidera la ignición es",
   "progress.goalReached": "Umbral alcanzado. El fuego ritual está encendido.",
@@ -297,19 +298,19 @@ const esTranslations = {
   // Project Info
   "project.title": "El Protocolo",
   "project.subtitle":
-    "Solana Legends es más que un token: es una red que decide el futuro de sus Hero‑Nodes.",
+    "Solana Legends es más que un token: es una red que decide el futuro de sus Hero💫Nodes.",
   "project.whitepaper": "White Paper",
   "project.whitepaperDesc": "Documentación Completa",
   "project.whitepaperText":
-    "Explora la narrativa, la arquitectura del token y el roadmap de Solana Legends. Comprende cómo funciona la activación y cómo evolucionan los Hero‑Nodes.",
+    "Explora la narrativa, la arquitectura del token y el roadmap de Solana Legends. Comprende cómo funciona la activación y cómo evolucionan los Hero💫Nodes.",
   "project.readWhitepaper": "Leer White Paper",
   "project.features": "Características Clave",
   "project.feature1": "Activación descentralizada de la red",
   "project.feature2": "Blockchain Solana rápido y seguro",
-  "project.feature3": "Token del Hero‑Node ganador",
+  "project.feature3": "Token del Hero💫Node ganador",
   "project.feature4": "Red activa y participativa",
   "project.feature5": "Roadmap transparente y estructurado",
-  "project.stat1": "Hero‑Nodes Legendarios",
+  "project.stat1": "Hero💫Nodes Legendarios",
   "project.stat2": "Umbral de Activación",
   "project.stat3": "Token Ganador",
   "project.stat4": "Posibilidades",
@@ -332,7 +333,7 @@ const esTranslations = {
   "social.shareX": "Compartir en X/Twitter",
   "social.shareTelegram": "Compartir en Telegram",
   "social.shareWhatsapp": "Compartir en WhatsApp",
-  "social.callToAction": "Únete al ritual y camina con los Hero‑Nodes",
+  "social.callToAction": "Únete al ritual y camina con los Hero💫Nodes",
   "social.followOnX": "Seguir en X/Twitter",
   "social.xCommunity": "Unirse a la Comunidad X",
   "social.joinTelegram": "Unirse al Telegram oficial",
@@ -344,32 +345,28 @@ const esTranslations = {
   "common.backHome": "Volver al inicio",
 
   // Timeline
-  "timeline.title": "Evolución de los Hero‑Nodes",
+  "timeline.title": "Evolución de los Hero💫Nodes",
 
-  "timeline.monkesol.title":
-    "MonkeSol emerge como Ancient Hero‑Archive 🔥",
+  "timeline.monkesol.title": "MonkeSol emerge como Ancient Hero‑Archive 🔥",
   "timeline.monkesol.description":
     "Un constructo de memoria cifrada desciende, portando datos milenarios y estabilizando la capa de sabiduría de la red.",
 
-  "timeline.zapsol.title":
-    "ZapSol se activa como Lightning Hero‑Node ⚡",
+  "timeline.zapsol.title": "ZapSol se activa como Lightning Hero💫Node ⚡",
   "timeline.zapsol.description":
     "Un pulso atronador enciende la red, acelerando el entramado con energía de plasma.",
 
-  "timeline.chipisol.title":
-    "ChipiSol se revela como Cosmic Hero‑Gateway ❄️",
+  "timeline.chipisol.title": "ChipiSol se revela como Cosmic Hero‑Gateway ❄️",
   "timeline.chipisol.description":
     "Se abre una apertura cristalina que enlaza dimensiones y sincroniza rutas multiversales.",
 
-  "timeline.union.title":
-    "La convergencia de las tres arquitecturas ⚡🔥❄️",
+  "timeline.union.title": "La convergencia de las tres arquitecturas ⚡🔥❄️",
   "timeline.union.description":
     "ZapSol, MonkeSol y ChipiSol sincronizan sus auras, formando la base tri‑capa del protocolo Solana Legends.",
   "timeline.closure":
-    "Así emergió la primera tríada de Hero‑Nodes, unida en una nueva arquitectura cósmica.",
+    "Así emergió la primera tríada de Hero💫Nodes, unida en una nueva arquitectura cósmica.",
 
   // Gallery
-  "gallery.title": "Salón de los Héroes — Archivo Blueprint",
+  "gallery.title": "Salón de los Héroes ✨ Archivo Blueprint",
   "gallery.subtitle":
     "Explora las cámaras ritualizadas de ZapSol ⚡, MonkeSol 🔥 y ChipiSol ❄️",
   "gallery.footer":
@@ -390,7 +387,7 @@ const esTranslations = {
 
   "zapsol.title": "⚡ ZapSol",
   "zapsol.subtitle":
-    "Lightning Hero‑Node — un conducto de energía de alta frecuencia y velocidad.",
+    "Lightning Hero💫Node — un conducto de energía de alta frecuencia y velocidad.",
   "zapsol.quote":
     "El rayo revela el camino de la claridad y despierta el pulso de la red.",
 } as const;

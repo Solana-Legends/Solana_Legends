@@ -1,8 +1,9 @@
 // src/components/heroes/HeroRoomZapSol.tsx
 import { useLanguage } from "@/contexts/LanguageContext";
 import { useEffect, useState } from "react";
-import SnowParticle from "@/components/particles/SnowParticle";
-import PointParticle from "@/components/particles/PointParticle";
+
+import LightningParticle from "@/components/particles/LightningParticle";
+import PointParticleZapSol from "@/components/particles/PointParticleZapSol";
 
 export default function HeroRoomZapSol() {
   const { t } = useLanguage();
@@ -20,7 +21,7 @@ export default function HeroRoomZapSol() {
       {/* ✨ Fondo eléctrico animado */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,#1e3a8a,#0f172a)] animate-pulse opacity-70" />
 
-      {/* ⚡ Rayos + ⚪ Puntos eléctricos (encapsulados) */}
+      {/* ⚡ Rayos + ⚪ Puntos eléctricos */}
       <div className="absolute inset-0 pointer-events-none">
         {Array.from({ length: 36 }).map((_, i) => {
           const isRay = i % 2 === 0;
@@ -41,9 +42,17 @@ export default function HeroRoomZapSol() {
             : pointAnimations[i % pointAnimations.length];
 
           return isRay ? (
-            <SnowParticle key={i} animationClass={animationClass} cycleKey={cycleKey} />
+            <LightningParticle
+              key={i}
+              animationClass={animationClass}
+              cycleKey={cycleKey}
+            />
           ) : (
-            <PointParticle key={i} animationClass={animationClass} cycleKey={cycleKey} />
+            <PointParticleZapSol
+              key={i}
+              animationClass={animationClass}
+              cycleKey={cycleKey}
+            />
           );
         })}
       </div>

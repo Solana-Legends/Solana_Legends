@@ -1,8 +1,9 @@
 // src/components/heroes/HeroRoomMonkeSol.tsx
 import { useLanguage } from "@/contexts/LanguageContext";
 import { useEffect, useState } from "react";
-import SnowParticle from "@/components/particles/SnowParticle";
-import PointParticle from "@/components/particles/PointParticle";
+
+import FireParticle from "@/components/particles/FireParticle";
+import PointParticleMonkeSol from "@/components/particles/PointParticleMonkeSol";
 
 export default function HeroRoomMonkeSol() {
   const { t } = useLanguage();
@@ -20,7 +21,7 @@ export default function HeroRoomMonkeSol() {
       {/* ✨ Fondo ritualizado con aura cálida */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,#7f1d1d,#0f172a)] opacity-70 animate-pulse" />
 
-      {/* 🔥 Llamas + ⚪ Puntos (encapsulados) */}
+      {/* 🔥 Llamas + 🟧 Puntos cálidos */}
       <div className="absolute inset-0 pointer-events-none">
         {Array.from({ length: 36 }).map((_, i) => {
           const isFlame = i % 2 === 0;
@@ -41,9 +42,17 @@ export default function HeroRoomMonkeSol() {
             : pointAnimations[i % pointAnimations.length];
 
           return isFlame ? (
-            <SnowParticle key={i} animationClass={animationClass} cycleKey={cycleKey} />
+            <FireParticle
+              key={i}
+              animationClass={animationClass}
+              cycleKey={cycleKey}
+            />
           ) : (
-            <PointParticle key={i} animationClass={animationClass} cycleKey={cycleKey} />
+            <PointParticleMonkeSol
+              key={i}
+              animationClass={animationClass}
+              cycleKey={cycleKey}
+            />
           );
         })}
       </div>
