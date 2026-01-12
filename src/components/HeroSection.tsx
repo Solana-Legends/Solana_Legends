@@ -158,7 +158,7 @@ export default function HeroSection() {
             style={{ width: maxWidth ?? "auto" }}
             className="w-fit border-[#FFA908] text-[#FFA908] hover:bg-[#FFA908] hover:text-[#0F0B1E] py-2 px-4"
           >
-            <Flame className="w-5 h-5" />
+            <Flame className="w-8 h-8" />
             {t("hero.hallOfHeroes")}
           </Button>
 

@@ -32,7 +32,7 @@ const enTranslations = {
   "characters.zapsol.name": "ZapSol",
   "characters.zapsol.title": "Lightning Hero💫Node",
   "characters.zapsol.description":
-    "A high‑frequency conduit engineered to channel plasma‑grade lightning across the metaverse lattice. ZapSol stabilizes energetic flows, accelerates network pulses, and ignites activation thresholds with precision.",
+    "A high‑frequency conduit engineered to channel plasma‑grade lightning across the metaverse lattice. ZapSol stabilizes energetic flows, accelerates network pulses, and ignites precise activation thresholds.",
   "characters.zapsol.element": "Energy",
 
   "characters.monkesol.name": "MonkeSol",
@@ -104,7 +104,7 @@ const enTranslations = {
   // Project Info
   "project.title": "The Protocol",
   "project.subtitle":
-    "Solana Legends is more than a token — it is a network that determines the future of its Hero💫Nodes.",
+    "Solana Legends is more than a token, it is a network that determines the future of its Hero💫Nodes.",
   "project.whitepaper": "White Paper",
   "project.whitepaperDesc": "Complete Documentation",
   "project.whitepaperText":
@@ -153,7 +153,7 @@ const enTranslations = {
   // Timeline
   "timeline.title": "Evolution of the Hero💫Nodes",
 
-  "timeline.monkesol.title": "MonkeSol emerges as an Ancient Hero‑Archive 🔥",
+  "timeline.monkesol.title": "MonkeSol emerges as an Ancient Hero💫Archive 🔥",
   "timeline.monkesol.description":
     "A construct of encrypted memory descends, carrying millennial data and stabilizing the wisdom layer of the network.",
 
@@ -162,7 +162,7 @@ const enTranslations = {
     "A thunderous pulse ignites the grid, accelerating the network with plasma‑grade energy.",
 
   "timeline.chipisol.title":
-    "ChipiSol reveals itself as a Cosmic Hero‑Gateway ❄️",
+    "ChipiSol reveals itself as a Cosmic Hero💫Gateway ❄️",
   "timeline.chipisol.description":
     "A crystalline aperture opens, linking dimensions and synchronizing multiversal pathways.",
 
@@ -182,19 +182,19 @@ const enTranslations = {
   // Individual hero pages
   "chipisol.title": "❄️ ChipiSol",
   "chipisol.subtitle":
-    "Cosmic Hero‑Gateway — a dimensional entity linking realms and blockchains.",
+    "Cosmic Hero💫Gateway ❄️ a dimensional entity linking realms and blockchains.",
   "chipisol.quote":
     "Crystalline gateways preserve the memory of the universe and open routes to the eternal.",
 
   "monkesol.title": "🔥 MonkeSol",
   "monkesol.subtitle":
-    "Ancient Hero‑Archive — a construct of encrypted ancestral wisdom.",
+    "Ancient Hero💫Archive 🔥 a construct of encrypted ancestral wisdom.",
   "monkesol.quote":
     "Controlled fire illuminates the path of knowledge and stabilizes the network’s memory.",
 
   "zapsol.title": "⚡ ZapSol",
   "zapsol.subtitle":
-    "Lightning Hero💫Node — a conduit of high‑frequency energy and speed.",
+    "Lightning Hero💫Node ⚡ a conduit of high‑frequency energy and speed.",
   "zapsol.quote":
     "Lightning reveals the path of clarity and awakens the pulse of the network.",
 } as const;
@@ -211,7 +211,7 @@ const esTranslations = {
   "hero.subtitle":
     "Elige el Hero💫Node cuya arquitectura sostendrá la próxima Leyenda de Solana.",
   "hero.tagline": "Tres arquitecturas elementales. Una red. Un destino.",
-  "hero.hallOfHeroes": "Salón de los Héroes ✨ Archivo Blueprint",
+  "hero.hallOfHeroes": "Salón de Héroes ✨ Archivo Blueprint",
   "hero.joinCommunity": "Unirse a la Red",
   "hero.voltraPartners": "Socio Oficial",
   "hero.activeProject": "Protocolo Activo",
@@ -226,17 +226,17 @@ const esTranslations = {
   "characters.zapsol.name": "ZapSol",
   "characters.zapsol.title": "Lightning Hero💫Node",
   "characters.zapsol.description":
-    "Un conducto de alta frecuencia diseñado para canalizar energía de plasma a través del entramado del metaverso. ZapSol estabiliza flujos energéticos, acelera pulsos de red y enciende umbrales de activación con precisión.",
+    "Un conducto de alta frecuencia diseñado para canalizar energía de plasma a través del entramado del metaverso. ZapSol estabiliza flujos energéticos, acelera pulsos de red y enciende umbrales de activación precisos.",
   "characters.zapsol.element": "Energía",
 
   "characters.monkesol.name": "MonkeSol",
-  "characters.monkesol.title": "Ancient Hero‑Archive",
+  "characters.monkesol.title": "Ancient Hero💫Archive",
   "characters.monkesol.description":
     "Un archivo‑constructo milenario que contiene conocimiento ancestral cifrado. MonkeSol decodifica patrones del mercado, preserva memoria ritual y protege la lógica profunda del continuo blockchain.",
   "characters.monkesol.element": "Sabiduría",
 
   "characters.chipisol.name": "ChipiSol",
-  "characters.chipisol.title": "Cosmic Hero‑Gateway",
+  "characters.chipisol.title": "Cosmic Hero💫Gateway",
   "characters.chipisol.description":
     "Una entidad‑portal dimensional capaz de abrir rutas estables entre cadenas y realidades. ChipiSol teje caminos cristalinos, sincroniza datos multiversales y mantiene la integridad del tránsito inter‑realidad.",
   "characters.chipisol.element": "Cosmos",
@@ -298,7 +298,7 @@ const esTranslations = {
   // Project Info
   "project.title": "El Protocolo",
   "project.subtitle":
-    "Solana Legends es más que un token: es una red que decide el futuro de sus Hero💫Nodes.",
+    "Solana Legends es más que un token, es una red que decide el futuro de sus Hero💫Nodes.",
   "project.whitepaper": "White Paper",
   "project.whitepaperDesc": "Documentación Completa",
   "project.whitepaperText":
@@ -347,7 +347,7 @@ const esTranslations = {
   // Timeline
   "timeline.title": "Evolución de los Hero💫Nodes",
 
-  "timeline.monkesol.title": "MonkeSol emerge como Ancient Hero‑Archive 🔥",
+  "timeline.monkesol.title": "MonkeSol emerge como Ancient Hero💫Archive 🔥",
   "timeline.monkesol.description":
     "Un constructo de memoria cifrada desciende, portando datos milenarios y estabilizando la capa de sabiduría de la red.",
 
@@ -355,7 +355,7 @@ const esTranslations = {
   "timeline.zapsol.description":
     "Un pulso atronador enciende la red, acelerando el entramado con energía de plasma.",
 
-  "timeline.chipisol.title": "ChipiSol se revela como Cosmic Hero‑Gateway ❄️",
+  "timeline.chipisol.title": "ChipiSol se revela como Cosmic Hero💫Gateway ❄️",
   "timeline.chipisol.description":
     "Se abre una apertura cristalina que enlaza dimensiones y sincroniza rutas multiversales.",
 
@@ -375,19 +375,19 @@ const esTranslations = {
   // Individual hero pages
   "chipisol.title": "❄️ ChipiSol",
   "chipisol.subtitle":
-    "Cosmic Hero‑Gateway — una entidad dimensional que enlaza reinos y blockchains.",
+    "Cosmic Hero💫Gateway ❄️ una entidad dimensional que enlaza reinos y blockchains.",
   "chipisol.quote":
     "Los portales cristalinos preservan la memoria del universo y abren rutas hacia lo eterno.",
 
   "monkesol.title": "🔥 MonkeSol",
   "monkesol.subtitle":
-    "Ancient Hero‑Archive — un constructo de sabiduría ancestral cifrada.",
+    "Ancient Hero💫Archive 🔥 un constructo de sabiduría ancestral cifrada.",
   "monkesol.quote":
     "El fuego controlado ilumina el camino del conocimiento y estabiliza la memoria de la red.",
 
   "zapsol.title": "⚡ ZapSol",
   "zapsol.subtitle":
-    "Lightning Hero💫Node — un conducto de energía de alta frecuencia y velocidad.",
+    "Lightning Hero💫Node ⚡ un conducto de energía de alta frecuencia y velocidad.",
   "zapsol.quote":
     "El rayo revela el camino de la claridad y despierta el pulso de la red.",
 } as const;
