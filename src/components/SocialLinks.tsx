@@ -239,7 +239,7 @@ export default function SocialLinks() {
         <div
           className="
     absolute 
-    bottom-[-8.6rem] left-[-5rem]     /* 📱 móvil: más arriba y más a la derecha */
+    bottom-[-7.6rem] left-[-5rem]     /* 📱 móvil: más arriba y más a la derecha */
     md:bottom-0 md:left-0         /* 🖥️ desktop: posición original */
     mb-[14rem] ml-[-3rem]
     animate-in fade-in slide-in-from-left duration-1000"
