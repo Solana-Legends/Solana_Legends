@@ -84,7 +84,7 @@ export default function HeroRoomZapSol() {
         <div
           className="
             absolute 
-            bottom-[6rem] right-[-8.5rem]
+            bottom-[5rem] right-[-8.5rem]
             md:bottom-0 md:right-0
             mb-[4rem] mr-[2rem]
             animate-in fade-in slide-in-from-left duration-1000"
