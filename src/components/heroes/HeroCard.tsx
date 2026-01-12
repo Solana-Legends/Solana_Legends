@@ -72,7 +72,7 @@ export default function HeroCard({
   // Animación del símbolo
   const symbolAnimation =
     id === "zapsol"
-      ? "symbol-zapsol"
+      ? "symbol-hero-zapsol-flicker"
       : id === "monkesol"
       ? "symbol-monkesol"
       : id === "chipisol"
