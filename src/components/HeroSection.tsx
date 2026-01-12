@@ -10,9 +10,10 @@ export default function HeroSection() {
   const { t } = useLanguage();
   const navigate = useNavigate();
 
-  {
-    /* Botones con ancho dinámico */
-  }
+  // Dividir el texto en dos líneas usando el emoji como separador
+  const [line1, line2] = t("hero.hallOfHeroes").split("✨");
+
+  // Botones con ancho dinámico
   const longestButtonRef = useRef<HTMLButtonElement | null>(null);
   const [maxWidth, setMaxWidth] = useState<number | null>(null);
 
@@ -21,7 +22,7 @@ export default function HeroSection() {
       const width = longestButtonRef.current.getBoundingClientRect().width;
       setMaxWidth(width);
     }
-  }, [t]); // recalcular cuando cambia el idioma
+  }, [t]);
 
   return (
     <section className="relative min-h-[70vh] flex justify-center bg-gradient-to-br from-[#0F0B1E] via-[#1A1530] to-[#0F0B1E] overflow-hidden aura-pulsante aura-hover-gold">
@@ -91,11 +92,11 @@ export default function HeroSection() {
         {/* MonkeSol flotante */}
         <div
           className="
-    absolute 
-    bottom-[-2rem] left-[-0.8rem]     /* 📱 móvil: más arriba y más a la derecha */
-    md:bottom-0 md:left-0         /* 🖥️ desktop: posición original */
-    ml-[-3rem]
-    animate-in fade-in slide-in-from-left duration-1000"
+            absolute 
+            bottom-[-2rem] left-[-0.8rem]
+            md:bottom-0 md:left-0
+            ml-[-3rem]
+            animate-in fade-in slide-in-from-left duration-1000"
         >
           <div className="relative z-10 flex justify-center items-center w-64 h-64 group">
             <div className="absolute w-64 h-64 rounded-full blur-3xl hero-monkesol-aura pointer-events-none z-0 transition-colors duration-500 group-hover:bg-red-400/40"></div>
@@ -107,7 +108,7 @@ export default function HeroSection() {
           </div>
         </div>
 
-        {/* Videos (ORIGINALES, SIN CAMBIOS) */}
+        {/* Videos */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 mb-6 w-full max-w-screen-lg mx-auto px-2">
           <div className="animate-in fade-in slide-in-from-left duration-1000">
             <div className="relative group rounded-xl overflow-hidden transition-shadow duration-300 hover:scale-[1.02] border border-purple-500/40 aura-pulsante aura-hover-white">
@@ -150,16 +151,25 @@ export default function HeroSection() {
 
         {/* Botones */}
         <div className="flex flex-col sm:flex-row gap-3 justify-center items-center mb-4">
-          {/* Botón 1 */}
+
+          {/* Botón 1 — Hall of Heroes */}
           <Button
             size="default"
             variant="outline"
             onClick={() => navigate("/hall-of-heroes")}
-            style={{ width: maxWidth ?? "auto" }}
-            className="w-fit border-[#FFA908] text-[#FFA908] hover:bg-[#FFA908] hover:text-[#0F0B1E] py-2 px-4"
+            className="
+              w-[220px]
+              flex flex-col items-center gap-1
+              text-center break-words leading-tight
+              border-[#FFA908] text-[#FFA908]
+              hover:bg-[#FFA908] hover:text-[#0F0B1E]
+              py-2 px-4
+            "
           >
             <Flame className="w-8 h-8" />
-            {t("hero.hallOfHeroes")}
+
+            <span className="leading-tight">{line1.trim()} ✨</span>
+            <span className="leading-tight">{line2.trim()}</span>
           </Button>
 
           {/* Botón 2 */}
