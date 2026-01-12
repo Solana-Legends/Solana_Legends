@@ -153,6 +153,7 @@ export default function HeroSection() {
             size="default"
             variant="outline"
             onClick={() => navigate("/hall-of-heroes")}
+            style={{ width: maxWidth ?? "auto" }}
             className="
     w-[220px]
     flex flex-row items-center gap-3
