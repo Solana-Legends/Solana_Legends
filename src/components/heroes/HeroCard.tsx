@@ -1,6 +1,6 @@
 import { useLanguage } from "@/contexts/LanguageContext";
 
-interface GuardianCardProps {
+interface HeroCardProps {
   id?: string;
   name: string;
   title: { en: string; es: string };
@@ -9,14 +9,14 @@ interface GuardianCardProps {
   description: { en: string; es: string };
 }
 
-export default function GuardianCard({
+export default function HeroCard({
   id,
   name,
   title,
   aura,
   image,
   description,
-}: GuardianCardProps) {
+}: HeroCardProps) {
   const { language, t } = useLanguage();
 
   // Aura de la tarjeta (cambia color en hover)
@@ -115,6 +115,7 @@ export default function GuardianCard({
         </h2>
         <p className="text-blue-300 italic">{title[language]}</p>
         <p className="mt-2 text-sm">{description[language]}</p>
+
         <button className="mt-4 bg-yellow-400 hover:bg-yellow-700 text-orange-900 font-semibold px-4 py-2 rounded">
           {t("characters.voteFor")} {name}
         </button>

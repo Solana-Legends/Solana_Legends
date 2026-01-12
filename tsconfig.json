@@ -1,9 +1,11 @@
 {
   "compilerOptions": {
-    "baseUrl": ".",
+    "baseUrl": "src",
     "paths": {
-      "@/*": ["./src/*"]
+      "@/*": ["*"]
     },
+
+    "forceConsistentCasingInFileNames": true,
 
     "strict": true,
     "noImplicitAny": true,
@@ -21,8 +23,7 @@
     "jsx": "react-jsx",
     "jsxImportSource": "react",
 
-    "types": ["react", "react-dom", "node"],
-    "typeRoots": ["./src/types", "./node_modules/@types"]
+    "types": ["react", "react-dom", "node"]
   },
 
   "include": ["src"],

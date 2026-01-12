@@ -5,7 +5,8 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { LanguageProvider } from "@/contexts/LanguageContext";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
-import GuardiansPage from "./pages/GuardiansPage";
+import HallOfHeroesPage from "./pages/HallOfHeroesPage";
+import { Navigate } from "react-router-dom";
 import { Analytics } from "@vercel/analytics/react";
 
 const queryClient = new QueryClient();
@@ -20,7 +21,8 @@ const App = () => (
           <div className="w-full">
             <Routes>
               <Route path="/" element={<Index />} />
-              <Route path="/guardians" element={<GuardiansPage />} />
+              <Route path="/hall-of-heroes" element={<HallOfHeroesPage />} />
+              <Route path="/guardians" element={<Navigate to="/hall-of-heroes" replace />} />
               <Route path="*" element={<NotFound />} />
             </Routes>
           </div>

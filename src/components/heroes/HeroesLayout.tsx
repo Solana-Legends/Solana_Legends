@@ -1,8 +1,8 @@
 import { ReactNode } from "react";
 import { useLanguage, TranslationKeys } from "@/contexts/LanguageContext";
 import LanguageSwitcher from "@/components/LanguageSwitcher";
-import BackHomeButton from "@/components/guardians/BackHomeButton";
-import GuardiansBreadcrumb from "@/components/guardians/GuardiansBreadcrumb";
+import BackHomeButton from "@/components/heroes/BackHomeButton";
+import GuardiansBreadcrumb from "@/components/heroes/HeroesBreadcrumb";
 
 interface GuardiansLayoutProps {
   children: ReactNode;
@@ -12,7 +12,7 @@ interface GuardiansLayoutProps {
 
 export default function GuardiansLayout({
   children,
-  titleKey = "hero.viewGuardians",
+  titleKey = "hero.hallOfHeroes",
   subtitleKey = "hero.tagline",
 }: GuardiansLayoutProps) {
   const { t } = useLanguage();
@@ -36,8 +36,11 @@ export default function GuardiansLayout({
 
         {/* Título y subtítulo ritualizados */}
         <header
-          className="w-full max-w-screen-2xl mx-auto px-4 text-center opacity-0 translate-y-3 animate-fadeInUp"
-          style={{ animationDelay: "0.4s" }}
+          className="
+            w-full max-w-screen-2xl mx-auto px-4 text-center 
+            opacity-0 translate-y-3 animate-fadeInUp 
+            [animation-delay:400ms]
+          "
         >
           <h1 className="text-4xl md:text-6xl font-bold mb-2">{t(titleKey)}</h1>
           <p className="text-lg md:text-xl text-blue-300 mb-10">

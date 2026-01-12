@@ -1,7 +1,7 @@
 import { useLanguage } from "@/contexts/LanguageContext";
-import GuardianCard from "@/components/guardians/GuardianCard";
-import GuardianGallery from "./GuardianGallery";
-import GuardiansLayout from "@/components/guardians/GuardiansLayout";
+import HeroCard from "@/components/heroes/HeroCard";
+import HeroesGallery from "./HeroesGallery";
+import HeroesLayout from "@/components/heroes/HeroesLayout";
 
 const guardians = [
   {
@@ -48,33 +48,39 @@ const guardians = [
   },
 ];
 
-export default function GuardiansPortal() {
+export default function HallOfHeroesPortal() {
   const { t } = useLanguage();
 
   return (
-    <GuardiansLayout titleKey="hero.viewGuardians" subtitleKey="hero.tagline">
-      {/* ✅ Grid de guardianes en flujo normal */}
+    <HeroesLayout titleKey="hero.hallOfHeroes" subtitleKey="hero.tagline">
+      {/* Grid de héroes */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8 w-full max-w-[960px] mx-auto px-4 place-items-center">
-        {guardians.map((g, index) => (
-          <div
-            key={g.id}
-            className="opacity-0 translate-y-6 animate-fadeInUp"
-            style={{ animationDelay: `${index * 0.3 + 0.6}s` }}
-          >
-            <GuardianCard {...g} />
-          </div>
-        ))}
+        {guardians.map((g, index) => {
+          const delay = index * 0.3 + 0.6; // segundos
+
+          return (
+            <div
+              key={g.id}
+              className={`
+                opacity-0 translate-y-6 animate-fadeInUp
+                [animation-delay:${delay}s]
+              `}
+            >
+              <HeroCard {...g} />
+            </div>
+          );
+        })}
       </div>
 
-      {/* ✅ Pie de sección ritualizado */}
+      {/* Pie ritualizado */}
       <footer className="mt-10 py-4">
         <p className="text-center text-sm text-yellow-500 italic footer-aura">
           {t("characters.telegramNote")}
         </p>
       </footer>
 
-      {/* ✅ Galería ritualizada */}
-      <GuardianGallery />
-    </GuardiansLayout>
+      {/* Galería ritualizada */}
+      <HeroesGallery />
+    </HeroesLayout>
   );
 }

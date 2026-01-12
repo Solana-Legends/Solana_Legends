@@ -1,19 +1,17 @@
-// src/components/guardians/GuardianRoomZapSol.tsx
+// src/components/heroes/HeroRoomZapSol.tsx
 import { useLanguage } from "@/contexts/LanguageContext";
 import { useEffect, useState } from "react";
+import SnowParticle from "@/components/particles/SnowParticle";
+import PointParticle from "@/components/particles/PointParticle";
 
-export default function GuardianRoomZapSol() {
+export default function HeroRoomZapSol() {
   const { t } = useLanguage();
   const [cycleKey, setCycleKey] = useState(0);
 
   useEffect(() => {
-    // ⏱️ Reinicia las animaciones cada 24s
-    // - 0–16% (≈4s) → fade in progresivo
-    // - 16–83% (≈16s) → tramo intermedio con pulsos, flotaciones, parpadeos y expansiones
-    // - 83–100% (≈4s) → fade out progresivo
     const interval = setInterval(() => {
       setCycleKey((prev) => prev + 1);
-    }, 24000); // ciclo completo de 24s
+    }, 24000);
     return () => clearInterval(interval);
   }, []);
 
@@ -22,21 +20,20 @@ export default function GuardianRoomZapSol() {
       {/* ✨ Fondo eléctrico animado */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,#1e3a8a,#0f172a)] animate-pulse opacity-70" />
 
-      {/* ⚡ Rayos + ⚪ Puntos eléctricos */}
+      {/* ⚡ Rayos + ⚪ Puntos eléctricos (encapsulados) */}
       <div className="absolute inset-0 pointer-events-none">
         {Array.from({ length: 36 }).map((_, i) => {
           const isRay = i % 2 === 0;
 
-          // Animaciones equivalentes a MonkeSol/ChipiSol
           const rayAnimations = [
-            "animate-flamePulse", // ⚡ → pulso rápido
-            "animate-flameFlicker", // ⚡ → parpadeo más lento
-            "animate-flameFloat", // ⚡ → flotación con rebote
+            "animate-flamePulse",
+            "animate-flameFlicker",
+            "animate-flameFloat",
           ];
           const pointAnimations = [
-            "animate-pointPulse", // ⚪ → pulso rápido
-            "animate-pointFloat", // ⚪ → flotación con rebote
-            "animate-pointPing", // ⚪ → 4 apariciones
+            "animate-pointPulse",
+            "animate-pointFloat",
+            "animate-pointPing",
           ];
 
           const animationClass = isRay
@@ -44,25 +41,9 @@ export default function GuardianRoomZapSol() {
             : pointAnimations[i % pointAnimations.length];
 
           return isRay ? (
-            <div
-              key={`${cycleKey}-${i}`}
-              className={`absolute text-xl text-yellow-400 drop-shadow-[0_0_12px_#facc15] ${animationClass}`}
-              style={{
-                top: `${Math.random() * 100}%`,
-                left: `${Math.random() * 100}%`,
-              }}
-            >
-              ⚡
-            </div>
+            <SnowParticle key={i} animationClass={animationClass} cycleKey={cycleKey} />
           ) : (
-            <div
-              key={`${cycleKey}-${i}`}
-              className={`absolute w-2 h-2 rounded-full bg-gradient-to-r from-yellow-400 to-orange-400 opacity-80 drop-shadow-[0_0_8px_#facc15] ${animationClass}`}
-              style={{
-                top: `${Math.random() * 100}%`,
-                left: `${Math.random() * 100}%`,
-              }}
-            />
+            <PointParticle key={i} animationClass={animationClass} cycleKey={cycleKey} />
           );
         })}
       </div>
@@ -76,18 +57,13 @@ export default function GuardianRoomZapSol() {
         <h3 className="text-4xl md:text-5xl font-bold text-yellow-400 mb-4 animate-fadeInUp">
           {t("zapsol.title")}
         </h3>
-        <p
-          className="text-lg md:text-xl text-blue-300 mb-6 animate-fadeInUp"
-          style={{ animationDelay: "0.3s" }}
-        >
+
+        <p className="text-lg md:text-xl text-blue-300 mb-6 animate-fadeInUp [animation-delay:300ms]">
           {t("zapsol.subtitle")}
         </p>
 
         {/* Imagen ritualizada */}
-        <div
-          className="flex justify-center mb-8 animate-fadeInUp"
-          style={{ animationDelay: "0.6s" }}
-        >
+        <div className="flex justify-center mb-8 animate-fadeInUp [animation-delay:600ms]">
           <img
             src="/images/guardians/Zap2.png"
             alt="ZapSol"
@@ -98,14 +74,15 @@ export default function GuardianRoomZapSol() {
         {/* Imagen ZapSol con aura lateral derecha */}
         <div
           className="
-    absolute 
-    bottom-[6rem] right-[-8.5rem]     /* 📱 móvil: más arriba y más a la derecha */
-    md:bottom-0 md:right-0         /* 🖥️ desktop: posición original */
-    mb-[4rem] mr-[2rem]
-    animate-in fade-in slide-in-from-left duration-1000"
+            absolute 
+            bottom-[6rem] right-[-8.5rem]
+            md:bottom-0 md:right-0
+            mb-[4rem] mr-[2rem]
+            animate-in fade-in slide-in-from-left duration-1000"
         >
           <div className="relative z-10 flex justify-center items-center w-80 h-80 group">
             <div className="absolute w-80 h-80 rounded-full blur-3xl hero-zapsol-aura pointer-events-none z-0 transition-colors duration-500 group-hover:bg-orange-500/40"></div>
+
             <img
               src="/assets/ZapSolVol.png"
               alt="ZapSol Hero"
@@ -115,10 +92,7 @@ export default function GuardianRoomZapSol() {
         </div>
 
         {/* Frase ritualizada */}
-        <blockquote
-          className="italic text-yellow-300 text-lg md:text-xl animate-fadeInUp"
-          style={{ animationDelay: "0.9s" }}
-        >
+        <blockquote className="italic text-yellow-300 text-lg md:text-xl animate-fadeInUp [animation-delay:900ms]">
           {t("zapsol.quote")}
         </blockquote>
       </div>

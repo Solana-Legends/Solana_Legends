@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { Rocket, Users, Vote, Shield } from "lucide-react";
+import { Rocket, Users, Vote, Flame } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { useNavigate } from "react-router-dom";
 import VideoWithControls from "@/components/VideoWithControls";
@@ -154,12 +154,12 @@ export default function HeroSection() {
           <Button
             size="default"
             variant="outline"
-            onClick={() => navigate("/guardians")}
+            onClick={() => navigate("/hall-of-heroes")}
             style={{ width: maxWidth ?? "auto" }}
             className="w-fit border-[#FFA908] text-[#FFA908] hover:bg-[#FFA908] hover:text-[#0F0B1E] py-2 px-4"
           >
-            <Shield className="w-5 h-5" />
-            {t("hero.viewGuardians")}
+            <Flame className="w-5 h-5" />
+            {t("hero.hallOfHeroes")}
           </Button>
 
           {/* Botón 2 */}

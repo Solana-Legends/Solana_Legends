@@ -13,186 +13,189 @@ interface LanguageContextType {
  */
 const enTranslations = {
   // Hero Section
-  "hero.title": "Solana Legends 🪐 Choose Your Meme",
+  "hero.title": "Solana Legends 🪐 Select Your Hero‑Node",
   "hero.subtitle":
-    "Join our community and choose the guardian that will become a token.",
-  "hero.tagline": "Three elemental forces. One community. One destiny.",
-  "hero.viewGuardians": "View Guardians",
-  "hero.joinCommunity": "Join the Community",
-  "hero.voltraPartners": "Official partner",
-  "hero.activeProject": "Active Project",
-  "hero.growingCommunity": "Growing Community",
-  "hero.upcomingVote": "Upcoming Vote",
+    "Choose the Hero‑Node whose architecture will anchor the next Solana Legend.",
+  "hero.tagline": "Three elemental architectures. One network. One destiny.",
+  "hero.hallOfHeroes": "Hall of Heroes — Blueprint Archive",
+  "hero.joinCommunity": "Join the Network",
+  "hero.voltraPartners": "Official Partner",
+  "hero.activeProject": "Active Protocol",
+  "hero.growingCommunity": "Expanding Network",
+  "hero.upcomingVote": "Activation Threshold Approaching",
 
   // Characters
-  "characters.title": "The Guardians",
+  "characters.title": "The Hero‑Nodes",
   "characters.subtitle":
-    "Meet the three legendary guardians competing to become the official Solana Legends token",
+    "Explore the three elemental Hero‑Nodes competing to become the official Solana Legends token architecture",
+
   "characters.zapsol.name": "ZapSol",
-  "characters.zapsol.title": "The Lightning Guardian",
+  "characters.zapsol.title": "Lightning Hero‑Node",
   "characters.zapsol.description":
-    "Master of electrical energy and speed. ZapSol controls cosmic lightning and can travel at the speed of light. His power lies in the ability to generate electrical storms and manipulate the pure energy of the universe.",
+    "A high‑frequency conduit engineered to channel plasma‑grade lightning across the metaverse lattice. ZapSol stabilizes energetic flows, accelerates network pulses, and ignites activation thresholds with precision.",
   "characters.zapsol.element": "Energy",
+
   "characters.monkesol.name": "MonkeSol",
-  "characters.monkesol.title": "The Ancient Sage",
+  "characters.monkesol.title": "Ancient Hero‑Archive",
   "characters.monkesol.description":
-    "Guardian of ancient wisdom and blockchain secrets. MonkeSol possesses millennial knowledge about cryptocurrencies and can predict market movements with supernatural precision.",
+    "A millennial archive‑construct containing encrypted ancestral knowledge. MonkeSol decodes market patterns, preserves ritual memory, and safeguards the deep logic of the blockchain continuum.",
   "characters.monkesol.element": "Wisdom",
+
   "characters.chipisol.name": "ChipiSol",
-  "characters.chipisol.title": "The Cosmic Spirit",
+  "characters.chipisol.title": "Cosmic Hero‑Gateway",
   "characters.chipisol.description":
-    "Mystical entity that connects all dimensions of the metaverse. ChipiSol can manipulate digital reality and create portals between different blockchains, being the bridge between virtual worlds.",
+    "A dimensional gateway‑entity capable of opening stable portals between chains and realities. ChipiSol weaves crystalline pathways, synchronizes multiversal data, and maintains the integrity of inter‑realm transit.",
   "characters.chipisol.element": "Cosmos",
-  "characters.stats": "Stats",
-  "characters.power": "Power",
-  "characters.speed": "Speed",
-  "characters.intelligence": "Intelligence",
-  "characters.voteFor": "Vote for",
-  "characters.votingLocked": "Voting Locked",
-  "characters.question": "Which guardian will be chosen by the community?",
-  "characters.votingUnlocked": "Voting unlocked in",
-  "characters.followersMore": "more followers",
-  "characters.viewResults": "View Voting Results",
+
+  "characters.stats": "Specifications",
+  "characters.power": "Output",
+  "characters.speed": "Throughput",
+  "characters.intelligence": "Cognitive Layer",
+  "characters.voteFor": "Support",
+  "characters.votingLocked": "Activation Locked",
+  "characters.question": "Which Hero‑Node will the network elevate?",
+  "characters.votingUnlocked": "Activation unlocked in",
+  "characters.followersMore": "more units",
+  "characters.viewResults": "View Activation Results",
   "characters.votingActive":
-    "Voting is active! Which guardian will be chosen by the community?",
-  "characters.chosenGuardian": "The guardian chosen by the community is",
+    "Activation is live. Which Hero‑Node will the network elevate?",
+  "characters.chosenGuardian": "The Hero‑Node chosen by the network is",
   "characters.telegramNote":
-    "🕰️ At every dawn and dusk, the numbers renew to reflect the living energy of the collective fire",
+    "🕰️ At every dawn and dusk, the metrics renew to reflect the living pulse of the collective fire",
 
   // Progress
-  "progress.title": "Community Progress",
-  "progress.subtitle": "Tracking the collective fire in each guardian",
-  "progress.mainProgressLabel": "Main Progress ({source})",
+  "progress.title": "Network Progress",
+  "progress.subtitle": "Tracking the ignition of each Hero‑Node",
+  "progress.mainProgressLabel": "Primary Activation ({source})",
   "progress.remainingFollowers":
-    "¡{remaining} followers left until the vote! ⚡️ the fire will ignite soon",
+    "{remaining} units left until activation. ⚡ The ignition sequence is near.",
   "progress.fireActivated":
-    "✨ {source} has ignited the ritual fire! Voting is now active",
-  "progress.twitterLabel": "Twitter/X 👉🏽 {current} / {goal} followers",
+    "✨ {source} has ignited the ritual fire. Activation is now live.",
+  "progress.twitterLabel": "Twitter/X 👉🏽 {current} / {goal} units",
   "progress.telegramLabel": "Telegram 👉🏽 {current} / {goal} members",
   "progress.communityLabel": "X Community 👉🏽 {current} / {goal} members",
-  "progress.followers": "followers",
-  "progress.towardsVoting": "Progress towards voting",
+  "progress.followers": "units",
+  "progress.towardsVoting": "Progress toward activation",
   "progress.missing": "Only",
-  "progress.forVoting": "followers left for voting!",
+  "progress.forVoting": "units left for activation",
   "progress.twitter": "Twitter/X",
   "progress.community": "X Community",
   "progress.telegram": "Telegram",
   "progress.members": "members",
   "progress.follow": "Follow on X",
-  "progress.joinCommunity": "Join Community",
+  "progress.joinCommunity": "Join Network",
   "progress.joinTelegram": "Join Telegram",
-  "progress.officialGroup": "Official group",
+  "progress.officialGroup": "Official Group",
   "progress.voteMessage":
-    "🗳️ Once we reach 500 followers on X, voting will begin to choose the winning guardian!",
-  "progress.ritualSoon": "The fire will ignite soon",
+    "🗳️ Once we reach 500 units on X, the activation ritual will begin.",
+  "progress.ritualSoon": "Ignition sequence approaching",
   "progress.voteMessageRitual":
-    "The ritual vote is active, take part in Solana Legends destiny",
-  "progress.fireUnleashed": "The fire has been unleashed!",
-  "progress.voteButton": "Vote for the Guardian",
+    "The activation ritual is live. Shape the destiny of Solana Legends.",
+  "progress.fireUnleashed": "The fire has been unleashed.",
+  "progress.voteButton": "Support the Hero‑Node",
   "progress.proposeLegend": "Propose a Legend",
-  "progress.topSource": "The network leading the fire is",
-  "progress.goalReached": "Goal reached! The ritual fire is lit.",
+  "progress.topSource": "The network leading the ignition is",
+  "progress.goalReached": "Threshold reached. The ritual fire is lit.",
   "progress.telegramNote":
-    "🕰️ At every dawn and dusk, the numbers renew to reflect the living energy of the collective fire",
+    "🕰️ At every dawn and dusk, the metrics renew to reflect the living pulse of the collective fire",
   "progress.renewalMessage":
-    "🕰️ At every dawn and every dusk, the numbers renew to reflect the living energy of the collective fire",
+    "🕰️ At every dawn and dusk, the metrics renew to reflect the living pulse of the collective fire",
 
   // Project Info
-  "project.title": "The Project",
+  "project.title": "The Protocol",
   "project.subtitle":
-    "Solana Legends is more than a token - it's a community that decides the future of its guardians",
+    "Solana Legends is more than a token — it is a network that determines the future of its Hero‑Nodes.",
   "project.whitepaper": "White Paper",
-  "project.whitepaperDesc": "Complete documentation",
+  "project.whitepaperDesc": "Complete Documentation",
   "project.whitepaperText":
-    "Discover the complete narrative, tokenomics, and detailed roadmap of Solana Legends. Learn how the voting system works and the future of our guardians.",
+    "Explore the full narrative, token architecture, and roadmap of Solana Legends. Understand how activation works and how the Hero‑Nodes evolve.",
   "project.readWhitepaper": "Read White Paper",
-  "project.features": "Key Features",
-  "project.feature1": "Decentralized community voting",
-  "project.feature2": "Secure and fast Solana blockchain",
-  "project.feature3": "Winning guardian token",
-  "project.feature4": "Active and participatory community",
-  "project.feature5": "Transparent and defined roadmap",
-  "project.stat1": "Legendary Guardians",
-  "project.stat2": "Follower Goal",
+  "project.features": "Core Features",
+  "project.feature1": "Decentralized network activation",
+  "project.feature2": "Fast and secure Solana blockchain",
+  "project.feature3": "Winning Hero‑Node token",
+  "project.feature4": "Active and participatory network",
+  "project.feature5": "Transparent and structured roadmap",
+  "project.stat1": "Legendary Hero‑Nodes",
+  "project.stat2": "Activation Threshold",
   "project.stat3": "Winning Token",
   "project.stat4": "Possibilities",
 
   // Ritual subtitles
-  "project.stat1Aura": "⚡ Ancestral energy",
-  "project.stat2Aura": "🔥 Community fire",
+  "project.stat1Aura": "⚡ High‑frequency energy",
+  "project.stat2Aura": "🔥 Collective fire",
   "project.stat3Aura": "❄️ Token revealed",
-  "project.stat4Aura": "🪐 Infinite possibilities",
+  "project.stat4Aura": "🪐 Infinite architectures",
 
-  // Social Links
-  "social.title": "Social Connections",
-  "social.subtitle": "Join our platforms and share the energy",
-  "social.followLatest": "Follow our latest updates",
-  "social.joinOurCommunity": "Join our community",
-  "social.realTimeChat": "Real-time chat",
+  // Social
+  "social.title": "Network Links",
+  "social.subtitle": "Join the platforms and amplify the signal",
+  "social.followLatest": "Follow the latest transmissions",
+  "social.joinOurCommunity": "Join the network",
+  "social.realTimeChat": "Real‑time channel",
   "social.follow": "Follow",
-  "social.share": "Share the legend",
-  "social.shareSubtitle": "Spread the collective fire across your networks",
+  "social.share": "Share the Legend",
+  "social.shareSubtitle": "Extend the collective fire across the network",
   "social.shareX": "Share on X/Twitter",
   "social.shareTelegram": "Share on Telegram",
   "social.shareWhatsapp": "Share on WhatsApp",
-  "social.callToAction": "Be part of the ritual and walk with the guardians",
+  "social.callToAction": "Join the ritual and walk with the Hero‑Nodes",
   "social.followOnX": "Follow on X/Twitter",
   "social.xCommunity": "Join the X Community",
   "social.joinTelegram": "Join the official Telegram",
   "social.telegramNote":
-    "🕰️ At every dawn and dusk, the numbers renew to reflect the living energy of the collective fire",
+    "🕰️ At every dawn and dusk, the metrics renew to reflect the living pulse of the collective fire",
 
-  // ✅ Common Section
+  // Common
   "common.home": "Home",
-  "common.backHome": "Back to home",
+  "common.backHome": "Back to Home",
 
   // Timeline
-  "timeline.title": "Guardians Timeline",
+  "timeline.title": "Evolution of the Hero‑Nodes",
 
-  "timeline.monkesol.title": "MonkeSol descends with ancestral wisdom 🔥",
+  "timeline.monkesol.title": "MonkeSol emerges as an Ancient Hero‑Archive 🔥",
   "timeline.monkesol.description":
-    "From the flames emerges the Sage Guardian, bearer of controlled fire that illuminates minds and protects blockchain secrets.",
+    "A construct of encrypted memory descends, carrying millennial data and stabilizing the wisdom layer of the network.",
 
-  "timeline.zapsol.title": "ZapSol bursts forth with a thunder of energy ⚡",
+  "timeline.zapsol.title": "ZapSol activates as a Lightning Hero‑Node ⚡",
   "timeline.zapsol.description":
-    "The lightning clears the path: symbol of speed, electric power, and the spark that awakens the community.",
+    "A thunderous pulse ignites the grid, accelerating the network with plasma‑grade energy.",
 
-  "timeline.chipisol.title": "ChipiSol reveals itself as cosmic spirit ❄️",
+  "timeline.chipisol.title": "ChipiSol reveals itself as a Cosmic Hero‑Gateway ❄️",
   "timeline.chipisol.description":
-    "Among crystalline dimensions appears the mystical Entity, weaving portals and preserving the eternal memory of the universe.",
+    "A crystalline aperture opens, linking dimensions and synchronizing multiversal pathways.",
 
-  "timeline.union.title": "The union of the three forces ⚡🔥❄️",
+  "timeline.union.title": "The convergence of the three architectures ⚡🔥❄️",
   "timeline.union.description":
-    "ZapSol, MonkeSol and ChipiSol intertwine their auras and become Guardians of a new cosmos, protectors of the legendary community.",
+    "ZapSol, MonkeSol and ChipiSol synchronize their auras, forming the tri‑layered foundation of the Solana Legends protocol.",
   "timeline.closure":
-    "Thus was born the legend of the Guardians, united in a new universe.",
+    "Thus emerged the first triad of Hero‑Nodes, united in a new cosmic architecture.",
 
-  // gallery
-  "gallery.title": "Virtual Museum of the Guardians",
+  // Gallery
+  "gallery.title": "Hall of Heroes — Blueprint Archive",
   "gallery.subtitle":
-    "Explore the ritualized halls of ZapSol ⚡, MonkeSol 🔥 and ChipiSol ❄️",
-  "gallery.footer": "At every dawn and dusk, the fire renews with your energy",
+    "Explore the ritualized chambers of ZapSol ⚡, MonkeSol 🔥 and ChipiSol ❄️",
+  "gallery.footer":
+    "At every dawn and dusk, the fire renews with the network’s energy",
 
-  // chipisol
+  // Individual hero pages
   "chipisol.title": "❄️ ChipiSol",
   "chipisol.subtitle":
-    "The Cosmic Spirit, mystical entity that connects all dimensions and portals.",
+    "Cosmic Hero‑Gateway — a dimensional entity linking realms and blockchains.",
   "chipisol.quote":
-    "Cosmic ice preserves the memory of the universe and opens portals to the eternal.",
+    "Crystalline gateways preserve the memory of the universe and open routes to the eternal.",
 
-  // monkesol
   "monkesol.title": "🔥 MonkeSol",
   "monkesol.subtitle":
-    "The Sage Guardian, protector of ancestral wisdom and blockchain secrets.",
+    "Ancient Hero‑Archive — a construct of encrypted ancestral wisdom.",
   "monkesol.quote":
-    "Controlled fire is the flame that guides the community toward wisdom.",
+    "Controlled fire illuminates the path of knowledge and stabilizes the network’s memory.",
 
-  // zapsol
   "zapsol.title": "⚡ ZapSol",
   "zapsol.subtitle":
-    "The Lightning Guardian, master of electrical energy, speed, and light.",
+    "Lightning Hero‑Node — a conduit of high‑frequency energy and speed.",
   "zapsol.quote":
-    "The lightning illuminates the path of the wise and awakens the community’s energy.",
+    "Lightning reveals the path of clarity and awakens the pulse of the network.",
 } as const;
 
 // 🔹 Tipo de claves de traducción generado automáticamente
@@ -203,187 +206,193 @@ export type TranslationKeys =
 // Bloque español
 const esTranslations = {
   // Hero Section
-  "hero.title": "Solana Legends 🪐 Elige Tu Meme",
+  "hero.title": "Solana Legends 🪐 Selecciona tu Hero‑Node",
   "hero.subtitle":
-    "Únete a nuestra comunidad y elige el guardián que se convertirá en token.",
-  "hero.tagline": "Tres fuerzas elementales. Una comunidad. Un destino.",
-  "hero.viewGuardians": "Ver Guardianes",
-  "hero.joinCommunity": "Únete a la Comunidad",
+    "Elige el Hero‑Node cuya arquitectura sostendrá la próxima Leyenda de Solana.",
+  "hero.tagline": "Tres arquitecturas elementales. Una red. Un destino.",
+  "hero.hallOfHeroes": "Salón de los Héroes — Archivo Blueprint",
+  "hero.joinCommunity": "Unirse a la Red",
   "hero.voltraPartners": "Socio Oficial",
-  "hero.activeProject": "Proyecto Activo",
-  "hero.growingCommunity": "Comunidad Creciendo",
-  "hero.upcomingVote": "Votación Próxima",
+  "hero.activeProject": "Protocolo Activo",
+  "hero.growingCommunity": "Red en Expansión",
+  "hero.upcomingVote": "Umbral de Activación Próximo",
 
   // Characters
-  "characters.title": "Los Guardianes",
+  "characters.title": "Los Hero‑Nodes",
   "characters.subtitle":
-    "Conoce a los tres legendarios guardianes que compiten por convertirse en el token oficial de Solana Legends",
+    "Explora los tres Hero‑Nodes elementales que compiten por convertirse en la arquitectura oficial del token de Solana Legends",
+
   "characters.zapsol.name": "ZapSol",
-  "characters.zapsol.title": "El Guardián del Rayo",
+  "characters.zapsol.title": "Lightning Hero‑Node",
   "characters.zapsol.description":
-    "Maestro de la energía eléctrica y la velocidad. ZapSol controla rayos cósmicos y viaja a la velocidad de la luz. Su poder radica en la capacidad de generar tormentas eléctricas y manipular la energía pura del universo.",
+    "Un conducto de alta frecuencia diseñado para canalizar energía de plasma a través del entramado del metaverso. ZapSol estabiliza flujos energéticos, acelera pulsos de red y enciende umbrales de activación con precisión.",
   "characters.zapsol.element": "Energía",
+
   "characters.monkesol.name": "MonkeSol",
-  "characters.monkesol.title": "El Sabio Ancestral",
+  "characters.monkesol.title": "Ancient Hero‑Archive",
   "characters.monkesol.description":
-    "Guardián de la sabiduría antigua y los secretos del blockchain. MonkeSol posee conocimientos milenarios sobre las criptomonedas y puede predecir los movimientos del mercado con precisión sobrenatural.",
+    "Un archivo‑constructo milenario que contiene conocimiento ancestral cifrado. MonkeSol decodifica patrones del mercado, preserva memoria ritual y protege la lógica profunda del continuo blockchain.",
   "characters.monkesol.element": "Sabiduría",
+
   "characters.chipisol.name": "ChipiSol",
-  "characters.chipisol.title": "El Espíritu Cósmico",
+  "characters.chipisol.title": "Cosmic Hero‑Gateway",
   "characters.chipisol.description":
-    "Entidad mística que conecta todas las dimensiones del metaverso. ChipiSol puede manipular la realidad digital y crear portales entre diferentes blockchains, siendo el puente entre mundos virtuales.",
+    "Una entidad‑portal dimensional capaz de abrir rutas estables entre cadenas y realidades. ChipiSol teje caminos cristalinos, sincroniza datos multiversales y mantiene la integridad del tránsito inter‑realidad.",
   "characters.chipisol.element": "Cosmos",
-  "characters.stats": "Estadísticas",
-  "characters.power": "Poder",
-  "characters.speed": "Velocidad",
-  "characters.intelligence": "Inteligencia",
-  "characters.voteFor": "Votar por",
-  "characters.votingLocked": "Votación bloqueada",
-  "characters.question": "¿Cuál será el guardián elegido por la comunidad?",
-  "characters.votingUnlocked": "Votación desbloqueada en",
-  "characters.followersMore": "seguidores más",
-  "characters.viewResults": "Ver Resultados de Votación",
+
+  "characters.stats": "Especificaciones",
+  "characters.power": "Potencia",
+  "characters.speed": "Rendimiento",
+  "characters.intelligence": "Capa Cognitiva",
+  "characters.voteFor": "Apoyar",
+  "characters.votingLocked": "Activación Bloqueada",
+  "characters.question": "¿Qué Hero‑Node elevará la red?",
+  "characters.votingUnlocked": "Activación desbloqueada en",
+  "characters.followersMore": "unidades más",
+  "characters.viewResults": "Ver Resultados de Activación",
   "characters.votingActive":
-    "¡La votación está activa! ¿Cuál será el guardián elegido por la comunidad?",
-  "characters.chosenGuardian": "El guardián elegido por la comunidad es",
+    "La activación está en curso. ¿Qué Hero‑Node elevará la red?",
+  "characters.chosenGuardian": "El Hero‑Node elegido por la red es",
   "characters.telegramNote":
-    "🕰️ Cada amanecer y cada ocaso, las cifras se renuevan para reflejar la energía viva del fuego colectivo",
+    "🕰️ Cada amanecer y cada ocaso, las métricas se renuevan para reflejar el pulso vivo del fuego colectivo",
 
   // Progress
-  "progress.title": "Progreso de la Comunidad",
-  "progress.subtitle": "Seguimos el fuego colectivo en cada guardián",
-  "progress.mainProgressLabel": "Progreso Principal ({source})",
+  "progress.title": "Progreso de la Red",
+  "progress.subtitle": "Seguimiento de la ignición de cada Hero‑Node",
+  "progress.mainProgressLabel": "Activación Principal ({source})",
   "progress.remainingFollowers":
-    "¡Faltan {remaining} seguidores para la votación! ⚡️ El fuego se activará pronto",
+    "Faltan {remaining} unidades para la activación. ⚡ La secuencia de ignición está cerca.",
   "progress.fireActivated":
-    "✨ ¡{source} ha encendido el fuego ritual! La votación está activa",
-  "progress.twitterLabel": "Twitter/X 👉🏽 {current} / {goal} seguidores",
+    "✨ {source} ha encendido el fuego ritual. La activación está en curso.",
+  "progress.twitterLabel": "Twitter/X 👉🏽 {current} / {goal} unidades",
   "progress.telegramLabel": "Telegram 👉🏽 {current} / {goal} miembros",
   "progress.communityLabel": "Comunidad X 👉🏽 {current} / {goal} miembros",
-  "progress.followers": "seguidores",
-  "progress.towardsVoting": "Progreso hacia la votación",
-  "progress.missing": "¡Faltan",
-  "progress.forVoting": "seguidores para la votación!",
+  "progress.followers": "unidades",
+  "progress.towardsVoting": "Progreso hacia la activación",
+  "progress.missing": "Solo",
+  "progress.forVoting": "unidades para la activación",
   "progress.twitter": "Twitter/X",
   "progress.community": "Comunidad X",
   "progress.telegram": "Telegram",
   "progress.members": "miembros",
   "progress.follow": "Seguir en X",
-  "progress.joinCommunity": "Unirse a Comunidad",
+  "progress.joinCommunity": "Unirse a la Red",
   "progress.joinTelegram": "Unirse a Telegram",
-  "progress.officialGroup": "Grupo oficial",
+  "progress.officialGroup": "Grupo Oficial",
   "progress.voteMessage":
-    "🗳️ Una vez que alcancemos 500 seguidores en X, ¡comenzará la votación para elegir el guardián ganador!",
-  "progress.ritualSoon": "El fuego se activará pronto",
+    "🗳️ Al alcanzar 500 unidades en X, comenzará el ritual de activación.",
+  "progress.ritualSoon": "Secuencia de ignición próxima",
   "progress.voteMessageRitual":
-    "La votación ritual está activa, participa en el destino de Solana Legends",
-  "progress.fireUnleashed": "¡El fuego se ha desatado!",
-  "progress.voteButton": "Votar por el Guardián",
+    "El ritual de activación está en curso. Participa en el destino de Solana Legends.",
+  "progress.fireUnleashed": "El fuego ha sido desatado.",
+  "progress.voteButton": "Apoyar al Hero‑Node",
   "progress.proposeLegend": "Proponer una Leyenda",
-  "progress.topSource": "La red que lidera el fuego es",
-  "progress.goalReached": "¡Meta alcanzada! El fuego ritual está encendido.",
+  "progress.topSource": "La red que lidera la ignición es",
+  "progress.goalReached": "Umbral alcanzado. El fuego ritual está encendido.",
   "progress.telegramNote":
-    "🕰️ Cada amanecer y cada ocaso, las cifras se renuevan para reflejar la energía viva del fuego colectivo",
+    "🕰️ Cada amanecer y cada ocaso, las métricas se renuevan para reflejar el pulso vivo del fuego colectivo",
   "progress.renewalMessage":
-    "🕰️ Cada amanecer y cada ocaso, las cifras se renuevan para reflejar la energía viva del fuego colectivo",
+    "🕰️ Cada amanecer y cada ocaso, las métricas se renuevan para reflejar el pulso vivo del fuego colectivo",
 
   // Project Info
-  "project.title": "El Proyecto",
+  "project.title": "El Protocolo",
   "project.subtitle":
-    "Solana Legends es más que un token - es una comunidad que decide el futuro de sus guardianes",
+    "Solana Legends es más que un token: es una red que decide el futuro de sus Hero‑Nodes.",
   "project.whitepaper": "White Paper",
-  "project.whitepaperDesc": "Documentación completa",
+  "project.whitepaperDesc": "Documentación Completa",
   "project.whitepaperText":
-    "Descubre la narrativa completa, la tokenomics, y el roadmap detallado de Solana Legends. Conoce cómo funciona el sistema de votación y el futuro de nuestros guardianes.",
+    "Explora la narrativa, la arquitectura del token y el roadmap de Solana Legends. Comprende cómo funciona la activación y cómo evolucionan los Hero‑Nodes.",
   "project.readWhitepaper": "Leer White Paper",
-  "project.features": "Características Principales",
-  "project.feature1": "Votación comunitaria descentralizada",
-  "project.feature2": "Blockchain Solana seguro y rápido",
-  "project.feature3": "Token del guardián ganador",
-  "project.feature4": "Comunidad activa y participativa",
-  "project.feature5": "Roadmap transparente y definido",
-  "project.stat1": "Guardianes Legendarios",
-  "project.stat2": "Meta de Seguidores",
+  "project.features": "Características Clave",
+  "project.feature1": "Activación descentralizada de la red",
+  "project.feature2": "Blockchain Solana rápido y seguro",
+  "project.feature3": "Token del Hero‑Node ganador",
+  "project.feature4": "Red activa y participativa",
+  "project.feature5": "Roadmap transparente y estructurado",
+  "project.stat1": "Hero‑Nodes Legendarios",
+  "project.stat2": "Umbral de Activación",
   "project.stat3": "Token Ganador",
   "project.stat4": "Posibilidades",
 
-  // Subtítulos ritualizados
-  "project.stat1Aura": "⚡ Energía ancestral",
-  "project.stat2Aura": "🔥 Fuego comunitario",
+  // Ritual subtitles
+  "project.stat1Aura": "⚡ Energía de alta frecuencia",
+  "project.stat2Aura": "🔥 Fuego colectivo",
   "project.stat3Aura": "❄️ Token revelado",
-  "project.stat4Aura": "🪐 Posibilidades infinitas",
+  "project.stat4Aura": "🪐 Arquitecturas infinitas",
 
-  // Social Links
-  "social.title": "Conexiones Sociales",
-  "social.subtitle": "Únete a nuestras plataformas y comparte la energía",
-  "social.followLatest": "Sigue nuestras últimas noticias",
-  "social.joinOurCommunity": "Únete a nuestra comunidad",
-  "social.realTimeChat": "Charla en tiempo real",
+  // Social
+  "social.title": "Enlaces de la Red",
+  "social.subtitle": "Únete a las plataformas y amplifica la señal",
+  "social.followLatest": "Sigue las últimas transmisiones",
+  "social.joinOurCommunity": "Unirse a la red",
+  "social.realTimeChat": "Canal en tiempo real",
   "social.follow": "Seguir",
-  "social.share": "Comparte la leyenda",
-  "social.shareSubtitle": "Difunde el fuego colectivo en tus redes",
+  "social.share": "Compartir la Leyenda",
+  "social.shareSubtitle": "Extiende el fuego colectivo por la red",
   "social.shareX": "Compartir en X/Twitter",
   "social.shareTelegram": "Compartir en Telegram",
   "social.shareWhatsapp": "Compartir en WhatsApp",
-  "social.callToAction": "Sé parte del ritual y acompaña a los guardianes",
+  "social.callToAction": "Únete al ritual y camina con los Hero‑Nodes",
   "social.followOnX": "Seguir en X/Twitter",
   "social.xCommunity": "Unirse a la Comunidad X",
   "social.joinTelegram": "Unirse al Telegram oficial",
   "social.telegramNote":
-    "🕰️ Cada amanecer y cada ocaso, las cifras se renuevan para reflejar la energía viva del fuego colectivo",
+    "🕰️ Cada amanecer y cada ocaso, las métricas se renuevan para reflejar el pulso vivo del fuego colectivo",
 
-  // ✅ Common Section
+  // Common
   "common.home": "Inicio",
   "common.backHome": "Volver al inicio",
 
   // Timeline
-  "timeline.title": "Cronología de los Guardianes",
+  "timeline.title": "Evolución de los Hero‑Nodes",
 
-  "timeline.monkesol.title": "MonkeSol desciende con sabiduría ancestral 🔥",
+  "timeline.monkesol.title":
+    "MonkeSol emerge como Ancient Hero‑Archive 🔥",
   "timeline.monkesol.description":
-    "De las llamas surge el Guardián Sabio, portador del fuego controlado que ilumina la mente y protege los secretos del blockchain.",
+    "Un constructo de memoria cifrada desciende, portando datos milenarios y estabilizando la capa de sabiduría de la red.",
 
-  "timeline.zapsol.title": "ZapSol irrumpe con un trueno de energía ⚡",
+  "timeline.zapsol.title":
+    "ZapSol se activa como Lightning Hero‑Node ⚡",
   "timeline.zapsol.description":
-    "El relámpago abre camino: símbolo de velocidad, poder eléctrico y la chispa que despierta a la comunidad.",
+    "Un pulso atronador enciende la red, acelerando el entramado con energía de plasma.",
 
-  "timeline.chipisol.title": "ChipiSol se revela como espíritu cósmico ❄️",
+  "timeline.chipisol.title":
+    "ChipiSol se revela como Cosmic Hero‑Gateway ❄️",
   "timeline.chipisol.description":
-    "Entre dimensiones cristalinas aparece la Entidad mística, tejiendo portales y preservando la memoria eterna del universo.",
+    "Se abre una apertura cristalina que enlaza dimensiones y sincroniza rutas multiversales.",
 
-  "timeline.union.title": "La unión de las tres fuerzas ⚡🔥❄️",
+  "timeline.union.title":
+    "La convergencia de las tres arquitecturas ⚡🔥❄️",
   "timeline.union.description":
-    "ZapSol, MonkeSol y ChipiSol entrelazan sus auras y se convierten en Guardianes de un nuevo cosmos, protectores de la comunidad legendaria.",
+    "ZapSol, MonkeSol y ChipiSol sincronizan sus auras, formando la base tri‑capa del protocolo Solana Legends.",
   "timeline.closure":
-    "Así nació la leyenda de los Guardianes, unidos en un nuevo universo.",
+    "Así emergió la primera tríada de Hero‑Nodes, unida en una nueva arquitectura cósmica.",
 
-  // gallery
-  "gallery.title": "Museo Virtual de los Guardianes",
+  // Gallery
+  "gallery.title": "Salón de los Héroes — Archivo Blueprint",
   "gallery.subtitle":
-    "Explora las salas ritualizadas de ZapSol ⚡, MonkeSol 🔥 y ChipiSol ❄️",
+    "Explora las cámaras ritualizadas de ZapSol ⚡, MonkeSol 🔥 y ChipiSol ❄️",
   "gallery.footer":
-    "Cada amanecer y cada ocaso, el fuego se renueva con vuestra energía",
+    "Cada amanecer y cada ocaso, el fuego se renueva con la energía de la red",
 
-  // chipisol
+  // Individual hero pages
   "chipisol.title": "❄️ ChipiSol",
   "chipisol.subtitle":
-    "El Espíritu Cósmico, entidad mística que conecta todas las dimensiones y portales.",
+    "Cosmic Hero‑Gateway — una entidad dimensional que enlaza reinos y blockchains.",
   "chipisol.quote":
-    "El hielo cósmico preserva la memoria del universo y abre portales hacia lo eterno.",
+    "Los portales cristalinos preservan la memoria del universo y abren rutas hacia lo eterno.",
 
-  // monkesol
   "monkesol.title": "🔥 MonkeSol",
   "monkesol.subtitle":
-    "El Guardián Sabio, protector de la sabiduría ancestral y los secretos del blockchain.",
+    "Ancient Hero‑Archive — un constructo de sabiduría ancestral cifrada.",
   "monkesol.quote":
-    "El fuego controlado es la llama que guía a la comunidad hacia la sabiduría.",
+    "El fuego controlado ilumina el camino del conocimiento y estabiliza la memoria de la red.",
 
-  // zapsol
   "zapsol.title": "⚡ ZapSol",
   "zapsol.subtitle":
-    "El Guardián del Rayo, maestro de la energía eléctrica, la velocidad y la luz.",
+    "Lightning Hero‑Node — un conducto de energía de alta frecuencia y velocidad.",
   "zapsol.quote":
-    "El rayo ilumina el camino del sabio y despierta la energía de la comunidad.",
+    "El rayo revela el camino de la claridad y despierta el pulso de la red.",
 } as const;
 
 /**

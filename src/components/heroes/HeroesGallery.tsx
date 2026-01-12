@@ -1,8 +1,8 @@
 import { useLanguage } from "@/contexts/LanguageContext";
-import GuardianRoomZapSol from "@/components/guardians/GuardianRoomZapSol";
-import GuardianRoomMonkeSol from "@/components/guardians/GuardianRoomMonkeSol";
-import GuardianRoomChipiSol from "@/components/guardians/GuardianRoomChipiSol";
-import GuardianTimeline from "@/components/guardians/GuardianTimeline";
+import GuardianRoomZapSol from "@/components/heroes/HeroRoomZapSol";
+import GuardianRoomMonkeSol from "@/components/heroes/HeroRoomMonkeSol";
+import GuardianRoomChipiSol from "@/components/heroes/HeroRoomChipiSol";
+import GuardianTimeline from "@/components/heroes/HeroTimeline";
 import VideoWithControls from "@/components/VideoWithControls";
 
 export default function GuardianGallery() {
