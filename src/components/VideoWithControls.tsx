@@ -67,12 +67,26 @@ export default function VideoWithControls({ src, glowColor = '#A020F0' }: Props)
       <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent rounded-xl pointer-events-none" />
 
       <div className="absolute bottom-4 left-4 flex items-center gap-3 bg-black/50 backdrop-blur-sm p-2 px-3 rounded-full">
-        <button onClick={togglePlay} className="text-white">
+        
+        {/* PLAY / PAUSE */}
+        <button
+          onClick={togglePlay}
+          className="text-white"
+          aria-label={playing ? "Pausar video" : "Reproducir video"}
+        >
           {playing ? <Pause className="w-5 h-5" /> : <Play className="w-5 h-5" />}
         </button>
-        <button onClick={toggleMute} className="text-white">
+
+        {/* MUTE / UNMUTE */}
+        <button
+          onClick={toggleMute}
+          className="text-white"
+          aria-label={muted ? "Activar sonido" : "Silenciar video"}
+        >
           {muted ? <VolumeX className="w-5 h-5" /> : <Volume2 className="w-5 h-5" />}
         </button>
+
+        {/* VOLUME SLIDER */}
         <input
           type="range"
           min="0"
@@ -81,8 +95,15 @@ export default function VideoWithControls({ src, glowColor = '#A020F0' }: Props)
           value={volume}
           onChange={handleVolumeChange}
           className="w-28 accent-indigo-400"
+          aria-label="Control de volumen"
         />
-        <button onClick={handleFullscreen} className="text-white">
+
+        {/* FULLSCREEN */}
+        <button
+          onClick={handleFullscreen}
+          className="text-white"
+          aria-label="Pantalla completa"
+        >
           <Maximize className="w-5 h-5" />
         </button>
       </div>

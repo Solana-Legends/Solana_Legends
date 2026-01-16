@@ -1538,4 +1538,14 @@ html {
   font-size: clamp(14px, 2vw, 16px);
 }
 
+/* === Fix dinámico para barras de progreso (sin inline styles) === */
+.progress-bar {
+  width: calc(attr(data-progress percentage));
+}
+
+.stat-bar {
+  width: calc(attr(data-width percentage));
+  transition-delay: calc(attr(data-delay ms));
+}
+
 /* === Fin del archivo === */

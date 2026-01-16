@@ -31,8 +31,7 @@ type Character = {
 
 export default function CharacterGallery() {
   const { t } = useLanguage();
-  const { votingEnabled, remaining, mainProgress, goal, isLoading } =
-    useMetrics();
+  const { remaining, mainProgress, goal, isLoading } = useMetrics();
 
   const characters: Character[] = [
     {
@@ -73,19 +72,6 @@ export default function CharacterGallery() {
     },
   ];
 
-  const handleVote = (characterName: string) => {
-    if (!votingEnabled) return;
-    console.log("[VOTE]", characterName);
-  };
-
-  const handleViewResults = () => {
-    if (!votingEnabled) return;
-    console.log("[VIEW_RESULTS]");
-  };
-
-  void handleVote;
-  void handleViewResults;
-
   const progressPercentage = goal > 0 ? (mainProgress / goal) * 100 : 0;
 
   return (
@@ -115,10 +101,11 @@ export default function CharacterGallery() {
               : `${mainProgress} / ${goal} ${t("progress.followers")}`}
           </p>
 
+          {/* PROGRESS BAR */}
           <div className="relative w-full max-w-lg mx-auto h-2.5 rounded-full border border-[#FFA908]/40 bg-[#1A1530] overflow-hidden mt-3">
             <div
-              className="absolute top-0 left-0 h-full bg-gradient-to-r from-yellow-400 to-orange-500 animate-[pulse_2s_infinite] rounded-full"
-              style={{ width: `${progressPercentage}%` }}
+              className="progress-bar absolute top-0 left-0 h-full bg-gradient-to-r from-yellow-400 to-orange-500 animate-[pulse_2s_infinite] rounded-full"
+              data-progress={progressPercentage}
             />
           </div>
 
@@ -152,7 +139,7 @@ export default function CharacterGallery() {
                       `}
                     />
 
-                    {/* AVATAR — BORDE AJUSTADO EXACTO */}
+                    {/* AVATAR */}
                     <div
                       className={`inline-block rounded-2xl border-4 ${character.borderColor}
                                   overflow-hidden p-1 aura-pulsante aura-hover z-20`}
@@ -211,11 +198,9 @@ export default function CharacterGallery() {
                             className={`w-full h-1.5 rounded-full border ${character.borderColor}`}
                           >
                             <div
-                              className={`h-full rounded-full bg-gradient-to-r ${character.color} transition-all duration-1000 ease-out`}
-                              style={{
-                                width: `${value}%`,
-                                transitionDelay: `${index * 200}ms`,
-                              }}
+                              className={`stat-bar h-full rounded-full bg-gradient-to-r ${character.color} transition-all duration-1000 ease-out`}
+                              data-width={value}
+                              data-delay={index * 200}
                             />
                           </div>
                         </div>
@@ -223,7 +208,7 @@ export default function CharacterGallery() {
                     )}
                   </div>
 
-                  {/* BOTÓN BLOQUEADO — AURA */}
+                  {/* BOTÓN BLOQUEADO */}
                   <Button
                     className="group w-full bg-gradient-to-r from-[#1A1530] to-[#2A1F40] 
                                text-[#FFA908] font-semibold border border-[#FFA908]/30 
@@ -256,7 +241,6 @@ export default function CharacterGallery() {
             </p>
           </div>
 
-          {/* BOTÓN INFERIOR — AURA PULSANTE */}
           <Button
             size="default"
             variant="outline"

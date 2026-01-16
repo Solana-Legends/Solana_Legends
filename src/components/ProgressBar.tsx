@@ -16,11 +16,10 @@ export function ProgressBar({ percent, aura = false }: ProgressBarProps) {
   return (
     <div className="relative w-full">
       <div className="relative w-full h-3 rounded-full bg-zinc-900 overflow-hidden border border-amber-400/40 shadow-[0_0_12px_rgba(255,200,80,0.15)]">
-        
         {/* Barra */}
         <div
-          className={`h-full rounded-full bg-gradient-to-r ${gradient} transition-[width] duration-700`}
-          style={{ width: `${clamped}%` }}
+          className={`progress-bar h-full rounded-full bg-gradient-to-r ${gradient} transition-[width] duration-700`}
+          data-width={clamped}
         />
 
         {/* Aura suave */}

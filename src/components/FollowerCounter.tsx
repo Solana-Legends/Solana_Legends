@@ -62,8 +62,8 @@ export default function FollowerCounter() {
 
                 <div className="relative w-full h-3 rounded-full border border-[#FFA908]/40 bg-[#1A1530] overflow-hidden">
                   <div
-                    className="absolute top-0 left-0 h-full bg-gradient-to-r from-yellow-400 to-orange-500 animate-[pulse_2s_infinite] rounded-full"
-                    style={{ width: `${progressPercentage}%` }}
+                    className="progress-bar absolute top-0 left-0 h-full bg-gradient-to-r from-yellow-400 to-orange-500 animate-[pulse_2s_infinite] rounded-full"
+                    data-progress={progressPercentage}
                   />
                 </div>
               </div>
