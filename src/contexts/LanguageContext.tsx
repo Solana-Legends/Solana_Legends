@@ -88,7 +88,7 @@ const enTranslations = {
   "progress.officialGroup": "Official Group",
   "progress.voteMessage":
     "🗳️ Once we reach 500 Legends on X, the activation ritual will begin.",
-  "progress.ritualSoon": "Ignition sequence approaching",
+  "progress.ritualSoon": "Ignition sequence approaching ❄️",
   "progress.voteMessageRitual":
     "The activation ritual is live. Shape the destiny of Solana Legends.",
   "progress.fireUnleashed": "The fire has been unleashed.",
@@ -282,7 +282,7 @@ const esTranslations = {
   "progress.officialGroup": "Grupo Oficial",
   "progress.voteMessage":
     "🗳️ Al alcanzar 500 Leyendas en X, comenzará el ritual de activación.",
-  "progress.ritualSoon": "Secuencia de ignición próxima",
+  "progress.ritualSoon": "Secuencia de ignición próxima ❄️",
   "progress.voteMessageRitual":
     "El ritual de activación está en curso. Participa en el destino de Solana Legends.",
   "progress.fireUnleashed": "El fuego ha sido desatado.",

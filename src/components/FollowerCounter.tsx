@@ -71,7 +71,7 @@ export default function FollowerCounter() {
               <div className="text-center">
                 <Badge className="bg-gradient-to-r from-yellow-400 to-orange-500 text-white border-0 px-3 py-1.5 shadow-[0_0_15px_#FFA908] text-base">
                   🔥 {t("progress.missing")} {remaining}{" "}
-                  {t("progress.forVoting")} — {t("progress.ritualSoon")}
+                  {t("progress.forVoting")} ⚡️ {t("progress.ritualSoon")}
                 </Badge>
               </div>
             </CardContent>

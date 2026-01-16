@@ -256,7 +256,7 @@ export default function SocialLinks() {
 
         {/* Footer */}
         <div className="mt-16 text-center text-xs text-zinc-500 px-4">
-          Solana Legends 🪐 EligeTuMeme™ — © 2025
+          Solana Legends 🪐 EligeTuMeme™ ✨ © 2025
           <br />
           Official partners:{" "}
           <a
