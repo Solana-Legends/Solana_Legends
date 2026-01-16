@@ -260,12 +260,12 @@ export default function SocialLinks() {
           <br />
           Official partners:{" "}
           <a
-            href="https://Voltra.studio"
+            href="https://app.voltra.studio"
             target="_blank"
             rel="noopener noreferrer"
             className="underline hover:text-amber-400"
           >
-            Voltra.studio
+            app.Voltra.studio ⚡️
           </a>
           <br />
           Powered by community fire, ritualized progress, and cosmic guardianship.
