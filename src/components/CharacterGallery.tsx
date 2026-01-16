@@ -105,7 +105,7 @@ export default function CharacterGallery() {
           <div className="relative w-full max-w-lg mx-auto h-2.5 rounded-full border border-[#FFA908]/40 bg-[#1A1530] overflow-hidden mt-3">
             <div
               className="progress-bar absolute top-0 left-0 h-full bg-gradient-to-r from-yellow-400 to-orange-500 animate-[pulse_2s_infinite] rounded-full"
-              data-progress={progressPercentage}
+              style={{ "--progress": `${progressPercentage}%` } as React.CSSProperties}
             />
           </div>
 
@@ -199,8 +199,12 @@ export default function CharacterGallery() {
                           >
                             <div
                               className={`stat-bar h-full rounded-full bg-gradient-to-r ${character.color} transition-all duration-1000 ease-out`}
-                              data-width={value}
-                              data-delay={index * 200}
+                              style={
+                                {
+                                  "--stat-width": `${value}%`,
+                                  "--stat-delay": `${index * 200}ms`,
+                                } as React.CSSProperties
+                              }
                             />
                           </div>
                         </div>

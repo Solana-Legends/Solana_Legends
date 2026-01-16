@@ -63,7 +63,7 @@ export default function FollowerCounter() {
                 <div className="relative w-full h-3 rounded-full border border-[#FFA908]/40 bg-[#1A1530] overflow-hidden">
                   <div
                     className="progress-bar absolute top-0 left-0 h-full bg-gradient-to-r from-yellow-400 to-orange-500 animate-[pulse_2s_infinite] rounded-full"
-                    data-progress={progressPercentage}
+                    style={{ "--progress": `${progressPercentage}%` } as React.CSSProperties}
                   />
                 </div>
               </div>
@@ -180,11 +180,11 @@ export default function FollowerCounter() {
         {/* Imagen ZapSol */}
         <div
           className="
-    absolute 
-    bottom-[2rem] right-[-6rem]     /* 📱 móvil: más arriba y más a la derecha */
-    md:bottom-0 md:right-0         /* 🖥️ desktop: posición original */
-    mb-[4rem] mr-[2rem]
-    animate-in fade-in slide-in-from-left duration-1000"
+            absolute 
+            bottom-[2rem] right-[-6rem]
+            md:bottom-0 md:right-0
+            mb-[4rem] mr-[2rem]
+            animate-in fade-in slide-in-from-left duration-1000"
         >
           <div className="relative z-10 flex justify-center items-center w-80 h-80 group">
             <div className="absolute w-80 h-80 rounded-full blur-3xl hero-zapsol-aura pointer-events-none z-0 transition-colors duration-500 group-hover:bg-orange-500/40"></div>
