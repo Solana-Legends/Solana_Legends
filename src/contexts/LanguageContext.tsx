@@ -55,7 +55,7 @@ const enTranslations = {
   "characters.votingLocked": "Activation Locked",
   "characters.question": "Which Hero💫Node will the network elevate?",
   "characters.votingUnlocked": "Activation unlocked in",
-  "characters.followersMore": "more units",
+  "characters.followersMore": "more Legends",
   "characters.viewResults": "View Activation Results",
   "characters.votingActive":
     "Activation is live. Which Hero💫Node will the network elevate?",
@@ -68,16 +68,16 @@ const enTranslations = {
   "progress.subtitle": "Tracking the ignition of each Hero💫Node",
   "progress.mainProgressLabel": "Primary Activation ({source})",
   "progress.remainingFollowers":
-    "{remaining} units left until activation. ⚡ The ignition sequence is near.",
+    "{remaining} Legends left until activation. ⚡ The ignition sequence is near.",
   "progress.fireActivated":
     "✨ {source} has ignited the ritual fire. Activation is now live.",
-  "progress.twitterLabel": "Twitter/X 👉🏽 {current} / {goal} units",
+  "progress.twitterLabel": "Twitter/X 👉🏽 {current} / {goal} Legends",
   "progress.telegramLabel": "Telegram 👉🏽 {current} / {goal} members",
   "progress.communityLabel": "X Community 👉🏽 {current} / {goal} members",
-  "progress.followers": "units",
+  "progress.followers": "Legends",
   "progress.towardsVoting": "Progress toward activation",
   "progress.missing": "Only",
-  "progress.forVoting": "units left for activation",
+  "progress.forVoting": "Legends left for activation",
   "progress.twitter": "Twitter/X",
   "progress.community": "X Community",
   "progress.telegram": "Telegram",
@@ -87,7 +87,7 @@ const enTranslations = {
   "progress.joinTelegram": "Join Telegram",
   "progress.officialGroup": "Official Group",
   "progress.voteMessage":
-    "🗳️ Once we reach 500 units on X, the activation ritual will begin.",
+    "🗳️ Once we reach 500 Legends on X, the activation ritual will begin.",
   "progress.ritualSoon": "Ignition sequence approaching",
   "progress.voteMessageRitual":
     "The activation ritual is live. Shape the destiny of Solana Legends.",
@@ -249,7 +249,7 @@ const esTranslations = {
   "characters.votingLocked": "Activación Bloqueada",
   "characters.question": "¿Qué Hero💫Node elevará la red?",
   "characters.votingUnlocked": "Activación desbloqueada en",
-  "characters.followersMore": "unidades más",
+  "characters.followersMore": "Leyendas más",
   "characters.viewResults": "Ver Resultados de Activación",
   "characters.votingActive":
     "La activación está en curso. ¿Qué Hero💫Node elevará la red?",
@@ -262,16 +262,16 @@ const esTranslations = {
   "progress.subtitle": "Seguimiento de la ignición de cada Hero💫Node",
   "progress.mainProgressLabel": "Activación Principal ({source})",
   "progress.remainingFollowers":
-    "Faltan {remaining} unidades para la activación. ⚡ La secuencia de ignición está cerca.",
+    "Faltan {remaining} Leyendas para la activación. ⚡ La secuencia de ignición está cerca.",
   "progress.fireActivated":
     "✨ {source} ha encendido el fuego ritual. La activación está en curso.",
-  "progress.twitterLabel": "Twitter/X 👉🏽 {current} / {goal} unidades",
+  "progress.twitterLabel": "Twitter/X 👉🏽 {current} / {goal} Leyendas",
   "progress.telegramLabel": "Telegram 👉🏽 {current} / {goal} miembros",
   "progress.communityLabel": "Comunidad X 👉🏽 {current} / {goal} miembros",
-  "progress.followers": "unidades",
+  "progress.followers": "Leyendas",
   "progress.towardsVoting": "Progreso hacia la activación",
   "progress.missing": "Solo",
-  "progress.forVoting": "unidades para la activación",
+  "progress.forVoting": "Leyendas para la activación",
   "progress.twitter": "Twitter/X",
   "progress.community": "Comunidad X",
   "progress.telegram": "Telegram",
@@ -281,7 +281,7 @@ const esTranslations = {
   "progress.joinTelegram": "Unirse a Telegram",
   "progress.officialGroup": "Grupo Oficial",
   "progress.voteMessage":
-    "🗳️ Al alcanzar 500 unidades en X, comenzará el ritual de activación.",
+    "🗳️ Al alcanzar 500 Leyendas en X, comenzará el ritual de activación.",
   "progress.ritualSoon": "Secuencia de ignición próxima",
   "progress.voteMessageRitual":
     "El ritual de activación está en curso. Participa en el destino de Solana Legends.",
