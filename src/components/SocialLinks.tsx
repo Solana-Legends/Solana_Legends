@@ -260,7 +260,7 @@ export default function SocialLinks() {
           <br />
           Official Bot:{" "}
           <a
-            href="poco-mod-web.vercel.app"
+            href="https://poco-mod-web.vercel.app"
             target="_blank"
             rel="noopener noreferrer"
             className="underline hover:text-amber-400"

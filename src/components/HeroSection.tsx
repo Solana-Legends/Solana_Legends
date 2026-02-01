@@ -72,7 +72,7 @@ export default function HeroSection() {
             <div className="absolute w-full h-full rounded-full blur-xl md:blur-3xl aura-pulsante-gold-strong aura-hover-white"></div>
 
             <a
-              href="poco-mod-web.vercel.app"
+              href="https://poco-mod-web.vercel.app"
               target="_blank"
               rel="noopener noreferrer"
               className="relative z-10"
@@ -197,7 +197,7 @@ export default function HeroSection() {
           <Button
             size="default"
             variant="outline"
-            onClick={() => window.open("poco-mod-web.vercel.app", "_blank")}
+            onClick={() => window.open("https://poco-mod-web.vercel.app", "_blank")}
             style={{ width: maxWidth ?? "auto" }}
             className="
     w-[220px]
