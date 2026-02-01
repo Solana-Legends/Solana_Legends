@@ -66,20 +66,20 @@ export default function HeroSection() {
           {t("hero.tagline")}
         </p>
 
-        {/* Logo Voltra */}
+        {/* Logo $Poco */}
         <div className="flex justify-center md:justify-end mb-2">
           <div className="relative flex justify-center items-center w-24 h-24 md:w-36 md:h-36 group md:-translate-x-6">
             <div className="absolute w-full h-full rounded-full blur-xl md:blur-3xl aura-pulsante-gold-strong aura-hover-white"></div>
 
             <a
-              href="https://x.com/Voltrastudio"
+              href="poco-mod-web.vercel.app"
               target="_blank"
               rel="noopener noreferrer"
               className="relative z-10"
             >
               <img
-                src="/assets/Voltra.png"
-                alt="Voltra Studio Logo"
+                src="/assets/$Poco.png"
+                alt="$Poco Logo"
                 className="h-18 w-auto md:h-28 object-contain opacity-90 logo-respirando"
               />
             </a>
@@ -197,7 +197,7 @@ export default function HeroSection() {
           <Button
             size="default"
             variant="outline"
-            onClick={() => window.open("https://voltra.studio", "_blank")}
+            onClick={() => window.open("poco-mod-web.vercel.app", "_blank")}
             style={{ width: maxWidth ?? "auto" }}
             className="
     w-[220px]
@@ -209,14 +209,14 @@ export default function HeroSection() {
           >
             {/* ICONO A LA IZQUIERDA */}
             <span className="text-yellow-400 text-xl flex items-center">
-              ⚡
+              🤖
             </span>
 
             {/* TEXTO A LA DERECHA EN DOS LÍNEAS */}
             <div className="flex flex-col leading-tight text-left">
-              <span className="text-base font-bold">Voltra.studio</span>
+              <span className="text-base font-bold">$Poco Bot</span>
               <span className="text-xs text-[#FFD966]">
-                {t("hero.voltraPartners")}
+                {t("hero.$Poco")}
               </span>
             </div>
           </Button>

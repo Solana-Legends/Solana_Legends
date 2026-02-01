@@ -258,14 +258,14 @@ export default function SocialLinks() {
         <div className="mt-16 text-center text-xs text-zinc-500 px-4">
           Solana Legends 🪐 EligeTuMeme™ ✨ © 2025
           <br />
-          Official partners:{" "}
+          Official Bot:{" "}
           <a
-            href="https://app.voltra.studio"
+            href="poco-mod-web.vercel.app"
             target="_blank"
             rel="noopener noreferrer"
             className="underline hover:text-amber-400"
           >
-            app.Voltra.studio ⚡️
+            poco-mod-web.vercel.app 🤖
           </a>
           <br />
           Powered by community fire, ritualized progress, and cosmic guardianship.
