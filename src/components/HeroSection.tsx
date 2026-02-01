@@ -214,7 +214,7 @@ export default function HeroSection() {
 
             {/* TEXTO A LA DERECHA EN DOS LÍNEAS */}
             <div className="flex flex-col leading-tight text-left">
-              <span className="text-base font-bold">$Poco Bot</span>
+              <span className="text-base font-bold">$Poco</span>
               <span className="text-xs text-[#FFD966]">
                 {t("hero.$Poco")}
               </span>
