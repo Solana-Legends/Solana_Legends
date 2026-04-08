@@ -67,7 +67,7 @@ const enTranslations = {
 
   // Progress
   "progress.title": "Network Progress",
-  "progress.subtitle": "Tracking the ignition of each Hero💫Node",
+  "progress.subtitle": "Live telemetry of the active Solana🪐Legends network.",
   "progress.mainProgressLabel": "Primary Activation ({source})",
   "progress.remainingFollowers":
     "{remaining} Legends left until activation. ⚡ The ignition sequence is near.",
@@ -106,7 +106,7 @@ const enTranslations = {
   "progress.architectureOnline": " ZapSol⚡Architecture Online",
   "progress.systemCapacity": "🔋 System Capacity",
   "progress.maximum": " 100% MAXIMUM ",
-  "progress.protocolActive": "🔥 Ignition Sequence Complete. Protocol Active.",
+  "progress.protocolActive": "Ignition🔥Sequence Complete. Protocol Active.❄️",
 
   // Project Info
   "project.title": "The Protocol",
@@ -268,7 +268,7 @@ const esTranslations = {
 
   // Progress
   "progress.title": "Progreso de la Red",
-  "progress.subtitle": "Seguimiento de la ignición de cada Hero💫Node",
+  "progress.subtitle": "Telemetría en vivo de la red activa de Solana🪐Legends.",
   "progress.mainProgressLabel": "Activación Principal ({source})",
   "progress.remainingFollowers":
     "Faltan {remaining} Leyendas para la activación. ⚡ La secuencia de ignición está cerca.",
@@ -307,7 +307,7 @@ const esTranslations = {
   "progress.architectureOnline": " Arquitectura ZapSol⚡en Línea",
   "progress.systemCapacity": "🔋 Capacidad del Sistema",
   "progress.maximum": " 100% MÁXIMO ",
-  "progress.protocolActive": "🔥 Secuencia de Ignición Completa. Protocolo Activo.",
+  "progress.protocolActive": "Secuencia de Ignición🔥Completa. Protocolo Activo.❄️",
 
   // Project Info
   "project.title": "El Protocolo",

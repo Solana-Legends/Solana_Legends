@@ -12,7 +12,6 @@ import { useMetrics } from "@/hooks/useMetrics";
 
 export default function FollowerCounter() {
   const { t } = useLanguage();
-  // Purgados mainProgress, goal y remaining. Ya no hay cuenta atrás.
   const { metrics, isLoading } = useMetrics();
 
   return (
@@ -28,7 +27,7 @@ export default function FollowerCounter() {
           <p className="text-indigo-200 text-lg">{t("progress.subtitle")}</p>
         </div>
 
-        {/* --- NUEVO: PANEL DE ESTADO DEL NÚCLEO (Sustituye a la cuenta atrás) --- */}
+        {/* --- PANEL DE ESTADO DEL NÚCLEO --- */}
         <div className="w-full max-w-[960px] mx-auto relative z-20">
           <Card className="bg-[#1A1530]/40 border-2 border-[#FFA908]/30 rounded-xl hover:shadow-[0_0_25px_#FFA908] transition-all duration-300 relative overflow-hidden group">
             {/* Resplandor de fondo interactivo */}
@@ -56,14 +55,17 @@ export default function FollowerCounter() {
                 </div>
 
                 <div className="relative w-full h-3 rounded-full border border-[#FFA908]/40 bg-[#1A1530] overflow-hidden shadow-[0_0_15px_rgba(255,169,8,0.3)]">
-                  {/* Barra al 100% latiendo */}
-                  <div className="progress-bar absolute top-0 left-0 h-full w-full bg-gradient-to-r from-yellow-400 to-orange-500 animate-[pulse_2s_infinite] rounded-full" />
+                  {/* Barra al 100% latiendo - FORZADA MANUALMENTE PARA EVITAR CONFLICTOS CSS */}
+                  <div 
+                    className="absolute top-0 left-0 h-full bg-gradient-to-r from-yellow-400 to-orange-500 animate-[pulse_2s_infinite] rounded-full" 
+                    style={{ width: "100%" }}
+                  />
                 </div>
               </div>
 
               <div className="text-center">
                 <Badge className="bg-gradient-to-r from-yellow-400 to-orange-500 text-[#0F0B1E] font-bold border-0 px-5 py-2 shadow-[0_0_15px_#FFA908] text-sm md:text-base">
-                  ⚡️ {t("progress.protocolActive")}
+                  {t("progress.protocolActive")}
                 </Badge>
               </div>
             </CardContent>
@@ -191,7 +193,7 @@ export default function FollowerCounter() {
         </div>
         {/* ------------------------------------------------------------- */}
 
-        {/* 🔮 Mensaje ritualizado centrado (Purgados los textos de votación) */}
+        {/* 🔮 Mensaje ritualizado centrado */}
         <div className="text-center mt-12 relative z-20">
           <p className="text-sm text-zinc-400 italic animate-fadeIn animate-pulseSlow">
             {t("progress.renewalMessage")}
