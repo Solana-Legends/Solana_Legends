@@ -81,7 +81,7 @@ export default function CharacterGallery() {
   const progressPercentage = 100;
 
   return (
-    <section className="relative py-16 px-6 min-h-[520px] bg-gradient-to-br from-[#0F0B1E] via-[#1A1530] to-[#0F0B1E] aura-pulsante aura-hover-gold">
+    <section className="relative py-8 md:py-12 px-4 md:px-6 min-h-[520px] bg-gradient-to-br from-[#0F0B1E] via-[#1A1530] to-[#0F0B1E] aura-pulsante aura-hover-gold">
       <div className="absolute inset-0 z-0 pointer-events-none aura-pulsante aura-hover-gold" />
 
       <div
@@ -90,23 +90,23 @@ export default function CharacterGallery() {
                    bg-[#FFA908]/20 animate-pulse pointer-events-none z-0"
       />
 
-      <div className="relative z-10 w-full max-w-screen-2xl mx-auto px-4">
+      <div className="relative z-10 w-full max-w-screen-2xl mx-auto">
         {/* HEADER */}
-        <div className="text-center mb-10">
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-3">
+        <div className="text-center mb-6 md:mb-8">
+          <h2 className="text-3xl md:text-4xl font-bold text-white mb-2">
             {t("characters.title")}
           </h2>
 
-          <p className="text-base md:text-lg text-white w-full max-w-screen-lg mx-auto mb-3 px-4">
+          <p className="text-base md:text-lg text-white w-full max-w-screen-lg mx-auto mb-2 px-2">
             {t("characters.subtitle")}
           </p>
 
-          <p className="text-base text-[#FFA908] font-semibold">
+          <p className="text-sm md:text-base text-[#FFA908] font-semibold">
             {isLoading ? "Synchronizing Network..." : t("characters.votingActive")}
           </p>
 
           {/* PROGRESS BAR (Representando la Energía de la Red operando al 100%) */}
-          <div className="relative w-full max-w-lg mx-auto h-2.5 rounded-full border border-[#FFA908]/40 bg-[#1A1530] overflow-hidden mt-3 shadow-[0_0_15px_rgba(255,169,8,0.3)]">
+          <div className="relative w-full max-w-lg mx-auto h-2 rounded-full border border-[#FFA908]/40 bg-[#1A1530] overflow-hidden mt-2 shadow-[0_0_15px_rgba(255,169,8,0.3)]">
             <div
               className="progress-bar absolute top-0 left-0 h-full bg-gradient-to-r from-yellow-400 to-orange-500 animate-[pulse_2s_infinite] rounded-full"
               style={{ width: `${progressPercentage}%` } as React.CSSProperties}
@@ -115,7 +115,7 @@ export default function CharacterGallery() {
         </div>
 
         {/* CARDS */}
-        <div className="flex flex-wrap justify-center gap-6">
+        <div className="flex flex-wrap justify-center gap-4 md:gap-6">
           {characters.map((character) => {
             const IconComponent = character.icon;
             // Lógica Central: ZapSol (ID 1) es el token activo
@@ -124,7 +124,7 @@ export default function CharacterGallery() {
             return (
               <Card
                 key={character.id}
-                className={`w-[340px] bg-[#1A1530]/40 border-4 rounded-xl transition-all duration-300 hover:scale-[1.02] group ${
+                className={`w-[320px] md:w-[340px] bg-[#1A1530]/40 border-4 rounded-xl transition-all duration-300 hover:scale-[1.02] group ${
                   isActive ? character.borderColor : "border-[#2A1F40] opacity-80 hover:opacity-100"
                 } aura-pulsante aura-hover relative overflow-hidden flex flex-col`}
               >
@@ -133,8 +133,8 @@ export default function CharacterGallery() {
                   <div className="absolute inset-0 bg-yellow-500/5 pointer-events-none z-0"></div>
                 )}
 
-                <CardHeader className="text-center pb-3 relative z-10">
-                  <div className="relative mb-5">
+                <CardHeader className="text-center pb-2 relative z-10">
+                  <div className="relative mb-4">
                     {/* AURA HORIZONTAL */}
                     <div
                       className={`
@@ -153,52 +153,52 @@ export default function CharacterGallery() {
                       <img
                         src={character.image}
                         alt={character.name}
-                        className="h-36 md:h-40 w-full object-cover rounded-xl transition-all duration-300 group-hover:scale-105"
+                        className="h-32 md:h-36 w-full object-cover rounded-xl transition-all duration-300 group-hover:scale-105"
                       />
                     </div>
 
                     {/* BADGE */}
                     <div className="absolute -bottom-2 left-1/2 -translate-x-1/2 z-30">
                       <Badge
-                        className={`text-white border-0 px-3 py-1 shadow-lg ${
+                        className={`text-white border-0 px-3 py-0.5 md:py-1 text-xs md:text-sm shadow-lg ${
                           isActive ? `bg-gradient-to-r ${character.color}` : "bg-gray-700"
                         }`}
                       >
-                        <IconComponent className="w-4 h-4 mr-1" />
+                        <IconComponent className="w-3.5 h-3.5 mr-1" />
                         {character.element}
                       </Badge>
                     </div>
                   </div>
 
-                  <CardTitle className="text-xl text-white mb-1">
+                  <CardTitle className="text-lg md:text-xl text-white mb-1">
                     {character.name}
                   </CardTitle>
 
-                  <CardDescription className={`text-base font-medium ${isActive ? "text-[#FFA908]" : "text-gray-400"}`}>
+                  <CardDescription className={`text-sm md:text-base font-medium ${isActive ? "text-[#FFA908]" : "text-gray-400"}`}>
                     {character.title}
                   </CardDescription>
                 </CardHeader>
 
-                <CardContent className="space-y-4 relative z-10 flex flex-col flex-grow">
-                  <p className="text-gray-300 leading-relaxed text-sm flex-grow">
+                <CardContent className="space-y-3 relative z-10 flex flex-col flex-grow">
+                  <p className="text-gray-300 leading-snug text-xs md:text-sm flex-grow">
                     {character.description}
                   </p>
 
                   {/* STATS */}
-                  <div className="space-y-2 mt-auto">
-                    <h4 className="text-white font-semibold text-xs uppercase tracking-wide">
+                  <div className="space-y-1.5 mt-auto">
+                    <h4 className="text-white font-semibold text-[10px] md:text-xs uppercase tracking-wide">
                       {t("characters.stats")}
                     </h4>
 
                     {Object.entries(character.stats).map(([stat, value], index) => (
                       <div key={stat} className="space-y-1">
-                        <div className="flex justify-between text-xs">
+                        <div className="flex justify-between text-[10px] md:text-xs">
                           <span className={`${isActive ? "text-[#FFA908]" : "text-gray-400"} capitalize`}>
                             {t(`characters.${stat}`)}
                           </span>
                           <span className="text-white font-medium">{value}%</span>
                         </div>
-                        <div className={`w-full h-1.5 rounded-full border ${isActive ? character.borderColor : "border-gray-600"} bg-black/50`}>
+                        <div className={`w-full h-1 md:h-1.5 rounded-full border ${isActive ? character.borderColor : "border-gray-600"} bg-black/50`}>
                           <div
                             className={`h-full rounded-full transition-all duration-1000 ease-out ${
                               isActive ? `bg-gradient-to-r ${character.color}` : "bg-gray-500"
@@ -217,7 +217,7 @@ export default function CharacterGallery() {
                         {/* PUMP.FUN - Outline Dorado */}
                         <Button
                           variant="outline"
-                          className="w-full border-yellow-400 text-yellow-400 hover:bg-yellow-400 hover:text-[#0F0B1E] font-bold py-5 text-sm transition-transform hover:scale-[1.02]"
+                          className="w-full border-yellow-400 text-yellow-400 hover:bg-yellow-400 hover:text-[#0F0B1E] font-bold py-4 md:py-5 text-xs md:text-sm transition-transform hover:scale-[1.02]"
                           onClick={() => window.open(pumpFunURL, "_blank")}
                         >
                           <Rocket className="w-4 h-4 mr-2" />
@@ -227,7 +227,7 @@ export default function CharacterGallery() {
                         {/* JUPITER - Outline Verde */}
                         <Button
                           variant="outline"
-                          className="w-full border-green-400 text-green-400 hover:bg-green-400 hover:text-[#0F0B1E] font-bold py-5 text-sm transition-transform hover:scale-[1.02]"
+                          className="w-full border-green-400 text-green-400 hover:bg-green-400 hover:text-[#0F0B1E] font-bold py-4 md:py-5 text-xs md:text-sm transition-transform hover:scale-[1.02]"
                           onClick={() => window.open(jupiterURL, "_blank")}
                         >
                           <ArrowRightLeft className="w-4 h-4 mr-2" />
@@ -236,7 +236,7 @@ export default function CharacterGallery() {
                       </div>
                     ) : (
                       <Button
-                        className="w-full bg-gradient-to-r from-[#1A1530] to-[#2A1F40] text-gray-500 border border-gray-700 pointer-events-none transition-all duration-300 py-5 text-sm"
+                        className="w-full bg-gradient-to-r from-[#1A1530] to-[#2A1F40] text-gray-500 border border-gray-700 pointer-events-none transition-all duration-300 py-4 md:py-5 text-xs md:text-sm"
                       >
                         <Lock className="w-4 h-4 mr-2 opacity-50" />
                         {t("characters.votingLocked")}
@@ -250,8 +250,8 @@ export default function CharacterGallery() {
         </div>
 
         {/* FOOTER: Botón de Gráfico Funcional -> Apunta a DexScreener */}
-        <div className="text-center mt-12 mb-4">
-          <p className="text-white text-base mb-6 font-medium">
+        <div className="text-center mt-8 mb-2">
+          <p className="text-white text-sm md:text-base mb-3 font-medium">
             {t("characters.question")}
           </p>
 
@@ -263,7 +263,7 @@ export default function CharacterGallery() {
                        hover:bg-yellow-500
                        text-yellow-400 hover:text-black font-bold border border-yellow-500/50 
                        shadow-[0_0_15px_rgba(234,179,8,0.1)] cursor-pointer
-                       transition-all duration-300 px-8
+                       transition-all duration-300 px-8 py-4
                        group-hover:shadow-[0_0_30px_rgba(234,179,8,0.4)] hover:scale-105"
           >
             <Activity className="w-5 h-5 mr-2" />
