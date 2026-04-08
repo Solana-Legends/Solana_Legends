@@ -12,22 +12,22 @@ interface LanguageContextType {
  * 🔹 Definimos primero los bloques independientes
  */
 const enTranslations = {
-  // Hero Section
-  "hero.title": "Solana Legends 🪐 Select Your Hero💫Node",
+  // Hero Section (ACTUALIZADO A FASE DE IGNICIÓN)
+  "hero.title": "Solana Legends 🪐 ZapSol Activated ⚡",
   "hero.subtitle":
-    "Choose the Hero💫Node whose architecture will anchor the next Solana Legend.",
+    "The community has spoken. ZapSol is the chosen Hero💫Node. The circuit is live—anchor your position and join the Legend.",
   "hero.tagline": "Three elemental architectures. One network. One destiny.",
   "hero.hallOfHeroes": "Hall of Heroes ✨ Blueprint Archive",
   "hero.joinCommunity": "Join the Network",
   "hero.$Poco": "Official Bot",
   "hero.activeProject": "Active Protocol",
   "hero.growingCommunity": "Expanding Network",
-  "hero.upcomingVote": "Activation Threshold Approaching",
+  "hero.upcomingVote": "Network Ignition Live",
 
-  // Characters
+  // Characters (PURGADO DE "VOTACIONES" Y "CANDADOS")
   "characters.title": "The Hero💫Nodes",
   "characters.subtitle":
-    "Explore the three elemental Hero💫Nodes competing to become the official Solana Legends token architecture",
+    "Explore the three elemental Hero💫Nodes of the Solana Legends architecture.",
 
   "characters.zapsol.name": "ZapSol",
   "characters.zapsol.title": "Lightning Hero💫Node",
@@ -51,14 +51,14 @@ const enTranslations = {
   "characters.power": "Output",
   "characters.speed": "Throughput",
   "characters.intelligence": "Cognitive Layer",
-  "characters.voteFor": "Support",
-  "characters.votingLocked": "Activation Locked",
-  "characters.question": "Which Hero💫Node will the network elevate?",
+  "characters.voteFor": "Trade $ZAPSOL",
+  "characters.votingLocked": "Status: Standby",
+  "characters.question": "The network has elevated its Guardian.",
   "characters.votingUnlocked": "Activation unlocked in",
   "characters.followersMore": "more Legends",
-  "characters.viewResults": "View Activation Results",
+  "characters.viewResults": "View Live Chart",
   "characters.votingActive":
-    "Activation is live. Which Hero💫Node will the network elevate?",
+    "ZapSol protocol is currently active. The network is elevated.",
   "characters.chosenGuardian": "The Hero💫Node chosen by the network is",
   "characters.telegramNote":
     "🕰️ At every dawn and dusk, the metrics renew to reflect the living pulse of the collective fire",
@@ -206,22 +206,22 @@ export type TranslationKeys =
 
 // Bloque español
 const esTranslations = {
-  // Hero Section
-  "hero.title": "Solana Legends 🪐 Selecciona tu Hero💫Node",
+  // Hero Section (ACTUALIZADO A FASE DE IGNICIÓN)
+  "hero.title": "Solana Legends 🪐 ZapSol Activado ⚡",
   "hero.subtitle":
-    "Elige el Hero💫Node cuya arquitectura sostendrá la próxima Leyenda de Solana.",
+    "La comunidad ha hablado. ZapSol es el Hero💫Node elegido. El circuito está activo: asegura tu posición y únete a la Leyenda.",
   "hero.tagline": "Tres arquitecturas elementales. Una red. Un destino.",
   "hero.hallOfHeroes": "Salón de Héroes ✨ Archivo Blueprint",
   "hero.joinCommunity": "Unirse a la Red",
   "hero.$Poco": "Bot Oficial",
   "hero.activeProject": "Protocolo Activo",
   "hero.growingCommunity": "Red en Expansión",
-  "hero.upcomingVote": "Umbral de Activación Próximo",
+  "hero.upcomingVote": "Ignición de Red Activa",
 
-  // Characters
+  // Characters (PURGADO DE "VOTACIONES" Y "CANDADOS")
   "characters.title": "Los Hero💫Nodes",
   "characters.subtitle":
-    "Explora los tres Hero💫Nodes elementales que compiten por convertirse en la arquitectura oficial del token de Solana Legends",
+    "Explora los tres Hero💫Nodes elementales de la arquitectura de Solana Legends.",
 
   "characters.zapsol.name": "ZapSol",
   "characters.zapsol.title": "Lightning Hero💫Node",
@@ -245,14 +245,14 @@ const esTranslations = {
   "characters.power": "Potencia",
   "characters.speed": "Rendimiento",
   "characters.intelligence": "Capa Cognitiva",
-  "characters.voteFor": "Apoyar",
-  "characters.votingLocked": "Activación Bloqueada",
-  "characters.question": "¿Qué Hero💫Node elevará la red?",
+  "characters.voteFor": "Comprar $ZAPSOL",
+  "characters.votingLocked": "Estado: En espera",
+  "characters.question": "La red ha elevado a su Guardián.",
   "characters.votingUnlocked": "Activación desbloqueada en",
   "characters.followersMore": "Leyendas más",
-  "characters.viewResults": "Ver Resultados de Activación",
+  "characters.viewResults": "Ver Gráfico en Vivo",
   "characters.votingActive":
-    "La activación está en curso. ¿Qué Hero💫Node elevará la red?",
+    "El protocolo ZapSol está activo. La red se ha elevado.",
   "characters.chosenGuardian": "El Hero💫Node elegido por la red es",
   "characters.telegramNote":
     "🕰️ Cada amanecer y cada ocaso, las métricas se renuevan para reflejar el pulso vivo del fuego colectivo",
