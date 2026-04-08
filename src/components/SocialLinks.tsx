@@ -145,7 +145,7 @@ export default function SocialLinks() {
           })}
         </div>
 
-        {/* Mensaje ritualizado (Purgado el mensaje de "esperando renovación" por incongruente con ZapSol activo) */}
+        {/* Mensaje ritualizado */}
         <div className="mb-6 text-xs text-center text-zinc-400 italic animate-fadeIn animate-pulseSlow">
           🔥 The fire is sustained by those who stay.
         </div>
@@ -203,11 +203,11 @@ export default function SocialLinks() {
         </div>
       </div>
 
-      {/* Imagen ChipiSol - Anclada estrictamente a la esquina inferior izquierda (Fixed position relative to section) */}
+      {/* Imagen ChipiSol - ELEVADA */}
       <div
         className="
           absolute 
-          bottom-4 left-4 md:bottom-8 md:left-8
+          bottom-12 left-4 md:bottom-20 md:left-12
           w-28 h-28 md:w-48 md:h-48
           z-10
           animate-in fade-in slide-in-from-left duration-1000 pointer-events-none"
