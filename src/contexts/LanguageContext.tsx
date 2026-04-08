@@ -102,6 +102,11 @@ const enTranslations = {
     "🕰️ At every dawn and dusk, the metrics renew to reflect the living pulse of the collective fire",
   "progress.renewalMessage":
     "🕰️ At every dawn and dusk, the metrics renew to reflect the living pulse of the collective fire",
+  "progress.coreStatus": " Network Core Status",
+  "progress.architectureOnline": " ZapSol⚡Architecture Online",
+  "progress.systemCapacity": "🔋 System Capacity",
+  "progress.maximum": " 100% MAXIMUM ",
+  "progress.protocolActive": "🔥 Ignition Sequence Complete. Protocol Active.",
 
   // Project Info
   "project.title": "The Protocol",
@@ -298,6 +303,11 @@ const esTranslations = {
     "🕰️ Cada amanecer y cada ocaso, las métricas se renuevan para reflejar el pulso vivo del fuego colectivo",
   "progress.renewalMessage":
     "🕰️ Cada amanecer y cada ocaso, las métricas se renuevan para reflejar el pulso vivo del fuego colectivo",
+  "progress.coreStatus": " Estado del Núcleo",
+  "progress.architectureOnline": " Arquitectura ZapSol⚡en Línea",
+  "progress.systemCapacity": "🔋 Capacidad del Sistema",
+  "progress.maximum": " 100% MÁXIMO ",
+  "progress.protocolActive": "🔥 Secuencia de Ignición Completa. Protocolo Activo.",
 
   // Project Info
   "project.title": "El Protocolo",
