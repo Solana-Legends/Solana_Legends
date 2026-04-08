@@ -108,31 +108,31 @@ const enTranslations = {
   "progress.maximum": " 100% MAXIMUM ",
   "progress.protocolActive": "⚡Ignition🔥Sequence Complete. Protocol Active.❄️",
 
-  // Project Info
-  "project.title": "The Protocol",
-  "project.subtitle":
-    "Solana Legends is more than a token, it is a network that determines the future of its Hero💫Nodes.",
-  "project.whitepaper": "White Paper",
-  "project.whitepaperDesc": "Complete Documentation",
-  "project.whitepaperText":
-    "Explore the full narrative, token architecture, and roadmap of Solana Legends. Understand how activation works and how the Hero💫Nodes evolve.",
-  "project.readWhitepaper": "Read White Paper",
-  "project.features": "Core Features",
-  "project.feature1": "Decentralized network activation",
-  "project.feature2": "Fast and secure Solana blockchain",
-  "project.feature3": "Winning Hero💫Node token",
-  "project.feature4": "Active and participatory network",
-  "project.feature5": "Transparent and structured roadmap",
-  "project.stat1": "Legendary Hero💫Nodes",
-  "project.stat2": "Activation Threshold",
-  "project.stat3": "Winning Token",
-  "project.stat4": "Possibilities",
+// Project Info
+  "project.title": "The Narrative Portal",
+  "project.subtitle": "Solana Legends wasn't born to compete. It was born to ignite.",
+  "project.whitepaper": "The Manifest",
+  "project.whitepaperDesc": "Structure, Ritual, and Presence.",
+  "project.whitepaperText": "This document is not an invitation. It is a filter. You won't find promises of success here, nor formulas for growth. You'll find conviction, structure, and ritual. Because legends aren't built through marketing. They're built through presence.",
+  "project.readWhitepaper": "Enter the Portal",
+  "project.features": "Core Architecture",
+  "project.feature1": "The Technical Altar: pump.fun as a portal of birth.",
+  "project.feature2": "Guardian of the Pulse: Automated delta-neutral protection.",
+  "project.feature3": "Ritualized Loyalty: Holding is building. Loyalty is rewarded.",
+  "project.feature4": "Controlled Fire: No paid hype. Organic and strategic growth.",
+  "project.feature5": "Pixar-Tier Standard: Epic, ritualized 3D visual language.",
+  
+  // Stats
+  "project.stat1": "Forces in Resonance",
+  "project.stat2": "System Capacity",
+  "project.stat3": "Chosen Narrative",
+  "project.stat4": "Sustained Fire",
 
   // Ritual subtitles
-  "project.stat1Aura": "⚡ High‑frequency energy",
-  "project.stat2Aura": "🔥 Collective fire",
-  "project.stat3Aura": "❄️ Token revealed",
-  "project.stat4Aura": "🪐 Infinite architectures",
+  "project.stat1Aura": "⚡ Awaiting the ritual",
+  "project.stat2Aura": "🔥 Protocol active",
+  "project.stat3Aura": "❄️ The shared fire",
+  "project.stat4Aura": "🪐 Roots make no noise",
 
   // Social
   "social.title": "Network Links",
@@ -309,31 +309,31 @@ const esTranslations = {
   "progress.maximum": " 100% MÁXIMO ",
   "progress.protocolActive": "⚡Secuencia de Ignición🔥Completa. Protocolo Activo.❄️",
 
-  // Project Info
-  "project.title": "El Protocolo",
-  "project.subtitle":
-    "Solana Legends es más que un token, es una red que decide el futuro de sus Hero💫Nodes.",
-  "project.whitepaper": "White Paper",
-  "project.whitepaperDesc": "Documentación Completa",
-  "project.whitepaperText":
-    "Explora la narrativa, la arquitectura del token y el roadmap de Solana Legends. Comprende cómo funciona la activación y cómo evolucionan los Hero💫Nodes.",
-  "project.readWhitepaper": "Leer White Paper",
-  "project.features": "Características Clave",
-  "project.feature1": "Activación descentralizada de la red",
-  "project.feature2": "Blockchain Solana rápido y seguro",
-  "project.feature3": "Token del Hero💫Node ganador",
-  "project.feature4": "Red activa y participativa",
-  "project.feature5": "Roadmap transparente y estructurado",
-  "project.stat1": "Hero💫Nodes Legendarios",
-  "project.stat2": "Umbral de Activación",
-  "project.stat3": "Token Ganador",
-  "project.stat4": "Posibilidades",
+// Project Info
+  "project.title": "El Portal Narrativo",
+  "project.subtitle": "Solana Legends no nació para competir. Nació para encender.",
+  "project.whitepaper": "El Manifiesto",
+  "project.whitepaperDesc": "Estructura, Ritual y Presencia.",
+  "project.whitepaperText": "Este documento no es una invitación. Es un filtro. No encontrarás promesas de éxito aquí, ni fórmulas de crecimiento. Encontrarás convicción, estructura y ritual. Porque las leyendas no se construyen con marketing. Se construyen con presencia.",
+  "project.readWhitepaper": "Entrar al Portal",
+  "project.features": "Arquitectura Central",
+  "project.feature1": "El Altar Técnico: pump.fun como portal de nacimiento.",
+  "project.feature2": "Guardián del Pulso: Protección delta-neutral automatizada.",
+  "project.feature3": "Lealtad Ritualizada: Holdear es construir. Lealtad recompensada.",
+  "project.feature4": "Fuego Controlado: Sin hype pagado. Crecimiento orgánico.",
+  "project.feature5": "Estándar Pixar: Lenguaje visual 3D épico y ritualizado.",
+  
+  // Stats
+  "project.stat1": "Fuerzas en Resonancia",
+  "project.stat2": "Capacidad del Sistema",
+  "project.stat3": "Narrativa Elegida",
+  "project.stat4": "Fuego Sostenido",
 
   // Ritual subtitles
-  "project.stat1Aura": "⚡ Energía de alta frecuencia",
-  "project.stat2Aura": "🔥 Fuego colectivo",
-  "project.stat3Aura": "❄️ Token revelado",
-  "project.stat4Aura": "🪐 Arquitecturas infinitas",
+  "project.stat1Aura": "⚡ Esperando el ritual",
+  "project.stat2Aura": "🔥 Protocolo activo",
+  "project.stat3Aura": "❄️ El fuego compartido",
+  "project.stat4Aura": "🪐 Las raíces no hacen ruido",
 
   // Social
   "social.title": "Enlaces de la Red",
