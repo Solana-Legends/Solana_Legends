@@ -106,7 +106,7 @@ const enTranslations = {
   "progress.architectureOnline": " ZapSol⚡Architecture Online",
   "progress.systemCapacity": "🔋 System Capacity",
   "progress.maximum": " 100% MAXIMUM ",
-  "progress.protocolActive": "Ignition🔥Sequence Complete. Protocol Active.❄️",
+  "progress.protocolActive": "⚡Ignition🔥Sequence Complete. Protocol Active.❄️",
 
   // Project Info
   "project.title": "The Protocol",
@@ -307,7 +307,7 @@ const esTranslations = {
   "progress.architectureOnline": " Arquitectura ZapSol⚡en Línea",
   "progress.systemCapacity": "🔋 Capacidad del Sistema",
   "progress.maximum": " 100% MÁXIMO ",
-  "progress.protocolActive": "Secuencia de Ignición🔥Completa. Protocolo Activo.❄️",
+  "progress.protocolActive": "⚡Secuencia de Ignición🔥Completa. Protocolo Activo.❄️",
 
   // Project Info
   "project.title": "El Protocolo",

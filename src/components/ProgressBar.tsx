@@ -1,3 +1,5 @@
+import React from "react";
+
 interface ProgressBarProps {
   percent: number;
   aura?: boolean;
@@ -6,31 +8,32 @@ interface ProgressBarProps {
 export function ProgressBar({ percent, aura = false }: ProgressBarProps) {
   const clamped = Math.min(100, Math.max(0, percent));
 
-  const gradient =
-    clamped < 40
-      ? "from-orange-400 via-amber-500 to-red-500"
-      : clamped < 80
-      ? "from-amber-500 via-orange-600 to-red-600"
-      : "from-red-500 via-rose-600 to-fuchsia-600";
+  // Unificamos el gradiente con el estilo eléctrico de ZapSol y el estado de "Ignición"
+  const gradient = "from-yellow-400 to-orange-500";
 
   return (
     <div className="relative w-full">
-      <div className="relative w-full h-3 rounded-full bg-zinc-900 overflow-hidden border border-amber-400/40 shadow-[0_0_12px_rgba(255,200,80,0.15)]">
+      {/* Contenedor principal de la barra */}
+      <div className="relative w-full h-3 md:h-3.5 rounded-full bg-[#0F0B1E] overflow-hidden border border-[#FFA908]/40 shadow-[0_0_15px_rgba(255,169,8,0.2)] z-10">
         
-        {/* Barra */}
+        {/* Barra de progreso (Solución al fantasma del CSS) */}
         <div
-          className={`progress-bar h-full rounded-full bg-gradient-to-r ${gradient} transition-[width] duration-700`}
-          style={{ "--progress": `${clamped}%` } as React.CSSProperties}
+          className={`h-full rounded-full bg-gradient-to-r ${gradient} transition-all duration-1000 ease-out ${
+            aura ? "animate-[pulse_2s_infinite]" : ""
+          }`}
+          style={{ width: `${clamped}%` }}
         />
 
-        {/* Aura suave */}
-        <div className="absolute inset-0 rounded-full blur-xl bg-amber-500/10 pointer-events-none" />
-
-        {/* Aura dorada cuando se cumple el objetivo */}
+        {/* Brillo interior dorado cuando está activa */}
         {aura && (
-          <div className="absolute inset-0 rounded-full ring-2 ring-amber-400 animate-ping" />
+          <div className="absolute inset-0 rounded-full shadow-[inset_0_0_10px_rgba(255,255,255,0.4)] mix-blend-overlay pointer-events-none" />
         )}
       </div>
+
+      {/* Aura exterior cósmica (reemplaza al animate-ping tosco) */}
+      {aura && (
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[102%] h-[200%] rounded-full blur-md bg-yellow-500/20 pointer-events-none z-0" />
+      )}
     </div>
   );
 }
