@@ -27,22 +27,22 @@ const enTranslations = {
   // Characters (PURGADO DE "VOTACIONES" Y "CANDADOS")
   "characters.title": "The Hero💫Nodes",
   "characters.subtitle":
-    "Explore the three elemental Hero💫Nodes of the Solana Legends architecture.",
+    "Three elemental architectures. One unified destiny.",
 
   "characters.zapsol.name": "ZapSol",
-  "characters.zapsol.title": "Lightning Hero💫Node",
+  "characters.zapsol.title": "Lightning Hero⚡Token",
   "characters.zapsol.description":
     "A high‑frequency conduit engineered to channel plasma‑grade lightning across the metaverse lattice. ZapSol stabilizes energetic flows, accelerates network pulses, and ignites precise activation thresholds.",
   "characters.zapsol.element": "Energy",
 
   "characters.monkesol.name": "MonkeSol",
-  "characters.monkesol.title": "Ancient Hero‑Archive",
+  "characters.monkesol.title": "Fire Hero🔥Supporting",
   "characters.monkesol.description":
     "A millennial archive‑construct containing encrypted ancestral knowledge. MonkeSol decodes market patterns, preserves ritual memory, and safeguards the deep logic of the blockchain continuum.",
   "characters.monkesol.element": "Wisdom",
 
   "characters.chipisol.name": "ChipiSol",
-  "characters.chipisol.title": "Cosmic Hero‑Gateway",
+  "characters.chipisol.title": "Ice Hero❄️Supporting",
   "characters.chipisol.description":
     "A dimensional gateway‑entity capable of opening stable portals between chains and realities. ChipiSol weaves crystalline pathways, synchronizes multiversal data, and maintains the integrity of inter‑realm transit.",
   "characters.chipisol.element": "Cosmos",
@@ -52,13 +52,15 @@ const enTranslations = {
   "characters.speed": "Throughput",
   "characters.intelligence": "Cognitive Layer",
   "characters.voteFor": "Trade $ZAPSOL",
+  "characters.buyOnPump": "Buy on pump.fun",
+  "characters.buyOnJupiter": "Buy on Jupiter",
   "characters.votingLocked": "Status: Standby",
-  "characters.question": "The network has elevated its Guardian.",
+  "characters.question": "The Community has elevated its Guardian.",
   "characters.votingUnlocked": "Activation unlocked in",
   "characters.followersMore": "more Legends",
   "characters.viewResults": "View Live Chart",
   "characters.votingActive":
-    "ZapSol protocol is currently active. The network is elevated.",
+    "ZapSol⚡Protocol Ignited. The network is operating at maximum capacity.",
   "characters.chosenGuardian": "The Hero💫Node chosen by the network is",
   "characters.telegramNote":
     "🕰️ At every dawn and dusk, the metrics renew to reflect the living pulse of the collective fire",
@@ -221,22 +223,22 @@ const esTranslations = {
   // Characters (PURGADO DE "VOTACIONES" Y "CANDADOS")
   "characters.title": "Los Hero💫Nodes",
   "characters.subtitle":
-    "Explora los tres Hero💫Nodes elementales de la arquitectura de Solana Legends.",
+    "Tres arquitecturas elementales. Un único destino.",
 
   "characters.zapsol.name": "ZapSol",
-  "characters.zapsol.title": "Lightning Hero💫Node",
+  "characters.zapsol.title": "Relampago Hero⚡Token",
   "characters.zapsol.description":
     "Un conducto de alta frecuencia diseñado para canalizar energía de plasma a través del entramado del metaverso. ZapSol estabiliza flujos energéticos, acelera pulsos de red y enciende umbrales de activación precisos.",
   "characters.zapsol.element": "Energía",
 
   "characters.monkesol.name": "MonkeSol",
-  "characters.monkesol.title": "Ancient Hero💫Archive",
+  "characters.monkesol.title": "Fuego Hero🔥Apoyando",
   "characters.monkesol.description":
     "Un archivo‑constructo milenario que contiene conocimiento ancestral cifrado. MonkeSol decodifica patrones del mercado, preserva memoria ritual y protege la lógica profunda del continuo blockchain.",
   "characters.monkesol.element": "Sabiduría",
 
   "characters.chipisol.name": "ChipiSol",
-  "characters.chipisol.title": "Cosmic Hero💫Gateway",
+  "characters.chipisol.title": "Ice Hero❄️Apoyando",
   "characters.chipisol.description":
     "Una entidad‑portal dimensional capaz de abrir rutas estables entre cadenas y realidades. ChipiSol teje caminos cristalinos, sincroniza datos multiversales y mantiene la integridad del tránsito inter‑realidad.",
   "characters.chipisol.element": "Cosmos",
@@ -246,13 +248,15 @@ const esTranslations = {
   "characters.speed": "Rendimiento",
   "characters.intelligence": "Capa Cognitiva",
   "characters.voteFor": "Comprar $ZAPSOL",
+  "characters.buyOnPump": "Comprar en pump.fun",
+  "characters.buyOnJupiter": "Comprar en Jupiter",
   "characters.votingLocked": "Estado: En espera",
-  "characters.question": "La red ha elevado a su Guardián.",
+  "characters.question": "La Comunidad ha elevado a su Guardián.",
   "characters.votingUnlocked": "Activación desbloqueada en",
   "characters.followersMore": "Leyendas más",
   "characters.viewResults": "Ver Gráfico en Vivo",
   "characters.votingActive":
-    "El protocolo ZapSol está activo. La red se ha elevado.",
+    "Protocolo ZapSol⚡en Ignición. La red opera a máxima capacidad.",
   "characters.chosenGuardian": "El Hero💫Node elegido por la red es",
   "characters.telegramNote":
     "🕰️ Cada amanecer y cada ocaso, las métricas se renuevan para reflejar el pulso vivo del fuego colectivo",

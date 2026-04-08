@@ -31,7 +31,7 @@ type Character = {
 
 export default function CharacterGallery() {
   const { t } = useLanguage();
-  const { mainProgress, goal, isLoading } = useMetrics();
+  const { isLoading } = useMetrics();
 
   // Enlaces de Acción Táctica
   const pumpFunURL = "https://pump.fun/coin/GmPDuwtYuMUpCrzGwYasxmo6vSmWvaHSg1Kf7skipump";
@@ -77,8 +77,8 @@ export default function CharacterGallery() {
     },
   ];
 
-  // Forzamos visualmente que la red está viva y activa, sin depender del objetivo antiguo
-  const progressPercentage = goal > 0 ? Math.max((mainProgress / goal) * 100, 85) : 85;
+  // La red está 100% activa. Ignición completada.
+  const progressPercentage = 100;
 
   return (
     <section className="relative py-16 px-6 min-h-[520px] bg-gradient-to-br from-[#0F0B1E] via-[#1A1530] to-[#0F0B1E] aura-pulsante aura-hover-gold">
@@ -105,11 +105,11 @@ export default function CharacterGallery() {
             {isLoading ? "Synchronizing Network..." : t("characters.votingActive")}
           </p>
 
-          {/* PROGRESS BAR (Representando la Energía de la Red, no seguidores) */}
-          <div className="relative w-full max-w-lg mx-auto h-2.5 rounded-full border border-[#FFA908]/40 bg-[#1A1530] overflow-hidden mt-3 shadow-[0_0_15px_rgba(255,169,8,0.2)]">
+          {/* PROGRESS BAR (Representando la Energía de la Red operando al 100%) */}
+          <div className="relative w-full max-w-lg mx-auto h-2.5 rounded-full border border-[#FFA908]/40 bg-[#1A1530] overflow-hidden mt-3 shadow-[0_0_15px_rgba(255,169,8,0.3)]">
             <div
               className="progress-bar absolute top-0 left-0 h-full bg-gradient-to-r from-yellow-400 to-orange-500 animate-[pulse_2s_infinite] rounded-full"
-              style={{ "--progress": `${progressPercentage}%`, width: `${progressPercentage}%` } as React.CSSProperties}
+              style={{ width: `${progressPercentage}%` } as React.CSSProperties}
             />
           </div>
         </div>
@@ -179,7 +179,6 @@ export default function CharacterGallery() {
                   </CardDescription>
                 </CardHeader>
 
-                {/* Flex-grow asegura que los botones siempre queden abajo del todo si las descripciones tienen distinta altura */}
                 <CardContent className="space-y-4 relative z-10 flex flex-col flex-grow">
                   <p className="text-gray-300 leading-relaxed text-sm flex-grow">
                     {character.description}
@@ -222,7 +221,7 @@ export default function CharacterGallery() {
                           onClick={() => window.open(pumpFunURL, "_blank")}
                         >
                           <Rocket className="w-4 h-4 mr-2" />
-                          Buy on pump.fun
+                          {t("characters.buyOnPump")}
                         </Button>
 
                         {/* JUPITER - Outline Verde */}
@@ -232,7 +231,7 @@ export default function CharacterGallery() {
                           onClick={() => window.open(jupiterURL, "_blank")}
                         >
                           <ArrowRightLeft className="w-4 h-4 mr-2" />
-                          Buy on Jupiter
+                          {t("characters.buyOnJupiter")}
                         </Button>
                       </div>
                     ) : (

@@ -105,7 +105,7 @@ export default function HeroSection() {
           </Badge>
         </div>
 
-        {/* --- MATRIZ DE BOTONES (2x2) --- */}
+        {/* --- MATRIZ DE BOTONES (2x2) SINCRONIZADA --- */}
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-2xl mx-auto w-full px-4 pb-4">
           
           {/* Botón 1: PUMP.FUN */}
@@ -116,7 +116,7 @@ export default function HeroSection() {
             onClick={() => window.open("https://pump.fun/coin/GmPDuwtYuMUpCrzGwYasxmo6vSmWvaHSg1Kf7skipump", "_blank")}
           >
             <Rocket className="mr-2 h-5 w-5" />
-            Buy on pump.fun
+            {t("characters.buyOnPump")}
           </Button>
 
           {/* Botón 2: JUPITER */}
@@ -127,7 +127,7 @@ export default function HeroSection() {
             onClick={() => window.open("https://jup.ag/swap?sell=So11111111111111111111111111111111111111112&buy=GmPDuwtYuMUpCrzGwYasxmo6vSmWvaHSg1Kf7skipump", "_blank")}
           >
             <ArrowRightLeft className="mr-2 h-5 w-5" />
-            Buy on Jupiter
+            {t("characters.buyOnJupiter")}
           </Button>
 
           {/* Botón 3: COMUNIDAD */}
@@ -138,7 +138,7 @@ export default function HeroSection() {
             onClick={() => document.getElementById("community")?.scrollIntoView({ behavior: "smooth" })}
           >
             <Users className="mr-2 h-5 w-5" />
-            Join community
+            {t("hero.joinCommunity")}
           </Button>
 
           {/* Botón 4: HALL OF HEROES */}
@@ -153,7 +153,7 @@ export default function HeroSection() {
         </div>
       </div>
 
-      {/* --- Personaje Decorativo Flotante (MonkeSol) - Posición y Escala Ajustadas --- */}
+      {/* --- Personaje Decorativo Flotante (MonkeSol) --- */}
       <div className="absolute bottom-10 left-10 md:bottom-16 md:left-20 opacity-30 md:opacity-60 pointer-events-none z-0">
         <img
           src="/assets/MonkeSol.png"
