@@ -8,7 +8,7 @@ import {
 } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { Zap, Brain, Sparkles, Lock, Rocket, Activity } from "lucide-react";
+import { Zap, Brain, Sparkles, Lock, Rocket, Activity, ArrowRightLeft } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { useMetrics } from "@/hooks/useMetrics";
 
@@ -35,6 +35,7 @@ export default function CharacterGallery() {
 
   // Enlaces de Acción Táctica
   const pumpFunURL = "https://pump.fun/coin/GmPDuwtYuMUpCrzGwYasxmo6vSmWvaHSg1Kf7skipump";
+  const jupiterURL = "https://jup.ag/swap?sell=So11111111111111111111111111111111111111112&buy=GmPDuwtYuMUpCrzGwYasxmo6vSmWvaHSg1Kf7skipump";
   const dexScreenerURL = "https://dexscreener.com/solana/7yxrb1wzpeknlj2yfjm3p8qy4ytsmq1vzuts1dpkhmsh";
 
   const characters: Character[] = [
@@ -123,9 +124,9 @@ export default function CharacterGallery() {
             return (
               <Card
                 key={character.id}
-                className={`w-[340px] bg-[#1A1530]/40 border-4 rounded-xl transition-all duration-300 hover:scale-105 group ${
+                className={`w-[340px] bg-[#1A1530]/40 border-4 rounded-xl transition-all duration-300 hover:scale-[1.02] group ${
                   isActive ? character.borderColor : "border-[#2A1F40] opacity-80 hover:opacity-100"
-                } aura-pulsante aura-hover relative overflow-hidden`}
+                } aura-pulsante aura-hover relative overflow-hidden flex flex-col`}
               >
                 {/* Resplandor de fondo solo para el activo */}
                 {isActive && (
@@ -178,13 +179,14 @@ export default function CharacterGallery() {
                   </CardDescription>
                 </CardHeader>
 
-                <CardContent className="space-y-4 relative z-10">
-                  <p className="text-gray-300 leading-relaxed text-sm">
+                {/* Flex-grow asegura que los botones siempre queden abajo del todo si las descripciones tienen distinta altura */}
+                <CardContent className="space-y-4 relative z-10 flex flex-col flex-grow">
+                  <p className="text-gray-300 leading-relaxed text-sm flex-grow">
                     {character.description}
                   </p>
 
                   {/* STATS */}
-                  <div className="space-y-2">
+                  <div className="space-y-2 mt-auto">
                     <h4 className="text-white font-semibold text-xs uppercase tracking-wide">
                       {t("characters.stats")}
                     </h4>
@@ -209,28 +211,39 @@ export default function CharacterGallery() {
                     ))}
                   </div>
 
-                  {/* BOTÓN DINÁMICO (Activo vs Standby) -> Apunta a Pump.fun */}
-                  <Button
-                    className={`w-full font-bold transition-all duration-300 py-2 text-sm mt-4
-                      ${isActive 
-                        ? "bg-yellow-500 text-black hover:bg-yellow-400 shadow-[0_0_15px_rgba(234,179,8,0.4)] cursor-pointer hover:scale-105" 
-                        : "bg-gradient-to-r from-[#1A1530] to-[#2A1F40] text-gray-500 border border-gray-700 pointer-events-none"
-                      }
-                    `}
-                    onClick={() => isActive && window.open(pumpFunURL, "_blank")}
-                  >
+                  {/* BOTONES DINÁMICOS (Activo vs Standby) */}
+                  <div className="pt-2">
                     {isActive ? (
-                      <>
-                        <Rocket className="w-4 h-4 mr-2" />
-                        {t("characters.voteFor")}
-                      </>
+                      <div className="flex flex-col gap-2">
+                        {/* PUMP.FUN - Outline Dorado */}
+                        <Button
+                          variant="outline"
+                          className="w-full border-yellow-400 text-yellow-400 hover:bg-yellow-400 hover:text-[#0F0B1E] font-bold py-5 text-sm transition-transform hover:scale-[1.02]"
+                          onClick={() => window.open(pumpFunURL, "_blank")}
+                        >
+                          <Rocket className="w-4 h-4 mr-2" />
+                          Buy on pump.fun
+                        </Button>
+
+                        {/* JUPITER - Outline Verde */}
+                        <Button
+                          variant="outline"
+                          className="w-full border-green-400 text-green-400 hover:bg-green-400 hover:text-[#0F0B1E] font-bold py-5 text-sm transition-transform hover:scale-[1.02]"
+                          onClick={() => window.open(jupiterURL, "_blank")}
+                        >
+                          <ArrowRightLeft className="w-4 h-4 mr-2" />
+                          Buy on Jupiter
+                        </Button>
+                      </div>
                     ) : (
-                      <>
+                      <Button
+                        className="w-full bg-gradient-to-r from-[#1A1530] to-[#2A1F40] text-gray-500 border border-gray-700 pointer-events-none transition-all duration-300 py-5 text-sm"
+                      >
                         <Lock className="w-4 h-4 mr-2 opacity-50" />
                         {t("characters.votingLocked")}
-                      </>
+                      </Button>
                     )}
-                  </Button>
+                  </div>
                 </CardContent>
               </Card>
             );
