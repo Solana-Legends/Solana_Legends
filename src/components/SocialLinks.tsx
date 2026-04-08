@@ -46,8 +46,8 @@ export default function SocialLinks() {
 
   const shareText =
     language === "es"
-      ? "🪐 ¡Descubre Solana Legends! Tres guardianes épicos compiten por convertirse en token. ¿Cuál elegirás? #Solana #Legends #Voltra #Studio #Crypto #Meme \n"
-      : "🪐 Discover Solana Legends! Three epic guardians compete to become a token. Which will you choose? #Solana #Legends #Voltra #Studio #Crypto #Meme \n";
+      ? "🪐 ¡El Ritual ha concluido! La arquitectura de ZapSol ⚡ domina la red de Solana Legends. Entra al portal y únete al fuego. #Solana #ZapSol #Crypto \n"
+      : "🪐 The Ritual is complete! ZapSol ⚡ architecture dominates the Solana Legends network. Enter the portal and join the fire. #Solana #ZapSol #Crypto \n";
 
   const shareUrl = typeof window !== "undefined" ? window.location.href : "";
 
@@ -78,60 +78,63 @@ export default function SocialLinks() {
   return (
     <section
       id="community"
-      className="relative py-20 px-6 bg-gradient-to-br from-[#0F0B1E] via-[#1A1530] to-[#0F0B1E] aura-pulsante aura-hover-gold"
+      className="relative flex flex-col justify-center items-center py-8 md:py-12 px-4 md:px-6 bg-gradient-to-br from-[#0F0B1E] via-[#1A1530] to-[#0F0B1E] aura-pulsante aura-hover-gold min-h-screen overflow-hidden"
     >
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 rounded-full blur-3xl bg-[#FFA908]/20 animate-pulse pointer-events-none z-0" />
 
-      {/* 🔥 Ajuste de ancho para coincidir con las barras */}
-      <div className="relative z-10 w-full max-w-[960px] mx-auto px-4">
+      {/* Contenedor principal */}
+      <div className="relative z-10 w-full max-w-[960px] mx-auto flex flex-col justify-center h-full">
         
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+        <div className="text-center mb-6 md:mb-8">
+          <h2 className="text-3xl md:text-4xl font-bold text-white mb-2">
             {t("social.title")}
           </h2>
-          <p className="text-xl text-indigo-200 max-w-3xl mx-auto">
+          <p className="text-base md:text-lg text-indigo-200 max-w-3xl mx-auto px-2">
             {t("social.subtitle")}
           </p>
         </div>
 
-        {/* Social Platforms */}
-        <div className="grid md:grid-cols-3 gap-6 mb-6">
+        {/* Tarjetas de Plataformas Sociales (Comprimidas) */}
+        <div className="grid md:grid-cols-3 gap-4 md:gap-6 mb-6">
           {socialPlatforms.map((platform) => {
             const IconComponent = platform.icon;
             return (
               <Card
                 key={platform.name}
-                className="bg-[#1A1530]/40 border border-[#FFA908]/30 rounded-xl hover:shadow-[0_0_25px_#FFA908] hover:scale-105 transition-all duration-300"
+                className="bg-[#1A1530]/60 border border-[#FFA908]/30 rounded-xl hover:shadow-[0_0_20px_#FFA908] hover:scale-105 transition-all duration-300 flex flex-col"
               >
-                <CardHeader className="text-center pb-4">
-                  <div className="flex justify-center mb-4">
+                <CardHeader className="text-center pb-2 pt-4">
+                  <div className="flex justify-center mb-2">
                     <div
-                      className={`p-4 ${platform.color} rounded-full shadow-[0_0_15px_#FFA908]`}
+                      className={`p-3 ${platform.color} rounded-full shadow-[0_0_15px_#FFA908]`}
                     >
-                      <IconComponent className="h-8 w-8 text-white" />
+                      <IconComponent className="h-6 w-6 text-white" />
                     </div>
                   </div>
-                  <CardTitle className="text-white text-xl">
+                  <CardTitle className="text-white text-lg">
                     {platform.name}
                   </CardTitle>
-                  <CardDescription className="text-purple-300">
+                  <CardDescription className="text-purple-300 text-xs">
                     {platform.handle}
                   </CardDescription>
                 </CardHeader>
-                <CardContent className="text-center space-y-4">
-                  <div className="text-2xl font-bold text-yellow-300">
-                    {platform.followers}
+                <CardContent className="text-center space-y-3 flex-grow flex flex-col justify-between pb-4">
+                  <div>
+                    <div className="text-xl font-bold text-yellow-300">
+                      {platform.followers}
+                    </div>
+                    <p className="text-purple-200 text-xs mt-1">
+                      {platform.description}
+                    </p>
                   </div>
-                  <p className="text-purple-200 text-sm">
-                    {platform.description}
-                  </p>
                   <a
                     href={platform.url}
                     target="_blank"
                     rel="noopener noreferrer"
+                    className="mt-auto"
                   >
                     <Button
-                      className={`w-full ${platform.color} text-white font-semibold aura-hover aura-pulsante shadow-[0_0_15px_#FFA908]`}
+                      className={`w-full ${platform.color} text-white font-semibold aura-hover aura-pulsante shadow-[0_0_10px_#FFA908] py-2 h-auto text-sm`}
                     >
                       {t("social.follow")}
                     </Button>
@@ -142,120 +145,48 @@ export default function SocialLinks() {
           })}
         </div>
 
-        {/* Mensaje ritualizado */}
-        <div className="mb-12 text-sm text-center text-zinc-400 italic animate-fadeIn animate-pulseSlow">
-          {t("progress.renewalMessage")}
+        {/* Mensaje ritualizado (Purgado el mensaje de "esperando renovación" por incongruente con ZapSol activo) */}
+        <div className="mb-6 text-xs text-center text-zinc-400 italic animate-fadeIn animate-pulseSlow">
+          🔥 The fire is sustained by those who stay.
         </div>
 
-        {/* Share Section */}
-        <Card className="bg-[#1A1530]/40 border border-[#FFA908]/30 rounded-xl mb-12 hover:shadow-[0_0_25px_#FFA908] transition-all duration-300">
-          <CardHeader className="text-center">
-            <div className="flex justify-center mb-4">
-              <div className="p-4 bg-yellow-500 rounded-full shadow-[0_0_15px_#FFA908]">
-                <Share2 className="h-8 w-8 text-[#0F0B1E]" />
-              </div>
-            </div>
-            <CardTitle className="text-white text-2xl">
+        {/* Sección Compartir (Comprimida y Horizontal) */}
+        <Card className="bg-[#1A1530]/60 border border-[#FFA908]/30 rounded-xl mb-4 hover:shadow-[0_0_20px_#FFA908] transition-all duration-300">
+          <CardHeader className="text-center pb-2 pt-4">
+            <CardTitle className="text-white text-lg flex items-center justify-center gap-2">
+              <Share2 className="h-5 w-5 text-yellow-500" />
               {t("social.share")}
             </CardTitle>
-            <CardDescription className="text-purple-300">
-              {t("social.shareSubtitle")}
-            </CardDescription>
           </CardHeader>
-          <CardContent>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <CardContent className="pb-4">
+            <div className="flex flex-row flex-wrap gap-3 justify-center">
               <Button
                 onClick={() => handleShare("twitter")}
-                className="bg-blue-600 hover:bg-blue-700 text-white font-semibold aura-hover aura-pulsante shadow-[0_0_15px_#FFA908]"
+                className="bg-blue-600 hover:bg-blue-700 text-white font-semibold aura-hover aura-pulsante shadow-[0_0_10px_#FFA908] text-xs h-8"
               >
-                <Twitter className="w-4 h-4 mr-2" />
+                <Twitter className="w-3.5 h-3.5 mr-1.5" />
                 {t("social.shareX")}
               </Button>
               <Button
                 onClick={() => handleShare("telegram")}
-                className="bg-cyan-600 hover:bg-cyan-700 text-white font-semibold aura-hover aura-pulsante shadow-[0_0_15px_#FFA908]"
+                className="bg-cyan-600 hover:bg-cyan-700 text-white font-semibold aura-hover aura-pulsante shadow-[0_0_10px_#FFA908] text-xs h-8"
               >
-                <MessageCircle className="w-4 h-4 mr-2" />
+                <MessageCircle className="w-3.5 h-3.5 mr-1.5" />
                 {t("social.shareTelegram")}
               </Button>
               <Button
                 onClick={() => handleShare("whatsapp")}
-                className="bg-green-600 hover:bg-green-700 text-white font-semibold aura-hover aura-pulsante shadow-[0_0_15px_#FFA908]"
+                className="bg-green-600 hover:bg-green-700 text-white font-semibold aura-hover aura-pulsante shadow-[0_0_10px_#FFA908] text-xs h-8"
               >
-                <Heart className="w-4 h-4 mr-2" />
+                <Heart className="w-3.5 h-3.5 mr-1.5" />
                 {t("social.shareWhatsapp")}
               </Button>
             </div>
           </CardContent>
         </Card>
 
-        {/* Call to Action */}
-        <div className="text-center">
-          <p className="text-indigo-200 text-lg mb-6">
-            {t("social.callToAction")}
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a
-              href="https://x.com/EligeTuMeme"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <Button
-                size="lg"
-                className="bg-yellow-500 hover:bg-yellow-600 text-[#0F0B1E] font-semibold px-8 shadow-[0_0_15px_#FFA908] aura-hover aura-pulsante"
-              >
-                {t("social.followOnX")}
-              </Button>
-            </a>
-            <a
-              href="https://x.com/i/communities/1976865385971360174"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <Button
-                size="lg"
-                className="bg-yellow-500 hover:bg-yellow-600 text-[#0F0B1E] font-semibold px-8 shadow-[0_0_15px_#FFA908] aura-hover aura-pulsante"
-              >
-                {t("social.xCommunity")}
-              </Button>
-            </a>
-            <a
-              href="https://t.me/EligeTuMeme"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <Button
-                size="lg"
-                variant="outline"
-                className="border-yellow-400 text-yellow-300 hover:bg-yellow-400 hover:text-[#0F0B1E] px-8 aura-hover aura-pulsante shadow-[0_0_15px_#FFA908]"
-              >
-                {t("social.joinTelegram")}
-              </Button>
-            </a>
-          </div>
-        </div>
-
-        {/* Imagen ChipiSol */}
-        <div
-          className="
-    absolute 
-    bottom-[-9.6rem] left-[-5rem]     /* 📱 móvil: más arriba y más a la derecha */
-    md:bottom-0 md:left-0         /* 🖥️ desktop: posición original */
-    mb-[14rem] ml-[-3rem]
-    animate-in fade-in slide-in-from-left duration-1000"
-        >
-          <div className="relative z-10 flex justify-center items-center w-80 h-80 group">
-            <div className="absolute w-80 h-80 rounded-full blur-3xl hero-chipisol-aura pointer-events-none z-0 transition-colors duration-500 group-hover:bg-white/40"></div>
-            <img
-              src="/assets/ChipiSol.png"
-              alt="ChipiSol Hero"
-              className="relative z-10 h-44 w-auto md:h-64 object-contain mix-blend-overlay opacity-90 symbol-hero-chipisol"
-            />
-          </div>
-        </div>
-
-        {/* Footer */}
-        <div className="mt-16 text-center text-xs text-zinc-500 px-4">
+        {/* Footer (Ajustado) */}
+        <div className="mt-auto text-center text-[10px] md:text-xs text-zinc-500 px-4 pb-2 z-20 relative">
           Solana Legends 🪐 EligeTuMeme™ ✨ © 2025
           <br />
           Official Bot:{" "}
@@ -271,6 +202,26 @@ export default function SocialLinks() {
           Powered by community fire, ritualized progress, and cosmic guardianship.
         </div>
       </div>
+
+      {/* Imagen ChipiSol - Anclada estrictamente a la esquina inferior izquierda (Fixed position relative to section) */}
+      <div
+        className="
+          absolute 
+          bottom-4 left-4 md:bottom-8 md:left-8
+          w-28 h-28 md:w-48 md:h-48
+          z-10
+          animate-in fade-in slide-in-from-left duration-1000 pointer-events-none"
+      >
+        <div className="relative flex justify-center items-center w-full h-full group">
+          <div className="absolute w-full h-full rounded-full blur-2xl hero-chipisol-aura z-0 transition-colors duration-500 group-hover:bg-white/40"></div>
+          <img
+            src="/assets/ChipiSol.png"
+            alt="ChipiSol Hero"
+            className="relative z-10 w-full h-full object-contain mix-blend-overlay opacity-90 symbol-hero-chipisol"
+          />
+        </div>
+      </div>
+
     </section>
   );
 }
