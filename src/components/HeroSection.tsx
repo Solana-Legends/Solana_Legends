@@ -1,226 +1,129 @@
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { Rocket, Users, Vote } from "lucide-react";
+import { Rocket, Users, Copy, Check } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { useNavigate } from "react-router-dom";
 import VideoWithControls from "@/components/VideoWithControls";
-import { useRef, useLayoutEffect, useState } from "react";
+import { useState } from "react";
 
 export default function HeroSection() {
   const { t } = useLanguage();
   const navigate = useNavigate();
+  const [copied, setCopied] = useState(false);
 
-  // Botones con ancho dinámico
-  const longestButtonRef = useRef<HTMLButtonElement | null>(null);
-  const [maxWidth, setMaxWidth] = useState<number | null>(null);
+  // Dirección del contrato (Asegúrate de cambiar esto por el CA de ZapSol)
+  const contractAddress = "0x0000000000000000000000000000000000000000";
 
-  useLayoutEffect(() => {
-    if (longestButtonRef.current) {
-      const width = longestButtonRef.current.getBoundingClientRect().width;
-      setMaxWidth(width);
-    }
-  }, [t]);
+  const copyToClipboard = () => {
+    navigator.clipboard.writeText(contractAddress);
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2000);
+  };
 
   return (
-    <section className="relative min-h-[70vh] flex justify-center bg-gradient-to-br from-[#0F0B1E] via-[#1A1530] to-[#0F0B1E] overflow-hidden aura-pulsante aura-hover-gold">
-      {/* Fondo cósmico */}
+    <section className="relative min-h-screen flex flex-col items-center justify-start bg-gradient-to-br from-[#0F0B1E] via-[#1A1530] to-[#0F0B1E] overflow-hidden aura-pulsante pt-6 md:pt-12">
+      {/* Fondo Cósmico */}
       <div className="absolute inset-0 opacity-20 pointer-events-none">
-        <div className="absolute top-1/4 left-1/4 w-16 h-16 md:w-28 md:h-28 bg-purple-500 rounded-full blur-xl md:blur-3xl animate-pulse"></div>
-        <div className="absolute bottom-1/4 right-1/4 w-24 h-24 md:w-40 md:h-40 bg-blue-600 rounded-full blur-xl md:blur-3xl animate-pulse delay-1000"></div>
-        <div className="absolute top-1/2 right-1/3 w-12 h-12 md:w-20 md:h-20 bg-indigo-400 rounded-full blur-lg md:blur-2xl animate-pulse delay-500"></div>
+        <div className="absolute top-1/4 left-1/4 w-28 h-28 bg-purple-500 rounded-full blur-3xl animate-pulse"></div>
+        <div className="absolute bottom-1/4 right-1/4 w-40 h-40 bg-blue-600 rounded-full blur-3xl animate-pulse delay-1000"></div>
       </div>
 
-      {/* Contenido */}
-      <div className="relative z-10 w-full max-w-screen-2xl mx-auto px-4 text-center md:pt-2">
-        {/* Logo */}
-        <div className="mb-4 md:mb-6 flex justify-center relative group origin-bottom scale-125 md:scale-125 mt-4">
-          <div className="absolute inset-0 flex justify-center items-center pointer-events-none z-0">
-            <div className="w-24 h-24 md:w-44 md:h-44 rounded-full blur-lg md:blur-3xl aura-pulsante-gold-strong aura-hover-white"></div>
+      <div className="relative z-10 w-full max-w-screen-xl mx-auto px-4 text-center">
+        {/* Logo Principal */}
+        <div className="mb-6 flex justify-center relative group scale-110 md:scale-125">
+          <div className="absolute inset-0 flex justify-center items-center pointer-events-none">
+            <div className="w-32 h-32 md:w-48 md:h-48 rounded-full blur-3xl bg-yellow-500/20 aura-pulsante-gold-strong"></div>
           </div>
-
-          <a
-            href="https://x.com/EligeTuMeme"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <img
-              src="/assets/LogoPremium2.png"
-              alt="Solana Legends Logo"
-              className="h-16 w-auto md:h-28 object-contain opacity-90 logo-respirando"
-            />
-          </a>
+          <img
+            src="/assets/LogoPremium2.png"
+            alt="Solana Legends Logo"
+            className="h-20 md:h-32 object-contain opacity-95 logo-respirando"
+          />
         </div>
 
-        {/* Título */}
-        <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-3">
+        {/* Título y Subtítulo */}
+        <h1 className="text-4xl md:text-6xl font-extrabold text-white mb-4 tracking-tight">
           {t("hero.title")}
         </h1>
-
-        {/* Subtítulo */}
-        <p className="text-base md:text-xl text-indigo-200 mb-2">
+        <p className="text-lg md:text-2xl text-indigo-200 mb-6 max-w-2xl mx-auto">
           {t("hero.subtitle")}
         </p>
 
-        {/* Tagline */}
-        <p className="text-sm md:text-lg text-purple-300 mb-1 font-medium">
-          {t("hero.tagline")}
-        </p>
-
-        {/* Logo $Poco */}
-        <div className="flex justify-center md:justify-end mb-2">
-          <div className="relative flex justify-center items-center w-24 h-24 md:w-36 md:h-36 group md:-translate-x-6">
-            <div className="absolute w-full h-full rounded-full blur-xl md:blur-3xl aura-pulsante-gold-strong aura-hover-white"></div>
-
-            <a
-              href="https://poco-mod-web.vercel.app"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="relative z-10"
-            >
-              <img
-                src="/assets/$Poco.png"
-                alt="$Poco Logo"
-                className="h-18 w-auto md:h-28 object-contain opacity-90 logo-respirando"
-              />
-            </a>
-          </div>
-        </div>
-
-        {/* MonkeSol flotante */}
-        <div
-          className="
-            absolute 
-            bottom-[-2rem] left-[-0.8rem]
-            md:bottom-0 md:left-0
-            ml-[-3rem]
-            animate-in fade-in slide-in-from-left duration-1000"
-        >
-          <div className="relative z-10 flex justify-center items-center w-64 h-64 group">
-            <div className="absolute w-64 h-64 rounded-full blur-3xl hero-monkesol-aura pointer-events-none z-0 transition-colors duration-500 group-hover:bg-red-400/40"></div>
-            <img
-              src="/assets/MonkeSol.png"
-              alt="MonkeSol Hero"
-              className="relative z-10 h-44 w-auto md:h-60 object-contain mix-blend-overlay opacity-90 symbol-hero-monkesol-pulse"
-            />
-          </div>
-        </div>
-
-        {/* Videos */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 mb-6 w-full max-w-screen-lg mx-auto px-2">
-          <div className="animate-in fade-in slide-in-from-left duration-1000">
-            <div className="relative group rounded-xl overflow-hidden transition-shadow duration-300 hover:scale-[1.02] border border-purple-500/40 aura-pulsante aura-hover-white">
-              <VideoWithControls
-                src="/assets/HeroesLevitan.mp4"
-                glowColor="#A020F0"
-              />
-              <div className="pointer-events-none absolute inset-0 rounded-xl bg-gradient-to-t from-black/50 to-transparent"></div>
-            </div>
-          </div>
-
-          <div className="animate-in fade-in slide-in-from-right duration-1000">
-            <div className="relative group rounded-xl overflow-hidden transition-shadow duration-300 hover:scale-[1.02] border border-blue-400/40 aura-pulsante-blue aura-hover-gold">
-              <VideoWithControls
-                src="/assets/HéroesProgramandoEn.mp4"
-                glowColor="#00BFFF"
-              />
-              <div className="pointer-events-none absolute inset-0 rounded-xl bg-gradient-to-t from-black/50 to-transparent"></div>
-            </div>
-          </div>
-        </div>
-
-        {/* Badges */}
-        <div className="flex flex-wrap justify-center gap-2 md:gap-3 mb-3">
-          <Badge className="text-green-400 border-green-400 bg-green-400/10 px-3 py-1.5">
-            <Rocket className="w-4 h-4 mr-2" />
-            {t("hero.activeProject")}
-          </Badge>
-
-          <Badge className="text-blue-300 border-blue-300 bg-blue-300/10 px-3 py-1.5">
-            <Users className="w-4 h-4 mr-2" />
-            {t("hero.growingCommunity")}
-          </Badge>
-
-          <Badge className="text-purple-300 border-purple-300 bg-purple-300/10 px-3 py-1.5">
-            <Vote className="w-4 h-4 mr-2" />
-            {t("hero.upcomingVote")}
-          </Badge>
-        </div>
-
-        {/* Botones */}
-        <div className="flex flex-col sm:flex-row gap-3 justify-center items-center mb-4">
-          {/* Botón 1 — Hall of Heroes */}
-          <Button
-            size="default"
-            variant="outline"
-            onClick={() => navigate("/hall-of-heroes")}
-            className="
-    w-[200px]
-    flex flex-row items-center gap-3
-    text-left
-    border-[#FFA908] text-[#FFA908]
-    hover:bg-[#FFA908] hover:text-[#0F0B1E]
-    py-2 px-4
-  "
-          >
-            {/* ICONO IZQUIERDA — CENTRADO VERTICALMENTE */}
-            <span className="text-yellow-400 text-xl flex items-center">
-              🔥
+        {/* --- SECCIÓN CONTRACT ADDRESS (CA) --- */}
+        <div className="flex justify-center mb-8">
+          <div className="flex items-center gap-2 bg-black/40 border border-indigo-500/30 rounded-full px-4 py-2 backdrop-blur-sm group hover:border-indigo-400 transition-colors cursor-pointer" onClick={copyToClipboard}>
+            <span className="text-indigo-300 font-mono text-xs md:text-sm">
+              CA: {contractAddress.slice(0, 6)}...{contractAddress.slice(-4)}
             </span>
+            <Button size="icon" variant="ghost" className="h-6 w-6 text-indigo-400">
+              {copied ? <Check className="h-3 w-3 text-green-400" /> : <Copy className="h-3 w-3" />}
+            </Button>
+          </div>
+        </div>
 
-            {/* TEXTO DERECHA (2 líneas) */}
-            <div className="flex flex-col leading-tight">
-              <span className="font-semibold">
-                {t("hero.hallOfHeroes").split("✨")[0].trim()} ✨
-              </span>
-              <span className="text-sm opacity-90">
-                {t("hero.hallOfHeroes").split("✨")[1].trim()}
-              </span>
-            </div>
+        {/* Videos de Héroes */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10 max-w-4xl mx-auto">
+          <div className="relative rounded-2xl overflow-hidden border border-purple-500/40 shadow-2xl shadow-purple-500/10">
+            <VideoWithControls src="/assets/HeroesLevitan.mp4" glowColor="#A020F0" />
+          </div>
+          <div className="relative rounded-2xl overflow-hidden border border-blue-400/40 shadow-2xl shadow-blue-500/10">
+            <VideoWithControls src="/assets/HéroesProgramandoEn.mp4" glowColor="#00BFFF" />
+          </div>
+        </div>
+
+        {/* Badges de Estado */}
+        <div className="flex flex-wrap justify-center gap-3 mb-8">
+          <Badge className="bg-green-500/10 text-green-400 border-green-500/30 px-4 py-1">
+            <Rocket className="w-4 h-4 mr-2" /> {t("hero.activeProject")}
+          </Badge>
+          <Badge className="bg-blue-500/10 text-blue-300 border-blue-500/30 px-4 py-1">
+            <Users className="w-4 h-4 mr-2" /> {t("hero.growingCommunity")}
+          </Badge>
+        </div>
+
+        {/* Botones de Acción Principal */}
+        <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pb-12">
+          
+          {/* CTA PRIMARIO: COMPRAR */}
+          <Button
+            size="lg"
+            className="w-full sm:w-64 bg-yellow-500 text-black hover:bg-yellow-400 font-bold text-lg shadow-[0_0_20px_rgba(234,179,8,0.3)]"
+            onClick={() => window.open("https://pump.fun", "_blank")}
+          >
+            <Rocket className="mr-2 h-5 w-5" />
+            BUY ON PUMP.FUN
           </Button>
 
-          {/* Botón 2 */}
+          {/* CTA SECUNDARIO: COMUNIDAD */}
           <Button
-            ref={longestButtonRef}
-            size="default"
+            size="lg"
             variant="outline"
-            onClick={() => {
-              const section = document.getElementById("community");
-              if (section) section.scrollIntoView({ behavior: "smooth" });
-            }}
-            className="w-fit border-indigo-400 text-indigo-400 hover:bg-indigo-400 hover:text-[#0F0B1E] py-2 px-4"
+            className="w-full sm:w-64 border-indigo-400 text-indigo-400 hover:bg-indigo-400/10"
+            onClick={() => document.getElementById("community")?.scrollIntoView({ behavior: "smooth" })}
           >
-            <Users className="w-5 h-5" />
+            <Users className="mr-2 h-5 w-5" />
             {t("hero.joinCommunity")}
           </Button>
 
-          {/* Botón 3 */}
+          {/* ACCESO A HALL OF HEROES */}
           <Button
-            size="default"
-            variant="outline"
-            onClick={() => window.open("https://poco-mod-web.vercel.app", "_blank")}
-            style={{ width: maxWidth ?? "auto" }}
-            className="
-    w-[220px]
-    flex flex-row items-center gap-3
-    border-[#FFA908] text-[#FFA908]
-    hover:bg-[#FFA908] hover:text-[#0F0B1E]
-    py-2 px-4
-  "
+            size="lg"
+            variant="ghost"
+            className="w-full sm:w-64 text-yellow-500 hover:bg-yellow-500/10 border border-yellow-500/20"
+            onClick={() => navigate("/hall-of-heroes")}
           >
-            {/* ICONO A LA IZQUIERDA */}
-            <span className="text-yellow-400 text-xl flex items-center">
-              🤖
-            </span>
-
-            {/* TEXTO A LA DERECHA EN DOS LÍNEAS */}
-            <div className="flex flex-col leading-tight text-left">
-              <span className="text-base font-bold">$Poco</span>
-              <span className="text-xs text-[#FFD966]">
-                {t("hero.$Poco")}
-              </span>
-            </div>
+            🔥 {t("hero.hallOfHeroes").split("✨")[0]}
           </Button>
         </div>
+      </div>
+
+      {/* Personaje Decorativo Flotante (MonkeSol) */}
+      <div className="absolute bottom-4 left-4 md:bottom-10 md:left-10 opacity-40 md:opacity-80 pointer-events-none">
+        <img
+          src="/assets/MonkeSol.png"
+          alt="MonkeSol"
+          className="h-32 md:h-56 object-contain animate-float"
+        />
       </div>
     </section>
   );

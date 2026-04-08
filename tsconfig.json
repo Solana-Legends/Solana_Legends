@@ -1,31 +1,34 @@
 {
   "compilerOptions": {
-    "baseUrl": "src",
+    "target": "ES2022",
+    "module": "ESNext",
+    "moduleResolution": "bundler",
+    "jsx": "react-jsx",
+    "jsxImportSource": "react",
+
+    /* Rutas y Resolución (Corregido para TS 5.0+) */
     "paths": {
-      "@/*": ["*"]
+      "@/*": ["./src/*"]
     },
 
-    "forceConsistentCasingInFileNames": true,
-
+    /* Rigor y Estrictura (Modo Preciso) */
     "strict": true,
     "noImplicitAny": true,
     "noUnusedParameters": true,
     "noUnusedLocals": true,
     "strictNullChecks": true,
+    "forceConsistentCasingInFileNames": true,
+
+    /* Optimización de Compilación */
+    "esModuleInterop": true,
     "skipLibCheck": true,
     "allowJs": false,
-
-    "module": "ESNext",
-    "target": "ES2022",
-    "esModuleInterop": true,
-    "moduleResolution": "bundler",
-
-    "jsx": "react-jsx",
-    "jsxImportSource": "react",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "noEmit": true,
 
     "types": ["react", "react-dom", "node"]
   },
-
   "include": ["src"],
   "exclude": ["node_modules", "dist", "build"]
 }
