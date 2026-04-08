@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { Rocket, Users, Copy, Check } from "lucide-react";
+import { Rocket, Users, Copy, Check, ArrowRightLeft } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { useNavigate } from "react-router-dom";
 import VideoWithControls from "@/components/VideoWithControls";
@@ -28,40 +28,53 @@ export default function HeroSection() {
         <div className="absolute bottom-1/4 right-1/4 w-40 h-40 bg-blue-600 rounded-full blur-3xl animate-pulse delay-1000"></div>
       </div>
 
-      <div className="relative z-10 w-full max-w-screen-xl mx-auto px-4 text-center flex flex-col items-center">
+      <div className="relative z-10 w-full max-w-screen-2xl mx-auto px-4 text-center flex flex-col items-center">
         
-        {/* Logo Principal (Escala reducida para ahorrar espacio) */}
-        <div className="mb-3 flex justify-center relative group scale-100">
-          <div className="absolute inset-0 flex justify-center items-center pointer-events-none">
-            <div className="w-24 h-24 md:w-36 md:h-36 rounded-full blur-2xl bg-yellow-500/20 aura-pulsante-gold-strong"></div>
+        {/* Contenedor de Logos (Solana Legends Centro, Poco Bot Derecha) */}
+        <div className="relative w-full flex flex-col md:flex-row items-center justify-center mb-4 min-h-[100px]">
+          
+          {/* Logo Principal (Centro) */}
+          <div className="relative group scale-100 z-10">
+            <div className="absolute inset-0 flex justify-center items-center pointer-events-none">
+              <div className="w-24 h-24 md:w-36 md:h-36 rounded-full blur-2xl bg-yellow-500/20 aura-pulsante-gold-strong"></div>
+            </div>
+            <a href="https://x.com/EligeTuMeme" target="_blank" rel="noopener noreferrer" className="relative z-10">
+              <img
+                src="/assets/LogoPremium2.png"
+                alt="Solana Legends Logo"
+                className="h-16 md:h-24 object-contain opacity-95 logo-respirando"
+              />
+            </a>
           </div>
-          <a href="https://x.com/EligeTuMeme" target="_blank" rel="noopener noreferrer" className="relative z-10">
-            <img
-              src="/assets/LogoPremium2.png"
-              alt="Solana Legends Logo"
-              className="h-16 md:h-24 object-contain opacity-95 logo-respirando"
-            />
-          </a>
+
+          {/* Logo Poco Bot (Anclado a la derecha en Desktop) */}
+          <div className="md:absolute md:right-8 lg:right-16 md:top-1/2 md:-translate-y-1/2 mt-4 md:mt-0 flex flex-col items-center z-20">
+            <a href="https://poco-mod-web.vercel.app" target="_blank" rel="noopener noreferrer" className="relative group">
+              <div className="absolute inset-0 rounded-full blur-xl aura-pulsante-gold-strong"></div>
+              <img 
+                src="/assets/$Poco.png" 
+                alt="$Poco Logo" 
+                className="relative z-10 h-16 md:h-24 object-contain logo-respirando transition-transform hover:scale-110" 
+              />
+            </a>
+            <span className="text-yellow-500/80 text-[10px] md:text-xs mt-1 font-mono tracking-widest uppercase">
+              Community Guard
+            </span>
+          </div>
         </div>
 
-        {/* Título (Tamaño ajustado) */}
+        {/* Título */}
         <h1 className="text-3xl md:text-5xl font-bold text-white mb-2 tracking-tight">
           {t("hero.title")}
         </h1>
         
-        {/* Subtítulo + Logo de Poco Bot integrado (Ahorro masivo de espacio vertical) */}
-        <div className="flex flex-row items-center justify-center gap-3 mb-4">
-          <p className="text-base md:text-xl text-indigo-200">
-            {t("hero.subtitle")}
-          </p>
-          <a href="https://poco-mod-web.vercel.app" target="_blank" rel="noopener noreferrer" className="relative group flex-shrink-0">
-            <div className="absolute inset-0 rounded-full blur-md aura-pulsante-gold-strong"></div>
-            <img src="/assets/$Poco.png" alt="$Poco Logo" className="relative z-10 h-8 md:h-12 object-contain logo-respirando" />
-          </a>
-        </div>
+        {/* Subtítulo */}
+        <p className="text-base md:text-xl text-indigo-200 mb-5 max-w-2xl mx-auto">
+          {t("hero.subtitle")}
+        </p>
 
         {/* --- SECCIÓN CONTRACT ADDRESS (CA) --- */}
-        <div className="flex justify-center mb-6">
+        <div className="flex justify-center mb-8">
           <div className="flex items-center gap-2 bg-black/40 border border-indigo-500/30 rounded-full px-4 py-1.5 backdrop-blur-sm group hover:border-indigo-400 transition-colors cursor-pointer" onClick={copyToClipboard}>
             <span className="text-indigo-300 font-mono text-xs md:text-sm">
               CA: {contractAddress.slice(0, 6)}...{contractAddress.slice(-4)}
@@ -72,12 +85,12 @@ export default function HeroSection() {
           </div>
         </div>
 
-        {/* Videos de Héroes (Escala reducida para pantallas pequeñas) */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6 max-w-3xl mx-auto w-full">
-          <div className="relative rounded-xl overflow-hidden border border-purple-500/40 shadow-xl shadow-purple-500/10 transition-transform hover:scale-[1.02]">
+        {/* Videos de Héroes (Pantalla Horizontal Ancha - 16:9) */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8 max-w-5xl mx-auto w-full px-2 md:px-0">
+          <div className="relative aspect-video rounded-xl overflow-hidden border border-purple-500/40 shadow-xl shadow-purple-500/10 transition-transform hover:scale-[1.02] bg-black/50">
             <VideoWithControls src="/assets/HeroesLevitan.mp4" glowColor="#A020F0" />
           </div>
-          <div className="relative rounded-xl overflow-hidden border border-blue-400/40 shadow-xl shadow-blue-500/10 transition-transform hover:scale-[1.02]">
+          <div className="relative aspect-video rounded-xl overflow-hidden border border-blue-400/40 shadow-xl shadow-blue-500/10 transition-transform hover:scale-[1.02] bg-black/50">
             <VideoWithControls src="/assets/HéroesProgramandoEn.mp4" glowColor="#00BFFF" />
           </div>
         </div>
@@ -92,36 +105,47 @@ export default function HeroSection() {
           </Badge>
         </div>
 
-        {/* Botones de Acción Principal (Todos unificados en estilo Outline) */}
-        <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pb-4">
+        {/* --- MATRIZ DE BOTONES (2x2) --- */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-2xl mx-auto w-full px-4 pb-4">
           
-          {/* CTA PRIMARIO: COMPRAR (Estilo Outline Dorado) */}
+          {/* Botón 1: PUMP.FUN */}
           <Button
             size="default"
             variant="outline"
-            className="w-full sm:w-56 border-yellow-400 text-yellow-400 hover:bg-yellow-400 hover:text-[#0F0B1E] font-semibold text-base py-2"
+            className="w-full border-yellow-400 text-yellow-400 hover:bg-yellow-400 hover:text-[#0F0B1E] font-semibold text-base py-6"
             onClick={() => window.open("https://pump.fun/coin/GmPDuwtYuMUpCrzGwYasxmo6vSmWvaHSg1Kf7skipump", "_blank")}
           >
-            <Rocket className="mr-2 h-4 w-4" />
+            <Rocket className="mr-2 h-5 w-5" />
             Buy on pump.fun
           </Button>
 
-          {/* CTA SECUNDARIO: COMUNIDAD */}
+          {/* Botón 2: JUPITER */}
           <Button
             size="default"
             variant="outline"
-            className="w-full sm:w-56 border-indigo-400 text-indigo-400 hover:bg-indigo-400 hover:text-[#0F0B1E] text-base py-2"
-            onClick={() => document.getElementById("community")?.scrollIntoView({ behavior: "smooth" })}
+            className="w-full border-green-400 text-green-400 hover:bg-green-400 hover:text-[#0F0B1E] font-semibold text-base py-6"
+            onClick={() => window.open("https://jup.ag/swap?sell=So11111111111111111111111111111111111111112&buy=GmPDuwtYuMUpCrzGwYasxmo6vSmWvaHSg1Kf7skipump", "_blank")}
           >
-            <Users className="mr-2 h-4 w-4" />
-            {t("hero.joinCommunity")}
+            <ArrowRightLeft className="mr-2 h-5 w-5" />
+            Buy on Jupiter
           </Button>
 
-          {/* ACCESO A HALL OF HEROES */}
+          {/* Botón 3: COMUNIDAD */}
           <Button
             size="default"
             variant="outline"
-            className="w-full sm:w-56 border-orange-400 text-orange-400 hover:bg-orange-400 hover:text-[#0F0B1E] text-base py-2"
+            className="w-full border-indigo-400 text-indigo-400 hover:bg-indigo-400 hover:text-[#0F0B1E] text-base py-6"
+            onClick={() => document.getElementById("community")?.scrollIntoView({ behavior: "smooth" })}
+          >
+            <Users className="mr-2 h-5 w-5" />
+            Join community
+          </Button>
+
+          {/* Botón 4: HALL OF HEROES */}
+          <Button
+            size="default"
+            variant="outline"
+            className="w-full border-orange-400 text-orange-400 hover:bg-orange-400 hover:text-[#0F0B1E] text-base py-6"
             onClick={() => navigate("/hall-of-heroes")}
           >
             🔥 {t("hero.hallOfHeroes").split("✨")[0]}
@@ -129,7 +153,7 @@ export default function HeroSection() {
         </div>
       </div>
 
-      {/* Personaje Decorativo Flotante (MonkeSol) - Tamaño reducido */}
+      {/* Personaje Decorativo Flotante (MonkeSol) */}
       <div className="absolute bottom-2 left-2 md:bottom-6 md:left-6 opacity-30 md:opacity-60 pointer-events-none">
         <img
           src="/assets/MonkeSol.png"
