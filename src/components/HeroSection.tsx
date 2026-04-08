@@ -33,16 +33,18 @@ export default function HeroSection() {
         {/* Contenedor de Logos (Solana Legends Centro, Poco Bot Derecha) */}
         <div className="relative w-full flex flex-col md:flex-row items-center justify-center mb-4 min-h-[100px]">
           
-          {/* Logo Principal (Centro) */}
+          {/* Logo Principal (Centro) - ESCALA AUMENTADA */}
           <div className="relative group scale-100 z-10">
             <div className="absolute inset-0 flex justify-center items-center pointer-events-none">
-              <div className="w-24 h-24 md:w-36 md:h-36 rounded-full blur-2xl bg-yellow-500/20 aura-pulsante-gold-strong"></div>
+              {/* AURA: Aumentada de 24/36 a 32/48 */}
+              <div className="w-32 h-32 md:w-48 md:h-48 rounded-full blur-2xl bg-yellow-500/20 aura-pulsante-gold-strong"></div>
             </div>
             <a href="https://x.com/EligeTuMeme" target="_blank" rel="noopener noreferrer" className="relative z-10">
+              {/* IMAGEN: Aumentada de 16/24 a 24/32 */}
               <img
                 src="/assets/LogoPremium2.png"
                 alt="Solana Legends Logo"
-                className="h-16 md:h-24 object-contain opacity-95 logo-respirando"
+                className="h-24 md:h-32 object-contain opacity-95 logo-respirando"
               />
             </a>
           </div>
