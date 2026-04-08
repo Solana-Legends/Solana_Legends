@@ -238,7 +238,7 @@ const esTranslations = {
   "characters.monkesol.element": "Sabiduría",
 
   "characters.chipisol.name": "ChipiSol",
-  "characters.chipisol.title": "Ice Hero❄️Apoyando",
+  "characters.chipisol.title": "Hielo Hero❄️Apoyando",
   "characters.chipisol.description":
     "Una entidad‑portal dimensional capaz de abrir rutas estables entre cadenas y realidades. ChipiSol teje caminos cristalinos, sincroniza datos multiversales y mantiene la integridad del tránsito inter‑realidad.",
   "characters.chipisol.element": "Cosmos",
