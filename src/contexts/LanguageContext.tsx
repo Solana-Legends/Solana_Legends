@@ -13,9 +13,9 @@ interface LanguageContextType {
  */
 const enTranslations = {
   // Hero Section (ACTUALIZADO A FASE DE IGNICIÓN)
-  "hero.title": "Solana Legends 🪐 ZapSol Activated ⚡",
+  "hero.title": "Solana🪐Legends, ZapSol⚡Activated",
   "hero.subtitle":
-    "The community has spoken. ZapSol is the chosen Hero💫Node. The circuit is live—anchor your position and join the Legend.",
+    "The community has spoken. ZapSol⚡ is the chosen Hero Token. The circuit is live: anchor your position and join the Legend.",
   "hero.tagline": "Three elemental architectures. One network. One destiny.",
   "hero.hallOfHeroes": "Hall of Heroes ✨ Blueprint Archive",
   "hero.joinCommunity": "Join the Network",
@@ -207,9 +207,9 @@ export type TranslationKeys =
 // Bloque español
 const esTranslations = {
   // Hero Section (ACTUALIZADO A FASE DE IGNICIÓN)
-  "hero.title": "Solana Legends 🪐 ZapSol Activado ⚡",
+  "hero.title": "Solana🪐Legends, ZapSol⚡Activado",
   "hero.subtitle":
-    "La comunidad ha hablado. ZapSol es el Hero💫Node elegido. El circuito está activo: asegura tu posición y únete a la Leyenda.",
+    "La comunidad ha hablado. ZapSol⚡ es el Hero Token elegido. El circuito está activo: asegura tu posición y únete a la Leyenda.",
   "hero.tagline": "Tres arquitecturas elementales. Una red. Un destino.",
   "hero.hallOfHeroes": "Salón de Héroes ✨ Archivo Blueprint",
   "hero.joinCommunity": "Unirse a la Red",
