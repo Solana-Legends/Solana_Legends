@@ -88,10 +88,10 @@ export default function HeroSection() {
         {/* Videos de Héroes (Pantalla Horizontal Ancha - 16:9) */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8 max-w-5xl mx-auto w-full px-2 md:px-0">
           <div className="relative aspect-video rounded-xl overflow-hidden border border-purple-500/40 shadow-xl shadow-purple-500/10 transition-transform hover:scale-[1.02] bg-black/50">
-            <VideoWithControls src="/assets/HeroesLevitan.mp4" glowColor="#A020F0" />
+            <VideoWithControls src="/assets/MorfeoGuía_Completo_1.mp4" glowColor="#A020F0" />
           </div>
           <div className="relative aspect-video rounded-xl overflow-hidden border border-blue-400/40 shadow-xl shadow-blue-500/10 transition-transform hover:scale-[1.02] bg-black/50">
-            <VideoWithControls src="/assets/HéroesProgramandoEn.mp4" glowColor="#00BFFF" />
+            <VideoWithControls src="/assets/Zapsol_The_Chosen_Hero_música.mp4" glowColor="#00BFFF" />
           </div>
         </div>
 
