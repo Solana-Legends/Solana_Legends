@@ -129,9 +129,9 @@ const enTranslations = {
   "project.stat4": "Sustained Fire",
 
   // Ritual subtitles
-  "project.stat1Aura": "⚡ Awaiting the ritual",
-  "project.stat2Aura": "🔥 Protocol active",
-  "project.stat3Aura": "❄️ The shared fire",
+  "project.stat1Aura": "⚡ Ritual Complete",
+  "project.stat2Aura": "❄️ Protocol active",
+  "project.stat3Aura": "🔥 The shared fire",
   "project.stat4Aura": "🪐 Roots make no noise",
 
   // Social
@@ -330,9 +330,9 @@ const esTranslations = {
   "project.stat4": "Fuego Sostenido",
 
   // Ritual subtitles
-  "project.stat1Aura": "⚡ Esperando el ritual",
-  "project.stat2Aura": "🔥 Protocolo activo",
-  "project.stat3Aura": "❄️ El fuego compartido",
+  "project.stat1Aura": "⚡ Ritual Completado",
+  "project.stat2Aura": "❄️ Protocolo activo",
+  "project.stat3Aura": "🔥 El fuego compartido",
   "project.stat4Aura": "🪐 Las raíces no hacen ruido",
 
   // Social
