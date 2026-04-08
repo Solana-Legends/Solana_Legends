@@ -12,7 +12,7 @@ export default function HeroSection() {
   const [copied, setCopied] = useState(false);
 
   // Dirección del contrato (Asegúrate de cambiar esto por el CA de ZapSol)
-  const contractAddress = "0x0000000000000000000000000000000000000000";
+  const contractAddress = "GmPDuwtYuMUpCrzGwYasxmo6vSmWvaHSg1Kf7skipump";
 
   const copyToClipboard = () => {
     navigator.clipboard.writeText(contractAddress);
