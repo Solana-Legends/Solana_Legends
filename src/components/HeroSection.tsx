@@ -156,7 +156,7 @@ export default function HeroSection() {
       </div>
 
       {/* --- Personaje Decorativo Flotante (MonkeSol) --- */}
-      <div className="absolute top-12 left-6 md:top-auto md:bottom-12 md:left-16 pointer-events-none z-20">
+      <div className="absolute top-12 left-12 md:top-auto md:bottom-12 md:left-16 pointer-events-none z-20">
         <img
           src="/assets/MonkeSol.png"
           alt="MonkeSol"
