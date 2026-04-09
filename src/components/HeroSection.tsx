@@ -156,11 +156,12 @@ export default function HeroSection() {
       </div>
 
       {/* --- Personaje Decorativo Flotante (MonkeSol) --- */}
-      <div className="absolute bottom-6 left-6 md:bottom-12 md:left-16 opacity-30 md:opacity-60 pointer-events-none z-0">
+      <div className="absolute top-12 left-6 md:top-auto md:bottom-12 md:left-16 pointer-events-none z-20">
         <img
           src="/assets/MonkeSol.png"
           alt="MonkeSol"
-          className="h-32 md:h-56 object-contain animate-float symbol-hero-monkesol-pulse"
+          // Reduje ligeramente el tamaño en móvil (h-20) para que no aplaste el logo principal
+          className="h-24 md:h-56 object-contain animate-float symbol-hero-monkesol-pulse"
         />
       </div>
     </section>
