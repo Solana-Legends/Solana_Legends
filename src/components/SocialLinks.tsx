@@ -207,7 +207,7 @@ export default function SocialLinks() {
       <div
         className="
           absolute 
-          bottom-58 left-12 md:bottom-40 md:left-12
+          bottom-80 left-12 md:bottom-40 md:left-12
           w-28 h-28 md:w-48 md:h-48
           z-10
           animate-in fade-in slide-in-from-left duration-1000 pointer-events-none"
