@@ -113,8 +113,15 @@ const enTranslations = {
   "project.subtitle": "Solana Legends wasn't born to compete. It was born to ignite.",
   "project.whitepaper": "The Manifest",
   "project.whitepaperDesc": "Structure, Ritual, and Presence.",
-  "project.whitepaperText": "This document is not an invitation. It is a filter. You won't find promises of success here, nor formulas for growth. You'll find conviction, structure, and ritual. Because legends aren't built through marketing. They're built through presence.",
+  "project.whitepaperText": "This document is not an invitation. It is a filter. You won't find promises of success here, nor formulas for growth. You'll find conviction, structure, and ritual.",
   "project.readWhitepaper": "Enter the Portal",
+  
+  // Ritual Statutes (El bloque nuevo para rellenar el vacío)
+  "project.ritualRules": "Ritual Statutes:",
+  "project.rule1": "🧿 Filtration through vibration.",
+  "project.rule2": "⚔️ Conviction over hype.",
+  "project.rule3": "🔮 Holding is building.",
+
   "project.features": "Core Architecture",
   "project.feature1": "The Technical Altar: pump.fun as a portal of birth.",
   "project.feature2": "Guardian of the Pulse: Automated delta-neutral protection.",
@@ -314,8 +321,15 @@ const esTranslations = {
   "project.subtitle": "Solana Legends no nació para competir. Nació para encender.",
   "project.whitepaper": "El Manifiesto",
   "project.whitepaperDesc": "Estructura, Ritual y Presencia.",
-  "project.whitepaperText": "Este documento no es una invitación. Es un filtro. No encontrarás promesas de éxito aquí, ni fórmulas de crecimiento. Encontrarás convicción, estructura y ritual. Porque las leyendas no se construyen con marketing. Se construyen con presencia.",
+  "project.whitepaperText": "Este documento no es una invitación. Es un filtro. No encontrarás promesas de éxito aquí, ni fórmulas de crecimiento. Encontrarás convicción, estructura y ritual.",
   "project.readWhitepaper": "Entrar al Portal",
+
+  // Estatutos del Ritual (El bloque nuevo para rellenar el vacío)
+  "project.ritualRules": "Estatutos del Ritual:",
+  "project.rule1": "🧿 Filtrado por vibración.",
+  "project.rule2": "⚔️ Convicción ante el hype.",
+  "project.rule3": "🔮 Holdear es construir.",
+
   "project.features": "Arquitectura Central",
   "project.feature1": "El Altar Técnico: pump.fun como portal de nacimiento.",
   "project.feature2": "Guardián del Pulso: Protección delta-neutral automatizada.",
