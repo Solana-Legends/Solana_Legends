@@ -1,13 +1,12 @@
 import { Toaster } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import { LanguageProvider } from "@/contexts/LanguageContext";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 import HallOfHeroesPage from "./pages/HallOfHeroesPage";
-import LanguageSwitcher from "@/components/LanguageSwitcher"; // IMPORTANTE
-import { Navigate } from "react-router-dom";
+import LanguageSwitcher from "@/components/LanguageSwitcher";
 import { Analytics } from "@vercel/analytics/react";
 
 const queryClient = new QueryClient();
@@ -18,7 +17,7 @@ const App = () => (
       <TooltipProvider>
         <Toaster />
         <BrowserRouter>
-          {/* 🛡️ INTERFAZ GLOBAL: Aquí es donde debe vivir para no desplazar nada */}
+          {/* Único punto de control del idioma para toda la web */}
           <LanguageSwitcher />
           
           <div className="w-full">

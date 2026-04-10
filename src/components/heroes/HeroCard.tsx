@@ -44,8 +44,6 @@ export default function HeroCard({ id, name, title, aura, image, description, ac
             <Button
               key={index}
               variant="outline"
-              // TÁCTICO: Estilo Ghost. Borde y texto con color, fondo transparente.
-              // En hover se rellena con el color y el texto pasa a negro.
               className={`w-full h-11 bg-transparent border-2 font-bold text-[11px] transition-all duration-300 hover:text-[#0F0B1E] rounded-xl ${action.color}`}
               onClick={(e) => {
                 e.stopPropagation();
