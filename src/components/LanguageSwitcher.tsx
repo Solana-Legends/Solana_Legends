@@ -1,43 +1,30 @@
-import { Button } from '@/components/ui/button';
-import { Globe } from 'lucide-react';
-import { useLanguage } from '@/contexts/LanguageContext';
-import { cva } from 'class-variance-authority';
-
-// cva: solo clases CSS
-const switcher = cva("font-semibold transition-colors", {
-  variants: {
-    language: {
-      es: "bg-yellow-500 hover:bg-yellow-600 text-orange-900",
-      en: "bg-blue-500 hover:bg-blue-600 text-white",
-    },
-    size: {
-      sm: "px-2 py-1 text-sm",
-      lg: "px-4 py-2 text-lg",
-    },
-  },
-  defaultVariants: {
-    language: "en",
-    size: "sm",
-  },
-});
+import { useLanguage } from "@/contexts/LanguageContext";
+import { Button } from "@/components/ui/button";
+import { Globe } from "lucide-react";
 
 export default function LanguageSwitcher() {
   const { language, setLanguage } = useLanguage();
 
-  const toggleLanguage = () => {
-    setLanguage(language === "es" ? "en" : "es");
+  // Función interna para alternar si toggleLanguage no existe en el context
+  const handleToggle = () => {
+    setLanguage(language === "en" ? "es" : "en");
   };
 
   return (
-    <div className="fixed top-4 right-4 z-50">
-      <Button
-        onClick={toggleLanguage}
-        className={switcher({ language })}
-        size="sm"
-      >
-        <Globe className="w-4 h-4 mr-2" />
-        {language === "es" ? "EN" : "ES"}
-      </Button>
-    </div>
+    <Button
+      variant="outline"
+      onClick={handleToggle}
+      className="
+        bg-transparent 
+        border-2 border-[#FFA908]/40 
+        hover:border-[#FFA908] hover:bg-[#FFA908]/10 
+        text-[#FFA908] font-black px-4 py-2.5 rounded-xl 
+        text-sm uppercase tracking-widest transition-all duration-300
+        flex items-center gap-2 shadow-lg backdrop-blur-sm
+      "
+    >
+      <Globe className="w-4 h-4" />
+      <span>{language === "en" ? "EN" : "ES"}</span>
+    </Button>
   );
 }
