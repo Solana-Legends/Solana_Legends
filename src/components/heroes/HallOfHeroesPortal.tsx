@@ -46,8 +46,10 @@ const guardians = [
 export default function HallOfHeroesPortal() {
   return (
     <HeroesLayout titleKey="hero.hallOfHeroes" subtitleKey="hero.tagline">
+      {/* Contenedor central con py mínimo */}
       <div className="flex-grow flex flex-col justify-center items-center py-2">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 w-full max-w-4xl mx-auto px-4 place-items-stretch">
+        {/* TÁCTICO: max-w aumentado a 1300px y gap ajustado para tarjetas GRANDES */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-10 w-full max-w-[1300px] mx-auto px-4 place-items-stretch">
           {guardians.map((g) => (
             <HeroCard key={g.id} {...g} />
           ))}
@@ -55,7 +57,7 @@ export default function HallOfHeroesPortal() {
       </div>
 
       <footer className="mt-auto py-3 bg-black/40 border-t border-white/5 w-full">
-        <p className="text-center text-[9px] text-yellow-500/50 font-mono tracking-[0.5em] uppercase">
+        <p className="text-center text-[10px] md:text-xs text-yellow-500/50 font-mono tracking-[0.5em] uppercase">
            STATUS: ZAP SOL ASCENDED
         </p>
       </footer>

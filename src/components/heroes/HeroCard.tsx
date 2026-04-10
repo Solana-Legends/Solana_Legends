@@ -25,25 +25,27 @@ export default function HeroCard({ id, name, title, aura, image, description, ac
   const heroAura = id === "zapsol" ? "hero-zapsol-aura" : id === "monkesol" ? "hero-monkesol-aura" : id === "chipisol" ? "hero-chipisol-aura" : "";
   
   return (
-    <div className={`relative bg-[#1A1530]/90 rounded-xl p-5 shadow-2xl text-left border border-white/5 flex flex-col h-full max-w-[320px] transition-all z-10 ${auraClass}`}>
+    // TÁCTICO: max-w ELIMINADO para que la tarjeta crezca. P-6 aumentado para mejor espaciado interno.
+    <div className={`relative bg-[#1A1530]/90 rounded-2xl p-6 shadow-2xl text-left border border-white/5 flex flex-col h-full transition-all z-10 ${auraClass}`}>
       
-      <div className="relative h-16 mb-4">
-        <img src={image} alt={name} className={`absolute top-0 left-0 w-16 h-16 object-contain rounded-md z-20 ${heroAnimation} ${heroAura}`} />
-        <div className="absolute top-0 right-0 text-2xl opacity-50">{aura}</div>
+      <div className="relative h-20 mb-5">
+        <img src={image} alt={name} className={`absolute top-0 left-0 w-20 h-20 object-contain rounded-xl z-20 ${heroAnimation} ${heroAura}`} />
+        <div className="absolute top-0 right-0 text-3xl opacity-60">{aura}</div>
       </div>
 
       <div className="flex-grow">
-        <h2 className="text-lg font-bold text-white uppercase">{aura} {name}</h2>
-        <p className="text-[#FFA908] text-[9px] font-mono tracking-widest uppercase mb-2">{title[language]}</p>
-        <p className="text-indigo-200/90 text-[11px] leading-relaxed line-clamp-3">{description[language]}</p>
+        <h2 className="text-2xl font-bold text-white uppercase tracking-tight">{aura} {name}</h2>
+        <p className="text-[#FFA908] text-[10px] font-mono tracking-widest uppercase mb-3">{title[language]}</p>
+        <p className="text-indigo-100 text-[13px] leading-relaxed line-clamp-3">{description[language]}</p>
       </div>
 
       {actions.length > 0 ? (
-        <div className="mt-4 flex flex-col gap-2 relative z-30">
+        <div className="mt-5 flex flex-col gap-2.5 relative z-30">
           {actions.map((action, index) => (
             <Button
               key={index}
-              className={`w-full h-8 ${action.color} text-[#0F0B1E] font-black text-[9px] uppercase tracking-tighter hover:opacity-90 active:scale-95 transition-all shadow-lg`}
+              // TÁCTICO: h-10, h-bold, brightness-125 y text-[#0F0B1E] para hover LIMPIO y legible
+              className={`w-full h-10 ${action.color} text-[#0F0B1E] font-extrabold text-[11px] uppercase tracking-tighter hover:brightness-125 active:scale-95 transition-all shadow-xl rounded-lg`}
               onClick={(e) => {
                 e.stopPropagation();
                 window.open(action.url, "_blank");
@@ -54,7 +56,7 @@ export default function HeroCard({ id, name, title, aura, image, description, ac
           ))}
         </div>
       ) : (
-        <div className="mt-4 text-[9px] text-white/20 font-mono italic">ARCHIVE DATA ONLY</div>
+        <div className="mt-5 text-[10px] text-white/30 font-mono italic">ARCHIVE DATA ONLY</div>
       )}
     </div>
   );
