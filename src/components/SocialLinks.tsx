@@ -85,6 +85,7 @@ export default function SocialLinks() {
           </p>
         </div>
 
+        {/* Tarjetas Sociales */}
         <div className="grid md:grid-cols-3 gap-4 md:gap-6 mb-6">
           {socialPlatforms.map((platform) => {
             const IconComponent = platform.icon;
@@ -118,30 +119,8 @@ export default function SocialLinks() {
           })}
         </div>
 
-        <div className="mb-6 text-xs text-center text-zinc-400 italic animate-fadeIn animate-pulseSlow">
-          🔥 The fire is sustained by those who stay.
-        </div>
-
-        {/* 🚀 BOTÓN GHOST: BACK TO TOP */}
-        <div className="flex justify-center mb-8 relative z-20">
-          <Button
-            variant="outline"
-            onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-            className="
-              bg-transparent
-              border-2 border-white/10 text-white/40 
-              hover:border-[#FFA908] hover:text-[#FFA908] hover:bg-[#FFA908]/5
-              rounded-full px-8 py-2 transition-all duration-500
-              flex items-center gap-2 text-[10px] font-mono tracking-[0.4em]
-              uppercase
-            "
-          >
-            <ArrowUp className="w-4 h-4" />
-            BACK TO TOP
-          </Button>
-        </div>
-
-        <Card className="bg-[#1A1530]/60 border border-[#FFA908]/30 rounded-xl mb-4 hover:shadow-[0_0_20px_#FFA908] transition-all duration-300">
+        {/* Sección Compartir */}
+        <Card className="bg-[#1A1530]/60 border border-[#FFA908]/30 rounded-xl mb-6 hover:shadow-[0_0_20px_#FFA908] transition-all duration-300">
           <CardHeader className="text-center pb-2 pt-4">
             <CardTitle className="text-white text-lg flex items-center justify-center gap-2">
               <Share2 className="h-5 w-5 text-yellow-500" />
@@ -163,15 +142,45 @@ export default function SocialLinks() {
           </CardContent>
         </Card>
 
-        <div className="mt-auto text-center text-[10px] md:text-xs text-zinc-500 px-4 pb-2 z-20 relative">
-          Solana Legends 🪐 EligeTuMeme™ ✨ © 2025
-          <br />
-          Official Bot: <a href="https://poco-mod-web.vercel.app" target="_blank" rel="noopener noreferrer" className="underline hover:text-amber-400">poco-mod-web.vercel.app 🤖</a>
+        {/* Mensaje ritualizado */}
+        <div className="mb-4 text-xs text-center text-zinc-400 italic animate-fadeIn animate-pulseSlow">
+          🔥 The fire is sustained by those who stay.
+        </div>
+
+        {/* 🚀 BOTÓN GHOST: Back to Top */}
+        <div className="flex justify-center mb-8 relative z-20">
+          <Button
+            variant="outline"
+            onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+            className="
+              bg-transparent
+              border-2 border-white/20 text-white/70 
+              hover:border-[#FFA908] hover:text-[#FFA908] hover:bg-[#FFA908]/5
+              rounded-full px-6 py-2 transition-all duration-300
+              flex items-center gap-2 text-sm font-medium
+            "
+          >
+            <ArrowUp className="w-4 h-4" />
+            Back to Top
+          </Button>
+        </div>
+
+        {/* Footer Oficial */}
+        <div className="mt-auto text-center text-[10px] md:text-xs text-zinc-500 px-4 pb-2 z-20 relative space-y-1">
+          <p>Solana Legends 🪐 EligeTuMeme™ ✨ © 2025</p>
+          <p>
+            Official Bot:{" "}
+            <a href="https://poco-mod-web.vercel.app" target="_blank" rel="noopener noreferrer" className="underline hover:text-amber-400">
+              poco-mod-web.vercel.app 🤖
+            </a>
+          </p>
+          <p className="opacity-70">Powered by community fire, ritualized progress, and cosmic guardianship.</p>
         </div>
       </div>
 
-      <div className="absolute bottom-40 left-12 w-28 h-28 md:w-48 md:h-48 z-10 pointer-events-none opacity-40 mix-blend-screen">
-        <img src="/assets/ChipiSol.png" alt="ChipiSol Decor" className="w-full h-full object-contain animate-float" />
+      {/* Imagen ChipiSol Decorativa - TRANSPARENCIA ELIMINADA */}
+      <div className="absolute bottom-40 left-12 w-28 h-28 md:w-48 md:h-48 z-10 pointer-events-none">
+        <img src="/assets/ChipiSol.png" alt="ChipiSol Decor" className="w-full h-full object-contain animate-float drop-shadow-[0_0_15px_rgba(255,255,255,0.2)]" />
       </div>
     </section>
   );
