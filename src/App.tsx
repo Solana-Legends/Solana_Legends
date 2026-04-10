@@ -6,6 +6,7 @@ import { LanguageProvider } from "@/contexts/LanguageContext";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 import HallOfHeroesPage from "./pages/HallOfHeroesPage";
+import LanguageSwitcher from "@/components/LanguageSwitcher"; // IMPORTANTE
 import { Navigate } from "react-router-dom";
 import { Analytics } from "@vercel/analytics/react";
 
@@ -17,7 +18,9 @@ const App = () => (
       <TooltipProvider>
         <Toaster />
         <BrowserRouter>
-          {/* ❌ Eliminado el max-w que creaba bandas */}
+          {/* 🛡️ INTERFAZ GLOBAL: Aquí es donde debe vivir para no desplazar nada */}
+          <LanguageSwitcher />
+          
           <div className="w-full">
             <Routes>
               <Route path="/" element={<Index />} />

@@ -11,7 +11,6 @@ export default function HeroSection() {
   const navigate = useNavigate();
   const [copied, setCopied] = useState(false);
 
-  // Dirección del contrato (CA real de ZapSol)
   const contractAddress = "GmPDuwtYuMUpCrzGwYasxmo6vSmWvaHSg1Kf7skipump";
 
   const copyToClipboard = () => {
@@ -29,18 +28,13 @@ export default function HeroSection() {
       </div>
 
       <div className="relative z-10 w-full max-w-screen-2xl mx-auto px-4 text-center flex flex-col items-center">
-        
-        {/* Contenedor de Logos (Solana Legends Centro, Poco Bot Derecha) */}
+        {/* Contenedor de Logos */}
         <div className="relative w-full flex flex-col md:flex-row items-center justify-center mb-1 md:mb-2 min-h-[100px]">
-          
-          {/* Logo Principal (Centro) - ESCALA MÁXIMA */}
           <div className="relative group scale-100 z-10">
             <div className="absolute inset-0 flex justify-center items-center pointer-events-none">
-              {/* Aura ultra-expandida */}
               <div className="w-40 h-40 md:w-56 md:h-56 rounded-full blur-2xl bg-yellow-500/20 aura-pulsante-gold-strong"></div>
             </div>
             <a href="https://x.com/EligeTuMeme" target="_blank" rel="noopener noreferrer" className="relative z-10">
-              {/* Imagen dominante */}
               <img
                 src="/assets/LogoPremium2.png"
                 alt="Solana Legends Logo"
@@ -49,7 +43,6 @@ export default function HeroSection() {
             </a>
           </div>
 
-          {/* Logo Poco Bot (Anclado a la derecha en Desktop) */}
           <div className="md:absolute md:right-8 lg:right-16 md:top-1/2 md:-translate-y-1/2 mt-2 md:mt-0 flex flex-col items-center z-20">
             <a href="https://poco-mod-web.vercel.app" target="_blank" rel="noopener noreferrer" className="relative group">
               <div className="absolute inset-0 rounded-full blur-xl aura-pulsante-gold-strong"></div>
@@ -65,17 +58,14 @@ export default function HeroSection() {
           </div>
         </div>
 
-        {/* Título (Interlineado ajustado a leading-none) */}
         <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-1 tracking-tight leading-none">
           {t("hero.title")}
         </h1>
         
-        {/* Subtítulo */}
         <p className="text-base md:text-lg text-indigo-200 mb-3 max-w-2xl mx-auto px-2 leading-tight">
           {t("hero.subtitle")}
         </p>
 
-        {/* --- SECCIÓN CONTRACT ADDRESS (CA) --- */}
         <div className="flex justify-center mb-3 md:mb-4">
           <div className="flex items-center gap-2 bg-black/40 border border-indigo-500/30 rounded-full px-4 py-1 backdrop-blur-sm group hover:border-indigo-400 transition-colors cursor-pointer" onClick={copyToClipboard}>
             <span className="text-indigo-300 font-mono text-xs md:text-sm">
@@ -87,7 +77,6 @@ export default function HeroSection() {
           </div>
         </div>
 
-        {/* Videos de Héroes */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-4 mb-3 max-w-4xl mx-auto w-full px-2 md:px-0">
           <div className="relative aspect-video rounded-xl overflow-hidden border border-purple-500/40 shadow-xl shadow-purple-500/10 transition-transform hover:scale-[1.02] bg-black/50">
             <VideoWithControls src="/assets/MorfeoGuía_Completo_1.mp4" glowColor="#A020F0" />
@@ -97,7 +86,6 @@ export default function HeroSection() {
           </div>
         </div>
 
-        {/* Badges de Estado */}
         <div className="flex flex-wrap justify-center gap-2 mb-3">
           <Badge className="bg-green-500/10 text-green-400 border-green-500/30 px-3 py-0.5">
             <Rocket className="w-3.5 h-3.5 mr-1.5" /> {t("hero.activeProject")}
@@ -107,12 +95,8 @@ export default function HeroSection() {
           </Badge>
         </div>
 
-        {/* --- MATRIZ DE BOTONES (2x2) SINCRONIZADA --- */}
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 md:gap-3 max-w-2xl mx-auto w-full px-4 pb-2">
-          
-          {/* Botón 1: PUMP.FUN */}
           <Button
-            size="default"
             variant="outline"
             className="w-full border-yellow-400 text-yellow-400 hover:bg-yellow-400 hover:text-[#0F0B1E] font-semibold text-base py-5"
             onClick={() => window.open("https://pump.fun/coin/GmPDuwtYuMUpCrzGwYasxmo6vSmWvaHSg1Kf7skipump", "_blank")}
@@ -121,9 +105,7 @@ export default function HeroSection() {
             {t("characters.buyOnPump")}
           </Button>
 
-          {/* Botón 2: JUPITER */}
           <Button
-            size="default"
             variant="outline"
             className="w-full border-green-400 text-green-400 hover:bg-green-400 hover:text-[#0F0B1E] font-semibold text-base py-5"
             onClick={() => window.open("https://jup.ag/swap?sell=So11111111111111111111111111111111111111112&buy=GmPDuwtYuMUpCrzGwYasxmo6vSmWvaHSg1Kf7skipump", "_blank")}
@@ -132,9 +114,7 @@ export default function HeroSection() {
             {t("characters.buyOnJupiter")}
           </Button>
 
-          {/* Botón 3: COMUNIDAD */}
           <Button
-            size="default"
             variant="outline"
             className="w-full border-indigo-400 text-indigo-400 hover:bg-indigo-400 hover:text-[#0F0B1E] text-base py-5"
             onClick={() => document.getElementById("community")?.scrollIntoView({ behavior: "smooth" })}
@@ -143,9 +123,7 @@ export default function HeroSection() {
             {t("hero.joinCommunity")}
           </Button>
 
-          {/* Botón 4: HALL OF HEROES */}
           <Button
-            size="default"
             variant="outline"
             className="w-full border-orange-400 text-orange-400 hover:bg-orange-400 hover:text-[#0F0B1E] text-base py-5"
             onClick={() => navigate("/hall-of-heroes")}
@@ -155,12 +133,10 @@ export default function HeroSection() {
         </div>
       </div>
 
-      {/* --- Personaje Decorativo Flotante (MonkeSol) --- */}
       <div className="absolute top-12 left-12 md:top-auto md:bottom-12 md:left-16 pointer-events-none z-20">
         <img
           src="/assets/MonkeSol.png"
           alt="MonkeSol"
-          // Reduje ligeramente el tamaño en móvil (h-20) para que no aplaste el logo principal
           className="h-24 md:h-56 object-contain animate-float symbol-hero-monkesol-pulse"
         />
       </div>
