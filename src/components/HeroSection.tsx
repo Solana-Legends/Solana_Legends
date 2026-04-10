@@ -1,14 +1,13 @@
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { Rocket, Users, Copy, Check, ArrowRightLeft } from "lucide-react";
+import { Rocket, Users, Copy, Check, ArrowRightLeft, ChevronDown } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
-import { useNavigate } from "react-router-dom";
 import VideoWithControls from "@/components/VideoWithControls";
+import NavigationHall from "@/components/NavigationHall"; 
 import { useState } from "react";
 
 export default function HeroSection() {
   const { t } = useLanguage();
-  const navigate = useNavigate();
   const [copied, setCopied] = useState(false);
 
   const contractAddress = "GmPDuwtYuMUpCrzGwYasxmo6vSmWvaHSg1Kf7skipump";
@@ -21,6 +20,10 @@ export default function HeroSection() {
 
   return (
     <section className="relative w-full flex flex-col items-center justify-center bg-gradient-to-br from-[#0F0B1E] via-[#1A1530] to-[#0F0B1E] overflow-hidden aura-pulsante py-2 md:py-4 min-h-screen">
+      
+      {/* 🛡️ INTERFAZ FIJA: Acceso al Salón de Héroes */}
+      <NavigationHall />
+
       {/* Fondo Cósmico */}
       <div className="absolute inset-0 opacity-20 pointer-events-none">
         <div className="absolute top-1/4 left-1/4 w-28 h-28 bg-purple-500 rounded-full blur-3xl animate-pulse"></div>
@@ -28,6 +31,7 @@ export default function HeroSection() {
       </div>
 
       <div className="relative z-10 w-full max-w-screen-2xl mx-auto px-4 text-center flex flex-col items-center">
+        
         {/* Contenedor de Logos */}
         <div className="relative w-full flex flex-col md:flex-row items-center justify-center mb-1 md:mb-2 min-h-[100px]">
           <div className="relative group scale-100 z-10">
@@ -125,10 +129,11 @@ export default function HeroSection() {
 
           <Button
             variant="outline"
-            className="w-full border-orange-400 text-orange-400 hover:bg-orange-400 hover:text-[#0F0B1E] text-base py-5"
-            onClick={() => navigate("/hall-of-heroes")}
+            className="w-full border-blue-400 text-blue-400 hover:bg-blue-400 hover:text-[#0F0B1E] text-base py-5 animate-pulse"
+            onClick={() => window.scrollBy({ top: window.innerHeight, behavior: 'smooth' })}
           >
-            🔥 {t("hero.hallOfHeroes").split("✨")[0]}
+            <ChevronDown className="mr-2 h-5 w-5" />
+            EXPLORE LEGENDS
           </Button>
         </div>
       </div>
