@@ -24,12 +24,24 @@ export default function HeroCard({ id, name, title, aura, image, description, ac
   const heroAnimation = id === "zapsol" ? "hero-zapsol" : id === "monkesol" ? "hero-monkesol" : id === "chipisol" ? "hero-chipisol" : "";
   const heroAura = id === "zapsol" ? "hero-zapsol-aura" : id === "monkesol" ? "hero-monkesol-aura" : id === "chipisol" ? "hero-chipisol-aura" : "";
   
+  // TÁCTICO: Lógica de animación para los emojis de las esquinas
+  const isFloating = id === "chipisol";
+  const iconAnimation = isFloating ? "animate-float" : "animate-pulse";
+  const iconStyle = !isFloating ? { animationDuration: "0.8s" } : {}; // Aceleramos el pulso a 0.8s para que sea rápido
+
   return (
     <div className={`relative bg-[#1A1530]/90 rounded-2xl p-6 shadow-2xl text-left border border-white/5 flex flex-col h-full transition-all z-10 ${auraClass}`}>
       
       <div className="relative h-20 mb-5">
         <img src={image} alt={name} className={`absolute top-0 left-0 w-20 h-20 object-contain rounded-xl z-20 ${heroAnimation} ${heroAura}`} />
-        <div className="absolute top-0 right-0 text-3xl opacity-60">{aura}</div>
+        
+        {/* ICONO CON ANIMACIÓN RESTAURADA */}
+        <div 
+          className={`absolute top-0 right-0 text-3xl opacity-90 ${iconAnimation}`}
+          style={iconStyle}
+        >
+          {aura}
+        </div>
       </div>
 
       <div className="flex-grow">
@@ -55,7 +67,7 @@ export default function HeroCard({ id, name, title, aura, image, description, ac
           ))}
         </div>
       ) : (
-        <div className="mt-5 text-[10px] text-white/30 font-mono italic">ARCHIVE DATA ONLY</div>
+        <div className="mt-5 text-[10px] text-white/30 font-mono italic uppercase">ARCHIVE DATA ONLY</div>
       )}
     </div>
   );
