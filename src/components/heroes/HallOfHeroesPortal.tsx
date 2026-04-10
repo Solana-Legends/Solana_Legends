@@ -8,42 +8,45 @@ const guardians = [
     id: "zapsol",
     name: "ZapSol",
     title: {
-      en: "The Lightning Guardian",
-      es: "El guardián del rayo",
+      en: "Cosmic Ignition Protocol",
+      es: "Protocolo de Ignición Cósmica",
     },
     aura: "⚡",
-    image: "/images/guardians/Zap.png",
+    // TÁCTICO: Ruta corregida a PNG transparente para que brille la aura
+    image: "/assets/ZapSol.png", 
     description: {
-      en: "Zap is the Master of electrical energy, speed, and lightning...",
-      es: "Zap es el Maestro de la energía eléctrica, la velocidad y el rayo...",
+      en: "Activated in the Technical Altar, ZapSol represents expansion and electric movement. It is the spark that connects dimensions.",
+      es: "Activado en el Altar Técnico, ZapSol representa expansión y movimiento eléctrico. Es la chispa que conecta dimensiones.",
     },
   },
   {
     id: "monkesol",
     name: "MonkeSol",
     title: {
-      en: "The Ancient Sage",
-      es: "El antiguo sabio",
+      en: "Urban Fire Core",
+      es: "Núcleo de Fuego Urbano",
     },
     aura: "🔥",
-    image: "/images/guardians/Monk.png",
+    // TÁCTICO: Ruta corregida a PNG transparente
+    image: "/assets/MonkeSol.png",
     description: {
-      en: "Monke is the Guardian of ancient wisdom and blockchain secrets...",
-      es: "Monke es el Guardián de la sabiduría antigua y los secretos del blockchain...",
+      en: "Stored in the Blueprint, MonkeSol embodies street fire and spontaneous tribal energy that ignites the community.",
+      es: "Almacenado en el Blueprint, MonkeSol encarna el fuego callejero y la energía tribal espontánea que enciende a la comunidad.",
     },
   },
   {
     id: "chipisol",
     name: "ChipiSol",
     title: {
-      en: "The Cosmic Spirit",
-      es: "El Espíritu Cósmico",
+      en: "Icy Strategy Blueprint",
+      es: "Blueprint de Estrategia Gélida",
     },
     aura: "❄️",
-    image: "/images/guardians/Chip.png",
+    // TÁCTICO: Ruta corregida a PNG transparente
+    image: "/assets/ChipiSol.png",
     description: {
-      en: "Chipi is the mystical Entity that connects all dimensions and portals...",
-      es: "Chipi es la Entidad mística que conecta todas las dimensiones y portales...",
+      en: "The blueprint of a cold mind that sustains. Represents the strategy and emotional intelligence needed to build a legend.",
+      es: "El blueprint de una mente fría que sostiene. Representa la estrategia y la inteligencia emocional necesaria para construir una leyenda.",
     },
   },
 ];
@@ -52,29 +55,33 @@ export default function HallOfHeroesPortal() {
   const { t } = useLanguage();
 
   return (
+    // HeroesLayout debe manejar el BackButton como mirror del LangSwitcher
     <HeroesLayout titleKey="hero.hallOfHeroes" subtitleKey="hero.tagline">
-      {/* Grid de héroes */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-8 w-full max-w-[960px] mx-auto px-4 place-items-center">
-        {guardians.map((g, index) => {
-          const delay = index * 0.3 + 0.6; // segundos
+      
+      {/* Grid de héroes (Sección Principal comprimida para que quepa en pantalla) */}
+      <div className="flex-grow flex flex-col justify-center items-center py-6 md:py-10">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-10 w-full max-w-[1000px] mx-auto px-4 place-items-center">
+          {guardians.map((g, index) => {
+            const delay = index * 0.3 + 0.6; // segundos
 
-          return (
-            <div
-              key={g.id}
-              className={`
-                opacity-0 translate-y-6 animate-fadeInUp
-                [animation-delay:${delay}s]
-              `}
-            >
-              <HeroCard {...g} />
-            </div>
-          );
-        })}
+            return (
+              <div
+                key={g.id}
+                className={`
+                  opacity-0 translate-y-6 animate-fadeInUp
+                  [animation-delay:${delay}s]
+                `}
+              >
+                <HeroCard {...g} />
+              </div>
+            );
+          })}
+        </div>
       </div>
 
-      {/* Pie ritualizado */}
-      <footer className="mt-10 py-4">
-        <p className="text-center text-sm text-yellow-500 italic footer-aura">
+      {/* Pie ritualizado (Movido fuera del Grid para equilibrio visual) */}
+      <footer className="mt-auto py-6 md:py-8 border-t border-[#FFA908]/10 bg-[#0F0B1E]/60 w-full">
+        <p className="text-center text-xs md:text-sm text-yellow-500/80 italic font-mono tracking-wide footer-aura">
           {t("characters.telegramNote")}
         </p>
       </footer>

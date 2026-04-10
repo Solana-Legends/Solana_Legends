@@ -18,38 +18,51 @@ export default function GuardiansLayout({
   const { t } = useLanguage();
 
   return (
-    <section className="relative mt-[-3rem] px-4 py-12 md:py-20 min-h-[600px] bg-gradient-to-b from-slate-950 to-slate-900 text-white aura-pulsante aura-hover-gold">
-      {/* ✨ Capas absolutas de aura */}
-      <div className="absolute inset-0 z-0 pointer-events-none aura-pulsante aura-hover-gold" />
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 rounded-full blur-3xl bg-[#FFA908]/20 animate-pulse pointer-events-none z-0" />
+    <section className="relative w-full min-h-screen bg-[#0F0B1E] bg-gradient-to-b from-[#0F0B1E] to-[#1A1530] text-white overflow-x-hidden flex flex-col">
+      
+      {/* ✨ Capas de Aura fijas para profundidad cósmica */}
+      <div className="fixed inset-0 z-0 pointer-events-none aura-pulsante opacity-50" />
+      <div className="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] rounded-full blur-[120px] bg-[#FFA908]/10 pointer-events-none z-0" />
 
-      {/* ✅ Contenido en flujo normal */}
-      <div className="relative z-10">
-        {/* Encabezado con cambio de idioma y botón de regreso */}
-        <div className="mb-8 space-y-4">
-          <div className="flex justify-between items-center">
-            <LanguageSwitcher />
-            <BackHomeButton />
+      {/* 🛡️ INTERFAZ PERSISTENTE (Fixed) */}
+      <div className="fixed top-4 left-4 z-50 animate-fadeIn">
+        <BackHomeButton />
+      </div>
+
+      <div className="fixed top-4 right-4 z-50 animate-fadeIn">
+        <LanguageSwitcher />
+      </div>
+
+      {/* ✅ CONTENIDO RITUALIZADO */}
+      <div className="relative z-10 flex-grow flex flex-col pt-20 md:pt-24 pb-12">
+        
+        {/* Navegación y Breadcrumb (Centrado y elegante) */}
+        <div className="w-full max-w-screen-2xl mx-auto px-6 mb-8">
+          <div className="flex justify-center md:justify-start opacity-70 hover:opacity-100 transition-opacity">
+            <GuardiansBreadcrumb />
           </div>
-          <GuardiansBreadcrumb />
         </div>
 
-        {/* Título y subtítulo ritualizados */}
+        {/* Encabezado Principal */}
         <header
           className="
-            w-full max-w-screen-2xl mx-auto px-4 text-center 
+            w-full max-w-screen-2xl mx-auto px-4 text-center mb-10
             opacity-0 translate-y-3 animate-fadeInUp 
             [animation-delay:400ms]
           "
         >
-          <h1 className="text-4xl md:text-6xl font-bold mb-2">{t(titleKey)}</h1>
-          <p className="text-lg md:text-xl text-blue-300 mb-10">
+          <h1 className="text-4xl md:text-7xl font-bold mb-4 tracking-tighter bg-clip-text text-transparent bg-gradient-to-b from-white to-zinc-500">
+            {t(titleKey)}
+          </h1>
+          <p className="text-lg md:text-xl text-[#FFA908] font-mono tracking-widest uppercase opacity-80">
             {t(subtitleKey)}
           </p>
         </header>
 
-        {/* Contenido específico de cada vista */}
-        {children}
+        {/* Slot para el Grid de Héroes y Galería */}
+        <main className="w-full flex-grow flex flex-col">
+          {children}
+        </main>
       </div>
     </section>
   );
