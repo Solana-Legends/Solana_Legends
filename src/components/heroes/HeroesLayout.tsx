@@ -18,36 +18,35 @@ export default function GuardiansLayout({
   const { t } = useLanguage();
 
   return (
-    <section className="relative w-full min-h-screen bg-[#0F0B1E] bg-gradient-to-b from-[#0F0B1E] to-[#1A1530] text-white overflow-x-hidden flex flex-col">
+    <section className="relative w-full min-h-screen bg-[#0F0B1E] bg-gradient-to-b from-[#0F0B1E] to-[#1A1530] text-white overflow-hidden flex flex-col">
       
-      <div className="fixed inset-0 z-0 pointer-events-none aura-pulsante opacity-40" />
+      {/* Fondo de aura fijo */}
+      <div className="fixed inset-0 z-0 pointer-events-none aura-pulsante opacity-30" />
 
-      {/* 🛡️ INTERFAZ PERSISTENTE (BOTONES + BREADCRUMB) */}
-      <div className="fixed top-4 left-4 z-50 flex flex-col gap-2">
+      {/* 🛡️ INTERFAZ FIJA */}
+      <div className="fixed top-4 left-4 z-50 flex flex-col gap-2 scale-90 md:scale-100 origin-top-left">
         <BackHomeButton />
-        <div className="bg-black/40 backdrop-blur-md rounded-lg p-1.5 border border-white/5">
+        <div className="bg-black/60 backdrop-blur-md rounded-lg p-1.5 border border-white/10 shadow-lg">
             <GuardiansBreadcrumb />
         </div>
       </div>
 
-      <div className="fixed top-4 right-4 z-50">
+      <div className="fixed top-4 right-4 z-50 scale-90 md:scale-100 origin-top-right">
         <LanguageSwitcher />
       </div>
 
-      <div className="relative z-10 flex-grow flex flex-col pt-32 md:pt-36 pb-12">
-        <header
-          className="w-full max-w-screen-2xl mx-auto px-4 text-center mb-12 opacity-0 animate-fadeIn"
-          style={{ animationFillMode: 'forwards' }}
-        >
-          <h1 className="text-4xl md:text-7xl font-bold mb-4 tracking-tighter bg-clip-text text-transparent bg-gradient-to-b from-white to-zinc-500 uppercase">
+      {/* CONTENIDO PRINCIPAL - Reducido el PT para que el título entre en escena rápido */}
+      <div className="relative z-10 flex-grow flex flex-col pt-24 md:pt-28">
+        <header className="w-full max-w-screen-2xl mx-auto px-4 text-center mb-6">
+          <h1 className="text-4xl md:text-6xl font-black mb-2 tracking-tighter text-white uppercase drop-shadow-[0_0_15px_rgba(255,255,255,0.3)]">
             {t(titleKey)}
           </h1>
-          <p className="text-lg md:text-xl text-[#FFA908] font-mono tracking-widest uppercase opacity-80">
+          <p className="text-sm md:text-base text-[#FFA908] font-mono tracking-[0.3em] uppercase font-bold">
             {t(subtitleKey)}
           </p>
         </header>
 
-        <main className="w-full flex-grow flex flex-col">
+        <main className="w-full flex-grow flex flex-col justify-center">
           {children}
         </main>
       </div>
