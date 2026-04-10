@@ -38,14 +38,14 @@ export default function HeroesGallery() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-10 w-full max-w-6xl mx-auto px-4 mb-16 md:mb-24 z-10">
           <div className="animate-in fade-in slide-in-from-left duration-1000">
             <div className="relative group rounded-xl overflow-hidden transition-all duration-500 hover:scale-[1.02] border border-purple-500/30 shadow-[0_0_30px_rgba(160,32,240,0.15)] hover:shadow-[0_0_40px_rgba(160,32,240,0.3)] aura-pulsante">
-              <VideoWithControls src="/assets/HéroesVolando.mp4" glowColor="#A020F0" />
+              <VideoWithControls src="/assets/Héroes_Guía_Salón_futurista_3_música.mp4" glowColor="#A020F0" />
               <div className="pointer-events-none absolute inset-0 rounded-xl bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
             </div>
           </div>
 
           <div className="animate-in fade-in slide-in-from-right duration-1000">
             <div className="relative group rounded-xl overflow-hidden transition-all duration-500 hover:scale-[1.02] border border-blue-400/30 shadow-[0_0_30px_rgba(0,191,255,0.15)] hover:shadow-[0_0_40px_rgba(0,191,255,0.3)] aura-pulsante-blue">
-              <VideoWithControls src="/assets/HeroesEspac.mp4" glowColor="#00BFFF" />
+              <VideoWithControls src="/assets/NFT_Héroes_0x_2.mp4" glowColor="#00BFFF" />
               <div className="pointer-events-none absolute inset-0 rounded-xl bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
             </div>
           </div>
