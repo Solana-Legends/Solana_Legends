@@ -1,4 +1,3 @@
-import { useLanguage } from "@/contexts/LanguageContext";
 import HeroCard from "@/components/heroes/HeroCard";
 import HeroesGallery from "./HeroesGallery";
 import HeroesLayout from "@/components/heroes/HeroesLayout";
@@ -8,69 +7,60 @@ const guardians = [
     id: "zapsol",
     name: "ZapSol",
     title: {
-      en: "Cosmic Ignition Protocol",
-      es: "Protocolo de Ignición Cósmica",
+      en: "👑 ENTHRONED LEGEND",
+      es: "👑 LEYENDA ENTRONIZADA",
     },
     aura: "⚡",
-    // TÁCTICO: Ruta corregida a PNG transparente para que brille la aura
-    image: "/assets/ZapSol.png", 
+    image: "/images/guardians/Zap1.png", 
     description: {
-      en: "Activated in the Technical Altar, ZapSol represents expansion and electric movement. It is the spark that connects dimensions.",
-      es: "Activado en el Altar Técnico, ZapSol representa expansión y movimiento eléctrico. Es la chispa que conecta dimensiones.",
+      en: "The community has spoken. ZapSol is the official catalyst of the cosmic energy on the Solana network.",
+      es: "La comunidad ha hablado. ZapSol es el catalizador oficial de la energía cósmica en la red de Solana.",
     },
   },
   {
     id: "monkesol",
     name: "MonkeSol",
     title: {
-      en: "Urban Fire Core",
-      es: "Núcleo de Fuego Urbano",
+      en: "ARCHIVED BLUEPRINT",
+      es: "BLUEPRINT ARCHIVADO",
     },
     aura: "🔥",
-    // TÁCTICO: Ruta corregida a PNG transparente
-    image: "/assets/MonkeSol.png",
+    image: "/images/guardians/Monk1.png",
     description: {
-      en: "Stored in the Blueprint, MonkeSol embodies street fire and spontaneous tribal energy that ignites the community.",
-      es: "Almacenado en el Blueprint, MonkeSol encarna el fuego callejero y la energía tribal espontánea que enciende a la comunidad.",
+      en: "The Urban Fire remains in the archive, ready to be summoned if the ritual demands a new flame.",
+      es: "El Fuego Urbano permanece en el archivo, listo para ser invocado si el ritual exige una nueva llama.",
     },
   },
   {
     id: "chipisol",
     name: "ChipiSol",
     title: {
-      en: "Icy Strategy Blueprint",
-      es: "Blueprint de Estrategia Gélida",
+      en: "ARCHIVED BLUEPRINT",
+      es: "BLUEPRINT ARCHIVADO",
     },
     aura: "❄️",
-    // TÁCTICO: Ruta corregida a PNG transparente
-    image: "/assets/ChipiSol.png",
+    image: "/images/guardians/Chip1.png",
     description: {
-      en: "The blueprint of a cold mind that sustains. Represents the strategy and emotional intelligence needed to build a legend.",
-      es: "El blueprint de una mente fría que sostiene. Representa la estrategia y la inteligencia emocional necesaria para construir una leyenda.",
+      en: "The Icy Strategy is preserved in the narrative portal as part of the foundational myth.",
+      es: "La Estrategia Gélida se preserva en el portal narrativo como parte del mito fundacional.",
     },
   },
 ];
 
 export default function HallOfHeroesPortal() {
-  const { t } = useLanguage();
 
   return (
-    // HeroesLayout debe manejar el BackButton como mirror del LangSwitcher
     <HeroesLayout titleKey="hero.hallOfHeroes" subtitleKey="hero.tagline">
       
-      {/* Grid de héroes (Sección Principal comprimida para que quepa en pantalla) */}
       <div className="flex-grow flex flex-col justify-center items-center py-6 md:py-10">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-10 w-full max-w-[1000px] mx-auto px-4 place-items-center">
           {guardians.map((g, index) => {
-            const delay = index * 0.3 + 0.6; // segundos
-
+            const delay = index * 0.2 + 0.4;
             return (
               <div
                 key={g.id}
-                className={`
-                  opacity-0 translate-y-6 animate-fadeInUp
-                  [animation-delay:${delay}s]
-                `}
+                className="opacity-0 translate-y-6 animate-fadeInUp"
+                style={{ animationDelay: `${delay}s`, animationFillMode: 'forwards' }}
               >
                 <HeroCard {...g} />
               </div>
@@ -79,14 +69,12 @@ export default function HallOfHeroesPortal() {
         </div>
       </div>
 
-      {/* Pie ritualizado (Movido fuera del Grid para equilibrio visual) */}
-      <footer className="mt-auto py-6 md:py-8 border-t border-[#FFA908]/10 bg-[#0F0B1E]/60 w-full">
-        <p className="text-center text-xs md:text-sm text-yellow-500/80 italic font-mono tracking-wide footer-aura">
-          {t("characters.telegramNote")}
+      <footer className="mt-auto py-8 border-t border-[#FFA908]/10 bg-[#0F0B1E]/60 w-full">
+        <p className="text-center text-xs md:text-sm text-yellow-500/80 italic font-mono tracking-widest">
+           RITUAL STATUS: ZAP SOL ASCENDED ⚡
         </p>
       </footer>
 
-      {/* Galería ritualizada */}
       <HeroesGallery />
     </HeroesLayout>
   );
