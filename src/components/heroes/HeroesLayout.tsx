@@ -21,11 +21,16 @@ export default function GuardiansLayout({
     <section className="relative w-full min-h-screen bg-[#0F0B1E] bg-gradient-to-b from-[#0F0B1E] to-[#1A1530] text-white overflow-x-hidden flex flex-col">
       <div className="fixed inset-0 z-0 pointer-events-none aura-pulsante opacity-30" />
 
-      {/* 🛡️ INTERFAZ FIJA */}
-      <div className="fixed top-4 left-4 z-50 flex flex-col gap-2 scale-90 md:scale-100 origin-top-left">
+      {/* 🛡️ INTERFAZ FIJA PERSISTENTE */}
+      <div className="fixed top-4 left-4 z-50 flex flex-col gap-2 w-40 md:w-48 scale-90 md:scale-100 origin-top-left">
+        {/* El botón ahora ocupará todo el ancho de este contenedor (w-40/48) */}
         <BackHomeButton />
-        <div className="hidden md:block bg-black/60 backdrop-blur-md rounded-lg p-1.5 border border-white/10">
-            <GuardiansBreadcrumb />
+        
+        {/* El Breadcrumb ahora forzado a dos líneas con max-w */}
+        <div className="bg-black/60 backdrop-blur-md rounded-lg p-2 border border-white/10 shadow-lg">
+            <div className="max-w-[120px] md:max-w-[150px] leading-tight">
+                <GuardiansBreadcrumb />
+            </div>
         </div>
       </div>
 

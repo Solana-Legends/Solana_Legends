@@ -16,17 +16,25 @@ export default function BackHomeButton({
     <Link
       to="/"
       onClick={() => setExit(true)}
-      className={`flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white font-semibold px-5 py-3 rounded-lg text-lg transition ${
-        exit ? "animate-slideOutLeftGlow" : "animate-slideInLeftGlow"
-      } ${className}`}
+      // TÁCTICO: Estética Ghost (border-2, bg-transparent) y w-full para adaptarse al contenedor
+      className={`
+        flex items-center justify-center gap-2 
+        bg-transparent border-2 border-white/20 
+        hover:border-[#FFA908] hover:bg-[#FFA908]/10 
+        text-white font-bold px-4 py-2.5 rounded-xl 
+        text-sm uppercase tracking-widest transition-all duration-300
+        w-full shadow-lg backdrop-blur-sm
+        ${exit ? "animate-slideOutLeftGlow" : "animate-slideInLeftGlow"} 
+        ${className}
+      `}
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        className="h-6 w-6"
+        className="h-4 w-4"
         fill="none"
         viewBox="0 0 24 24"
         stroke="currentColor"
-        strokeWidth={2}
+        strokeWidth={3}
       >
         <path
           strokeLinecap="round"
