@@ -25,7 +25,6 @@ export default function HeroCard({ id, name, title, aura, image, description, ac
   const heroAura = id === "zapsol" ? "hero-zapsol-aura" : id === "monkesol" ? "hero-monkesol-aura" : id === "chipisol" ? "hero-chipisol-aura" : "";
   
   return (
-    // TÁCTICO: max-w ELIMINADO para que la tarjeta crezca. P-6 aumentado para mejor espaciado interno.
     <div className={`relative bg-[#1A1530]/90 rounded-2xl p-6 shadow-2xl text-left border border-white/5 flex flex-col h-full transition-all z-10 ${auraClass}`}>
       
       <div className="relative h-20 mb-5">
@@ -40,18 +39,20 @@ export default function HeroCard({ id, name, title, aura, image, description, ac
       </div>
 
       {actions.length > 0 ? (
-        <div className="mt-5 flex flex-col gap-2.5 relative z-30">
+        <div className="mt-5 flex flex-col gap-3 relative z-30">
           {actions.map((action, index) => (
             <Button
               key={index}
-              // TÁCTICO: h-10, h-bold, brightness-125 y text-[#0F0B1E] para hover LIMPIO y legible
-              className={`w-full h-10 ${action.color} text-[#0F0B1E] font-extrabold text-[11px] uppercase tracking-tighter hover:brightness-125 active:scale-95 transition-all shadow-xl rounded-lg`}
+              variant="outline"
+              // TÁCTICO: Estilo Ghost. Borde y texto con color, fondo transparente.
+              // En hover se rellena con el color y el texto pasa a negro.
+              className={`w-full h-11 bg-transparent border-2 font-bold text-[11px] transition-all duration-300 hover:text-[#0F0B1E] rounded-xl ${action.color}`}
               onClick={(e) => {
                 e.stopPropagation();
                 window.open(action.url, "_blank");
               }}
             >
-              TRADE {name} ON {action.label}
+              Trade ${name} en {action.label}
             </Button>
           ))}
         </div>

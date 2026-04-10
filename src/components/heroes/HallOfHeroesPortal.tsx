@@ -1,66 +1,90 @@
 import HeroCard from "@/components/heroes/HeroCard";
 import HeroesLayout from "@/components/heroes/HeroesLayout";
+import HeroesGallery from "./HeroesGallery";
 
 const guardians = [
   {
     id: "zapsol",
     name: "ZapSol",
-    title: { en: "👑 ENTHRONED", es: "👑 ENTRONIZADO" },
+    title: { 
+      en: "👑 ENTHRONED LEGEND", 
+      es: "👑 LEYENDA ENTRONIZADA" 
+    },
     aura: "⚡",
     image: "/images/guardians/Zap.png", 
     description: {
-      en: "The community catalyst. Official energy of Solana.",
-      es: "El catalizador de la comunidad. Energía oficial de Solana.",
+      en: "The community has spoken. ZapSol is the official catalyst of the cosmic energy on the Solana network.",
+      es: "La comunidad ha hablado. ZapSol es el catalizador oficial de la energía cósmica en la red de Solana.",
     },
+    // Configuración de botones con estilo Ghost y textos precisos
     actions: [
-      { label: "PUMPFUN", url: "https://pump.fun/coin/GmPDuwtYuMUpCrzGwYasxmo6vSmWvaHSg1Kf7skipump", color: "bg-yellow-400" },
-      { label: "JUPITER", url: "https://jup.ag/swap?sell=So11111111111111111111111111111111111111112&buy=GmPDuwtYuMUpCrzGwYasxmo6vSmWvaHSg1Kf7skipump", color: "bg-green-500" }
+      { 
+        label: "pump.fun", 
+        url: "https://pump.fun/coin/GmPDuwtYuMUpCrzGwYasxmo6vSmWvaHSg1Kf7skipump", 
+        color: "border-yellow-400 text-yellow-400 hover:bg-yellow-400" 
+      },
+      { 
+        label: "Jupiter", 
+        url: "https://jup.ag/swap?sell=So11111111111111111111111111111111111111112&buy=GmPDuwtYuMUpCrzGwYasxmo6vSmWvaHSg1Kf7skipump", 
+        color: "border-green-500 text-green-500 hover:bg-green-500" 
+      }
     ]
   },
   {
     id: "monkesol",
     name: "MonkeSol",
-    title: { en: "ARCHIVED", es: "ARCHIVADO" },
+    title: { 
+      en: "ARCHIVED BLUEPRINT", 
+      es: "BLUEPRINT ARCHIVADO" 
+    },
     aura: "🔥",
     image: "/images/guardians/Monk.png",
     description: {
-      en: "Urban Fire stored in the vault.",
-      es: "Fuego Urbano guardado en la bóveda.",
+      en: "The Urban Fire remains in the archive, ready to be summoned if the ritual demands a new flame.",
+      es: "El Fuego Urbano permanece en el archivo, listo para ser invocado si el ritual exige una nueva llama.",
     },
-    actions: []
+    actions: [] // Sin botones para personajes archivados
   },
   {
     id: "chipisol",
     name: "ChipiSol",
-    title: { en: "ARCHIVED", es: "ARCHIVADO" },
+    title: { 
+      en: "ARCHIVED BLUEPRINT", 
+      es: "BLUEPRINT ARCHIVADO" 
+    },
     aura: "❄️",
     image: "/images/guardians/Chip.png",
     description: {
-      en: "Icy Strategy preserved in the portal.",
-      es: "Estrategia Gélida preservada en el portal.",
+      en: "The Icy Strategy is preserved in the narrative portal as part of the foundational myth.",
+      es: "La Estrategia Gélida se preserva en el portal narrativo como parte del mito fundacional.",
     },
-    actions: []
+    actions: [] // Sin botones para personajes archivados
   },
 ];
 
 export default function HallOfHeroesPortal() {
   return (
     <HeroesLayout titleKey="hero.hallOfHeroes" subtitleKey="hero.tagline">
-      {/* Contenedor central con py mínimo */}
-      <div className="flex-grow flex flex-col justify-center items-center py-2">
-        {/* TÁCTICO: max-w aumentado a 1300px y gap ajustado para tarjetas GRANDES */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-10 w-full max-w-[1300px] mx-auto px-4 place-items-stretch">
+      
+      {/* Contenedor principal con centrado vertical para ocupar la pantalla */}
+      <div className="flex-grow flex flex-col justify-center items-center py-4 md:py-6">
+        {/* Rejilla expandida para tarjetas monumentales */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-10 w-full max-w-[1200px] mx-auto px-6 place-items-stretch">
           {guardians.map((g) => (
             <HeroCard key={g.id} {...g} />
           ))}
         </div>
       </div>
 
-      <footer className="mt-auto py-3 bg-black/40 border-t border-white/5 w-full">
+      {/* Footer minimalista de la sección */}
+      <footer className="mt-auto py-4 border-t border-white/5 bg-black/20 w-full backdrop-blur-sm">
         <p className="text-center text-[10px] md:text-xs text-yellow-500/50 font-mono tracking-[0.5em] uppercase">
-           STATUS: ZAP SOL ASCENDED
+           Ritual Status: Zap Sol Ascended ⚡
         </p>
       </footer>
+
+      {/* Galería que se activa con el scroll fuera del viewport inicial */}
+      <HeroesGallery />
     </HeroesLayout>
   );
 }
