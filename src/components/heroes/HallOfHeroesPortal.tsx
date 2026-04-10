@@ -11,7 +11,7 @@ const guardians = [
       es: "👑 LEYENDA ENTRONIZADA",
     },
     aura: "⚡",
-    image: "/images/guardians/Zap1.png", 
+    image: "/images/guardians/Zap.png", 
     description: {
       en: "The community has spoken. ZapSol is the official catalyst of the cosmic energy on the Solana network.",
       es: "La comunidad ha hablado. ZapSol es el catalizador oficial de la energía cósmica en la red de Solana.",
@@ -25,7 +25,7 @@ const guardians = [
       es: "BLUEPRINT ARCHIVADO",
     },
     aura: "🔥",
-    image: "/images/guardians/Monk1.png",
+    image: "/images/guardians/Monk.png",
     description: {
       en: "The Urban Fire remains in the archive, ready to be summoned if the ritual demands a new flame.",
       es: "El Fuego Urbano permanece en el archivo, listo para ser invocado si el ritual exige una nueva llama.",
@@ -39,7 +39,7 @@ const guardians = [
       es: "BLUEPRINT ARCHIVADO",
     },
     aura: "❄️",
-    image: "/images/guardians/Chip1.png",
+    image: "/images/guardians/Chip.png",
     description: {
       en: "The Icy Strategy is preserved in the narrative portal as part of the foundational myth.",
       es: "La Estrategia Gélida se preserva en el portal narrativo como parte del mito fundacional.",
@@ -48,14 +48,14 @@ const guardians = [
 ];
 
 export default function HallOfHeroesPortal() {
-
   return (
     <HeroesLayout titleKey="hero.hallOfHeroes" subtitleKey="hero.tagline">
       
-      <div className="flex-grow flex flex-col justify-center items-center py-6 md:py-10">
+      {/* Contenedor principal con altura calculada para forzar el Full Screen real */}
+      <div className="flex-grow flex flex-col justify-center items-center py-4 md:py-8 min-h-[calc(100vh-320px)]">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-10 w-full max-w-[1000px] mx-auto px-4 place-items-center">
           {guardians.map((g, index) => {
-            const delay = index * 0.2 + 0.4;
+            const delay = index * 0.2 + 0.5;
             return (
               <div
                 key={g.id}
@@ -69,9 +69,9 @@ export default function HallOfHeroesPortal() {
         </div>
       </div>
 
-      <footer className="mt-auto py-8 border-t border-[#FFA908]/10 bg-[#0F0B1E]/60 w-full">
-        <p className="text-center text-xs md:text-sm text-yellow-500/80 italic font-mono tracking-widest">
-           RITUAL STATUS: ZAP SOL ASCENDED ⚡
+      <footer className="mt-auto py-6 border-t border-[#FFA908]/10 bg-[#0F0B1E]/60 w-full">
+        <p className="text-center text-xs md:text-sm text-yellow-500/80 italic font-mono tracking-widest uppercase">
+           Ritual Status: Zap Sol Ascended ⚡
         </p>
       </footer>
 

@@ -20,29 +20,31 @@ export default function GuardiansLayout({
   return (
     <section className="relative w-full min-h-screen bg-[#0F0B1E] bg-gradient-to-b from-[#0F0B1E] to-[#1A1530] text-white overflow-x-hidden flex flex-col">
       
+      {/* Fondo de aura fijo */}
       <div className="fixed inset-0 z-0 pointer-events-none aura-pulsante opacity-40" />
 
-      {/* 🛡️ INTERFAZ PERSISTENTE (BOTONES + BREADCRUMB) */}
-      <div className="fixed top-4 left-4 z-50 flex flex-col gap-2">
+      {/* 🛡️ INTERFAZ FIJA */}
+      <div className="fixed top-6 left-6 z-50 flex flex-col gap-3">
         <BackHomeButton />
-        <div className="bg-black/40 backdrop-blur-md rounded-lg p-1.5 border border-white/5">
+        <div className="bg-black/60 backdrop-blur-md rounded-lg p-2 border border-white/10 shadow-xl">
             <GuardiansBreadcrumb />
         </div>
       </div>
 
-      <div className="fixed top-4 right-4 z-50">
+      <div className="fixed top-6 right-6 z-50">
         <LanguageSwitcher />
       </div>
 
-      <div className="relative z-10 flex-grow flex flex-col pt-32 md:pt-36 pb-12">
+      {/* Título Principal - Ajustado el Padding Top para que aparezca debajo de los botones */}
+      <div className="relative z-10 flex-grow flex flex-col pt-40 md:pt-48 pb-10">
         <header
-          className="w-full max-w-screen-2xl mx-auto px-4 text-center mb-12 opacity-0 animate-fadeIn"
+          className="w-full max-w-screen-2xl mx-auto px-4 text-center mb-10 opacity-0 animate-fadeIn"
           style={{ animationFillMode: 'forwards' }}
         >
-          <h1 className="text-4xl md:text-7xl font-bold mb-4 tracking-tighter bg-clip-text text-transparent bg-gradient-to-b from-white to-zinc-500 uppercase">
+          <h1 className="text-5xl md:text-8xl font-black mb-3 tracking-tighter bg-clip-text text-transparent bg-gradient-to-b from-white via-white to-zinc-600 uppercase">
             {t(titleKey)}
           </h1>
-          <p className="text-lg md:text-xl text-[#FFA908] font-mono tracking-widest uppercase opacity-80">
+          <p className="text-xl md:text-2xl text-[#FFA908] font-mono tracking-[0.3em] uppercase opacity-90 drop-shadow-lg">
             {t(subtitleKey)}
           </p>
         </header>
