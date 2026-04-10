@@ -83,7 +83,6 @@ export default function HeroSection() {
         </div>
 
         {/* --- MATRIZ DE COMPRA (Solo 2 botones centrados y equilibrados) --- */}
-        {/* TÁCTICO: mb-8 md:mb-12 para mantener el alto visual de la sección */}
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 md:gap-4 max-w-2xl mx-auto w-full px-4 mb-8 md:mb-12">
           
           <Button
@@ -105,6 +104,15 @@ export default function HeroSection() {
           </Button>
 
         </div>
+      </div>
+
+      {/* Personaje Decorativo Restaurado */}
+      <div className="absolute top-12 left-12 md:top-auto md:bottom-12 md:left-16 pointer-events-none z-20">
+        <img
+          src="/assets/MonkeSol.png"
+          alt="MonkeSol"
+          className="h-24 md:h-56 object-contain animate-float symbol-hero-monkesol-pulse"
+        />
       </div>
 
     </section>

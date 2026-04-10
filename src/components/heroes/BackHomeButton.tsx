@@ -16,13 +16,12 @@ export default function BackHomeButton({
     <Link
       to="/"
       onClick={() => setExit(true)}
-      // TÁCTICO: Estética Ghost (border-2, bg-transparent) y w-full para adaptarse al contenedor
       className={`
         flex items-center justify-center gap-2 
         bg-transparent border-2 border-white/20 
         hover:border-[#FFA908] hover:bg-[#FFA908]/10 
         text-white font-bold px-4 py-2.5 rounded-xl 
-        text-sm uppercase tracking-widest transition-all duration-300
+        text-sm transition-all duration-300
         w-full shadow-lg backdrop-blur-sm
         ${exit ? "animate-slideOutLeftGlow" : "animate-slideInLeftGlow"} 
         ${className}
