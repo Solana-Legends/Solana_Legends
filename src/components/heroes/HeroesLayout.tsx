@@ -23,12 +23,12 @@ export default function GuardiansLayout({
 
       {/* 🛡️ INTERFAZ FIJA PERSISTENTE */}
       <div className="fixed top-4 left-4 z-50 flex flex-col gap-2 w-40 md:w-48 scale-90 md:scale-100 origin-top-left">
-        {/* El botón ahora ocupará todo el ancho de este contenedor (w-40/48) */}
+        {/* Botón Ghost de ancho completo */}
         <BackHomeButton />
         
-        {/* El Breadcrumb ahora forzado a dos líneas con max-w */}
-        <div className="bg-black/60 backdrop-blur-md rounded-lg p-2 border border-white/10 shadow-lg">
-            <div className="max-w-[120px] md:max-w-[150px] leading-tight">
+        {/* Breadcrumb en dos líneas, centrado y con mejor legibilidad */}
+        <div className="bg-black/60 backdrop-blur-md rounded-lg p-2 border border-white/10 shadow-lg flex justify-center">
+            <div className="max-w-[120px] md:max-w-[150px] leading-tight text-center">
                 <GuardiansBreadcrumb />
             </div>
         </div>
