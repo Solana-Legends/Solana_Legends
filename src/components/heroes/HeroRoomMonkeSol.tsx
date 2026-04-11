@@ -97,7 +97,7 @@ export default function HeroRoomMonkeSol() {
       </div>
 
       {/* Imagen MonkeSol anclada (Volador archivado) */}
-      <div className="absolute bottom-10 left-4 md:bottom-20 md:left-10 w-48 h-48 md:w-80 md:h-80 pointer-events-none z-20 animate-in fade-in slide-in-from-left-8 duration-1000 delay-700">
+      <div className="absolute bottom-4 left-2 md:bottom-20 md:left-10 w-48 h-48 md:w-80 md:h-80 pointer-events-none z-20 animate-in fade-in slide-in-from-left-8 duration-1000 delay-700">
         <div className="relative w-full h-full flex justify-center items-center group">
           
           <div className="absolute inset-0 rounded-full blur-3xl bg-red-500/20 animate-[pulse_3s_infinite] transition-colors duration-500 group-hover:bg-red-500/30"></div>
