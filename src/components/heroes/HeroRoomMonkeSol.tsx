@@ -83,7 +83,7 @@ export default function HeroRoomMonkeSol() {
           
           <div>
             <img
-              src="/images/guardians/Monk2.png"
+              src="/images/guardians/Monk4.png"
               alt="MonkeSol"
               className="relative z-10 w-64 h-64 md:w-80 md:h-80 object-contain drop-shadow-[0_0_25px_rgba(248,113,113,0.5)] symbol-hero-monkesol-pulse"
             />
