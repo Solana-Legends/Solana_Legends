@@ -2,7 +2,6 @@ import { useLanguage } from "@/contexts/LanguageContext";
 import { useEffect, useState } from "react";
 
 import LightningParticle from "@/components/particles/LightningParticle";
-// Eliminamos PointParticleZapSol como solicitaste
 
 export default function HeroRoomZapSol() {
   const { t } = useLanguage();
@@ -43,7 +42,6 @@ export default function HeroRoomZapSol() {
           70%, 100% { opacity: 0.9; }
         }
         
-        /* Clases utilitarias que mezclan las animaciones con tiempos distintos */
         .fx-ray-1 { animation: chispa-rapida 1s infinite; }
         .fx-ray-2 { animation: chispa-latido 2.5s infinite; }
         .fx-ray-3 { animation: chispa-caos 1.8s infinite; }
@@ -62,7 +60,6 @@ export default function HeroRoomZapSol() {
       {/* ⚡ SOLO RAYOS: 36 Partículas con diferentes tamaños y ritmos de chisporroteo */}
       <div className="absolute inset-0 pointer-events-none z-0">
         {Array.from({ length: 36 }).map((_, i) => {
-          // Asignar 6 efectos de parpadeo distintos basados en el índice
           const effectTypes = [
             "fx-ray-1 opacity-80", 
             "fx-ray-2 opacity-100", 
@@ -72,7 +69,6 @@ export default function HeroRoomZapSol() {
             "fx-ray-6 opacity-100"
           ];
           
-          // Asignar diferentes tamaños (escalas)
           const sizeTypes = [
             "scale-50", 
             "scale-75", 
@@ -83,7 +79,6 @@ export default function HeroRoomZapSol() {
 
           const animationClass = `${effectTypes[i % effectTypes.length]} ${sizeTypes[i % sizeTypes.length]}`;
 
-          // TODO son LightningParticle ahora
           return (
             <LightningParticle 
               key={i} 
@@ -97,9 +92,11 @@ export default function HeroRoomZapSol() {
       {/* Contenido Principal */}
       <div className="relative z-10 w-full max-w-5xl mx-auto text-center flex flex-col items-center justify-center flex-grow">
         
-        <div className="mb-10">
-          <h3 className="text-4xl md:text-6xl font-black text-white mb-2 uppercase tracking-tighter animate-in fade-in slide-in-from-bottom-4 duration-1000">
-            <span className="text-[#FFA908]">⚡</span> {t("zapsol.title")}
+        <div className="mb-10 flex flex-col items-center">
+          {/* TÍTULO CORREGIDO: Sin 'uppercase', escrito como "ZapSol", rayo gigante a la derecha */}
+          <h3 className="text-5xl md:text-7xl font-black text-white mb-2 tracking-tighter flex items-center justify-center gap-3 animate-in fade-in slide-in-from-bottom-4 duration-1000">
+            ZapSol 
+            <span className="text-[#FFA908] text-6xl md:text-8xl drop-shadow-[0_0_20px_rgba(255,169,8,0.8)]">⚡</span>
           </h3>
           <p className="text-sm md:text-base text-indigo-200 font-mono tracking-widest uppercase animate-in fade-in slide-in-from-bottom-4 duration-1000 delay-150">
             {t("zapsol.subtitle")}
@@ -108,11 +105,8 @@ export default function HeroRoomZapSol() {
 
         {/* Imagen Central Ritualizada */}
         <div className="relative flex justify-center mb-12 animate-in zoom-in-95 duration-1000 delay-300">
-          
-          {/* AURA CENTRAL UNIFICADA: Exactamente igual que la del volador */}
           <div className="absolute inset-0 rounded-full blur-3xl bg-[#FFA908]/20 animate-[pulse_2s_infinite]"></div>
           
-          {/* Añadido animate-float al contenedor, y el chisporroteo a la imagen */}
           <div className="animate-float">
             <img
               src="/images/guardians/Zap2.png"
@@ -132,7 +126,6 @@ export default function HeroRoomZapSol() {
       <div className="absolute bottom-10 right-4 md:bottom-20 md:right-10 w-48 h-48 md:w-80 md:h-80 pointer-events-none z-20 animate-in fade-in slide-in-from-right-8 duration-1000 delay-700">
         <div className="relative w-full h-full flex justify-center items-center group animate-float">
           
-          {/* AURA VOLADOR UNIFICADA: Exactamente igual que la central */}
           <div className="absolute inset-0 rounded-full blur-3xl bg-[#FFA908]/20 animate-[pulse_2s_infinite] transition-colors duration-500 group-hover:bg-[#FFA908]/30"></div>
           
           <img
