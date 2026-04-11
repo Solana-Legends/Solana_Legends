@@ -35,7 +35,7 @@ export default function GuardianTimeline() {
       aura: "❄️",
     },
     {
-      year: "2025",
+      year: "2026",
       title: t("timeline.union.title"),
       description: t("timeline.union.description"),
       color: "text-purple-400",
