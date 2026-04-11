@@ -103,7 +103,7 @@ export default function HeroRoomMonkeSol() {
           <div className="absolute inset-0 rounded-full blur-3xl bg-red-500/20 animate-[pulse_3s_infinite] transition-colors duration-500 group-hover:bg-red-500/30"></div>
 
           <img
-            src="/assets/MonkeSolVol.png"
+            src="/assets/MonkeSolVol_1.png"
             alt="MonkeSol Hero"
             className="relative z-10 w-full h-full object-contain mix-blend-screen opacity-90 symbol-hero-monkesol-pulse drop-shadow-[0_0_25px_rgba(248,113,113,0.5)]"
           />
