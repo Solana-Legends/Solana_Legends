@@ -200,11 +200,9 @@ const enTranslations = {
   "chipisol.quote":
     "Crystalline gateways preserve the memory of the universe and open routes to the eternal.",
 
-  "monkesol.title": "🔥 MonkeSol",
-  "monkesol.subtitle":
-    "Ancient Hero💫Archive 🔥 a construct of encrypted ancestral wisdom.",
-  "monkesol.quote":
-    "Controlled fire illuminates the path of knowledge and stabilizes the network’s memory.",
+  "monkesol.title": "MonkeSol",
+  "monkesol.subtitle": "ARCHIVED BLUEPRINT 🔥 ANCESTRAL WISDOM",
+  "monkesol.quote": "The Urban Fire remains in the archive. Its controlled flame illuminates the path of knowledge and stabilizes the network's memory."
 
 "zapsol.title": "ZapSol",
   "zapsol.subtitle": "THE OFFICIAL HERO TOKEN ⚡ THE DEFINITIVE NETWORK CATALYST",
@@ -405,11 +403,9 @@ const esTranslations = {
   "chipisol.quote":
     "Los portales cristalinos preservan la memoria del universo y abren rutas hacia lo eterno.",
 
-  "monkesol.title": "🔥 MonkeSol",
-  "monkesol.subtitle":
-    "Ancient Hero💫Archive 🔥 un constructo de sabiduría ancestral cifrada.",
-  "monkesol.quote":
-    "El fuego controlado ilumina el camino del conocimiento y estabiliza la memoria de la red.",
+  "monkesol.title": "MonkeSol",
+  "monkesol.subtitle": "BLUEPRINT ARCHIVADO 🔥 SABIDURÍA ANCESTRAL",
+  "monkesol.quote": "El Fuego Urbano permanece en el archivo. Su llama controlada ilumina el camino del conocimiento y estabiliza la memoria de la red."
 
 "zapsol.title": "ZapSol",
   "zapsol.subtitle": "EL HERO TOKEN OFICIAL ⚡ EL CATALIZADOR DEFINITIVO DE LA RED",
