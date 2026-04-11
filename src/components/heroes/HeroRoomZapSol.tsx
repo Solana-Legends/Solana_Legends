@@ -10,7 +10,7 @@ export default function HeroRoomZapSol() {
   useEffect(() => {
     const interval = setInterval(() => {
       setCycleKey((prev) => prev + 1);
-    }, 24000);
+    }, 12000);
     return () => clearInterval(interval);
   }, []);
 
@@ -70,7 +70,7 @@ export default function HeroRoomZapSol() {
 
       {/* ⚡ SOLO RAYOS */}
       <div className="absolute inset-0 pointer-events-none z-0">
-        {Array.from({ length: 36 }).map((_, i) => {
+        {Array.from({ length: 44 }).map((_, i) => {
           const effectTypes = [
             "fx-ray-1", 
             "fx-ray-2", 
