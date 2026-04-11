@@ -179,7 +179,7 @@ export default function SocialLinks() {
       </div>
 
       {/* Imagen ChipiSol Decorativa - TRANSPARENCIA ELIMINADA */}
-      <div className="absolute bottom-[340px] left-12 w-28 h-28 md:w-48 md:h-48 z-10 pointer-events-none">
+      <div className="absolute bottom-[412px] left-12 w-28 h-28 md:w-48 md:h-48 z-10 pointer-events-none">
         <img src="/assets/ChipiSol.png" alt="ChipiSol Decor" className="w-full h-full object-contain animate-float drop-shadow-[0_0_15px_rgba(255,255,255,0.2)]" />
       </div>
     </section>
