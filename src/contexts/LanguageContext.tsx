@@ -206,11 +206,9 @@ const enTranslations = {
   "monkesol.quote":
     "Controlled fire illuminates the path of knowledge and stabilizes the network’s memory.",
 
-  "zapsol.title": "⚡ ZapSol",
-  "zapsol.subtitle":
-    "Lightning Hero💫Node ⚡ a conduit of high‑frequency energy and speed.",
-  "zapsol.quote":
-    "Lightning reveals the path of clarity and awakens the pulse of the network.",
+"zapsol.title": "ZapSol",
+  "zapsol.subtitle": "THE OFFICIAL HERO TOKEN ⚡ THE DEFINITIVE NETWORK CATALYST",
+  "zapsol.quote": "The community has spoken. The ritual is complete. The lightning takes the throne and governs the pulse of Solana Legends.",
 } as const;
 
 // 🔹 Tipo de claves de traducción generado automáticamente
@@ -413,11 +411,9 @@ const esTranslations = {
   "monkesol.quote":
     "El fuego controlado ilumina el camino del conocimiento y estabiliza la memoria de la red.",
 
-  "zapsol.title": "⚡ ZapSol",
-  "zapsol.subtitle":
-    "Lightning Hero💫Node ⚡ un conducto de energía de alta frecuencia y velocidad.",
-  "zapsol.quote":
-    "El rayo revela el camino de la claridad y despierta el pulso de la red.",
+"zapsol.title": "ZapSol",
+  "zapsol.subtitle": "EL HERO TOKEN OFICIAL ⚡ EL CATALIZADOR DEFINITIVO DE LA RED",
+  "zapsol.quote": "La comunidad ha hablado. El ritual se ha completado. El rayo asume el trono y gobierna el pulso de Solana Legends.",
 } as const;
 
 /**
