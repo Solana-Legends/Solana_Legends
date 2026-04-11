@@ -184,7 +184,7 @@ const enTranslations = {
     "The ritual concludes and the community chooses speed. ZapSol rises as the official Hero Token, backed by the wisdom of fire and the resilience of ice.",
   
   "timeline.closure":
-    "Three elemental architectures. A single victor. The Solana Legends protocol is complete.",
+    "Three elemental architectures. A single victor. The Solana Legends protocol is complete, but the story continues.",
 
   // Gallery
   "gallery.title": "Hall of Heroes ✨ Blueprint Archive",
@@ -386,7 +386,7 @@ const esTranslations = {
     "El ritual concluye y la comunidad elige la velocidad. ZapSol se alza como el Hero Token oficial, respaldado por la sabiduría del fuego y la resiliencia del hielo.",
   
   "timeline.closure":
-    "Tres arquitecturas elementales. Un único vencedor. El protocolo de Solana Legends ha sido completado.",
+    "Tres arquitecturas elementales. Un único vencedor. El protocolo de Solana Legends ha sido completado, pero la histora continúa.",
 
   // Gallery
   "gallery.title": "Salón de los Héroes ✨ Archivo Blueprint",
