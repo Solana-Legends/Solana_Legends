@@ -17,37 +17,48 @@ export default function HeroRoomZapSol() {
   return (
     <section className="relative w-full min-h-screen flex flex-col items-center justify-center px-4 py-20 bg-[#0F0B1E] overflow-hidden">
       
-      {/* INYECCIÓN DE CSS: Efectos de chisporroteo (Neón roto) para los rayos */}
+      {/* INYECCIÓN DE CSS: Efectos de chisporroteo con FADE IN y FADE OUT */}
       <style>{`
         @keyframes chispa-rapida {
-          0%, 50%, 100% { opacity: 0.9; }
+          0% { opacity: 0; }
+          15% { opacity: 0.9; }
+          50% { opacity: 0.9; }
           52% { opacity: 0.1; }
           54% { opacity: 0.8; }
           56% { opacity: 0.1; }
           58% { opacity: 0.9; }
+          85% { opacity: 0.9; }
+          100% { opacity: 0; }
         }
         @keyframes chispa-latido {
-          0%, 80% { opacity: 0.6; transform: scale(1); }
-          85% { opacity: 1; transform: scale(1.1); }
-          88% { opacity: 0.1; transform: scale(0.9); }
-          92% { opacity: 1; transform: scale(1.05); }
-          100% { opacity: 0.6; transform: scale(1); }
+          0% { opacity: 0; transform: scale(0.95); }
+          15% { opacity: 0.6; transform: scale(1); }
+          75% { opacity: 0.6; transform: scale(1); }
+          80% { opacity: 1; transform: scale(1.1); }
+          83% { opacity: 0.1; transform: scale(0.9); }
+          86% { opacity: 1; transform: scale(1.05); }
+          90% { opacity: 0.6; transform: scale(1); }
+          100% { opacity: 0; transform: scale(0.95); }
         }
         @keyframes chispa-caos {
-          0%, 20% { opacity: 0.9; }
+          0% { opacity: 0; }
+          15% { opacity: 0.9; }
+          20% { opacity: 0.9; }
           22% { opacity: 0.1; }
           25% { opacity: 0.8; }
           28% { opacity: 0.2; }
           30% { opacity: 0.9; }
-          70%, 100% { opacity: 0.9; }
+          75% { opacity: 0.9; }
+          90% { opacity: 0; }
+          100% { opacity: 0; }
         }
         
-        .fx-ray-1 { animation: chispa-rapida 1s infinite; }
+        .fx-ray-1 { animation: chispa-rapida 1.2s infinite; }
         .fx-ray-2 { animation: chispa-latido 2.5s infinite; }
-        .fx-ray-3 { animation: chispa-caos 1.8s infinite; }
-        .fx-ray-4 { animation: chispa-rapida 0.7s infinite; }
-        .fx-ray-5 { animation: chispa-caos 2.2s infinite; }
-        .fx-ray-6 { animation: chispa-latido 1.5s infinite; }
+        .fx-ray-3 { animation: chispa-caos 2s infinite; }
+        .fx-ray-4 { animation: chispa-rapida 0.9s infinite; }
+        .fx-ray-5 { animation: chispa-caos 2.4s infinite; }
+        .fx-ray-6 { animation: chispa-latido 1.8s infinite; }
       `}</style>
 
       {/* ✨ Fondo eléctrico / Aura de la sala */}
@@ -57,16 +68,16 @@ export default function HeroRoomZapSol() {
       <div className="absolute top-0 left-[15%] md:left-[20%] w-[1px] h-full bg-gradient-to-b from-transparent via-[#FFA908]/50 to-transparent shadow-[0_0_15px_#FFA908] animate-[pulse_2s_infinite] pointer-events-none" />
       <div className="absolute top-0 right-[15%] md:right-[20%] w-[1px] h-full bg-gradient-to-b from-transparent via-[#FFA908]/50 to-transparent shadow-[0_0_15px_#FFA908] animate-[pulse_3s_infinite] pointer-events-none" />
 
-      {/* ⚡ SOLO RAYOS: 36 Partículas con diferentes tamaños y ritmos de chisporroteo */}
+      {/* ⚡ SOLO RAYOS */}
       <div className="absolute inset-0 pointer-events-none z-0">
         {Array.from({ length: 36 }).map((_, i) => {
           const effectTypes = [
-            "fx-ray-1 opacity-80", 
-            "fx-ray-2 opacity-100", 
-            "fx-ray-3 opacity-70", 
-            "fx-ray-4 opacity-90", 
-            "fx-ray-5 opacity-60", 
-            "fx-ray-6 opacity-100"
+            "fx-ray-1", 
+            "fx-ray-2", 
+            "fx-ray-3", 
+            "fx-ray-4", 
+            "fx-ray-5", 
+            "fx-ray-6"
           ];
           
           const sizeTypes = [
@@ -77,6 +88,7 @@ export default function HeroRoomZapSol() {
             "scale-150"
           ];
 
+          // Nota: He quitado las opacidades estáticas de effectTypes porque la opacidad ahora la dicta el keyframe (del 0 al 100%)
           const animationClass = `${effectTypes[i % effectTypes.length]} ${sizeTypes[i % sizeTypes.length]}`;
 
           return (
@@ -93,7 +105,6 @@ export default function HeroRoomZapSol() {
       <div className="relative z-10 w-full max-w-5xl mx-auto text-center flex flex-col items-center justify-center flex-grow">
         
         <div className="mb-10 flex flex-col items-center">
-          {/* TÍTULO CORREGIDO: Sin 'uppercase', escrito como "ZapSol", rayo gigante a la derecha */}
           <h3 className="text-5xl md:text-7xl font-black text-white mb-2 tracking-tighter flex items-center justify-center gap-3 animate-in fade-in slide-in-from-bottom-4 duration-1000">
             ZapSol 
             <span className="text-[#FFA908] text-6xl md:text-8xl drop-shadow-[0_0_20px_rgba(255,169,8,0.8)]">⚡</span>
@@ -103,11 +114,12 @@ export default function HeroRoomZapSol() {
           </p>
         </div>
 
-        {/* Imagen Central Ritualizada */}
+        {/* Imagen Central Ritualizada (SIN FLOTACIÓN, SÓLO CHISPORROTEO) */}
         <div className="relative flex justify-center mb-12 animate-in zoom-in-95 duration-1000 delay-300">
           <div className="absolute inset-0 rounded-full blur-3xl bg-[#FFA908]/20 animate-[pulse_2s_infinite]"></div>
           
-          <div className="animate-float">
+          {/* Quitada la clase animate-float del contenedor */}
+          <div>
             <img
               src="/images/guardians/Zap2.png"
               alt="ZapSol"
@@ -122,9 +134,10 @@ export default function HeroRoomZapSol() {
         </blockquote>
       </div>
 
-      {/* ZapSol Volador */}
+      {/* ZapSol Volador (SIN FLOTACIÓN, SÓLO CHISPORROTEO) */}
       <div className="absolute bottom-10 right-4 md:bottom-20 md:right-10 w-48 h-48 md:w-80 md:h-80 pointer-events-none z-20 animate-in fade-in slide-in-from-right-8 duration-1000 delay-700">
-        <div className="relative w-full h-full flex justify-center items-center group animate-float">
+        {/* Quitada la clase animate-float del contenedor */}
+        <div className="relative w-full h-full flex justify-center items-center group">
           
           <div className="absolute inset-0 rounded-full blur-3xl bg-[#FFA908]/20 animate-[pulse_2s_infinite] transition-colors duration-500 group-hover:bg-[#FFA908]/30"></div>
           
