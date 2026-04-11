@@ -202,9 +202,9 @@ const enTranslations = {
 
   "monkesol.title": "MonkeSol",
   "monkesol.subtitle": "ARCHIVED BLUEPRINT 🔥 ANCESTRAL WISDOM",
-  "monkesol.quote": "The Urban Fire remains in the archive. Its controlled flame illuminates the path of knowledge and stabilizes the network's memory."
+  "monkesol.quote": "The Urban Fire remains in the archive. Its controlled flame illuminates the path of knowledge and stabilizes the network's memory.",
 
-"zapsol.title": "ZapSol",
+  "zapsol.title": "ZapSol",
   "zapsol.subtitle": "THE OFFICIAL HERO TOKEN ⚡ THE DEFINITIVE NETWORK CATALYST",
   "zapsol.quote": "The community has spoken. The ritual is complete. The lightning takes the throne and governs the pulse of Solana Legends.",
 } as const;
@@ -405,9 +405,9 @@ const esTranslations = {
 
   "monkesol.title": "MonkeSol",
   "monkesol.subtitle": "BLUEPRINT ARCHIVADO 🔥 SABIDURÍA ANCESTRAL",
-  "monkesol.quote": "El Fuego Urbano permanece en el archivo. Su llama controlada ilumina el camino del conocimiento y estabiliza la memoria de la red."
+  "monkesol.quote": "El Fuego Urbano permanece en el archivo. Su llama controlada ilumina el camino del conocimiento y estabiliza la memoria de la red.",
 
-"zapsol.title": "ZapSol",
+  "zapsol.title": "ZapSol",
   "zapsol.subtitle": "EL HERO TOKEN OFICIAL ⚡ EL CATALIZADOR DEFINITIVO DE LA RED",
   "zapsol.quote": "La comunidad ha hablado. El ritual se ha completado. El rayo asume el trono y gobierna el pulso de Solana Legends.",
 } as const;
