@@ -164,27 +164,27 @@ const enTranslations = {
   "common.home": "Home",
   "common.backHome": "Back to Home",
 
-  // Timeline
-  "timeline.title": "Evolution of the Hero💫Nodes",
+// Timeline
+  "timeline.title": "The History of the Ritual 🪐",
 
-  "timeline.monkesol.title": "MonkeSol emerges as an Ancient Hero💫Archive 🔥",
+  "timeline.monkesol.title": "MonkeSol emerges as Ancestral Fire 🔥",
   "timeline.monkesol.description":
-    "A construct of encrypted memory descends, carrying millennial data and stabilizing the wisdom layer of the network.",
+    "A construct of encrypted memory descends, stabilizing the wisdom layer of the network. Today it rests in the archive as guardian of the past.",
 
-  "timeline.zapsol.title": "ZapSol activates as a Lightning Hero💫Node ⚡",
+  "timeline.zapsol.title": "ZapSol activates Maximum Frequency ⚡",
   "timeline.zapsol.description":
-    "A thunderous pulse ignites the grid, accelerating the network with plasma‑grade energy.",
+    "A thunderous pulse ignites the grid, competing for supremacy with plasma-grade energy.",
 
-  "timeline.chipisol.title":
-    "ChipiSol reveals itself as a Cosmic Hero💫Gateway ❄️",
+  "timeline.chipisol.title": "ChipiSol reveals the Cosmic Gateway ❄️",
   "timeline.chipisol.description":
-    "A crystalline aperture opens, linking dimensions and synchronizing multiversal pathways.",
+    "A crystalline aperture links dimensions. Its structure was frozen and preserved in the archive to keep multiversal routes open.",
 
-  "timeline.union.title": "The convergence of the three architectures ⚡🔥❄️",
+  "timeline.union.title": "The Ascension of the Definitive Hero💫Node 👑⚡",
   "timeline.union.description":
-    "ZapSol, MonkeSol and ChipiSol synchronize their auras, forming the tri‑layered foundation of the Solana Legends protocol.",
+    "The ritual concludes and the community chooses speed. ZapSol rises as the official Hero Token, backed by the wisdom of fire and the resilience of ice.",
+  
   "timeline.closure":
-    "Thus emerged the first triad of Hero💫Nodes, united in a new cosmic architecture.",
+    "Three elemental architectures. A single victor. The Solana Legends protocol is complete.",
 
   // Gallery
   "gallery.title": "Hall of Heroes ✨ Blueprint Archive",
@@ -366,26 +366,27 @@ const esTranslations = {
   "common.home": "Inicio",
   "common.backHome": "Volver al inicio",
 
-  // Timeline
-  "timeline.title": "Evolución de los Hero💫Nodes",
+// Timeline
+  "timeline.title": "La Historia del Ritual 🪐",
 
-  "timeline.monkesol.title": "MonkeSol emerge como Ancient Hero💫Archive 🔥",
+  "timeline.monkesol.title": "MonkeSol emerge como Fuego Ancestral 🔥",
   "timeline.monkesol.description":
-    "Un constructo de memoria cifrada desciende, portando datos milenarios y estabilizando la capa de sabiduría de la red.",
+    "Un constructo de memoria cifrada desciende, estabilizando la capa de sabiduría de la red. Hoy descansa en el archivo como guardián del pasado.",
 
-  "timeline.zapsol.title": "ZapSol se activa como Lightning Hero💫Node ⚡",
+  "timeline.zapsol.title": "ZapSol activa la Frecuencia Máxima ⚡",
   "timeline.zapsol.description":
-    "Un pulso atronador enciende la red, acelerando el entramado con energía de plasma.",
+    "Un pulso atronador enciende la red, compitiendo por la supremacía con energía de grado-plasma.",
 
-  "timeline.chipisol.title": "ChipiSol se revela como Cosmic Hero💫Gateway ❄️",
+  "timeline.chipisol.title": "ChipiSol revela la Puerta Cósmica ❄️",
   "timeline.chipisol.description":
-    "Se abre una apertura cristalina que enlaza dimensiones y sincroniza rutas multiversales.",
+    "Una apertura cristalina vincula dimensiones. Su estructura fue congelada y preservada en el archivo para mantener abiertas las rutas multiversales.",
 
-  "timeline.union.title": "La convergencia de las tres arquitecturas ⚡🔥❄️",
+  "timeline.union.title": "La Ascensión del Hero💫Node Definitivo 👑⚡",
   "timeline.union.description":
-    "ZapSol, MonkeSol y ChipiSol sincronizan sus auras, formando la base tri‑capa del protocolo Solana Legends.",
+    "El ritual concluye y la comunidad elige la velocidad. ZapSol se alza como el Hero Token oficial, respaldado por la sabiduría del fuego y la resiliencia del hielo.",
+  
   "timeline.closure":
-    "Así emergió la primera tríada de Hero💫Nodes, unida en una nueva arquitectura cósmica.",
+    "Tres arquitecturas elementales. Un único vencedor. El protocolo de Solana Legends ha sido completado.",
 
   // Gallery
   "gallery.title": "Salón de los Héroes ✨ Archivo Blueprint",
