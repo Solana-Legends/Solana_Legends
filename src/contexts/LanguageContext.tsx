@@ -195,8 +195,8 @@ const enTranslations = {
 
   // Individual hero pages
   "chipisol.title": "ChipiSol",
-  "chipisol.subtitle": "Cosmic Hero💫Gateway ❄️ a dimensional entity linking realms and blockchains.",
-  "chipisol.quote": "Crystalline gateways preserve the memory of the universe and open routes to the eternal.",
+  "chipisol.subtitle": "ARCHIVED BLUEPRINT ❄️ DIMENSIONAL GATEWAY",
+  "chipisol.quote": "The Icy Strategy is preserved in the portal. Its crystals protect the memory of the universe and keep the routes to the eternal open.",
 
   "monkesol.title": "MonkeSol",
   "monkesol.subtitle": "ARCHIVED BLUEPRINT 🔥 ANCESTRAL WISDOM",
@@ -396,8 +396,8 @@ const esTranslations = {
 
   // Individual hero pages
   "chipisol.title": "ChipiSol",
-  "chipisol.subtitle": "Cosmic Hero💫Gateway ❄️ una entidad dimensional que enlaza reinos y blockchains.",
-  "chipisol.quote": "Los portales cristalinos preservan la memoria del universo y abren rutas hacia lo eterno.",
+  "chipisol.subtitle": "BLUEPRINT ARCHIVADO ❄️ PUERTA DIMENSIONAL",
+  "chipisol.quote": "La Estrategia Gélida se preserva en el portal. Sus cristales protegen la memoria del universo y mantienen abiertas las rutas hacia lo eterno.",
 
   "monkesol.title": "MonkeSol",
   "monkesol.subtitle": "BLUEPRINT ARCHIVADO 🔥 SABIDURÍA ANCESTRAL",
