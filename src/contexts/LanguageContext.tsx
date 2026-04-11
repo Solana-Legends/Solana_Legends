@@ -194,11 +194,9 @@ const enTranslations = {
     "At every dawn and dusk, the fire renews with the network’s energy",
 
   // Individual hero pages
-  "chipisol.title": "❄️ ChipiSol",
-  "chipisol.subtitle":
-    "Cosmic Hero💫Gateway ❄️ a dimensional entity linking realms and blockchains.",
-  "chipisol.quote":
-    "Crystalline gateways preserve the memory of the universe and open routes to the eternal.",
+  "chipisol.title": "ChipiSol",
+  "chipisol.subtitle": "Cosmic Hero💫Gateway ❄️ a dimensional entity linking realms and blockchains.",
+  "chipisol.quote": "Crystalline gateways preserve the memory of the universe and open routes to the eternal.",
 
   "monkesol.title": "MonkeSol",
   "monkesol.subtitle": "ARCHIVED BLUEPRINT 🔥 ANCESTRAL WISDOM",
@@ -397,11 +395,9 @@ const esTranslations = {
     "Cada amanecer y cada ocaso, el fuego se renueva con la energía de la red",
 
   // Individual hero pages
-  "chipisol.title": "❄️ ChipiSol",
-  "chipisol.subtitle":
-    "Cosmic Hero💫Gateway ❄️ una entidad dimensional que enlaza reinos y blockchains.",
-  "chipisol.quote":
-    "Los portales cristalinos preservan la memoria del universo y abren rutas hacia lo eterno.",
+  "chipisol.title": "ChipiSol",
+  "chipisol.subtitle": "Cosmic Hero💫Gateway ❄️ una entidad dimensional que enlaza reinos y blockchains.",
+  "chipisol.quote": "Los portales cristalinos preservan la memoria del universo y abren rutas hacia lo eterno.",
 
   "monkesol.title": "MonkeSol",
   "monkesol.subtitle": "BLUEPRINT ARCHIVADO 🔥 SABIDURÍA ANCESTRAL",

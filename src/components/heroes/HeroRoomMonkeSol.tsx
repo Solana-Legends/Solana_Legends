@@ -2,7 +2,7 @@ import { useLanguage } from "@/contexts/LanguageContext";
 import { useEffect, useState } from "react";
 
 import FireParticle from "@/components/particles/FireParticle";
-import PointParticleMonkeSol from "@/components/particles/PointParticleMonkeSol";
+// Eliminamos PointParticleMonkeSol para dejar solo llamas
 
 export default function HeroRoomMonkeSol() {
   const { t } = useLanguage();
@@ -39,30 +39,27 @@ export default function HeroRoomMonkeSol() {
       <div className="absolute top-0 left-[15%] md:left-[20%] w-[1px] h-full bg-gradient-to-b from-transparent via-red-500/50 to-transparent shadow-[0_0_15px_#ef4444] animate-[pulse_2s_infinite] pointer-events-none" />
       <div className="absolute top-0 right-[15%] md:right-[20%] w-[1px] h-full bg-gradient-to-b from-transparent via-orange-500/50 to-transparent shadow-[0_0_15px_#f97316] animate-[pulse_3s_infinite] pointer-events-none" />
 
-      {/* 🔥 Llamas + 🟧 Puntos cálidos (Con Fade In y Fade Out suave) */}
+      {/* 🔥 SOLO LLAMAS: 44 Partículas con diferentes tamaños y efectos */}
       <div className="absolute inset-0 pointer-events-none z-0 animacion-ciclo-suave">
-        {Array.from({ length: 36 }).map((_, i) => {
-          const isFlame = i % 2 === 0;
-
+        {Array.from({ length: 44 }).map((_, i) => {
           const flameAnimations = [
             "animate-flamePulse",
             "animate-flameFlicker",
             "animate-flameFloat",
           ];
-          const pointAnimations = [
-            "animate-pointPulse",
-            "animate-pointFloat",
-            "animate-pointPing",
+          
+          const sizeTypes = [
+            "scale-50", 
+            "scale-75", 
+            "scale-100", 
+            "scale-125", 
+            "scale-150"
           ];
 
-          const animationClass = isFlame
-            ? flameAnimations[i % flameAnimations.length]
-            : pointAnimations[i % pointAnimations.length];
+          const animationClass = `${flameAnimations[i % flameAnimations.length]} ${sizeTypes[i % sizeTypes.length]}`;
 
-          return isFlame ? (
+          return (
             <FireParticle key={i} animationClass={animationClass} cycleKey={cycleKey} />
-          ) : (
-            <PointParticleMonkeSol key={i} animationClass={animationClass} cycleKey={cycleKey} />
           );
         })}
       </div>
@@ -71,7 +68,6 @@ export default function HeroRoomMonkeSol() {
       <div className="relative z-10 w-full max-w-5xl mx-auto text-center flex flex-col items-center justify-center flex-grow">
         
         <div className="mb-10 flex flex-col items-center">
-          {/* Título corregido: Sin uppercase, escrito MonkeSol, icono derecha */}
           <h3 className="text-5xl md:text-7xl font-black text-white mb-2 tracking-tighter flex items-center justify-center gap-3 animate-in fade-in slide-in-from-bottom-4 duration-1000">
             MonkeSol
             <span className="text-[#f87171] text-6xl md:text-8xl drop-shadow-[0_0_20px_rgba(248,113,113,0.8)]">🔥</span>
