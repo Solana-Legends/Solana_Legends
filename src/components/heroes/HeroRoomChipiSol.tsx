@@ -85,7 +85,7 @@ export default function HeroRoomChipiSol() {
             <img
               src="/images/guardians/Chip4.png"
               alt="ChipiSol"
-              className="relative z-10 w-64 h-64 md:w-80 md:h-80 object-contain drop-shadow-[0_0_25px_rgba(6,182,212,0.5)]"
+              className="relative z-10 w-72 h-72 md:w-88 md:h-88 object-contain drop-shadow-[0_0_25px_rgba(6,182,212,0.5)]"
             />
           </div>
         </div>
