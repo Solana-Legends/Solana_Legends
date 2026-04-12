@@ -123,7 +123,7 @@ export default function HeroRoomZapSol() {
             <img
               src="/images/guardians/Zap2.png"
               alt="ZapSol"
-              className="relative z-10 w-64 h-64 md:w-80 md:h-80 object-contain drop-shadow-[0_0_25px_rgba(255,169,8,0.5)] symbol-hero-zapsol-flicker"
+              className="relative z-10 w-80 h-80 md:w-96 md:h-96 object-contain drop-shadow-[0_0_25px_rgba(255,169,8,0.5)] symbol-hero-zapsol-flicker"
             />
           </div>
         </div>
@@ -135,7 +135,7 @@ export default function HeroRoomZapSol() {
       </div>
 
       {/* ZapSol Volador (SIN FLOTACIÓN, SÓLO CHISPORROTEO) */}
-      <div className="absolute bottom-10 right-4 md:bottom-20 md:right-10 w-48 h-48 md:w-80 md:h-80 pointer-events-none z-20 animate-in fade-in slide-in-from-right-8 duration-1000 delay-700">
+      <div className="absolute bottom-8 right-4 md:bottom-20 md:right-10 w-48 h-48 md:w-80 md:h-80 pointer-events-none z-20 animate-in fade-in slide-in-from-right-8 duration-1000 delay-700">
         {/* Quitada la clase animate-float del contenedor */}
         <div className="relative w-full h-full flex justify-center items-center group">
           
