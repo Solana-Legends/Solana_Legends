@@ -97,7 +97,7 @@ export default function HeroRoomChipiSol() {
       </div>
 
       {/* Imagen ChipiSol anclada a la derecha (Con efecto FLOTANTE) */}
-      <div className="absolute bottom-10 right-4 md:bottom-20 md:right-10 w-48 h-48 md:w-80 md:h-80 pointer-events-none z-20 animate-in fade-in slide-in-from-right-8 duration-1000 delay-700">
+      <div className="absolute bottom-2 right-2 md:bottom-20 md:right-10 w-48 h-48 md:w-80 md:h-80 pointer-events-none z-20 animate-in fade-in slide-in-from-right-8 duration-1000 delay-700">
         <div className="relative w-full h-full flex justify-center items-center group animate-float">
           
           <div className="absolute inset-0 rounded-full blur-3xl bg-cyan-500/20 animate-[pulse_4s_infinite] transition-colors duration-500 group-hover:bg-cyan-500/30"></div>
