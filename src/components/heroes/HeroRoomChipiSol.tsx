@@ -83,7 +83,7 @@ export default function HeroRoomChipiSol() {
           
           <div className="animate-float">
             <img
-              src="/images/guardians/Chip2.png"
+              src="/images/guardians/Chip4.png"
               alt="ChipiSol"
               className="relative z-10 w-64 h-64 md:w-80 md:h-80 object-contain drop-shadow-[0_0_25px_rgba(6,182,212,0.5)]"
             />
@@ -103,7 +103,7 @@ export default function HeroRoomChipiSol() {
           <div className="absolute inset-0 rounded-full blur-3xl bg-cyan-500/20 animate-[pulse_4s_infinite] transition-colors duration-500 group-hover:bg-cyan-500/30"></div>
 
           <img
-            src="/assets/ChipiSolVol.png"
+            src="/assets/ChipiSolVol_1.png"
             alt="ChipiSol Hero"
             className="relative z-10 w-full h-full object-contain mix-blend-screen opacity-90 drop-shadow-[0_0_25px_rgba(6,182,212,0.5)] symbol-hero-chipisol"
           />
