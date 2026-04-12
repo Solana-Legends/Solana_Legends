@@ -135,7 +135,7 @@ export default function HeroRoomZapSol() {
       </div>
 
       {/* ZapSol Volador (SIN FLOTACIÓN, SÓLO CHISPORROTEO) */}
-      <div className="absolute bottom-8 right-4 md:bottom-20 md:right-10 w-48 h-48 md:w-80 md:h-80 pointer-events-none z-20 animate-in fade-in slide-in-from-right-8 duration-1000 delay-700">
+      <div className="absolute bottom-4 right-4 md:bottom-20 md:right-10 w-48 h-48 md:w-80 md:h-80 pointer-events-none z-20 animate-in fade-in slide-in-from-right-8 duration-1000 delay-700">
         {/* Quitada la clase animate-float del contenedor */}
         <div className="relative w-full h-full flex justify-center items-center group">
           
