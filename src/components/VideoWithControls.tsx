@@ -50,8 +50,11 @@ export default function VideoWithControls({ src, glowColor = '#A020F0' }: Props)
   };
 
   return (
+    /* Cambiamos a h-full para que el componente ocupe todo el espacio 
+       que el padre (la galería) le asigne.
+    */
     <div
-      className={`relative group rounded-xl overflow-hidden shadow-2xl transition-all duration-300
+      className={`relative w-full h-full group rounded-xl overflow-hidden shadow-2xl transition-all duration-300
         hover:shadow-[0_0_40px_${glowColor}]`}
     >
       <video
@@ -59,7 +62,8 @@ export default function VideoWithControls({ src, glowColor = '#A020F0' }: Props)
         autoPlay
         loop
         playsInline
-        className="w-full h-64 object-cover rounded-xl group-hover:scale-105 transition-transform duration-300"
+        /* ❌ ELIMINADO h-64 | ✅ AÑADIDO h-full */
+        className="w-full h-full object-cover rounded-xl group-hover:scale-105 transition-transform duration-300"
       >
         <source src={src} type="video/mp4" />
       </video>
@@ -67,43 +71,20 @@ export default function VideoWithControls({ src, glowColor = '#A020F0' }: Props)
       <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent rounded-xl pointer-events-none" />
 
       <div className="absolute bottom-4 left-4 flex items-center gap-3 bg-black/50 backdrop-blur-sm p-2 px-3 rounded-full">
-        
-        {/* PLAY / PAUSE */}
-        <button
-          onClick={togglePlay}
-          className="text-white"
-          aria-label={playing ? "Pausar video" : "Reproducir video"}
-        >
+        <button onClick={togglePlay} className="text-white">
           {playing ? <Pause className="w-5 h-5" /> : <Play className="w-5 h-5" />}
         </button>
-
-        {/* MUTE / UNMUTE */}
-        <button
-          onClick={toggleMute}
-          className="text-white"
-          aria-label={muted ? "Activar sonido" : "Silenciar video"}
-        >
+        <button onClick={toggleMute} className="text-white">
           {muted ? <VolumeX className="w-5 h-5" /> : <Volume2 className="w-5 h-5" />}
         </button>
-
-        {/* VOLUME SLIDER */}
         <input
           type="range"
-          min="0"
-          max="1"
-          step="0.01"
+          min="0" max="1" step="0.01"
           value={volume}
           onChange={handleVolumeChange}
           className="w-28 accent-indigo-400"
-          aria-label="Control de volumen"
         />
-
-        {/* FULLSCREEN */}
-        <button
-          onClick={handleFullscreen}
-          className="text-white"
-          aria-label="Pantalla completa"
-        >
+        <button onClick={handleFullscreen} className="text-white">
           <Maximize className="w-5 h-5" />
         </button>
       </div>
