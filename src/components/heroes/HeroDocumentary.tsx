@@ -1,6 +1,6 @@
 import { useLanguage } from "@/contexts/LanguageContext";
 import VideoWithControls from "@/components/VideoWithControls";
-import { Play } from "lucide-react"; // 👈 Importamos el icono de Play
+import { Play } from "lucide-react";
 
 export default function HeroDocumentary() {
   const { language } = useLanguage();
@@ -14,7 +14,7 @@ export default function HeroDocumentary() {
       </div>
 
       <div className="relative z-10 w-full max-w-[1400px] h-full mx-auto flex flex-col justify-between py-2 md:py-4">
-        {/* 1. Cabecera */}
+        {/* 1. Cabecera (Se mantiene fija arriba) */}
         <div className="w-full flex flex-col md:flex-row items-end justify-between gap-4 shrink-0 px-4 pt-2">
           <div className="max-w-[80%] text-left">
             <div className="flex items-center gap-3 mb-1">
@@ -37,28 +37,30 @@ export default function HeroDocumentary() {
           </p>
         </div>
 
-        {/* 2. El Marco del Vídeo */}
-        <div className="relative group w-full flex-grow flex items-center justify-center min-h-0 py-2">
-          <div className="absolute inset-8 bg-gradient-to-r from-purple-600/10 via-[#FFA908]/5 to-blue-600/10 rounded-full blur-3xl opacity-30"></div>
+        {/* 2. Área del Vídeo (Ocupa todo el espacio central) */}
+        <div className="relative w-full flex-grow min-h-0">
+          {/* Este div es el que evita la "línea vertical". 
+              Se posiciona de forma absoluta para forzar el alto y que el aspect-ratio calcule el ancho. */}
+          <div className="absolute inset-0 flex items-center justify-center p-2 md:p-4">
+            <div className="relative h-full aspect-video bg-black rounded-xl md:rounded-3xl overflow-hidden border border-white/10 shadow-[0_0_80px_rgba(0,0,0,0.9)]">
+              <div className="absolute inset-0 w-full h-full">
+                <VideoWithControls src="/assets/Documental_Solana_Legends.mp4" />
+              </div>
 
-          <div className="relative h-full max-h-full aspect-video bg-black rounded-xl md:rounded-3xl overflow-hidden border border-white/10 shadow-[0_0_80px_rgba(0,0,0,0.9)] flex items-center justify-center">
-            <div className="absolute inset-0 w-full h-full">
-              <VideoWithControls src="/assets/Documental_Solana_Legends.mp4" />
-            </div>
-
-            {/* ✅ NUEVO INDICADOR: PLAY en lugar de REC */}
-            <div className="absolute top-6 left-6 flex items-center gap-2.5 pointer-events-none z-20 bg-black/20 backdrop-blur-sm py-1 px-3 rounded-full border border-white/5">
-              <Play className="w-3 h-3 text-white fill-white shadow-[0_0_8px_rgba(255,255,255,0.4)]" />
-              <span className="text-[10px] md:text-xs font-mono text-white tracking-[0.2em] uppercase opacity-80 drop-shadow-md">
-                {language === "es" ? "Reproduciendo" : "Now Playing"}
-              </span>
+              {/* Nuevo Indicador: PLAY / Reproduciendo */}
+              <div className="absolute top-6 left-6 flex items-center gap-2.5 pointer-events-none z-20 bg-black/40 backdrop-blur-md py-1.5 px-3.5 rounded-full border border-white/10">
+                <Play className="w-3 h-3 text-white fill-white" />
+                <span className="text-[10px] md:text-xs font-mono text-white tracking-[0.2em] uppercase opacity-90">
+                  {language === "es" ? "Reproduciendo" : "Now Playing"}
+                </span>
+              </div>
             </div>
           </div>
         </div>
 
-        {/* 3. Mensaje inferior */}
+        {/* 3. Mensaje inferior (Se mantiene fijo abajo) */}
         <div className="w-full flex flex-col justify-center items-center pb-2 shrink-0">
-          <span className="text-base md:text-xl font-mono text-[#FFA908]/60 tracking-[0.3em] uppercase text-center font-bold drop-shadow-[0_2px-10px-rgba(0,0,0,0.5)]">
+          <span className="text-base md:text-xl font-mono text-[#FFA908]/60 tracking-[0.3em] uppercase text-center font-bold drop-shadow-[0_2px_10px_rgba(0,0,0,0.5)]">
             {language === "es"
               ? "Capítulo: 01 — Filosofía de la Paciencia"
               : "Chapter: 01 — Philosophy of Patience"}
