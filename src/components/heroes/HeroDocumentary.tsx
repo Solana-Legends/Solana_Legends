@@ -37,26 +37,30 @@ export default function HeroDocumentary() {
           </p>
         </div>
 
-        {/* 2. Área del Vídeo - ELIMINADO EL GRID PARA GANAR LOS 850px */}
-        <div className="relative w-full flex-grow flex items-center justify-center min-h-0 py-4">
-          {/* Contenedor del Vídeo:
-              - max-w-[850px]: Para que no sobrepase la medida que quieres.
-              - aspect-video: Para forzar el 1.77 (16:9).
-          */}
-          <div className="relative w-full max-w-[850px] aspect-video bg-black rounded-xl md:rounded-3xl overflow-hidden border border-white/10 shadow-[0_0_80px_rgba(0,0,0,0.9)]">
-            <div className="absolute inset-0 w-full h-full">
-              <VideoWithControls
-                src="/assets/Documental_Solana_Legends.mp4"
-                glowColor="#FFA908"
-              />
-            </div>
+        {/* 2. Área del Vídeo - MAXIMIZADA Y CORREGIDA
+            Usamos 'relative flex-grow' para crear el espacio, y un hijo 'absolute' 
+            para que el aspect-ratio no colapse.
+        */}
+        <div className="relative w-full flex-grow min-h-0">
+          <div className="absolute inset-0 flex items-center justify-center p-4 md:p-8">
+            {/* El contenedor del vídeo ahora manda en la altura ('h-full') 
+                y calcula el ancho automáticamente ('aspect-video')
+            */}
+            <div className="relative h-full aspect-video bg-black rounded-2xl md:rounded-[2rem] overflow-hidden border border-white/10 shadow-[0_0_80px_rgba(0,0,0,0.9)]">
+              <div className="absolute inset-0 w-full h-full">
+                <VideoWithControls
+                  src="/assets/Documental_Solana_Legends.mp4"
+                  glowColor="#FFA908"
+                />
+              </div>
 
-            {/* Indicador Now Playing (Ahora sí se verá arriba a la izquierda del vídeo) */}
-            <div className="absolute top-4 left-4 md:top-6 md:left-6 flex items-center gap-2.5 pointer-events-none z-20 bg-black/60 backdrop-blur-md py-1.5 px-3.5 rounded-full border border-white/10">
-              <Play className="w-3 h-3 text-white fill-white shadow-[0_0_8px_rgba(255,255,255,0.3)]" />
-              <span className="text-[10px] md:text-xs font-mono text-white tracking-[0.2em] uppercase font-bold">
-                {language === "es" ? "Reproduciendo" : "Now Playing"}
-              </span>
+              {/* Indicador Now Playing - Ahora sí dentro del marco del vídeo */}
+              <div className="absolute top-4 left-4 md:top-8 md:left-8 flex items-center gap-3 pointer-events-none z-30 bg-black/60 backdrop-blur-md py-2 px-4 rounded-full border border-white/10 shadow-2xl">
+                <Play className="w-3 h-3 md:w-4 md:h-4 text-white fill-white animate-pulse" />
+                <span className="text-[10px] md:text-xs font-mono text-white tracking-[0.2em] uppercase font-bold">
+                  {language === "es" ? "Reproduciendo" : "Now Playing"}
+                </span>
+              </div>
             </div>
           </div>
         </div>
