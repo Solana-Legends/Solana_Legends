@@ -41,24 +41,14 @@ export default function HeroDocumentary() {
           </p>
         </div>
 
-        {/* 2. Área del Vídeo - ESTABILIZADA
-            Usamos 'w-full' y un 'max-w' sólido para que no colapse en una línea.
-        */}
-        <div className="relative w-full flex-grow flex items-center justify-center px-4 py-8">
-          {/* El aura de fondo */}
-          <div className="absolute inset-20 bg-gradient-to-r from-purple-600/10 via-[#FFA908]/5 to-blue-600/10 rounded-full blur-3xl opacity-20"></div>
-
-          {/* Recuadro del Vídeo: 
-              - max-w-[950px] es el punto dulce para que se vea grande pero respete los márgenes.
-              - h-auto + aspect-video garantiza el 16:9 perfecto.
-          */}
-          <div className="relative w-full max-w-[950px] aspect-video bg-black rounded-2xl md:rounded-[2.5rem] overflow-hidden border border-white/10 shadow-[0_0_80px_rgba(0,0,0,0.9)]">
-            <div className="absolute inset-0">
-              <VideoWithControls
-                src="/assets/Documental_Solana_Legends.mp4"
-                glowColor="#FFA908"
-              />
-            </div>
+        {/* 2. Área del Vídeo - AQUÍ ESTÁ EL CAMBIO CLAVE */}
+        <div className="relative w-full flex-grow flex items-center justify-center min-h-0 py-6 px-4">
+          {/* Eliminamos el GRID y usamos un contenedor único con max-w-[1100px] o el que prefieras */}
+          <div className="relative w-full max-w-[1100px] aspect-video bg-black rounded-2xl overflow-hidden border border-white/10 shadow-[0_0_80px_rgba(0,0,0,0.9)] group">
+            <VideoWithControls
+              src="/assets/Documental_Solana_Legends.mp4"
+              glowColor="#A020F0"
+            />
 
             {/* Indicador de Reproducción anclado al marco del vídeo */}
             <div className="absolute top-4 left-4 md:top-8 md:left-8 flex items-center gap-3 pointer-events-none z-20 bg-black/60 backdrop-blur-md py-1.5 px-4 rounded-full border border-white/10 shadow-2xl">
