@@ -11,9 +11,11 @@ export default function NotFoundPage() {
         </div>
 
         <div className="flex flex-col sm:flex-row gap-3 justify-center">
-          <Button asChild>
-            <a href="/">Return Home</a>
+          {/* CORRECCIÓN: Eliminado asChild y la etiqueta <a>. Usamos onClick para redirigir. */}
+          <Button onClick={() => window.location.href = '/'}>
+            Return Home
           </Button>
+          
           <Button variant="outline" onClick={() => window.history.back()}>
             Go Back
           </Button>
