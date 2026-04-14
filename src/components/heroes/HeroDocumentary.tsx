@@ -1,67 +1,66 @@
 import { useLanguage } from "@/contexts/LanguageContext";
 import VideoWithControls from "@/components/VideoWithControls";
-// ❌ ELIMINADO: import { PlayCircle } from "lucide-react";
 
 export default function HeroDocumentary() {
   const { language } = useLanguage();
 
   return (
-    <section className="relative w-full min-h-screen bg-[#0F0B1E] py-12 md:py-20 px-4 overflow-hidden flex flex-col justify-center items-center">
+    // h-screen (en lugar de min-h) fija la sección al tamaño exacto de la ventana
+    <section className="relative w-full h-screen bg-[#0F0B1E] overflow-hidden flex flex-col items-center p-4 md:p-8">
       
-      {/* Decoración de fondo: Luces de estudio/teatro */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-full pointer-events-none">
-        <div className="absolute top-[-10%] left-[-10%] w-64 h-64 bg-purple-600/10 rounded-full blur-[120px] animate-pulse" />
-        <div className="absolute bottom-[-10%] right-[-10%] w-96 h-96 bg-blue-600/10 rounded-full blur-[120px] animate-pulse delay-700" />
+      {/* Decoración de fondo */}
+      <div className="absolute inset-0 pointer-events-none">
+        <div className="absolute top-0 left-1/4 w-96 h-96 bg-purple-600/5 rounded-full blur-[120px] animate-pulse" />
+        <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-blue-600/5 rounded-full blur-[120px] animate-pulse delay-700" />
       </div>
 
-      {/* ❌ CORREGIDO: Eliminado el w-full duplicado al final del className */}
-      <div className="relative z-10 w-full max-w-[1400px] mx-auto flex flex-col justify-center">
+      {/* Contenedor principal: Ocupa el 100% de la altura disponible */}
+      <div className="relative z-10 w-full max-w-[1400px] h-full mx-auto flex flex-col justify-between">
         
-        {/* Cabecera de la sección */}
-        <div className="flex flex-col md:flex-row items-end justify-between mb-8 gap-6 px-4 md:px-8">
-          <div className="max-w-3xl">
-            <div className="flex items-center gap-2 mb-4">
-              <span className="w-12 h-[1px] bg-[#FFA908]"></span>
-              <span className="text-[#FFA908] font-mono text-xs tracking-[0.4em] uppercase">
+        {/* 1. Cabecera - Reducimos márgenes para dar aire al vídeo */}
+        <div className="w-full flex flex-col md:flex-row items-end justify-between pt-4 md:pt-0 gap-4 shrink-0 px-4">
+          <div className="max-w-2xl text-left">
+            <div className="flex items-center gap-2 mb-2">
+              <span className="w-8 h-[1px] bg-[#FFA908]"></span>
+              <span className="text-[#FFA908] font-mono text-[10px] tracking-[0.4em] uppercase">
                 {language === 'es' ? 'Archivo Audiovisual' : 'Audiovisual Archive'}
               </span>
             </div>
-            <h2 className="text-4xl md:text-5xl lg:text-7xl font-black text-white tracking-tighter uppercase leading-none drop-shadow-lg">
+            <h2 className="text-3xl md:text-5xl lg:text-6xl font-black text-white tracking-tighter uppercase leading-none">
               {language === 'es' ? 'El Documental' : 'The Documentary'}
             </h2>
           </div>
-          
-          <p className="text-indigo-200/60 font-mono text-xs md:text-sm max-w-sm md:text-right leading-relaxed border-l md:border-l-0 md:border-r border-white/10 pl-4 md:pl-0 md:pr-4">
+          <p className="hidden md:block text-indigo-200/40 font-mono text-[10px] max-w-xs text-right leading-tight border-r border-white/10 pr-4">
             {language === 'es' 
-              ? 'Una inmersión profunda en las raíces y la filosofía que dieron vida a la tríada original.' 
-              : 'A deep dive into the roots and philosophy that brought the original triad to life.'}
+              ? 'Inmersión profunda en las raíces de la tríada original.' 
+              : 'Deep dive into the roots of the original triad.'}
           </p>
         </div>
 
-        {/* El Marco del Vídeo (16:9) */}
-        <div className="relative group animate-in fade-in zoom-in-95 duration-1000 w-full aspect-video">
+        {/* 2. El Marco del Vídeo: La clave es 'flex-grow' para que chupe todo el espacio libre */}
+        <div className="relative group w-full flex-grow flex items-center justify-center min-h-0 py-4">
           
-          {/* Brillo perimetral dinámico ajustado */}
-          <div className="absolute -inset-2 bg-gradient-to-r from-purple-600/30 via-[#FFA908]/30 to-blue-600/30 rounded-2xl blur-xl opacity-40 group-hover:opacity-70 transition duration-1000 group-hover:duration-500"></div>
+          {/* Brillo dinámico */}
+          <div className="absolute inset-4 bg-gradient-to-r from-purple-600/20 via-[#FFA908]/10 to-blue-600/20 rounded-2xl blur-2xl opacity-40"></div>
           
-          <div className="relative w-full h-full bg-black rounded-xl md:rounded-2xl overflow-hidden border border-white/10 shadow-[0_20px_50px_rgba(0,0,0,0.5)]">
+          {/* Contenedor del vídeo con aspect-video pero limitado por el alto del padre */}
+          <div className="relative w-full h-full max-h-full aspect-video bg-black rounded-xl md:rounded-2xl overflow-hidden border border-white/10 shadow-[0_0_50px_rgba(0,0,0,0.6)]">
             <VideoWithControls 
               src="/assets/Documental_Solana_Legends.mp4" 
               glowColor="#FFA908" 
             />
             
-            {/* Superposición estética de "Grabación" */}
-            <div className="absolute top-6 left-6 flex items-center gap-2 pointer-events-none opacity-50">
-              <div className="w-3 h-3 bg-red-600 rounded-full animate-pulse shadow-[0_0_10px_red]"></div>
-              <span className="text-xs font-mono text-white tracking-[0.3em] uppercase drop-shadow-md">REC</span>
+            <div className="absolute top-4 left-4 flex items-center gap-2 pointer-events-none opacity-40">
+              <div className="w-2 h-2 bg-red-600 rounded-full animate-pulse shadow-[0_0_10px_red]"></div>
+              <span className="text-[10px] font-mono text-white tracking-widest uppercase">REC</span>
             </div>
           </div>
         </div>
 
-        {/* Footer de la sección */}
-        <div className="mt-8 flex justify-center">
-          <div className="inline-flex items-center gap-4 px-6 py-2.5 rounded-full border border-white/10 bg-black/40 backdrop-blur-md shadow-lg">
-            <span className="text-[10px] md:text-xs font-mono text-[#FFA908] tracking-widest uppercase">
+        {/* 3. Mensaje inferior - Pegado abajo para no empujar el vídeo */}
+        <div className="w-full flex justify-center items-center pb-4 shrink-0">
+          <div className="inline-flex items-center justify-center gap-4 px-6 py-2 rounded-full border border-white/5 bg-black/40 backdrop-blur-md">
+            <span className="text-[10px] font-mono text-[#FFA908] tracking-[0.2em] uppercase text-center">
               {language === 'es' ? 'Capítulo: 01 — Filosofía de la Paciencia' : 'Chapter: 01 — Philosophy of Patience'}
             </span>
           </div>
