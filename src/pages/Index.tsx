@@ -7,9 +7,9 @@ import SocialLinks from "@/components/SocialLinks";
 import LanguageSwitcher from "@/components/LanguageSwitcher";
 
 export default function Index() {
+  console.log("Renderizando Index.tsx - Cortafuegos activado");
   return (
-    <div className="min-h-screen bg-black overflow-x-hidden">
-      {/* ❌ Eliminado el max-w que creaba bandas laterales */}
+    <div className="min-h-screen bg-black overflow-x-hidden border-8 border-red-500">
       <div className="w-full overflow-x-hidden">
         <LanguageSwitcher />
         <HeroSection />
