@@ -46,7 +46,7 @@ export default function HeroDocumentary() {
           
           <div className="relative w-full h-full bg-black rounded-xl md:rounded-2xl overflow-hidden border border-white/10 shadow-[0_20px_50px_rgba(0,0,0,0.5)]">
             <VideoWithControls 
-              src="/assets/Documental_Solana_Lengends.mp4" 
+              src="/assets/Documental_Solana_Legends.mp4" 
               glowColor="#FFA908" 
             />
             
