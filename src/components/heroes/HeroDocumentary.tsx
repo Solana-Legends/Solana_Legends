@@ -14,7 +14,7 @@ export default function HeroDocumentary() {
       </div>
 
       <div className="relative z-10 w-full max-w-[1400px] h-full mx-auto flex flex-col justify-between py-4">
-        {/* 1. Cabecera (Se mantiene fija arriba) */}
+        {/* 1. Cabecera */}
         <div className="w-full flex flex-col md:flex-row items-end justify-between gap-4 shrink-0 px-6 pt-2">
           <div className="max-w-[80%] text-left">
             <div className="flex items-center gap-3 mb-1">
@@ -29,7 +29,6 @@ export default function HeroDocumentary() {
               {language === "es" ? "El Documental" : "The Documentary"}
             </h2>
           </div>
-
           <p className="hidden md:block text-indigo-200/40 font-mono text-xs md:text-sm max-w-xs text-right leading-tight border-r border-white/10 pr-6">
             {language === "es"
               ? "Inmersión profunda en las raíces de la tríada original."
@@ -37,36 +36,34 @@ export default function HeroDocumentary() {
           </p>
         </div>
 
-        {/* 2. Área del Vídeo (Ocupa el centro sin desbordar) */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-10 w-full max-w-6xl mx-auto px-4 mb-16 md:mb-24 z-10">
-          <div className="animate-in fade-in slide-in-from-left duration-1000">
-            {/* ✅ AÑADIDO: aspect-video */}
-            <div className="relative group rounded-xl overflow-hidden aspect-video transition-all duration-500 hover:scale-[1.02] border border-purple-500/30 shadow-[0_0_30px_rgba(160,32,240,0.15)]">
-              <VideoWithControls
-                src="/assets/Documental_Solana_Legends.mp4"
-                glowColor="#A020F0"
-              />
+        {/* 2. Área del Vídeo - AQUÍ ESTÁ EL CAMBIO CLAVE */}
+        <div className="relative w-full flex-grow flex items-center justify-center min-h-0 py-6 px-4">
+          {/* Eliminamos el GRID y usamos un contenedor único con max-w-[1100px] o el que prefieras */}
+          <div className="relative w-full max-w-[1100px] aspect-video bg-black rounded-2xl overflow-hidden border border-white/10 shadow-[0_0_80px_rgba(0,0,0,0.9)] group">
+            <VideoWithControls
+              src="/assets/Documental_Solana_Legends.mp4"
+              glowColor="#A020F0"
+            />
+
+            {/* Indicador: PLAY / Reproduciendo - Ahora anclado al vídeo */}
+            <div className="absolute top-4 left-4 md:top-8 md:left-8 flex items-center gap-2.5 pointer-events-none z-20 bg-black/40 backdrop-blur-md py-1.5 px-4 rounded-full border border-white/10">
+              <Play className="w-3 h-3 text-white fill-white shadow-[0_0_8px_rgba(255,255,255,0.4)]" />
+              <span className="text-[10px] md:text-xs font-mono text-white tracking-[0.2em] uppercase font-bold">
+                {language === "es" ? "Reproduciendo" : "Now Playing"}
+              </span>
             </div>
           </div>
-
-          {/* Indicador: PLAY / Reproduciendo */}
-          <div className="absolute top-6 left-6 flex items-center gap-2.5 pointer-events-none z-20 bg-black/40 backdrop-blur-md py-1.5 px-4 rounded-full border border-white/10">
-            <Play className="w-3 h-3 text-white fill-white" />
-            <span className="text-[10px] md:text-xs font-mono text-white tracking-[0.2em] uppercase opacity-90">
-              {language === "es" ? "Reproduciendo" : "Now Playing"}
-            </span>
-          </div>
         </div>
-      </div>
 
-      {/* 3. Mensaje inferior (Ahora siempre visible) */}
-      <div className="w-full flex flex-col justify-center items-center pb-6 shrink-0">
-        <span className="text-base md:text-xl font-mono text-[#FFA908]/60 tracking-[0.3em] uppercase text-center font-bold drop-shadow-[0_2px_10px_rgba(0,0,0,0.5)]">
-          {language === "es"
-            ? "Capítulo: 01 — Filosofía de la Paciencia"
-            : "Chapter: 01 — Philosophy of Patience"}
-        </span>
-        <div className="w-28 h-[1px] bg-gradient-to-r from-transparent via-[#FFA908]/20 to-transparent mt-3"></div>
+        {/* 3. Mensaje inferior */}
+        <div className="w-full flex flex-col justify-center items-center pb-6 shrink-0">
+          <span className="text-base md:text-xl font-mono text-[#FFA908]/60 tracking-[0.3em] uppercase text-center font-bold">
+            {language === "es"
+              ? "Capítulo: 01 — Filosofía de la Paciencia"
+              : "Chapter: 01 — Philosophy of Patience"}
+          </span>
+          <div className="w-28 h-[1px] bg-gradient-to-r from-transparent via-[#FFA908]/20 to-transparent mt-3"></div>
+        </div>
       </div>
     </section>
   );
