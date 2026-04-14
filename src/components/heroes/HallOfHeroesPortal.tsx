@@ -1,6 +1,6 @@
 import HeroCard from "@/components/heroes/HeroCard";
 import HeroesLayout from "@/components/heroes/HeroesLayout";
-import HeroesGallery from "./HeroesGallery";
+// ❌ Importación de HeroesGallery eliminada de aquí
 
 const guardians = [
   {
@@ -62,8 +62,8 @@ export default function HallOfHeroesPortal() {
            Ritual Status: Zap Sol Ascended ⚡
         </p>
       </footer>
-
-      <HeroesGallery />
+      
+      {/* ❌ Etiqueta <HeroesGallery /> eliminada. Ahora este componente SOLO dibuja la entrada. */}
     </HeroesLayout>
   );
 }
