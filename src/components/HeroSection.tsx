@@ -65,10 +65,10 @@ export default function HeroSection() {
         {/* Videos Section (max-w-6xl en lugar de max-w-4xl para ensancharlos) */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-4 mb-3 max-w-6xl mx-auto w-full px-2">
           <div className="relative aspect-video rounded-xl overflow-hidden border border-purple-500/40 bg-black/50">
-            <VideoWithControls src="/assets/MorfeoGuía_Completo_1.mp4" />
+            <VideoWithControls src="/assets/MorfeoGuía_Completo_1.mp4" glowColor="#A020F0" />
           </div>
           <div className="relative aspect-video rounded-xl overflow-hidden border border-blue-400/40 bg-black/50">
-            <VideoWithControls src="/assets/Zapsol_The_Chosen_Hero_música.mp4" />
+            <VideoWithControls src="/assets/Zapsol_The_Chosen_Hero_música.mp4" glowColor="#00BFFF" />
           </div>
         </div>
 
