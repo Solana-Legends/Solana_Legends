@@ -1,6 +1,6 @@
 import HeroCard from "@/components/heroes/HeroCard";
 import HeroesLayout from "@/components/heroes/HeroesLayout";
-// ❌ Importación de HeroesGallery eliminada de aquí
+import { useLanguage } from "@/contexts/LanguageContext"; // 👈 Añadimos la importación del idioma
 
 const guardians = [
   {
@@ -45,6 +45,8 @@ const guardians = [
 ];
 
 export default function HallOfHeroesPortal() {
+  const { language } = useLanguage(); // 👈 Activamos el hook
+
   return (
     <HeroesLayout titleKey="hero.hallOfHeroes" subtitleKey="hero.tagline">
       
@@ -59,11 +61,11 @@ export default function HallOfHeroesPortal() {
 
       <footer className="mt-8 py-6 border-t border-white/5 bg-black/20 w-full">
         <p className="text-center text-[10px] md:text-xs text-yellow-500/50 font-mono tracking-[0.5em] uppercase">
-           Ritual Status: Zap Sol Ascended ⚡
+           {/* 👈 Condicional de idioma aplicado */}
+           {language === 'es' ? 'Estado del Ritual: Zap Sol Ascendido ⚡' : 'Ritual Status: Zap Sol Ascended ⚡'}
         </p>
       </footer>
       
-      {/* ❌ Etiqueta <HeroesGallery /> eliminada. Ahora este componente SOLO dibuja la entrada. */}
     </HeroesLayout>
   );
 }

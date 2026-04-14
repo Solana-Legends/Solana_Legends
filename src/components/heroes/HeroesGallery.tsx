@@ -51,9 +51,9 @@ export default function HeroesGallery() {
           </div>
         </div>
 
-        {/* NUEVO: Indicador de Scroll hacia las salas */}
-        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center opacity-60 animate-bounce">
-          <span className="text-[10px] md:text-xs font-mono uppercase tracking-[0.3em] text-[#FFA908] mb-2">
+        {/* NUEVO: Indicador de Scroll hacia las salas (CENTRADO ABSOLUTO CORREGIDO) */}
+        <div className="absolute bottom-8 left-0 w-full flex flex-col items-center justify-center opacity-60 animate-bounce pointer-events-none px-4">
+          <span className="text-[10px] md:text-xs font-mono uppercase tracking-[0.3em] text-[#FFA908] mb-2 text-center">
             {language === 'es' ? 'Acceder a los Salones de los Héroes' : 'Access the Halls of Heroes'}
           </span>
           <ChevronDown className="w-5 h-5 text-[#FFA908]" />
