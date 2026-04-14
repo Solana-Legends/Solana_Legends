@@ -38,36 +38,35 @@ export default function HeroDocumentary() {
         </div>
 
         {/* 2. Área del Vídeo (Ocupa el centro sin desbordar) */}
-        <div className="relative w-full flex-grow min-h-0">
-          {/* AÑADIDO: 'p-8 md:p-14' para reducir la altura del marco y que no pise el footer.
-              Esto garantiza que el vídeo siempre sea un poco más bajo que el espacio disponible. */}
-          <div className="absolute inset-0 flex items-center justify-center p-8 md:p-14">
-            {/* 'max-w-full' asegura que si el alto crece mucho, el ancho no se salga de la pantalla */}
-            <div className="relative h-full max-w-full aspect-video bg-black rounded-3xl overflow-hidden border border-white/10 shadow-[0_0_80px_rgba(0,0,0,0.9)] transition-all duration-500">
-              <div className="absolute inset-0 w-full h-full">
-                <VideoWithControls src="/assets/Documental_Solana_Legends.mp4" />
-              </div>
-
-              {/* Indicador: PLAY / Reproduciendo */}
-              <div className="absolute top-6 left-6 flex items-center gap-2.5 pointer-events-none z-20 bg-black/40 backdrop-blur-md py-1.5 px-4 rounded-full border border-white/10">
-                <Play className="w-3 h-3 text-white fill-white" />
-                <span className="text-[10px] md:text-xs font-mono text-white tracking-[0.2em] uppercase opacity-90">
-                  {language === "es" ? "Reproduciendo" : "Now Playing"}
-                </span>
-              </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-10 w-full max-w-6xl mx-auto px-4 mb-16 md:mb-24 z-10">
+          <div className="animate-in fade-in slide-in-from-left duration-1000">
+            {/* ✅ AÑADIDO: aspect-video */}
+            <div className="relative group rounded-xl overflow-hidden aspect-video transition-all duration-500 hover:scale-[1.02] border border-purple-500/30 shadow-[0_0_30px_rgba(160,32,240,0.15)]">
+              <VideoWithControls
+                src="/assets/Documental_Solana_Legends.mp4"
+                glowColor="#A020F0"
+              />
             </div>
           </div>
-        </div>
 
-        {/* 3. Mensaje inferior (Ahora siempre visible) */}
-        <div className="w-full flex flex-col justify-center items-center pb-6 shrink-0">
-          <span className="text-base md:text-xl font-mono text-[#FFA908]/60 tracking-[0.3em] uppercase text-center font-bold drop-shadow-[0_2px_10px_rgba(0,0,0,0.5)]">
-            {language === "es"
-              ? "Capítulo: 01 — Filosofía de la Paciencia"
-              : "Chapter: 01 — Philosophy of Patience"}
-          </span>
-          <div className="w-28 h-[1px] bg-gradient-to-r from-transparent via-[#FFA908]/20 to-transparent mt-3"></div>
+          {/* Indicador: PLAY / Reproduciendo */}
+          <div className="absolute top-6 left-6 flex items-center gap-2.5 pointer-events-none z-20 bg-black/40 backdrop-blur-md py-1.5 px-4 rounded-full border border-white/10">
+            <Play className="w-3 h-3 text-white fill-white" />
+            <span className="text-[10px] md:text-xs font-mono text-white tracking-[0.2em] uppercase opacity-90">
+              {language === "es" ? "Reproduciendo" : "Now Playing"}
+            </span>
+          </div>
         </div>
+      </div>
+
+      {/* 3. Mensaje inferior (Ahora siempre visible) */}
+      <div className="w-full flex flex-col justify-center items-center pb-6 shrink-0">
+        <span className="text-base md:text-xl font-mono text-[#FFA908]/60 tracking-[0.3em] uppercase text-center font-bold drop-shadow-[0_2px_10px_rgba(0,0,0,0.5)]">
+          {language === "es"
+            ? "Capítulo: 01 — Filosofía de la Paciencia"
+            : "Chapter: 01 — Philosophy of Patience"}
+        </span>
+        <div className="w-28 h-[1px] bg-gradient-to-r from-transparent via-[#FFA908]/20 to-transparent mt-3"></div>
       </div>
     </section>
   );
