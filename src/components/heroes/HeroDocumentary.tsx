@@ -5,7 +5,6 @@ export default function HeroDocumentary() {
   const { language } = useLanguage();
 
   return (
-    // h-screen (en lugar de min-h) fija la sección al tamaño exacto de la ventana
     <section className="relative w-full h-screen bg-[#0F0B1E] overflow-hidden flex flex-col items-center p-4 md:p-8">
       
       {/* Decoración de fondo */}
@@ -14,53 +13,56 @@ export default function HeroDocumentary() {
         <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-blue-600/5 rounded-full blur-[120px] animate-pulse delay-700" />
       </div>
 
-      {/* Contenedor principal: Ocupa el 100% de la altura disponible */}
-      <div className="relative z-10 w-full max-w-[1400px] h-full mx-auto flex flex-col justify-between">
+      <div className="relative z-10 w-full max-w-[1400px] h-full mx-auto flex flex-col justify-between py-2">
         
-        {/* 1. Cabecera - Reducimos márgenes para dar aire al vídeo */}
-        <div className="w-full flex flex-col md:flex-row items-end justify-between pt-4 md:pt-0 gap-4 shrink-0 px-4">
+        {/* 1. Cabecera - Textos más grandes */}
+        <div className="w-full flex flex-col md:flex-row items-end justify-between gap-4 shrink-0 px-4">
           <div className="max-w-2xl text-left">
             <div className="flex items-center gap-2 mb-2">
-              <span className="w-8 h-[1px] bg-[#FFA908]"></span>
-              <span className="text-[#FFA908] font-mono text-[10px] tracking-[0.4em] uppercase">
+              <span className="w-10 h-[1px] bg-[#FFA908]"></span>
+              {/* TAMAÑO SUBIDO: de text-[10px] a text-sm */}
+              <span className="text-[#FFA908] font-mono text-xs md:text-sm tracking-[0.4em] uppercase">
                 {language === 'es' ? 'Archivo Audiovisual' : 'Audiovisual Archive'}
               </span>
             </div>
-            <h2 className="text-3xl md:text-5xl lg:text-6xl font-black text-white tracking-tighter uppercase leading-none">
+            <h2 className="text-4xl md:text-5xl lg:text-7xl font-black text-white tracking-tighter uppercase leading-none">
               {language === 'es' ? 'El Documental' : 'The Documentary'}
             </h2>
           </div>
-          <p className="hidden md:block text-indigo-200/40 font-mono text-[10px] max-w-xs text-right leading-tight border-r border-white/10 pr-4">
+          {/* TAMAÑO SUBIDO: de text-[10px] a text-xs/sm */}
+          <p className="hidden md:block text-indigo-200/50 font-mono text-xs md:text-sm max-w-sm text-right leading-tight border-r border-white/10 pr-4">
             {language === 'es' 
               ? 'Inmersión profunda en las raíces de la tríada original.' 
               : 'Deep dive into the roots of the original triad.'}
           </p>
         </div>
 
-        {/* 2. El Marco del Vídeo: La clave es 'flex-grow' para que chupe todo el espacio libre */}
-        <div className="relative group w-full flex-grow flex items-center justify-center min-h-0 py-4">
+        {/* 2. El Marco del Vídeo - Forzamos el llenado total */}
+        <div className="relative group w-full flex-grow flex items-center justify-center min-h-0 py-6">
+          <div className="absolute inset-4 bg-gradient-to-r from-purple-600/20 via-[#FFA908]/10 to-blue-600/20 rounded-2xl blur-3xl opacity-40"></div>
           
-          {/* Brillo dinámico */}
-          <div className="absolute inset-4 bg-gradient-to-r from-purple-600/20 via-[#FFA908]/10 to-blue-600/20 rounded-2xl blur-2xl opacity-40"></div>
-          
-          {/* Contenedor del vídeo con aspect-video pero limitado por el alto del padre */}
-          <div className="relative w-full h-full max-h-full aspect-video bg-black rounded-xl md:rounded-2xl overflow-hidden border border-white/10 shadow-[0_0_50px_rgba(0,0,0,0.6)]">
-            <VideoWithControls 
-              src="/assets/Documental_Solana_Legends.mp4" 
-              glowColor="#FFA908" 
-            />
+          <div className="relative w-full h-full max-h-full aspect-video bg-black rounded-xl md:rounded-3xl overflow-hidden border border-white/10 shadow-[0_0_60px_rgba(0,0,0,0.8)]">
+            {/* IMPORTANTE: Si tu componente VideoWithControls permite className, 
+                añadimos w-full h-full para que el vídeo no flote en el centro. 
+            */}
+            <div className="w-full h-full">
+               <VideoWithControls 
+                src="/assets/Documental_Solana_Legends.mp4" 
+                glowColor="#FFA908"
+              />
+            </div>
             
-            <div className="absolute top-4 left-4 flex items-center gap-2 pointer-events-none opacity-40">
-              <div className="w-2 h-2 bg-red-600 rounded-full animate-pulse shadow-[0_0_10px_red]"></div>
-              <span className="text-[10px] font-mono text-white tracking-widest uppercase">REC</span>
+            <div className="absolute top-6 left-6 flex items-center gap-2 pointer-events-none opacity-60">
+              <div className="w-3 h-3 bg-red-600 rounded-full animate-pulse shadow-[0_0_15px_red]"></div>
+              <span className="text-xs font-mono text-white tracking-widest uppercase shadow-black drop-shadow-md">REC</span>
             </div>
           </div>
         </div>
 
-        {/* 3. Mensaje inferior - Pegado abajo para no empujar el vídeo */}
-        <div className="w-full flex justify-center items-center pb-4 shrink-0">
-          <div className="inline-flex items-center justify-center gap-4 px-6 py-2 rounded-full border border-white/5 bg-black/40 backdrop-blur-md">
-            <span className="text-[10px] font-mono text-[#FFA908] tracking-[0.2em] uppercase text-center">
+        {/* 3. Mensaje inferior - TAMAÑO SUBIDO: de text-[10px] a text-xs/sm */}
+        <div className="w-full flex justify-center items-center pb-2 shrink-0">
+          <div className="inline-flex items-center justify-center gap-4 px-10 py-4 rounded-full border border-white/10 bg-black/60 backdrop-blur-xl shadow-2xl">
+            <span className="text-xs md:text-sm font-mono text-[#FFA908] tracking-[0.2em] uppercase text-center font-bold">
               {language === 'es' ? 'Capítulo: 01 — Filosofía de la Paciencia' : 'Chapter: 01 — Philosophy of Patience'}
             </span>
           </div>
