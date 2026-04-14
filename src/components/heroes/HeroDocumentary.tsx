@@ -14,7 +14,7 @@ export default function HeroDocumentary() {
       </div>
 
       <div className="relative z-10 w-full max-w-[1400px] h-full mx-auto flex flex-col justify-between py-4">
-        {/* 1. Cabecera */}
+        {/* 1. Cabecera (Shrink-0 para que no se encoja) */}
         <div className="w-full flex flex-col md:flex-row items-end justify-between gap-4 shrink-0 px-6 pt-2">
           <div className="max-w-[80%] text-left">
             <div className="flex items-center gap-3 mb-1">
@@ -37,24 +37,20 @@ export default function HeroDocumentary() {
           </p>
         </div>
 
-        {/* 2. Área del Vídeo - MAXIMIZADA Y CORREGIDA
-            Usamos 'relative flex-grow' para crear el espacio, y un hijo 'absolute' 
-            para que el aspect-ratio no colapse.
-        */}
-        <div className="relative w-full flex-grow min-h-0">
-          <div className="absolute inset-0 flex items-center justify-center p-4 md:p-8">
-            {/* El contenedor del vídeo ahora manda en la altura ('h-full') 
-                y calcula el ancho automáticamente ('aspect-video')
-            */}
-            <div className="relative h-full aspect-video bg-black rounded-2xl md:rounded-[2rem] overflow-hidden border border-white/10 shadow-[0_0_80px_rgba(0,0,0,0.9)]">
-              <div className="absolute inset-0 w-full h-full">
-                <VideoWithControls
-                  src="/assets/Documental_Solana_Legends.mp4"
-                  glowColor="#FFA908"
-                />
+        {/* 2. Área del Vídeo (El corazón del problema) */}
+        <div className="relative flex-grow w-full min-h-0 flex items-center justify-center p-4">
+          {/* SOLUCIÓN TÉCNICA: 
+            Usamos un contenedor que ocupa todo el espacio disponible (w-full h-full)
+            pero el hijo real tiene 'aspect-video' y 'max-h-full' para no salirse.
+          */}
+          <div className="relative w-full h-full flex items-center justify-center">
+            <div className="relative w-full max-w-full max-h-full aspect-video bg-black rounded-2xl md:rounded-[2.5rem] overflow-hidden border border-white/10 shadow-[0_0_80px_rgba(0,0,0,0.9)]">
+              {/* Vídeo */}
+              <div className="absolute inset-0">
+                <VideoWithControls src="/assets/Documental_Solana_Legends.mp4" />
               </div>
 
-              {/* Indicador Now Playing - Ahora sí dentro del marco del vídeo */}
+              {/* Indicador "Now Playing" - Ahora sí se verá arriba a la izquierda del vídeo */}
               <div className="absolute top-4 left-4 md:top-8 md:left-8 flex items-center gap-3 pointer-events-none z-30 bg-black/60 backdrop-blur-md py-2 px-4 rounded-full border border-white/10 shadow-2xl">
                 <Play className="w-3 h-3 md:w-4 md:h-4 text-white fill-white animate-pulse" />
                 <span className="text-[10px] md:text-xs font-mono text-white tracking-[0.2em] uppercase font-bold">
