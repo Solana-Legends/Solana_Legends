@@ -45,7 +45,7 @@ export default function HeroDocumentary() {
             - py-2 en móvil para quitar los huecos negros.
             - md:py-6 en PC para mantener el aire.
         */}
-        <div className="relative w-full flex-grow flex items-center justify-center min-h-0 py-0 md:py-6 px-4">
+        <div className="relative w-full flex-grow flex items-center justify-center min-h-0 py-6 md:py-6 px-4">
           <div className="relative w-full max-w-[1100px] aspect-video bg-black rounded-xl md:rounded-3xl overflow-hidden border border-white/10 shadow-[0_0_80px_rgba(0,0,0,0.9)] group">
             <VideoWithControls
               src="/assets/Documental_Solana_Legends.mp4"
