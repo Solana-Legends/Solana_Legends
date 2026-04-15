@@ -33,8 +33,8 @@ export default function HeroDocumentary() {
             </h2>
           </div>
 
-          {/* Subtítulo: 'md:-mt-2' para subirlo un poco respecto a su posición original */}
-          <p className="hidden md:block text-indigo-200/40 font-mono text-[10px] md:text-xs max-w-xs text-right leading-tight border-r border-white/10 pr-6 md:-mt-2">
+          {/* CAMBIO AQUÍ: He quitado 'hidden md:block' y he añadido 'block text-center md:text-right' */}
+          <p className="block text-center md:text-right text-indigo-200/40 font-mono text-[10px] md:text-xs max-w-xs leading-tight border-r-0 md:border-r border-white/10 md:pr-6 md:-mt-2">
             {language === "es"
               ? "Inmersión profunda en las raíces de la tríada original."
               : "Deep dive into the roots of the original triad."}
@@ -42,7 +42,7 @@ export default function HeroDocumentary() {
         </div>
 
         {/* 2. Área del Vídeo - AQUÍ ESTÁ EL CAMBIO CLAVE */}
-        <div className="relative w-full flex-grow flex items-center justify-center min-h-0 py-6 px-4">
+        <div className="relative w-full flex-grow flex items-center justify-center min-h-0 py-2 pb-2 md:py-6 px-4">
           {/* Eliminamos el GRID y usamos un contenedor único con max-w-[1100px] o el que prefieras */}
           <div className="relative w-full max-w-[1100px] aspect-video bg-black rounded-2xl overflow-hidden border border-white/10 shadow-[0_0_80px_rgba(0,0,0,0.9)] group">
             <VideoWithControls
@@ -53,7 +53,7 @@ export default function HeroDocumentary() {
             {/* Indicador de Reproducción anclado al marco del vídeo */}
             <div className="absolute top-4 left-4 md:top-8 md:left-8 flex items-center gap-3 pointer-events-none z-20 bg-black/60 backdrop-blur-md py-1.5 px-4 rounded-full border border-white/10 shadow-2xl">
               <Play className="w-3 h-3 text-white fill-white animate-pulse" />
-              <span className="text-[10px] md:text-xs font-mono text-white tracking-[0.2em] uppercase font-bold">
+              <span className="text-[10px] md:text-xs font-mono text-white tracking-[0.2em] font-bold">
                 {language === "es" ? "Reproduciendo" : "Now Playing"}
               </span>
             </div>
@@ -64,7 +64,7 @@ export default function HeroDocumentary() {
             Cambiamos 'pb-6' por 'pb-4' y ajustamos el margen.
         */}
         <div className="w-full flex flex-col justify-center items-center pb-4 shrink-0">
-          <span className="text-sm md:text-lg font-mono text-[#FFA908]/50 tracking-[0.3em] uppercase text-center font-bold">
+          <span className="text-sm md:text-lg font-mono text-[#FFA908]/50 tracking-[0.3em] text-center font-bold">
             {language === "es"
               ? "Capítulo: 01 — Filosofía de la Paciencia"
               : "Chapter: 01 — Philosophy of Patience"}
