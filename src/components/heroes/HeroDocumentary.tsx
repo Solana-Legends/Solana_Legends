@@ -21,7 +21,7 @@ export default function HeroDocumentary() {
           <div className="text-center md:text-left">
             <div className="flex items-center justify-center md:justify-start gap-3 mb-2">
               <span className="w-8 h-[1px] bg-[#FFA908]"></span>
-              <span className="text-[#FFA908] font-mono text-[10px] md:text-xs tracking-[0.4em] uppercase">
+              <span className="text-[#FFA908] font-mono text-[10px] md:text-xs tracking-[0.4em]">
                 {language === "es"
                   ? "Archivo Audiovisual"
                   : "Audiovisual Archive"}
