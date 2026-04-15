@@ -50,10 +50,10 @@ export default function HeroDocumentary() {
               glowColor="#A020F0"
             />
 
-            {/* Indicador de Reproducción anclado al marco del vídeo */}
-            <div className="absolute top-4 left-4 md:top-8 md:left-8 flex items-center gap-3 pointer-events-none z-20 bg-black/60 backdrop-blur-md py-1.5 px-4 rounded-full border border-white/10 shadow-2xl">
-              <Play className="w-3 h-3 text-white fill-white animate-pulse" />
-              <span className="text-[10px] md:text-xs font-mono text-white tracking-[0.2em] font-bold">
+            {/* Indicador de Reproducción - Ajustado para estar más esquinado y ser más pequeño en móvil */}
+            <div className="absolute top-1.5 left-1.5 md:top-4 md:left-4 flex items-center gap-1.5 md:gap-2.5 pointer-events-none z-20 bg-black/40 backdrop-blur-sm py-0.5 px-2 md:py-1.5 md:px-4 rounded-full border border-white/10 shadow-2xl">
+              <Play className="w-2 h-2 md:w-3 md:h-3 text-white fill-white animate-pulse" />
+              <span className="text-[8px] md:text-xs font-mono text-white tracking-[0.1em] md:tracking-[0.2em] font-bold">
                 {language === "es" ? "Reproduciendo" : "Now Playing"}
               </span>
             </div>
