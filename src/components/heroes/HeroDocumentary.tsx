@@ -14,7 +14,6 @@ export default function HeroDocumentary() {
       </div>
 
       <div className="relative z-10 w-full max-w-[1400px] h-full mx-auto flex flex-col justify-between py-2 md:py-4">
-        
         {/* 1. Cabecera
             - pt-4 en móvil para que el título no esté pegado al vídeo.
             - md:pt-10 en PC para mantener tu espacio preferido.
@@ -24,7 +23,9 @@ export default function HeroDocumentary() {
             <div className="flex items-center justify-center md:justify-start gap-3 mb-1 md:mb-2">
               <span className="w-8 h-[1px] bg-[#FFA908]"></span>
               <span className="text-[#FFA908] font-mono text-[10px] md:text-xs tracking-[0.4em] uppercase">
-                {language === "es" ? "Archivo Audiovisual" : "Audiovisual Archive"}
+                {language === "es"
+                  ? "Archivo Audiovisual"
+                  : "Audiovisual Archive"}
               </span>
             </div>
             <h2 className="text-2xl md:text-5xl font-black text-white tracking-tighter leading-none whitespace-nowrap">
@@ -44,9 +45,8 @@ export default function HeroDocumentary() {
             - py-2 en móvil para quitar los huecos negros.
             - md:py-6 en PC para mantener el aire.
         */}
-        <div className="relative w-full flex-grow flex items-center justify-center min-h-0 py-2 md:py-6 px-4">
+        <div className="relative w-full flex-grow flex items-center justify-center min-h-0 py-0 md:py-6 px-4">
           <div className="relative w-full max-w-[1100px] aspect-video bg-black rounded-xl md:rounded-3xl overflow-hidden border border-white/10 shadow-[0_0_80px_rgba(0,0,0,0.9)] group">
-            
             <VideoWithControls
               src="/assets/Documental_Solana_Legends.mp4"
               glowColor="#A020F0"
